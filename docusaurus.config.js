@@ -60,7 +60,7 @@ const config = {
     announcementBar: {
       id: 'support_us',
       content:
-        `⭐️ <b>If you like StackQL, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/docusaurus">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/docusaurus" >Twitter</a></b> ${TwitterSvg}`,
+        `⭐️ <b>If you like StackQL, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/infraql" >Twitter</a></b> ${TwitterSvg}`,
       backgroundColor: '#A9BCD0',
       textColor: '#1A4E82',
       isCloseable: true,
@@ -83,7 +83,6 @@ const config = {
     //  searchParameters: {},
       //... other Algolia params
     //},    
-    // sidebarCollapsible: true, 
     hideableSidebar: true,  
     navbar: {
       logo: {

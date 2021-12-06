@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="451px" preserveAspectRatio="none" style="width:709px;height:451px;background:#FFFFFF;" version="1.1" viewBox="0 0 709 451" width="709px" zoomAndPan="magnify"><defs><filter height="300%" id="f1uqt3pnytlk7t" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b225eedcfb2337a4b9b2667e21197ea8]
+cluster Cloud Provider--><rect fill="#FFFFFF" filter="url(#f1uqt3pnytlk7t)" height="227.5" style="stroke:#000000;stroke-width:1.5;" width="182" x="7" y="96"/><rect fill="#FFFFFF" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="169" y="101"/><rect fill="#FFFFFF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="167" y="103"/><rect fill="#FFFFFF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="167" y="107"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106" x="45" y="123.5332">Cloud Provider</text><!--MD5=[acefe5441fcae7e276f9fdfa19bfcc6a]
+cluster StackQL Application--><polygon fill="#FFFFFF" filter="url(#f1uqt3pnytlk7t)" points="222,96,361,96,368,119.6094,692,119.6094,692,444,222,444,222,96" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="222" x2="368" y1="119.6094" y2="119.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="226" y="112.5332">StackQL Application</text><!--MD5=[48bec2727c60d9b6f7ed14a669c09e51]
+entity discdoc--><rect fill="#FFFFFF" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="150" x="23" y="132"/><rect fill="#FFFFFF" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="18" y="137"/><rect fill="#FFFFFF" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="18" y="177.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="74" x="61" y="156.5332">«API Spec»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="33" y="174.1426">Discovery Document</text><!--MD5=[e2307af040e3f87d22824e7603ca28ec]
+entity api--><rect fill="#FFFFFF" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="106" x="67" y="252.5"/><rect fill="#FFFFFF" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="62" y="257.5"/><rect fill="#FFFFFF" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="62" y="297.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="38" x="101" y="277.0332">«API»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="77" y="294.6426">Resource API</text><!--MD5=[893418e03dea80777231e2b7df261f35]
+entity localexec--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="109" x="313.5" y="373"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="308.5" y="378"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="308.5" y="418.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="325" y="397.5332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="323.5" y="415.1426">LocalExecutor</text><!--MD5=[2c63adfedc3fe0c93325f026c33b6d1e]
+entity remoteexec--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="124" x="243" y="132"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="238" y="137"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="238" y="177.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="262" y="156.5332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="253" y="174.1426">RemoteExecutor</text><!--MD5=[75390d3fefe5b03c70cb446d957a6395]
+entity planner--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="108" x="387" y="252.5"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="382" y="257.5"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="382" y="297.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="398" y="277.0332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="397" y="294.6426">QueryPlanner</text><!--MD5=[b3c633cd6cd267e80b8ca5565fbac860]
+entity parser--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="106" x="407" y="132"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="402" y="137"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="402" y="177.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="417" y="156.5332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="419.5" y="174.1426">QueryParser</text><!--MD5=[839529e8711a56e2bc1927757a72830a]
+entity preprocessor--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="145" x="530.5" y="252.5"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="525.5" y="257.5"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="525.5" y="297.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="560" y="277.0332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="540.5" y="294.6426">QueryPreProcessor</text><!--MD5=[20e8a0d1c10cbe4476c06f9d600054d8]
+entity driver--><rect fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" height="55.2188" style="stroke:#A80036;stroke-width:1.5;" width="106" x="550" y="132"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="545" y="137"/><rect fill="#FEFECE" height="5" style="stroke:#A80036;stroke-width:1.5;" width="10" x="545" y="177.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="560" y="156.5332">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="584" y="174.1426">Driver</text><!--MD5=[fe1dc0ffe2c7033f1a075e99cc66abc2]
+entity localdb--><path d="M238.5,258 C238.5,248 295,248 295,248 C295,248 351.5,248 351.5,258 L351.5,302.2188 C351.5,312.2188 295,312.2188 295,312.2188 C295,312.2188 238.5,312.2188 238.5,302.2188 L238.5,258 " fill="#FFFFFF" filter="url(#f1uqt3pnytlk7t)" style="stroke:#000000;stroke-width:1.5;"/><path d="M238.5,258 C238.5,268 295,268 295,268 C295,268 351.5,268 351.5,258 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="48" x="271" y="286.5332">«store»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="248.5" y="304.1426">Local Backend</text><!--MD5=[1cc63f1686552ec4d4eb6d9ab6ab4c68]
+entity userint--><ellipse cx="603" cy="14" fill="#FEFECE" filter="url(#f1uqt3pnytlk7t)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[df62aceab7e001e05af2b62b338fdb90]
+link discdoc to api--><!--MD5=[bcfd055d738e3415ff62f1da20cb9d54]
+link userint to driver--><path d="M603,23.13 C603,43.7 603,98.57 603,131.79 " fill="none" id="userint-driver" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="608" y="76.4951">query interface</text><!--MD5=[aa0b161f4dddde9444918c245408c718]
+link driver to preprocessor--><path d="M603,187.09 C603,204.93 603,228.51 603,247.32 " fill="none" id="driver-to-preprocessor" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="603,252.5,607,243.5,603,247.5,599,243.5,603,252.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[99ebd50184349ebb0bda7b0217797f10]
+reverse link parser to preprocessor--><path d="M496.03,190.35 C519.1,209.48 548.78,234.07 571.02,252.5 " fill="none" id="parser-backto-preprocessor" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="492.09,187.09,496.4659,195.9133,495.9393,190.2811,501.5716,189.7545,492.09,187.09" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[131747bc2debbc7fb6fb7cb1989d2803]
+link parser to planner--><path d="M455.74,187.09 C452.88,204.93 449.09,228.51 446.08,247.32 " fill="none" id="parser-to-planner" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="445.25,252.5,450.6366,244.2547,446.0489,247.5642,442.7393,242.9765,445.25,252.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[da59548aafb61215d02e709a067bd562]
+link planner to localexec--><path d="M424.62,307.59 C413.53,325.59 398.85,349.42 387.22,368.31 " fill="none" id="planner-to-localexec" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="384.33,373,392.4618,367.4436,386.9569,368.7456,385.6548,363.2407,384.33,373" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7fd38ba9e4e8e54be6fa2759a1beb4cd]
+reverse link remoteexec to planner--><path d="M339.54,190.59 C361.44,209.68 389.52,234.14 410.58,252.5 " fill="none" id="remoteexec-backto-planner" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="335.52,187.09,339.6784,196.0179,339.29,190.3744,344.9335,189.986,335.52,187.09" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[17f1d2a182d8b2e04fd69444566f0c9f]
+link remoteexec to localdb--><path d="M302.76,187.09 C301.38,203.42 299.59,224.56 298.09,242.44 " fill="none" id="remoteexec-to-localdb" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="297.63,247.88,302.3615,239.2421,298.044,242.8972,294.389,238.5797,297.63,247.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5efde776a1298f67a6502591d876e4b4]
+reverse link localdb to localexec--><path d="M316.97,316.66 C328.12,334.76 341.43,356.38 351.67,372.99 " fill="none" id="localdb-backto-localexec" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="#A80036" points="314.18,312.13,315.5048,321.8893,316.8069,316.3844,322.3118,317.6864,314.18,312.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0f863fa9d0511bc5f2a35cf303c8d527]
+link discdoc to remoteexec--><!--MD5=[528e479bfae964486b4bb315b15a14de]
+link remoteexec to discdoc--><path d="M242.96,159.5 C219.71,159.5 196.45,159.5 173.2,159.5 " fill="none" id="remoteexec-discdoc" style="stroke:#A80036;stroke-width:1.0;"/><path d="M215.1511,166.5711 A10,10 0 0 0 215.1511 152.4289" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><ellipse cx="208.08" cy="159.5" fill="#FFFFFF" rx="6" ry="6" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[8d69f59442b807a585c814b4cdf32602]
+link remoteexec to api--><!--MD5=[8d69f59442b807a585c814b4cdf32602]
+link remoteexec to api--><path d="M274.96,187.09 C247.19,206.61 205.99,233 172.85,252.5 " fill="none" id="remoteexec-api-1" style="stroke:#A80036;stroke-width:1.0;"/><path d="M235.6871,221.9426 A10,10 0 0 0 228.0589 210.0342" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><ellipse cx="225.9188" cy="219.8025" fill="#FFFFFF" rx="6" ry="6" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[f664164a75259667fe73ec1759038765]
+@startuml
+
+skinparam componentStyle uml1
+
+component "Cloud Provider" {
+    component "Discovery Document" <<API Spec>> as discdoc {
+    }
+    component "Resource API" <<API>> as api {
+    }
+}
+
+package "StackQL Application" {
+    database "Local Backend" <<store>> as localdb { 
+    }
+    [LocalExecutor] <<component>> as localexec
+    [RemoteExecutor] <<component>> as remoteexec
+    [QueryPlanner] <<component>> as planner
+    [QueryParser] <<component>> as parser
+    [QueryPreProcessor] <<component>> as preprocessor
+    [Driver] <<component>> as driver
+}
+
+interface " " as userint
+
+discdoc -[hidden]D- api
+userint - - driver : " query interface"
+driver ~down~> preprocessor
+preprocessor ~up~> parser
+parser ~down~> planner
+planner ~down~> localexec
+planner ~up~> remoteexec
+remoteexec ~down~> localdb
+localexec ~up~> localdb
+
+remoteexec -[hidden]U- discdoc
+remoteexec -[hidden]R- api
+remoteexec -(0- discdoc
+remoteexec -(0- api
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 22:40:07 AEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: AU
+--></g></svg>
