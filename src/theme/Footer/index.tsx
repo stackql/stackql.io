@@ -81,14 +81,32 @@ function Footer(): JSX.Element | null {
     <footer
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
-      })}>
+      })}
+    >
       <div className="container">
         {links && links.length > 0 && (
           <div className="row footer__links">
+            <div className="col col--6 footer__col">
+              {logo && (logo.src || logo.srcDark) && (
+                <div className="margin-bottom--sm">
+                  {logo.href ? (
+                    <Link href={logo.href} className={styles.footerLogoLink}>
+                      <FooterLogo alt={logo.alt} sources={sources} />
+                    </Link>
+                  ) : (
+                    <FooterLogo alt={logo.alt} sources={sources} />
+                  )}
+                </div>
+              )}
+              <p className="footer__subtitle">
+                A new approach to querying and <br />
+                provisioning cloud services.
+              </p>
+            </div>
             {links.map((linkItem, i) => (
               <div key={i} className="col footer__col">
                 {linkItem.title != null ? (
-                  <div className="footer__title">{linkItem.title}</div>
+                  <h4 className="footer__title">{linkItem.title}</h4>
                 ) : null}
                 {linkItem.items != null &&
                 Array.isArray(linkItem.items) &&
@@ -98,8 +116,7 @@ function Footer(): JSX.Element | null {
                       item.html ? (
                         <li
                           key={key}
-                          className="footer__item"
-                          // Developer provided the HTML, so assume it's safe.
+                          className="footer__item" // Developer provided the HTML, so assume it's safe.
                           // eslint-disable-next-line react/no-danger
                           dangerouslySetInnerHTML={{
                             __html: item.html,
@@ -117,28 +134,12 @@ function Footer(): JSX.Element | null {
             ))}
           </div>
         )}
+        <div className="divider" />
         {(logo || copyright) && (
           <div className="footer__bottom text--center">
-            {logo && (logo.src || logo.srcDark) && (
-              <div className="margin-bottom--sm">
-                {logo.href ? (
-                  <Link href={logo.href} className={styles.footerLogoLink}>
-                    <FooterLogo
-                      alt={logo.alt}
-                      sources={sources}
-                      width={logo.width}
-                      height={logo.height}
-                    />
-                  </Link>
-                ) : (
-                  <FooterLogo alt={logo.alt} sources={sources} />
-                )}
-              </div>
-            )}
             {copyright ? (
               <div
-                className="footer__copyright"
-                // Developer provided the HTML, so assume it's safe.
+                className="footer__copyright" // Developer provided the HTML, so assume it's safe.
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                   __html: copyright,

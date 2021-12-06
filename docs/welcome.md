@@ -16,8 +16,8 @@ slug: /
 import ImageSwitcher from '/js/ImageSwitcher/ImageSwitcher.js';
 
 <ImageSwitcher 
-lightImageSrc="/img/stackql-banner.png"
-darkImageSrc="/img/stackql-banner-darkbg.png"
+lightImageSrc="/img/infraql-banner.png"
+darkImageSrc="/img/infraql-banner-darkbg.png"
 alttext="StackQL"/>
 
 ## Welcome to the Revolution!

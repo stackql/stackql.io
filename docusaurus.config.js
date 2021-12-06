@@ -19,17 +19,19 @@ const config = {
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
 
-  plugins: [],
+  plugins: ['@docusaurus/plugin-ideal-image'],
 
   presets: [
     [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        sitemap: {},
+        pages: {},
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           path: 'docs',
-		  sidebarCollapsible: true, 
+		      sidebarCollapsible: true, 
           editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
         },
         blog: {
@@ -88,28 +90,24 @@ const config = {
       logo: {
         alt: 'StackQL',
         href: '/',
-        //target: '_self',
         src: 'img/logo-original.svg',
         srcDark: 'img/logo-white.svg',
       },
       items: [
         {
-          href: 'https://stackql.io/features',
+          href: '/features',
           label: 'Features',
           position: 'left',
-          target: '_self',
         },
         {
-          href: 'https://stackql.io/contact-us',
+          href: '/contact-us',
           label: 'Contact us',
           position: 'left',
-          target: '_self',
         },
         {
-          href: 'https://stackql.io/downloads',
+          href: '/downloads',
           label: 'Downloads',
           position: 'left',
-          target: '_self',
         },        
         {
           to: 'docs',
@@ -141,39 +139,23 @@ const config = {
       },
       links: [
         {
-          title: 'Pages',
+          title: 'StackQL',
           items: [
             {
+              label: 'Home',
+              to: '/',
+            },
+            {
               label: 'Features',
-              href: 'https://stackql.io/features/',
-              target: '_self',
+              to: '/features',
             },
             {
               label: 'Downloads',
-              href: 'https://stackql.io/downloads/',
-              target: '_self',
+              to: '/downloads',
             },
             {
               label: 'Contact us',
-              href: 'https://stackql.io/contact-us/',
-              target: '_self',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Github',
-              href: 'https://github.com/stackql',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/stackql',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/stackql',
+              to: '/contact-us',
             },
           ],
         },
@@ -182,23 +164,11 @@ const config = {
           items: [
             {
               label: 'Documentation',
-              to: '/',
+              to: '/docs',
             },
             {
-              label: 'Blogs',
-              to: 'blog',
-            },
-            {
-              label: 'Tutorials',
-              to: '/',
-            },
-            {
-              label: 'Videos',
-              href: 'https://youtube.com',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Blog',
+              to: '/blog',
             },
           ],
         },
