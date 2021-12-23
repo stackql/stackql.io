@@ -27,33 +27,44 @@ var prompt2 = _react2.default.createElement(
   '>> '
 );
 
-var keywords = ['SELECT', 'FROM', 'GROUP', 'BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL', 'TRUE', 'FALSE'];
+var keywords = ['SELECT', 'FROM', 'GROUP', 'BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL'];
 
 function renderPrompt() {
   return prompt2;
 }
 
-function renderText(text) {
-  // return a span for each word in the text
-  return text.split(' ').map(function (word, index) {
-    var isKeyword = keywords.includes(word);
-    return _react2.default.createElement(
+function renderWord(word, i) {
+  var isKeyword = keywords.includes(word);
+  var isCount = word === 'COUNT(*)';
+  return isCount ? _react2.default.createElement(
+    'span',
+    { key: i },
+    _react2.default.createElement(
       'span',
-      {
-        key: index,
-        className: isKeyword ? 'Terminal-keyword' : ''
-      },
-      word,
-      ' '
-    );
-  });
+      { className: 'Terminal-keyword' },
+      'COUNT'
+    ),
+    _react2.default.createElement(
+      'span',
+      null,
+      '(*) '
+    )
+  ) : _react2.default.createElement(
+    'span',
+    {
+      key: i,
+      className: isKeyword ? 'Terminal-keyword' : ''
+    },
+    word,
+    ' '
+  );
 }
 
-// return text;
-//  return kewords.reduce((acc, keyword) => {
-//    return acc.replace(keyword, <span className="Terminal-keyword">${keyword}</span>);
-//  }, text);
-
+function renderText(text) {
+  return text.split(' ').map(function (word, i) {
+    return renderWord(word, i);
+  });
+}
 
 var renderLines = function renderLines(lines) {
   return lines.map(function (line) {

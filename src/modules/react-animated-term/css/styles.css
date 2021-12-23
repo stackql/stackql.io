@@ -3,17 +3,13 @@
   --terminal-code-line-height: 18px;
   --console-text-font-size: 12px;
   --console-text-line-height: 24px;
+  --keyword-font-weight: 500;
 }
 
 .Terminal-keyword {
   color: #0000ff;
+  font-weight: var(--keyword-font-weight);
 }
-
-/*
-.Terminal-word {
-  color: #905;
-}
-*/
 
 .Terminal-window {
   position: relative;

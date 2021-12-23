@@ -19,8 +19,6 @@ const keywords = [
   'IS',
   'NOT',
   'NULL',
-  'TRUE',
-  'FALSE',
 ];
 
 
@@ -28,26 +26,32 @@ function renderPrompt(){
     return prompt2;
 }
 
+function renderWord(word, i){
+  const isKeyword = keywords.includes(word);
+  const isCount = (word === 'COUNT(*)');
+  return (isCount ? 
+            <span key={i}>
+              <span className={'Terminal-keyword'}>{'COUNT'}</span>
+              <span>{'(*) '}</span>
+            </span>
+          : 
+            <span
+            key={i}
+            className={isKeyword ? 'Terminal-keyword' : ''}
+            >
+            {word}{' '}
+            </span>          
+          )
+}
+
+
 function renderText(text){
-// return a span for each word in the text
-  return text.split(' ').map((word, index) => {
-    const isKeyword = keywords.includes(word);
+  return text.split(' ').map((word, i) => {
     return (
-      <span
-        key={index}
-        className={isKeyword ? 'Terminal-keyword' : ''}
-      >
-        {word}{' '}
-      </span>
+      renderWord(word, i)
     );
   });
 }
-
-  // return text;
-//  return kewords.reduce((acc, keyword) => {
-//    return acc.replace(keyword, <span className="Terminal-keyword">${keyword}</span>);
-//  }, text);
-
 
 const renderLines = (lines) => {
   return lines.map((line) => {
