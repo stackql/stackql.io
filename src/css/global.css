@@ -66,6 +66,7 @@
 	*/
 	 --ifm-navbar-link-color: var(--ifm-menu-color);
 	 --ifm-menu-color-background-active: var(--ifm-color-emphasis-200);
+
 }
  :root .react-toggle-thumb {
 	 top: -2px !important;
@@ -104,7 +105,8 @@
 	 --ifm-menu-color-background-active: #21243d;
 	 --ifm-code-color: var(--white);
 }
- html[data-theme='dark'] .react-toggle-thumb {
+
+html[data-theme='dark'] .react-toggle-thumb {
 	 background-color: #1a237e !important;
 }
  html[data-theme='dark'] .react-toggle-track {
@@ -312,4 +314,16 @@
 }
 /* End Railroad diagrams */
  
- 
+.footerSocialIcon {
+	font-size: 24;
+  }
+  
+.footerSocialIconButton {
+padding: 0;
+color: 'rgba(255,255,255,.6)';
+}
+
+.footerSocialIconButton:hover {
+background: 'transparent';
+color: 'rgba(255,255,255,.6)';
+}

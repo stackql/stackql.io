@@ -15,6 +15,11 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { IconButton } from '@mui/material';
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 function FooterLink({
   to,
@@ -65,6 +70,14 @@ const FooterLogo = ({
 );
 
 function Footer(): JSX.Element | null {
+  const socialLinks = {
+    linkedin: "https://www.linkedin.com/company/stackql",
+    twitter: "https://twitter.com/stackql",
+    github: "https://github.com/stackql",
+  };
+  
+  const { isDarkTheme } = useThemeContext();
+
   const {footer} = useThemeConfig();
 
   const {copyright, links = [], logo = {}} = footer || {};
@@ -136,6 +149,7 @@ function Footer(): JSX.Element | null {
         )}
         <div className="divider" />
         {(logo || copyright) && (
+          <>
           <div className="footer__bottom text--center">
             {copyright ? (
               <div
@@ -147,6 +161,19 @@ function Footer(): JSX.Element | null {
               />
             ) : null}
           </div>
+          <div className="footer__bottom text--center">
+          <IconButton
+            className="footerSocialIconButton"
+            href={socialLinks.twitter}
+            size="large">
+            <GitHubIcon className="footerSocialIcon" htmlColor={isDarkTheme ? 'white' : 'black'}/>
+          </IconButton>            
+          {/*
+          <TwitterIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+          <LinkedInIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+          */}
+          </div>
+          </>
         )}
       </div>
     </footer>

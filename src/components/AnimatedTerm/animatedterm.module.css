@@ -1,0 +1,131 @@
+.marvelDevice {
+  display: inline-block;
+  position: relative;
+  box-sizing: content-box !important;
+}
+.marvelDevice .screen {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  z-index: 3;
+  background: white;
+  overflow: hidden;
+  display: block;
+  border-radius: 1px;
+  box-shadow: 0 0 0 3px #111;
+}
+.marvelDevice .topBar, .marvelDevice .bottomBar {
+  height: 3px;
+  background: black;
+  width: 100%;
+  display: block;
+}
+.marvelDevice .middle-bar {
+  width: 1.5px;
+  height: 2px;
+  top: 0px;
+  left: 45px;
+  background: black;
+  position: absolute;
+}
+
+.marvelDevice.macbook {
+  width: 480px;
+  height: 300px; 
+  padding: 22px 22px 38px;
+  margin: 0 auto;
+  background: #bebebe;
+  border-radius: 17px;
+}
+.marvelDevice.macbook:before {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  content: "";
+  display: block;
+  top: 2px;
+  left: 2px;
+  border-radius: 15px;
+  background: #1e1e1e;
+}
+.marvelDevice.macbook .topBar {
+  width: calc(100% + 2 * 35px);
+  height: 20px;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 340px;
+  left: -35px;
+  border-bottom-left-radius: 45px 9px;
+  border-bottom-right-radius: 45px 9px;
+  background: #bebebe;
+  box-shadow: inset 0px -2px 6.5px 1.5px rgba(34, 34, 34, 0.6);
+}
+.marvelDevice.macbook .topBar:before {
+  width: 100%;
+  height: 12px;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  border-bottom: 1px solid #aaa;
+  border-radius: 2.5px;
+  position: relative;
+}
+.marvelDevice.macbook .topBar:after {
+  width: 16%;
+  height: 7px;
+  content: "";
+  display: block;
+  top: 0;
+  background: #ddd;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0px -1.5px 5px #999;
+}
+.marvelDevice.macbook .bottomBar {
+  background: transparent;
+  width: calc(100% + 2 * 35px);
+  height: 13px;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 340px;
+  left: -35px;
+}
+.marvelDevice.macbook .bottomBar:before, .marvelDevice.macbook .bottomBar:after {
+  height: calc(100% - 1px);
+  width: 40px;
+  content: "";
+  display: block;
+  top: 0;
+  position: absolute;
+}
+.marvelDevice.macbook .bottomBar:before {
+  left: 0;
+  background: #f0f0f0;
+  background: linear-gradient(to right, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);
+}
+.marvelDevice.macbook .bottomBar:after {
+  right: 0;
+  background: #f0f0f0;
+  background: linear-gradient(to right, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);
+}
+.marvelDevice.macbook .camera {
+  background: #3c3d3d;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -2.5px;
+  border-radius: 100%;
+}
+.marvelDevice.macbook .home {
+  display: none;
+}
