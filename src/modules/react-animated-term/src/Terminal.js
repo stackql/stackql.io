@@ -3,25 +3,40 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 const cursor = <span className="Terminal-cursor" />
-const prompt1 = <span className="Terminal-prompt">$ StackQL* {'>> '}</span>
+// const prompt1 = <span className="Terminal-prompt">$ StackQL* {'>> '}</span>
 const prompt2 = <span className="Terminal-prompt">$ {'>> '}</span>
+const kewords = [
+  'SELECT',
+  'FROM',
+  'GROUP BY',
+  'WHERE',
+  'AND',
+  'OR',
+  'LIKE',
+  'IN',
+  'IS',
+  'NOT',
+  'NULL',
+  'TRUE',
+  'FALSE',
+];
 
-function renderPrompt(line){
-  if (line.prompt1 === true) {
-    return prompt1;
-  } else if (line.prompt2 === true) {
+
+function renderPrompt(){
     return prompt2;
-  } else {
-    return '';
-  }
 }
+
+function renderText(text){
+  return text;
+}
+
 
 const renderLines = (lines) => {
   return lines.map((line) => {
     return (
       <React.Fragment key={line.id}>
-        { prompt1 }
-        {line.text}
+        {line.cmd ?  renderPrompt() : ''}
+        {renderText(line.text)}
         {line.current ? cursor : ''}
         <br />
       </React.Fragment>

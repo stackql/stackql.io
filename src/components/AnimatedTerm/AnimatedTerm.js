@@ -5,6 +5,7 @@ import Code from '../Code';
 const AnimatedTerm = props => {
     const { data } = props;
     return (
+
     <div className={[styles.marvelDevice, styles.macbook].join(" ")}>
       <div className={styles.notch}>
           <div className={styles.camera}></div>
@@ -18,6 +19,7 @@ const AnimatedTerm = props => {
           <Code />
       </div>
     </div>
+
     );
 };
     

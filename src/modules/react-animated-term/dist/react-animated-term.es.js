@@ -3,12 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 var cursor = React.createElement('span', { className: 'Terminal-cursor' });
-var prompt1 = React.createElement(
-  'span',
-  { className: 'Terminal-prompt' },
-  '$ StackQL* ',
-  '>> '
-);
+// const prompt1 = <span className="Terminal-prompt">$ StackQL* {'>> '}</span>
 var prompt2 = React.createElement(
   'span',
   { className: 'Terminal-prompt' },
@@ -16,13 +11,21 @@ var prompt2 = React.createElement(
   '>> '
 );
 
+function renderPrompt() {
+  return prompt2;
+}
+
+function renderText(text) {
+  return text;
+}
+
 var renderLines = function renderLines(lines) {
   return lines.map(function (line) {
     return React.createElement(
       React.Fragment,
       { key: line.id },
-      prompt1,
-      line.text,
+      line.cmd ? renderPrompt() : '',
+      renderText(line.text),
       line.current ? cursor : '',
       React.createElement('br', null)
     );

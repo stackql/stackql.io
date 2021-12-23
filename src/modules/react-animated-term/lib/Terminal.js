@@ -19,27 +19,21 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cursor = _react2.default.createElement('span', { className: 'Terminal-cursor' });
-var prompt1 = _react2.default.createElement(
-  'span',
-  { className: 'Terminal-prompt' },
-  '$ StackQL* ',
-  '>> '
-);
+// const prompt1 = <span className="Terminal-prompt">$ StackQL* {'>> '}</span>
 var prompt2 = _react2.default.createElement(
   'span',
   { className: 'Terminal-prompt' },
   '$ ',
   '>> '
 );
+var kewords = ['SELECT', 'FROM', 'GROUP BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL', 'TRUE', 'FALSE'];
 
-function renderPrompt(line) {
-  if (line.prompt1 === true) {
-    return prompt1;
-  } else if (line.prompt2 === true) {
-    return prompt2;
-  } else {
-    return '';
-  }
+function renderPrompt() {
+  return prompt2;
+}
+
+function renderText(text) {
+  return text;
 }
 
 var renderLines = function renderLines(lines) {
@@ -47,8 +41,8 @@ var renderLines = function renderLines(lines) {
     return _react2.default.createElement(
       _react2.default.Fragment,
       { key: line.id },
-      prompt1,
-      line.text,
+      line.cmd ? renderPrompt() : '',
+      renderText(line.text),
       line.current ? cursor : '',
       _react2.default.createElement('br', null)
     );

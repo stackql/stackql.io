@@ -1,3 +1,10 @@
+:root {
+  --terminal-code-font-size: 16px;
+  --terminal-code-line-height: 18px;
+  --console-text-font-size: 12px;
+  --console-text-line-height: 24px;
+}
+
 .Terminal-window {
   position: relative;
   width: 100%;
@@ -40,9 +47,9 @@
 }
 
 .Terminal-console {
-  font-size: 12px;
+  font-size: var(--console-text-font-size);
   font-family: Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace;
-  line-height: 24px;
+  line-height: var(--console-text-line-height);
   color: rgb(255, 255, 255);
   margin: 0px 16px;
 }
@@ -94,9 +101,9 @@
 
 .Terminal-code {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--terminal-code-font-size);
   font-family: Menlo, DejaVu Sans Mono, Consolas, Lucida Console, monospace;
-  line-height: 20px;
+  line-height: var(--terminal-code-line-height);
   white-space: pre-wrap;
 }
 
