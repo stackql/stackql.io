@@ -5,10 +5,12 @@ import PropTypes from 'prop-types'
 const cursor = <span className="Terminal-cursor" />
 // const prompt1 = <span className="Terminal-prompt">$ StackQL* {'>> '}</span>
 const prompt2 = <span className="Terminal-prompt">$ {'>> '}</span>
-const kewords = [
+
+const keywords = [
   'SELECT',
   'FROM',
-  'GROUP BY',
+  'GROUP',
+  'BY',
   'WHERE',
   'AND',
   'OR',
@@ -27,8 +29,24 @@ function renderPrompt(){
 }
 
 function renderText(text){
-  return text;
+// return a span for each word in the text
+  return text.split(' ').map((word, index) => {
+    const isKeyword = keywords.includes(word);
+    return (
+      <span
+        key={index}
+        className={isKeyword ? 'Terminal-keyword' : ''}
+      >
+        {word}{' '}
+      </span>
+    );
+  });
 }
+
+  // return text;
+//  return kewords.reduce((acc, keyword) => {
+//    return acc.replace(keyword, <span className="Terminal-keyword">${keyword}</span>);
+//  }, text);
 
 
 const renderLines = (lines) => {
@@ -36,7 +54,7 @@ const renderLines = (lines) => {
     return (
       <React.Fragment key={line.id}>
         {line.cmd ?  renderPrompt() : ''}
-        {renderText(line.text)}
+        {line.cmd ? renderText(line.text) : line.text}
         {line.current ? cursor : ''}
         <br />
       </React.Fragment>

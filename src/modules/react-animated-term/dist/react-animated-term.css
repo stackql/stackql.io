@@ -5,6 +5,16 @@
   --console-text-line-height: 24px;
 }
 
+.Terminal-keyword {
+  color: #0000ff;
+}
+
+/*
+.Terminal-word {
+  color: #905;
+}
+*/
+
 .Terminal-window {
   position: relative;
   width: 100%;

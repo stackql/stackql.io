@@ -26,15 +26,34 @@ var prompt2 = _react2.default.createElement(
   '$ ',
   '>> '
 );
-var kewords = ['SELECT', 'FROM', 'GROUP BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL', 'TRUE', 'FALSE'];
+
+var keywords = ['SELECT', 'FROM', 'GROUP', 'BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL', 'TRUE', 'FALSE'];
 
 function renderPrompt() {
   return prompt2;
 }
 
 function renderText(text) {
-  return text;
+  // return a span for each word in the text
+  return text.split(' ').map(function (word, index) {
+    var isKeyword = keywords.includes(word);
+    return _react2.default.createElement(
+      'span',
+      {
+        key: index,
+        className: isKeyword ? 'Terminal-keyword' : ''
+      },
+      word,
+      ' '
+    );
+  });
 }
+
+// return text;
+//  return kewords.reduce((acc, keyword) => {
+//    return acc.replace(keyword, <span className="Terminal-keyword">${keyword}</span>);
+//  }, text);
+
 
 var renderLines = function renderLines(lines) {
   return lines.map(function (line) {
@@ -42,7 +61,7 @@ var renderLines = function renderLines(lines) {
       _react2.default.Fragment,
       { key: line.id },
       line.cmd ? renderPrompt() : '',
-      renderText(line.text),
+      line.cmd ? renderText(line.text) : line.text,
       line.current ? cursor : '',
       _react2.default.createElement('br', null)
     );
