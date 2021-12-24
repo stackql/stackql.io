@@ -16,7 +16,7 @@ const AnimatedTerm = props => {
       <div className={styles.bottomBar}></div>
       <div className={styles.volume}></div>
 	  <div className={styles.screen}>
-          <Code />
+          <Code data={data} />
       </div>
     </div>
 

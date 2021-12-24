@@ -31,8 +31,7 @@ const Hero = props => {
                 </div>
             </div>
             <div className="col col--6">
-                <AnimatedTerm />
-                
+                <AnimatedTerm data={data.animatedTerm} />
             </div>
           </div>
         </div>

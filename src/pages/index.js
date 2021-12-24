@@ -5,6 +5,53 @@ import {
 Hero,
 } from '../components';
 
+const spinner = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
+const termLines = [
+    {
+        text: 'SELECT machineType, COUNT(*)',
+        cmd: true,
+        delay: 80,
+    },
+    {
+        text: 'FROM google.compute.instances',
+        cmd: true,
+        delay: 80,
+    },
+    {
+        text: 'GROUP BY machineType',
+        cmd: true,
+        delay: 80,
+    },
+    {
+        text: "WHERE zone = 'us-east1-a'",
+        cmd: true,
+        delay: 80,
+    },
+    {
+        text: ' ',
+        cmd: false,
+        repeat: true,
+        repeatCount: 3,
+        frames: spinner.map(function (spinner) {
+        return {
+            text: spinner + ' Running query',
+            delay: 10
+        }
+    })
+    },
+    {
+        text: 
+`+------------------------+
+|  MACHINETYPE   | COUNT |
++------------------------+
+| n1-standard-1  |   3   |
+| n1-megamem-96  |   8   |
+| c2-standard-60 |   4   |
++------------------------+`,
+        cmd: false,
+    }
+]
+
 const pageData = {
   hero: {
     title: [
@@ -13,7 +60,9 @@ const pageData = {
       'One Language.',
     ],
     subtitle: 'Provision. Query. Secure.',
-    animatedTerm: '',
+    animatedTerm: {
+      termLines: termLines,
+    },
   },
 
 };  

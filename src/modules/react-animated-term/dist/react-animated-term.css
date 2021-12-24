@@ -1,9 +1,9 @@
 :root {
-  --terminal-code-font-size: 16px;
-  --terminal-code-line-height: 18px;
+  --terminal-code-font-size: 17px;
+  --terminal-code-line-height: 20px;
   --console-text-font-size: 12px;
   --console-text-line-height: 24px;
-  --keyword-font-weight: 500;
+  --keyword-font-weight: 600;
 }
 
 .Terminal-keyword {
