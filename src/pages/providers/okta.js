@@ -3,8 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {
 Hero,
-HomepageFeatures,
-} from '../components';
+} from '../../components';
 
 const spinner = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
 const termLines = [
@@ -91,8 +90,8 @@ export default function Home() {
     >
       <Hero data={pageData.hero} />
       <main>
-      <HomepageFeatures />
+      {/*  <HomepageFeatures /> */}
       </main>
     </Layout>
   );
-};
+}

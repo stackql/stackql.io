@@ -1,0 +1,56 @@
+.headerSection  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  font-family: var(--ifm-font-family-base);
+  padding-top: 2rem;
+  justify-content: center;
+}
+
+.disableGutter {
+  margin-bottom: 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 3rem;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .title {
+    line-height: 1.167;
+  }
+  .subtitle {
+    line-height: 1.167;
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/**
+  cta: {
+    marginTop: 10,
+    marginLeft: 10,
+    '&:first-child': {
+      marginLeft: 10,
+    },
+  },
+  labelColor: {
+    color: 'black',
+  },
+}));
+
+
+
+ */

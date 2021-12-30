@@ -23,6 +23,7 @@
     "@mdx-js/react": "^1.6.21",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.5",
+    "@mui/styles": "^5.2.3",
     "@svgr/webpack": "^5.5.0",
     "aos": "^2.3.4",
     "clsx": "^1.1.1",
@@ -30,6 +31,7 @@
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-material-ui-carousel": "^3.1.1",
     "url-loader": "^4.1.1"
   },
   "browserslist": {
