@@ -3,6 +3,17 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import styles from './sectionheader.module.css';
 
+/*
+import AOS from 'aos';
+
+AOS.init({
+  once: true,
+  delay: 50,
+  duration: 500,
+  easing: 'ease-in-out',
+});
+*/
+
 const SectionHeader = props => {
   const {
     title,
@@ -19,7 +30,9 @@ const SectionHeader = props => {
   
   return (
     <section className={clsx(styles.headerSection)}>
-      <div className={clsx('container', styles.header, disableGutter ? styles.disableGutter : styles.enableGutter)}>
+      <div 
+        className={clsx('container', styles.header, disableGutter ? styles.disableGutter : styles.enableGutter)}
+        data-aos={fadeUp ? 'fade-up' : ''}>
         {overline && (
           <div className='row'>
             <div className={clsx('col', 'col--12', styles.overline)}>{overline}</div>

@@ -8,6 +8,7 @@ import {
 } from '../components';
 import styles from '../components/Hero/Hero.module.css';
 import Link from '@docusaurus/Link';
+import MediaQuery from 'react-responsive'
 
 export default function Features() {
   const {siteConfig} = useDocusaurusContext();
@@ -20,23 +21,31 @@ export default function Features() {
       // keywords
     >
       <SectionHeader
-          title="Cloud Everything as SQL"
-          subtitle="A new approach to querying and provisioning cloud services."
-          align="center"
         // disableGutter 
-        label="label fred"
         // overline
         // fadeUp
+        // className
+        title={
+          <span>
+          Cloud <span style={{color: '#00af91'}}>Everything</span> as SQL
+          </span>
+        }
+        subtitle="A new approach to querying and provisioning cloud services."
+        align="center"
+        label="FAMILIAR, FUNCTIONAL, FLEXIBLE"
         ctaGroup = {[
-          <div className={styles.buttons}>
-            <DownloadLink styles={['button--primary']}/>
-          </div>,
-          <div style={{width: "2em"}}></div>,
+          <MediaQuery minWidth={1224}>
+            <div className={styles.buttons}>
+              <DownloadLink styles={['button--primary']}/>
+            </div>
+          </MediaQuery>,
+          <MediaQuery minWidth={1224}>
+            <div style={{width: "2em"}}></div>
+          </MediaQuery>,
           <div className={styles.buttons}>
             <DocumentationLink />
-          </div>,
+          </div>
         ]}
-        // className
       />
       <main>
       {/*  <HomepageFeatures /> */}
