@@ -3,7 +3,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {
   SectionHeader,
+  DownloadLink,
+  DocumentationLink,
 } from '../components';
+import styles from '../components/Hero/Hero.module.css';
+import Link from '@docusaurus/Link';
 
 export default function Features() {
   const {siteConfig} = useDocusaurusContext();
@@ -19,24 +23,20 @@ export default function Features() {
           title="Cloud Everything as SQL"
           subtitle="A new approach to querying and provisioning cloud services."
           align="center"
-          disableGutter
-          titleVariant="h1"      
-        // title
-        // titleVariant
-        // subtitleVariant
-        // subtitle
-        // subtitleColor
-        // label
+        // disableGutter 
+        label="label fred"
         // overline
         // fadeUp
-        // align
-        // ctaGroup
-        // disableGutter
-        // titleClasses
+        ctaGroup = {[
+          <div className={styles.buttons}>
+            <DownloadLink styles={['button--primary']}/>
+          </div>,
+          <div style={{width: "2em"}}></div>,
+          <div className={styles.buttons}>
+            <DocumentationLink />
+          </div>,
+        ]}
         // className
-        // labelProps
-        // titleProps
-        // subtitleProps
       />
       <main>
       {/*  <HomepageFeatures /> */}

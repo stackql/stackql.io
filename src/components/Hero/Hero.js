@@ -5,7 +5,9 @@ import styles from './hero.module.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnimatedTerm from '../AnimatedTerm';
+import DownloadLink from '../DownloadLink';
 
+/*
 function getOS() {
   const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
   const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
@@ -45,6 +47,7 @@ const DownloadLink = () => {
   );
 };
 
+*/
 
 const Hero = props => {
     const { data } = props;
@@ -60,7 +63,7 @@ const Hero = props => {
                 </h1>
                 <p className="hero__subtitle">{data.subtitle}</p>
                 <div className={styles.buttons}>
-                      <DownloadLink />
+                      <DownloadLink styles={['button--info', 'button--lg']}/>
                 </div>
                 <div className={styles.allPlatformsDiv}>
                 <Link className={styles.allPlatformsLink} to="/downloads">Download for other platforms{' >'}</Link>

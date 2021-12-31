@@ -14,6 +14,30 @@
   margin-bottom: 0;
 }
 
+.enableGutter {
+  margin-bottom: 2em;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  line-height: 1.43;
+  padding: 8px;
+}
+
+.overline {
+  padding: 8px;
+}
+
+.ctaGroup {
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
 .title {
   font-weight: bold;
   font-size: 3rem;
@@ -37,20 +61,3 @@
   text-align: center;
   line-height: 1.5;
 }
-
-/**
-  cta: {
-    marginTop: 10,
-    marginLeft: 10,
-    '&:first-child': {
-      marginLeft: 10,
-    },
-  },
-  labelColor: {
-    color: 'black',
-  },
-}));
-
-
-
- */

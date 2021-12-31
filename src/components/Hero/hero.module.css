@@ -18,6 +18,7 @@
 
 .buttons {
   display: flex;
+  float: left;
   align-items: center;
   justify-content: center;
 }
