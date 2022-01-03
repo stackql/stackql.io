@@ -1,0 +1,35 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="169.17mm" height="37.43mm" viewBox="0 0 479.53 106.11">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 72px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+      }
+
+      .cls-1, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        letter-spacing: 0.06em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0.07em;
+      }
+
+      .cls-4 {
+        font-size: 86px;
+        stroke: #fff;
+        font-family: Baskerville-Bold, Baskerville;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g>
+    <text class="cls-1" transform="translate(0 70.42)">INFR<tspan class="cls-2" x="199.37" y="0">A</tspan><tspan class="cls-3" x="257.47" y="0">QL</tspan></text>
+    <text class="cls-4" transform="translate(380.48 72.14) scale(0.86 1)">&gt;&gt;</text>
+  </g>
+</svg>
