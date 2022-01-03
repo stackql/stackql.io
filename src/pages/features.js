@@ -49,6 +49,20 @@ export default function Features() {
       />
       <main>
       {/*  <HomepageFeatures /> */}
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="row">
+              <div className="col col--4 divtest padding-top--md margin-bottom--md">fredalskdjlaksjdlakjsd;lkaj;sdlkjal;sdkja;lksdjlaksjdlkajsd;lkajsldkjalskdjlaksjdlkajsdlkjalskdjalskdjals;dkj
+              </div>
+              <div className="col col--4 divtest">
+              </div>
+              <div className="col col--4 divtest">
+              </div>                    
+            </div>          
+          </div>
+        </div>
+      </div>  
       </main>
     </Layout>
   );

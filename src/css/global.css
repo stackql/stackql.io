@@ -1,7 +1,7 @@
 /* Brand Colour */
  :root {
 	 --gamma-blue: #0f4c81;
-	 --gamma-light-blue: #6c83aa;
+	 --gamma-medium-blue: #6c83aa;
 	/* Blues */
 	 --gamma-dark-blue: #004165;
 	 --gamma-light-blue: #b5bfd4;
@@ -62,6 +62,7 @@
 	 --ifm-color-primary: var(--gamma-dark-blue);
 	 --ifm-code-color: var(--code-blue);
 	 --ifm-code-font-size: 108%;
+	 --ifm-color-content: #212529;
 	/*--ifm-navbar-link-color: var(--ifm-font-color-base);
 	*/
 	 --ifm-navbar-link-color: var(--ifm-menu-color);
@@ -326,4 +327,9 @@ color: 'rgba(255,255,255,.6)';
 .footerSocialIconButton:hover {
 background: 'transparent';
 color: 'rgba(255,255,255,.6)';
+}
+
+.divtest {
+	border: #000 solid 1px;
+	height: 100px;
 }
