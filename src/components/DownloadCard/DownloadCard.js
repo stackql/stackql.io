@@ -6,9 +6,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './downloadcard.module.css';
 
 const DownloadCard = props => {
-  const { data } = props;
+  const { data, liftUp } = props;
   return(
-    <div className={clsx('card', 'card--full-height', styles.downloadCard)}>
+    <div className={clsx('card', 'card--full-height', styles.downloadCard, liftUp ? styles.downloadCardLift : '')}>
     <div className={clsx('card__header')}>
       <div className={clsx('avatar', 'avatar--vertical')}>
         <span className={clsx(styles.downloadIcon)}><i class={data.icon}></i></span>

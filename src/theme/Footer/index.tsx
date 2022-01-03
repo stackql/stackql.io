@@ -164,14 +164,31 @@ function Footer(): JSX.Element | null {
           <div className="footer__bottom text--center">
           <IconButton
             className="footerSocialIconButton"
-            href={socialLinks.twitter}
-            size="large">
+            href={socialLinks.github}
+            size="large"
+            target="_blank"
+            rel="noopener"
+            >
             <GitHubIcon className="footerSocialIcon" htmlColor={isDarkTheme ? 'white' : 'black'}/>
-          </IconButton>            
-          {/*
-          <TwitterIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
-          <LinkedInIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
-          */}
+          </IconButton>
+          <IconButton
+            className="footerSocialIconButton"
+            href={socialLinks.twitter}
+            size="large"
+            target="_blank"
+            rel="noopener"
+            >
+            <TwitterIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+          </IconButton>
+          <IconButton
+            className="footerSocialIconButton"
+            href={socialLinks.linkedin}
+            size="large"
+            target="_blank"
+            rel="noopener"
+            >
+            <LinkedInIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+          </IconButton>                                
           </div>
           </>
         )}

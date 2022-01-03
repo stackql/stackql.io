@@ -5,62 +5,18 @@ import {
   SectionHeader,
   DownloadLink,
   DocumentationLink,
-  DownloadCard,
+  HubspotContactForm,
 } from '../components';
 import styles from '../components/Hero/Hero.module.css';
 import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive'
 
-const windows = {
-  icon: 'fab fa-windows',
-  title: 'Microsoft Windows',
-  description: 'x86 and x64',
-  buttons: [
-    {
-      url:  '#',
-      text: 'Download MSI',
-      icon: 'fas fa-download',
-    },
-    {
-      url:  '#',
-      text: 'Download ZIP',
-      icon: 'fas fa-download',
-    },    
-  ]
-};
-
-const macos = {
-  icon: 'fab fa-apple',
-  title: 'MacOS',
-  description: '64-bit AMD and ARM',
-  buttons: [
-    {
-      url:  '#',
-      text: 'Download PKG',
-      icon: 'fas fa-download',
-    },
-  ]
-};
-
-const linux = {
-  icon: 'fab fa-linux',
-  title: 'Linux',
-  description: 'x86 and x64',
-  buttons: [
-    {
-      url:  '#',
-      text: 'Download ZIP',
-      icon: 'fas fa-download',
-    },
-  ]
-};
-
-export default function Downloads() {
+export default function ContactUs() {
   const {siteConfig} = useDocusaurusContext();
   // downloadFile();
   return (
    <Layout
-      title={`Downloads`}
+      title={`Contact Us`}
       description="Description will go into a meta tag in <head />"
       // image
       // keywords
@@ -72,12 +28,23 @@ export default function Downloads() {
         // className
         title={
           <span>
-          <span style={{color: '#00af91'}}>Download</span> StackQL
+          Get <span style={{color: '#00af91'}}>in Touch</span>
           </span>
         }
         subtitle="A new approach to querying and provisioning cloud services."
         align="center"
         ctaGroup = {[
+          <MediaQuery minWidth={1224}>
+            <div className={styles.buttons}>
+              <DownloadLink styles={['button--primary']}/>
+            </div>
+          </MediaQuery>,
+          <MediaQuery minWidth={1224}>
+            <div style={{width: "2em"}}></div>
+          </MediaQuery>,
+          <div className={styles.buttons}>
+            <DocumentationLink />
+          </div>
         ]}
       />
       <main>
@@ -86,15 +53,17 @@ export default function Downloads() {
         <div className="row">
           <div className="col">
             <div className="row">
-            {[windows, macos, linux].map(card => (
-              <div className="col col--4 margin-bottom--md">
-              <DownloadCard
-                  key={card.title}
-                  data={card}
-                  liftUp
+              <div className="col col--4 divtest padding-top--md margin-bottom--md">fredalskdjlaksjdlakjsd;lkaj;sdlkjal;sdkja;lksdjlaksjdlkajsd;lkajsldkjalskdjlaksjdlkajsdlkjalskdjalskdjals;dkj
+              </div>
+              <div className="col col--4 divtest">
+                <HubspotContactForm 
+                region="na1"
+                portalId="20948070"
+                formId='50c084cd-b1af-4af1-b757-4297a3f5db94'
                 />
-                </div>
-              ))}
+              </div>
+              <div className="col col--4 divtest">
+              </div>                    
             </div>          
           </div>
         </div>
@@ -102,4 +71,4 @@ export default function Downloads() {
       </main>
     </Layout>
   );
-};
+}

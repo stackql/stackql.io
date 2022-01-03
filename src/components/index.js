@@ -6,3 +6,4 @@ export { default as HomepageFeatures } from './HomepageFeatures';
 export { default as DownloadLink } from './DownloadLink';
 export { default as DocumentationLink } from './DocumentationLink';
 export { default as DownloadCard } from './DownloadCard';
+export { default as HubspotContactForm } from './HubspotContactForm';
