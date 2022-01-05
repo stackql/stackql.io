@@ -17,12 +17,12 @@ const windows = {
   description: 'x86 and x64',
   buttons: [
     {
-      url:  '#',
+      url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi',
       text: 'Download MSI',
       icon: 'fas fa-download',
     },
     {
-      url:  '#',
+      url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.zip',
       text: 'Download ZIP',
       icon: 'fas fa-download',
     },    
@@ -35,7 +35,7 @@ const macos = {
   description: '64-bit AMD and ARM',
   buttons: [
     {
-      url:  '#',
+      url:  'https://releases.stackql.io/stackql/latest/infraql_darwin_multiarch.pkg',
       text: 'Download PKG',
       icon: 'fas fa-download',
     },
@@ -48,7 +48,7 @@ const linux = {
   description: 'x86 and x64',
   buttons: [
     {
-      url:  '#',
+      url:  'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip',
       text: 'Download ZIP',
       icon: 'fas fa-download',
     },

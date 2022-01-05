@@ -19,7 +19,10 @@ const config = {
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
 
-  plugins: ['@docusaurus/plugin-ideal-image'],
+  plugins: [
+    '@docusaurus/plugin-ideal-image',
+    'docusaurus-plugin-hubspot',
+  ],
 
   presets: [
     [
@@ -66,7 +69,10 @@ const config = {
       backgroundColor: '#A9BCD0',
       textColor: '#1A4E82',
       isCloseable: true,
-    },    
+    },
+    hubspot: {
+      accountId: '21220110',
+    },        
     //smartlook: {
     //  projectKey: '2c78d968d0285f6d1d8f41008505e629a0a830dc',
     //},    
