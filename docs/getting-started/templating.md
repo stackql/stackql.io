@@ -12,7 +12,7 @@ custom_edit_url: null
 image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
 ---
 See also:  
-[[` exec `]](/docs/command-line-usage/exec) [[` INSERT `]](/docs/language-spec/insert) [[` SHOW `]](/docs/language-spec/show) [[ Using Variables ]](getting-started/variables)
+[[` exec `]](/docs/command-line-usage/exec) [[` INSERT `]](/docs/language-spec/insert) [[` SHOW `]](/docs/language-spec/show) [[ Using Variables ]](/docs/getting-started/variables)
 
 Cloud resources are deployed with StackQL using `INSERT` statements.  `INSERT` templates for different cloud resources using the `SHOW INSERT` command.
 
@@ -61,7 +61,7 @@ SELECT
   '{{ .values.data__subnetwork }}'
 ```
 
-> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](getting-started/variables).
+> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](/docs/getting-started/variables).
 
 ### Generating an `INSERT` template with only required parameters
 

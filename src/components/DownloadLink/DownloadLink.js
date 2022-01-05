@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import '@fortawesome/fontawesome-free/css/all.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 function getOS() {
   const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
@@ -20,17 +21,18 @@ function getOS() {
 
 const DownloadLink = props => {
   const { styles } = props;
-  const os = getOS();
+  const isBrowser = useIsBrowser();
+  const os = isBrowser ? getOS() : 'Windows';
   let downloadUrl = '';
   let downloadIcon = '';
   if (os === 'Mac OS') {
-    downloadUrl = '/downloads/macos';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_darwin_multiarch.pkg';
     downloadIcon = 'fab fa-apple';
   } else if (os === 'Windows') {
-    downloadUrl = '/downloads/windows';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi';
     downloadIcon = 'fab fa-windows';
   } else {
-    downloadUrl = '/downloads/linux';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip';
     downloadIcon = 'fab fa-linux';
   }
 

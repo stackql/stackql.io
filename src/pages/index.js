@@ -68,20 +68,8 @@ const pageData = {
 
 };  
 
-/*
-const downloadFile = () => {
-   const downloadLink = document.createElement('a');
-   downloadLink.href = 'https://storage.googleapis.com/infraql-downloads/infraql.msi';
-   downloadLink.download = 'macos';
-   document.body.appendChild(downloadLink);
-   downloadLink.click();
-   document.body.removeChild(downloadLink);
- };
-*/
-
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-  // downloadFile();
   return (
    <Layout
       title={`Home`}
