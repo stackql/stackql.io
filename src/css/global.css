@@ -96,6 +96,7 @@
 }
  html[data-theme='dark'] {
 	 --ifm-font-base-color: #dee0f2;
+	 --ifm-color-content: var(--ifm-font-base-color);
 	 --ifm-navbar-link-hover-color: var(--gamma-light-blue);
 	 --ifm-link-color: var(--gamma-light-blue);
 	 --ifm-menu-color-active: var(--gamma-light-blue);
