@@ -22,20 +22,6 @@ const config = {
   plugins: [
     '@docusaurus/plugin-ideal-image',
     'docusaurus-plugin-hubspot',
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        changefreq: 'weekly',
-        priority: 0.5,
-      },
-    ],
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-M7GH68KJ3F',
-        anonymizeIP: true,
-      },
-    ],    
   ],
 
   presets: [
@@ -43,6 +29,10 @@ const config = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        gtag: {
+          trackingID: 'G-M7GH68KJ3F',
+          anonymizeIP: true,
+        },        
         sitemap: {},
         pages: {},
         docs: {
