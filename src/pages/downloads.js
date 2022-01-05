@@ -7,7 +7,6 @@ import {
   DocumentationLink,
   DownloadCard,
 } from '../components';
-import styles from '../components/Hero/Hero.module.css';
 import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive'
 

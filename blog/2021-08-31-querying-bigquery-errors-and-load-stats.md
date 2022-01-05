@@ -163,7 +163,7 @@ To refine results to only `load` operations add the following expression to the 
 AND JSON_EXTRACT(statistics, '$.load') IS NOT null;
 ```
 
-Date values returned in job responses are in Unix timestamp format, to format them in a human readable format we can use the [__`DATETIME`__](/docs/language-spec/functions/datetime/datetime) built in function.  Here is a more advanced example:  
+Date values returned in job responses are in Unix timestamp format, to format them in a human readable format we can use the [__`DATETIME`__](/docs/language-spec/functions/datetime/datetime-fn) built in function.  Here is a more advanced example:  
 
 <Tabs
   defaultValue="iql"

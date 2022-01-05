@@ -6,7 +6,7 @@ import {
   DownloadLink,
   DocumentationLink,
 } from '../components';
-import styles from '../components/Hero/Hero.module.css';
+import styles from '../components/Hero/hero.module.css';
 import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive'
 
