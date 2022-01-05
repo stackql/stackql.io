@@ -1,5 +1,5 @@
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {
 Hero,
@@ -69,7 +69,7 @@ const pageData = {
 };  
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  // const {siteConfig} = useDocusaurusContext();
   return (
    <Layout
       title={`Home`}
