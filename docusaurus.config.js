@@ -22,6 +22,21 @@ const config = {
   plugins: [
     '@docusaurus/plugin-ideal-image',
     'docusaurus-plugin-hubspot',
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        trailingSlash: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-M7GH68KJ3F',
+        anonymizeIP: true,
+      },
+    ],    
   ],
 
   presets: [

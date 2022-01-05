@@ -2041,7 +2041,7 @@
     "@docusaurus/utils-validation" "2.0.0-beta.14"
     tslib "^2.3.1"
 
-"@docusaurus/plugin-google-gtag@2.0.0-beta.14":
+"@docusaurus/plugin-google-gtag@2.0.0-beta.14", "@docusaurus/plugin-google-gtag@^2.0.0-beta.14":
   version "2.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-beta.14.tgz#be950af01da784965a7fd7ba61d557055cceeb5e"
   integrity sha512-DcaNRvu0VLS/C6qRAG0QNWjnuP8dAdzH0NOfl86AxdK6dWOP5NlGD9QoIFKTa19PB8iTzM2XZn/hOCub4hR6MQ==
@@ -2064,7 +2064,7 @@
     tslib "^2.3.1"
     webpack "^5.61.0"
 
-"@docusaurus/plugin-sitemap@2.0.0-beta.14":
+"@docusaurus/plugin-sitemap@2.0.0-beta.14", "@docusaurus/plugin-sitemap@^2.0.0-beta.14":
   version "2.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.14.tgz#13042fee40ab2a66615c44d9ef440abb3df5c42a"
   integrity sha512-ikSgz4VAttDB2uOrPa7fq/E/GKS5HAtKfD572kBj8RvppdlgFYwCLZ88ex5cnRFF//2ccaobYkU4QwDw2UKWMA==
