@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnimatedTerm from '../AnimatedTerm';
 import DownloadLink from '../DownloadLink';
+import MediaQuery from 'react-responsive'
 
 const Hero = props => {
     const { data } = props;
@@ -20,12 +21,16 @@ const Hero = props => {
                     ))}
                 </h1>
                 <p className="hero__subtitle">{data.subtitle}</p>
-                <div className={styles.buttons}>
+                <MediaQuery minWidth={768}>
+                  <div className="row">
+                    <div className={styles.buttons}>
                       <DownloadLink styles={['button--info', 'button--lg']}/>
-                </div>
-                <div className={styles.allPlatformsDiv}>
-                <Link className={styles.allPlatformsLink} to="/downloads">Download for other platforms{' >'}</Link>
-                </div>
+                    </div>
+                    <div className={styles.allPlatformsDiv}>
+                      <Link className={styles.allPlatformsLink} to="/downloads">Download for other platforms{' >'}</Link>
+                    </div>
+                  </div>
+                </MediaQuery>
             </div>
             <div className="col col--6">
                 <AnimatedTerm data={data.animatedTerm} />

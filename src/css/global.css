@@ -334,3 +334,15 @@ color: 'rgba(255,255,255,.6)';
 	border: #000 solid 1px;
 	height: 100px;
 }
+
+@media screen and (max-width: 966px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+}
+
+@media screen and (max-width: 966px) {
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+}
