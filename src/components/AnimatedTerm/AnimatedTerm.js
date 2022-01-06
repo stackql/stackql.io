@@ -3,14 +3,6 @@ import styles from './animatedterm.module.css';
 import Code from '../Code';
 
 const AnimatedTerm = props => {
-    const { data } = props;
-
-    //const [value, setValue] = React.useState(0);
-
-    //const handleChange = (event, newValue) => {
-    //  setValue(newValue);
-    //};
-
     return (
         <div className={[styles.marvelDevice, styles.macbook].join(" ")}>
             <div className={styles.notch}>
