@@ -65,7 +65,6 @@ const pageData = {
       termLines: termLines,
     },
   },
-
 };  
 
 export default function Home() {

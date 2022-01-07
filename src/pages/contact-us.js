@@ -21,53 +21,54 @@ export default function ContactUs() {
       // image
       // keywords
     >
-      <SectionHeader
-        // disableGutter 
-        // overline
-        // fadeUp
-        // className
-        title={
-          <span>
-          Get <span style={{color: '#00af91'}}>in Touch</span>
-          </span>
-        }
-        subtitle="A new approach to querying and provisioning cloud services."
-        align="center"
-        ctaGroup = {[
-          <MediaQuery minWidth={1224}>
+      <header>
+        <SectionHeader
+          // disableGutter 
+          // overline
+          // fadeUp
+          // className
+          title={
+            <span>
+            Get <span style={{color: '#00af91'}}>in Touch</span>
+            </span>
+          }
+          subtitle="A new approach to querying and provisioning cloud services."
+          align="center"
+          ctaGroup = {[
+            <MediaQuery minWidth={1224}>
+              <div className={styles.buttons}>
+                <DownloadLink styles={['button--primary']}/>
+              </div>
+            </MediaQuery>,
+            <MediaQuery minWidth={1224}>
+              <div style={{width: "2em"}}></div>
+            </MediaQuery>,
             <div className={styles.buttons}>
-              <DownloadLink styles={['button--primary']}/>
+              <DocumentationLink />
             </div>
-          </MediaQuery>,
-          <MediaQuery minWidth={1224}>
-            <div style={{width: "2em"}}></div>
-          </MediaQuery>,
-          <div className={styles.buttons}>
-            <DocumentationLink />
-          </div>
-        ]}
-      />
+          ]}
+        />
+      </header>
       <main>
-      {/*  <HomepageFeatures /> */}
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="row">
-              <div className="col col--4 divtest padding-top--md margin-bottom--md">fredalskdjlaksjdlakjsd;lkaj;sdlkjal;sdkja;lksdjlaksjdlkajsd;lkajsldkjalskdjlaksjdlkajsdlkjalskdjalskdjals;dkj
-              </div>
-              <div className="col col--4 divtest">
-                <HubspotContactForm 
-                region="na1"
-                portalId="20948070"
-                formId='50c084cd-b1af-4af1-b757-4297a3f5db94'
-                />
-              </div>
-              <div className="col col--4 divtest">
-              </div>                    
-            </div>          
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="row">
+                <div className="col col--4 divtest padding-top--md margin-bottom--md">fredalskdjlaksjdlakjsd;lkaj;sdlkjal;sdkja;lksdjlaksjdlkajsd;lkajsldkjalskdjlaksjdlkajsdlkjalskdjalskdjals;dkj
+                </div>
+                <div className="col col--4 divtest">
+                  <HubspotContactForm 
+                  region="na1"
+                  portalId="20948070"
+                  formId='50c084cd-b1af-4af1-b757-4297a3f5db94'
+                  />
+                </div>
+                <div className="col col--4 divtest">
+                </div>                    
+              </div>          
+            </div>
           </div>
-        </div>
-      </div>  
+        </div>  
       </main>
     </Layout>
   );
