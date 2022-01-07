@@ -337,12 +337,42 @@ color: 'rgba(255,255,255,.6)';
 
 /* breakpoints */
 
+/* Laptops and Desktops */
+/*
+@media (min-width: 1025px){
+
+}
+*/
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }
+}
+
+
 /* tablet devices */
+/*
 @media screen and (max-width: 768px) {
 	.hero__title {
 		font-size: 1.75rem;
 	}
 	.hero__subtitle {
 		font-size: 1.25rem;
-	  }	
+	  }
 }
+*/
