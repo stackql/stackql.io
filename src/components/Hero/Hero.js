@@ -14,7 +14,7 @@ const Hero = props => {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className="row">
-            <div className="col col--6">
+            <div className={clsx('col', 'col--6', styles.heroColDiv)}>
                 <h1 className="hero__title">
                     {data.title.map((text, i) => (
                     (data.title.length - 1 === i) ? <span>{text}</span> : <span>{text}<br /></span>
@@ -32,7 +32,7 @@ const Hero = props => {
                   </div>
                 </MediaQuery>
             </div>
-            <div className="col col--6">
+            <div className={clsx('col', 'col--6')}>
                 <AnimatedTerm data={data.animatedTerm} />
             </div>
           </div>
