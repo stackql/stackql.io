@@ -335,14 +335,14 @@ color: 'rgba(255,255,255,.6)';
 	height: 100px;
 }
 
-@media screen and (max-width: 966px) {
+/* breakpoints */
+
+/* tablet devices */
+@media screen and (max-width: 768px) {
 	.hero__title {
 		font-size: 1.75rem;
 	}
-}
-
-@media screen and (max-width: 966px) {
-  .hero__subtitle {
-    font-size: 1.25rem;
-  }
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }	
 }
