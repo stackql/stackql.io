@@ -164,10 +164,10 @@
 /* Mobile Devices */
 @media (max-width: 480px) {
   :root {
-    --terminal-code-font-size: 9px;
-    --terminal-code-line-height: 10px;
-    --console-text-font-size: 6px;
-    --console-text-line-height: 12px;
+    --terminal-code-font-size: 10px;
+    --terminal-code-line-height: 11px;
+    --console-text-font-size: 7px;
+    --console-text-line-height: 13px;
   }
   .Terminal-btn {
     width: 6px;
@@ -228,10 +228,10 @@
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
   :root {
-    --terminal-code-font-size: 13px;
-    --terminal-code-line-height: 15px;
-    --console-text-font-size: 9px;
-    --console-text-line-height: 18px;
+    --terminal-code-font-size: 14px;
+    --terminal-code-line-height: 16px;
+    --console-text-font-size: 10px;
+    --console-text-line-height: 19px;
   }
   .Terminal-btn {
     width: 9px;
