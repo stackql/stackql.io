@@ -45,7 +45,12 @@ const FeatureContent = props => {
 const FeaturesContent = props => {
     const { data } = props;
     <BrowserOnly>
-        AOS.init();
+        {() => {
+            AOS.init({ 
+                duration: '2000', 
+                disable: 'mobile'
+                });}
+        }
     </BrowserOnly>
     return (
         <div className="lgContainer">
