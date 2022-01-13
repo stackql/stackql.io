@@ -12,9 +12,40 @@ import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive'
 
 const pageData = {
+  cards: {
+    provision: {
+      title: 'Provision',
+      text: `
+      Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
+      `,
+      link: '#',
+    },
+    navigate: {
+      title: 'Navigate',
+      text: `
+      Simplified API discovery for available service and resources in cloud and SaaS providers. 
+      `,
+      link: '#',
+    },
+    query: {
+      title: 'Query',
+      text: `
+      Perform live and interactive queries for inventory, compliance, cost optimisation and more.
+      `,
+      link: '#',
+    },
+    operate: {
+      title: 'Operate',
+      text: `
+      Manage complete life cycle of cloud and SaaS resources from deployment to termination.
+      `,
+      link: '#',
+    },
+  },
   features: [
     {
-      title: 'Simplified Cloud Provisioning.',
+      archor: 'archor-1',
+      title: 'Cloud Provisioning Simplified.',
       code: `-- Deploy new cloud resources
 INSERT INTO google.compute.instances (
  name,
@@ -28,14 +59,16 @@ SELECT
  'infraql-demo';
       `,
       checks: [
-        'something',
-        'something',
-        'something',
+        'No state file to maintain',
+        'Use other tools interchangeably',
+        'Create, query and interact with cloud resources',
+        'Works seamlessly with existing stacks',
       ],
     },
     {
+      archor: 'archor-2',
       title: 'Easily Navigate Cloud APIs.',
-      code: `-- Discover services and resources available in a provider
+      code: `-- Discover available services and resources
 SHOW SERVICES IN google LIKE '%compute%';
 SHOW RESOURCES IN google.compute LIKE '%instances%';
 -- Show attributes of a resource
@@ -53,6 +86,7 @@ SHOW INSERT INTO google.compute.instances;
       ],
     },    
     {
+      archor: 'archor-3',
       title: 'Query Cloud and SaaS Assets.',
       code: `-- Query cloud resources
 SELECT machineType, COUNT(*)
@@ -76,6 +110,7 @@ WHERE zone = 'us-east1-a';
       ],
     },
     {
+      archor: 'archor-4',
       title: 'Cloud Operations Made Easy.',
       code: `-- Perform operations on cloud resources
 USE google;
@@ -129,7 +164,7 @@ export default function Features() {
         />
       </header>
       <main>
-        <FeaturesContent data={pageData.features}/>
+        <FeaturesContent data={pageData}/>
       </main>
     </Layout>
   );

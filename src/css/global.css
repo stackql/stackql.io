@@ -55,14 +55,15 @@
 	*/
 	/*--ifm-font-family-base: 'Montserrat', sans-serif;
 	*/
-	 --ifm-font-family-base: 'Montserrat', sans-serif; /* Montserrat Trebuchet MS*/
+	 --ifm-font-family-base: 'Montserrat', sans-serif;
 	 --ifm-font-size-base: 16px;
 	 --ifm-code-font-size: 90%;
 	 --ifm-background-color: var(--white);
 	 --ifm-color-primary: var(--gamma-dark-blue);
 	 --ifm-code-color: var(--code-blue);
 	 --ifm-code-font-size: 108%;
-	 --ifm-color-content: #212529;
+	 /* --ifm-color-content: #212529; */
+	 --ifm-color-content: #2d3748;
 	/*--ifm-navbar-link-color: var(--ifm-font-color-base);
 	*/
 	 --ifm-navbar-link-color: var(--ifm-menu-color);
@@ -376,3 +377,9 @@ color: 'rgba(255,255,255,.6)';
 	  }
 }
 */
+
+.lgContainer {
+	width: 100%;
+	max-width: 100%;
+	/* var(--ifm-container-width-xl); */
+}
