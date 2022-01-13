@@ -36,9 +36,17 @@ const FeatureContent = props => {
     );
 };
 
+
+//AOS.init({ 
+//    duration: '2000', 
+//    disable: 'mobile'
+//    });
+
 const FeaturesContent = props => {
     const { data } = props;
-    //AOS.init({ duration : 2000, disable: 'mobile'});
+    <BrowserOnly>
+        AOS.init();
+    </BrowserOnly>
     return (
         <div className="lgContainer">
             <div className="row">
