@@ -38,7 +38,7 @@ const FeatureContent = props => {
 
 const FeaturesContent = props => {
     const { data } = props;
-    AOS.init({ duration : 2000, disable: 'mobile'});
+    //AOS.init({ duration : 2000, disable: 'mobile'});
     return (
         <div className="lgContainer">
             <div className="row">
