@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import {
     CodeDiv,
@@ -13,6 +13,8 @@ import AnimatedTerm from '../AnimatedTerm';
 import DownloadLink from '../DownloadLink';
 import MediaQuery from 'react-responsive'
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useIsBrowser from '@docusaurus/useIsBrowser';
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -44,15 +46,18 @@ const FeatureContent = props => {
 
 const FeaturesContent = props => {
     const { data } = props;
-    <BrowserOnly>
-        {() => {
-            AOS.init({ 
-                duration: '2000', 
-                disable: 'mobile'
-                });}
-        }
-    </BrowserOnly>
+    const isBrowser = useIsBrowser();
+    React.useEffect(() => {
+        AOS.init({
+          once: true,
+          delay: 50,
+          duration: 500,
+          easing: 'ease-in-out',
+        });
+      }, []);    
+
     return (
+        <>
         <div className="lgContainer">
             <div className="row">
                 {/* <div className="col margin-horiz--xl"> */}
@@ -84,6 +89,7 @@ const FeaturesContent = props => {
                 </>
             </div>
         </div>
+        </>
         );
     };
     
