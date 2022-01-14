@@ -1,25 +1,22 @@
 .downloadCard {
-	border: 1px solid var(--gamma-light-blue);
+    border: 1px solid var(--default-light-blue);
     color: var(--gamma-blue);
     opacity: 0.9;
+    transition:box-shadow .28s ease-in-out, -webkit-box-shadow .28s ease-in-out;
 }
 
 .downloadCard:hover {
     opacity: 1;
-}
-
-.downloadCardLift {
-    transition: box-shadow .25s ease,transform .25s ease,-webkit-transform .25s ease;
+    color: #1262c2;
+    box-shadow:0 2px 6px 0 rgba(60,64,67,0.05),0 8px 16px 6px rgba(60,64,67,0.15) !important;    
 }
 
 .downloadCardLift:hover {
-    box-shadow: 0 1.5rem 2.5rem rgba(22,28,45,.1),0 .3rem 0.5rem -.50rem rgba(22,28,45,.05) !important;
     transform: translate3d(0,-5px,0);
 }
 
 .downloadIcon {
-    font-size: 3rem;
-    
+    font-size: 3rem;  
 }
 
 html[data-theme='dark'] .downloadIcon {

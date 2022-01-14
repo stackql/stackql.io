@@ -55,14 +55,15 @@
 	*/
 	/*--ifm-font-family-base: 'Montserrat', sans-serif;
 	*/
-	 --ifm-font-family-base: 'Montserrat', sans-serif; /* Montserrat Trebuchet MS*/
+	 --ifm-font-family-base: 'Montserrat', sans-serif;
 	 --ifm-font-size-base: 16px;
 	 --ifm-code-font-size: 90%;
 	 --ifm-background-color: var(--white);
 	 --ifm-color-primary: var(--gamma-dark-blue);
 	 --ifm-code-color: var(--code-blue);
 	 --ifm-code-font-size: 108%;
-	 --ifm-color-content: #212529;
+	 /* --ifm-color-content: #212529; */
+	 --ifm-color-content: #2d3748;
 	/*--ifm-navbar-link-color: var(--ifm-font-color-base);
 	*/
 	 --ifm-navbar-link-color: var(--ifm-menu-color);
@@ -96,6 +97,7 @@
 }
  html[data-theme='dark'] {
 	 --ifm-font-base-color: #dee0f2;
+	 --ifm-color-content: var(--ifm-font-base-color);
 	 --ifm-navbar-link-hover-color: var(--gamma-light-blue);
 	 --ifm-link-color: var(--gamma-light-blue);
 	 --ifm-menu-color-active: var(--gamma-light-blue);
@@ -331,5 +333,53 @@ color: 'rgba(255,255,255,.6)';
 
 .divtest {
 	border: #000 solid 1px;
-	height: 100px;
+	/* height: 100px; */
+}
+
+/* breakpoints */
+
+/* Laptops and Desktops */
+/*
+@media (min-width: 1025px){
+
+}
+*/
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }
+}
+
+
+/* tablet devices */
+/*
+@media screen and (max-width: 768px) {
+	.hero__title {
+		font-size: 1.75rem;
+	}
+	.hero__subtitle {
+		font-size: 1.25rem;
+	  }
+}
+*/
+
+.lgContainer {
+	width: 100%;
+	max-width: 100%;
+	/* var(--ifm-container-width-xl); */
 }

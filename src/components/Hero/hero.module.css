@@ -10,12 +10,6 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   float: left;
@@ -38,4 +32,40 @@
 .allPlatformsLink:hover {
   background-color: var(--ifm-hero-background-color);
   color: var(--ifm-hero-text-color);  
+}
+
+/* Laptops and Desktops */
+@media (min-width: 1025px){
+  .heroColDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+  .heroColDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }  
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+  .heroColDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }  
 }

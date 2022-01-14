@@ -64,40 +64,41 @@ export default function Downloads() {
       // image
       // keywords
     >
-      <SectionHeader
-        // disableGutter 
-        // overline
-        // fadeUp
-        // className
-        title={
-          <span>
-          <span style={{color: '#00af91'}}>Download</span> StackQL
-          </span>
-        }
-        subtitle="A new approach to querying and provisioning cloud services."
-        align="center"
-        ctaGroup = {[
-        ]}
-      />
+      <header>
+        <SectionHeader
+          // disableGutter 
+          // overline
+          // fadeUp
+          // className
+          title={
+            <span>
+            <span style={{color: '#00af91'}}>Download</span> StackQL
+            </span>
+          }
+          subtitle="A new approach to querying and provisioning cloud services."
+          align="center"
+          ctaGroup = {[
+          ]}
+        />
+      </header>
       <main>
-      {/*  <HomepageFeatures /> */}
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="row">
-            {[windows, macos, linux].map(card => (
-              <div className="col col--4 margin-bottom--md">
-              <DownloadCard
-                  key={card.title}
-                  data={card}
-                  liftUp
-                />
-                </div>
-              ))}
-            </div>          
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="row">
+              {[windows, macos, linux].map(card => (
+                <div className="col col--4 margin-bottom--md">
+                <DownloadCard
+                    key={card.title}
+                    data={card}
+                    liftUp
+                  />
+                  </div>
+                ))}
+              </div>          
+            </div>
           </div>
-        </div>
-      </div>  
+        </div>  
       </main>
     </Layout>
   );

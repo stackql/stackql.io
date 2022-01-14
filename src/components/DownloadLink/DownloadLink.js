@@ -2,17 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import '@fortawesome/fontawesome-free/css/all.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 function getOS() {
-  const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
-  const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
   let platform = navigator.userAgentData.platform;
 
-  if (macosPlatforms.indexOf(platform) !== -1) {
+  if (platform.match(/(.*?)(M|m)(A|a)(C|c)(.*?)/)) {
     return 'Mac OS';
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+  } else if (platform.match(/(.*?)(W|w)(I|i)(N|n)(.*?)/)) {
     return 'Windows';
   } else {
     return 'Linux';

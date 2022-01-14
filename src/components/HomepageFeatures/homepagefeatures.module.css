@@ -37,3 +37,24 @@
   text-decoration: none;
   color: var(--gamma-light-blue);
 }
+
+/* Laptops and Desktops */
+/*
+@media (min-width: 1025px){
+
+}
+*/
+
+/* Mobile Devices */
+/*
+@media (max-width: 480px) {
+	
+}
+*/
+
+/* Tablets */
+/*
+@media (min-width: 481px) and (max-width: 1024px) {
+
+}
+*/
