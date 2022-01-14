@@ -25,7 +25,7 @@ const Card = props => {
                 </div> 
             </div>   
             <div className="row" style={{ padding: '8px' }}>
-                <div className={clsx("padding-horiz--md", styles.learnMore)}>
+                <div className={clsx('col', 'padding-horiz--md', styles.learnMore)}>
                     <a href={data.link} className={clsx(styles.learnMoreLink)}>
                         <span>Learn more <i class="fas fa-angle-double-right"></i></span> 
                     </a>
