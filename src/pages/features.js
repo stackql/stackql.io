@@ -1,136 +1,18 @@
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import MediaQuery from 'react-responsive'
 import {
   SectionHeader,
   DownloadLink,
   DocumentationLink,
   FeaturesContent,
 } from '../components';
-import styles from '../components/Hero/hero.module.css';
-import Link from '@docusaurus/Link';
-import MediaQuery from 'react-responsive'
 
-const pageData = {
-  cards: {
-    provision: {
-      title: 'Provision',
-      text: `
-      Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
-      `,
-      link: '#',
-    },
-    navigate: {
-      title: 'Navigate',
-      text: `
-      Simplified API discovery for available service and resources in cloud and SaaS providers. 
-      `,
-      link: '#',
-    },
-    query: {
-      title: 'Query',
-      text: `
-      Perform live and interactive queries for inventory, compliance, cost optimisation and more.
-      `,
-      link: '#',
-    },
-    operate: {
-      title: 'Operate',
-      text: `
-      Manage complete life cycle of cloud and SaaS resources from deployment to termination.
-      `,
-      link: '#',
-    },
-  },
-  features: [
-    {
-      archor: 'archor-1',
-      title: 'Cloud Provisioning Simplified.',
-      code: `-- Deploy new cloud resources
-INSERT INTO google.compute.instances (
- name,
- zone,
- machineType,
- project)
-SELECT
- 'worker-1',
- 'australia-southeast1-a',
- 'f1-micro',
- 'infraql-demo';
-      `,
-      checks: [
-        'No state file to maintain',
-        'Use other tools interchangeably',
-        'Create, query and interact with cloud resources',
-        'Works seamlessly with existing stacks',
-      ],
-    },
-    {
-      archor: 'archor-2',
-      title: 'Easily Navigate Cloud APIs.',
-      code: `-- Discover available services and resources
-SHOW SERVICES IN google LIKE '%compute%';
-SHOW RESOURCES IN google.compute LIKE '%instances%';
--- Show attributes of a resource
-DESCRIBE google.compute.instances;
-DESCRIBE EXTENDED google.compute.instances;
--- Show available methods for a resource
-SHOW METHODS IN google.compute.instances;
--- Create a provisioning template
-SHOW INSERT INTO google.compute.instances;
-    `,
-      checks: [
-        'something',
-        'something',
-        'something',
-      ],
-    },    
-    {
-      archor: 'archor-3',
-      title: 'Query Cloud and SaaS Assets.',
-      code: `-- Query cloud resources
-SELECT machineType, COUNT(*)
-FROM google.compute.instances
-GROUP BY machineType
-WHERE zone = 'us-east1-a';
-/*
-    +------------------------+
-    |  MACHINETYPE   | COUNT |
-    +------------------------+
-    | n1-standard-1  |   3   |
-    | n1-megamem-96  |   8   |
-    | c2-standard-60 |   4   |
-    +------------------------+      
-*/
-      `,
-      checks: [
-        'something',
-        'something',
-        'something',
-      ],
-    },
-    {
-      archor: 'archor-4',
-      title: 'Cloud Operations Made Easy.',
-      code: `-- Perform operations on cloud resources
-USE google;
-EXEC compute.instances.start
- @instance = 'demo-instance-1',
- @project = 'infraql-demo',
- @zone = 'australia-southeast1-a';
-✔ Instance started successfully      
-      `,
-      checks: [
-        'something',
-        'something',
-        'something',
-      ],
-    },        
-  ],
-};  
+import styles from '../components/Hero/hero.module.css';
+
+import { featuresPageData } from '../data/features';  
 
 export default function Features() {
-  const {siteConfig} = useDocusaurusContext();
   return (
    <Layout
       title={`Features`}
@@ -164,7 +46,7 @@ export default function Features() {
         />
       </header>
       <main>
-        <FeaturesContent data={pageData}/>
+        <FeaturesContent data={featuresPageData}/>
       </main>
     </Layout>
   );

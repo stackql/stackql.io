@@ -35,15 +35,18 @@
 }
 
 .featureCard {
-    border: 1px solid var(--default-light-blue);
-    color: var(--gamma-blue);
+    border: 1px solid rgb(219, 219, 220);
+    border-radius: 2px;
+    /* color: var(--gamma-blue);
+    var(--default-light-blue)
+    */
     opacity: 0.9;
     transition:box-shadow .28s ease-in-out, -webkit-box-shadow .28s ease-in-out;
 }
 
 .featureCard:hover {
     opacity: 1;
-    color: #1262c2;
+    /* color: #1262c2; */
     box-shadow:0 2px 6px 0 rgba(60,64,67,0.05),0 8px 16px 6px rgba(60,64,67,0.15) !important;    
 }
 
