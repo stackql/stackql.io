@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './cards.module.css';
+import styles from './card.module.css';
 import Image from '@theme/IdealImage';
 
 import Provision from './images/provision.png';
@@ -15,7 +15,7 @@ const Card = props => {
             <div className="row" style={{ padding: '8px', height: '42px' }}>
                 <div className={clsx('col', 'col--2')}>
                     <div className={clsx(styles.featureIconContainer)}>
-                    <Image img={img} />
+                    <Image img={Provision} />
                     </div>
                 </div>
                 <div className={clsx('col', 'col--10')}>
@@ -51,6 +51,7 @@ const Card = props => {
 
 //margin-horiz--xl
 
+/*
 const Cards = props => {
     const { data } = props;
     return (
@@ -72,5 +73,6 @@ const Cards = props => {
         </div>
     );
 };
+*/
 
-export default Cards;
+export default Card;

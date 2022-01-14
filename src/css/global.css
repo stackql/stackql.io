@@ -333,7 +333,7 @@ color: 'rgba(255,255,255,.6)';
 
 .divtest {
 	border: #000 solid 1px;
-	height: 100px;
+	/* height: 100px; */
 }
 
 /* breakpoints */

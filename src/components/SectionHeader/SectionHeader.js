@@ -18,8 +18,8 @@ const SectionHeader = props => {
   } = props;
   
   return (
-    <section className={clsx(styles.headerSection)}>
-      <div 
+    <section className={clsx(align === 'left' ? styles.headerSectionLeftAlign : styles.headerSection)}>
+      <div
         className={clsx('container', styles.header, disableGutter ? styles.disableGutter : styles.enableGutter)}
         // data-aos={fadeUp ? 'fade-up' : ''}
         >
@@ -41,7 +41,7 @@ const SectionHeader = props => {
         </div>
         {ctaGroup && (
           <div className='row'>
-            <div className={clsx('col', 'col--12', 'button-group', styles.ctaGroup)}>{ctaGroup}</div>
+            <div className={clsx('col', 'col--12', 'button-group', align === 'left' ? styles.ctaGroupLeftAlign : styles.ctaGroup)}>{ctaGroup}</div>
           </div>
         )}        
       </div>

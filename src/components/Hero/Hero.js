@@ -10,7 +10,7 @@ import styles from './hero.module.css';
 const Hero = props => {
     const { data } = props;
     return (
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero', 'hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className="row">
             <div className={clsx('col', 'col--6', styles.heroColDiv)}>

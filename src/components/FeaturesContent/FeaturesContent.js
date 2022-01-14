@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import {
     CodeDiv,
     ContentDiv,
-    Cards,
 } from './components';
 import Link from '@docusaurus/Link';
 import styles from './featurescontent.module.css';
@@ -77,7 +76,7 @@ const FeaturesContent = props => {
 
 
                     <div className="row">
-                        <Cards data={data.cards} />
+                       {/* <Cards data={data.cards} /> */}
                     </div>
                     {
                         data.features.map((feature, idx) => (

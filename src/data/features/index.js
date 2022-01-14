@@ -17,37 +17,42 @@ export const featuresPageData = {
       'query google cloud resources',
       'okta deployment',
     ],
-    cards: {
-        provision: {
+    header: {
+      title: "Cloud Everything as SQL",
+      subtitle: "A new approach to querying and provisioning cloud services.",
+      label: "FAMILIAR, FUNCTIONAL, FLEXIBLE",
+      cards: [
+        {
           title: 'Provision',
           text: `
           Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
           `,
           link: '#',
         },
-        navigate: {
-          title: 'Navigate',
+        {
+          title: 'Provision',
           text: `
-          Simplified API discovery for available service and resources in cloud and SaaS providers. 
+          Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
           `,
           link: '#',
         },
-        query: {
-          title: 'Query',
+        {
+          title: 'Provision',
           text: `
-          Perform live and interactive queries for inventory, compliance, cost optimisation and more.
+          Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
           `,
           link: '#',
         },
-        operate: {
-          title: 'Operate',
+        {
+          title: 'Provision',
           text: `
-          Manage complete life cycle of cloud and SaaS resources from deployment to termination.
+          Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
           `,
           link: '#',
-        },
-      },
-      features: [
+        },                        
+      ],
+    },
+    features: [
         {
           archor: 'archor-1',
           title: 'Cloud Provisioning Simplified.',
