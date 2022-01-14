@@ -23,7 +23,7 @@ export const featuresPageData = {
       label: "FAMILIAR, FUNCTIONAL, FLEXIBLE",
       cards: [
         {
-          icon: '',
+          icon: 'fas fa-layer-group',
           title: 'Provision',
           text: `
           Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
@@ -31,7 +31,7 @@ export const featuresPageData = {
           link: '#',
         },
         {
-          icon: '',
+          icon: 'fas fa-map',
           title: 'Navigate',
           text: `
           Simplified API discovery for available service and resources in cloud and SaaS providers.      
@@ -39,7 +39,7 @@ export const featuresPageData = {
           link: '#',
         },
         {
-          icon: '',
+          icon: 'fas fa-search',
           title: 'Query',
           text: `
           Perform live and interactive queries for inventory, compliance, cost optimization and more.      
@@ -47,7 +47,7 @@ export const featuresPageData = {
           link: '#',
         },
         {
-          icon: '',
+          icon: 'fas fa-power-off',
           title: 'Operate',
           text: `
           Manage complete life cycle of cloud and SaaS resources from deployment to termination.      

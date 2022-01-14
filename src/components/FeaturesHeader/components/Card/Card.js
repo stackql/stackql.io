@@ -15,7 +15,7 @@ const Card = props => {
             <div className="row" style={{ padding: '8px', height: '42px' }}>
                 <div className={clsx('col', 'col--2')}>
                     <div className={clsx(styles.featureIconContainer)}>
-                        <span className={clsx('fas fa-layer-group', styles.featureIcon)}></span>
+                        <span className={clsx(data.icon, styles.featureIcon)}></span>
                     </div>
                 </div>
                 <div className={clsx('col', 'col--10')}></div>
