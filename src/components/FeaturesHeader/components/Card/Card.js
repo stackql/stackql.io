@@ -1,15 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './card.module.css';
-import Image from '@theme/IdealImage';
-
-import Provision from './images/provision.png';
-import Navigate from './images/navigate.png';
-import Query from './images/query.png';
-import Operate from './images/operate.png';
 
 const Card = props => {
-    const { data, img, liftUp } = props;
+    const { data, liftUp } = props;
     return (
         <div className={clsx('card', 'card--full-height', styles.featureCard, liftUp ? styles.featureCardLift : '')}>
             <div className="row" style={{ padding: '8px', height: '42px' }}>

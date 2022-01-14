@@ -20,6 +20,9 @@ const FeaturesHeader = props => {
         <div className={clsx('col', 'col--12')}>
             <div className="row">
                 <div className={clsx('col', 'col--6', styles.cardsContainer)}>
+
+                <div className={clsx('row')}>
+
                     <div className={clsx('col', 'col--2')}></div>
                     <div className={clsx('col', 'col--5', styles.cardsLeftCol)}>
                         <div className="row margin-bottom--md margin-right--sm">
@@ -37,6 +40,9 @@ const FeaturesHeader = props => {
                             <Card data={data.cards[3]} liftUp />
                         </div>                            
                     </div>
+
+                    </div>
+
                 </div>
                 <div className={clsx('col', 'col--6')}>
                 <div className={clsx('row')} style={{height: '20%'}}></div>
