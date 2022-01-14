@@ -11,9 +11,10 @@ import styles from '../components/Hero/hero.module.css';
 import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive'
 
+import { contactusPageData } from '../data/contact-us';  
+
 export default function ContactUs() {
   const {siteConfig} = useDocusaurusContext();
-  // downloadFile();
   return (
    <Layout
       title={`Contact Us`}
