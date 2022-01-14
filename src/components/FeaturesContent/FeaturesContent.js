@@ -35,7 +35,7 @@ const FeaturesContent = props => {
           delay: 50,
           duration: 500,
           easing: 'ease-in-out',
-          disable: 'mobile',
+          // disable: 'mobile',
         });
       }, []);    
 

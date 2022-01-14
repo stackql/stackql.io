@@ -97,9 +97,10 @@ SHOW METHODS IN google.compute.instances;
 SHOW INSERT INTO google.compute.instances;
         `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Discover available services and resources',
+            'Show attributes of a resource',
+            'Show available methods for a resource',
+            'Create provisioning templates',
           ],
         },    
         {
@@ -121,9 +122,10 @@ SELECT machineType, COUNT(*)
 */
           `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Perform live queries against cloud resources',
+            'Query for security misconfigurations',
+            'Inventory cloud assets for cost optimization',
+            'Perform compliance and configuration drift checks'
           ],
         },
         {
@@ -138,9 +140,10 @@ EXEC compute.instances.start
 ✔ Instance started successfully      
           `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Perform operations on cloud resources',
+            'Interact with cloud services',
+            'Make configuration changes',
+            'Manage cloud infrastructure',
           ],
         },        
       ],    

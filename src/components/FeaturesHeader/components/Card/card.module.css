@@ -47,7 +47,8 @@
 }
 
 .featureCard {
-    border: 1px solid #d4d9e8; /* 1px solid rgb(219, 219, 220); */
+    
+    border: 1px solid var(--gamma-light-blue); /* 1px solid rgb(219, 219, 220);  #d4d9e8*/
     border-radius: 4px;
     opacity: 0.9;
     transition:box-shadow .28s ease-in-out, -webkit-box-shadow .28s ease-in-out;
