@@ -16,12 +16,12 @@ export default function Features() {
       keywords={featuresPageData.keywords}
     >
       <header>
-        <div className="lgContainer">
+        <div className="lgContainer margin-top--lg">
           <FeaturesHeader data={featuresPageData.header} />
         </div>
       </header>
       <main>
-        <FeaturesContent data={featuresPageData}/>
+        <FeaturesContent data={featuresPageData.content}/>
       </main>
     </Layout>
   );

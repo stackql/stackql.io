@@ -43,23 +43,23 @@ const FeaturesHeader = props => {
                 <div className={clsx('row')}>
                 <SectionHeader
                 //title= {<span>Cloud <span style={{color: '#00af91'}}>Everything</span> as SQL</span>}
-                title={data.title}
-                subtitle={data.subtitle}
-                align="left"
-                label={data.label}
-                ctaGroup = {[
-                    <MediaQuery minWidth={1224}>
-                    <div className={buttonStyles.buttons}>
-                        <DownloadLink styles={['button--primary']}/>
-                    </div>
-                    </MediaQuery>,
-                    <MediaQuery minWidth={1224}>
-                    <div style={{width: "2em"}}></div>
-                    </MediaQuery>,
-                    <div className={buttonStyles.buttons}>
-                    <DocumentationLink />
-                    </div>
-                ]}
+                    title={data.title}
+                    subtitle={data.subtitle}
+                    align="left"
+                    label={data.label}
+                    ctaGroup = {[
+                        <MediaQuery minWidth={1224}>
+                        <div className={buttonStyles.buttons}>
+                            <DownloadLink styles={['button--primary']}/>
+                        </div>
+                        </MediaQuery>,
+                        <MediaQuery minWidth={1224}>
+                        <div style={{width: "2em"}}></div>
+                        </MediaQuery>,
+                        <div className={buttonStyles.buttons}>
+                        <DocumentationLink />
+                        </div>
+                    ]}
                 />
                 </div>
                 </div>

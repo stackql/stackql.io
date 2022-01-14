@@ -8,7 +8,6 @@ const DocumentationLink = props => {
   const { styles } = props;
   const docs = useBaseUrl('/docs');
   const docIcon = 'fa-solid fa-book';
-  //<i class="fa-solid fa-file-lines"></i>
   return(
     <Link
     className={clsx('button', styles ? styles : 'button--outline button--primary')}
