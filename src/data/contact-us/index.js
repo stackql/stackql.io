@@ -18,7 +18,7 @@ export const contactusPageData = {
       'okta deployment',
     ],    
     header: {
-        title: "Contact Us",
+        title: `<span>Get <span style="color:#00af91">in Touch</span></span>`,
         subtitle: "A new approach to querying and provisioning cloud services.",
     },
     body: {

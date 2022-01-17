@@ -18,7 +18,7 @@ const SectionHeader = props => {
   } = props;
   
   return (
-    <section className={clsx(align === 'left' ? styles.headerSectionLeftAlign : styles.headerSection)}>
+    <section className={clsx(align === 'left' ? styles.headerSectionLeftAlign : styles.headerSection, className ? className : '')}>
       <div
         className={clsx('container', styles.header, disableGutter ? styles.disableGutter : styles.enableGutter)}
         // data-aos={fadeUp ? 'fade-up' : ''}
@@ -34,7 +34,7 @@ const SectionHeader = props => {
           </div>
         )}      
         <div className='row'>
-          <div className={clsx('col', 'col--12', styles.title)}>{title}</div>
+          <div className={clsx('col', 'col--12', styles.title)} dangerouslySetInnerHTML={{__html: title}} />
         </div>
         <div className='row'>
           <div className={clsx('col', 'col--12', styles.subtitle)}>{subtitle}</div>

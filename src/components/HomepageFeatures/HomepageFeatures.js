@@ -22,9 +22,9 @@ function Feature({icon, link, title, description}) {
 const HomepageFeatures = props => {
   const { data } = props;
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
+    <section className={clsx(styles.features)}>
+      <div className={clsx('container')}>
+        <div className={clsx('row')}>
           {data.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

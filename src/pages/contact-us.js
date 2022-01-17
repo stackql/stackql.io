@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import {
@@ -17,23 +18,15 @@ export default function ContactUs() {
   const {siteConfig} = useDocusaurusContext();
   return (
    <Layout
-      title={`Contact Us`}
-      description="Description will go into a meta tag in <head />"
-      // image
-      // keywords
+   title={contactusPageData.title}
+   description={contactusPageData.description}
+   image={contactusPageData.image}
+   keywords={contactusPageData.keywords}
     >
       <header>
         <SectionHeader
-          // disableGutter 
-          // overline
-          // fadeUp
-          // className
-          title={
-            <span>
-            Get <span style={{color: '#00af91'}}>in Touch</span>
-            </span>
-          }
-          subtitle="A new approach to querying and provisioning cloud services."
+          title={contactusPageData.header.title}
+          subtitle={contactusPageData.header.subtitle}
           align="center"
           ctaGroup = {[
             <MediaQuery minWidth={1224}>
@@ -51,25 +44,30 @@ export default function ContactUs() {
         />
       </header>
       <main>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div className="row">
-                <div className="col col--4 divtest padding-top--md margin-bottom--md">fredalskdjlaksjdlakjsd;lkaj;sdlkjal;sdkja;lksdjlaksjdlkajsd;lkajsldkjalskdjlaksjdlkajsdlkjalskdjalskdjals;dkj
-                </div>
-                <div className="col col--4 divtest">
+      <div className={clsx('padding-bottom--xl', 'lgContainer', 'divHalfBackgroundBottom')}>
+          <div className={clsx('row')}>
+            <div className={clsx('container')}>
+              <div className={clsx('row')}>
+                {/* form */}
+                <div className={clsx('col', 'col--6', 'divtest')}>
+                <div className={clsx('row')}>
+                  Form Header
+                </div>  
+                <div className={clsx('row')}>
                   <HubspotContactForm 
-                  region="na1"
-                  portalId="20948070"
-                  formId='50c084cd-b1af-4af1-b757-4297a3f5db94'
+                    region="na1"
+                    portalId="21220110"
+                    formId="85a06e5f-d7aa-46ec-9953-b26ff962eedb"
                   />
+                </div>  
+                </div>  
+                {/* address and map */}
+                <div className={clsx('col', 'col--6', 'divtest')}>
                 </div>
-                <div className="col col--4 divtest">
-                </div>                    
-              </div>          
+              </div>
             </div>
           </div>
-        </div>  
+      </div>      
       </main>
     </Layout>
   );

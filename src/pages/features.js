@@ -1,9 +1,11 @@
 import React from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import {
   FeaturesContent,
   FeaturesHeader,
 } from '../components';
+import ScrollToTop from 'react-scroll-to-top';
 
 import { featuresPageData } from '../data/features';  
 
@@ -15,8 +17,9 @@ export default function Features() {
       image={featuresPageData.image}
       keywords={featuresPageData.keywords}
     >
+      <ScrollToTop smooth />
       <header>
-        <div className="lgContainer margin-top--lg">
+        <div className={clsx('margin-top--lg', 'padding-bottom--xl', 'lgContainer', 'divQtrBackgroundBottom')}>
           <FeaturesHeader data={featuresPageData.header} />
         </div>
       </header>

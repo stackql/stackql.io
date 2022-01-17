@@ -11,8 +11,8 @@ const Hero = props => {
     const { data } = props;
     return (
       <header className={clsx('hero', 'hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <div className="row">
+        <div className={clsx('container')}>
+          <div className={clsx('row')}>
             <div className={clsx('col', 'col--6', styles.heroColDiv)}>
                 <h1 className={clsx('hero__title')}>
                     {data.title.map((text, i) => (
@@ -21,12 +21,12 @@ const Hero = props => {
                 </h1>
                 <p className={clsx('hero__subtitle')}>{data.subtitle}</p>
                 <MediaQuery minWidth={768}>
-                  <div className="row">
-                    <div className={styles.buttons}>
+                  <div className={clsx('row')}>
+                    <div className={clsx(styles.buttons)}>
                       <DownloadLink styles={['button--info', 'button--lg']}/>
                     </div>
-                    <div className={styles.allPlatformsDiv}>
-                      <Link className={styles.allPlatformsLink} to="/downloads">Download for other platforms{' >'}</Link>
+                    <div className={clsx(styles.allPlatformsDiv)}>
+                      <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Download for other platforms{' >'}</Link>
                     </div>
                   </div>
                 </MediaQuery>

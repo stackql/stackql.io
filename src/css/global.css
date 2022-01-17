@@ -331,11 +331,6 @@ background: 'transparent';
 color: 'rgba(255,255,255,.6)';
 }
 
-.divtest {
-	border: #000 solid 1px;
-	/* height: 100px; */
-}
-
 /* breakpoints */
 
 /* Laptops and Desktops */
@@ -382,4 +377,27 @@ color: 'rgba(255,255,255,.6)';
 	width: 100%;
 	max-width: 100%;
 	/* var(--ifm-container-width-xl); */
+}
+
+.divtest {
+	border: #000 solid 1px;
+	/* height: 100px; */
+}
+
+.divHalfBackgroundBottom {
+	background: transparent;
+	background-image: linear-gradient(180deg, #fff 50%, var(--ifm-color-primary) 0%);
+}
+
+html[data-theme='dark'] .divHalfBackgroundBottom {
+	background: transparent;
+}
+
+.divQtrBackgroundBottom {
+	background: transparent;
+	background-image: linear-gradient(180deg, #fff 75%, var(--ifm-color-primary) 0%);
+}
+
+html[data-theme='dark'] .divQtrBackgroundBottom {
+	background: transparent;
 }

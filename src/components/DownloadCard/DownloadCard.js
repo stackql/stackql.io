@@ -21,8 +21,8 @@ const DownloadCard = props => {
     {/*
     <div className="card__body text--center">{data.description}</div>
     */}
-    <div className="card__footer">
-      <div className="button-group button-group--block">
+    <div className={clsx('card__footer')}>
+      <div className={clsx('button-group', 'button-group--block')}>
         {data.buttons.map(button => (
           <Link
           className={clsx('button', 'button--primary button--sm')}
