@@ -401,3 +401,7 @@ html[data-theme='dark'] .divHalfBackgroundBottom {
 html[data-theme='dark'] .divQtrBackgroundBottom {
 	background: transparent;
 }
+
+.divWhiteBackground {
+	background: #fff;
+}

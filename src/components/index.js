@@ -10,3 +10,4 @@ export { default as HubspotContactForm } from './HubspotContactForm';
 export { default as StructuredData } from './StructuredData';
 export { default as FeaturesContent } from './FeaturesContent';
 export { default as FeaturesHeader } from './FeaturesHeader';
+export { default as Map } from './Map';

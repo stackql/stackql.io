@@ -7,6 +7,7 @@ import {
   DownloadLink,
   DocumentationLink,
   HubspotContactForm,
+  Map,
 } from '../components';
 import styles from '../components/Hero/hero.module.css';
 import Link from '@docusaurus/Link';
@@ -51,18 +52,83 @@ export default function ContactUs() {
                 {/* form */}
                 <div className={clsx('col', 'col--6', 'divtest')}>
                 <div className={clsx('row')}>
-                  Form Header
+                  <div className={clsx('col', 'col--12')}>
+                  <h2>{contactusPageData.body.form.heading}</h2>
+                  </div>
                 </div>  
                 <div className={clsx('row')}>
-                  <HubspotContactForm 
-                    region="na1"
-                    portalId="21220110"
-                    formId="85a06e5f-d7aa-46ec-9953-b26ff962eedb"
-                  />
+                  <div className={clsx('col', 'col--12', 'divWhiteBackground')}>
+                    <HubspotContactForm 
+                      region={contactusPageData.body.form.hubspot.region}
+                      portalId={contactusPageData.body.form.hubspot.portalId}
+                      formId={contactusPageData.body.form.hubspot.formId}
+                    />
+                  </div>
                 </div>  
                 </div>  
                 {/* address and map */}
                 <div className={clsx('col', 'col--6', 'divtest')}>
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--12')}>
+                  <h2>{contactusPageData.body.address.heading}</h2>
+                  </div>  
+                </div>
+                {/* address */}
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--1')}>
+                    <span><i class="fas fa-building"></i></span>
+                  </div>
+                  <div className={clsx('col', 'col--11')}>
+                    {contactusPageData.body.address.line1}
+                  </div>  
+                </div>
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--1')}>
+                  </div>
+                  <div className={clsx('col', 'col--11')}>
+                    {contactusPageData.body.address.line2}
+                  </div>  
+                </div>
+                {/* phone */}
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--1')}>
+                    <span><i class="fas fa-phone"></i></span>
+                  </div>
+                  <div className={clsx('col', 'col--11')}>
+                    {contactusPageData.body.address.phone}
+                  </div>  
+                </div>
+                {/* email */}
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--1')}>
+                    <span><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <div className={clsx('col', 'col--11')}>
+                    {contactusPageData.body.address.email}
+                  </div>  
+                </div>                
+               {/* twitter */}
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--1')}>
+                    <span><i class="fab fa-twitter"></i></span>
+                  </div>
+                  <div className={clsx('col', 'col--11')}>
+                    {contactusPageData.body.address.twitter}
+                  </div>  
+                </div>
+                {/* map */}
+                <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--12')}>
+                    <Map
+                      mapsApiKey={contactusPageData.body.address.map.mapsApiKey}
+                      lat={contactusPageData.body.address.map.lat}
+                      long={contactusPageData.body.address.map.long}
+                      defaultZoom={contactusPageData.body.address.map.defaultZoom}
+                      markerTitle={contactusPageData.body.address.map.markerTitle}
+                    />
+                  </div>  
+                </div>
+                {/* end map */}
                 </div>
               </div>
             </div>

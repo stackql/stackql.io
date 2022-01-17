@@ -31,6 +31,7 @@
     "clsx": "^1.1.1",
     "docusaurus-plugin-hubspot": "^1.0.0",
     "file-loader": "^6.2.0",
+    "google-map-react": "^2.1.10",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",

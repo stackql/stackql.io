@@ -1,20 +1,30 @@
 import React from 'react';
+import { useEffect } from "react";
 
 const HubspotContactForm = props => {
     const { region, portalId, formId } = props;
-    const formCode = `
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-    <script>
-      hbspt.forms.create({
-        region: "${region}",
-        portalId: "${portalId}",
-        formId: "${formId}"
-    });
-    </script>
-    `;
-    return (
-        <div id="hubspotForm" dangerouslySetInnerHTML={{__html: formCode}} />
-  );
-};
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://js.hsforms.net/forms/shell.js';
+        document.body.appendChild(script);
+        
+        script.addEventListener('load', () => {
+            if(window.hbspt) {
+              window.hbspt.forms.create({
+              region: region,
+              portalId: portalId,
+              formId: formId,
+              target: '#hubspotForm'
+            });
+          };
+        });
+      }, []);
+
+      return (
+        <div>
+            <div id="hubspotForm"></div>
+        </div>
+    );
+}
 
 export default HubspotContactForm;
