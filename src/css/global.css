@@ -405,3 +405,7 @@ html[data-theme='dark'] .divQtrBackgroundBottom {
 .divWhiteBackground {
 	background: #fff;
 }
+
+.addressDetails {
+	font-size: 1.20rem;
+}

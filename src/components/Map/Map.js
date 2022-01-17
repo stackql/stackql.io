@@ -23,18 +23,13 @@ const Map = props => {
        };
 
     return (
-        <GoogleMapReact
-        bootstrapURLKeys={{ 
-          key: `${mapProps.mapsApiKey}`,
-          language: 'en',
-          region: 'us',
-        }}
-        defaultCenter={mapProps.center}
-        defaultZoom={mapProps.zoom}
-        yesIWantToUseGoogleMapApiInternals
-        onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}          
-      >
-      </GoogleMapReact>
+
+<GoogleMapReact
+//style={{width: "100%", height: "100"}}
+defaultCenter={mapProps.center}
+defaultZoom={mapProps.zoom}
+/>
+
     );
 }
 
