@@ -379,6 +379,15 @@ color: 'rgba(255,255,255,.6)';
 	/* var(--ifm-container-width-xl); */
 }
 
+.divThreeQtrBackgroundBottom {
+	background: transparent;
+	background-image: linear-gradient(180deg, #fff 25%, var(--ifm-color-primary) 0%);
+}
+
+html[data-theme='dark'] .divThreeQtrBackgroundBottom {
+	background: transparent;
+}
+
 .divHalfBackgroundBottom {
 	background: transparent;
 	background-image: linear-gradient(180deg, #fff 50%, var(--ifm-color-primary) 0%);

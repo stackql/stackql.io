@@ -17,7 +17,7 @@ const ContactForm = props => {
   const { margin } = props;
  
   return (
-    <div className={clsx('padding-bottom--xl', 'lgContainer', 'divHalfBackgroundBottom', margin ? 'margin-top--xl' : '')}>
+    <div className={clsx('padding-bottom--xl', 'lgContainer', 'divThreeQtrBackgroundBottom', margin ? 'margin-top--xl' : '')}>
     <div className={clsx('row')}>
       <div className={clsx('mobileContainer80')}>
         <div className={clsx('row')}>
