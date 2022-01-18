@@ -16,8 +16,8 @@ slug: /
 import ImageSwitcher from '/js/ImageSwitcher/ImageSwitcher.js';
 
 <ImageSwitcher 
-lightImageSrc="/img/infraql-banner.png"
-darkImageSrc="/img/infraql-banner-darkbg.png"
+lightImageSrc="/img/stackql-banner.png"
+darkImageSrc="/img/stackql-banner-darkbg.png"
 alttext="StackQL"/>
 
 ## Welcome to the Revolution!
@@ -27,8 +27,8 @@ alttext="StackQL"/>
 StackQL is a new approach to Cloud Infrastructure coding. With StackQL you can deploy, query and interact with cloud services and resources from major cloud providers using a familiar language...SQL! Querying cloud services in your account is as easy as writing a [`SELECT`](/docs/language-spec/select) statement...
 
 <ImageSwitcher 
-lightImageSrc="/img/stackql-select.png"
-darkImageSrc="/img/stackql-select-darkbg.png"
+lightImageSrc="/img/infraql-select.png"
+darkImageSrc="/img/infraql-select-darkbg.png"
 alttext="StackQL Shell"/>
 
 Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/docs/language-spec/insert) statement...

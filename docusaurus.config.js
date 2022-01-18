@@ -22,6 +22,7 @@ const config = {
   plugins: [
     '@docusaurus/plugin-ideal-image',
     'docusaurus-plugin-hubspot',
+    'docusaurus-plugin-smartlook',
   ],
 
   presets: [
@@ -78,9 +79,10 @@ const config = {
       accountId: '21220110',
     },
     image: '/img/stackql-cover.png',        
-    //smartlook: {
-    //  projectKey: '2c78d968d0285f6d1d8f41008505e629a0a830dc',
-    //},    
+    smartlook: {
+      projectKey: '2c78d968d0285f6d1d8f41008505e629a0a830dc',
+      useBetaNextGen: true,
+    },    
     //algolia: {
     //  apiKey: 'e656729c343b12a0507b97b9aacf78bb',
     //  indexName: 'stackql',
