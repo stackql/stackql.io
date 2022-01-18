@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import MediaQuery from 'react-responsive'
+import MediaQuery from 'react-responsive';
 import {
   SectionHeader,
   DownloadLink,
@@ -63,7 +63,7 @@ const FeatureCards = props => {
     );
 };
 
-const FeatureCardsSmViewport = props => {
+const FeatureCardsTabletViewport = props => {
     const { cards } = props;
     return (
         <>
@@ -89,6 +89,27 @@ const FeatureCardsSmViewport = props => {
     );
 };
 
+const FeatureCardsMobileViewport = props => {
+    const { cards } = props;
+    return (
+        <>
+        <div className={clsx('mobileContainer')}>
+            <div className={clsx('row', 'margin-bottom--lg')}>
+            <Card data={cards[0]} liftUp />
+            </div>
+            <div className={clsx('row', 'margin-bottom--lg')}>
+            <Card data={cards[1]} liftUp />
+            </div>
+            <div className={clsx('row', 'margin-bottom--lg')}>
+            <Card data={cards[2]} liftUp />
+            </div>
+            <div className={clsx('row')}>
+            <Card data={cards[3]} liftUp />
+            </div>                                    
+        </div>
+        </>
+    );
+};
 
 const FeaturesHeader = props => {
     const { data } = props;
@@ -117,16 +138,27 @@ const FeaturesHeader = props => {
 
         {/* mobile/small viewport layout */}
         <MediaQuery maxWidth={997}>
-        <div className={clsx('row')}>
+        <div className={clsx('row', 'margin-horiz--xs')}>
             <FeaturesSectionHeader 
             title={data.title}
             subtitle={data.subtitle}
             label={data.label}
             />
-        </div>    
+        </div>
+        </MediaQuery>
+        
+        <MediaQuery minWidth={481} maxWidth={997}>
         <div className={clsx('row')}>
             <div className={clsx('mobileContainer')}>
-                <FeatureCardsSmViewport cards={data.cards} />
+                <FeatureCardsTabletViewport cards={data.cards} />
+            </div>    
+        </div>
+        </MediaQuery>
+
+        <MediaQuery maxWidth={480}>
+        <div className={clsx('row')}>
+            <div className={clsx('mobileContainer')}>
+                <FeatureCardsMobileViewport cards={data.cards} />
             </div>    
         </div>
         </MediaQuery>

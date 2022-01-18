@@ -6,12 +6,15 @@ import {
 } from './components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import MediaQuery from 'react-responsive';
 
 import styles from './featurescontent.module.css';
 
 const FeatureContent = props => {
     const { feature, idx } = props;
     return (
+        <>
+        <MediaQuery minWidth={997}>
         <div className={clsx('row')}>
             {idx % 2 == 0 ? 
                 <>
@@ -25,6 +28,20 @@ const FeatureContent = props => {
                 </>
             }
         </div>
+        </MediaQuery>
+        <MediaQuery maxWidth={996}>
+        <div className={clsx('row')}>
+        <div className={clsx('mobileContainer')}>
+        <ContentDiv id={feature.id} title={feature.title} checks={feature.checks} isRight/>
+        </div>    
+        </div>
+        <div className={clsx('row')}>
+        <div className={clsx('mobileContainer')}>
+        <CodeDiv code={feature.code} isRight/>
+        </div>
+        </div>        
+        </MediaQuery>
+        </>
     );
 };
 
