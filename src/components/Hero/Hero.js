@@ -20,15 +20,17 @@ const Hero = props => {
                     ))}
                 </h1>
                 <p className={clsx('hero__subtitle')}>{data.subtitle}</p>
-                <MediaQuery minWidth={768}>
+                <MediaQuery minWidth={997}>
                   <div className={clsx('row')}>
                     <div className={clsx(styles.buttons)}>
                       <DownloadLink styles={['button--info', 'button--lg']}/>
                     </div>
+                  </div>
+                  <div className={clsx('row')}>
                     <div className={clsx(styles.allPlatformsDiv)}>
                       <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Download for other platforms{' >'}</Link>
                     </div>
-                  </div>
+                    </div>
                 </MediaQuery>
             </div>
             <div className={clsx('col', 'col--6')}>
