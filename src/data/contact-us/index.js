@@ -23,7 +23,7 @@ export const contactusPageData = {
     },
     body: {
         form: {
-            heading: 'Form title',
+            heading: "Send us a message",
             hubspot: {
                 region: 'na1',
                 portalId: '21220110',
@@ -35,7 +35,9 @@ export const contactusPageData = {
             line1: 'Level 24, 570 Bourke Street',
             line2: 'Melbourne, Victoria 3000, Australia',
             phone: '+61 (0)3 8658 5880',
+            phoneLink: 'tel:+61 (0)3 8658 5880',
             email: 'info@stackql.io',
+            emailLink: 'mailto:info@stackql.io',
             twitter: 'https://twitter.com/stackql',
             map: {
                 mapsApiKey: 'AIzaSyD1DhS73DM65hHWcZTqqrerWbqICO9MuDA', 

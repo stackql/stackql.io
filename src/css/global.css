@@ -379,11 +379,6 @@ color: 'rgba(255,255,255,.6)';
 	/* var(--ifm-container-width-xl); */
 }
 
-.divtest {
-	border: #000 solid 1px;
-	/* height: 100px; */
-}
-
 .divHalfBackgroundBottom {
 	background: transparent;
 	background-image: linear-gradient(180deg, #fff 50%, var(--ifm-color-primary) 0%);
@@ -407,7 +402,7 @@ html[data-theme='dark'] .divQtrBackgroundBottom {
 }
 
 .addressDetails {
-	font-size: 1.20rem;
+	font-size: 1.2rem;
 }
 
 .scrollToTop {
@@ -427,6 +422,36 @@ html[data-theme='dark'] .divQtrBackgroundBottom {
 	outline: none;
   }
   
-  .scrollToTop:active {
+.scrollToTop:active {
 	transform: matrix(0.95, 0, 0, 0.95, 0, 0);
   }
+
+.contactFormDiv {
+	background-color: whitesmoke;
+	padding: 1rem;
+	border-radius: 5px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid var(--gamma-light-blue);
+}
+
+.contactFormHeading {
+	font-weight: bold;
+	font-size: 1.75rem;
+	color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .contactFormHeading {
+	color: #00af91;
+}
+
+
+.contactLink:hover {
+	text-decoration: none;
+	color: var(--ifm-color-primary-dark);
+}
+
+.divtest {
+	border: #000 solid 1px;
+	/* height: 100px; */
+}

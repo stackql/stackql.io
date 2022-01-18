@@ -107,11 +107,6 @@ const config = {
           position: 'left',
         },
         {
-          href: '/contact-us',
-          label: 'Contact us',
-          position: 'left',
-        },
-        {
           href: '/downloads',
           label: 'Downloads',
           position: 'left',
@@ -128,6 +123,11 @@ const config = {
           activeBasePath: 'blog',
           position: 'left',
         },
+        {
+          href: '/contact-us',
+          label: 'Contact us',
+          position: 'left',
+        },        
         {
           href: 'https://github.com/stackql',
           position: 'right',

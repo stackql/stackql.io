@@ -23,13 +23,11 @@ const Map = props => {
        };
 
     return (
-
-<GoogleMapReact
-//style={{width: "100%", height: "100"}}
-defaultCenter={mapProps.center}
-defaultZoom={mapProps.zoom}
-/>
-
+        <GoogleMapReact
+        //style={{width: "100%", height: "100"}}
+        defaultCenter={mapProps.center}
+        defaultZoom={mapProps.zoom}
+        />
     );
 }
 
