@@ -18,7 +18,7 @@ export const featuresPageData = {
       'okta deployment',
     ],
     header: {
-      title: "Cloud Everything as SQL",
+      title: `<span>Configuration <span style="color:#00af91">as Data</span></span>`,
       subtitle: "A new approach to querying and provisioning cloud services.",
       label: "FAMILIAR, FUNCTIONAL, FLEXIBLE",
       cards: [
@@ -28,7 +28,7 @@ export const featuresPageData = {
           text: `
           Configuration-as-Data approach to deploy and configure cloud and SaaS resources.      
           `,
-          link: '#',
+          link: '#provision',
         },
         {
           icon: 'fas fa-map',
@@ -36,7 +36,7 @@ export const featuresPageData = {
           text: `
           Simplified API discovery for available service and resources in cloud and SaaS providers.      
           `,
-          link: '#',
+          link: '#navigate',
         },
         {
           icon: 'fas fa-search',
@@ -44,7 +44,7 @@ export const featuresPageData = {
           text: `
           Perform live and interactive queries for inventory, compliance, cost optimization and more.      
           `,
-          link: '#',
+          link: '#query',
         },
         {
           icon: 'fas fa-power-off',
@@ -52,7 +52,7 @@ export const featuresPageData = {
           text: `
           Manage complete life cycle of cloud and SaaS resources from deployment to termination.      
           `,
-          link: '#',
+          link: '#operate',
         },                        
       ],
     },
@@ -61,7 +61,7 @@ export const featuresPageData = {
       subtitle: 'What do you need to do?',
       features: [
         {
-          archor: 'archor-1',
+          id: 'provision',
           title: 'Cloud Provisioning Simplified.',
           code: `-- Deploy new cloud resources
 INSERT INTO google.compute.instances (
@@ -83,7 +83,7 @@ SELECT
           ],
         },
         {
-          archor: 'archor-2',
+          id: 'navigate',
           title: 'Easily Navigate Cloud APIs.',
           code: `-- Discover available services and resources
 SHOW SERVICES IN google LIKE '%compute%';
@@ -97,13 +97,14 @@ SHOW METHODS IN google.compute.instances;
 SHOW INSERT INTO google.compute.instances;
         `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Discover available services and resources',
+            'Show attributes of a resource',
+            'Show available methods for a resource',
+            'Create provisioning templates',
           ],
         },    
         {
-          archor: 'archor-3',
+          id: 'query',
           title: 'Query Cloud and SaaS Assets.',
           code: `-- Query cloud resources
 SELECT machineType, COUNT(*)
@@ -121,13 +122,14 @@ SELECT machineType, COUNT(*)
 */
           `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Perform live queries against cloud resources',
+            'Query for security misconfigurations',
+            'Inventory cloud assets for cost optimization',
+            'Perform compliance and configuration drift checks'
           ],
         },
         {
-          archor: 'archor-4',
+          id: 'operate',
           title: 'Cloud Operations Made Easy.',
           code: `-- Perform operations on cloud resources
 USE google;
@@ -138,9 +140,10 @@ EXEC compute.instances.start
 ✔ Instance started successfully      
           `,
           checks: [
-            'something',
-            'something',
-            'something',
+            'Perform operations on cloud resources',
+            'Interact with cloud services',
+            'Make configuration changes',
+            'Manage cloud infrastructure',
           ],
         },        
       ],    

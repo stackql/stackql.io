@@ -2,17 +2,17 @@ import React from 'react';
 import clsx from 'clsx';
 
 const ContentDiv = props => {
-    const {title, checks, isRight} = props;
+    const {title, checks, isRight, id} = props;
     return (
-        <div className={clsx('col', 'col--6', 'padding-top--md', 'margin-bottom--md')}>
-            <div className="row">
+        <div id={id} className={clsx('col', 'col--6', 'padding-top--md', 'margin-bottom--md')}>
+            <div className={clsx('row')}>
                 <div className={clsx('col col--11 padding-top--md', isRight ? 'col--offset-1' : '')}>
-                    <h1 className="margin-bottom--sm">{title}</h1>
+                    <h1 className={clsx('margin-bottom--sm')}>{title}</h1>
                     <ul style={{listStyleType: 'none', paddingLeft: 0}}>
                         {
                             checks.map(check => (
-                                <div className="row">
-                                    <div className="col col--12">
+                                <div className={clsx('row')}>
+                                    <div className={clsx('col', 'col--12')}>
                                         <li>
                                             <span style={{fontSize: '2rem', color: 'green', verticalAlign: 'middle'}}>
                                                 <i class="fas fa-check-circle"></i>

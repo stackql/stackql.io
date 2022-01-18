@@ -98,7 +98,7 @@
 }
 
 /* Laptops and Desktops */
-@media (min-width: 1025px){
+@media (min-width: 1158px){
   :root {
     --terminal-code-font-size: 17px;
     --terminal-code-line-height: 20px;
@@ -158,6 +158,70 @@
   }
   .Terminal-control-btn-white {
     border: 2px solid black;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1157px) {
+  :root {
+    --terminal-code-font-size: 14px;
+    --terminal-code-line-height: 16px;
+    --console-text-font-size: 10px;
+    --console-text-line-height: 19px;
+  }
+  .Terminal-btn {
+    width: 9px;
+    height: 9px;
+  }
+  .Terminal-btn-close {
+    left: 9.75px;
+  }
+  .Terminal-btn-minimize {
+    left: 24.75px;
+  }  
+  .Terminal-btn-maximize {
+    left: 39.75px;
+  }
+  .Terminal-window {
+    border-radius: 3.75px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0.75px 4.5px, rgba(0, 0, 0, 0.12) 0px 0.75px 3px;
+  }
+  .Terminal-window-white {
+    background: #fff;
+    border-style: solid;
+    border-color: transparent;
+  }  
+  .Terminal-console-white {
+    color: #000;
+  }  
+  .Terminal-term {
+    height: 180px;
+  }
+  .Terminal-header {
+    top: 13.5px;
+  }  
+  .Terminal-body {
+    margin-top: 33.75px;
+  }
+  .Terminal-console {
+    margin: 0px 12px;
+  }
+  .Terminal-console-code {
+    margin: 30px 12px;
+  }
+  .Terminal-cursor {
+    width: 4.5px;
+    height: 11.25px;
+  }
+  .Terminal-control-btn {
+    bottom: 39px;
+    right: 6px;
+    border-radius: 2.25px;
+    padding: 3.75px 7.5px;
+    border: 1.5px solid white;
+  }
+  .Terminal-control-btn-white {
+    border: 1.5px solid black;
   }
 }
 
@@ -223,68 +287,4 @@
   .Terminal-control-btn-white {
     border: 1px solid black;
   }  
-}
-
-/* Tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
-  :root {
-    --terminal-code-font-size: 14px;
-    --terminal-code-line-height: 16px;
-    --console-text-font-size: 10px;
-    --console-text-line-height: 19px;
-  }
-  .Terminal-btn {
-    width: 9px;
-    height: 9px;
-  }
-  .Terminal-btn-close {
-    left: 9.75px;
-  }
-  .Terminal-btn-minimize {
-    left: 24.75px;
-  }  
-  .Terminal-btn-maximize {
-    left: 39.75px;
-  }
-  .Terminal-window {
-    border-radius: 3.75px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 0.75px 4.5px, rgba(0, 0, 0, 0.12) 0px 0.75px 3px;
-  }
-  .Terminal-window-white {
-    background: #fff;
-    border-style: solid;
-    border-color: transparent;
-  }  
-  .Terminal-console-white {
-    color: #000;
-  }  
-  .Terminal-term {
-    height: 180px;
-  }
-  .Terminal-header {
-    top: 13.5px;
-  }  
-  .Terminal-body {
-    margin-top: 33.75px;
-  }
-  .Terminal-console {
-    margin: 0px 12px;
-  }
-  .Terminal-console-code {
-    margin: 30px 12px;
-  }
-  .Terminal-cursor {
-    width: 4.5px;
-    height: 11.25px;
-  }
-  .Terminal-control-btn {
-    bottom: 39px;
-    right: 6px;
-    border-radius: 2.25px;
-    padding: 3.75px 7.5px;
-    border: 1.5px solid white;
-  }
-  .Terminal-control-btn-white {
-    border: 1.5px solid black;
-  }
 }

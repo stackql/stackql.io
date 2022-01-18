@@ -35,7 +35,7 @@
 }
 
 /* Laptops and Desktops */
-@media (min-width: 1025px){
+@media (min-width: 1158px){
   .heroColDiv {
     display: flex;
     flex-direction: column;
@@ -44,21 +44,21 @@
   }
 }
 
-/* Mobile Devices */
-@media (max-width: 480px) {
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1157px) {
   .heroBanner {
     padding: 2rem;
   }
   .heroColDiv {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
   }  
 }
 
-/* Tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
+/* Mobile Devices */
+@media (max-width: 480px) {
   .heroBanner {
     padding: 2rem;
   }

@@ -1,104 +1,91 @@
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import {
   SectionHeader,
-  DownloadLink,
   DocumentationLink,
   DownloadCard,
 } from '../components';
-import Link from '@docusaurus/Link';
-import MediaQuery from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import MediaQuery from 'react-responsive';
 
-const windows = {
-  icon: 'fab fa-windows',
-  title: 'Microsoft Windows',
-  description: 'x86 and x64',
-  buttons: [
-    {
-      url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi',
-      text: 'Download MSI',
-      icon: 'fas fa-download',
-    },
-    {
-      url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.zip',
-      text: 'Download ZIP',
-      icon: 'fas fa-download',
-    },    
-  ]
-};
+import buttonStyles from '../components/Hero/hero.module.css';
 
-const macos = {
-  icon: 'fab fa-apple',
-  title: 'MacOS',
-  description: '64-bit AMD and ARM',
-  buttons: [
-    {
-      url:  'https://releases.stackql.io/stackql/latest/infraql_darwin_multiarch.pkg',
-      text: 'Download PKG',
-      icon: 'fas fa-download',
-    },
-  ]
-};
-
-const linux = {
-  icon: 'fab fa-linux',
-  title: 'Linux',
-  description: 'x86 and x64',
-  buttons: [
-    {
-      url:  'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip',
-      text: 'Download ZIP',
-      icon: 'fas fa-download',
-    },
-  ]
-};
+import { downloadsPageData } from '../data/downloads';
+const windows = downloadsPageData.downloadCards.windows;
+const macos = downloadsPageData.downloadCards.macos;
+const linux = downloadsPageData.downloadCards.linux;
 
 export default function Downloads() {
-  const {siteConfig} = useDocusaurusContext();
-  // downloadFile();
+
+  const isNormalLayout = useMediaQuery({
+    query: '(min-width: 997px)'
+  });
+
+  const isMobile = useMediaQuery({
+    query: '(max-width: 480px)'
+  });
+
+  const isTablet = useMediaQuery({
+    query: '(min-width: 481px) and (max-width: 996px)'
+  });
+
   return (
    <Layout
-      title={`Downloads`}
-      description="Description will go into a meta tag in <head />"
-      // image
-      // keywords
+   title={downloadsPageData.title}
+   description={downloadsPageData.description}
+   image={downloadsPageData.image}
+   keywords={downloadsPageData.keywords}
     >
       <header>
         <SectionHeader
-          // disableGutter 
-          // overline
-          // fadeUp
-          // className
-          title={
-            <span>
-            <span style={{color: '#00af91'}}>Download</span> StackQL
-            </span>
-          }
-          subtitle="A new approach to querying and provisioning cloud services."
+          title={downloadsPageData.header.title}
+          subtitle={downloadsPageData.header.subtitle}
           align="center"
           ctaGroup = {[
-          ]}
+            <div className={clsx(buttonStyles.buttons)}>
+            <DocumentationLink />
+            </div>
+        ]}
         />
       </header>
       <main>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div className="row">
+        <div className={clsx('padding-bottom--xl', 'lgContainer', isNormalLayout ? 'divHalfBackgroundBottom' : '')}>
+          <div className={clsx('row')}>
+            <div className={clsx(isNormalLayout ? 'container' : isTablet ? 'tabletContainer' : 'mobileContainer')}>
+            {/* desktop/large tablet view */}         
+            <MediaQuery minWidth={997}>
+              <div className={clsx('row')}>
               {[windows, macos, linux].map(card => (
-                <div className="col col--4 margin-bottom--md">
-                <DownloadCard
-                    key={card.title}
-                    data={card}
-                    liftUp
-                  />
-                  </div>
+                <div className={clsx('col', 'col--4')}>
+                  <DownloadCard
+                      key={card.title}
+                      data={card}
+                      liftUp
+                    />
+                </div>
                 ))}
-              </div>          
+              </div> 
+            </MediaQuery>
+
+          {/* mobile/small tablet view */}                
+            <MediaQuery maxWidth={996}>
+            {[windows, macos, linux].map(card => (
+              <div className={clsx('row')}>
+                  <div className={clsx('col', 'col--12', 'margin-bottom--lg')}>
+                    <DownloadCard
+                        key={card.title}
+                        data={card}
+                        liftUp
+                      />
+                  </div>
+              </div>
+              ))}
+            </MediaQuery>
+
             </div>
           </div>
-        </div>  
+        </div>
       </main>
     </Layout>
   );
