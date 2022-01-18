@@ -445,10 +445,23 @@ html[data-theme='dark'] .contactFormHeading {
 	color: #00af91;
 }
 
-
 .contactLink:hover {
 	text-decoration: none;
 	color: var(--ifm-color-primary-dark);
+}
+
+.mobileContainer {
+	margin: 0 auto;
+	max-width: var(--ifm-container-width);
+	padding: 0 var(--ifm-spacing-horizontal);
+	width: 90%;
+}
+
+.tabletContainer {
+	margin: 0 auto;
+	max-width: var(--ifm-container-width);
+	padding: 0 var(--ifm-spacing-horizontal);
+	width: 70%;
 }
 
 .divtest {
