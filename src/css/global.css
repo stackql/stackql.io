@@ -473,6 +473,42 @@ html[data-theme='dark'] .contactFormHeading {
 	width: 80%;
 }
 
+.col3 {
+	width: calc(3 / 12 * 100%);
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.col2 {
+	width: calc(2 / 12 * 100%);
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.col6 {
+	width: calc(6 / 12 * 100%);
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+
+.col475pct {
+	width: 47.5%;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.col5pct {
+	width: 5%;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
 .tabletContainer {
 	margin: 0 auto;
 	max-width: var(--ifm-container-width);
