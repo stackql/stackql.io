@@ -457,6 +457,13 @@ html[data-theme='dark'] .contactFormHeading {
 	width: 90%;
 }
 
+.mobileContainer80 {
+	margin: 0 auto;
+	max-width: var(--ifm-container-width);
+	padding: 0 var(--ifm-spacing-horizontal);
+	width: 80%;
+}
+
 .tabletContainer {
 	margin: 0 auto;
 	max-width: var(--ifm-container-width);

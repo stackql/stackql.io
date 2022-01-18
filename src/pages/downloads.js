@@ -6,8 +6,8 @@ import {
   DocumentationLink,
   DownloadCard,
 } from '../components';
-import { useMediaQuery } from 'react-responsive'
-import MediaQuery from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import MediaQuery from 'react-responsive';
 
 import buttonStyles from '../components/Hero/hero.module.css';
 
