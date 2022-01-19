@@ -4532,6 +4532,11 @@ docusaurus-plugin-hubspot@^1.0.0:
   resolved "https://registry.yarnpkg.com/docusaurus-plugin-hubspot/-/docusaurus-plugin-hubspot-1.0.0.tgz#64c3d232c02ff5b34c39cc959fc92528c5959318"
   integrity sha512-qeNRlI336M6mcANGrEDxMt7B+GWvWd+yXOpT6uquQLX0b2cDHncDj0+rbuUaJUNQnKQz1st7sKgJQ0P55736Ug==
 
+docusaurus-plugin-smartlook@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-smartlook/-/docusaurus-plugin-smartlook-1.0.1.tgz#6633857ea5fc6f620b885f49c51797d770ed660a"
+  integrity sha512-dXxF08TeeGNivMjdNbR2zPcqjVb6UfrUIPtVhJRiktNBNLLbzxlseo7itBpzZfviJuS7wWcctL1Z2mnp618n2g==
+
 dom-converter@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"

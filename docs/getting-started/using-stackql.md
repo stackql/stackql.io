@@ -43,10 +43,6 @@ You can change the color scheme for the StackQL shell using the `--colorscheme` 
 # Changing the Shell Color Scheme
 ./stackql shell --colorscheme light
 ```
-An example of the light color scheme is shown here:
-
-IMAGE
-
 ### The `.iqlrc` Initialization File
 
 Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the iqlrc initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
@@ -58,9 +54,7 @@ Defaults for StackQL command options, such as the output format and color scheme
 More information about command options is available in the Global Flags topic.
 
 ### Using the StackQL Command Line Utility
-StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.iqlrc` initialization file discussed previously.  An example of a non-interactive operation command line StackQL operation is shown below:
-
-IMAGE
+StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.iqlrc` initialization file discussed previously.  
 
 The output from the StackQL executable is sent to stdout on the system being used, this output can be parsed within a BASH or PowerShell script.  
 
@@ -84,9 +78,7 @@ $select = $cmd, $query, $flags -join " "
 
 (iex $select | ConvertFrom-Json) | Out-GridView -Title 'StackQL Query Results'
 ```
-The above PowerShell command demonstrates selecting Compute Engine instances displaying the output using `Out-GridView`, as shown below:
-
-IMAGE
+The above PowerShell command demonstrates selecting Compute Engine instances displaying the output using `Out-GridView`.  
 
 ### Using an Input File (IQL File)
 StackQL input files can be used to execute several commands terminated by semicolons.  This is another option for non-interactive or batch infrastructure programming.  An input file is specified with the  `-i` or `--infile` option as shown below:
