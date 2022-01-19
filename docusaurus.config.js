@@ -80,7 +80,7 @@ const config = {
     },
     image: '/img/stackql-cover.png',        
     smartlook: {
-      projectKey: '2c78d968d0285f6d1d8f41008505e629a0a830dc',
+      projectKey: '0b522f879953aea6bcb0f17f0e397f498d8eea32',
       useBetaNextGen: true,
     },    
     //algolia: {
