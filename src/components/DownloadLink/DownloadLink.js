@@ -5,7 +5,12 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 function getOS() {
-  let platform = navigator.userAgentData.platform;
+  let platform = 'Linux';
+  try {
+    platform = navigator.userAgentData.platform;
+  } catch (ignore) {
+    //browser does not support this, so catch error and continue
+  }
 
   if (platform.match(/(.*?)(M|m)(A|a)(C|c)(.*?)/)) {
     return 'Mac OS';
