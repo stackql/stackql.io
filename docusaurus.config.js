@@ -70,7 +70,7 @@ const config = {
     announcementBar: {
       id: 'support_us',
       content:
-        `⭐️ <b>If you like StackQL, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`,
+        `<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`,
       backgroundColor: '#A9BCD0',
       textColor: '#1A4E82',
       isCloseable: true,
@@ -83,17 +83,18 @@ const config = {
       projectKey: '0b522f879953aea6bcb0f17f0e397f498d8eea32',
       useBetaNextGen: true,
     },    
-    //algolia: {
-    //  apiKey: 'e656729c343b12a0507b97b9aacf78bb',
-    //  indexName: 'stackql',
+    algolia: {
+      appId: 'HYO8BM1W1Y',
+      apiKey: 'a67a2d399f2e604202e82f8fd284b103',
+      indexName: 'stackql',
       // Optional: see doc section below
-      // contextualSearch: false,
-      // Optional: see doc section below
-      // appId: 'YOUR_APP_ID',
+      contextualSearch: false,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      // externalUrlRegex: 'external\\.com|domain\\.com',
       // Optional: Algolia search parameters
-    //  searchParameters: {},
+      // searchParameters: {},
       //... other Algolia params
-    //},    
+    },    
     hideableSidebar: true,  
     navbar: {
       logo: {
