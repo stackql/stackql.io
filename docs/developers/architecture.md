@@ -30,7 +30,10 @@ The QueryPreProcessor is responsible for the preprossing of variables (if provid
 ### QueryParser
 The QueryParser parses the IQL statement and ensures the validity of the syntax provided as well as attribute references and mandatory attributes. 
 
-> StackQL interrogates discovery documents from major cloud providers to enumerate all available resources and their associated methods and attributes.  This information - collected at execution time - is cached internally for the current session.
+### ProviderInterface
+The ProviderInterface consumes signed extended API specs from the StackQL Provider Registry.
+
+> StackQL provider interface documents are used to enumerate and define all available resources and their associated methods and attributes for a given provider.  This information - collected at execution time - is cached internally for the current session.
 
 ### QueryPlanner
 The QueryPlanner determines which components of the query will be executed remotely through the relevant Cloud Provider API, and which components will be executed locally (such as aggregate operations).
