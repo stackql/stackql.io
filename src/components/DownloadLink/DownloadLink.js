@@ -35,6 +35,9 @@ const DownloadLink = props => {
   } else if (os === 'Windows') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi';
     downloadIcon = 'fab fa-windows';
+  } else if (os === 'Chrome OS') {
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip';
+    downloadIcon = 'fa-brands fa-chrome';  
   } else {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip';
     downloadIcon = 'fab fa-linux';
