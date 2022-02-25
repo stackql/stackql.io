@@ -8,11 +8,12 @@ function getOS() {
   let platform = 'Linux';
   try {
     platform = navigator.userAgentData.platform;
-    window.alert(platform);
     if (platform.match(/(.*?)(M|m)(A|a)(C|c)(.*?)/)) {
       return 'Mac OS';
     } else if (platform.match(/(.*?)(W|w)(I|i)(N|n)(.*?)/)) {
       return 'Windows';
+    } else if (platform === 'Chrome OS'){
+      return 'Chrome OS';
     } else {
       return 'Linux';
     }    
