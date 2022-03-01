@@ -183,7 +183,7 @@ const config = {
           ],
         },
       ],
-      copyright: `<strong>© ${new Date().getFullYear()} StackQL Studios</strong>`,
+      copyright: `© ${new Date().getFullYear()} StackQL Studios (ABN 65 656 147 054)`,
     },
     colorMode: {
       // using user system preferences, instead of the hardcoded defaultMode
