@@ -1,12 +1,10 @@
 ---
 slug: analyze-gcs-usage-logs-in-bigquery
 title: Enable Logging for Google Cloud Storage Buckets and Analyzing Logs in Big Query (Part II)
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
+authors:	
+  - jeffreyaven
 hide_table_of_contents: false
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-gcs-logging-to-bq.png
+image: "/img/blog/infraql-gcs-logging-to-bq.png"
 description: This post demonstrates how to enable logging for a Google Cloud Storage bucket and analyze usage logs in Big Query using StackQL - a new, SQL based approach to deploying and querying cloud resources.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, logging, bigquery]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, logging, bigquery]
@@ -14,6 +12,10 @@ tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, goo
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 In the previous [__post__](/blog/enable-google-cloud-storage-logging), we showed you how to enable usage and storage logging for GCS buckets.  Now that we have enabled logging, let's load and analyze the logs using Big Query.  We will build up a data file __`vars.jsonnet`__ as we go and show the queries step by step, at the end we will show how to run this as one batch using StackQL.  
 

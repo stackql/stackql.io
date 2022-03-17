@@ -1,15 +1,17 @@
 ---
 slug: gke-autopilot-the-easy-way
 title: GKE Autopilot - the easy way
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-gke-blog.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-gke-blog.png"
 description: This article shows how to use StackQL to deploy a GKE Autopilot cluster in a Shared VPC in GCP.
 keywords: [stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilot]
 tags: [stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilot]
 ---
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 I grappled with Terraform for the better part of a day trying to provision a GKE Autopilot cluster in a Shared VPC service project, I was able to do this with StackQL in 2 minutes, this is how...  
 

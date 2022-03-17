@@ -12,10 +12,7 @@ tags: [stackql, stackql provider registry, multicloud, asset management, cloud s
 
 <head>
 <meta name="author" content="Jeffrey Aven" />
-<meta property="article:published_time" content="2022-03-17" />
 </head>
-
-<time datetime="2022-03-17" />
 
 > Multi cloud visibility, SecOps, FinOps, DevOps made easy  
 

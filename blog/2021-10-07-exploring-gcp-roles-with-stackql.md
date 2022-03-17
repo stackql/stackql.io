@@ -1,16 +1,18 @@
 ---
 slug: exploring-gcp-roles-with-stackql
 title: Exploring GCP Roles with StackQL
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-gcp-roles.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-gcp-roles.png"
 description: This article provides a primer on roles in GCP with demonstrations of creating and querying roles using StackQL.
 keywords: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
 tags: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
 hide_table_of_contents: false
 ---
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 Understanding roles is integral to applying the principal of least privilege to GCP environments.
 
