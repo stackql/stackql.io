@@ -1,11 +1,9 @@
 ---
 slug: using-the-jsonnet-map-function
 title: Using the Jsonnet Map Function
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-jsonnet-blog.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-jsonnet-blog.png"
 description: This article demonstrates the use of the map and format functions in the Jsonnet standard library.
 keywords: [jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
 tags: [jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
@@ -13,6 +11,10 @@ tags: [jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 [Jsonnet](https://jsonnet.org/) is a fantastic configuration language as discussed in [Using Jsonnet to Configure Multiple Environments](https://cloudywithachanceofbigdata.com/using-jsonnet-to-configure-multiple-environments/).  Going slightly beyond the basics, this article is an introduction to anonymous functions and the `map` and `format` methods in the Jsonnet standard library.  
 

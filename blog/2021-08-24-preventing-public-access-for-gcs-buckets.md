@@ -1,15 +1,17 @@
 ---
 slug: preventing-public-access-for-gcs-buckets
 title: Preventing Public Access for GCS Buckets
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-gcs-public-access-prevention.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-gcs-public-access-prevention.png"
 description: This article shows how to enable public access prevention on Google Cloud Storage (GCS) buckets using StackQL - a SQL based approach to deploying and querying cloud assets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, cloud security, CSPM]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, cloud security, CSPM]
 ---
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 Its easy enough for anyone to deploy a Cloud Storage bucket in google, this can be done through the console, `gcloud`, `terraform` or `stackql` as shown here: [__Deploying and Querying GCS Buckets using StackQL__](/blog/deploying-and-querying-gcs-buckets-using-stackql).  It is also easy to inadvertently allow users to set public ACLs on a bucket, therefore making its contents publicly visible by default.  There is an easy way to prevent this from happening by [Using public access prevention](https://cloud.google.com/storage/docs/using-public-access-prevention).
 

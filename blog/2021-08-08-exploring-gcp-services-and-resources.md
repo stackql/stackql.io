@@ -1,12 +1,10 @@
 ---
 slug: exploring-gcp-services-and-resources-using-stackql
 title: Exploring GCP services and resources using StackQL
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
+authors:	
+  - jeffreyaven
 hide_table_of_contents: false
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-blog-post-featured-image.png
+image: "/img/blog/infraql-blog-post-featured-image.png"
 description: This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
@@ -14,6 +12,10 @@ tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.  If you are new to StackQL it may be helpful to start [__here__](/docs/getting-started/resource-hierarchy).
 

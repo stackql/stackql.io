@@ -1,11 +1,9 @@
 ---
 slug: exploring-the-google-cloud-asset-api
 title: Exploring the Google Cloud Asset API
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-cloud-asset-inventory-blog.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-cloud-asset-inventory-blog.png"
 description: This article shows how to use the Google Cloud Asset Inventory service using SQL.
 keywords: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
 tags: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
@@ -13,6 +11,10 @@ tags: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inv
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 The [Cloud Asset API](https://cloud.google.com/asset-inventory/docs) has recently gone GA, this is an exceptionally useful service which stores the history and inventory of cloud resources in your GCP org.  Using the Cloud Asset API via StackQL you can enumerate all of the services and resources in your GCP org, including billable resources such as Cloud Storage buckets or Compute Engine instances, as well as other objects such as billing accounts, folders, projects, firewalls, service accounts and much more.  All of this can be done using SQL!
 

@@ -1,11 +1,9 @@
 ---
 slug: big-query-cost-analysis-using-stackql
 title: Big Query Cost Analysis using StackQL
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-bq-cost-analysis.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-bq-cost-analysis.png"
 description: This article demonstrates how to use StackQL to summarize or drill down into detail Big Query billing data for analysis into billing spikes or anomalies.
 keywords: [stackql, bigquery, gcp, costs, cost management]
 tags: [stackql, bigquery, gcp, costs, cost management]
@@ -13,6 +11,10 @@ tags: [stackql, bigquery, gcp, costs, cost management]
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 Queries (particularly) repetitive queries that don't take advantage of results caching can lead to extraordinarily high bills.    
 

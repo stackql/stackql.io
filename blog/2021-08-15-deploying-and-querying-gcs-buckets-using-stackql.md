@@ -1,12 +1,10 @@
 ---
 slug: deploying-and-querying-gcs-buckets-using-stackql
 title: Deploying and Querying GCS Buckets using StackQL
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
+authors:	
+  - jeffreyaven
 hide_table_of_contents: false
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-gcs-blog.png
+image: "/img/blog/infraql-gcs-blog.png"
 description: StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as to query buckets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS]
@@ -14,6 +12,10 @@ tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, goo
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as an easy way to query buckets in your environment for asset management reasons or to look for misconfigurations, such as public access, non-conformant encryption configuration and more.  It may be useful to review [__Exploring GCP services and resources using StackQL__](/blog/exploring-gcp-services-and-resources-using-stackql), which walks working through the StackQL resource hierarchy including the [`SHOW`](/docs/language-spec/show) and [`DESCRIBE`](/docs/language-spec/describe) commands.  
 

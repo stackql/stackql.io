@@ -1,11 +1,9 @@
 ---
 slug: querying-bigquery-errors-and-load-stats
 title: Querying Big Query Errors and Load Stats
-author: Jeffrey Aven
-author_title: Cloud Consultant
-author_url: https://github.com/stackql
-author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/infraql-bq-errors-and-stats.png
+authors:	
+  - jeffreyaven
+image: "/img/blog/infraql-bq-errors-and-stats.png"
 description: This article demonstrates some queries you can run using StackQL to bring back live statistics from Big Query as well as detail regarding encountered during the loading of data into Big Query.
 keywords: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
 tags: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
@@ -13,6 +11,10 @@ tags: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+<meta name="author" content="Jeffrey Aven" />
+</head>
 
 Big Query provides a wealth of metrics and statistics for jobs run against it which could be queries, load jobs or export jobs.  This article demonstrates some queries you can run using StackQL to bring back live statistics from load operations into Big Query as well as detail regarding errors encountered during the loading of data into Big Query.  
 
