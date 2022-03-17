@@ -5,7 +5,7 @@ author: Jeffrey Aven
 author_title: Cloud Consultant
 author_url: https://github.com/stackql
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: /img/blog/stackql-registry-featured-image.png
+image: "/img/blog/stackql-registry-featured-image.png"
 description: The StackQL provider registry allows contributors to add support for different providers (major cloud, alt cloud and SaaS providers) using a no-code approach.
 keywords: [stackql, stackql provider registry, multicloud, asset management, cloud security]
 tags: [stackql, stackql provider registry, multicloud, asset management, cloud security]
