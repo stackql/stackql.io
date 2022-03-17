@@ -188,7 +188,11 @@ const config = {
     colorMode: {
       // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: true,
-    },		
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },    		
 	}),
 };
 
