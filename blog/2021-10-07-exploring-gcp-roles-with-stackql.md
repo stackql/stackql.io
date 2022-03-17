@@ -5,7 +5,7 @@ author: Jeffrey Aven
 author_title: Cloud Consultant
 author_url: https://github.com/stackql
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-gcp-roles.png
+image: /img/blog/infraql-gcp-roles.png
 description: This article provides a primer on roles in GCP with demonstrations of creating and querying roles using StackQL.
 keywords: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
 tags: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
