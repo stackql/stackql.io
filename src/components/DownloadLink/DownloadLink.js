@@ -30,16 +30,16 @@ const DownloadLink = props => {
   let downloadUrl = '';
   let downloadIcon = '';
   if (os === 'Mac OS') {
-    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_darwin_multiarch.pkg';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg';
     downloadIcon = 'fab fa-apple';
   } else if (os === 'Windows') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi';
     downloadIcon = 'fab fa-windows';
   } else if (os === 'Chrome OS') {
-    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip';
     downloadIcon = 'fa-brands fa-chrome';  
   } else {
-    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip';
     downloadIcon = 'fab fa-linux';
   }
 
