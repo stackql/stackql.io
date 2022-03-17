@@ -10,6 +10,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'StackQL',
+  staticDirectories: ['static'],
   tagline: 'Provision and Query Cloud and SaaS Resources using SQL',
   url: 'https://stackql.io',
   baseUrl: '/',
