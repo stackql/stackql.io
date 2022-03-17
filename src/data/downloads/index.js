@@ -46,7 +46,7 @@ export const downloadsPageData = {
             description: '64-bit AMD and ARM',
             buttons: [
               {
-                url:  'https://releases.stackql.io/stackql/latest/infraql_darwin_multiarch.pkg',
+                url:  'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg',
                 text: 'Download PKG',
                 icon: 'fas fa-download',
               },
@@ -58,7 +58,7 @@ export const downloadsPageData = {
             description: 'x86 and x64',
             buttons: [
               {
-                url:  'https://releases.stackql.io/stackql/latest/infraql_linux_amd64.zip',
+                url:  'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip',
                 text: 'Download ZIP',
                 icon: 'fas fa-download',
               },
