@@ -5,7 +5,7 @@ author: Jeffrey Aven
 author_title: Cloud Consultant
 author_url: https://github.com/stackql
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-cloud-asset-inventory-blog.png
+image: /img/blog/infraql-cloud-asset-inventory-blog.png
 description: This article shows how to use the Google Cloud Asset Inventory service using SQL.
 keywords: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
 tags: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]

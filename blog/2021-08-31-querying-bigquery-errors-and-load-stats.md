@@ -5,7 +5,7 @@ author: Jeffrey Aven
 author_title: Cloud Consultant
 author_url: https://github.com/stackql
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-bq-errors-and-stats.png
+image: /img/blog/infraql-bq-errors-and-stats.png
 description: This article demonstrates some queries you can run using StackQL to bring back live statistics from Big Query as well as detail regarding encountered during the loading of data into Big Query.
 keywords: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
 tags: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]

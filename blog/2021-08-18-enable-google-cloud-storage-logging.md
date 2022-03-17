@@ -6,7 +6,7 @@ author_title: Cloud Consultant
 author_url: https://github.com/stackql
 hide_table_of_contents: false
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-gcs-logging-to-bq.png
+image: /img/blog/infraql-gcs-logging-to-bq.png
 description: This post demonstrates how to enable logging for a Google Cloud Storage bucket and analyze usage logs in Big Query using StackQL - a new, SQL based approach to deploying and querying cloud resources.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, logging, bigquery]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, logging, bigquery]

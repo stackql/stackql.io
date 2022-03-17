@@ -5,7 +5,7 @@ author: Jeffrey Aven
 author_title: Cloud Consultant
 author_url: https://github.com/stackql
 author_image_url: https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-gcs-public-access-prevention.png
+image: /img/blog/infraql-gcs-public-access-prevention.png
 description: This article shows how to enable public access prevention on Google Cloud Storage (GCS) buckets using StackQL - a SQL based approach to deploying and querying cloud assets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, cloud security, CSPM]
 tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS, cloud security, CSPM]
