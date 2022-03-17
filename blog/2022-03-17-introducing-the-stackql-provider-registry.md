@@ -15,6 +15,8 @@ tags: [stackql, stackql provider registry, multicloud, asset management, cloud s
 <meta property="article:published_time" content="2022-03-17" />
 </head>
 
+<time datetime="2022-03-17" />
+
 > Multi cloud visibility, SecOps, FinOps, DevOps made easy  
 
 Today marks a significant epoch in the evolution of the InfraQL/StackQL project.  The StackQL provider registry allows contributors to add support for different providers (major cloud, alt cloud and SaaS providers) using a no-code approach.  Developers simply add extensions to the providers OpenAPI spec using configuration documents (currently supporting `yaml` and `json` – with future support for `toml` and `hcl`).  These extensions allow StackQL to map an ORM to provider services, resources, and methods.  
