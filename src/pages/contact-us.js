@@ -51,30 +51,38 @@ const ContactForm = props => {
 const SmViewportContactDetails = () => {
   return (
     <div className={clsx('container', 'margin-top--lg', 'text--center', 'addressDetails')}>
-    <div className={clsx('row')}>
-    <div className={clsx('col', 'col--12')}>
-    {contactusPageData.body.address.line1}
-    </div>
-    </div>
-    <div className={clsx('row')}>
-    <div className={clsx('col', 'col--12')}>
-    {contactusPageData.body.address.line2}
-    </div>
-    </div>
-    <div className={clsx('row')}>
-    <div className={clsx('col', 'col--12')}>
-    <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>      
-    <span><i class="fas fa-phone"></i>{' '}{contactusPageData.body.address.phone}</span>
-    </Link>
-    </div>
-    </div>
-    <div className={clsx('row')}>
-    <div className={clsx('col', 'col--12')}>
-    <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
-    <span><i class="fas fa-envelope"></i>{' '}{contactusPageData.body.address.email}</span>
-    </Link>
-    </div>
-    </div>
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12')}>
+        {contactusPageData.body.address.line1}
+        </div>
+      </div>
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12')}>
+        {contactusPageData.body.address.line2}
+        </div>
+      </div>
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12', 'emptyRow')}>
+        </div>
+      </div>
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12')}>
+          <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>      
+            <span><i class="fas fa-phone"></i>{' '}{contactusPageData.body.address.phone}</span>
+          </Link>
+        </div>
+      </div>
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12', 'emptyRow')}>
+        </div>
+      </div>      
+      <div className={clsx('row')}>
+        <div className={clsx('col', 'col--12')}>
+          <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
+            <span><i class="fas fa-envelope"></i>{' '}{contactusPageData.body.address.email}</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
@@ -126,16 +134,16 @@ const LgViewportContactDetails = () => {
       </div>  
     </div>
     </Link>                
-    {/*
-    <div className={clsx('row', 'addressDetails')}>
-      <div className={clsx('col', 'col--1')}>
-        <span><i class="fab fa-twitter"></i></span>
+    <Link className={clsx('contactLink')} to={contactusPageData.body.address.twitterLink}>
+      <div className={clsx('row', 'addressDetails')}>
+        <div className={clsx('col', 'col--1', 'padding--none')}>
+          <span><i class="fab fa-twitter"></i></span>
+        </div>
+        <div className={clsx('col', 'col--11')}>
+          {contactusPageData.body.address.twitter}
+        </div>  
       </div>
-      <div className={clsx('col', 'col--11')}>
-        {contactusPageData.body.address.twitter}
-      </div>  
-    </div>
-    */}   
+    </Link>                
     </div> 
     <div className={clsx('col', 'col--1')}></div>       
     </div>
@@ -173,23 +181,21 @@ export default function ContactUs() {
         />
       </header>
       <main>
-      <MediaQuery maxWidth={996}>
-        {/* contact form */}
-        <ContactForm margin />
-        {/* contact details */}  
-        <SmViewportContactDetails />
-      </MediaQuery>
+        <section className={clsx('sectionContainer')}>
+          <MediaQuery maxWidth={996}>
+            {/* contact form */}
+            <ContactForm margin />
+            {/* contact details */}  
+            <SmViewportContactDetails />
+          </MediaQuery>
 
-      <MediaQuery minWidth={997}>
-        {/* contact details */}  
-        <LgViewportContactDetails />
-        {/* contact form */}
-        <ContactForm />
-      </MediaQuery>
-
-
-      
-      
+          <MediaQuery minWidth={997}>
+            {/* contact details */}  
+            <LgViewportContactDetails />
+            {/* contact form */}
+            <ContactForm />
+          </MediaQuery>
+        </section>
       </main>
     </Layout>
   );

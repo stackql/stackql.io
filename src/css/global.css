@@ -373,6 +373,12 @@ color: 'rgba(255,255,255,.6)';
 }
 */
 
+.sectionContainer {
+    overflow-x: hidden;
+	position: relative;
+}
+
+
 .lgContainer {
 	width: 100%;
 	max-width: 100%;
@@ -519,4 +525,8 @@ html[data-theme='dark'] .contactFormHeading {
 .divtest {
 	border: #000 solid 1px;
 	/* height: 100px; */
+}
+
+.emptyRow {
+	height: 0.5rem;
 }

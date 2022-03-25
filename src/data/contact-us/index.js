@@ -38,7 +38,8 @@ export const contactusPageData = {
             phoneLink: 'tel:+61 (0)3 8658 5880',
             email: 'info@stackql.io',
             emailLink: 'mailto:info@stackql.io',
-            twitter: 'https://twitter.com/stackql',
+            twitter: '@stackql',
+            twitterLink: 'https://twitter.com/stackql',
             map: {
                 mapsApiKey: 'AIzaSyD1DhS73DM65hHWcZTqqrerWbqICO9MuDA', 
                 lat: 37.8153, 
