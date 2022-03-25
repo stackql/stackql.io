@@ -5,6 +5,7 @@ export { default as SectionHeader } from './SectionHeader';
 export { default as HomepageFeatures } from './HomepageFeatures';
 export { default as DownloadLink } from './DownloadLink';
 export { default as DocumentationLink } from './DocumentationLink';
+export { default as Downloads } from './Downloads';
 export { default as DownloadCard } from './DownloadCard';
 export { default as HubspotContactForm } from './HubspotContactForm';
 export { default as StructuredData } from './StructuredData';

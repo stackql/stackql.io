@@ -1,0 +1,24 @@
+.downloads {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0 0;
+    width: 100%;
+  }
+
+@media only screen and (max-width: 768px) {
+    .downloads {
+        padding: 0rem 0 0;
+    }
+}
+
+.downloadDiv {
+    margin-bottom: 0rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .downloadDiv {
+        margin-bottom: 3rem;
+    }
+}
+
+  
