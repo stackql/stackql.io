@@ -1,7 +1,7 @@
 .downloadCard {
     border: 1px solid var(--gamma-light-blue);
     color: var(--gamma-blue);
-    opacity: 0.9;
+    opacity: 1;
     transition:box-shadow .28s ease-in-out, -webkit-box-shadow .28s ease-in-out;
 }
 
