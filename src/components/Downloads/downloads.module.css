@@ -5,8 +5,6 @@
     width: 100%;
 }
 
-
-
 @media only screen and (min-width: 997px) {
     html[data-theme='light'] .downloads {
         background-image: linear-gradient(180deg, #fff 60%, #004165 0%);
