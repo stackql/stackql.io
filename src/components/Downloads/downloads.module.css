@@ -5,10 +5,12 @@
     width: 100%;
 }
 
+
+
 @media only screen and (min-width: 997px) {
-    .downloads {
+    html[data-theme='light'] .downloads {
         background-image: linear-gradient(180deg, #fff 60%, #004165 0%);
-    }
+    }    
 }
 
 @media only screen and (max-width: 768px) {
