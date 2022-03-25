@@ -65,6 +65,12 @@
   }
 }
 
+@media (max-width: 365px) {
+  .title {
+    font-size: 2.75rem;
+  }
+}
+
 .subtitle {
   font-size: 1.5rem;
   color: var(--ifm-color-primary);
