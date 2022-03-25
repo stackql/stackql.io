@@ -83,19 +83,6 @@ const SmViewportContactDetails = () => {
           </Link>
         </div>
       </div>
-      {/*
-      <div className={clsx('row')}>
-        <div className={clsx('col', 'col--12', 'emptyRow')}>
-        </div>
-      </div>      
-      <div className={clsx('row')}>
-        <div className={clsx('col', 'col--12')}>
-          <Link className={clsx('contactLink')} to={contactusPageData.body.address.twitterLink}>
-            <span><i class="fab fa-twitter"></i>{' '}{contactusPageData.body.address.twitter}</span>
-          </Link>
-        </div>
-      </div>
-      */}      
     </div>
   );
 };
