@@ -41,12 +41,16 @@ export default function Features() {
       color='#0F4C81'
       />
       <header>
-        <div className={clsx('margin-top--lg', 'padding-bottom--xl', 'lgContainer', isNormalLayout ? 'divQtrBackgroundBottom' : '')}>
-          <FeaturesHeader data={featuresPageData.header} />
-        </div>
+        <section className={clsx('sectionContainer')}>
+          <div className={clsx('margin-top--lg', 'padding-bottom--xl', 'lgContainer', isNormalLayout ? 'divQtrBackgroundBottom' : '')}>
+            <FeaturesHeader data={featuresPageData.header} />
+          </div>
+        </section>
       </header>
       <main>
-        <FeaturesContent data={featuresPageData.content}/>
+        <section className={clsx('sectionContainer')}>
+          <FeaturesContent data={featuresPageData.content}/>
+        </section>
       </main>
     </Layout>
   );
