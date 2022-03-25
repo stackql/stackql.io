@@ -18,7 +18,7 @@ export const featuresPageData = {
       'okta deployment',
     ],
     header: {
-      title: `<span>Configuration <span style="color:#00af91">as Data</span></span>`,
+      title: `<span>Configuration<br /><span style="color:#00af91">as Data</span></span>`,
       subtitle: "A new approach to querying and provisioning cloud services.",
       label: "FAMILIAR, FUNCTIONAL, FLEXIBLE",
       cards: [
