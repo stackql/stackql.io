@@ -378,6 +378,10 @@ color: 'rgba(255,255,255,.6)';
 	position: relative;
 }
 
+/* left align hamburger menu, override default style */
+.navbar--fixed-top {
+	padding: 0 0 0.5rem 2rem;
+}
 
 .lgContainer {
 	width: 100%;
