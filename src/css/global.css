@@ -383,6 +383,13 @@ color: 'rgba(255,255,255,.6)';
 	padding: 0 0 0.5rem 2rem;
 }
 
+/* documentation headings override default style */
+@media screen and (max-width: 414px) {
+	h1 {
+		font-size: 2.75rem;
+	  }
+}
+
 .lgContainer {
 	width: 100%;
 	max-width: 100%;
