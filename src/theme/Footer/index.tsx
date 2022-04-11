@@ -19,7 +19,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { IconButton } from '@mui/material';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
+
 
 function FooterLink({
   to,
@@ -76,7 +77,8 @@ function Footer(): JSX.Element | null {
     github: "https://github.com/stackql",
   };
   
-  const { isDarkTheme } = useThemeContext();
+  // const { colorMode === 'dark' } = useThemeContext();
+  const {colorMode} = useColorMode();
 
   const {footer} = useThemeConfig();
 
@@ -169,7 +171,7 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <GitHubIcon className="footerSocialIcon" htmlColor={isDarkTheme ? 'white' : 'black'}/>
+            <GitHubIcon className="footerSocialIcon" htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
           </IconButton>
           <IconButton
             className="footerSocialIconButton"
@@ -178,7 +180,7 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <TwitterIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+            <TwitterIcon className={styles.footerSocialIcon} htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
           </IconButton>
           <IconButton
             className="footerSocialIconButton"
@@ -187,7 +189,7 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <LinkedInIcon className={styles.footerSocialIcon} htmlColor={isDarkTheme ? 'white' : 'black'}/>
+            <LinkedInIcon className={styles.footerSocialIcon} htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
           </IconButton>                                
           </div>
           </>
