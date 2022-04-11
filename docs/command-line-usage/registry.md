@@ -1,5 +1,5 @@
 ---
-title: exec
+title: registry
 hide_title: false
 hide_table_of_contents: false
 keywords:
@@ -12,13 +12,13 @@ custom_edit_url: null
 image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
 ---
 
-Command used to run a StackQL query, either as a statement or as a batch of statements from an StackQL script (IQL File).  
+Command used to interact with the StackQL Provider Registry.  
 
 * * * 
 
 ### Syntax
 
-`stackql exec [query] [flags]`
+`stackql registry {subcommand} [{provider} {version}]`
 
 * * *
 
@@ -26,7 +26,9 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 | Argument | Description | Example |
 |--|--|--|
-|`query`|StackQL query to be performed<br/>or command to be executed | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Note that the query must be enclosed in single or double quotes_ |    
+|`subcommand`|Registry operation to be performed<br/>(either `list` or `pull`) | `list` or `pull` |    
+|`provider`|Provider to be installed using `pull` subcommand| `okta` |
+|`version`|Provider version to be installed using `pull` subcommand<br />*(StackQL Provider Document Version)* | `v1` |
 
 
 ### Flags
@@ -48,22 +50,12 @@ see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
 ### Examples
 
-Output query results to the console in table format:
+List available providers in the public registry:
 ```shell
-stackql exec "SHOW services IN google"
+stackql registry list
 ```
 
-Output query results to the console in json format:
+Pull a provider from the public registry:
 ```shell
-stackql exec "SHOW services IN google" -o json
-```
-
-Output query results to a file in json format:
-```shell
-stackql exec "SHOW services IN google" -o json -f services.json
-```
-
-Execute query from an input file (IQL File) outputting the results to a file in json format:
-```shell
-stackql exec -i getservices.iql -o json -f services.json
+stackql registry pull okta v1
 ```
