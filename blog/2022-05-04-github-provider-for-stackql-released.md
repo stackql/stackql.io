@@ -10,10 +10,6 @@ keywords: [github, stackql, stackql provider registry, multicloud, asset managem
 tags: [github, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
-<head>
-<meta name="author" content="Jeffrey Aven" />
-</head>
-
 The __GitHub provider for StackQL__ is now generally available.  This can be used to query resources in GitHub Cloud or GitHub Enterprise, including orgs, teams, users, repositories, branches, pull requests, issues, workflows/actions and much more!  
 
 ### See available providers
