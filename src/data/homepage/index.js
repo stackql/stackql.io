@@ -77,34 +77,34 @@ export const homePageData = {
   },
   features: [
     {
-        title: 'Deploy Cloud Resources',
-        icon: 'fas fa-code',
-        link: '/features',
-        description: (
-          <>
-            Infrastructure-as-Code to deploy and configure cloud infrastructure and applications using a familiar language ... SQL.  Extensible to all cloud and SaaS providers.
-          </>
-        ),
-      },
-      {
-        title: 'Query Cloud Assets',
-        icon: 'fas fa-angle-double-right',
-        link: '/features',
-        description: (
-          <>
-            Use a familiar SQL language to perform interactive queries against cloud providers for inventory, security posture management, compliance, cost optimisation and more
-          </>
-        ),
-      },
-      {
-        title: 'Manage Cloud Resources',
-        icon: 'fas fa-layer-group',
-        link: '/features',
-        description: (
-          <>
-            Manage complete life cycle of cloud and SaaS assets from deployment to termination, including seamlessly handling existing cloud stacks and SaaS applications.
-          </>
-        ),
-      },
+      title: 'Query Multiple Clouds',
+      icon: 'fas fa-angle-double-right',
+      link: '/features',
+      description: (
+        <>
+          Use a familiar SQL language to perform interactive queries against cloud providers for inventory, security posture management, compliance, cost optimisation and more
+        </>
+      ),
+    },
+    {
+      title: 'Deploy Cloud Resources',
+      icon: 'fas fa-code',
+      link: '/features',
+      description: (
+        <>
+          Infrastructure-as-Code to deploy and configure cloud infrastructure and applications using a familiar language ... SQL.  Extensible to all cloud and SaaS providers.
+        </>
+      ),
+    },
+    {
+      title: 'Manage Cloud Resources',
+      icon: 'fas fa-layer-group',
+      link: '/features',
+      description: (
+        <>
+          Manage complete life cycle of cloud and SaaS assets from deployment to termination, including seamlessly handling existing cloud stacks and SaaS applications.
+        </>
+      ),
+    },
   ],
 };
