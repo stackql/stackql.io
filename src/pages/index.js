@@ -5,8 +5,11 @@ import {
   Hero,
   HomepageFeatures,
 } from '../components';
-
+import Head from '@docusaurus/Head';
 import { homePageData } from '../data/homepage';
+
+
+//<meta name="wot-verification" content="38f4ae79b091dc8046a0"/>
 
 export default function Home() {
   // const {siteConfig} = useDocusaurusContext();
@@ -17,6 +20,9 @@ export default function Home() {
       image={homePageData.image}
       keywords={homePageData.keywords}
     >
+      <Head>
+      <meta name="wot-verification" content="38f4ae79b091dc8046a0"/>
+      </Head>
       <Hero data={homePageData.hero} />
       <main>
       <HomepageFeatures data={homePageData.features} />
