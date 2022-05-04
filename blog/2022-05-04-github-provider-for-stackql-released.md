@@ -4,8 +4,8 @@ title: GitHub Provider for StackQL Released
 authors:	
   - jeffreyaven
 draft: false
-image: "/img/blog/stackql-registry-featured-image.png"
-description: The StackQL provider registry allows contributors to add support for different providers (major cloud, alt cloud and SaaS providers) using a no-code approach.
+image: "/img/blog/stackql-provider-for-github-released.png"
+description: The StackQL provider for GitHub is now available, you can use this provider to query public and protected resources in GitHub.
 keywords: [github, stackql, stackql provider registry, multicloud, asset management, cloud security]
 tags: [github, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
