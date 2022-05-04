@@ -33,7 +33,7 @@ const DownloadLink = props => {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg';
     downloadIcon = 'fab fa-apple';
   } else if (os === 'Windows') {
-    downloadUrl = 'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi';
     downloadIcon = 'fab fa-windows';
   } else if (os === 'Chrome OS') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip';
