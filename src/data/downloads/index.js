@@ -30,12 +30,12 @@ export const downloadsPageData = {
           description: 'x86 and x64',
           buttons: [
             {
-              url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.msi',
+              url:  'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi',
               text: 'Download MSI',
               icon: 'fas fa-download',
             },
             {
-              url:  'https://releases.stackql.io/stackql/latest/infraql_windows_amd64.zip',
+              url:  'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.zip',
               text: 'Download ZIP',
               icon: 'fas fa-download',
             },    
