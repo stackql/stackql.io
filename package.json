@@ -22,6 +22,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fortawesome/fontawesome-free": "^6.0.0-beta3",
+    "@iconify/react": "^3.2.1",
     "@mdx-js/react": "^1.6.21",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.5",

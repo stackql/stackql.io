@@ -15,12 +15,10 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { IconButton } from '@mui/material';
 import { useColorMode } from '@docusaurus/theme-common';
 
+import { Icon } from '@iconify/react';
 
 function FooterLink({
   to,
@@ -75,6 +73,7 @@ function Footer(): JSX.Element | null {
     linkedin: "https://www.linkedin.com/company/stackql",
     twitter: "https://twitter.com/stackql",
     github: "https://github.com/stackql",
+    discord: "https://discord.com/invite/xVXZ9d5NxN",
   };
   
   // const { colorMode === 'dark' } = useThemeContext();
@@ -171,7 +170,7 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <GitHubIcon className="footerSocialIcon" htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
+              <Icon icon="akar-icons:github-fill" width="24" color={colorMode === 'dark' ? 'white' : ''} />
           </IconButton>
           <IconButton
             className="footerSocialIconButton"
@@ -180,7 +179,7 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <TwitterIcon className={styles.footerSocialIcon} htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
+              <Icon icon="akar-icons:twitter-fill" width="24" color={colorMode === 'dark' ? 'white' : ''} />
           </IconButton>
           <IconButton
             className="footerSocialIconButton"
@@ -189,8 +188,17 @@ function Footer(): JSX.Element | null {
             target="_blank"
             rel="noopener"
             >
-            <LinkedInIcon className={styles.footerSocialIcon} htmlColor={colorMode === 'dark' ? 'white' : 'black'}/>
-          </IconButton>                                
+              <Icon icon="fa:linkedin-square" width="24" color={colorMode === 'dark' ? 'white' : ''} />
+          </IconButton>     
+          <IconButton
+            className="footerSocialIconButton"
+            href={socialLinks.discord}
+            size="large"
+            target="_blank"
+            rel="noopener"
+            >
+            <Icon icon="mdi:discord" color={colorMode === 'dark' ? 'white' : ''} />
+          </IconButton>
           </div>
           </>
         )}
