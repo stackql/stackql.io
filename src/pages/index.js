@@ -8,9 +8,6 @@ import {
 import Head from '@docusaurus/Head';
 import { homePageData } from '../data/homepage';
 
-
-//<meta name="wot-verification" content="38f4ae79b091dc8046a0"/>
-
 export default function Home() {
   // const {siteConfig} = useDocusaurusContext();
   return (
