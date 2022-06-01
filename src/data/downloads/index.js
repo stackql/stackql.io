@@ -48,7 +48,7 @@ export const downloadsPageData = {
           description: '64-bit AMD and ARM',
           buttons: [
             {
-              url:  'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg',
+              url:  'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg',
               text: 'Download PKG',
               icon: 'fas fa-download',
             },
