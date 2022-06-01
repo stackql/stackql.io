@@ -49,6 +49,6 @@ Or clean up resources using:
 DELETE FROM aws.ec2.instances WHERE …;
 ```
 
-The StackQL beta version supporting the provider registry is available for [__Mac (arm and amd)__](https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg) and [__Linux__](https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip), with a Windows version coming in the next few weeks.  
+The StackQL beta version supporting the provider registry is available for [__Mac (arm and amd)__](https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg) and [__Linux__](https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip), with a Windows version coming in the next few weeks.  
 
 Providers are currently available for Google and Okta, see [__StackQL Provider Registry repo__](https://github.com/stackql/stackql-provider-registry) and [__Developer Guide__](https://github.com/stackql/stackql/blob/main/docs/registry_contribution.md).  We are encouraging developers to contribute – we would be happy to assist, just raise an issue or a PR.

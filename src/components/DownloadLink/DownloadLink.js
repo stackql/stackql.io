@@ -30,7 +30,7 @@ const DownloadLink = props => {
   let downloadUrl = '';
   let downloadIcon = '';
   if (os === 'Mac OS') {
-    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg';
+    downloadUrl = 'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg';
     downloadIcon = 'fab fa-apple';
   } else if (os === 'Windows') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi';
