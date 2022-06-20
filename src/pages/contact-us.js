@@ -65,7 +65,7 @@ const SmViewportContactDetails = () => {
         <div className={clsx('col', 'col--12', 'emptyRow')}>
         </div>
       </div>
-      <div className={clsx('row')}>
+      {/* <div className={clsx('row')}>
         <div className={clsx('col', 'col--12')}>
           <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>      
             <span><i class="fas fa-phone"></i>{' '}{contactusPageData.body.address.phone}</span>
@@ -75,7 +75,7 @@ const SmViewportContactDetails = () => {
       <div className={clsx('row')}>
         <div className={clsx('col', 'col--12', 'emptyRow')}>
         </div>
-      </div>      
+      </div>       */}
       <div className={clsx('row')}>
         <div className={clsx('col', 'col--12')}>
           <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
@@ -92,15 +92,15 @@ const LgViewportContactDetails = () => {
     <div className={clsx('container', 'margin-bottom--xl', 'margin-top--xl')}>
     <div className={clsx('row')}>
     <div className={clsx('col', 'col--1')}></div>
-    {/* phone */}
+    {/* email */}
     <div className={clsx('col', 'col--3')}>
-    <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>
+    <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
       <div className={clsx('row', 'addressDetails')}>
         <div className={clsx('col', 'col--1', 'padding--none')}>
-          <span><i class="fas fa-phone"></i></span>
+          <span><i class="fas fa-envelope"></i></span>
         </div>
         <div className={clsx('col', 'col--11')}>
-          {contactusPageData.body.address.phone}
+          {contactusPageData.body.address.email}
         </div>  
       </div>        
       </Link>
@@ -122,27 +122,17 @@ const LgViewportContactDetails = () => {
       </div>  
     </div>        
     </div>
-    {/* email and twitter */}
+    {/* twitter */}
     <div className={clsx('col', 'col--3')}>
-    <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
+    <Link className={clsx('contactLink')} to={contactusPageData.body.address.twitterLink}>
     <div className={clsx('row', 'addressDetails')}>
       <div className={clsx('col', 'col--1', 'padding--none')}>
-        <span><i class="fas fa-envelope"></i></span>
+        <span><i class="fab fa-twitter"></i></span>
       </div>
       <div className={clsx('col', 'col--11')}>
-        {contactusPageData.body.address.email}
+        {contactusPageData.body.address.twitter}
       </div>  
     </div>
-    </Link>                
-    <Link className={clsx('contactLink')} to={contactusPageData.body.address.twitterLink}>
-      <div className={clsx('row', 'addressDetails')}>
-        <div className={clsx('col', 'col--1', 'padding--none')}>
-          <span><i class="fab fa-twitter"></i></span>
-        </div>
-        <div className={clsx('col', 'col--11')}>
-          {contactusPageData.body.address.twitter}
-        </div>  
-      </div>
     </Link>                
     </div> 
     <div className={clsx('col', 'col--1')}></div>       

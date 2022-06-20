@@ -37,6 +37,11 @@ const sidebars = {
     },
     {
       type: 'link',
+      label: 'Providers',
+      href: '/providers',
+    },
+    {
+      type: 'link',
       label: 'Blog',
       href: '/blog',
     },

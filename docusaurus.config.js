@@ -106,32 +106,34 @@ const config = {
       },
       items: [
         {
-          href: '/features',
+          to: '/features',
+          activeBasePath: 'features',
           label: 'Features',
           position: 'left',
         },
         {
-          href: '/downloads',
+          to: '/downloads',
+          activeBasePath: 'downloads',
           label: 'Downloads',
           position: 'left',
         },        
         {
           to: 'docs',
-          activeBaseRegex: '^((?!/blog).)*$',
+          //activeBaseRegex: '^((?!/blog).)*$',
           label: 'Documentation',
           position: 'left',
         },
+        {
+          to: '/providers',
+          label: 'Providers',
+          position: 'left',
+        },        
         {
           to: 'blog',
           label: 'Blog',
           activeBasePath: 'blog',
           position: 'left',
         },
-        {
-          href: '/contact-us',
-          label: 'Contact us',
-          position: 'left',
-        },        
         {
           href: 'https://github.com/stackql',
           position: 'right',
@@ -178,13 +180,17 @@ const config = {
               to: '/docs',
             },
             {
+              label: 'Providers',
+              to: 'https://registry.stackql.io/',
+            },
+            {
               label: 'Blog',
               to: '/blog',
             },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} StackQL Studios (ABN 65 656 147 054)`,
+      copyright: `© ${new Date().getFullYear()} StackQL Studios`,
     },
     colorMode: {
       // using user system preferences, instead of the hardcoded defaultMode

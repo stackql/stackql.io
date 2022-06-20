@@ -541,3 +541,27 @@ html[data-theme='dark'] .contactFormHeading {
 .emptyRow {
 	height: 0.5rem;
 }
+
+.providerDocColumn {
+	width: calc(50% - var(--ifm-spacing-horizontal));
+	float: left;
+	padding-left: var(--ifm-list-margin);
+}
+
+@media screen and (max-width: 600px) {
+	.providerDocColumn {
+	  width: 100%;
+	}
+  }
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+}
