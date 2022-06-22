@@ -63,8 +63,8 @@ this would return something like...
 The provider and public objects can be queried without authentication as shown here:  
 
 ```
-AUTH_STR='{"github": { "type": "null_auth" }}'
-stackql shell --auth="${AUTH_STR}"
+AUTH='{"github": { "type": "null_auth" }}'
+stackql shell --auth="${AUTH}"
 ```
 
 you can now enumerate services, resources, attributes and methods in the `github` provider using the `SHOW` and `DESCRIBE` meta commands, for instance:  
@@ -163,8 +163,8 @@ Accessing protected resources requires authentication using a Personal Access to
 
 ```
 export GITHUB_CREDS=$(echo -n 'yourgithubusername:ghp_YOURPERSONALACCESSTOKEN' | base64)
-AUTH_STR='{ "github": { "type": "basic", "credentialsenvvar": "GITHUB_CREDS" } }'
-stackql shell --auth="${AUTH_STR}"
+AUTH='{ "github": { "type": "basic", "credentialsenvvar": "GITHUB_CREDS" } }'
+stackql shell --auth="${AUTH}"
 ```
 
 Now you are able to access protected resources, for example:  
