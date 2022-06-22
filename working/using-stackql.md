@@ -23,17 +23,21 @@ StackQL has several usage modes, these include: the StackQL interactive shell, t
 ### Using the StackQL Interactive Shell
 The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/docs/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
 
-The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](https://registry.stackql.io/)) for information about provider authentication:
+The StackQL shell can be invoked using the shell command as shown below:
 
 ```shell
 # Launching the StackQL Interactive Shell
-stackql shell --auth="${AUTH}"
+stackql shell
 ```
-Once in a shell authenticated to a cloud provider, you can begin running StackQL queries (`SELECT` queries or DDL - Infrastructure as Code - operations).
+Once in the shell and authenticated to a cloud provider (see [`AUTH`](/docs/language-spec/auth)), you can begin running StackQL queries (`SELECT` queries or DDL - Infrastructure as Code - operations).
 
-By default the StackQL shell will return tabular results, however `json`, `csv` and `text` output formats are available using the `--output` flag, see [Output Modes](/docs/getting-started/output-modes).  
+By default the StackQL shell will return tabular results, however this can be changed to return results in `json` or `csv` format using the `--output` flag, as shown below:
 
-You can change the color scheme for the StackQL shell using the `--colorscheme` flag, as shown below:  
+```shell
+# Json Output Example
+stackql.exe shell --output json
+```
+You can change the color scheme for the StackQL shell using the `--colorscheme` flag, as shown below:
 
 ```shell
 # Changing the Shell Color Scheme

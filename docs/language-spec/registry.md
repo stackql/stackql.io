@@ -45,8 +45,8 @@ REGISTRY { LIST | PULL <provider> <version>};
 REGISTRY LIST;
 ```
 ### Install a provider
-```sql
-REGISTRY PULL okta v1;
+```
+REGISTRY PULL okta v0.1.1;
 ```
 <!--
 <Gist id="9b9985dbf8163ade22b71f2ccf20cb51" 

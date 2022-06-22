@@ -1,7 +1,7 @@
 ---
 slug: kubernetes-provider-for-stackql-released
 title: Kubernetes Provider for StackQL Released
-hide_table_of_contents: true
+hide_table_of_contents: false
 authors:	
   - jeffreyaven
 draft: false
@@ -21,11 +21,11 @@ Complete provider documentation for all of the Kubernetes resources, properties 
 
 Here are the steps to get started with the Kubernetes provider:  
 
-### Setup
+## Setup
 
 If you are using a proxy ([`kubectl proxy`](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)), follow these instructions:
 
-#### Using a proxy
+### Using a proxy
 
 1. Open an interactive shell (authentication will be handled using the proxy and your `.kube/config`):  
 
@@ -52,25 +52,37 @@ and cluster_addr = 'localhost:8080'
 order by name asc limit 3;
 ```
 
-#### Direct cluster access
+### Direct cluster access
 
 1. Generate an access token for your cluster, see [Access Clusters Using the Kubernetes API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#without-kubectl-proxy).
 
-2. Export the token to a variable and supply this as the provider authentication for StackQL:  
+2. Generate a certificate bundle for your cluster using the following code (for MacOS or Linux):  
+
+```bash
+kubectl get secret -o jsonpath="{.items[?(@.type==\"kubernetes.io/service-account-token\")].data['ca\.crt']}" | base64 -i --decode > k8s_cert_bundle.pem
+```
+
+:::note
+
+Alternatively, you could add the `--tls.allowInsecure=true` argument to the `stackql` command, it is not recommended however. 
+
+:::
+
+3. Export the token to a variable and supply this as the provider authentication for StackQL:  
 
 ```bash
 export K8S_TOKEN='eyJhbGciOi...'
 AUTH='{ "k8s": { "type": "api_key", "valuePrefix": "Bearer ", "credentialsenvvar": "K8S_TOKEN" } }'
-./stackql shell --auth="${AUTH}" --tls.allowInsecure=true
+./stackql shell --auth="${AUTH}" --tls.CABundle k8s_cert_bundle.pem
 ```
 
-3. Pull the latest `k8s` provider for StackQL:
+4. Pull the latest `k8s` provider for StackQL:
 
 ```
 REGISTRY PULL k8s v0.1.1;
 ```
 
-4. Run some queries (provide the `cluster_addr` as a `WHERE` clause parameter):  
+5. Run some queries (provide the `cluster_addr` as a `WHERE` clause parameter):  
 
 ```sql
 select name, namespace, uid, creationTimestamp 
