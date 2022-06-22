@@ -27,8 +27,8 @@ Here are the steps to get started with the Netlify provider:
 
 ```bash
 export NETLIFY_TOKEN=your_personal_access_token
-AUTH_STR='{ "netlify": { "type": "api_key", "valuePrefix": "Bearer ", "credentialsenvvar": "NETLIFY_TOKEN" } }'
-./stackql shell --auth="${AUTH_STR}"
+AUTH='{ "netlify": { "type": "api_key", "valuePrefix": "Bearer ", "credentialsenvvar": "NETLIFY_TOKEN" } }'
+./stackql shell --auth="${AUTH}"
 ```
 
 ### Install the `netlify` provider
