@@ -33,7 +33,7 @@ type="show"
 
 ```sql
 SHOW [ EXTENDED ]
-{ PROVIDERS | SERVICES | RESOURCES | METHODS | AUTH | INSERT INTO <resource> }
+{ PROVIDERS | SERVICES | RESOURCES | METHODS | INSERT INTO <resource> }
 [ { IN | FROM } { <provider> | <service> | <resource> } ]
 [ { LIKE <pattern> | WHERE <expression> } ];
 ```

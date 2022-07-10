@@ -33,7 +33,7 @@ type="registry"
 &nbsp;  
 
 ```sql
-REGISTRY { LIST | PULL <provider> <version>};
+REGISTRY { LIST [<provider>] | PULL <provider> <version>};
 ```
 
 * * *
@@ -41,9 +41,16 @@ REGISTRY { LIST | PULL <provider> <version>};
 ## Examples
 
 ### List available providers
+Retrieves the list of the latest versions of each available provider.  
 ```sql
 REGISTRY LIST;
 ```
+### List all versions for a specific provider
+Retrieves the list of all available versions of a specific provider.    
+```sql
+REGISTRY LIST google;
+```
+
 ### Install a provider
 ```
 REGISTRY PULL okta v0.1.1;
