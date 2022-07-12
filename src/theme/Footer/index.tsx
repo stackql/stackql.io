@@ -74,6 +74,7 @@ function Footer(): JSX.Element | null {
     twitter: "https://twitter.com/stackql",
     github: "https://github.com/stackql",
     discord: "https://discord.com/invite/xVXZ9d5NxN",
+    slack: "https://join.slack.com/t/stackqlcommunity/shared_invite/zt-1cbdq9s5v-CkY65IMAesCgFqjN6FU6hg",    
   };
   
   // const { colorMode === 'dark' } = useThemeContext();
@@ -199,6 +200,15 @@ function Footer(): JSX.Element | null {
             >
             <Icon icon="mdi:discord" color={colorMode === 'dark' ? 'white' : ''} />
           </IconButton>
+          <IconButton
+            className="footerSocialIconButton"
+            href={socialLinks.slack}
+            size="large"
+            target="_blank"
+            rel="noopener"
+            >
+              <Icon icon="fa:slack" width="24" color={colorMode === 'dark' ? 'white' : ''} />
+          </IconButton>          
           </div>
           </>
         )}
