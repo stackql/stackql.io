@@ -1,5 +1,5 @@
 ---
-title: srv (Server)
+title: srv
 hide_title: false
 hide_table_of_contents: false
 keywords:
@@ -90,7 +90,10 @@ AUTH='{ "github": { "type": "basic", "credentialsenvvar": "GITHUB_CREDS" } }'
 Now start the server in one terminal.  
 
 ```bash
-stackql srv --auth="${AUTH}" --pgsrv.address=0.0.0.0 --pgsrv.port=$PGPORT --pgsrv.tls='{ "keyFilePath": "'${PGSSLSRVKEY}'", "certFilePath": "'${PGSSLROOTCERT}'", "clientCAs": [ "'${CLIENT_CERT}'" ] }'
+stackql srv --auth="${AUTH}" \
+--pgsrv.address=0.0.0.0 \
+--pgsrv.port=$PGPORT \
+--pgsrv.tls='{ "keyFilePath": "'${PGSSLSRVKEY}'", "certFilePath": "'${PGSSLROOTCERT}'", "clientCAs": [ "'${CLIENT_CERT}'" ] }'
 ```
 
 In another terminal, connect to the server using the `psql` command line client.  
