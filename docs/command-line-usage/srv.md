@@ -34,7 +34,7 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 |--|--|
 |`--pgsrv.address`|Address the server is listening on (typically `0.0.0.0`)|
 |`--pgsrv.port`|Port the server is listening on (e.g. `5444`)|
-|`--pgsrv.tls`|mTLS configuration object, see the [example](#Examples) below|
+|`--pgsrv.tls`|mTLS configuration object, see the [example](#examples) below|
 
 :::tip
 
