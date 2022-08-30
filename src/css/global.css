@@ -565,3 +565,12 @@ html[data-theme='dark'] .contactFormHeading {
 		font-size: 1.5rem;
 	}
 }
+
+.footer__items {
+	list-style: none;
+	padding-left: 0;
+}
+
+.footer__title {
+	line-height: 1.5;
+}

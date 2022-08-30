@@ -71,11 +71,13 @@ const config = {
     announcementBar: {
       id: 'support_us',
       content:
-        `<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`,
+        `If you like StackQL, give it a ⭐️ on GitHub or follow us on Twitter ${TwitterSvg}`,
       backgroundColor: '#A9BCD0',
       textColor: '#1A4E82',
       isCloseable: true,
     },
+    announcementBarActive: true,
+    announcementBarLink: "https://github.com/stackql/stackql",    
     hubspot: {
       accountId: '21220110',
     },
@@ -96,7 +98,11 @@ const config = {
       // searchParameters: {},
       //... other Algolia params
     },    
-    hideableSidebar: true,  
+    docs: {
+      sidebar: {
+        hideable: true,
+      }
+    },
     navbar: {
       logo: {
         alt: 'StackQL',

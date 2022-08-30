@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
-import IconExternalLink from '@theme/IconExternalLink';
+import IconExternalLink from '@theme/Icon/ExternalLink';
 import { IconButton } from '@mui/material';
 import { useColorMode } from '@docusaurus/theme-common';
 
