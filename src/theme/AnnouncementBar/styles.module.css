@@ -12,10 +12,7 @@
 .announcementBar {
   display: flex;
   align-items: center;
-  height: var(--docusaurus-announcement-bar-height);
-  background-color: var(--ifm-color-white);
-  color: var(--ifm-color-black);
-  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  height: auto;
 }
 
 html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
@@ -31,13 +28,16 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
   align-self: stretch;
   padding: 0;
   line-height: 0;
+  /*color: var(--ifm-color-white);*/
+  opacity: 1;
 }
 
 .announcementBarContent {
   flex: 1 1 auto;
-  font-size: 85%;
+  font-size: 1.1rem;
   text-align: center;
-  padding: 5px 0;
+  padding: 15px 0;
+  font-weight: bold;
 }
 
 @media print {
@@ -52,12 +52,17 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
 }
 
 @media (min-width: 997px) {
-  :root {
-    --docusaurus-announcement-bar-height: 30px;
-  }
-
   .announcementBarPlaceholder,
   .announcementBarClose {
     flex-basis: 50px;
   }
+}
+
+.announcementBarLink {
+  color: var(--ifm-color-white);
+  width: 100%;
+}
+.announcementBarLink:hover {
+  color: var(--ifm-color-white);
+  text-decoration: none;
 }
