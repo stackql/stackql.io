@@ -75,7 +75,7 @@ const config = {
     announcementBar: {
       id: 'support_us',
       content:
-        `Azure ${azureSvg} and AWS ${awsSvg} providers for StackQL coming soon, stay tuned!`,
+        `${azureSvg} Microsoft Azure provider for StackQL available now, ${awsSvg} AWS coming soon!`,
       //If you like StackQL, give it a ⭐️ on GitHub or follow us on Twitter ${TwitterSvg}
       //<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}
       backgroundColor: '#A9BCD0',
@@ -83,7 +83,7 @@ const config = {
       isCloseable: true,
     },
     announcementBarActive: true,
-    announcementBarLink: "https://github.com/stackql/stackql",    
+    announcementBarLink: "https://registry.stackql.io/",    
     hubspot: {
       accountId: '21220110',
     },
