@@ -57,11 +57,10 @@
 	*/
 	 --ifm-font-family-base: 'Montserrat', sans-serif;
 	 --ifm-font-size-base: 16px;
-	 --ifm-code-font-size: 90%;
+	 --ifm-code-font-size: 95%;
 	 --ifm-background-color: var(--white);
 	 --ifm-color-primary: var(--gamma-dark-blue);
 	 --ifm-code-color: var(--code-blue);
-	 --ifm-code-font-size: 108%;
 	 /* --ifm-color-content: #212529; */
 	 --ifm-color-content: #2d3748;
 	/*--ifm-navbar-link-color: var(--ifm-font-color-base);
