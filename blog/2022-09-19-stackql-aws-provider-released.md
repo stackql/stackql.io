@@ -22,7 +22,9 @@ The initial release of the AWS provider covers EC2, S3, and the [Cloud Control A
 
 Follow the steps below to get started querying AWS in the StackQL interactive command shell:  
 
-## Connect to an authenticated shell
+## Authenticate and Connect
+
+Connect to an authenticated shell using the syntax shown below:   
 
 ```bash
 # AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID should be set as environment variables
@@ -30,7 +32,9 @@ AUTH="{ \"aws\": { \"type\": \"aws_signing_v4\", \"credentialsenvvar\": \"AWS_SE
 stackql shell --auth="${AUTH}"
 ```
 
-## Download the AWS provider from the StackQL Provider Registry
+## Download the AWS provider
+
+Download the AWS provider from the StackQL Provider Registry:    
 
 ```bash
 REGISTRY PULL aws v0.1.3;
@@ -40,11 +44,15 @@ REGISTRY PULL aws v0.1.3;
 
 Explore the AWS provider using StackQL metacommands (such as [__`SHOW`__](/docs/language-spec/show) and [__`DESCRIBE`__](/docs/language-spec/describe)), for example...  
 
-### Show the services available in the StackQL AWS provider
+### Show available services
+
+Show the services available in the StackQL AWS provider:  
 
 ```sql
 SHOW SERVICES IN aws;
 ```
+
+### Show available resources
 
 Show the resources available in the AWS EC2 service (filtered by a fuzzy match on instances):  
 
@@ -81,7 +89,9 @@ SHOW RESOURCES IN aws.ec2 LIKE '%instances%';
 </TabItem>
 </Tabs>
 
-### Show the 'selectable' fields available in a resource
+### Show 'selectable' fields
+
+Show the 'selectable' fields available in a resource:  
 
 <Tabs
   defaultValue="iql"
@@ -135,7 +145,9 @@ DESCRIBE EXTENDED aws.ec2.instances;
 </TabItem>
 </Tabs>
 
-### Show the available operations on a resource  
+### Show operations available
+
+Show the available operations on a resource:    
 
 <Tabs
   defaultValue="iql"
@@ -170,9 +182,11 @@ SHOW EXTENDED METHODS IN aws.ec2.instances;
 </TabItem>
 </Tabs>
 
-## Run some queries!
+## Run some queries
 
-### Instances by region (across multiple regions):
+Now that you've identified the available resources and fields let's run some queries!  
+
+### Instances by region (across multiple regions)
 
 <Tabs
   defaultValue="iql"
