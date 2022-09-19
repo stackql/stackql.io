@@ -75,7 +75,7 @@ const config = {
     announcementBar: {
       id: 'support_us',
       content:
-        `${azureSvg} Microsoft Azure provider for StackQL available now, ${awsSvg} AWS coming soon!`,
+        `${azureSvg} Microsoft Azure and ${awsSvg} AWS providers for StackQL available now`,
       //If you like StackQL, give it a ⭐️ on GitHub or follow us on Twitter ${TwitterSvg}
       //<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}
       backgroundColor: '#A9BCD0',
