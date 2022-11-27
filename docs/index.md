@@ -1,5 +1,5 @@
 ---
-title: Welcome!
+title: Documentation
 hide_title: true
 hide_table_of_contents: false
 keywords:
