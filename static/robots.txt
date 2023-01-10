@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://stackql.io/
+
+# Sitemaps
+Sitemap: https://stackql.io/sitemap.xml
