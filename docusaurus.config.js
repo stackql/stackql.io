@@ -39,7 +39,12 @@ const config = {
           trackingID: 'G-M7GH68KJ3F',
           anonymizeIP: true,
         },        
-        sitemap: {},
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/blog/tags/**', '/search'],
+          filename: 'sitemap.xml',
+        },
         pages: {},
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
