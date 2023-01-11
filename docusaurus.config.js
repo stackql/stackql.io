@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const awsSvg = 
@@ -29,7 +29,6 @@ const config = {
     'docusaurus-plugin-hubspot',
     'docusaurus-plugin-smartlook',
   ],
-
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -77,7 +76,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-    announcementBar: {
+      metadata: [
+        {name: 'robots', content: 'index,follow'},
+        {name: 'twitter:site', content: '@stackql'},
+        {name: 'twitter:creator', content: '@stackql'},
+        {name: 'og:type', content: 'website'},
+        {name: 'og:locale', content: 'en_US'},
+        {name: 'og:site_name', content: 'StackQL'},
+      ],
+      announcementBar: {
       id: 'support_us',
       content:
         `${azureSvg} Microsoft Azure and ${awsSvg} AWS providers for StackQL available now`,
@@ -239,3 +246,7 @@ const config = {
 };
 
 module.exports = config;
+function fetchHeadTagsFromAPI() {
+  throw new Error('Function not implemented.');
+}
+
