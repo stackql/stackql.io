@@ -36,7 +36,7 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
   flex: 1 1 auto;
   font-size: 1.1rem;
   text-align: center;
-  padding: 15px 0;
+  padding: 5px 0;
   font-weight: bold;
 }
 
@@ -44,6 +44,13 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
   .announcementBar {
     display: none;
   }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+	.announcementBar {
+		display: none;
+	}
 }
 
 .announcementBarContent a {
