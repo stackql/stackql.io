@@ -27,6 +27,10 @@ const config = {
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
   baseUrlIssueBanner: false,
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en', 'fr', 'pt-BR', 'ko', 'zh-CN'],
+  // },  
   headTags: [
     {
       tagName: 'link',
@@ -82,6 +86,7 @@ const config = {
     '@docusaurus/plugin-ideal-image',
     'docusaurus-plugin-hubspot',
     'docusaurus-plugin-smartlook',
+    '@stackql/docusaurus-plugin-structured-data',
   ],
   presets: [
     [
@@ -149,6 +154,63 @@ const config = {
     },
     announcementBarActive: true,
     // announcementBarLink: "https://registry.stackql.io/",    
+    structuredData: {
+      excludedRoutes: [
+        '/providers',
+      ],
+      verbose: true,
+      organization: {
+        sameAs: [
+          'https://twitter.com/stackql',
+          'https://www.linkedin.com/company/stackql',
+          'https://github.com/stackql',
+          'https://www.youtube.com/@stackql',
+          'https://hub.docker.com/u/stackql',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'info@stackql.io',
+        },
+        logo: {
+          '@type': 'ImageObject',
+          inLanguage: 'en-US',
+          '@id': 'https://stackql.io/#/schema/logo/image/',
+          url: 'https://stackql.io',
+          contentUrl: 'orgLogoContentUrl',
+          width: 0,
+          height: 0,
+          caption: '',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'AU', // country code from https://en.wikipedia.org/wiki/ISO_3166-1
+          postalCode: '3001',
+          streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
+        },
+        duns: '750469226',
+        taxID: 'ABN 65 656 147 054',
+      },
+      website: {
+        inLanguage: 'en-US',
+      },
+      webpage: {
+        inLanguage: 'en-US',
+        datePublished: '2021-07-01',
+      },
+      breadcrumbLabelMap: {
+        'developers': 'Developers',
+        'functions': 'Functions',
+        'aggregate': 'Aggregate',
+        'datetime': 'Date Time',
+        'json': 'JSON',
+        'math': 'Math',
+        'string': 'String',
+        'command-line-usage': 'Command Line Usage',
+        'getting-started': 'Getting Started',
+        'language-spec': 'Language Specification',
+        're': 'Regular Expressions',
+      }
+    },
     hubspot: {
       accountId: '21220110',
     },
@@ -211,6 +273,10 @@ const config = {
           activeBasePath: 'blog',
           position: 'left',
         },
+        // {
+        //   type: 'localeDropdown',
+        //   position: 'left',
+        // },        
         {
           href: 'https://github.com/stackql',
           position: 'right',
