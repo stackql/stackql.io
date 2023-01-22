@@ -4,7 +4,6 @@ title: StackQL Provider for AWS Released
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: The StackQL provider for AWS provides key visibility across the AWS estate for CSPM, asset inventory and analysis, finops and more, as well as our IaC and ops (lifecycle management) functionality.
 keywords: [aws, amazon web services, amazon, stackql, stackql provider registry, multicloud, asset management, cloud security]
