@@ -2322,10 +2322,10 @@
     p-map "^4.0.0"
     webpack-sources "^3.2.2"
 
-"@stackql/docusaurus-plugin-structured-data@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.0.2.tgz#07c92dc5ad3052d385f7889d1a5273dd0c87bfa2"
-  integrity sha512-RtSy623Jxnm/wvVzZWs1mnjpMxqFGL88E8XBbG7g1k6nac9M9/b2Hq5aPJTHR6CIq/XOp8mWeUl0L+hFXTQ2Ag==
+"@stackql/docusaurus-plugin-structured-data@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.1.0.tgz#dd1746afe4fd71342acc460a12bdbb7c58d458ae"
+  integrity sha512-nCtXjWcF4jFbtL2eD/xheZcr40RdV+XXSAZAlFB4W8vlbEj/YNBm+Vu0/fyBUYg0Zj4zQuV7X7wh0GElOTxhvA==
   dependencies:
     jsdom "^21.0.0"
 
@@ -7473,10 +7473,15 @@ punycode@^1.3.2:
   resolved "https://registry.npmjs.org/punycode/-/punycode-1.4.1.tgz"
   integrity sha1-wNWmOycYgArY4esPpSachN1BhF4=
 
-punycode@^2.1.0, punycode@^2.1.1:
+punycode@^2.1.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.2.0.tgz"
   integrity sha512-LN6QV1IJ9ZhxWTNdktaPClrNfp8xdSAYS0Zk2ddX7XsXZAxckMHPCBcHRo0cTcEIgYPRiGEkmji3Idkh2yFtYw==
+
+punycode@^2.1.1:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.0.tgz#f67fa67c94da8f4d0cfff981aee4118064199b8f"
+  integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
 
 pupa@^2.1.1:
   version "2.1.1"

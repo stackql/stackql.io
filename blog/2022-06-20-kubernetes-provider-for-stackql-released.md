@@ -4,7 +4,6 @@ title: Kubernetes Provider for StackQL Released
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-provider-for-k8s-released.png"
 description: The StackQL provider for Kubernetes has been released, you can use this to query node, namespaces, pods, services and more in a k8s cluster.
 keywords: [kubernetes, k8s, cloud native, stackql, stackql provider registry, multicloud, asset management, cloud security]

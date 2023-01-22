@@ -4,7 +4,6 @@ title: New Functions and Azure Provider Available
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-azure-provider-featured-image.png"
 description: The StackQL provider for Azure provides key visibility across the Azure estate for CSPM, asset inventory and analysis, finops and more, as well as our IaC and ops (lifecycle management) functionality.
 keywords: [azure, microsoft, microsoft azure, stackql, stackql provider registry, multicloud, asset management, cloud security]

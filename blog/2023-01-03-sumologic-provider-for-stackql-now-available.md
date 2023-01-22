@@ -4,7 +4,6 @@ title: Sumologic Provider for StackQL Now Available
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-sumologic-provider-featured-image.png"
 description: The StackQL provider for Sumologic is now available, allowing you to query, create, update and delete Sumologic collectors, sources, and more.
 keywords: [stackql, sumologic, multicloud, monitoring, logging, observability, cloud security, analysis, analytics]

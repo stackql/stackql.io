@@ -3,7 +3,6 @@ slug: introducing-the-stackql-provider-registry
 title: Introducing the StackQL Provider Registry
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-registry-featured-image.png"
 description: The StackQL provider registry allows contributors to add support for different providers (major cloud, alt cloud and SaaS providers) using a no-code approach.
 keywords: [stackql, stackql provider registry, multicloud, asset management, cloud security]

@@ -4,7 +4,6 @@ title: StackQL Middleware and Playground Available
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/stackql-cover.png"
 description: The StackQL Middleware Server along with the StackQL Playground App allow users to explore and query resources from API providers using SQL.
 keywords: [stackql, stackql middleware, stackql playground, middleware, stackql provider registry, multicloud, asset management, cloud security]

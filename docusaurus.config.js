@@ -139,7 +139,7 @@ const config = {
         {name: 'robots', content: 'index,follow'},
         {name: 'twitter:site', content: '@stackql'},
         {name: 'twitter:creator', content: '@stackql'},
-        {name: 'og:type', content: 'website'},
+        // {name: 'og:type', content: 'website'},
         {name: 'og:locale', content: 'en_US'},
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
@@ -158,9 +158,27 @@ const config = {
       excludedRoutes: [
         '/providers',
       ],
-      verbose: true,
+      verbose: false,
+      featuredImageDimensions: {
+        width: 1200,
+        height: 627,
+      },
+      authors:{
+        'Jeffrey Aven': {
+          imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
+          sameAs: [
+            'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
+            'https://developers.google.com/community/experts/directory/profile/profile-jeffrey-aven',
+            'https://www.linkedin.com/in/jeffreyaven/',
+            'https://www.crunchbase.com/person/jeffrey-aven',
+            'https://github.com/jeffreyaven',
+            'https://dev.to/jeffreyaven',
+          ],
+        },
+      },
       organization: {
         sameAs: [
+          // wikidata
           'https://twitter.com/stackql',
           'https://www.linkedin.com/company/stackql',
           'https://github.com/stackql',

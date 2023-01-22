@@ -4,7 +4,6 @@ title: Cloud security and inventory analysis with StackQL and Jupyter
 hide_table_of_contents: false
 authors:	
   - jeffreyaven
-draft: false
 image: "/img/blog/stackql-jupyter-featured-image.png"
 description: StackQL can be used with Jupyter to provide valuable insights into your cloud and SaaS estates, whether for security posture management, cross-cloud entitlements reporting, cost optimization, or asset/inventory management.
 keywords: [stackql, jupyter, python, ipython, multicloud, asset management, cloud security, analysis, analytics]
