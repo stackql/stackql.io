@@ -2322,10 +2322,10 @@
     p-map "^4.0.0"
     webpack-sources "^3.2.2"
 
-"@stackql/docusaurus-plugin-structured-data@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.2.0.tgz#688ac5012cc5c98604a4a6aa95e3c44388cf1633"
-  integrity sha512-LM30DRqgZSU4szbYrgTG0p1O2wEJc3gIhcdGzPu3iuxmkpR6PPsRVPnmGTre8lM7O0fr5KYKFyTNyxKyCwqeoA==
+"@stackql/docusaurus-plugin-structured-data@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.2.1.tgz#b4959ad6806d83af691e7e640562a6ea2111af23"
+  integrity sha512-FSDIpKO95hloOe+KH0gdAoCaZ82TPeW7u5FcTboPASBgWUzSG0ZNEnNuzX+NavjZbFD9SqsIbw1RDBatnPIS2Q==
   dependencies:
     jsdom "^21.0.0"
 
