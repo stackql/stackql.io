@@ -139,7 +139,6 @@ const config = {
         {name: 'robots', content: 'index,follow'},
         {name: 'twitter:site', content: '@stackql'},
         {name: 'twitter:creator', content: '@stackql'},
-        // {name: 'og:type', content: 'website'},
         {name: 'og:locale', content: 'en_US'},
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
@@ -165,6 +164,8 @@ const config = {
       },
       authors:{
         'Jeffrey Aven': {
+          authorId: '1',
+          url: 'https://www.linkedin.com/in/jeffreyaven/',
           imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
           sameAs: [
             'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
@@ -192,16 +193,19 @@ const config = {
         logo: {
           '@type': 'ImageObject',
           inLanguage: 'en-US',
-          '@id': 'https://stackql.io/#/schema/logo/image/',
-          url: 'https://stackql.io',
-          contentUrl: 'orgLogoContentUrl',
-          width: 0,
-          height: 0,
-          caption: '',
+          '@id': 'https://stackql.io/#logo',
+          url: 'https://stackql.io/img/stackql-cover.png',
+          contentUrl: 'https://stackql.io/img/stackql-cover.png',
+          width: 1440,
+          height: 900,
+          caption: 'StackQL - your cloud using SQL',
+        },
+        image: {
+          '@id': 'https://stackql.io/#logo'
         },
         address: {
           '@type': 'PostalAddress',
-          addressCountry: 'AU', // country code from https://en.wikipedia.org/wiki/ISO_3166-1
+          addressCountry: 'AU',
           postalCode: '3001',
           streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
         },
