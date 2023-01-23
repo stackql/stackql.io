@@ -27,7 +27,7 @@
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.5",
     "@mui/styles": "^5.2.3",
-    "@stackql/docusaurus-plugin-structured-data": "^1.1.1",
+    "@stackql/docusaurus-plugin-structured-data": "^1.2.0",
     "@svgr/webpack": "^5.5.0",
     "aos": "^2.3.4",
     "caniuse-lite": "^1.0.30001384",
