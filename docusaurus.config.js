@@ -84,7 +84,7 @@ const config = {
   ],
   plugins: [
     '@docusaurus/plugin-ideal-image',
-    '@stackql/docusaurus-plugin-hubspot',
+    // '@stackql/docusaurus-plugin-hubspot',
     '@stackql/docusaurus-plugin-smartlook',
     '@stackql/docusaurus-plugin-structured-data',
   ],
@@ -233,11 +233,11 @@ const config = {
         're': 'Regular Expressions',
       }
     },
-    hubspot: {
-      accountId: '21220110',
-      async: true,
-      defer: false,
-    },
+    // hubspot: {
+    //   accountId: '21220110',
+    //   async: true,
+    //   defer: true,
+    // },
     image: '/img/stackql-cover.png',        
     smartlook: {
       projectKey: '0b522f879953aea6bcb0f17f0e397f498d8eea32',
