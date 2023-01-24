@@ -84,8 +84,8 @@ const config = {
   ],
   plugins: [
     '@docusaurus/plugin-ideal-image',
-    'docusaurus-plugin-hubspot',
-    'docusaurus-plugin-smartlook',
+    '@stackql/docusaurus-plugin-hubspot',
+    '@stackql/docusaurus-plugin-smartlook',
     '@stackql/docusaurus-plugin-structured-data',
   ],
   presets: [
@@ -235,6 +235,8 @@ const config = {
     },
     hubspot: {
       accountId: '21220110',
+      async: false,
+      defer: false,
     },
     image: '/img/stackql-cover.png',        
     smartlook: {
