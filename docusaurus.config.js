@@ -235,7 +235,7 @@ const config = {
     },
     hubspot: {
       accountId: '21220110',
-      async: false,
+      async: true,
       defer: false,
     },
     image: '/img/stackql-cover.png',        
