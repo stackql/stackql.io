@@ -1,18 +1,19 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import '@fortawesome/fontawesome-free/css/all.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { MdLibraryBooks } from "react-icons/md";
 
 const DocumentationLink = props => {
-  const { styles } = props;
+  const { styles, iconSize } = props;
   const docs = useBaseUrl('/docs');
-  const docIcon = 'fa-solid fa-book';
   return(
     <Link
     className={clsx('button', styles ? styles : 'button--outline button--primary')}
     to={docs}>
-    <span><i class={docIcon}></i></span>&nbsp;&nbsp;Read the Docs
+    <div style={{display: "flex", justifyContent: "center"}}>
+      <MdLibraryBooks size={iconSize}/><span>&nbsp;&nbsp;Read the Docs</span>
+    </div>
     </Link>
   );
 };

@@ -1,5 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
+import { 
+    FaCheckCircle, 
+  } from "react-icons/fa";
+  
 
 const ContentDiv = props => {
     const {title, checks, isRight, id} = props;
@@ -15,7 +19,7 @@ const ContentDiv = props => {
                                     <div className={clsx('col', 'col--12')}>
                                         <li>
                                             <span style={{fontSize: '2rem', color: 'green', verticalAlign: 'middle'}}>
-                                                <i class="fas fa-check-circle"></i>
+                                                <FaCheckCircle />
                                             </span>
                                             <span style={{ marginLeft: '1rem', fontSize: '20px' }}>{check}</span>
                                         </li>

@@ -10,6 +10,12 @@ import {
 import styles from '../components/Hero/hero.module.css';
 import Link from '@docusaurus/Link';
 import MediaQuery from 'react-responsive';
+import { 
+  FaRegEnvelope, 
+  FaRegBuilding,
+  FaTwitter,
+  FaPhone,
+} from "react-icons/fa";
 
 import { contactusPageData } from '../data/contact-us';  
 
@@ -51,6 +57,7 @@ const ContactForm = props => {
 const SmViewportContactDetails = () => {
   return (
     <div className={clsx('container', 'margin-top--lg', 'text--center', 'addressDetails')}>
+      {/* address */}
       <div className={clsx('row')}>
         <div className={clsx('col', 'col--12')}>
         {contactusPageData.body.address.line1}
@@ -65,21 +72,27 @@ const SmViewportContactDetails = () => {
         <div className={clsx('col', 'col--12', 'emptyRow')}>
         </div>
       </div>
-      {/* <div className={clsx('row')}>
+      {/* phone */}
+      <div className={clsx('row')}>
         <div className={clsx('col', 'col--12')}>
-          <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>      
-            <span><i class="fas fa-phone"></i>{' '}{contactusPageData.body.address.phone}</span>
+          <Link className={clsx('contactLink')} to={contactusPageData.body.address.phoneLink}>   
+            <div style={{display: "flex", justifyContent: "center"}}>
+              <FaPhone size={25}/><span>&nbsp;&nbsp;{contactusPageData.body.address.phone}</span>
+            </div>
           </Link>
         </div>
       </div>
       <div className={clsx('row')}>
         <div className={clsx('col', 'col--12', 'emptyRow')}>
         </div>
-      </div>       */}
+      </div>
+      {/* email */}      
       <div className={clsx('row')}>
         <div className={clsx('col', 'col--12')}>
           <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
-            <span><i class="fas fa-envelope"></i>{' '}{contactusPageData.body.address.email}</span>
+            <div style={{display: "flex", justifyContent: "center"}}>
+              <FaRegEnvelope size={25}/><span>&nbsp;&nbsp;{contactusPageData.body.address.email}</span>
+            </div>
           </Link>
         </div>
       </div>
@@ -97,7 +110,7 @@ const LgViewportContactDetails = () => {
     <Link className={clsx('contactLink')} to={contactusPageData.body.address.emailLink}>
       <div className={clsx('row', 'addressDetails')}>
         <div className={clsx('col', 'col--1', 'padding--none')}>
-          <span><i class="fas fa-envelope"></i></span>
+          <FaRegEnvelope size={30}/>
         </div>
         <div className={clsx('col', 'col--11')}>
           {contactusPageData.body.address.email}
@@ -109,7 +122,7 @@ const LgViewportContactDetails = () => {
     <div className={clsx('col', 'col--4')}>
     <div className={clsx('row', 'addressDetails')}>
       <div className={clsx('col', 'col--1')}>
-        <span><i class="fas fa-building"></i></span>
+        <FaRegBuilding size={30}/>
       </div>
       <div className={clsx('col', 'col--11')}>
         {contactusPageData.body.address.line1}
@@ -127,7 +140,7 @@ const LgViewportContactDetails = () => {
     <Link className={clsx('contactLink')} to={contactusPageData.body.address.twitterLink}>
     <div className={clsx('row', 'addressDetails')}>
       <div className={clsx('col', 'col--1', 'padding--none')}>
-        <span><i class="fab fa-twitter"></i></span>
+        <FaTwitter size={30}/>
       </div>
       <div className={clsx('col', 'col--11')}>
         {contactusPageData.body.address.twitter}
@@ -158,14 +171,14 @@ export default function ContactUs() {
           ctaGroup = {[
             <MediaQuery minWidth={1224}>
               <div className={styles.buttons}>
-                <DownloadLink styles={['button--primary']}/>
+                <DownloadLink iconSize={20} styles={['button--primary']}/>
               </div>
             </MediaQuery>,
             <MediaQuery minWidth={1224}>
               <div style={{width: "2em"}}></div>
             </MediaQuery>,
             <div className={styles.buttons}>
-              <DocumentationLink />
+              <DocumentationLink iconSize={20} />
             </div>
           ]}
         />

@@ -38,6 +38,29 @@
   color: var(--gamma-light-blue);
 }
 
+.learnMoreLinkDark {
+  color: var(--gamma-light-blue);
+  font-size: large;
+  font-weight: bold;  
+}
+
+.learnMoreLinkDark:hover {
+  text-decoration: none;
+  color: #5c6bc0;
+}
+
+.featureHeading {
+  display:flex;
+  justify-content: left;
+  color: #5c6bc0;
+}
+
+.featureHeadingDark {
+  display:flex;
+  justify-content: left;
+  color: var(--gamma-light-blue);
+}
+
 /* Laptops and Desktops */
 /*
 @media (min-width: 1025px){

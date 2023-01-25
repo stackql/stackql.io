@@ -78,7 +78,7 @@ export const homePageData = {
   features: [
     {
       title: 'Query Multiple Clouds',
-      icon: 'fas fa-angle-double-right',
+      icon: 'query',
       link: '/features',
       description: (
         <>
@@ -88,7 +88,7 @@ export const homePageData = {
     },
     {
       title: 'Deploy Cloud Resources',
-      icon: 'fas fa-code',
+      icon: 'deploy',
       link: '/features',
       description: (
         <>
@@ -98,7 +98,7 @@ export const homePageData = {
     },
     {
       title: 'Manage Cloud Resources',
-      icon: 'fas fa-layer-group',
+      icon: 'manage',
       link: '/features',
       description: (
         <>

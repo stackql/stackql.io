@@ -24,14 +24,14 @@ const FeaturesSectionHeader = props => {
         ctaGroup = {[
             <MediaQuery minWidth={1224}>
             <div className={clsx(buttonStyles.buttons)}>
-                <DownloadLink styles={['button--primary']}/>
+                <DownloadLink iconSize={20} styles={['button--primary']}/>
             </div>
             </MediaQuery>,
             <MediaQuery minWidth={1224}>
             <div style={{width: "2em"}}></div>
             </MediaQuery>,
             <div className={clsx(buttonStyles.buttons)}>
-            <DocumentationLink />
+            <DocumentationLink iconSize={20} />
             </div>
         ]}
     />
