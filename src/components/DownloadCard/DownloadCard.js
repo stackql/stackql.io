@@ -1,9 +1,38 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import '@fortawesome/fontawesome-free/css/all.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './downloadcard.module.css';
+import { 
+  DiApple,
+  DiWindows,
+  DiLinux,
+} from "react-icons/di";
+import { 
+  FaDownload,
+} from "react-icons/fa";
+
+const PlatformIcon = props => {
+  const { platform } = props;  
+  switch(platform) {
+    case 'windows':
+      return (
+        <DiWindows />
+      );
+    case 'macos':
+      return (
+        <DiApple />
+      );
+    case 'linux':
+      return (
+        <DiLinux />
+      );
+    default:
+      return (
+        <DiLinux />
+      );
+  }
+}
 
 const DownloadCard = props => {
   const { data, liftUp } = props;
@@ -11,7 +40,9 @@ const DownloadCard = props => {
     <div className={clsx('card', 'card--full-height', styles.downloadCard, liftUp ? styles.downloadCardLift : '')}>
     <div className={clsx('card__header')}>
       <div className={clsx('avatar', 'avatar--vertical')}>
-        <span className={clsx(styles.downloadIcon)}><i class={data.icon}></i></span>
+        <span className={clsx(styles.downloadIcon)}>
+          <PlatformIcon platform={data.platform} />
+        </span>
         <div className={clsx('avatar__intro')}>
           <span className={clsx(styles.downloadTitle)}>{data.title}</span>
           <p className={clsx(styles.downloadDesc)}>{data.description}</p>
@@ -27,7 +58,7 @@ const DownloadCard = props => {
           <Link
           className={clsx('button', 'button--primary button--sm')}
           to={useBaseUrl(button.url)}>
-          <span><i class={button.icon}></i></span>&nbsp;&nbsp;{button.text}
+            <span><FaDownload /></span>&nbsp;&nbsp;{button.text}
           </Link>
         ))}
       </div>

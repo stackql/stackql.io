@@ -25,7 +25,6 @@ export const downloadsPageData = {
     downloadCards: [
         {
           platform: 'windows',
-          icon: 'fab fa-windows',
           title: 'Microsoft Windows',
           description: 'x86 and x64',
           buttons: [
@@ -43,7 +42,6 @@ export const downloadsPageData = {
         },
         {
           platform: 'macos',  
-          icon: 'fab fa-apple',
           title: 'MacOS',
           description: '64-bit AMD and ARM',
           buttons: [
@@ -56,7 +54,6 @@ export const downloadsPageData = {
         },
         {
           platform: 'linux',  
-          icon: 'fab fa-linux',
           title: 'Linux',
           description: 'x86 and x64',
           buttons: [

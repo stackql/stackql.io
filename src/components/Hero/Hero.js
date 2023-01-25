@@ -23,7 +23,7 @@ const Hero = props => {
                 <MediaQuery minWidth={997}>
                   <div className={clsx('row')}>
                     <div className={clsx(styles.buttons)}>
-                      <DownloadLink styles={['button--info', 'button--lg']}/>
+                      <DownloadLink iconSize={25} styles={['button--info', 'button--lg']}/>
                     </div>
                   </div>
                   <div className={clsx('row')}>

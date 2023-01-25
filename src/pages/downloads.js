@@ -27,7 +27,7 @@ export default function Home() {
            align="center"
            ctaGroup = {[
              <div className={clsx(buttonStyles.buttons)}>
-             <DocumentationLink />
+             <DocumentationLink iconSize={20} />
              </div>
          ]}
          />

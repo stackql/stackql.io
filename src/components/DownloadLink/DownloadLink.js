@@ -1,8 +1,35 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import '@fortawesome/fontawesome-free/css/all.css';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import { 
+  DiApple,
+  DiChrome,
+  DiWindows,
+  DiLinux,
+} from "react-icons/di";
+
+const PlatformIcon = props => {
+    const { icon, iconSize } = props;  
+  switch(icon) {
+    case 'Mac OS':
+      return (
+        <DiApple size={iconSize}/>
+      );
+    case 'Windows':
+      return (
+        <DiWindows size={iconSize}/>
+      );
+    case 'Chrome OS':
+      return (
+        <DiChrome size={iconSize}/>
+      );
+    default:
+      return (
+        <DiLinux size={iconSize}/>
+      );
+  }
+}
 
 function getOS() {
   let platform = 'Linux';
@@ -24,30 +51,27 @@ function getOS() {
 }
 
 const DownloadLink = props => {
-  const { styles } = props;
+  const { styles, iconSize } = props;
   const isBrowser = useIsBrowser();
   const os = isBrowser ? getOS() : 'Windows';
   let downloadUrl = '';
-  let downloadIcon = '';
   if (os === 'Mac OS') {
     downloadUrl = 'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg';
-    downloadIcon = 'fab fa-apple';
   } else if (os === 'Windows') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi';
-    downloadIcon = 'fab fa-windows';
   } else if (os === 'Chrome OS') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip';
-    downloadIcon = 'fa-brands fa-chrome';  
   } else {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip';
-    downloadIcon = 'fab fa-linux';
   }
 
   return(
     <Link
     className={clsx('button', styles)}
     to={downloadUrl}>
-    <span><i class={downloadIcon}></i></span>&nbsp;&nbsp;Download for {os}
+    <div style={{display: "flex", justifyContent: "center"}}>
+      <PlatformIcon iconSize={iconSize} icon={os}/><span>&nbsp;&nbsp;Download for {os}</span>
+    </div>    
     </Link>
   );
 };
