@@ -8,7 +8,6 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-custom_edit_url: null
 image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
 ---
 Returns a date string in the format YYYY-MM-DD.  
