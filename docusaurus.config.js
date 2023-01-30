@@ -27,6 +27,7 @@ const config = {
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
   baseUrlIssueBanner: false,
+  trailingSlash: false,
   // i18n: {
   //   defaultLocale: 'en',
   //   locales: ['en', 'fr', 'pt-BR', 'ko', 'zh-CN'],
@@ -157,7 +158,7 @@ const config = {
       excludedRoutes: [
         '/providers',
       ],
-      verbose: false,
+      verbose: true,
       featuredImageDimensions: {
         width: 1200,
         height: 627,
@@ -234,19 +235,20 @@ const config = {
       }
     },
     // hubspot: {
-    //   accountId: '21220110',
+    //   accountId: process.env.HUBSPOT_ACCT_ID,
     //   async: true,
     //   defer: true,
     // },
     image: '/img/stackql-cover.png',        
     smartlook: {
-      projectKey: '0b522f879953aea6bcb0f17f0e397f498d8eea32',
+      projectKey: process.env.SMARTLOOK_PROJECT_KEY,
       useBetaNextGen: true,
     },    
     algolia: {
-      appId: 'HYO8BM1W1Y',
-      apiKey: 'a67a2d399f2e604202e82f8fd284b103',
-      indexName: 'stackql',
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+
       // Optional: see doc section below
       contextualSearch: false,
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
