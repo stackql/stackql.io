@@ -109,6 +109,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: 'docs',
 		      sidebarCollapsible: true, 
+          showLastUpdateTime: true,
           editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
         },
         blog: {
@@ -125,6 +126,7 @@ const config = {
             copyright: `Copyright © ${new Date().getFullYear()} StackQL Studios`,
           },
           showReadingTime: true,
+          editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/global.css'),
