@@ -25,9 +25,9 @@ export const contactusPageData = {
         form: {
             heading: "Send us a message",
             hubspot: {
-                region: 'na1',
-                portalId: '21220110',
-                formId: '85a06e5f-d7aa-46ec-9953-b26ff962eedb',
+                region: process.env.HUBSPOT_REGION,
+                portalId: process.env.HUBSPOT_ACCT_ID,
+                formId: process.env.HUBSPOT_FORM_ID,                
             },
         },    
         address: {
@@ -41,7 +41,7 @@ export const contactusPageData = {
             twitter: '@stackql',
             twitterLink: 'https://twitter.com/stackql',
             map: {
-                mapsApiKey: 'AIzaSyD1DhS73DM65hHWcZTqqrerWbqICO9MuDA', 
+                mapsApiKey: process.env.MAPS_API_KEY, 
                 lat: 37.8153, 
                 long: 144.9565, 
                 defaultZoom: 11, 
