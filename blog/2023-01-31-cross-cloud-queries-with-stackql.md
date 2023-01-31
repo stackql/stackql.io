@@ -60,6 +60,21 @@ GOOGLE_AUTH_FRAGMENT='{ "credentialsfilepath": "'"${GOOGLE_DOWNLOADED_KEY_FILE_P
 export STACKQL_AUTH_CTX='{ "aws":  '"${AWS_AUTH_FRAGMENT}"', "google": '"${GOOGLE_AUTH_FRAGMENT}"'  }'
 ```
 
+<details>
+  <summary>Setting up Provider Auth in PowerShell</summary>
+
+```powershell
+$GOOGLE_DOWNLOADED_KEY_FILE_PATH = "C:\path\to\your\downloaded\key.json"
+
+$AWS_AUTH_FRAGMENT = '{ "type": "aws_signing_v4", "credentialsenvvar": "AWS_SECRET_ACCESS_KEY", "keyIDenvvar": "AWS_ACCESS_KEY_ID" }'
+
+$GOOGLE_AUTH_FRAGMENT = '{ "credentialsfilepath": "' + $GOOGLE_DOWNLOADED_KEY_FILE_PATH + '", "type": "service_account" }'
+
+$env:STACKQL_AUTH_CTX = '{ "aws": ' + $AWS_AUTH_FRAGMENT + ', "google": ' + $GOOGLE_AUTH_FRAGMENT + ' }'
+```
+
+</details>
+
 ## Start a `stackql shell` session
 
 To start an interactive shell session, in the same shell you setup your envrioment variables, run:
