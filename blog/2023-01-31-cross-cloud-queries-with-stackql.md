@@ -4,7 +4,7 @@ title: Cross Cloud Queries with StackQL
 hide_table_of_contents: false
 authors:	
   - kieranrimmer
-image: "/img/blog/stackql-sumologic-provider-featured-image.png"
+image: "/img/blog/cross-cloud-queries-with-stackql.png"
 description: This is a how-to article demonstrating the use of stackql to query across AWS and Google cloud environments and combine data in real-time.
 keywords: [stackql, aws, google, multicloud, observability, cloud security, analysis, analytics]
 tags: [stackql, aws, google, multicloud, observability, cloud security, analysis, analytics]
