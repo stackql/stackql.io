@@ -37,14 +37,14 @@ All the materials required for this exercise are:
 
 First, please do the following:
 
-1. Download and install `stackql` [from our website](https://stackql.io/downloads).
+1. Download and install `stackql` [__from our website__](https://stackql.io/downloads).
 2. For google:
-    - (i) Create and download a Google Service Account Key as per [Google documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). Remember the location of your key file.
-    - (ii) You will need to grant the Service Account at least read, list, create, and delete privileges. For more information about google `iam` and Service Accounts in particular, please consult [the documentation](https://cloud.google.com/iam/docs/service-accounts). For this exercise, grant your service account the [roles/compute.storageAdmin](https://cloud.google.com/iam/docs/understanding-roles#compute.storageAdmin) role would be adequate.
+    - (i) Create and download a Google Service Account Key as per [__Google documentation__](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). Remember the location of your key file.
+    - (ii) You will need to grant the Service Account at least read, list, create, and delete privileges. For more information about google `iam` and Service Accounts in particular, please consult the [__documentation__](https://cloud.google.com/iam/docs/service-accounts). For this exercise, grant your service account the [__`roles/compute.storageAdmin`__](https://cloud.google.com/iam/docs/understanding-roles#compute.storageAdmin) role would be adequate.
 3. For AWS:
-    - (i) Create and download AWS user credentials as per [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). We will require long-lived credentials. In keeping with vendor advice, we strongly recommend against using root user credentials. We have created a dedicated CICD user for this exercise.
-    - (ii) Set up the AWS CLI environment variables [as per documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
-    - (iii) The user will need create / read / delete privileges against `ec2` volumes. This can be done [though the AWS IAM console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in various ways. For example, one can use groups and permission policies. Adding your user to a group with `AmazonEC2FullAccess` will certainly work, although lesser privileges may be adequate.
+    - (i) Create and download AWS user credentials as per [__AWS documentation__](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). We will require long-lived credentials. In keeping with vendor advice, we strongly recommend against using root user credentials. We have created a dedicated CICD user for this exercise.
+    - (ii) Set up the AWS CLI environment variables as per the [__documentation__](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
+    - (iii) The user will need create / read / delete privileges against `ec2` volumes. This can be done though the [__AWS IAM console__](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in various ways. For example, one can use groups and permission policies. Adding your user to a group with `AmazonEC2FullAccess` will certainly work, although lesser privileges may be adequate.
 
 Then, create some shell variables:
 
