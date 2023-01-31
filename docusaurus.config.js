@@ -179,6 +179,14 @@ const config = {
             'https://dev.to/jeffreyaven',
           ],
         },
+        'Kieran Rimmer': {
+          authorId: '2',
+          url: 'https://www.linkedin.com/in/kieranrimmer/',
+          imageUrl: 'https://s.gravatar.com/avatar/068b9fab6cbd66529ae878e6c1b797ed?s=80',
+          sameAs: [
+            'https://github.com/general-kroll-4-life',
+          ],
+        },        
       },
       organization: {
         sameAs: [
