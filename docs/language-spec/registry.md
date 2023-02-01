@@ -32,7 +32,7 @@ type="registry"
 &nbsp;  
 
 ```sql
-REGISTRY { LIST [<provider>] | PULL <provider> <version>};
+REGISTRY { LIST [<provider>] | PULL <provider> [<version>]};
 ```
 
 * * *
@@ -50,11 +50,12 @@ Retrieves the list of all available versions of a specific provider.
 REGISTRY LIST google;
 ```
 
-### Install a provider
+### Install the latest version of a provider
 ```
-REGISTRY PULL okta v0.1.1;
+REGISTRY PULL okta;
 ```
-<!--
-<Gist id="9b9985dbf8163ade22b71f2ccf20cb51" 
-/>
--->
+
+### Install a specific version of a provider
+```
+REGISTRY PULL azure v23.01.00104;
+```

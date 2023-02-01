@@ -231,3 +231,12 @@ select * from dual_cloud_block_storage order by name desc;
 ```
 
 That's it for the scripted demo!
+
+## Get involved
+
+:::info We Need Your Help!
+
+if you find bugs, want features, have tech questions then go to [__github.com/stackql/stackql/issues__](https://github.com/stackql/stackql/issues) and raise the appropriate issue 🙏
+
+:::
+
