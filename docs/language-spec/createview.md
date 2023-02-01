@@ -22,7 +22,7 @@ See also:
 
 ## Syntax
 
-*useStatement::=*
+*creatViewStatement::=*
 
 <RailroadDiagram 
 type="createview"
