@@ -37,8 +37,8 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'Providers',
-      href: '/providers',
+      label: 'Registry',
+      href: '/registry',
     },
     {
       type: 'link',
