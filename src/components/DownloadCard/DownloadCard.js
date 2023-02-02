@@ -46,10 +46,11 @@ const DownloadCard = props => {
         <div className={clsx('avatar__intro')}>
           <span className={clsx(styles.downloadTitle)}>{data.title}</span>
           <p className={clsx(styles.downloadDesc)}>{data.description}</p>
+          {/* <code style={{backgroundColor: 'rgb(55 65 81)', color: 'white', paddingLeft: 10, paddingRight: 10}}>{data.terminalInstall}</code>&nbsp;&nbsp;{data.orText} */}
         </div>
       </div>
     </div>
-    {/*
+    {/*     
     <div className="card__body text--center">{data.description}</div>
     */}
     <div className={clsx('card__footer')}>

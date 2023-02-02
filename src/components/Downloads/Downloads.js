@@ -6,12 +6,14 @@ import {
 
 import styles from './downloads.module.css';
 
-function Download({platform, icon, title, description, buttons}) {
+function Download({platform, icon, title, description, buttons, terminalInstall, orText}) {
   let cardData = {
     platform: platform, 
     icon: icon, 
     description: description, 
     buttons: buttons,
+    terminalInstall: terminalInstall,
+    orText: orText,    
   };
   return (
     <div className={clsx('col', 'col--4', styles.downloadDiv)}>

@@ -299,8 +299,8 @@ const config = {
           position: 'left',
         },
         {
-          to: '/providers',
-          label: 'Providers',
+          to: '/registry',
+          label: 'Registry',
           position: 'left',
         },        
         {

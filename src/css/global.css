@@ -49,13 +49,11 @@
 /* stylelint-disable docusaurus/copyright-header */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
-	/*--ifm-font-family-base: 'Inter', sans-serif;
-	*/
-	/*--ifm-font-family-base: 'Montserrat', sans-serif;
-	*/
-	 --ifm-font-family-base: 'Montserrat', sans-serif;
+	--ifm-font-family-base: 'Inter', sans-serif;
+	/*--ifm-font-family-base: 'Montserrat', sans-serif; */
 	 --ifm-font-size-base: 16px;
 	 --ifm-code-font-size: 95%;
 	 --ifm-background-color: var(--white);
@@ -67,7 +65,8 @@
 	*/
 	 --ifm-navbar-link-color: var(--ifm-menu-color);
 	 --ifm-menu-color-background-active: var(--ifm-color-emphasis-200);
-
+	 --ifm-hero-background-color: var(--white);
+	 --ifm-hero-text-color: var(--gamma-dark-blue);	 
 }
  :root .react-toggle-thumb {
 	 top: -2px !important;
@@ -142,6 +141,23 @@ html[data-theme='dark'] .react-toggle-thumb {
 	/* border-bottom: 0.2px solid var(--dark-2);
 	 */
 }
+
+.hero--primary {
+    --ifm-hero-background-color: var(--ifm-hero-background-color);
+    --ifm-hero-text-color: var(--gamma-dark-blue);
+	font-family: 'Montserrat', sans-serif;
+}
+
+.hero__title {
+	font-family: 'Montserrat', sans-serif;
+}
+
+html[data-theme='dark'] .hero--primary {
+    --ifm-hero-background-color: var(--gamma-dark-blue);
+    --ifm-hero-text-color: var(--white);
+}
+
+
  .header-github-link:hover {
 	 opacity: 0.6;
 }
