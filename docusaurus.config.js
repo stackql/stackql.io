@@ -158,7 +158,7 @@ const config = {
     // announcementBarLink: "https://registry.stackql.io/",    
     structuredData: {
       excludedRoutes: [
-        '/providers',
+        '/registry',
       ],
       verbose: true,
       featuredImageDimensions: {

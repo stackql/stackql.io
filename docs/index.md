@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Welcome to StackQL
 hide_title: true
 hide_table_of_contents: false
 keywords:
@@ -25,10 +25,14 @@ alttext="StackQL"/>
 
 StackQL is a new approach to Cloud Infrastructure coding. With StackQL you can deploy, query and interact with cloud services and resources from major cloud providers using a familiar language...SQL! Querying cloud services in your account is as easy as writing a [`SELECT`](/docs/language-spec/select) statement...
 
-<ImageSwitcher 
-lightImageSrc="/img/infraql-select.png"
-darkImageSrc="/img/infraql-select-darkbg.png"
-alttext="StackQL Shell"/>
+
+```sql
+SELECT instanceState, COUNT(*) as num_instances 
+FROM aws.ec2.instances 
+WHERE region = 'us-west-1' 
+GROUP BY instanceState
+```
+
 
 Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/docs/language-spec/insert) statement...
 
