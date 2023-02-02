@@ -1,5 +1,6 @@
 .downloadCard {
-    border: 1px solid var(--gamma-light-blue);
+    /* border: 1px solid var(--gamma-light-blue); */
+    border: 1px solid var(--gamma-dark-blue);
     color: var(--gamma-blue);
     opacity: 1;
     transition:box-shadow .28s ease-in-out, -webkit-box-shadow .28s ease-in-out;

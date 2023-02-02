@@ -15,13 +15,15 @@
   float: left;
   align-items: center;
   justify-content: center;
+  margin-left: 16px;
 }
 
 .allPlatformsDiv {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding-top: 10px;
+  margin-left: 16px;
 }
 
 .allPlatformsLink {

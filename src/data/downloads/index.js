@@ -27,6 +27,8 @@ export const downloadsPageData = {
           platform: 'windows',
           title: 'Microsoft Windows',
           description: 'x86 and x64',
+          terminalInstall: 'choco install stackql',
+          orText: 'or',
           buttons: [
             {
               url:  'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi',
@@ -44,6 +46,8 @@ export const downloadsPageData = {
           platform: 'macos',  
           title: 'MacOS',
           description: '64-bit AMD and ARM',
+          terminalInstall: 'brew install stackqlx/core/stackql',
+          orText: 'or',
           buttons: [
             {
               url:  'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg',
@@ -56,6 +60,8 @@ export const downloadsPageData = {
           platform: 'linux',  
           title: 'Linux',
           description: 'x86 and x64',
+          terminalInstall: 'curl -L https://tiny.one/stackql | unzip',
+          orText: 'or',
           buttons: [
             {
               url:  'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip',
