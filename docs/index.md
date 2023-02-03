@@ -80,7 +80,7 @@ Using StackQL you can develop your way: declarative or procedural. With an easy 
 
 ## OK, Let's Get Started!
 
-[[Installing StackQL]](/docs/installing-stackql)  
-[[StackQL Resource Hierarchy]](/docs/getting-started/resource-hierarchy)  
-[[Authenticating to a Provider]](/docs/getting-started/authenticating)  
-[[Using StackQL]](/docs/getting-started/using-stackql)  
+[Installing StackQL](/docs/installing-stackql)  
+[StackQL Resource Hierarchy](/docs/getting-started/resource-hierarchy)  
+[Authenticating to a Provider](/docs/getting-started/authenticating)  
+[Using StackQL](/docs/getting-started/using-stackql)  
