@@ -30,7 +30,12 @@ const Hero = props => {
                     <div className={clsx(styles.allPlatformsDiv)}>
                       <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Download for other platforms{' >'}</Link>
                     </div>
+                  </div>
+                  <div className={clsx('row')}>
+                    <div className={clsx(styles.allPlatformsDiv2)}>
+                      <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Install using brew or chocolatey{' >'}</Link>
                     </div>
+                  </div>                  
                 </MediaQuery>
             </div>
             <div className={clsx('col', 'col--6')}>

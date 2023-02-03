@@ -26,6 +26,14 @@
   margin-left: 16px;
 }
 
+.allPlatformsDiv2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 5px; */
+  margin-left: 16px;
+}
+
 .allPlatformsLink {
   background-color: var(--ifm-hero-background-color);
   color: var(--ifm-hero-text-color);  
