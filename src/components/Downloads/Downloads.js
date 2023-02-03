@@ -6,13 +6,15 @@ import {
 
 import styles from './downloads.module.css';
 
-function Download({platform, icon, title, description, buttons, terminalInstall, orText}) {
+function Download({platform, icon, title, description, buttons, detailsText, terminalInstallLine1, terminalInstallLine2, orText}) {
   let cardData = {
     platform: platform, 
     icon: icon, 
     description: description, 
     buttons: buttons,
-    terminalInstall: terminalInstall,
+    detailsText: detailsText,
+    terminalInstallLine1: terminalInstallLine1,
+    terminalInstallLine2: terminalInstallLine2,
     orText: orText,    
   };
   return (

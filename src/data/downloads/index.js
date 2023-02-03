@@ -27,7 +27,8 @@ export const downloadsPageData = {
           platform: 'windows',
           title: 'Microsoft Windows',
           description: 'x86 and x64',
-          terminalInstall: 'choco install stackql',
+          detailsText: 'chocolatey',
+          terminalInstallLine1: 'choco install stackql --version=0.3.265',
           orText: 'or',
           buttons: [
             {
@@ -46,7 +47,9 @@ export const downloadsPageData = {
           platform: 'macos',  
           title: 'MacOS',
           description: '64-bit AMD and ARM',
-          terminalInstall: 'brew install stackqlx/core/stackql',
+          detailsText: 'homebrew',
+          terminalInstallLine1: 'brew tap stackql-ops/stackql',
+          terminalInstallLine2: 'brew install stackql-ops/stackql/stackql',
           orText: 'or',
           buttons: [
             {
@@ -60,7 +63,9 @@ export const downloadsPageData = {
           platform: 'linux',  
           title: 'Linux',
           description: 'x86 and x64',
-          terminalInstall: 'curl -L https://tiny.one/stackql | unzip',
+          detailsText: 'curl',
+          terminalInstallLine1: 'curl -L https://bit.ly/stackql-zip -O \\',
+          terminalInstallLine2: '&& unzip stackql-zip',
           orText: 'or',
           buttons: [
             {

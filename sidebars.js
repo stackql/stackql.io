@@ -15,6 +15,7 @@
 const sidebars = {
   docsSidebar: [
     'index',
+    'installing-stackql',
     {
       type: 'category',
       label: 'Getting Started',

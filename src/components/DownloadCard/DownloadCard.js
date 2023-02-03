@@ -11,6 +11,8 @@ import {
 import { 
   FaDownload,
 } from "react-icons/fa";
+import CodeBlock from '@theme/CodeBlock';
+
 
 const PlatformIcon = props => {
   const { platform } = props;  
@@ -36,6 +38,15 @@ const PlatformIcon = props => {
 
 const DownloadCard = props => {
   const { data, liftUp } = props;
+  
+  let terminalInstallCmd = '';
+  
+  if (data.terminalInstallLine2) {
+    terminalInstallCmd = `${data.terminalInstallLine1}\n${data.terminalInstallLine2}`;
+  } else {
+    terminalInstallCmd = `${data.terminalInstallLine1}`;
+  }
+  
   return(
     <div className={clsx('card', 'card--full-height', styles.downloadCard, liftUp ? styles.downloadCardLift : '')}>
     <div className={clsx('card__header')}>
@@ -46,7 +57,14 @@ const DownloadCard = props => {
         <div className={clsx('avatar__intro')}>
           <span className={clsx(styles.downloadTitle)}>{data.title}</span>
           <p className={clsx(styles.downloadDesc)}>{data.description}</p>
-          {/* <code style={{backgroundColor: 'rgb(55 65 81)', color: 'white', paddingLeft: 10, paddingRight: 10}}>{data.terminalInstall}</code>&nbsp;&nbsp;{data.orText} */}
+          <details>
+          <summary className={clsx(styles.summaryText)}>Install using <code>{data.detailsText}</code></summary>
+          <CodeBlock
+            className={clsx(styles.codeBlock)}
+            showLineNumbers={false}>
+            {`${terminalInstallCmd}`}
+          </CodeBlock>
+          </details>
         </div>
       </div>
     </div>

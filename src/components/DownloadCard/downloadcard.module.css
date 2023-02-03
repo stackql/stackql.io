@@ -41,3 +41,13 @@ html[data-theme='dark'] .downloadTitle {
 html[data-theme='dark'] .downloadDesc {
     color: var(--white) !important;
 }
+
+.codeBlock {
+    padding: 0rem;
+    margin: 0rem 0;
+    text-align: left;
+}
+
+html[data-theme='dark'] .summaryText {
+    color: var(--white) !important;
+}
