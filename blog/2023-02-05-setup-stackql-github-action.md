@@ -1,14 +1,17 @@
 ---
 slug: setup-stackql-github-action
-title: Setup Stackql Github Action
+title: Using the setup-stackql Github Action
 hide_table_of_contents: false
 authors:	
-  - jeffreyaven
+  - yunchengyang
 image: "/img/blog/cross-cloud-queries-with-stackql.png"
 description: This is a how-to article demonstrating the use of setup-stackql github action to run stackql with github actions
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 ---
+
+<details>
+<summary>What is StackQL?</summary>
 
 :::info
 
@@ -16,9 +19,9 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 
 :::
 
-We are proud to announce the release of the `setup-stackql` action available in the GitHub Marketplace.  This is the first of many actions we plan on publishing to be used in GitHub Actions workflows.  
+</details>
 
-`setup-stackql` downloads and installs the latest `stackql` binary in your Actions runner.  Different runner operating systems are fully tested and supported, including `ubuntu-latest`, `windows-latest` and `darwin-latest`.  
+The `setup-stackql` action is now available in the [GitHub Marketplace](https://github.com/marketplace/actions/stackql-studio-setup-stackql).  `setup-stackql` downloads and installs the latest `stackql` binary in your Actions runner.  Different runner operating systems are fully tested and supported, including `ubuntu-latest`, `windows-latest` and `darwin-latest`.  
 
 Embedding `stackql` in an actions workflow can be done for assurance, compliance, and provisioning.  An example workflow is shown here:  
 
@@ -76,6 +79,8 @@ the log outputs showing...
 | stackql-demo-004                                    | RUNNING    |
 |-----------------------------------------------------|------------|
 ```
+
+> additional output types available through the `--output` argument include `json` and `csv`
 
 Source code for the action can be found at [__`stackql/setup-stackql`__](https://github.com/stackql/setup-stackql)  
 
