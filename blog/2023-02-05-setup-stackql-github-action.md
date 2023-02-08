@@ -6,15 +6,15 @@ authors:
   - jeffreyaven
 image: "/img/blog/cross-cloud-queries-with-stackql.png"
 description: This is a how-to article demonstrating the use of setup-stackql github action to run stackql with github actions
-keywords: [stackql, ci/cd, devops, infrastructure, github actions]
-tags: [stackql, devops, infrastructure, github actions, cloud security, ci/cd, devops, infrastructure]
+keywords: [stackql, devops, infrastructure, github actions, cloud security]
+tags: [stackql, devops, infrastructure, github actions, cloud security]
 ---
 
-:: info
+:::info
 
 [__`stackql`__](https://github.com/stackql/stackql) is a dev tool that allows you to query and manage cloud and SaaS resources using SQL, which developers and analysts can use for CSPM, assurance, user access management reporting, IaC, XOps and more.
 
-::
+:::
 
 We are proud to announce the release of the `setup-stackql` action available in the GitHub Marketplace.  This is the first of many actions we plan on publishing to be used in GitHub Actions workflows.  
 
