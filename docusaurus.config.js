@@ -187,6 +187,14 @@ const config = {
             'https://github.com/general-kroll-4-life',
           ],
         },        
+        'Yuncheng Yang': {
+          authorId: '3',
+          url: 'https://www.linkedin.com/in/yuncheng-fabio-yang/',
+          imageUrl: 'https://avatars.githubusercontent.com/u/45674168?v=4',
+          sameAs: [
+            'https://github.com/FabioYyc',
+          ],
+        },        
       },
       organization: {
         sameAs: [
