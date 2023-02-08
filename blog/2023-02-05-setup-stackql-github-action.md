@@ -4,7 +4,7 @@ title: Using the setup-stackql Github Action
 hide_table_of_contents: false
 authors:	
   - yunchengyang
-image: "/img/blog/cross-cloud-queries-with-stackql.png"
+image: "/img/blog/setup-stackql-github-action.png"
 description: This is a how-to article demonstrating the use of setup-stackql github action to run stackql with github actions
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
