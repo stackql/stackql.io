@@ -50,7 +50,6 @@ jobs:
         stackql --version
 
     - name: Prep Google Creds (bash)
-      if: ${{ matrix.os != 'windows-latest' }}
       run: | ## use the secret to create json file
         sudo echo ${{ secrets.GOOGLE_CREDS }} | base64 -d > sa-key.json
 
