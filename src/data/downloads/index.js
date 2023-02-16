@@ -48,8 +48,7 @@ export const downloadsPageData = {
           title: 'MacOS',
           description: '64-bit AMD and ARM',
           detailsText: 'homebrew',
-          terminalInstallLine1: 'brew tap stackql-ops/stackql',
-          terminalInstallLine2: 'brew install stackql-ops/stackql/stackql',
+          terminalInstallLine1: 'brew install stackql',
           orText: 'or',
           buttons: [
             {
