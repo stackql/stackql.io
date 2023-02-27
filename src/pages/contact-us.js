@@ -21,7 +21,7 @@ import { contactusPageData } from '../data/contact-us';
 
 const ContactForm = props => {
   const { margin } = props;
- 
+
   return (
     <div className={clsx('padding-bottom--xl', 'lgContainer', 'divThreeQtrBackgroundBottom', margin ? 'margin-top--xl' : '')}>
     <div className={clsx('row')}>
@@ -185,9 +185,9 @@ export default function ContactUs() {
       </header>
       <main>
         <section className={clsx('sectionContainer')}>
-          <MediaQuery maxWidth={996}>
+        <MediaQuery maxWidth={996}>
             {/* contact form */}
-            <ContactForm margin />
+            {/* <ContactForm margin /> */}
             {/* contact details */}  
             <SmViewportContactDetails />
           </MediaQuery>
@@ -196,7 +196,7 @@ export default function ContactUs() {
             {/* contact details */}  
             <LgViewportContactDetails />
             {/* contact form */}
-            <ContactForm />
+            {/* <ContactForm /> */}
           </MediaQuery>
         </section>
       </main>
