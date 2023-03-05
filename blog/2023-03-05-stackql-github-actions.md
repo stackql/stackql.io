@@ -1,6 +1,6 @@
 ---
 slug: stackql-github-actions
-title: Stackql Github Actions
+title: Use Stackql with Github Actions
 hide_table_of_contents: false
 authors:	
   - yunchengyang
@@ -16,9 +16,7 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 
 :::
 
-## StackQL GitHub Actions
-
-StackQL GitHub Actions include three main actions:
+We provide a set of useful actions that allow you use `StackQL` with GitHub Actions Workflow. These actions are available in the GitHub Marketplace.
 
 ### [`setup-stackql`](https://github.com/stackql/setup-stackql)
 
