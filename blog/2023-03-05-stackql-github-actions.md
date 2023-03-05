@@ -1,6 +1,6 @@
 ---
 slug: stackql-github-actions
-title: "GitHub Actions StackQL Tutorial: Streamlining Your CI/CD Pipeline with StackQL"
+title: StackQL GitHub Actions Tutorial
 hide_table_of_contents: false
 authors:	
   - yunchengyang
