@@ -68,7 +68,7 @@ You can check more example [here](https://github.com/stackql/setup-stackql/blob/
 
 ## Use `stackql-exec` to run StackQL queries in a single step
 
-**`stackql-exec`** action ****provides a simpler and more streamlined way to execute **`StackQL`**
+**`stackql-exec`** action **provides a simpler and more streamlined way to execute**`stackql CLI`
  queries in your GitHub Workflow. You can create a step like this:
 
 ```yaml
@@ -132,7 +132,8 @@ Meanwhile if you are using a credential file, you can create the file via this e
 For `stackql-exec` and `stackql-assert`, you can use the same authentication method as `setup-stackql`, except the authentication object is passed via the `auth_obj_path` or `auth_str`parameter
 - `auth_obj_path` parameter to specify the path to the authentication object that contains the credentials required to authenticate with the data source.
 - `auth_str` parameter to specify the authentication object as a string.
-Example Authentication Object file (auth.json):
+
+##### Example Authentication Object file (auth.json):
 ```json
 {
   "github": {
@@ -141,7 +142,7 @@ Example Authentication Object file (auth.json):
   }
 }
 ```
-Example Usage of `auth_obj_path`:
+##### Example Usage of `auth_obj_path`:
 ```yaml
   - name: Prep Google Creds (bash)
   if: ${{ matrix.os != 'windows-latest' }}
@@ -163,7 +164,7 @@ Example Usage of `auth_obj_path`:
       expected_rows: 4
 ```
 
-Example Usage of `auth_str`:
+##### Example Usage of `auth_str`:
 ```yaml
   - name: Prep Google Creds (bash)
     if: ${{ matrix.os != 'windows-latest' }}
@@ -193,7 +194,7 @@ Example Usage of `auth_str`:
 ## Read More
 ### Check the full demo
 - [stackql-actions-demo](https://github.com/stackql/stackql-actions-demo)
-### Check the GitHub Repos for more examples and documentation
+### Check the GitHub Repos
 - [setup-stackql](https://github.com/stackql/setup-stackql)
 - [stackql-exec](https://github.com/stackql/stackql-exec)
 - [stackql-assert](https://github.com/stackql/stackql-assert)
