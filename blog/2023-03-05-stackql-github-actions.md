@@ -191,7 +191,9 @@ Example Usage of `auth_str`:
       expected_rows: 1
 ```
 ## Read More
-check the GitHub Repo for more examples and documentation
+### check the full demo
+- [stackql-actions-demo](https://github.com/stackql/stackql-actions-demo)
+### check the GitHub Repos for more examples and documentation
 - [setup-stackql](https://github.com/stackql/setup-stackql)
 - [stackql-exec](https://github.com/stackql/stackql-exec)
 - [stackql-assert](https://github.com/stackql/stackql-assert)
