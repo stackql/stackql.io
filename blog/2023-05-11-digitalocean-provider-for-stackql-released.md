@@ -56,12 +56,12 @@ You can use [jsonnet](https://jsonnet.org/) as a configuration, templating langu
 The code for `create_droplets.iql` and `vars.jsonnet` is shown here:  
 
 <Tabs
-  defaultValue="shell"
+  defaultValue="iql"
   values={[
     { label: 'create_droplets.iql', value: 'iql', },
     { label: 'vars.jsonnet', value: 'data', },
-  ]
-}>
+  ]}
+>
 <TabItem value="iql">
 
 ```sql
