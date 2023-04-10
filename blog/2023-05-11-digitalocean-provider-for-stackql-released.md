@@ -4,7 +4,7 @@ title: Digital Ocean provider for StackQL Available
 hide_table_of_contents: false
 authors:	
   - kieranrimmer
-image: "/img/blog/stackql-digitalocean-provider-featured-image"
+image: "/img/blog/stackql-digitalocean-provider-featured-image.png"
 description: The Digital Ocean provider for StackQL enables you to provision, query and manage Digital Ocean assets using StackQL SQL.
 keywords: [stackql, digitalocean, digital ocean, devops, infrastructure, github actions, cloud security, CI/CD]
 tags: [stackql, digitalocean, digital ocean, devops, infrastructure, github actions, cloud security, CI/CD]
