@@ -38,7 +38,7 @@ DESCRIBE [ EXTENDED ] <multipartIdentifier> ;
 
 ## Examples
 
-### Basic DESCRIBE Statement
+### Basic `DESCRIBE` Statement
 Run a basic DESCRIBE statement to list the fields in a resource from an authenticated session.
 
 ```sql
@@ -47,7 +47,7 @@ USE google;
 DESCRIBE compute.instances;
 ```
 
-### Extended DESCRIBE Statement
+### Extended `DESCRIBE` Statement
 Run an extended DESCRIBE statement to list the fields in a resource and their descriptions from an authenticated session.
 
 ```sql

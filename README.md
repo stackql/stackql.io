@@ -7,13 +7,13 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ### Installation
 
 ```
-$ yarn
+yarn
 ```
 
 ### Local Development
 
 ```
-$ yarn start
+yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -21,7 +21,29 @@ This command starts a local development server and opens up a browser window. Mo
 ### Build
 
 ```
-$ yarn build
+export ALGOLIA_API_KEY="<your algolia api key>"
+export ALGOLIA_APP_ID="<your algolia app id>"
+export ALGOLIA_INDEX_NAME="<your algolia index name>"
+export HUBSPOT_ACCT_ID="<your hubspot account id>"
+export HUBSPOT_FORM_ID="<your hubspot form id>"
+export HUBSPOT_REGION="<your hubspot region>"
+export MAPS_API_KEY="<your google maps api key>"
+export SMARTLOOK_PROJECT_KEY="<your smartlook project key>"
+yarn build
+```
+
+or PowerShell:  
+
+```
+$env:ALGOLIA_API_KEY="<your algolia api key>"
+$env:ALGOLIA_APP_ID="<your algolia app id>"
+$env:ALGOLIA_INDEX_NAME="<your algolia index name>"
+$env:HUBSPOT_ACCT_ID="<your hubspot account id>"
+$env:HUBSPOT_FORM_ID="<your hubspot form id>"
+$env:HUBSPOT_REGION="<your hubspot region>"
+$env:MAPS_API_KEY="<your google maps api key>"
+$env:SMARTLOOK_PROJECT_KEY="<your smartlook project key>"
+yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.

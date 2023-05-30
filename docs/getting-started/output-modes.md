@@ -13,9 +13,9 @@ image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-
 See also:  
 [[` exec `]](/docs/command-line-usage/exec) [[` shell `]](/docs/command-line-usage/shell)
 
-Results returned from StackQL queries can be formatted in tabular (table) format, as well as json or csv format.  JSON and csv formats can be used to interchange data with other programs.  The desired output format is configured using the `--output` StackQL flag.
+Results returned from StackQL queries can be formatted in tabular (table) format, as well as json or csv format.  JSON and CSV formats can be used to interchange data with other programs.  The desired output format is configured using the `--output` StackQL flag.
 
-### Table Output Format
+### `table` Output Format
 Results can be formatted in a table format using the `table` value for the `--output` parameter as shown below (this is the default value for the StackQL interactive shell):
 
 ```shell
@@ -35,7 +35,7 @@ and zone = 'australia-southeast1-a'" \
 |---------------------|-----------------|
 ```
 
-### Json Output
+### `json` Output
 Results can be returned in JSON format using the `json` value for the `--output` parameter as shown below, this output format is useful if the results of a query need to be passed to an external process or script:
 
 ```shell
@@ -50,7 +50,7 @@ and zone = 'australia-southeast1-a'" \
 ```
 
 
-### Csv Output
+### `csv` Output
 Results can be returned in JSON format using the `csv` value for the `--output` parameter as shown below, this output format is useful for parsing results in Excel or providing a data interface to another system:
 
 ```shell

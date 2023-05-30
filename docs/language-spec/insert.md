@@ -39,7 +39,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 
 ## Examples
 
-### Basic INSERT statement
+### Basic `INSERT` statement
 Run an INSERT statement to create a Compute Engine Disk resource.  This is a non blocking (asynchronous) invocation.
 
 ```sql
@@ -50,7 +50,7 @@ SELECT 'stackql-demo',
 'test10gbdisk', 10;
 ```
 
-### INSERT statement (blocking)
+### `INSERT` statement (blocking)
 Run an INSERT statement to create a Compute Engine Disk resource.  This is a blocking (synchronous) invocation.
 
 ```sql

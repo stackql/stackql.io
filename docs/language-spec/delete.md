@@ -39,7 +39,7 @@ WHERE <expression> ;
 
 ## Examples
 
-### Basic DELETE Statement
+### Basic `DELETE` Statement
 Run a basic DELETE statement to remove a deployed resource in an authenticated session.
 
 ```sql

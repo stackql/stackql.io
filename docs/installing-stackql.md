@@ -22,8 +22,8 @@ StackQL is available on MacOS via Homebrew and the `pkg` Installer, both ARM (M1
 To install via Homebrew, run the following command in your terminal:  
 
 ```bash
-brew tap stackql-ops/stackql
-brew install stackql-ops/stackql/stackql
+brew tap stackql/tap
+brew install stackql/tap/stackql
 ```
 
 ### `pkg` Installer
@@ -75,10 +75,38 @@ StackQL builds are published to [__DockerHub__](https://hub.docker.com/u/stackql
 docker pull stackql/stackql
 ```
 
-## 🚧 GitHub Actions
+## GitHub Actions
 
-Coming soon!
+[__StackQL GitHub Actions__](https://github.com/stackql/stackql-actions-demo) are available for use in your GitHub Actions workflows.  The following actions are available:
 
+- [__`setup-stackql`__](https://github.com/marketplace/actions/stackql-studios-setup-stackql) - Setup StackQL in your GitHub Actions workflow
+- [__`stackql-exec`__](https://github.com/marketplace/actions/stackql-studios-stackql-exec) - Execute StackQL commands in your GitHub Actions workflow
+- [__`stackql-assert`__](https://github.com/marketplace/actions/stackql-studios-stackql-assert) - Perform unit tests against IaC routines performed with any tool (Terraform, Pulumi, CDK, etc.) in your GitHub Actions workflow
 
+## `pystackql` Python Package
 
+Python wrapper to use StackQL in your Python programs.  The __`pystackql`__ package is available on [__PyPi__](https://pypi.org/project/pystackql/), documentation for the `pystackql` package is available via [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/).  To install the `pystackql` package, run the following command:  
 
+```bash
+pip install pystackql
+```
+
+The following example shows the `pystackql` package used along with `pandas` to run StackQL queries and return the results to a `pandas.DataFrame`:
+
+```python
+from pystackql import StackQL
+import pandas as pd
+region = "ap-southeast-2"
+stackql = StackQL()
+
+query = """
+SELECT instanceType, COUNT(*) as num_instances
+FROM aws.ec2.instances
+WHERE region = '%s'
+GROUP BY instanceType
+""" % (region)
+
+res = stackql.execute(query)
+df = pd.read_json(res)
+print(df)
+```
