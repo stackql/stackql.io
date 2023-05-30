@@ -51,7 +51,6 @@ const sidebars = {
         'language-spec/delete',
         'language-spec/exec',
         'language-spec/registry',
-        'language-spec/use',
         {
           type: 'category',
           label: 'Functions',

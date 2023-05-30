@@ -54,9 +54,8 @@ Run a `SELECT` statement with a column list to return specified fields from a Co
 
 ```sql
 -- Selecting specified fields from a resource
-USE google;
 SELECT id, name 
-FROM compute.instances 
+FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```

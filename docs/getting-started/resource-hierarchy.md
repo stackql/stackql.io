@@ -35,12 +35,9 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-The [`USE`](/docs/language-spec/use) statement can be used to set the default context within a session to a given provider, enabling the omission of the provider as shown below:
-
 ```sql
 -- Selecting all resources deployed within a service using a basic SELECT statement
-USE google;
-SELECT * FROM compute.instances
+SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
@@ -70,8 +67,7 @@ Similarly resources within a service can be listed using the [`SHOW RESOURCES`](
 
 ```sql
 -- Returns all of the available resources in a cloud provider service
-USE google;
-SHOW RESOURCES IN compute;
+SHOW RESOURCES IN google.compute;
 ```  
 
 ### Showing Fields within a Resource
@@ -80,8 +76,7 @@ Fields within a resource can be displayed using a [`DESCRIBE`](/docs/language-sp
 
 ```sql
 -- Returns all of the available fields in a resource
-USE google;
-DESCRIBE compute.instances;
+DESCRIBE google.compute.instances;
 ```
 
 ### Showing Executable Methods for a Resource
