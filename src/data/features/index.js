@@ -132,8 +132,7 @@ SELECT machineType, COUNT(*)
           id: 'operate',
           title: 'Cloud Operations Made Easy.',
           code: `-- Perform operations on cloud resources
-USE google;
-EXEC compute.instances.start
+EXEC google.compute.instances.start
   @instance = 'demo-instance-1',
   @project = 'infraql-demo',
   @zone = 'australia-southeast1-a';

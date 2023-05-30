@@ -43,8 +43,7 @@ Run a basic DESCRIBE statement to list the fields in a resource from an authenti
 
 ```sql
 -- Show the available fields in a Compute Engine resource
-USE google;
-DESCRIBE compute.instances;
+DESCRIBE google.compute.instances;
 ```
 
 ### Extended `DESCRIBE` Statement

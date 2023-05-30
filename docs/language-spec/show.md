@@ -78,11 +78,10 @@ SHOW EXTENDED SERVICES IN google;
 
 
 ### List all resources within a cloud provider service
-List all of the resources available within a given service of a cloud provider.  The USE statement can be used to specify a cloud provider for an StackQL session.  The optional EXTENDED keyword returns the resource description in addition to the resource name.
+List all of the resources available within a given service of a cloud provider.  The optional `EXTENDED` keyword returns the resource description in addition to the resource name.
 ```sql
 -- Returns all resources available in a cloud provider service
-USE google;
-SHOW EXTENDED RESOURCES IN compute;
+SHOW EXTENDED RESOURCES IN google.compute;
 ```
 *__Returns :__*  
 
@@ -99,8 +98,7 @@ SHOW EXTENDED RESOURCES IN compute;
 List all of the methods available for a given resource.
 ```sql
 -- Returns all methods available for a cloud provider resource
-USE google;
-SHOW METHODS IN compute.instances;
+SHOW METHODS IN google.compute.instances;
 ```
 *__Returns :__*  
 
