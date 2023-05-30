@@ -38,18 +38,18 @@ You can change the color scheme for the StackQL shell using the `--colorscheme` 
 # Changing the Shell Color Scheme
 ./stackql shell --colorscheme light
 ```
-### The `.iqlrc` Initialization File
+### The `.stackqlrc` Initialization File
 
-Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the iqlrc initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
+Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the `stackqlrc` initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
 
 ```shell
-# Specifing a Initialization (.iqlrc) File
-./stackql shell --configfile /tmp/.iqlrc
+# Specifing a Initialization (.stackqlrc) File
+./stackql shell --configfile /tmp/.stackqlrc
 ```
 More information about command options is available in the Global Flags topic.
 
 ### Using the StackQL Command Line Utility
-StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.iqlrc` initialization file discussed previously.  
+StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.stackqlrc` initialization file discussed previously.  
 
 The output from the StackQL executable is sent to stdout on the system being used, this output can be parsed within a BASH or PowerShell script.  
 

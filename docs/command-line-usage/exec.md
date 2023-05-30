@@ -32,16 +32,18 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 | Flag | Description |
 |--|--|
-|`-o, --output <outputtype>`|Output mode, valid values include: `table`(default) `json`, `csv` and `text` |
-|`-i, --infile <filename>`|Run query from the specified file if required, if specified any query provided<br/> as an argument will be ignored |
-|`-q, --iqldata <filename>`|Source data for the command using a `json` or `jsonnet` file |
-|`--dryrun`|Dry run flag; preprocessor only will run and output will returned |
-|`-i, --infile <filename>`|Run query from the specified file if required, if specified any query provided<br/> as an argument will be ignored |
-|`-f, --outfile <filename>`|File to output results to if required (default behavior is to output results to the<br/> console only)|
-|`-H, --help`|Print help information|
-|`-v, --verbose`|Run queries in verbose mode with additional output sent to stdout,<br/> if the `-f` option is selected this additional logging information will be written<br/>to the output file along with the query results|
+|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|Output mode, valid values include: `table`(default) `json`, `csv` and `text`, example: `--output json` |
+|<span class="nowrap">`-i`</span><br/><span class="nowrap">`--infile`</span>|Run query from the specified file if required, if specified any query provided as an argument will be ignored, example: `--infile myquery.iql` |
+|<span class="nowrap">`-q`</span><br/><span class="nowrap">`--iqldata`</span>|Source data for the command using a `json` or `jsonnet` file, example: `--iqldata vars.jsonnet`|
+|<span class="nowrap">`--dryrun`</span>|Dry run flag; preprocessor only will run and output will returned |
+|<span class="nowrap">`--var`</span>|External variables (can be environment vars or secrets) sourced by jsonnet files specified using the `--iqldata` flag, example `--var region=${AWS_REGION}`|
+|<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|File to output results to if required (default behavior is to output results to the console only), example `--outfile myoutput.csv`|
+|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Print help information|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected this additional logging information will be written to the output file along with the query results|
+&nbsp;  
+&nbsp;  
+> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
-see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
 * * *
 

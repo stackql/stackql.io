@@ -31,13 +31,17 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 
 | Option | Description |
 |--|--|
-|`--pgsrv.address`|Address the server is listening on (typically `0.0.0.0`)|
-|`--pgsrv.port`|Port the server is listening on (e.g. `5444`)|
-|`--pgsrv.tls`|mTLS configuration object, see the [example](#examples) below|
+|<span class="nowrap">`--pgsrv.address`</span>|Address the server is listening on (typically `0.0.0.0`)|
+|<span class="nowrap">`--pgsrv.port`</span>|Port the server is listening on (e.g. `5444`)|
+|<span class="nowrap">`--pgsrv.tls`</span>|mTLS configuration object, see the [example](#examples) below|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|Log level (default `WARN`)|
+&nbsp;  
+&nbsp;  
+> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
-:::tip
+:::info
 
-You should start the server with the `--auth` argument to enable authenticated queries to your selected providers, see [Authenticating to a Provider](/docs/getting-started/authenticating) for more information.
+You need to set environment variables required for provider authentication before starting the server, see [Using a Provider](/docs/getting-started/using-a-provider) for more information.
 
 :::
 
@@ -82,14 +86,14 @@ export PGSSLMODE=allow
 Set up an authentication object for whatever providers the server will need access to, for instance for GitHub.  
 
 ```bash
-export GITHUB_CREDS=$(echo -n 'youruser:ghp_youraccesstoken' | base64)
-AUTH='{ "github": { "type": "basic", "credentialsenvvar": "GITHUB_CREDS" } }'
+export STACKQL_GITHUB_USERNAME=youruser
+export STACKQL_GITHUB_PASSWORD=ghp_youraccesstoken
 ```
 
 Now start the server in one terminal.  
 
 ```bash
-stackql srv --auth="${AUTH}" \
+stackql srv \
 --pgsrv.address=0.0.0.0 \
 --pgsrv.port=$PGPORT \
 --pgsrv.tls='{ "keyFilePath": "'${PGSSLSRVKEY}'", "certFilePath": "'${PGSSLROOTCERT}'", "clientCAs": [ "'${CLIENT_CERT}'" ] }'

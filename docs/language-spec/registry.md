@@ -22,7 +22,7 @@ See also:
 
 ## Syntax
 
-*useStatement::=*
+*registryStatement::=*
 
 <RailroadDiagram 
 type="registry"

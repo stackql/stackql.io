@@ -589,3 +589,15 @@ html[data-theme='dark'] .contactFormHeading {
 .footer__title {
 	line-height: 1.5;
 }
+
+/* Table formatting */
+
+table td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+table td .nowrap {
+    white-space: nowrap;
+}
+

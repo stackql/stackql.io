@@ -28,7 +28,7 @@ Data can be provided through `json` or `jsonnet` files referenced through the `-
 /* stackql statements ... */
 ```
 
-### Jsonnet Configuration Example
+## Jsonnet Configuration Example
 The following example demonstrates the use of Jsonnet to supply configuration data to an StackQL script.  Data is supplied using the `--iqldata` parameter to the `exec` command as shown below:
 
 ```shell
@@ -37,7 +37,7 @@ stackql exec -i myscript.iql \
 --keyfilepath stackql-demo.json
 ```
 
-#### Jsonnet Data
+### Jsonnet Data
 Using jsonnet you can re-use variables and use arrays within loop structures in your StackQL code.  The following jsonnet would be in the contents of the `vars.jsonnet` file referenced in the `--iqldata` parameter.
 
 ```json
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-#### Referencing Jsonnet Data in an StackQL statement
+### Referencing Jsonnet Data in an StackQL statement
 The following code snippet demonstrates how to reference jsonnet values from an StackQL command.
 
 ```sql
@@ -101,7 +101,54 @@ SELECT
 {{end}}
 ```
 
-### Json Configuration Example
+### Sourcing External Variables using Jsonnet
+The following code snippets demonstrate how to source external variables into a Jsonnet configuration file used to render a StackQL query.  
+
+#### StackQL Query (`env-var-input.iql`)
+
+```sql
+INSERT /*+ AWAIT  */ INTO google.compute.networks
+(
+ project,
+ data__name,
+ data__autoCreateSubnetworks,
+ data__routingConfig
+) 
+SELECT
+'{{ .global.project }}',
+'{{ .network.name }}',
+{{ .network.autoCreateSubnetworks }},
+'{{ .network.routingConfig }}';
+```
+
+#### Jsonnet Data File (`vars.jsonnet`)
+
+```json
+// variables
+local name = 'env-var-input-demo';
+local project = std.extVar("project");
+
+{
+  // global config
+  global: {
+    project: project,
+  },
+  // network
+  network: {
+    autoCreateSubnetworks: false,
+    name: name + '-vpc',
+    routingConfig: {routingMode: 'REGIONAL'}
+  },
+}
+```
+
+#### Command Line Execution
+
+```
+/path/to/stackql exec -i $(pwd)/env-var-input.iql  --var project=stackql-demo --iqldata $(pwd)/vars.jsonnet
+```
+
+## Json Configuration Example
 Simple json can also be used to supply configuration data to an StackQL script as shown below:
 
 ```shell
@@ -110,7 +157,7 @@ stackql exec -i myscript.iql \
 --keyfilepath stackql-demo.json
 ```
 
-#### Json Data
+### Json Data
 
 ```json
 The following json data would be in the contents of the `vars.json` file referenced in the `--iqldata` parameter.
@@ -136,7 +183,7 @@ The following json data would be in the contents of the `vars.json` file referen
 }
 ```
 
-#### Referencing Json Data in an StackQL statement
+### Referencing Json Data in an StackQL statement
 The data shown above would be referenced in an StackQL `INSERT` statement as shown here:
 
 ```sql
@@ -175,7 +222,7 @@ SELECT
 '{{ firewalls[1].allowed }}';
 ```
 
-### Dryrun Option to Preview Command
+## Dryrun Option to Preview Command
 You can use the `--dryrun` option to output a preprocessed StackQL script using your input script and `json` or `jsonnet` data file as shown below:
 
 ```shell
