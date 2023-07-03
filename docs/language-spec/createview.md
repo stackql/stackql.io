@@ -32,7 +32,7 @@ type="createview"
 &nbsp;  
 
 ```sql
-CREATE VIEW AS 
+CREATE [ OR REPLACE ] VIEW AS 
 <selectStatement> [ UNION | JOIN <selectStatement> ];
 ```
 

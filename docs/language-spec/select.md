@@ -31,8 +31,13 @@ type="select"
 &nbsp;
 
 ```sql
-SELECT { * | <fieldList> } FROM <multipartIdentifier>
-WHERE <expression> ;
+SELECT { * | <fieldList> } FROM { <multipartIdentifier> | <joinStatement(s)> }
+WHERE <expression> 
+[ GROUP BY <fieldList> ]
+[ HAVING <expression> ]
+[ ORDER BY <fieldList> [ ASC | DESC ] ]
+[ LIMIT <integer> ]
+[ UNION <selectStatement> ];
 ```
 
 * * *
