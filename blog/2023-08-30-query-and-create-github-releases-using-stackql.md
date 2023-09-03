@@ -4,7 +4,7 @@ title: Query and Create GitHub Releases using StackQL
 hide_table_of_contents: false
 authors:  
   - jeffreyaven
-image: "/img/blog/stackql-googleadmin-provider-featured-image.png"
+image: "/img/blog/stackql-provider-for-github-released.png"
 keywords: [stackql, github, github releases]
 tags: [stackql, github, github releases]
 ---
