@@ -56,7 +56,7 @@ const DownloadLink = props => {
   const os = isBrowser ? getOS() : 'Windows';
   let downloadUrl = '';
   if (os === 'Mac OS') {
-    downloadUrl = 'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg';
+    downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg';
   } else if (os === 'Windows') {
     downloadUrl = 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi';
   } else if (os === 'Chrome OS') {
