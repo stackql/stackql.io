@@ -4,7 +4,7 @@ title: Introducing Table Valued Functions in StackQL
 hide_table_of_contents: false
 authors:  
   - kieranrimmer
-image: "/img/blog/stackql-provider-for-github-released.png"
+image: "/img/blog/stackql-featured-image.png"
 keywords: [stackql, analytics]
 tags: [stackql, analytics]
 ---
