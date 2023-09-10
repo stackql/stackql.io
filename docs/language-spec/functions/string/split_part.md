@@ -40,7 +40,7 @@ A character or characters you want to use as the separator.
 > Only ASCII (1-byte) symbols are supported as separators.  
 
 __*part*__  
-The element (one based) of the split string to return.  
+The element (one based) of the split string to return.  Negative values are used to count backwards from the last element.  
 
 ## Return Value(s)
 Returns a string.
@@ -80,6 +80,40 @@ FROM azure.compute.virtual_machines
 |------|--------------------------------------|-------------------------|-----------------|
 | test | 273769f6-545f-45b2-8ab8-2f14ec5768dc | stackql-ops-cicd-dev-01 | Standard_D2s_v3 |
 |------|--------------------------------------|-------------------------|-----------------|
+```
+
+</TabItem>
+</Tabs>
+
+### Extract the last element from a url
+
+
+<Tabs
+  defaultValue="iql"
+  values={[
+    { label: 'StackQL', value: 'iql', },
+    { label: 'Results', value: 'results', },
+  ]
+}>
+<TabItem value="iql">
+
+```sql
+SELECT
+name,
+SPLIT_PART(network, '/', -1) as network,
+SPLIT_PART(region, '/', -1) as region
+FROM google.compute.vpn_gateways WHERE project = 'stackql-demo';
+```
+
+</TabItem>
+<TabItem value="results">
+
+```
++------------------------+-----------------------+----------------------+
+| name                   | network               | region               |
++------------------------+-----------------------+----------------------+
+| gcp-aws-vpn-gateway    | stackql-shrd-vpc-nw   | australia-southeast1 |
++------------------------+-----------------------+----------------------+
 ```
 
 </TabItem>
