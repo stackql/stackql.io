@@ -100,10 +100,10 @@
 /* Laptops and Desktops */
 @media (min-width: 1158px){
   :root {
-    --terminal-code-font-size: 17px;
-    --terminal-code-line-height: 20px;
+    --terminal-code-font-size: 16px;
+    --terminal-code-line-height: 18px;
     --console-text-font-size: 12px;
-    --console-text-line-height: 24px;
+    --console-text-line-height: 24px;    
   }
   .Terminal-btn {
     width: 12px;
@@ -164,8 +164,8 @@
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1157px) {
   :root {
-    --terminal-code-font-size: 14px;
-    --terminal-code-line-height: 16px;
+    --terminal-code-font-size: 13px;
+    --terminal-code-line-height: 15px;
     --console-text-font-size: 10px;
     --console-text-line-height: 19px;
   }
@@ -228,10 +228,10 @@
 /* Mobile Devices */
 @media (max-width: 480px) {
   :root {
-    --terminal-code-font-size: 10px;
-    --terminal-code-line-height: 11px;
+    --terminal-code-font-size: 9px;
+    --terminal-code-line-height: 10px;
     --console-text-font-size: 7px;
-    --console-text-line-height: 13px;
+    --console-text-line-height: 13px;    
   }
   .Terminal-btn {
     width: 6px;
