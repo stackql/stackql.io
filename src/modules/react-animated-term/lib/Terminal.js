@@ -27,7 +27,7 @@ var prompt2 = _react2.default.createElement(
   '>> '
 );
 
-var keywords = ['SELECT', 'FROM', 'GROUP', 'BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL'];
+var keywords = ['SELECT', 'FROM', 'GROUP', 'BY', 'WHERE', 'AND', 'OR', 'LIKE', 'IN', 'IS', 'NOT', 'NULL', 'HAVING'];
 
 function renderPrompt() {
   return prompt2;
@@ -161,13 +161,23 @@ var Terminal = function Terminal(_ref) {
               { className: 'Terminal-code' },
               renderLines(children)
             ),
+            // completed ? _react2.default.createElement(
+            //   'a',
+            //   { className: btnClassName, onClick: function onClick() {
+            //       return onReplay();
+            //     } },
+            //   'Replay'
+            // ) : null
             completed ? _react2.default.createElement(
               'a',
-              { className: btnClassName, onClick: function onClick() {
-                  return onReplay();
-                } },
-              'Replay'
-            ) : null
+              { 
+              className: btnClassName, 
+              onClick: function() {
+              window.location.reload();
+              } 
+              },
+              'Try Again!'
+              ) : null            
           )
         )
       )

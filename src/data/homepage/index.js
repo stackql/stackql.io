@@ -1,51 +1,18 @@
 import React from 'react';
+import { googleSelect1, googleSelect2 } from './terminals/google';
+import { awsSelect1, awsSelect2 } from './terminals/aws';
+import { azureSelect } from './terminals/azure';
 
-const spinner = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
-const termLines = [
-    {
-        text: 'SELECT machineType, COUNT(*)',
-        cmd: true,
-        delay: 80,
-    },
-    {
-        text: 'FROM google.compute.instances',
-        cmd: true,
-        delay: 80,
-    },
-    {
-        text: 'GROUP BY machineType',
-        cmd: true,
-        delay: 80,
-    },
-    {
-        text: "WHERE zone = 'us-east1-a'",
-        cmd: true,
-        delay: 80,
-    },
-    {
-        text: ' ',
-        cmd: false,
-        repeat: true,
-        repeatCount: 3,
-        frames: spinner.map(function (spinner) {
-        return {
-            text: spinner + ' Running query',
-            delay: 10
-        }
-    })
-    },
-    {
-        text: 
-`+------------------------+
-|  MACHINETYPE   | COUNT |
-+------------------------+
-| n1-standard-1  |   3   |
-| n1-megamem-96  |   8   |
-| c2-standard-60 |   4   |
-+------------------------+`,
-        cmd: false,
-    }
-]
+const getRandomTermLines = () => {
+  const termLinesSets = [
+    googleSelect1,
+    googleSelect2,
+    awsSelect1,
+    awsSelect2,
+    azureSelect,
+  ];
+  return termLinesSets[Math.floor(Math.random() * termLinesSets.length)];
+};
 
 export const homePageData = {
   title: 'Home',
@@ -72,7 +39,8 @@ export const homePageData = {
     ],
     subtitle: 'Provision. Query. Secure.',
     animatedTerm: {
-      termLines: termLines,
+      // termLines: termLines,
+      termLines: getRandomTermLines(),
     },
   },
   features: [
