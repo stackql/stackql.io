@@ -13,16 +13,16 @@ image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 //import Gist from 'react-gist';
 
-Creates a `view` within a session which can be used to represent a long or complex `stackql` query.  
+Creates a `view` or a `materialized view` within a session which can be used to represent a long or complex `stackql` query.  
 
 See also:  
-[[ SELECT ]](/docs/language-spec/select)
+[[ `SELECT` ]](/docs/language-spec/select) [[ `REFRESH` ]](/docs/language-spec/refreshview) [[ `DROP` ]](/docs/language-spec/dropview)
 
 * * * 
 
 ## Syntax
 
-*creatViewStatement::=*
+*createViewStatement::=*
 
 <RailroadDiagram 
 type="createview"
@@ -32,18 +32,11 @@ type="createview"
 &nbsp;  
 
 ```sql
-CREATE [ OR REPLACE ] VIEW AS 
+CREATE [ OR REPLACE ] [ MATERIALIZED ] VIEW <viewName> AS 
 <selectStatement> [ UNION | JOIN <selectStatement> ];
 ```
 
 * * *
-
-:::info
-
-Available in version __`0.3.x`__ and above.
-
-:::
-
 
 ## Examples
 
@@ -68,4 +61,39 @@ SELECT
  size 
 FROM aws.ec2.volumes 
  WHERE region = 'ap-southeast-2';
+```
+
+### Create and use a Materialized View
+```sql
+/* -------------------------- */
+/* create a materialized view */
+/* -------------------------- */
+CREATE MATERIALIZED VIEW vw_ec2_instance_types AS 
+SELECT 
+ memoryInfo, 
+ hypervisor, 
+ autoRecoverySupported, 
+ instanceType, 
+ SPLIT_PART(processorInfo, '\n', 3) as processorArch, 
+ currentGeneration, 
+ freeTierEligible, 
+ hibernationSupported,
+ SPLIT_PART(vCpuInfo, '\n', 2) as vCPUs, 
+ bareMetal, 
+ burstablePerformanceSupported, 
+ dedicatedHostsSupported 
+FROM aws.ec2.instance_types 
+WHERE region = 'us-east-1';
+/* ------------------------- */
+/* use the materialized view */
+/* ------------------------- */
+SELECT 
+ i.instanceId, 
+ i.instanceType, 
+ it.vCPUs, 
+ it.memoryInfo 
+FROM aws.ec2.instances i 
+ INNER JOIN vw_ec2_instance_types it 
+ ON i.instanceType = it.instanceType 
+WHERE i.region = 'us-east-1';
 ```

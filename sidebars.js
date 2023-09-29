@@ -46,10 +46,12 @@ const sidebars = {
         'language-spec/select',
         'language-spec/show',
         'language-spec/describe',
-        'language-spec/createview',
         'language-spec/insert',
         'language-spec/delete',
         'language-spec/exec',
+        'language-spec/createview',
+        'language-spec/refreshview',
+        'language-spec/dropview',        
         'language-spec/registry',
         {
           type: 'category',
