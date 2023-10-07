@@ -10,6 +10,7 @@ const TwitterSvg =
 
 const providersAnnouncement = `${azureSvg} Microsoft Azure and ${awsSvg} AWS providers for StackQL available now`;
 const gitHubStarAccouncement = `<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`;
+const hacktoberfestAccouncement = `<b>🎃 Join us for <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest">Hacktoberfest</a> 🎃`;
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -149,7 +150,7 @@ const config = {
       ],
       announcementBar: {
       id: 'support_us',
-      content: gitHubStarAccouncement,
+      content: hacktoberfestAccouncement,
       backgroundColor: '#A9BCD0',
       textColor: '#1A4E82',
       isCloseable: true,
@@ -322,7 +323,7 @@ const config = {
         //   position: 'left',
         // },        
         {
-          href: 'https://github.com/stackql',
+          href: 'https://github.com/stackql/stackql',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
