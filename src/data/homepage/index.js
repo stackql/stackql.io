@@ -33,9 +33,9 @@ export const homePageData = {
   ],
   hero: {
     title: [
-      'Every Cloud.',
-      'Every Operation.',
-      'One Language.',
+      'Open Source',
+      'Multi Cloud',
+      'Analytics, IaC, more',
     ],
     subtitle: 'Provision. Query. Secure.',
     animatedTerm: {
