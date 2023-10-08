@@ -156,7 +156,7 @@ const config = {
       isCloseable: true,
     },
     announcementBarActive: true,
-    // announcementBarLink: "https://registry.stackql.io/",    
+    announcementBarLink: "https://github.com/stackql/stackql",    
     structuredData: {
       excludedRoutes: [
         '/registry',
