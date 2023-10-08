@@ -10,7 +10,7 @@ const TwitterSvg =
 
 const providersAnnouncement = `${azureSvg} Microsoft Azure and ${awsSvg} AWS providers for StackQL available now`;
 const gitHubStarAccouncement = `<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`;
-const hacktoberfestAccouncement = `<b>🎃 Join us for <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest">Hacktoberfest</a> 🎃`;
+const hacktoberfestAccouncement = `<b>🎃 Join us for <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest">Hacktoberfest</a>`;
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -156,7 +156,7 @@ const config = {
       isCloseable: true,
     },
     announcementBarActive: true,
-    // announcementBarLink: "https://registry.stackql.io/",    
+    announcementBarLink: "https://github.com/stackql/stackql",    
     structuredData: {
       excludedRoutes: [
         '/registry',
