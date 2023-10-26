@@ -78,7 +78,7 @@ This can be run through the `shell` or using an `exec` command as shown here:
 *__Returns :__*  
 
 ```sql
-INSERT INTO compute.instances(
+INSERT INTO google.compute.instances(
   project,
   zone,
   data__machineType,
