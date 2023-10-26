@@ -19,7 +19,7 @@ Results returned from StackQL queries can be formatted in tabular (table) format
 Results can be formatted in a table format using the `table` value for the `--output` parameter as shown below (this is the default value for the StackQL interactive shell):
 
 ```shell
-stackql exec "select id, name from compute.instances \
+stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
 --keyfilepath stackql-demo.json --output table
@@ -39,7 +39,7 @@ and zone = 'australia-southeast1-a'" \
 Results can be returned in JSON format using the `json` value for the `--output` parameter as shown below, this output format is useful if the results of a query need to be passed to an external process or script:
 
 ```shell
-stackql exec "select id, name from compute.instances \
+stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
 --keyfilepath stackql-demo.json --output json
@@ -54,7 +54,7 @@ and zone = 'australia-southeast1-a'" \
 Results can be returned in JSON format using the `csv` value for the `--output` parameter as shown below, this output format is useful for parsing results in Excel or providing a data interface to another system:
 
 ```shell
-stackql exec "select id, name from compute.instances \
+stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
 --keyfilepath stackql-demo.json --output csv
@@ -69,7 +69,7 @@ id,name
 An alternatate delimiter can be specified for the `csv` output format using the `-d` switch as shown below:
 
 ```shell
-stackql exec "select id, name from compute.instances \
+stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
 --keyfilepath stackql-demo.json --output csv -d "|"

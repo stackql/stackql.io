@@ -82,7 +82,7 @@ The following code snippet demonstrates how to reference jsonnet values from an 
 -- create firewall rules
 --
 {{range .firewalls}}
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -187,7 +187,7 @@ The following json data would be in the contents of the `vars.json` file referen
 The data shown above would be referenced in an StackQL `INSERT` statement as shown here:
 
 ```sql
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
