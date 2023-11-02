@@ -155,7 +155,7 @@ const config = {
       textColor: '#1A4E82',
       isCloseable: true,
     },
-    announcementBarActive: true,
+    announcementBarActive: false,
     announcementBarLink: "https://github.com/stackql/stackql",    
     structuredData: {
       excludedRoutes: [
