@@ -22,8 +22,7 @@ StackQL is available on MacOS via Homebrew and the `pkg` Installer, both ARM (M1
 To install via Homebrew, run the following command in your terminal:  
 
 ```bash
-brew tap stackql/tap
-brew install stackql/tap/stackql
+brew install stackql
 ```
 
 ### `pkg` Installer
@@ -64,6 +63,7 @@ Alternatively, you could use `curl` as shown here:
 ```bash
 curl -L https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip -O \
 && unzip stackql_linux_amd64.zip \
+&& chmod +x stackql \
 && ./stackql --version
 ```
 

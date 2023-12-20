@@ -64,7 +64,7 @@ export const downloadsPageData = {
           description: 'x86 and x64',
           detailsText: 'curl',
           terminalInstallLine1: 'curl -L https://bit.ly/stackql-zip -O \\',
-          terminalInstallLine2: '&& unzip stackql-zip',
+          terminalInstallLine2: '&& unzip stackql-zip && chmod +x stackql',
           orText: 'or',
           buttons: [
             {
