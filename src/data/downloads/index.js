@@ -28,7 +28,7 @@ export const downloadsPageData = {
           title: 'Microsoft Windows',
           description: 'x86 and x64',
           detailsText: 'chocolatey',
-          terminalInstallLine1: 'choco install stackql --version=0.3.265',
+          terminalInstallLine1: 'choco install stackql --version=0.5.509',
           orText: 'or',
           buttons: [
             {
