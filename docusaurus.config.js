@@ -168,8 +168,6 @@ const config = {
         '/registry/k8s',
         '/registry/linode',
         '/registry/okta',
-        '/resources',
-        '/resources/githubactions',
       ],
       verbose: true,
       featuredImageDimensions: {
@@ -317,11 +315,6 @@ const config = {
           label: 'Documentation',
           position: 'left',
         },
-        // {
-        //   to: '/registry',
-        //   label: 'Registry',
-        //   position: 'left',
-        // },
         {
           to: '/registry',
           type: 'dropdown',
@@ -366,31 +359,25 @@ const config = {
             },                                                                                                
           ]                      
         },        
-        // {
-        //   to: 'blog',
-        //   label: 'Blog',
-        //   activeBasePath: 'blog',
-        //   position: 'left',
-        // },
         {
           type: 'dropdown',
           label: 'Resources',
           position: 'left',
           items: [
             {
-              to: '/resources/githubactions',
+              href: 'https://github.com/stackql/stackql-actions-demo',
               label: 'GitHub Actions',
-              activeBasePath: 'resources',
             },
             {
               to: 'blog',
               label: 'Blog',
               activeBasePath: 'blog',
             },
-            // {
-            //   to: '/docs/cookbooks',
-            //   label: 'Cookbooks',
-            // },
+            {
+              type: 'doc',
+              docId: '/stackql-cookbooks',
+              label: 'Cookbooks',
+            },
           ],
         },
         // {
