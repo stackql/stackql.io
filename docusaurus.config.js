@@ -318,7 +318,7 @@ const config = {
         {
           to: '/registry',
           type: 'dropdown',
-          label: 'Registry',
+          label: 'Providers',
           position: 'left',
           items: [
             {
