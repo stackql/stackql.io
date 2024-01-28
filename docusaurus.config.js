@@ -160,6 +160,16 @@ const config = {
     structuredData: {
       excludedRoutes: [
         '/registry',
+        '/registry/aws',
+        '/registry/azure',
+        '/registry/digitalocean',
+        '/registry/github',
+        '/registry/google',
+        '/registry/k8s',
+        '/registry/linode',
+        '/registry/okta',
+        '/resources',
+        '/resources/githubactions',
       ],
       verbose: true,
       featuredImageDimensions: {

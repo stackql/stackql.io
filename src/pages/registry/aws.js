@@ -8,21 +8,3 @@ export default function Registry() {
     </Head>
   );
 };
-
-// import React, { useEffect } from 'react';
-// import { useLocation } from '@docusaurus/router';
-
-// export default function Registry() {
-//   const location = useLocation();
-
-//   useEffect(() => {
-//     // Construct the new URL by appending the path suffix to the external base URL
-//     // The replace() function is used to remove '/registry' from the path
-//     const newPathSuffix = location.pathname.replace('/registry', '');
-//     const newUrl = `https://registry.stackql.io${newPathSuffix}`;
-//     window.location.href = newUrl;
-//   }, [location.pathname]); // This effect will re-run if the pathname changes
-
-//   // Render nothing or a loading indicator as the page will redirect
-//   return null;
-// };
