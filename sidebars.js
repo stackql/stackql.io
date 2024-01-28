@@ -127,11 +127,11 @@ const sidebars = {
         },
       ]
     },    
-    {
-      type: 'link',
-      label: 'Cookbooks',
-      href: '/docs/cookbooks',
-    },
+    // {
+    //   type: 'link',
+    //   label: 'Cookbooks',
+    //   href: '/docs/cookbooks',
+    // },
     {
       type: 'link',
       label: 'Blog',
