@@ -368,6 +368,11 @@ const config = {
           position: 'left',
           items: [
             {
+              to: '/resources/githubactions',
+              label: 'GitHub Actions',
+              activeBasePath: 'resources',
+            },
+            {
               to: 'blog',
               label: 'Blog',
               activeBasePath: 'blog',
