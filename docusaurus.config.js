@@ -307,16 +307,76 @@ const config = {
           label: 'Documentation',
           position: 'left',
         },
+        // {
+        //   to: '/registry',
+        //   label: 'Registry',
+        //   position: 'left',
+        // },
         {
           to: '/registry',
+          type: 'dropdown',
           label: 'Registry',
           position: 'left',
+          items: [
+            {
+              label: 'AWS',
+              to: '/registry/aws',
+            },
+            {
+              label: 'Azure',
+              to: '/registry/azure',
+            },
+            {
+              label: 'Google',
+              to: '/registry/google',
+            },
+            {
+              label: 'GitHub',
+              to: '/registry/github',
+            },
+            {
+              label: 'Kubernetes',
+              to: '/registry/k8s',
+            },
+            {
+              label: 'Okta',
+              to: '/registry/okta',
+            },
+            {
+              label: 'DigitalOcean',
+              to: '/registry/digitalocean',
+            },
+            {
+              label: 'Linode',
+              to: '/registry/linode',
+            },
+            {
+              label: '... More',
+              to: '/registry',
+            },                                                                                                
+          ]                      
         },        
+        // {
+        //   to: 'blog',
+        //   label: 'Blog',
+        //   activeBasePath: 'blog',
+        //   position: 'left',
+        // },
         {
-          to: 'blog',
-          label: 'Blog',
-          activeBasePath: 'blog',
+          type: 'dropdown',
+          label: 'Resources',
           position: 'left',
+          items: [
+            {
+              to: 'blog',
+              label: 'Blog',
+              activeBasePath: 'blog',
+            },
+            // {
+            //   to: '/docs/cookbooks',
+            //   label: 'Cookbooks',
+            // },
+          ],
         },
         // {
         //   type: 'localeDropdown',
