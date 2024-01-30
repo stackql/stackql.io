@@ -646,3 +646,16 @@ table td .nowrap {
     top: 2px;
     transform: translateY(-50%);
   }
+
+  .cookbook_tested_on {
+    --docusaurus-tag-list-border: var(--ifm-link-color);
+    text-decoration: none;
+    border-radius: var(--ifm-global-radius);
+    padding: 0.2rem 0.5rem 0.3rem;
+    font-size: 90%;
+    border: 1px solid var(--docusaurus-tag-list-border);
+    transition: border var(--ifm-transition-fast);
+    color: var(--ifm-link-color);
+    text-decoration: var(--ifm-link-decoration);
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  }
