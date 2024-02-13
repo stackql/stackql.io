@@ -52,7 +52,7 @@ export const downloadsPageData = {
           orText: 'or',
           buttons: [
             {
-              url:  'https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg',
+              url:  'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg',
               text: 'Download PKG',
               icon: 'fas fa-download',
             },

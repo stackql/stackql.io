@@ -15,22 +15,13 @@ image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-
 
 In this guide, you'll learn how to query and report Azure activity logs using StackQL, a powerful dev tool that enables querying and deploying cloud infrastructure and resources using SQL syntax.  
 
-:::tip This Guide Will Demonstrate:
-
-- Using Jsonnet with external variables for StackQL query pre-processing
-- Using the [__`JSON_EXTRACT`__](/docs/language-spec/functions/json/json_extract) and [__`SPLIT_PART`__](/docs/language-spec/functions/string/split_part) functions to manipulate response data
-- Using the [__`--output csv`__](/docs/getting-started/output-modes#csv-output) to generate CSV output from a StackQL query
-- Using the interactive [__`stackql shell`__](/docs/command-line-usage/shell) and batch interface [__`stackql exec`__](/docs/command-line-usage/exec)
-- Using aggregate functions with the `GROUP BY` clause
-- Using `JOIN` operators to join fields across different StackQL resources
-
-:::
-
 Tested with <span class="cookbook_tested_on">default sql backend</span> <span class="cookbook_tested_on">macos</span> <span class="cookbook_tested_on">linux</span> <span class="cookbook_tested_on">powershell</span>  
 
 ## Basic query
 
-The basic query is here using the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.
+The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/docs/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
+
+The [__`JSON_EXTRACT`__](/docs/language-spec/functions/json/json_extract) and [__`SPLIT_PART`__](/docs/language-spec/functions/string/split_part) functions are used to manipulate response data.  
 
 ```sql
 <<<jsonnet
@@ -79,11 +70,11 @@ $startDate = (Get-Date).AddDays(-1).ToString("yyyy-MM-ddTHH:mm:ssZ")
 stackql.exe shell --var startdate=$startDate
 ```
 
-You should see a tabular output with columns for: `event_timestamp`, `caller`, `ip_address`, `subscriptionId`, `tenantId`, `resource_group`, `resource_name`, `level`, `action`, `category`, `operation` and `status` 
+You should see a tabular output with columns for: `event_timestamp`, `caller`, `ip_address`, `subscriptionId`, `tenantId`, `resource_group`, `resource_name`, `level`, `action`, `category`, `operation` and `status`.   
 
 ## Generating a CSV report
 
-By saving the StackQL query to a file (`activity_report.iql`), you can produce a `csv` report from the activity query as follows:
+By saving the StackQL query to a file (`activity_report.iql`), you can produce a `csv` report from the activity query as follows (see [__`--output csv`__](/docs/getting-started/output-modes#csv-output) for more information on `stackql` outputs):
 
 ```bash
 # to run on mac or linux
@@ -315,7 +306,7 @@ AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupName eq ''MC_kube-03_aks862a_australiaeast''';
 ```
 
-or using variables from a `jsonnet` block, provided as a file using either the `--iqldata` or `-q` arguments, or as a jsonnet block as shown here:
+or using variables from `jsonnet`, provided as a file using either the `--iqldata` or `-q` arguments, or as a jsonnet block as shown here:
 
 ```sql
 <<<jsonnet
