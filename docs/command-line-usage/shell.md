@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 
 Command used to launch the interactive StackQL Command Shell.  For more information see [Using the Interactive StackQL Shell](/docs/getting-started/using-stackql#using-the-stackql-interactive-shell).

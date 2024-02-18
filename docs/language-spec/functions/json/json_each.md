@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 Table-valued function which returns a table consisting of one row for each array element or object member.
 

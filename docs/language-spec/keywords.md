@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 
 Keywords are reserved words that have significance in the StackQL grammar.  Keywords can be entered in any case (upper, lower or mixed), they are capitalized in all of the examples by convention.  Keywords in StackQL include:

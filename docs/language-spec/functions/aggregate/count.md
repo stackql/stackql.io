@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 Returns the total number of records in a resource or a count of the non `NULL` instances of a column in a grouping.  
 

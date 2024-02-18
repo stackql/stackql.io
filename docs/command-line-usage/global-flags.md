@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 
 Global flags specify runtime program behavior for the StackQL application, these flags are set at the command line when the StackQL application is launched (in either the interactive/shell mode or non-interactive exec mode) or are sourced from the StackQL initialization ([`.stackqlrc`](/docs/getting-started/using-stackql#the-stackqlrc-initialization-file)) file.  Flags include:  
