@@ -1,5 +1,5 @@
 ---
-title: Activity Monitor
+title: Monitoring Azure Activity
 hide_title: true
 hide_table_of_contents: false
 keywords:
@@ -7,15 +7,18 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+  - cspm
+  - azure
+  - microsoft azure
+description: Query and Deploy Azure Cloud Infrastructure and Resources using SQL
+image: "/img/cookbooks/azure/stackql-azure-provider-featured-image.png"
 ---
 
 # Azure Activity Observability using StackQL
 
 In this guide, you'll learn how to query and report Azure activity logs using StackQL, a powerful dev tool that enables querying and deploying cloud infrastructure and resources using SQL syntax.  
 
-Tested with <span class="cookbook_tested_on">default sql backend</span> <span class="cookbook_tested_on">macos</span> <span class="cookbook_tested_on">linux</span> <span class="cookbook_tested_on">powershell</span>  
+Tested with <span class="cookbook_tested_on">embedded sql backend</span> <span class="cookbook_tested_on">macos</span> <span class="cookbook_tested_on">linux</span> <span class="cookbook_tested_on">powershell</span>  
 
 ## Basic query
 

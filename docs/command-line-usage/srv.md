@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 
 Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS.

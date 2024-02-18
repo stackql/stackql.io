@@ -8,7 +8,7 @@ keywords:
   - configuration-as-data
   - cloud inventory
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
-image: https://storage.googleapis.com/stackql-web-assets/blog/stackql-blog-post-featured-image.png
+image: "/img/stackql-featured-image.png"
 ---
 Returns the Julian day - the number of days since noon in Greenwich on November 24, 4714 B.C. [(Proleptic Gregorian calendar)](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).  
 
