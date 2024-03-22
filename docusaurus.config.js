@@ -323,7 +323,7 @@ const config = {
           items: [
             {
               label: 'AWS',
-              to: '/registry/aws',
+              to: '/registry/awscc',
             },
             {
               label: 'Azure',
