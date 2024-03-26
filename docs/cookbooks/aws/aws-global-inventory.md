@@ -62,20 +62,20 @@ Here it is...
   defaultValue="inventory"
   values={[
     { label: 'stackql-aws-inventory.py', value: 'inventory', },
-    { label: 'supported_regions.py', value: 'regions', },
+    { label: 'resources.py', value: 'resources', },
+    { label: 'regions.py', value: 'regions', },
   ]
 }>
 <TabItem value="inventory">
 
 ```python
-from supported_regions import supported_regions
+from regions import supported_regions, regions
+from resources import excluded_resources, resource_filters
 import time
 from pystackql import StackQL
 import pandas as pd
 
-stackql = StackQL(output='pandas', execution_concurrency_limit=-1)
-
-regions = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2', 'ap-south-1', 'ap-northeast-3', 'ap-northeast-2', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ca-central-1', 'eu-central-1', 'eu-west-1', 'eu-west-2', 'eu-west-3', 'eu-north-1', 'sa-east-1']
+stackql = StackQL(output='pandas', page_limit=-1, execution_concurrency_limit=-1)
 
 def pull_stackql_providers():
     providers_df = stackql.execute("SHOW PROVIDERS")
@@ -99,16 +99,20 @@ def get_s3_buckets():
     """)['bucket_name'].values.tolist()
     for bucket in buckets:
         regional_domain_query = f"""
-            SELECT regional_domain_name
+            SELECT 
+            bucket_name,
+            bucket_location
             FROM awscc.s3.bucket WHERE region = 'us-east-1' AND data__Identifier = '{bucket}'
         """
         print(f"Checking location for {bucket}...")
         regional_domain_name_df = stackql.execute(regional_domain_query)
         # Extract the region from the domain name
         if not regional_domain_name_df.empty:
-            regional_domain_name = regional_domain_name_df.iloc[0]['regional_domain_name']
-            region = regional_domain_name.split('.')[2]
-            new_row = {'bucket': bucket, 'region': region}
+            bucket_name = regional_domain_name_df['bucket_name'].values[0]
+            bucket_location = regional_domain_name_df['bucket_location'].values[0]
+            print("bucket_name: ", bucket_name)
+            print("bucket_location: ", bucket_location)
+            new_row = {'bucket': bucket_name, 'region': bucket_location}
             int_results_df = pd.concat([int_results_df, pd.DataFrame([new_row])], ignore_index=True)
     # Group by region and count the total resources (buckets) in each region
     grouped = int_results_df.groupby('region').size().reset_index(name='total_resources')
@@ -135,15 +139,23 @@ def main():
                     if service == 's3' and resource == 'buckets':
                         print(f"Checking location for s3 buckets...")
                         resource_df = get_s3_buckets()
-                    else:    
+                    else:
+                        # should we skip this service?
+                        if service in excluded_resources and resource in excluded_resources[service]:
+                            continue
+                        # check if the resource is global or regional
                         if 'global' in supported_regions[service]:
                             regions_in = ", ".join([f"'{region}'" for region in regions])
                         else:
                             regions_in = ", ".join([f"'{region}'" for region in supported_regions[service]])      
+                        
+                        # check if there are additional where clauses for this resource
+                        where_clause = resource_filters.get(service, {}).get(resource, '')
+                        
                         resource_df = stackql.execute(f"""
                             SELECT '{service}' as svc, '{resource}' as res, region, COUNT(*) as total_resources  
                             FROM awscc.{service}.{resource} 
-                            WHERE region IN ({regions_in})
+                            WHERE region IN ({regions_in}){where_clause}
                             GROUP BY svc, res, region
                         """)
 
@@ -161,9 +173,83 @@ if __name__ == "__main__":
 ```
 
 </TabItem>
+<TabItem value="resources">
+
+```python
+# exclude these resources
+excluded_resources = {
+    'cloudformation': ['public_type_versions'],
+	'gamelift': ['locations'],
+    'codepipeline': ['custom_action_types'],
+    'ssm': ['patch_baselines'],
+	'iot': ['domain_configurations'],
+	'ce': ['anomaly_monitors', 'anomaly_subscriptions'],
+}
+
+# apply an additional filter to these resources, to filter defaults or AWS managed resources
+resource_filters = {
+    "appconfig": {
+        "extensions": " AND SPLIT_PART(id, '.', 1) <> 'AWS'",
+    },
+    "apprunner": {
+        "observability_configurations": " AND SPLIT_PART(observability_configuration_arn, '/', 2) <> 'DefaultConfiguration'",
+        "auto_scaling_configurations": " AND SPLIT_PART(auto_scaling_configuration_arn, '/', 2) <> 'DefaultConfiguration'",
+    },
+    "athena": {
+        "work_groups": " AND name <> 'primary'",
+        "data_catalogs": " AND name <> 'AwsDataCatalog'",
+    },      
+    "cassandra": {
+        "keyspaces": " AND keyspace_name <> 'system_multiregion_info'",
+    },
+    "codedeploy": {
+        "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
+    },
+    "ec2": {
+        "snapshots": " AND ownerAlias <> 'amazon'",
+    },
+    "elasticache": {
+        "users": " AND user_id <> 'default'",
+    },
+    "events": {
+        "event_buses": " AND name <> 'default'",
+    },
+    "iam": {
+        "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+    },
+    "kms": {
+        "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",
+    },
+    "memorydb": {
+        "acls": " AND acl_name <> 'open-access'",
+        "users": " AND user_name <> 'default'",
+        "parameter_groups": " AND SPLIT_PART(parameter_group_name, '.', 1) <> 'default'",
+    },
+	"ram": {
+		"permissions": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:ram::aws:permission'",
+    },
+    "route53resolver" : {
+        "resolver_rule_associations": " AND SPLIT_PART(resolver_rule_association_id, '-', 2) <> 'autodefined'",
+        "resolver_rules": " AND SPLIT_PART(resolver_rule_id, '-', 2) <> 'autodefined'",
+    },
+    "scheduler": {
+        "schedule_groups": " AND name <> 'default'",
+    },
+    "ssm": {
+        "documents": " AND SUBSTRING(name, 1, 3) <> 'AWS' AND SUBSTRING(name, 1, 6) <> 'Amazon' AND SUBSTRING(name, 1, 3) <> 'Aws' AND name NOT IN ('AlertLogic-MDR', 'CrowdStrike-FalconSensorDeploy', 'DynatraceOneAgent', 'FalconSensor-Linux', 'FalconSensor-Windows', 'New-Relic-infrastructure-monitoring-agent', 'TrendMicro-CloudOne-WorkloadSecurity')",
+    },
+}
+```
+
+</TabItem>
 <TabItem value="regions">
 
 ```python
+# all AWS regions
+regions = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2', 'ap-south-1', 'ap-northeast-3', 'ap-northeast-2', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ca-central-1', 'eu-central-1', 'eu-west-1', 'eu-west-2', 'eu-west-3', 'eu-north-1', 'sa-east-1']
+
+# regions supported by services
 supported_regions = {
  'accessanalyzer': ['global'],
  'acmpca': ['global'],
