@@ -14,31 +14,33 @@ image: "/img/stackql-featured-image.png"
 See also:  
 [[ StackQL Provider Registry ]](https://registry.stackql.io/) [[ Using a Provider ]](/docs/getting-started/using-a-provider)
 
-### Overview
+## Overview
 
-The following diagram describes the internals of the StackQL at a high level.
+The StackQL Provider Registry is a crucial component of the StackQL ecosystem. It maintains and manages the 'provider' interface documents which inform the StackQL application about how to interact with various providers like AWS, Azure, Google, etc. 
 
-[![StackQL Component Diagram](/img/stackql-component-diagram.svg)](/img/stackql-component-diagram.png)
+The registry workflow involves three key components:
 
-### Driver
-The StackQL Driver is invoked by either a command being run in the [StackQL Interactive Command Shell](/docs/command-line-usage/shell) or a command or commands being submitted using the [`stackql exec`](/docs/command-line-usage/exec) command. The Driver is responsible for the orchestration of StackQL commands. 
+1. **GitHub**: This is where the 'provider' interface documents, formatted as OpenAPI specifications in YAML, are versioned and maintained. Each provider has its document, detailing available methods and how to invoke them using SQL semantics.
 
-### QueryPreProcessor
-The QueryPreProcessor is responsible for the preprossing of variables (if provided), using either Json or [Jsonnet](https://jsonnet.org/).  For more information see [[ Templating ]](/docs/getting-started/templating).
+2. **GitHub Actions**: Upon updates to the GitHub repository, GitHub Actions are triggered to validate, test, and package the interface documents into signed, compressed artifacts.
 
-### QueryParser
-The QueryParser parses the IQL statement and ensures the validity of the syntax provided as well as attribute references and mandatory attributes. 
+3. **Deno Deploy**: The packaged artifacts are then registered and published to the StackQL Provider Registry Artifact Repository via Deno Deploy. These artifacts are available to the StackQL application via the registry API, retrievable using `REGISTRY LIST` or `REGISTRY PULL` commands.
 
-### ProviderInterface
-The ProviderInterface consumes signed extended API specs from the StackQL Provider Registry.
+![Your context diagram here]
 
-> StackQL provider interface documents are used to enumerate and define all available resources and their associated methods and attributes for a given provider.  This information - collected at execution time - is cached internally for the current session.
+## Developing a Provider Locally
 
-### QueryPlanner
-The QueryPlanner determines which components of the query will be executed remotely through the relevant Cloud Provider API, and which components will be executed locally (such as aggregate operations).
+To develop a StackQL provider, you'll need a provider's OpenAPI or Swagger specification. These specifications could either be supplied by the provider or generated through scripts such as [__google-discovery-to-openapi__](https://github.com/stackql/google-discovery-to-openapi) or [__stackql-azure-openapi__](https://github.com/stackql/stackql-azure-openapi).
 
-### RemoteExecutor
-The RemoteExecutor is responsible for interacting with the relevant Cloud Provider's API, this includes the handling of asynchronous operations and paginated responses.
+Once you have the OpenAPI specification, you can use the [__openapisaurus__](https://github.com/stackql/openapisaurus) utility project to generate a StackQL provider document.
 
-### LocalExecutor
-The LocalExector is the local embedded SQL engine responsible for operations on provider resource data, such as scalar functions and aggegation operations.
+## Testing Your Provider
+
+To ensure that your provider works as expected, you can test it using the `dev` registry before deploying it. Here's how:
+
+1. Export the `dev` registry URL as an environment variable:
+
+```bash
+export DEV_REG="{ \"url\": \"https://registry-dev.stackql.app/providers\" }"
+./stackql --registry="${DEV_REG}" shell
+```

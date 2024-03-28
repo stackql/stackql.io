@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 See also:  
 [[ Using StackQL ]](/docs/getting-started/using-stackql) [[ Using Variables ]](/docs/getting-started/variables) [[ Templating ]](/docs/getting-started/templating)
 
-### Overview
+## Overview
 
 The following diagram describes the internals of the StackQL at a high level.
 
@@ -42,3 +42,39 @@ The RemoteExecutor is responsible for interacting with the relevant Cloud Provid
 
 ### LocalExecutor
 The LocalExector is the local embedded SQL engine responsible for operations on provider resource data, such as scalar functions and aggegation operations.
+
+## Detailed Design
+
+The following diagram is a detailed description of the `stackql` application
+
+```mermaid
+graph TB
+    OpenapiStackQL("Openapi-StackQL")
+    StackQLParser("StackQL Parser")
+    PsqlWire("psql-wire")
+    
+    Shell[Shell] --> CommandRunner[Command Runner]
+    Exec[Exec] --> CommandRunner
+    CommandRunner --> Driver[Driver]
+    Server[Server] --> Driver
+    Server --> WireServer[Wire Server]
+    WireServer --> PsqlWire
+    Driver --> QuerySubmitter[Query Submitter]
+    QuerySubmitter --> PlanBuilder[Plan Builder]
+    
+    PlanBuilder --> InitialPassesScreenerAnalyzer[Mature the AST]
+    InitialPassesScreenerAnalyzer --> NestedIndirection[Nested Indirection]
+    NestedIndirection --> IndirectExpansion[Indirect Expansion]
+    PlanBuilder --> Parser[Parser]
+    IndirectExpansion --> Parser
+    Parser --> StackQLParser
+
+    PlanBuilder --> RoutePass[Route Pass]
+    PlanBuilder --> PrimitiveBuilder[Primitive Builder]
+    PrimitiveBuilder --> PrimitiveGraph[Primitive Graph]
+    PlanBuilder --> PrimitiveGraph
+    PrimitiveBuilder --> OpenapiStackQL
+    RoutePass --> ParameterRouter[Parameter Router]
+    ParameterRouter --> OpenapiStackQL
+    RoutePass --> NestingComposition[Nesting / Composition]
+```
