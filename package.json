@@ -19,6 +19,7 @@
     "@docusaurus/plugin-ideal-image": "^2.4.3",
     "@docusaurus/plugin-sitemap": "^2.4.3",
     "@docusaurus/preset-classic": "^2.4.3",
+    "@docusaurus/theme-mermaid": "^2.4.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@iconify/react": "^3.2.1",
