@@ -27,7 +27,7 @@ StackQL implements a SQL engine which can process multiple queries asynchronousl
 
 ```sql
 SELECT region, COUNT(*) as num_functions
-FROM aws.lambda.functions
+FROM awscc.lambda.functions
 WHERE region IN (
 	'us-east-1','us-east-2','us-west-1','us-west-2',
 	'ap-south-1','ap-northeast-3','ap-northeast-2',
