@@ -10,7 +10,7 @@ keywords:
   - homebrew
   - open source software
 description: Real-Time Insights for OSS Maintainers using StackQL
-image: "/img/cookbooks/google/stackql-google-provider-featured-image.png"
+image: "/img/cookbooks/github/stackql-github-provider-featured-image.png"
 ---
 
 # Open Source Project Activity Monitor powered by StackQL
