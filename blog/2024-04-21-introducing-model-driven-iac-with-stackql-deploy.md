@@ -161,10 +161,11 @@ AND JSON_EXTRACT(properties, '$.provisioningState') = 'Succeeded'
 Now we can __`build`__, __`test`__, and __`teardown`__ our example stack using these commands (starting with a __`dry-run`__, which will render the target queries without executing them):
 
 ```bash
-stackql-deploy build prd example_stack -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000 --dry-run
-stackql-deploy build prd example_stack -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
-stackql-deploy test prd example_stack -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
-stackql-deploy teardown prd example_stack -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
+# stackql-deploy build|test|teardown {stack_name} {stack_env} [{options}]
+stackql-deploy build example_stack prd -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000 --dry-run
+stackql-deploy build example_stack prd -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
+stackql-deploy test example_stack prd -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
+stackql-deploy teardown example_stack prd -e AZURE_SUBSCRIPTION_ID 00000000-0000-0000-0000-000000000000
 ```
 
 Give us your feedback! ⭐ us [__here__](https://github.com/stackql/stackql)!
