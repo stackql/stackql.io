@@ -23,6 +23,12 @@ Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` 
 
 :::
 
+:::note 
+
+The `json_type` function is implemented as the `json_typeof` function if you are using stackql with a `postgres` sql backend
+
+:::
+
 ## Syntax
 
 ```sql
