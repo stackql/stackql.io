@@ -23,6 +23,13 @@ Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` 
 
 :::
 
+:::note 
+
+The `json_extract` function is implemented as the `json_extract_path_text` function if you are using stackql with a `postgres` sql backend
+
+:::
+
+
 ## Syntax
 
 ```sql
