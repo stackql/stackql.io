@@ -107,3 +107,20 @@ HAVING location != 'ASIA';
 ```
 
 For more information on the `COUNT` function and other aggregate functions supported by StackQL see [Aggregate Functions](/docs/language-spec/functions/aggregate/count).
+
+### Get list of On Demand VMs and corresponding network interface from Azure VM Scaleset
+Run a `SELECT`statement using SPLIT_PART and JSON_EXTRACT functions to get list of OD VMs and their NICs. Note that without a qualifier the subscriptionId and resourceGroupName is applied to all the three Resources.
+
+```sql
+SELECT  c.name AS vm_name,
+        SPLIT_PART(JSON_EXTRACT(c.properties,'$.networkProfile.networkInterfaces[0].id'), '/', -1) AS nic_name
+FROM
+  azure.compute.virtual_machine_scale_sets a
+  INNER JOIN  azure.compute.virtual_machine_scale_set_vms b
+    ON a.name = b.virtualMachineScaleSetName
+  INNER JOIN  azure.compute.virtual_machines c
+    ON b.name = c.name
+WHERE subscriptionId = '0123456789'
+AND resourceGroupName = 'vmss-flex'
+AND JSON_EXTRACT(c.properties,'$.priority') is null;
+```
