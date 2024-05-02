@@ -10,6 +10,10 @@ keywords:
 description: Replace existing values in a JSON document using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Updates existing values in a JSON object based on their path. `JSON_REPLACE` does not add new keys to the document; it only replaces the values of existing keys.
 
 See also:  
@@ -45,12 +49,13 @@ Returns a modified JSON document with the specified value replaced. If the speci
 | [`json_replace()`](/docs/language-spec/functions/json/json_replace) | Yes                          | No                        |
 | [`json_set()`](/docs/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
 
+:::
 
 * * *
 
 ## Examples
 
-### Replace a Value in a JSON Object
+### Replace a Single Value in a JSON Object
 
 ```sql
 SELECT sku as original,
@@ -68,46 +73,58 @@ AND resourceGroupName = 'exampleResourceGroupProd';
 */
 ```
 
-### Replace Value in JSON Object
+### Replace Multiple Values in a JSON Object
+
+<Tabs
+  defaultValue="query"
+  values={[
+    { label: 'Query', value: 'query', },
+    { label: 'Output (JSON)', value: 'output', },
+  ]
+}>
+<TabItem value="query">
 
 ```sql
 select
   properties beforechange,
   json_replace(json_remove(properties,
-                                '$.allowPort25Out',
-                                '$.auxiliarySku',
-                                '$.provisioningState',
-                                '$.resourceGuid',
-                                '$.macAddress',
-                                '$.vnetEncryptionSupported',
-                                '$.enableIPForwarding',
-                                '$.defaultOutboundAccess',
-                                '$.primary',
-                                '$.virtualMachine',
-                                '$.hostedWorkloads',
-                                '$.tapConfigurations',
-                                '$.nicType',
-                                '$.auxiliaryMode',
-                                '$.ipConfigurations[0].id',
-                                '$.ipConfigurations[0].etag',
-                                '$.ipConfigurations[0].type',
-                                '$.ipConfigurations[0].properties.provisioningState',
-                                '$.ipConfigurations[0].properties.privateIPAddress',
-                                '$.ipConfigurations[0].properties.privateIPAllocationMethod',
-                                '$.ipConfigurations[0].properties.primary',
-                                '$.ipConfigurations[0].properties.privateIPAddressVersion'
-                              ),
-                    '$.ipConfigurations[0].name',
-                    'vmss-flex-vnet-nic01-defaultIpConfiguration'
-                    ) afterchange
+              '$.allowPort25Out',
+              '$.auxiliarySku',
+              '$.provisioningState',
+              '$.resourceGuid',
+              '$.macAddress',
+              '$.vnetEncryptionSupported',
+              '$.enableIPForwarding',
+              '$.defaultOutboundAccess',
+              '$.primary',
+              '$.virtualMachine',
+              '$.hostedWorkloads',
+              '$.tapConfigurations',
+              '$.nicType',
+              '$.auxiliaryMode',
+              '$.ipConfigurations[0].id',
+              '$.ipConfigurations[0].etag',
+              '$.ipConfigurations[0].type',
+              '$.ipConfigurations[0].properties.provisioningState',
+              '$.ipConfigurations[0].properties.privateIPAddress',
+              '$.ipConfigurations[0].properties.privateIPAllocationMethod',
+              '$.ipConfigurations[0].properties.primary',
+              '$.ipConfigurations[0].properties.privateIPAddressVersion'
+            ),
+  '$.ipConfigurations[0].name',
+  'vmss-flex-vnet-nic01-defaultIpConfiguration'
+  ) afterchange
 from
   azure.network.interfaces
 where subscriptionId = '0123456789'
 and resourceGroupName = 'vm-rg'
 and networkInterfaceName = 'vm1450_z1'
+```
 
-/* Output
-[{'afterchange': '
+</TabItem><TabItem value="output">
+
+```json
+[{"afterchange": 
 {
   "disableTcpStateTracking": false,
   "dnsSettings": {
@@ -135,8 +152,8 @@ and networkInterfaceName = 'vm1450_z1'
   "networkSecurityGroup": {
     "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/networkSecurityGroups/vm1-nsg"
   }
-}',
-'beforechange': '
+},
+"beforechange": 
 {
   "allowPort25Out": false,
   "auxiliaryMode": "None",
@@ -188,6 +205,7 @@ and networkInterfaceName = 'vm1450_z1'
   },
   "vnetEncryptionSupported": false
 }
-'}]
-*/
+}]
 ```
+
+</TabItem></Tabs>
