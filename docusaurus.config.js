@@ -165,7 +165,6 @@ const config = {
       excludedRoutes: [
         '/registry',
         '/registry/aws',
-        '/registry/awscc',
         '/registry/azure',
         '/registry/digitalocean',
         '/registry/github',
@@ -328,7 +327,7 @@ const config = {
           items: [
             {
               label: 'AWS',
-              to: '/registry/awscc',
+              to: '/registry/aws',
             },
             {
               label: 'Azure',

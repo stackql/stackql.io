@@ -27,7 +27,7 @@ StackQL implements a SQL engine which can process multiple queries asynchronousl
 
 ```sql
 SELECT region, COUNT(*) as num_functions
-FROM awscc.lambda.functions
+FROM aws.lambda.functions
 WHERE region IN (
 	'us-east-1','us-east-2','us-west-1','us-west-2',
 	'ap-south-1','ap-northeast-3','ap-northeast-2',
@@ -52,7 +52,7 @@ The above query is actually 17 queries run in parallel (one query for each regio
 The following code performs the following actions:
 
 1. Defines a list of all AWS regions (`regions`) and a list of regions supported for each service (`supported_regions`), more info on deriving `supported_regions` can be found at [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. Pulls the [`aws`](https://aws.stackql.io/providers/aws/) and [`awscc`](https://awscc.stackql.io/providers/awscc/) StackQL providers if they're not already installed.
+2. Pulls the [`aws`](https://aws.stackql.io/providers/aws/) and [`aws`](https://aws.stackql.io/providers/aws/) StackQL providers if they're not already installed.
 3. Iterates through each service (using [`SHOW SERVICES`](/docs/language-spec/show#list-all-services-in-a-cloud-provider)), then for each service iterates through each resource (using [`SHOW RESOURCES`](/docs/language-spec/show#list-all-resources-within-a-cloud-provider-service))
 4. [`SELECT`](/docs/language-spec/select)'s all instances of each resource across all regions asynchronously, groups the data by region and counts the instance of each resource for each region
 
@@ -79,12 +79,7 @@ stackql = StackQL(output='pandas', page_limit=-1, execution_concurrency_limit=-1
 
 def pull_stackql_providers():
     providers_df = stackql.execute("SHOW PROVIDERS")
-    is_awscc_installed = 'awscc' in providers_df['name'].values if not providers_df.empty else False
     is_aws_installed = 'aws' in providers_df['name'].values if not providers_df.empty else False
-    if not is_awscc_installed:
-        print("awscc not installed. Installing awscc")
-        res = stackql.executeStmt("REGISTRY PULL awscc")
-        print(res['message'])
     if not is_aws_installed:
         print("aws not installed. Installing aws")
         res = stackql.executeStmt("REGISTRY PULL aws")
@@ -95,14 +90,14 @@ def get_s3_buckets():
     int_results_df = pd.DataFrame(columns=['bucket', 'region'])
     buckets = stackql.execute("""
         SELECT bucket_name   
-        FROM awscc.s3.buckets WHERE region = 'us-east-1';
+        FROM aws.s3.buckets WHERE region = 'us-east-1';
     """)['bucket_name'].values.tolist()
     for bucket in buckets:
         regional_domain_query = f"""
             SELECT 
             bucket_name,
             bucket_location
-            FROM awscc.s3.bucket WHERE region = 'us-east-1' AND data__Identifier = '{bucket}'
+            FROM aws.s3.bucket WHERE region = 'us-east-1' AND data__Identifier = '{bucket}'
         """
         print(f"Checking location for {bucket}...")
         regional_domain_name_df = stackql.execute(regional_domain_query)
@@ -126,12 +121,12 @@ def main():
     pull_stackql_providers()    
     results_df = pd.DataFrame(columns=['svc', 'res', 'region', 'total_resources'])
     # get all enumerable aws services
-    services_df = stackql.execute("SHOW SERVICES IN awscc")
+    services_df = stackql.execute("SHOW SERVICES IN aws")
     for svcIx, svcRow in services_df.iterrows():
         service = svcRow['name']
         if service in supported_regions:
             # check all enumerable aws resources in the service against supported regions
-            resources_df = stackql.execute(f"SHOW RESOURCES IN awscc.{service}")
+            resources_df = stackql.execute(f"SHOW RESOURCES IN aws.{service}")
             plural_resources = [resource for resource in resources_df['name'].tolist() if resource.endswith('s')]
             if plural_resources:
                 for resource in plural_resources:
@@ -154,7 +149,7 @@ def main():
                         
                         resource_df = stackql.execute(f"""
                             SELECT '{service}' as svc, '{resource}' as res, region, COUNT(*) as total_resources  
-                            FROM awscc.{service}.{resource} 
+                            FROM aws.{service}.{resource} 
                             WHERE region IN ({regions_in}){where_clause}
                             GROUP BY svc, res, region
                         """)
