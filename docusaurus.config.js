@@ -165,6 +165,7 @@ const config = {
       excludedRoutes: [
         '/registry',
         '/registry/aws',
+        '/registry/awscc',
         '/registry/azure',
         '/registry/digitalocean',
         '/registry/github',
