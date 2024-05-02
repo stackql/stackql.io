@@ -67,3 +67,127 @@ AND resourceGroupName = 'exampleResourceGroupProd';
 |---------------------------------------|------------------------------------------|
 */
 ```
+
+### Replace Value in JSON Object
+
+```sql
+select
+  properties beforechange,
+  json_replace(json_remove(properties,
+                                '$.allowPort25Out',
+                                '$.auxiliarySku',
+                                '$.provisioningState',
+                                '$.resourceGuid',
+                                '$.macAddress',
+                                '$.vnetEncryptionSupported',
+                                '$.enableIPForwarding',
+                                '$.defaultOutboundAccess',
+                                '$.primary',
+                                '$.virtualMachine',
+                                '$.hostedWorkloads',
+                                '$.tapConfigurations',
+                                '$.nicType',
+                                '$.auxiliaryMode',
+                                '$.ipConfigurations[0].id',
+                                '$.ipConfigurations[0].etag',
+                                '$.ipConfigurations[0].type',
+                                '$.ipConfigurations[0].properties.provisioningState',
+                                '$.ipConfigurations[0].properties.privateIPAddress',
+                                '$.ipConfigurations[0].properties.privateIPAllocationMethod',
+                                '$.ipConfigurations[0].properties.primary',
+                                '$.ipConfigurations[0].properties.privateIPAddressVersion'
+                              ),
+                    '$.ipConfigurations[0].name',
+                    'vmss-flex-vnet-nic01-defaultIpConfiguration'
+                    ) afterchange
+from
+  azure.network.interfaces
+where subscriptionId = '0123456789'
+and resourceGroupName = 'vm-rg'
+and networkInterfaceName = 'vm1450_z1'
+
+/* Output
+[{'afterchange': '
+{
+  "disableTcpStateTracking": false,
+  "dnsSettings": {
+    "appliedDnsServers": [],
+    "dnsServers": [],
+    "internalDomainNameSuffix": "02ylkvekgslelowidrppwubzmb.bx.internal.cloudapp.net"
+  },
+  "enableAcceleratedNetworking": false,
+  "ipConfigurations": [
+    {
+      "name": "vmss-flex-vnet-nic01-defaultIpConfiguration",
+      "properties": {
+        "publicIPAddress": {
+          "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/publicIPAddresses/vm1-ip",
+          "properties": {
+            "deleteOption": "Delete"
+          }
+        },
+        "subnet": {
+          "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/virtualNetworks/vm1-vnet/subnets/default"
+        }
+      }
+    }
+  ],
+  "networkSecurityGroup": {
+    "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/networkSecurityGroups/vm1-nsg"
+  }
+}',
+'beforechange': '
+{
+  "allowPort25Out": false,
+  "auxiliaryMode": "None",
+  "auxiliarySku": "None",
+  "disableTcpStateTracking": false,
+  "dnsSettings": {
+    "appliedDnsServers": [],
+    "dnsServers": [],
+    "internalDomainNameSuffix": "123ylkvekgslelowidrppwubzmb.bx.internal.cloudapp.net"
+  },
+  "enableAcceleratedNetworking": false,
+  "enableIPForwarding": false,
+  "hostedWorkloads": [],
+  "ipConfigurations": [
+    {
+      "etag": "123-bc7e-4609-9328-709fe04c69c3",
+      "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/networkInterfaces/vm1450_z1/ipConfigurations/ipconfig1",
+      "name": "ipconfig1",
+      "properties": {
+        "primary": true,
+        "privateIPAddress": "10.0.0.4",
+        "privateIPAddressVersion": "IPv4",
+        "privateIPAllocationMethod": "Dynamic",
+        "provisioningState": "Succeeded",
+        "publicIPAddress": {
+          "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/publicIPAddresses/vm1-ip",
+          "properties": {
+            "deleteOption": "Delete"
+          }
+        },
+        "subnet": {
+          "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/virtualNetworks/vm1-vnet/subnets/default"
+        }
+      },
+      "type": "Microsoft.Network/networkInterfaces/ipConfigurations"
+    }
+  ],
+  "macAddress": "23-0D-3A-1B-FF-91",
+  "networkSecurityGroup": {
+    "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Network/networkSecurityGroups/vm1-nsg"
+  },
+  "nicType": "Standard",
+  "primary": true,
+  "provisioningState": "Succeeded",
+  "resourceGuid": "566a1d71-923d-41e0-bbd5-d09bf64cbe7b",
+  "tapConfigurations": [],
+  "virtualMachine": {
+    "id": "/subscriptions/0123456789/resourceGroups/vm-rg/providers/Microsoft.Compute/virtualMachines/vm1"
+  },
+  "vnetEncryptionSupported": false
+}
+'}]
+*/
+```
