@@ -60,3 +60,55 @@ SELECT 'stackql-demo',
 'australia-southeast1-a', 
 'test10gbdisk', 10;
 ```
+
+### `INSERT` statement with SELECT
+Run an INSERT statement with SELECT.
+
+```sql
+-- Create a Azure Network Interface
+INSERT INTO azure.network.interfaces
+  (
+    resourceGroupName,
+    subscriptionId,
+    networkInterfaceName,
+    data__location,
+    data__properties
+  )
+  SELECT
+    'vmss-flex',
+    '0123456789',
+    'vmss-flex-vnet-nic01-manual-' || '1',
+    'eastus',
+    json_replace(json_remove(properties,
+                                  '$.allowPort25Out',
+                                  '$.auxiliarySku',
+                                  '$.provisioningState',
+                                  '$.resourceGuid',
+                                  '$.macAddress',
+                                  '$.vnetEncryptionSupported',
+                                  '$.enableIPForwarding',
+                                  '$.defaultOutboundAccess',
+                                  '$.primary',
+                                  '$.virtualMachine',
+                                  '$.hostedWorkloads',
+                                  '$.tapConfigurations',
+                                  '$.nicType',
+                                  '$.auxiliaryMode',
+                                  '$.ipConfigurations[0].id',
+                                  '$.ipConfigurations[0].etag',
+                                  '$.ipConfigurations[0].type',
+                                  '$.ipConfigurations[0].properties.provisioningState',
+                                  '$.ipConfigurations[0].properties.privateIPAddress',
+                                  '$.ipConfigurations[0].properties.privateIPAllocationMethod',
+                                  '$.ipConfigurations[0].properties.primary',
+                                  '$.ipConfigurations[0].properties.privateIPAddressVersion'
+                                ),
+                      '$.ipConfigurations[0].name',
+                      'vmss-flex-vnet-nic01-defaultIpConfiguration'
+                      )
+  FROM
+    azure.network.interfaces
+  WHERE subscriptionId = '0123456789'
+  AND resourceGroupName = 'vmss-flex'
+  AND networkInterfaceName = 'vmss-nic-01';
+```
