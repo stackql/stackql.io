@@ -84,3 +84,13 @@ EXEC compute.instances.attachDisk
 "boot": false 
 }';
 ```
+
+### Simulate Azure Spot VM eviction
+Run an EXEC statement to simulate eviction of Azure Spot VM Instance. 
+
+```sql
+exec azure.compute.virtual_machine.simulate_eviction
+@subscriptionId = '0123456789',
+@resourceGroupName = 'vmss-flex',
+@vmName = 'vmss-flex-manual-1';
+```
