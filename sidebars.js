@@ -125,6 +125,11 @@ const sidebars = {
           label: 'pystackql',
           href: 'https://pystackql.readthedocs.io/en/latest/',
         },
+        {
+          type: 'link',
+          label: 'stackql-deploy',
+          href: 'https://pypi.org/project/stackql-deploy/',
+        },        
       ]
     },
     {
