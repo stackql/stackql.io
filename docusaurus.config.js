@@ -370,9 +370,13 @@ const config = {
           position: 'left',
           items: [
             {
+              href: 'https://pypi.org/project/stackql-deploy/',
+              label: 'stackql-deploy',
+            },
+            {
               href: 'https://github.com/stackql/stackql-actions-demo',
               label: 'GitHub Actions',
-            },
+            },            
             {
               to: 'blog',
               label: 'Blog',

@@ -10,7 +10,7 @@ keywords: [stackql, iac, infrastructure-as-code, dbt]
 tags: [stackql, iac, infrastructure-as-code, dbt]
 ---
 
-[__`stackql-deploy`__](https://pypi.org/project/stack-deploy/) is a multi-cloud resource provisioning framework using [__`stackql`__](https://github.com/stackql/stackql). It is inspired by dbt (data build tool), which manages data transformation workflows in analytics engineering by treating SQL scripts as models that can be built, tested, and materialized incrementally. With StackQL, you can create a similar framework for cloud and SaaS provisioning. The goal is to treat infrastructure-as-code (IaC) queries as __*models*__ that can be deployed, managed, and interconnected.  
+[__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is a multi-cloud resource provisioning framework using [__`stackql`__](https://github.com/stackql/stackql). It is inspired by dbt (data build tool), which manages data transformation workflows in analytics engineering by treating SQL scripts as models that can be built, tested, and materialized incrementally. With StackQL, you can create a similar framework for cloud and SaaS provisioning. The goal is to treat infrastructure-as-code (IaC) queries as __*models*__ that can be deployed, managed, and interconnected.  
 
 This ELT/model-based framework for IaC allows you to provision, test, update, and tear down multi-cloud stacks, similar to how dbt manages data transformation projects, with the benefits of version control, peer review, and automation. This approach enables you to deploy complex, dependent infrastructure components in a reliable and repeatable manner.  
 
@@ -47,7 +47,7 @@ platform              : Linux x86_64 (Linux-5.15.133.1-microsoft-standard-WSL2-x
 
 ## Project structure
 
-A `stack-deploy` project is a directory with declarative SQL definitions to provision, de-provision, or test resources in a stack. The key components and their definitions are listed here:
+A `stackql-deploy` project is a directory with declarative SQL definitions to provision, de-provision, or test resources in a stack. The key components and their definitions are listed here:
 
 - `stackql_manifest.yml` : The manifest file for your project, defining resources and properties in your stack.
 - `stackql_resources` directory : Contains StackQL queries to provision and de-provision resources in your stack.
