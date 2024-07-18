@@ -17,8 +17,8 @@ import TabItem from '@theme/TabItem';
 import ImageSwitcher from '/js/ImageSwitcher/ImageSwitcher.js';
 
 <ImageSwitcher 
-lightImageSrc="/img/stackql-banner.png"
-darkImageSrc="/img/stackql-banner-darkbg.png"
+lightImageSrc="/img/stackql-logo-bold-light-mode.png"
+darkImageSrc="/img/stackql-logo-bold-dark-mode.png"
 alttext="StackQL"/>
 
 ## Welcome to the Revolution!
