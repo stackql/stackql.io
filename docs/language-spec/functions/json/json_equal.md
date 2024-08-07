@@ -72,5 +72,5 @@ SELECT json_equal('[{"key": "value"}]', '[{"key": "value"}]');
 -- Returns 1 (true)
 ```
 
-For more information, see [json_equal](https://github.com/stackql/sqlite-ext-functions/docs/json_equal.md).
+For more information, see [json_equal](https://github.com/stackql/sqlite-ext-functions/blob/main/docs/json_equal.md).
 
