@@ -1,7 +1,7 @@
 ---
 slug: stackql-deploy-github-action-available
 title: GitHub Action available for stackql-deploy
-hide_table_of_contents: false
+hide_table_of_contents: true
 authors:	
   - jeffreyaven
 image: "/img/blog/setup-stackql-github-action.png"
@@ -9,6 +9,9 @@ description: Use stackql-deploy in a GitHub Actions workflow to provision, updat
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
 tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
 ---
+
+import Image from '@theme/IdealImage';
+import screenshot from '/img/blog/stackql-deploy-github-actions-screenshot.png';
 
 [__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is now available in the [__GitHub Actions Marketplace__](https://github.com/marketplace/actions/stackql-deploy).  
 
@@ -40,5 +43,10 @@ jobs:
           stack-dir: examples/k8s-the-hard-way
           stack-env: dev
           env-vars: GOOGLE_PROJECT=stackql-k8s-the-hard-way-demo
-```          
+```
+
+Example output is shown here:
+
+<Image img={screenshot} />
+
 Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).
