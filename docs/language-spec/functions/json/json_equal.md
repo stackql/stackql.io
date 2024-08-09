@@ -49,27 +49,39 @@ An integer value: 1 if the JSON strings are equivalent, 0 if they are not.
 ### Compare JSON Objects
 
 ```sql
-SELECT json_equal('{"key": "value"}', '{"key": "value"}'); 
--- Returns 1 (true)
-
-SELECT json_equal('{"key1": "value1", "key2": "value2"}', '{"key2": "value2", "key1": "value1"}'); 
--- Returns 1 (true)
-
-SELECT json_equal('{"key": "value"}', '{"key": "different"}'); 
--- Returns 0 (false)
+SELECT 
+public_access_block_configuration as current_state,
+'{"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true}' as desired_state,
+JSON_EQUAL(public_access_block_configuration, '{"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true}') as comp
+FROM aws.s3.buckets 
+WHERE region = 'ap-southeast-2' 
+AND data__Identifier = 'my-bucket';
+/* returns...
+|--------------------------------------------------------------------------------------------------------|--------------------------------|------|
+|                                             current_state                                              |         desired_state          | comp |
+|--------------------------------------------------------------------------------------------------------|--------------------------------|------|
+| {"RestrictPublicBuckets":true,"BlockPublicPolicy":true,"BlockPublicAcls":true,"IgnorePublicAcls":true} | {"BlockPublicAcls": true,      |    1 |
+|                                                                                                        | "BlockPublicPolicy": true,     |      |
+|                                                                                                        | "IgnorePublicAcls": true,      |      |
+|                                                                                                        | "RestrictPublicBuckets": true} |      |
+|--------------------------------------------------------------------------------------------------------|--------------------------------|------|
+*/
 ```
 
 ### Compare JSON Arrays
 
 ```sql
-SELECT json_equal('[1, 2, 3]', '[1, 2, 3]'); 
--- Returns 1 (true)
-
-SELECT json_equal('[1, 2, 3]', '[3, 2, 1]'); 
--- Returns 0 (false)
-
-SELECT json_equal('[{"key": "value"}]', '[{"key": "value"}]'); 
--- Returns 1 (true)
+SELECT 
+  json_equal('[1, 2, 3]', '[1, 2, 3]') as array_comp_1,
+  json_equal('[1, 2, 3]', '[3, 2, 1]') as array_comp_2
+; 
+/* returns...
+|--------------|--------------|
+| array_comp_1 | array_comp_2 |
+|--------------|--------------|
+|            1 |            0 |
+|--------------|--------------|
+*/
 ```
 
 For more information, see [json_equal](https://github.com/stackql/sqlite-ext-functions/blob/main/docs/json_equal.md).
