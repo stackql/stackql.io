@@ -12,6 +12,8 @@ import {
   FaDownload,
 } from "react-icons/fa";
 import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
 const PlatformIcon = props => {
@@ -59,11 +61,30 @@ const DownloadCard = props => {
           <p className={clsx(styles.downloadDesc)}>{data.description}</p>
           <details>
           <summary className={clsx(styles.summaryText)}>Install using <code>{data.detailsText}</code></summary>
-          <CodeBlock
-            className={clsx(styles.codeBlock)}
-            showLineNumbers={false}>
-            {`${terminalInstallCmd}`}
-          </CodeBlock>
+          {data.platform === 'linux' ? (
+                <Tabs>
+                  <TabItem value="amd64" label="amd64">
+                    <CodeBlock
+                      className={clsx(styles.codeBlock)}
+                      showLineNumbers={false}>
+                      {`curl -L https://bit.ly/stackql-zip -O \\\n&& unzip stackql-zip`}
+                    </CodeBlock>
+                  </TabItem>
+                  <TabItem value="arm64" label="arm64">
+                    <CodeBlock
+                      className={clsx(styles.codeBlock)}
+                      showLineNumbers={false}>
+                      {`curl -L https://bit.ly/stackql-arm64 -O \\\n&& unzip stackql-arm64`}
+                    </CodeBlock>
+                  </TabItem>
+                </Tabs>
+              ) : (
+                <CodeBlock
+                  className={clsx(styles.codeBlock)}
+                  showLineNumbers={false}>
+                  {`${terminalInstallCmd}`}
+                </CodeBlock>
+              )}
           </details>
         </div>
       </div>
