@@ -302,24 +302,24 @@ const config = {
         srcDark: 'img/logo-white.svg',
       },
       items: [
+        // {
+        //   to: '/features',
+        //   activeBasePath: 'features',
+        //   label: 'Features',
+        //   position: 'left',
+        // },
         {
-          to: '/features',
-          activeBasePath: 'features',
-          label: 'Features',
+          to: 'docs',
+          //activeBaseRegex: '^((?!/blog).)*$',
+          label: 'Docs',
           position: 'left',
-        },
+        },        
         {
           to: '/downloads',
           activeBasePath: 'downloads',
           label: 'Downloads',
           position: 'left',
-        },        
-        {
-          to: 'docs',
-          //activeBaseRegex: '^((?!/blog).)*$',
-          label: 'Documentation',
-          position: 'left',
-        },
+        },                
         {
           to: '/registry',
           type: 'dropdown',
@@ -365,14 +365,20 @@ const config = {
           ]                      
         },        
         {
+          to: '/stackql-deploy',
+          // activeBasePath: 'downloads',
+          label: 'stackql-deploy',
+          position: 'left',
+        },
+        {
           type: 'dropdown',
-          label: 'Resources',
+          label: 'More',
           position: 'left',
           items: [
-            {
-              href: 'https://pypi.org/project/stackql-deploy/',
-              label: 'stackql-deploy',
-            },
+            // {
+            //   href: 'https://stackql-deploy.io/',
+            //   label: 'stackql-deploy',
+            // },
             {
               href: 'https://github.com/stackql/stackql-actions-demo',
               label: 'GitHub Actions',
