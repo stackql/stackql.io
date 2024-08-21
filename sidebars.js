@@ -85,7 +85,7 @@ const sidebars = {
       items: [
         {
           type: 'link',
-          label: 'setup-deploy',
+          label: 'stackql-deploy',
           href: 'https://github.com/marketplace/actions/stackql-deploy',
         },
         {
