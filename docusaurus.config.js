@@ -173,6 +173,7 @@ const config = {
         '/registry/k8s',
         '/registry/linode',
         '/registry/okta',
+        '/stackql-deploy'
       ],
       verbose: true,
       featuredImageDimensions: {
