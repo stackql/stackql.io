@@ -53,7 +53,7 @@ export const downloadsPageData = {
           buttons: [
             {
               url:  'https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg',
-              text: 'Download PKG',
+              text: 'Download PKG (multiarch)',
               icon: 'fas fa-download',
             },
           ],
@@ -61,17 +61,24 @@ export const downloadsPageData = {
         {
           platform: 'linux',  
           title: 'Linux',
-          description: 'x86 and x64',
+          description: 'amd64 and arm64',
           detailsText: 'curl',
-          terminalInstallLine1: 'curl -L https://bit.ly/stackql-zip -O \\',
-          terminalInstallLine2: '&& unzip stackql-zip',
+          amd64InstallLine1: 'curl -L https://bit.ly/stackql-zip -O \\',
+          amd64InstallLine2: '&& unzip stackql-zip',
+          arm64InstallLine1: 'curl -L https://bit.ly/stackql-arm64-zip -O \\',
+          arm64InstallLine2: '&& unzip stackql-arm64-zip',
           orText: 'or',
           buttons: [
             {
               url:  'https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip',
-              text: 'Download ZIP',
+              text: 'Download ZIP (amd64)',
               icon: 'fas fa-download',
             },
+            {
+              url:  'https://releases.stackql.io/stackql/latest/stackql_linux_arm64.zip',
+              text: 'Download ZIP (arm64)',
+              icon: 'fas fa-download',
+            },            
           ]
         }
       ]
