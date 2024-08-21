@@ -10,9 +10,6 @@ keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/C
 tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
 ---
 
-import Image from '@theme/IdealImage';
-import screenshot from '/img/blog/stackql-deploy-github-actions-screenshot.png';
-
 [__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is now available in the [__GitHub Actions Marketplace__](https://github.com/marketplace/actions/stackql-deploy).  
 
 :::tip
@@ -47,6 +44,6 @@ jobs:
 
 Example output is shown here:
 
-<Image img={screenshot} />
+![stackql-deploy-github-actions-screenshot](/img/blog/stackql-deploy-github-actions-screenshot.png)
 
 Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).

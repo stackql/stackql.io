@@ -75,9 +75,19 @@ const sidebars = {
       href: '/registry',
     },
     {
+      type: 'link',
+      label: 'stackql-deploy',
+      href: '/stackql-deploy',
+    },    
+    {
       type: 'category',
       label: 'GitHub Actions',
       items: [
+        {
+          type: 'link',
+          label: 'setup-deploy',
+          href: 'https://github.com/marketplace/actions/stackql-deploy',
+        },
         {
           type: 'link',
           label: 'setup-stackql',
