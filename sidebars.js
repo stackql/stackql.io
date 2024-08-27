@@ -44,10 +44,11 @@ const sidebars = {
       label: 'Language Specification',
       items: [
         'language-spec/select',
+        'language-spec/insert',
+        'language-spec/update',
+        'language-spec/delete',
         'language-spec/show',
         'language-spec/describe',
-        'language-spec/insert',
-        'language-spec/delete',
         'language-spec/exec',
         'language-spec/createview',
         'language-spec/refreshview',

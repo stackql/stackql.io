@@ -24,6 +24,7 @@ fieldList: 'fieldList';
 selectStatement: 'selectStatement';
 awaitQueryHint: 'awaitQueryHint';
 viewName: 'viewName';
+fieldValue: 'fieldValue';
 //============================
 // End Identifier list
 //============================

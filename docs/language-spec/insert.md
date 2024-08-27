@@ -32,7 +32,8 @@ type="insert"
 
 ```sql
 INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
-[ (field_name [, field_name] ...) { VALUES (field_name [, field_name] ...) | <selectExpression>; } ;
+( field_name [, field_name] ... )
+{ VALUES ( value [, value] ... ) | <selectExpression> };
 ```
 
 * * *
