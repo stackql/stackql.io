@@ -1,0 +1,7 @@
+{
+    "antlr4.generation": {
+        "mode": "internal",
+        "listeners": true,
+        "visitors": false
+    }
+}
