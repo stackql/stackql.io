@@ -46,6 +46,7 @@ const sidebars = {
         'language-spec/select',
         'language-spec/insert',
         'language-spec/update',
+        // 'language-spec/replace',
         'language-spec/delete',
         'language-spec/show',
         'language-spec/describe',
