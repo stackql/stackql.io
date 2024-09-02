@@ -22,6 +22,7 @@ parameterExpression: 'parameterExpression';
 queryHint: 'queryHint';
 fieldList: 'fieldList';
 selectStatement: 'selectStatement';
+replaceStatement: 'replaceStatement';
 awaitQueryHint: 'awaitQueryHint';
 viewName: 'viewName';
 fieldValue: 'fieldValue';

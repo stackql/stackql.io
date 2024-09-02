@@ -1,4 +1,4 @@
-// Generated from c:\LocalGitRepos\stackql\stackql.io\ref\antlr\common.g4 by ANTLR 4.8
+// Generated from /mnt/c/LocalGitRepos/stackql/web-properties/stackql.io/ref/antlr/common.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class commonParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -18,42 +18,44 @@ public class commonParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, EXEC=22, AUTH=23, LIST=24, PULL=25, 
-		LOGIN=26, INTERACTIVE=27, REVOKE=28, DESC=29, METHODS=30, DESCRIBE=31, 
-		EXPLAIN=32, EXTENDED=33, LIMIT=34, ORDER=35, BY=36, GROUP=37, WITH=38, 
-		ROLLUP=39, HAVING=40, IN=41, AS=42, USE=43, LIKE=44, FROM=45, SHOW=46, 
-		WHERE=47, SERVICES=48, RESOURCES=49, PROVIDERS=50, FIELDS=51, SELECT=52, 
-		DISTINCT=53, ADD=54, ARRAY=55, AND=56, ASC=57, AUTO_INCREMENT=58, BETWEEN=59, 
-		BINARY=60, CASE=61, COLLATE=62, CONVERT=63, CREATE=64, CROSS=65, CUME_DIST=66, 
-		CURRENT_DATE=67, CURRENT_TIME=68, CURRENT_TIMESTAMP=69, SUBSTR=70, SUBSTRING=71, 
-		DATABASE=72, DATABASES=73, DEFAULT=74, DELETE=75, DENSE_RANK=76, DISTINCTROW=77, 
-		DIV=78, DROP=79, ELSE=80, END=81, ESCAPE=82, EXISTS=83, FALSE=84, FIRST_VALUE=85, 
-		FOR=86, FORCE=87, GROUPING=88, GROUPS=89, IF=90, IGNORE=91, INDEX=92, 
-		INNER=93, INSERT=94, INTERVAL=95, INTO=96, IS=97, JOIN=98, JSON_TABLE=99, 
-		KEY=100, LAG=101, LAST_VALUE=102, LATERAL=103, LEAD=104, LEFT=105, LOCALTIME=106, 
-		LOCALTIMESTAMP=107, LOCK=108, MEMBER=109, MATCH=110, MAXVALUE=111, MOD=112, 
-		NATURAL=113, NEXT=114, NOT=115, NTH_VALUE=116, NTILE=117, NULL=118, OF=119, 
-		OFF=120, ON=121, OR=122, OUTER=123, OVER=124, PERCENT_RANK=125, RANK=126, 
-		RECURSIVE=127, REGEXP=128, RENAME=129, REPLACE=130, REGISTRY=131, RIGHT=132, 
-		ROW_NUMBER=133, SCHEMA=134, SEPARATOR=135, SET=136, STRAIGHT_JOIN=137, 
-		SYSTEM=138, TABLE=139, THEN=140, TIMESTAMPADD=141, TIMESTAMPDIFF=142, 
-		TO=143, TRUE=144, UNION=145, UNIQUE=146, UNLOCK=147, UPDATE=148, USING=149, 
-		UTC_DATE=150, UTC_TIME=151, UTC_TIMESTAMP=152, VALUES=153, VIEW=154, WHEN=155, 
-		WINDOW=156, XOR=157, MATERIALIZED=158, REFRESH=159;
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, EXEC=24, AUTH=25, 
+		LIST=26, PULL=27, LOGIN=28, INTERACTIVE=29, REVOKE=30, DESC=31, METHODS=32, 
+		DESCRIBE=33, EXPLAIN=34, EXTENDED=35, LIMIT=36, ORDER=37, BY=38, GROUP=39, 
+		WITH=40, ROLLUP=41, HAVING=42, IN=43, AS=44, USE=45, LIKE=46, FROM=47, 
+		SHOW=48, WHERE=49, SERVICES=50, RESOURCES=51, PROVIDERS=52, FIELDS=53, 
+		SELECT=54, DISTINCT=55, ADD=56, ARRAY=57, AND=58, ASC=59, AUTO_INCREMENT=60, 
+		BETWEEN=61, BINARY=62, CASE=63, COLLATE=64, CONVERT=65, CREATE=66, CROSS=67, 
+		CUME_DIST=68, CURRENT_DATE=69, CURRENT_TIME=70, CURRENT_TIMESTAMP=71, 
+		SUBSTR=72, SUBSTRING=73, DATABASE=74, DATABASES=75, DEFAULT=76, DELETE=77, 
+		DENSE_RANK=78, DISTINCTROW=79, DIV=80, DROP=81, ELSE=82, END=83, ESCAPE=84, 
+		EXISTS=85, FALSE=86, FIRST_VALUE=87, FOR=88, FORCE=89, GROUPING=90, GROUPS=91, 
+		IF=92, IGNORE=93, INDEX=94, INNER=95, INSERT=96, INTERVAL=97, INTO=98, 
+		IS=99, JOIN=100, JSON_TABLE=101, KEY=102, LAG=103, LAST_VALUE=104, LATERAL=105, 
+		LEAD=106, LEFT=107, LOCALTIME=108, LOCALTIMESTAMP=109, LOCK=110, MEMBER=111, 
+		MATCH=112, MAXVALUE=113, MOD=114, NATURAL=115, NEXT=116, NOT=117, NTH_VALUE=118, 
+		NTILE=119, NULL=120, OF=121, OFF=122, ON=123, OR=124, OUTER=125, OVER=126, 
+		PERCENT_RANK=127, RANK=128, RECURSIVE=129, REGEXP=130, RENAME=131, REPLACE=132, 
+		REGISTRY=133, RIGHT=134, ROW_NUMBER=135, SCHEMA=136, SEPARATOR=137, SET=138, 
+		STRAIGHT_JOIN=139, SYSTEM=140, TABLE=141, THEN=142, TIMESTAMPADD=143, 
+		TIMESTAMPDIFF=144, TO=145, TRUE=146, UNION=147, UNIQUE=148, UNLOCK=149, 
+		UPDATE=150, USING=151, UTC_DATE=152, UTC_TIME=153, UTC_TIMESTAMP=154, 
+		VALUES=155, VIEW=156, WHEN=157, WINDOW=158, XOR=159, MATERIALIZED=160, 
+		REFRESH=161;
 	public static final int
 		RULE_provider = 0, RULE_version = 1, RULE_fullFieldName = 2, RULE_functionCall = 3, 
 		RULE_alias = 4, RULE_number = 5, RULE_groupByItem = 6, RULE_resourceOrSubQuery = 7, 
 		RULE_resource = 8, RULE_multipartIdentifier = 9, RULE_pattern = 10, RULE_expression = 11, 
 		RULE_providerMethodName = 12, RULE_parameterName = 13, RULE_parameterValue = 14, 
 		RULE_parameterExpression = 15, RULE_queryHint = 16, RULE_fieldList = 17, 
-		RULE_selectStatement = 18, RULE_awaitQueryHint = 19, RULE_viewName = 20;
+		RULE_selectStatement = 18, RULE_replaceStatement = 19, RULE_awaitQueryHint = 20, 
+		RULE_viewName = 21, RULE_fieldValue = 22;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"provider", "version", "fullFieldName", "functionCall", "alias", "number", 
 			"groupByItem", "resourceOrSubQuery", "resource", "multipartIdentifier", 
 			"pattern", "expression", "providerMethodName", "parameterName", "parameterValue", 
-			"parameterExpression", "queryHint", "fieldList", "selectStatement", "awaitQueryHint", 
-			"viewName"
+			"parameterExpression", "queryHint", "fieldList", "selectStatement", "replaceStatement", 
+			"awaitQueryHint", "viewName", "fieldValue"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -64,56 +66,57 @@ public class commonParser extends Parser {
 			"'alias'", "'number'", "'groupByItem'", "'resourceOrSubQuery'", "'resource'", 
 			"'multipartIdentifier'", "'pattern'", "'expression'", "'providerMethodName'", 
 			"'parameterName'", "'parameterValue'", "'parameterExpression'", "'queryHint'", 
-			"'fieldList'", "'selectStatement'", "'awaitQueryHint'", "'viewName'", 
-			"'EXEC'", "'AUTH'", "'LIST'", "'PULL'", "'LOGIN'", "'INTERACTIVE'", "'REVOKE'", 
-			"'DESC'", "'METHODS'", "'DESCRIBE'", "'EXPLAIN'", "'EXTENDED'", "'LIMIT'", 
-			"'ORDER'", "'BY'", "'GROUP'", "'WITH'", "'ROLLUP'", "'HAVING'", "'IN'", 
-			"'AS'", "'USE'", "'LIKE'", "'FROM'", "'SHOW'", "'WHERE'", "'SERVICES'", 
-			"'RESOURCES'", "'PROVIDERS'", "'FIELDS'", "'SELECT'", "'DISTINCT'", "'ADD'", 
-			"'ARRAY '", "'AND'", "'ASC'", "'AUTO_INCREMENT'", "'BETWEEN'", "'BINARY'", 
-			"'CASE'", "'COLLATE'", "'CONVERT'", "'CREATE'", "'CROSS'", "'CUME_DIST'", 
-			"'CURRENT_DATE'", "'CURRENT_TIME'", "'CURRENT_TIMESTAMP'", "'SUBSTR'", 
-			"'SUBSTRING'", "'DATABASE'", "'DATABASES'", "'DEFAULT'", "'DELETE'", 
-			"'DENSE_RANK'", "'DISTINCTROW'", "'DIV'", "'DROP'", "'ELSE'", "'END'", 
-			"'ESCAPE'", "'EXISTS'", "'FALSE'", "'FIRST_VALUE'", "'FOR'", "'FORCE'", 
-			"'GROUPING'", "'GROUPS'", "'IF'", "'IGNORE'", "'INDEX'", "'INNER'", "'INSERT'", 
-			"'INTERVAL'", "'INTO'", "'IS'", "'JOIN'", "'JSON_TABLE'", "'KEY'", "'LAG'", 
-			"'LAST_VALUE'", "'LATERAL'", "'LEAD'", "'LEFT'", "'LOCALTIME'", "'LOCALTIMESTAMP'", 
-			"'LOCK'", "'MEMBER'", "'MATCH'", "'MAXVALUE'", "'MOD'", "'NATURAL'", 
-			"'NEXT'", "'NOT'", "'NTH_VALUE'", "'NTILE'", "'NULL'", "'OF'", "'OFF'", 
-			"'ON'", "'OR'", "'OUTER'", "'OVER'", "'PERCENT_RANK'", "'RANK'", "'RECURSIVE'", 
-			"'REGEXP'", "'RENAME'", "'REPLACE'", "'REGISTRY'", "'RIGHT'", "'ROW_NUMBER'", 
-			"'SCHEMA'", "'SEPARATOR'", "'SET'", "'STRAIGHT_JOIN'", "'SYSTEM'", "'TABLE'", 
-			"'THEN'", "'TIMESTAMPADD'", "'TIMESTAMPDIFF'", "'TO'", "'TRUE'", "'UNION'", 
-			"'UNIQUE'", "'UNLOCK'", "'UPDATE'", "'USING'", "'UTC_DATE'", "'UTC_TIME'", 
-			"'UTC_TIMESTAMP'", "'VALUES'", "'VIEW'", "'WHEN'", "'WINDOW'", "'XOR'", 
-			"'MATERIALIZED'", "'REFRESH'"
+			"'fieldList'", "'selectStatement'", "'replaceStatement'", "'awaitQueryHint'", 
+			"'viewName'", "'fieldValue'", "'EXEC'", "'AUTH'", "'LIST'", "'PULL'", 
+			"'LOGIN'", "'INTERACTIVE'", "'REVOKE'", "'DESC'", "'METHODS'", "'DESCRIBE'", 
+			"'EXPLAIN'", "'EXTENDED'", "'LIMIT'", "'ORDER'", "'BY'", "'GROUP'", "'WITH'", 
+			"'ROLLUP'", "'HAVING'", "'IN'", "'AS'", "'USE'", "'LIKE'", "'FROM'", 
+			"'SHOW'", "'WHERE'", "'SERVICES'", "'RESOURCES'", "'PROVIDERS'", "'FIELDS'", 
+			"'SELECT'", "'DISTINCT'", "'ADD'", "'ARRAY '", "'AND'", "'ASC'", "'AUTO_INCREMENT'", 
+			"'BETWEEN'", "'BINARY'", "'CASE'", "'COLLATE'", "'CONVERT'", "'CREATE'", 
+			"'CROSS'", "'CUME_DIST'", "'CURRENT_DATE'", "'CURRENT_TIME'", "'CURRENT_TIMESTAMP'", 
+			"'SUBSTR'", "'SUBSTRING'", "'DATABASE'", "'DATABASES'", "'DEFAULT'", 
+			"'DELETE'", "'DENSE_RANK'", "'DISTINCTROW'", "'DIV'", "'DROP'", "'ELSE'", 
+			"'END'", "'ESCAPE'", "'EXISTS'", "'FALSE'", "'FIRST_VALUE'", "'FOR'", 
+			"'FORCE'", "'GROUPING'", "'GROUPS'", "'IF'", "'IGNORE'", "'INDEX'", "'INNER'", 
+			"'INSERT'", "'INTERVAL'", "'INTO'", "'IS'", "'JOIN'", "'JSON_TABLE'", 
+			"'KEY'", "'LAG'", "'LAST_VALUE'", "'LATERAL'", "'LEAD'", "'LEFT'", "'LOCALTIME'", 
+			"'LOCALTIMESTAMP'", "'LOCK'", "'MEMBER'", "'MATCH'", "'MAXVALUE'", "'MOD'", 
+			"'NATURAL'", "'NEXT'", "'NOT'", "'NTH_VALUE'", "'NTILE'", "'NULL'", "'OF'", 
+			"'OFF'", "'ON'", "'OR'", "'OUTER'", "'OVER'", "'PERCENT_RANK'", "'RANK'", 
+			"'RECURSIVE'", "'REGEXP'", "'RENAME'", "'REPLACE'", "'REGISTRY'", "'RIGHT'", 
+			"'ROW_NUMBER'", "'SCHEMA'", "'SEPARATOR'", "'SET'", "'STRAIGHT_JOIN'", 
+			"'SYSTEM'", "'TABLE'", "'THEN'", "'TIMESTAMPADD'", "'TIMESTAMPDIFF'", 
+			"'TO'", "'TRUE'", "'UNION'", "'UNIQUE'", "'UNLOCK'", "'UPDATE'", "'USING'", 
+			"'UTC_DATE'", "'UTC_TIME'", "'UTC_TIMESTAMP'", "'VALUES'", "'VIEW'", 
+			"'WHEN'", "'WINDOW'", "'XOR'", "'MATERIALIZED'", "'REFRESH'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, "EXEC", "AUTH", 
-			"LIST", "PULL", "LOGIN", "INTERACTIVE", "REVOKE", "DESC", "METHODS", 
-			"DESCRIBE", "EXPLAIN", "EXTENDED", "LIMIT", "ORDER", "BY", "GROUP", "WITH", 
-			"ROLLUP", "HAVING", "IN", "AS", "USE", "LIKE", "FROM", "SHOW", "WHERE", 
-			"SERVICES", "RESOURCES", "PROVIDERS", "FIELDS", "SELECT", "DISTINCT", 
-			"ADD", "ARRAY", "AND", "ASC", "AUTO_INCREMENT", "BETWEEN", "BINARY", 
-			"CASE", "COLLATE", "CONVERT", "CREATE", "CROSS", "CUME_DIST", "CURRENT_DATE", 
-			"CURRENT_TIME", "CURRENT_TIMESTAMP", "SUBSTR", "SUBSTRING", "DATABASE", 
-			"DATABASES", "DEFAULT", "DELETE", "DENSE_RANK", "DISTINCTROW", "DIV", 
-			"DROP", "ELSE", "END", "ESCAPE", "EXISTS", "FALSE", "FIRST_VALUE", "FOR", 
-			"FORCE", "GROUPING", "GROUPS", "IF", "IGNORE", "INDEX", "INNER", "INSERT", 
-			"INTERVAL", "INTO", "IS", "JOIN", "JSON_TABLE", "KEY", "LAG", "LAST_VALUE", 
-			"LATERAL", "LEAD", "LEFT", "LOCALTIME", "LOCALTIMESTAMP", "LOCK", "MEMBER", 
-			"MATCH", "MAXVALUE", "MOD", "NATURAL", "NEXT", "NOT", "NTH_VALUE", "NTILE", 
-			"NULL", "OF", "OFF", "ON", "OR", "OUTER", "OVER", "PERCENT_RANK", "RANK", 
-			"RECURSIVE", "REGEXP", "RENAME", "REPLACE", "REGISTRY", "RIGHT", "ROW_NUMBER", 
-			"SCHEMA", "SEPARATOR", "SET", "STRAIGHT_JOIN", "SYSTEM", "TABLE", "THEN", 
-			"TIMESTAMPADD", "TIMESTAMPDIFF", "TO", "TRUE", "UNION", "UNIQUE", "UNLOCK", 
-			"UPDATE", "USING", "UTC_DATE", "UTC_TIME", "UTC_TIMESTAMP", "VALUES", 
-			"VIEW", "WHEN", "WINDOW", "XOR", "MATERIALIZED", "REFRESH"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			"EXEC", "AUTH", "LIST", "PULL", "LOGIN", "INTERACTIVE", "REVOKE", "DESC", 
+			"METHODS", "DESCRIBE", "EXPLAIN", "EXTENDED", "LIMIT", "ORDER", "BY", 
+			"GROUP", "WITH", "ROLLUP", "HAVING", "IN", "AS", "USE", "LIKE", "FROM", 
+			"SHOW", "WHERE", "SERVICES", "RESOURCES", "PROVIDERS", "FIELDS", "SELECT", 
+			"DISTINCT", "ADD", "ARRAY", "AND", "ASC", "AUTO_INCREMENT", "BETWEEN", 
+			"BINARY", "CASE", "COLLATE", "CONVERT", "CREATE", "CROSS", "CUME_DIST", 
+			"CURRENT_DATE", "CURRENT_TIME", "CURRENT_TIMESTAMP", "SUBSTR", "SUBSTRING", 
+			"DATABASE", "DATABASES", "DEFAULT", "DELETE", "DENSE_RANK", "DISTINCTROW", 
+			"DIV", "DROP", "ELSE", "END", "ESCAPE", "EXISTS", "FALSE", "FIRST_VALUE", 
+			"FOR", "FORCE", "GROUPING", "GROUPS", "IF", "IGNORE", "INDEX", "INNER", 
+			"INSERT", "INTERVAL", "INTO", "IS", "JOIN", "JSON_TABLE", "KEY", "LAG", 
+			"LAST_VALUE", "LATERAL", "LEAD", "LEFT", "LOCALTIME", "LOCALTIMESTAMP", 
+			"LOCK", "MEMBER", "MATCH", "MAXVALUE", "MOD", "NATURAL", "NEXT", "NOT", 
+			"NTH_VALUE", "NTILE", "NULL", "OF", "OFF", "ON", "OR", "OUTER", "OVER", 
+			"PERCENT_RANK", "RANK", "RECURSIVE", "REGEXP", "RENAME", "REPLACE", "REGISTRY", 
+			"RIGHT", "ROW_NUMBER", "SCHEMA", "SEPARATOR", "SET", "STRAIGHT_JOIN", 
+			"SYSTEM", "TABLE", "THEN", "TIMESTAMPADD", "TIMESTAMPDIFF", "TO", "TRUE", 
+			"UNION", "UNIQUE", "UNLOCK", "UPDATE", "USING", "UTC_DATE", "UTC_TIME", 
+			"UTC_TIMESTAMP", "VALUES", "VIEW", "WHEN", "WINDOW", "XOR", "MATERIALIZED", 
+			"REFRESH"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -167,6 +170,7 @@ public class commonParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ProviderContext extends ParserRuleContext {
 		public ProviderContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -180,7 +184,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(42);
+			setState(46);
 			match(T__0);
 			}
 		}
@@ -195,6 +199,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class VersionContext extends ParserRuleContext {
 		public VersionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -208,7 +213,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(44);
+			setState(48);
 			match(T__1);
 			}
 		}
@@ -223,6 +228,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FullFieldNameContext extends ParserRuleContext {
 		public FullFieldNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -236,7 +242,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(46);
+			setState(50);
 			match(T__2);
 			}
 		}
@@ -251,6 +257,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FunctionCallContext extends ParserRuleContext {
 		public FunctionCallContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -264,7 +271,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(52);
 			match(T__3);
 			}
 		}
@@ -279,6 +286,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class AliasContext extends ParserRuleContext {
 		public AliasContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -292,7 +300,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(50);
+			setState(54);
 			match(T__4);
 			}
 		}
@@ -307,6 +315,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class NumberContext extends ParserRuleContext {
 		public NumberContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -320,7 +329,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(52);
+			setState(56);
 			match(T__5);
 			}
 		}
@@ -335,6 +344,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class GroupByItemContext extends ParserRuleContext {
 		public GroupByItemContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -348,7 +358,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(54);
+			setState(58);
 			match(T__6);
 			}
 		}
@@ -363,6 +373,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ResourceOrSubQueryContext extends ParserRuleContext {
 		public ResourceOrSubQueryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -376,7 +387,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(56);
+			setState(60);
 			match(T__7);
 			}
 		}
@@ -391,6 +402,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ResourceContext extends ParserRuleContext {
 		public ResourceContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -404,7 +416,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(58);
+			setState(62);
 			match(T__8);
 			}
 		}
@@ -419,6 +431,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class MultipartIdentifierContext extends ParserRuleContext {
 		public MultipartIdentifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -432,7 +445,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(60);
+			setState(64);
 			match(T__9);
 			}
 		}
@@ -447,6 +460,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class PatternContext extends ParserRuleContext {
 		public PatternContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -460,7 +474,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(62);
+			setState(66);
 			match(T__10);
 			}
 		}
@@ -475,6 +489,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionContext extends ParserRuleContext {
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -488,7 +503,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(64);
+			setState(68);
 			match(T__11);
 			}
 		}
@@ -503,6 +518,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ProviderMethodNameContext extends ParserRuleContext {
 		public ProviderMethodNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -516,7 +532,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(66);
+			setState(70);
 			match(T__12);
 			}
 		}
@@ -531,6 +547,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ParameterNameContext extends ParserRuleContext {
 		public ParameterNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -544,7 +561,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(68);
+			setState(72);
 			match(T__13);
 			}
 		}
@@ -559,6 +576,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ParameterValueContext extends ParserRuleContext {
 		public ParameterValueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -572,7 +590,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70);
+			setState(74);
 			match(T__14);
 			}
 		}
@@ -587,6 +605,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ParameterExpressionContext extends ParserRuleContext {
 		public ParameterExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -600,7 +619,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(72);
+			setState(76);
 			match(T__15);
 			}
 		}
@@ -615,6 +634,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class QueryHintContext extends ParserRuleContext {
 		public QueryHintContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -628,7 +648,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(78);
 			match(T__16);
 			}
 		}
@@ -643,6 +663,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FieldListContext extends ParserRuleContext {
 		public FieldListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -656,7 +677,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(76);
+			setState(80);
 			match(T__17);
 			}
 		}
@@ -671,6 +692,7 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SelectStatementContext extends ParserRuleContext {
 		public SelectStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -684,7 +706,7 @@ public class commonParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(78);
+			setState(82);
 			match(T__18);
 			}
 		}
@@ -699,20 +721,21 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class AwaitQueryHintContext extends ParserRuleContext {
-		public AwaitQueryHintContext(ParserRuleContext parent, int invokingState) {
+	@SuppressWarnings("CheckReturnValue")
+	public static class ReplaceStatementContext extends ParserRuleContext {
+		public ReplaceStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_awaitQueryHint; }
+		@Override public int getRuleIndex() { return RULE_replaceStatement; }
 	}
 
-	public final AwaitQueryHintContext awaitQueryHint() throws RecognitionException {
-		AwaitQueryHintContext _localctx = new AwaitQueryHintContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_awaitQueryHint);
+	public final ReplaceStatementContext replaceStatement() throws RecognitionException {
+		ReplaceStatementContext _localctx = new ReplaceStatementContext(_ctx, getState());
+		enterRule(_localctx, 38, RULE_replaceStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
+			setState(84);
 			match(T__19);
 			}
 		}
@@ -727,20 +750,21 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ViewNameContext extends ParserRuleContext {
-		public ViewNameContext(ParserRuleContext parent, int invokingState) {
+	@SuppressWarnings("CheckReturnValue")
+	public static class AwaitQueryHintContext extends ParserRuleContext {
+		public AwaitQueryHintContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_viewName; }
+		@Override public int getRuleIndex() { return RULE_awaitQueryHint; }
 	}
 
-	public final ViewNameContext viewName() throws RecognitionException {
-		ViewNameContext _localctx = new ViewNameContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_viewName);
+	public final AwaitQueryHintContext awaitQueryHint() throws RecognitionException {
+		AwaitQueryHintContext _localctx = new AwaitQueryHintContext(_ctx, getState());
+		enterRule(_localctx, 40, RULE_awaitQueryHint);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82);
+			setState(86);
 			match(T__20);
 			}
 		}
@@ -755,25 +779,109 @@ public class commonParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
+	public static class ViewNameContext extends ParserRuleContext {
+		public ViewNameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_viewName; }
+	}
+
+	public final ViewNameContext viewName() throws RecognitionException {
+		ViewNameContext _localctx = new ViewNameContext(_ctx, getState());
+		enterRule(_localctx, 42, RULE_viewName);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(88);
+			match(T__21);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class FieldValueContext extends ParserRuleContext {
+		public FieldValueContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_fieldValue; }
+	}
+
+	public final FieldValueContext fieldValue() throws RecognitionException {
+		FieldValueContext _localctx = new FieldValueContext(_ctx, getState());
+		enterRule(_localctx, 44, RULE_fieldValue);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(90);
+			match(T__22);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u00a1W\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3"+
-		"\5\3\6\3\6\3\7\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r\3"+
-		"\16\3\16\3\17\3\17\3\20\3\20\3\21\3\21\3\22\3\22\3\23\3\23\3\24\3\24\3"+
-		"\25\3\25\3\26\3\26\3\26\2\2\27\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36"+
-		" \"$&(*\2\2\2A\2,\3\2\2\2\4.\3\2\2\2\6\60\3\2\2\2\b\62\3\2\2\2\n\64\3"+
-		"\2\2\2\f\66\3\2\2\2\168\3\2\2\2\20:\3\2\2\2\22<\3\2\2\2\24>\3\2\2\2\26"+
-		"@\3\2\2\2\30B\3\2\2\2\32D\3\2\2\2\34F\3\2\2\2\36H\3\2\2\2 J\3\2\2\2\""+
-		"L\3\2\2\2$N\3\2\2\2&P\3\2\2\2(R\3\2\2\2*T\3\2\2\2,-\7\3\2\2-\3\3\2\2\2"+
-		"./\7\4\2\2/\5\3\2\2\2\60\61\7\5\2\2\61\7\3\2\2\2\62\63\7\6\2\2\63\t\3"+
-		"\2\2\2\64\65\7\7\2\2\65\13\3\2\2\2\66\67\7\b\2\2\67\r\3\2\2\289\7\t\2"+
-		"\29\17\3\2\2\2:;\7\n\2\2;\21\3\2\2\2<=\7\13\2\2=\23\3\2\2\2>?\7\f\2\2"+
-		"?\25\3\2\2\2@A\7\r\2\2A\27\3\2\2\2BC\7\16\2\2C\31\3\2\2\2DE\7\17\2\2E"+
-		"\33\3\2\2\2FG\7\20\2\2G\35\3\2\2\2HI\7\21\2\2I\37\3\2\2\2JK\7\22\2\2K"+
-		"!\3\2\2\2LM\7\23\2\2M#\3\2\2\2NO\7\24\2\2O%\3\2\2\2PQ\7\25\2\2Q\'\3\2"+
-		"\2\2RS\7\26\2\2S)\3\2\2\2TU\7\27\2\2U+\3\2\2\2\2";
+		"\u0004\u0001\u00a1]\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
+		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
+		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
+		"\f\u0007\f\u0002\r\u0007\r\u0002\u000e\u0007\u000e\u0002\u000f\u0007\u000f"+
+		"\u0002\u0010\u0007\u0010\u0002\u0011\u0007\u0011\u0002\u0012\u0007\u0012"+
+		"\u0002\u0013\u0007\u0013\u0002\u0014\u0007\u0014\u0002\u0015\u0007\u0015"+
+		"\u0002\u0016\u0007\u0016\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001"+
+		"\u0001\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0004\u0001\u0004"+
+		"\u0001\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007"+
+		"\u0001\b\u0001\b\u0001\t\u0001\t\u0001\n\u0001\n\u0001\u000b\u0001\u000b"+
+		"\u0001\f\u0001\f\u0001\r\u0001\r\u0001\u000e\u0001\u000e\u0001\u000f\u0001"+
+		"\u000f\u0001\u0010\u0001\u0010\u0001\u0011\u0001\u0011\u0001\u0012\u0001"+
+		"\u0012\u0001\u0013\u0001\u0013\u0001\u0014\u0001\u0014\u0001\u0015\u0001"+
+		"\u0015\u0001\u0016\u0001\u0016\u0001\u0016\u0000\u0000\u0017\u0000\u0002"+
+		"\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u001c\u001e"+
+		" \"$&(*,\u0000\u0000E\u0000.\u0001\u0000\u0000\u0000\u00020\u0001\u0000"+
+		"\u0000\u0000\u00042\u0001\u0000\u0000\u0000\u00064\u0001\u0000\u0000\u0000"+
+		"\b6\u0001\u0000\u0000\u0000\n8\u0001\u0000\u0000\u0000\f:\u0001\u0000"+
+		"\u0000\u0000\u000e<\u0001\u0000\u0000\u0000\u0010>\u0001\u0000\u0000\u0000"+
+		"\u0012@\u0001\u0000\u0000\u0000\u0014B\u0001\u0000\u0000\u0000\u0016D"+
+		"\u0001\u0000\u0000\u0000\u0018F\u0001\u0000\u0000\u0000\u001aH\u0001\u0000"+
+		"\u0000\u0000\u001cJ\u0001\u0000\u0000\u0000\u001eL\u0001\u0000\u0000\u0000"+
+		" N\u0001\u0000\u0000\u0000\"P\u0001\u0000\u0000\u0000$R\u0001\u0000\u0000"+
+		"\u0000&T\u0001\u0000\u0000\u0000(V\u0001\u0000\u0000\u0000*X\u0001\u0000"+
+		"\u0000\u0000,Z\u0001\u0000\u0000\u0000./\u0005\u0001\u0000\u0000/\u0001"+
+		"\u0001\u0000\u0000\u000001\u0005\u0002\u0000\u00001\u0003\u0001\u0000"+
+		"\u0000\u000023\u0005\u0003\u0000\u00003\u0005\u0001\u0000\u0000\u0000"+
+		"45\u0005\u0004\u0000\u00005\u0007\u0001\u0000\u0000\u000067\u0005\u0005"+
+		"\u0000\u00007\t\u0001\u0000\u0000\u000089\u0005\u0006\u0000\u00009\u000b"+
+		"\u0001\u0000\u0000\u0000:;\u0005\u0007\u0000\u0000;\r\u0001\u0000\u0000"+
+		"\u0000<=\u0005\b\u0000\u0000=\u000f\u0001\u0000\u0000\u0000>?\u0005\t"+
+		"\u0000\u0000?\u0011\u0001\u0000\u0000\u0000@A\u0005\n\u0000\u0000A\u0013"+
+		"\u0001\u0000\u0000\u0000BC\u0005\u000b\u0000\u0000C\u0015\u0001\u0000"+
+		"\u0000\u0000DE\u0005\f\u0000\u0000E\u0017\u0001\u0000\u0000\u0000FG\u0005"+
+		"\r\u0000\u0000G\u0019\u0001\u0000\u0000\u0000HI\u0005\u000e\u0000\u0000"+
+		"I\u001b\u0001\u0000\u0000\u0000JK\u0005\u000f\u0000\u0000K\u001d\u0001"+
+		"\u0000\u0000\u0000LM\u0005\u0010\u0000\u0000M\u001f\u0001\u0000\u0000"+
+		"\u0000NO\u0005\u0011\u0000\u0000O!\u0001\u0000\u0000\u0000PQ\u0005\u0012"+
+		"\u0000\u0000Q#\u0001\u0000\u0000\u0000RS\u0005\u0013\u0000\u0000S%\u0001"+
+		"\u0000\u0000\u0000TU\u0005\u0014\u0000\u0000U\'\u0001\u0000\u0000\u0000"+
+		"VW\u0005\u0015\u0000\u0000W)\u0001\u0000\u0000\u0000XY\u0005\u0016\u0000"+
+		"\u0000Y+\u0001\u0000\u0000\u0000Z[\u0005\u0017\u0000\u0000[-\u0001\u0000"+
+		"\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
