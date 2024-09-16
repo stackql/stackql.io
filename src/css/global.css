@@ -347,7 +347,16 @@ html[data-theme='dark'] .hero--primary {
 .footerSocialIcon {
 	font-size: 24;
   }
+
   
+.footer__bottom {
+	display: flex;
+	justify-content: center; /* Center the icons horizontally */
+	align-items: center;     /* Align the icons vertically */
+	gap: 16px;               /* Add spacing between the icons */
+	padding: 16px 0;         /* Add some padding to the top and bottom */
+}  
+
 .footerSocialIconButton {
 padding: 0;
 color: 'rgba(255,255,255,.6)';
