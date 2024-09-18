@@ -21,15 +21,15 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--approotfilemode`</span> | uint32 | Application config and cache file mode | `493` |
 | <span class="nowrap">`--auth`</span> | string | `auth` context keyvals in json form |  |
 | <span class="nowrap">`--cachekeycount`</span> | integer | Cache initial key count | `100` |
-| <span class="nowrap">`--colorscheme`</span> | string | Color scheme used in the shell must be one of {`dark`, `light`, `null`}; applies to Linux and Mac only | `null` |
 | <span class="nowrap">`--configfile`</span> | string | Config file full path | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` file, none if empty | `null` |
-| <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` file, none if empty | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Maximum dataflow dependency depth for a given query | `1` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Maximum dataflow dependency depth for a given query | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | int | Maximum dataflow weakly connected components for a given query | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | JSON / YAML string to configure DBMS housekeeping query handling | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Delimiter for csv output. Single char only.  Ignored for all non-csv output | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` flag; run preprocessor only, templated output will be returned | `false` |
 | <span class="nowrap">`--execution.concurrency.limit`</span> | int | Concurrency limit for query execution | `1` |
+| <span class="nowrap">`--export.alias`</span> | string | Export alias prefix (namespace or schema) | |
 | <span class="nowrap">`--gc`</span> | string | JSON / YAML string representing GC config | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Disables column headers, valid only with `--output csv` or `--output text` | `false` |
 | <span class="nowrap">`--http.log.enabled`</span> | flag | Display http request info in terminal | `false` |
@@ -51,6 +51,7 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `table`, `csv`, `text`} | `table` |
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
 | <span class="nowrap">`--registry`</span> | string | openapi registry context keyvals in json form |  |
+| <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |
 | <span class="nowrap">`--sqlBackend`</span> | string | JSON / YAML string representing SQL Backend System Config | `{}` |
 | <span class="nowrap">`--store.txn`</span> | string | JSON / YAML string representing Txn store config | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | Path to CA bundle, if not specified then system defaults used |  |
