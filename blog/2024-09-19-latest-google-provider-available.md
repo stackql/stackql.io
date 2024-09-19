@@ -16,17 +16,19 @@ Summary stats for the new `google` provider:
 
 <table>
   <tr>
-    <td>Version</td>
+    <td><b>Version</b></td>
     <td>v24.09.00254</td>
   </tr>
   <tr>
-    <td>Total services</td>
+    <td><b>Total services</b></td>
     <td>168</td>
   </tr>
   <tr>
-    <td>Total resources</td>
+    <td><b>Total resources</b></td>
     <td>1941</td>
   </tr>
 </table>
 
+<br />
+<br />
 Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).
