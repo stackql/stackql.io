@@ -31,4 +31,5 @@ Summary stats for the new `google` provider:
 
 <br />
 <br />
+
 Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).
