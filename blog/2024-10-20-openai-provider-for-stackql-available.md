@@ -105,7 +105,7 @@ stackql  >>select * from openai.models.models;
 here is an example of a chat completion using the provider:
 
 ```shell
-stackql  >>select choices from openai.chat.chat_completions
+stackql  >>select choices from openai.chat.completions
 stackql  >>where data__model = 'gpt-4o'
 stackql  >>and data__messages = '[{"role": "system", "content": "what is stackql?"}]';
 |----------------------------------------------------------------------------------|
@@ -126,7 +126,7 @@ stackql  >>and data__messages = '[{"role": "system", "content": "what is stackql
 then run it again...
 
 ```shell
-stackql  >>select choices from openai.chat.chat_completions
+stackql  >>select choices from openai.chat.completions
 stackql  >>where data__model = 'gpt-4o'
 stackql  >>and data__messages = '[{"role": "system", "content": "what is stackql?"}]';
 |----------------------------------------------------------------------------------|
