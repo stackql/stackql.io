@@ -79,9 +79,9 @@ docker pull stackql/stackql
 
 [__StackQL GitHub Actions__](https://github.com/stackql/stackql-actions-demo) are available for use in your GitHub Actions workflows.  The following actions are available:
 
-- [__`setup-stackql`__](https://github.com/marketplace/actions/stackql-studios-setup-stackql) - Setup StackQL in your GitHub Actions workflow
-- [__`stackql-exec`__](https://github.com/marketplace/actions/stackql-studios-stackql-exec) - Execute StackQL commands in your GitHub Actions workflow
-- [__`stackql-assert`__](https://github.com/marketplace/actions/stackql-studios-stackql-assert) - Perform unit tests against IaC routines performed with any tool (Terraform, Pulumi, CDK, etc.) in your GitHub Actions workflow
+- [__`setup-stackql`__](https://github.com/marketplace/actions/setup-stackql) - Setup StackQL in your GitHub Actions workflow
+- [__`stackql-exec`__](https://github.com/marketplace/actions/stackql-exec) - Execute StackQL commands in your GitHub Actions workflow
+- [__`stackql-assert`__](https://github.com/marketplace/actions/stackql-assert) - Perform unit tests against IaC routines performed with any tool (Terraform, Pulumi, CDK, etc.) in your GitHub Actions workflow
 
 ## `pystackql` Python Package
 

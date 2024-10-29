@@ -93,17 +93,17 @@ const sidebars = {
         {
           type: 'link',
           label: 'setup-stackql',
-          href: 'https://github.com/marketplace/actions/stackql-studios-setup-stackql',
+          href: 'https://github.com/marketplace/actions/setup-stackql',
         },
         {
           type: 'link',
           label: 'stackql-exec',
-          href: 'https://github.com/marketplace/actions/stackql-studios-stackql-exec',
+          href: 'https://github.com/marketplace/actions/stackql-exec',
         },
         {
           type: 'link',
           label: 'stackql-assert',
-          href: 'https://github.com/marketplace/actions/stackql-studios-stackql-assert',
+          href: 'https://github.com/marketplace/actions/stackql-assert',
         },
       ]
     },
