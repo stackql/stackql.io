@@ -92,4 +92,4 @@ now provides something much more useful from an analytic perspective:
 |--------------------------------------|----------------|-----------------------------------------------------------------------------|
 ```
 
-`__json_each__`is available from  version 0.5.418 or stackql onwards, this function can also be used in StackQL GitHub Actions such as [__`stackql-exec`__](https://github.com/marketplace/actions/stackql-studios-stackql-exec) or [__`stackql-assert`__](https://github.com/marketplace/actions/stackql-studios-stackql-assert) and in Python and Pandas using [__`pystackql`__](https://pystackql.readthedocs.io/en/latest/).
+`__json_each__`is available from  version 0.5.418 or stackql onwards, this function can also be used in StackQL GitHub Actions such as [__`stackql-exec`__](https://github.com/marketplace/actions/stackql-exec) or [__`stackql-assert`__](https://github.com/marketplace/actions/stackql-assert) and in Python and Pandas using [__`pystackql`__](https://pystackql.readthedocs.io/en/latest/).
