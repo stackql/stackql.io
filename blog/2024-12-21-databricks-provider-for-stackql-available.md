@@ -17,7 +17,7 @@ registry pull databricks_account;
 registry pull databricks_workspace;
 ``` 
 
-## The `databricks_account` provider
+## `databricks_account` provider
 
 The __`databricks_account`__ provider is used for account-level operations, including provisioning or managing users, groups, unity catalog metastores, workspaces, and account-level cloud resources used by workspaces (such as networking resources).  Services include:
 
@@ -88,7 +88,7 @@ stackql  >>databricks_account.provisioning.workspaces where account_id = 'ebfcc
 |------------------|----------------|-------------------|------------------|--------------|------------|--------------------------------------|--------------------------------------|
 ```
 
-## The `databricks_workspace` provider
+## `databricks_workspace` provider
 
 The `databricks_workspace` provider is used for workspace-level operations, such as provisioning and managing clusters, dashboards, and workflow jobs (including delta live table pipelines).  Services include:  
 
