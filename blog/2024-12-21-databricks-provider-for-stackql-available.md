@@ -2,8 +2,8 @@
 slug: databricks-provider-for-stackql-available
 title: Databricks Provider for StackQL Available
 hide_table_of_contents: false
-authors:  
- - jeffreyaven
+authors:	
+  - jeffreyaven
 image: "/img/blog/stackql-databricks-provider-featured-image.png"
 description: Query and interact with Databricks resources using SQL.
 keywords: [stackql, databricks, spark, iac, analytics]
