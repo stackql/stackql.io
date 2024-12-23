@@ -168,6 +168,8 @@ const config = {
         '/registry/awscc',
         '/registry/azure',
         '/registry/digitalocean',
+        '/registry/confluent',
+        '/registry/databricks',
         '/registry/github',
         '/registry/google',
         '/registry/k8s',
@@ -327,6 +329,8 @@ const config = {
           label: 'Providers',
           position: 'left',
           items: [
+
+            // AWS, Azure, Google, Databricks, Confluent, Okta, K8S, DigitalOcean, Linode, more
             {
               label: 'AWS',
               to: '/registry/aws',
@@ -340,16 +344,20 @@ const config = {
               to: '/registry/google',
             },
             {
-              label: 'GitHub',
-              to: '/registry/github',
+              label: 'Databricks',
+              to: '/registry/databricks',
+            },
+            {
+              label: 'Confluent',
+              to: '/registry/confluent',
+            },            
+            {
+              label: 'Okta',
+              to: '/registry/okta',
             },
             {
               label: 'Kubernetes',
               to: '/registry/k8s',
-            },
-            {
-              label: 'Okta',
-              to: '/registry/okta',
             },
             {
               label: 'DigitalOcean',
@@ -358,6 +366,10 @@ const config = {
             {
               label: 'Linode',
               to: '/registry/linode',
+            },
+            {
+              label: 'GitHub',
+              to: '/registry/github',
             },
             {
               label: '... More',
