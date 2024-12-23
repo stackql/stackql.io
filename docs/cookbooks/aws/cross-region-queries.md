@@ -39,7 +39,7 @@ Using StackQL, you can specify regions to target resources across different geog
 ### Example: Listing EC2 Instances Across Multiple Regions
 
 ```sql
-SELECT instanceId, region
+SELECT instance_id, region
 FROM aws.ec2.instances
 WHERE region IN ('us-east-1', 'eu-west-1');
 ```
