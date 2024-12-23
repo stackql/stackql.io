@@ -18,7 +18,6 @@ Check out the registry docs at [__`databricks_account`__](https://databricks-acc
 
 :::
 
-
 To get started, pull the providers from the registry as follows:  
 
 ```
