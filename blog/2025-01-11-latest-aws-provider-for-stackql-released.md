@@ -3,7 +3,7 @@ slug: latest-aws-provider-for-stackql-released
 title: New AWS Provider Available (Jan 2025)
 hide_table_of_contents: false
 authors:  
- - kieranrimmer
+- kieranrimmer
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Query and interact with AWS resources using SQL.
 keywords: [stackql, aws, amazon web services, iac, analytics]
