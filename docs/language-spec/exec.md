@@ -38,43 +38,57 @@ EXEC [ queryHint ] <multipartIdentifier>.<methodName> [ <methodArguments> ];
 
 Query hints supported for the `EXEC` command are summarised below:  
 
-| Hint                 | Description                                                                                                                 |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `/*+ SHOWRESULTS */` | Returns result set, designed for methods that return data, use `SELECT` however if possible.                                |
-| `/*+ AWAIT  */`      | Makes the operation blocking (synchronous), provides script control for long running operations (e.g. mutation operations). |
+| Hint                 | Description                                                                                                                                                                |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/*+ SHOWRESULTS */` | Returns result set, designed for methods that return data, use `SELECT` however if possible.                                                                               |
+| `/*+ AWAIT  */`      | Makes the operation blocking (synchronous), provides script control for long running operations (e.g. mutation operations).  Note: this is not supported for all providers |
 
 * * *
 
 ## Examples
 
 ### Stopping a Google Compute Engine instance
-Run an EXEC statement to stop a running Compute Engine instance in an authenticated session.
+Run an `EXEC` statement to stop a running Compute Engine instance in an authenticated session.
 
 ```sql
 -- Stop a running Compute Engine resource instance
-EXEC compute.instances.stop 
+EXEC google.compute.instances.stop 
 @instance = 'demo-instance-1', 
 @project = 'stackql-demo', 
 @zone = 'australia-southeast1-a';
 ```
 
 ### Starting a Google Compute Engine instance (synchronous option)
-Run an EXEC statement to start a stopped Compute Engine instance in an authenticated session, uses the `/*+ AWAIT  */` query hint to make the operation blocking (synchronous).
+Run an `EXEC` statement to start a stopped Compute Engine instance in an authenticated session, uses the `/*+ AWAIT  */` query hint to make the operation blocking (synchronous).
 
 ```sql
 -- Start a stopped Compute Engine resource instance
-EXEC /*+ AWAIT  */ compute.instances.stop 
+EXEC /*+ AWAIT  */ google.compute.instances.stop 
 @instance = 'demo-instance-1', 
 @project = 'stackql-demo', 
 @zone = 'australia-southeast1-a';
 ```
 
+### Starting and stopping an AWS EC2 instance
+Run an `EXEC` statement to start an AWS EC2 instance in an authenticated session.
+
+```sql
+-- Start an EC2 instance
+EXEC aws.ec2_native.instances.start 
+@InstanceId = 'i-0fc989cf4efcd8b88', 
+@region = 'ap-southeast-2';
+-- Stop an EC2 instance
+EXEC aws.ec2_native.instances.stop 
+@InstanceId = 'i-0fc989cf4efcd8b88', 
+@region = 'ap-southeast-2';
+```
+
 ### Attach a Disk to a Google Compute Engine instance
-Run an EXEC statement to attach a Disk to a Compute Engine instance in an authenticated session.
+Run an `EXEC` statement to attach a Disk to a Compute Engine instance in an authenticated session.
 
 ```sql
 -- Attach a Disk resource to a Compute Engine instance
-EXEC compute.instances.attachDisk 
+EXEC google.compute.instances.attachDisk 
 @zone='australia-southeast1-a', 
 @project='stackql-demo', 
 @instance='demo-instance-1' 
@@ -86,7 +100,7 @@ EXEC compute.instances.attachDisk
 ```
 
 ### Simulate Azure Spot VM eviction
-Run an EXEC statement to simulate eviction of Azure Spot VM Instance. 
+Run an `EXEC` statement to simulate eviction of Azure Spot VM Instance. 
 
 ```sql
 exec azure.compute.virtual_machine.simulate_eviction
