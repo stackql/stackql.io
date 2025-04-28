@@ -2,8 +2,7 @@
 slug: quickly-identify-old-node-runtimes-in-aws-lambda
 title: (Quickly) Identify Old Node Runtimes in AWS Lambda
 hide_table_of_contents: false
-authors:  
- - jeffreyaven
+author: jeffreyaven
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Query and interact with AWS resources using SQL.
 keywords: [stackql, aws, amazon web services, iac, analytics, lambda]
