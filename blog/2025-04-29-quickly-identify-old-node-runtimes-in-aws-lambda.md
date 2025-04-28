@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 Have you been sent one of these?
 
-> ## [Action Required] AWS Lambda end of support for Node.js 18 [AWS Account: 824123456789] [EU-CENTRAL-1]
+__[Action Required] AWS Lambda end of support for Node.js 18 [AWS Account: 824123456789] [EU-CENTRAL-1]__
 
 If you are like me and manage AWS accounts with numerous Lambda functions potentially deployed across multiple regions, you need to identify affected resources, in this case, Lambda node runtimes, which will be discontinued later this year.  
 
@@ -32,7 +32,7 @@ sh stackql-aws-cloud-shell.sh
 ```
 4. Run some analytic queries using `stackql`; here are some examples...
 
-## 🔍 List all functions and runtimes across regions
+### 🔍 List all functions and runtimes across regions
 
 Run a stackql query to get the details about functions, runtimes, etc, deployed at any given time across one or more AWS regions.  You can include all 25 AWS regions; each query will be performed asynchronously - speeding up the results.
 
@@ -84,7 +84,7 @@ WHERE region IN ('us-east-1', 'eu-west-1');
 </TabItem>
 </Tabs>
 
-## 📊 Group by runtime and region
+### 📊 Group by runtime and region
 
 Perform an analytic query like a `group by aggregate` query such as...
 
@@ -110,10 +110,6 @@ GROUP BY runtime, region;
 </TabItem>
 <TabItem value="results">
 
-
-</TabItem>
-</Tabs>
-
 ```bash
 |--------------|----------------|---------------|
 | runtime      | region         | num_functions |
@@ -137,6 +133,9 @@ GROUP BY runtime, region;
 | python3.8    | ap-southeast-2 | 18            |
 |--------------|----------------|---------------|
 ```
+
+</TabItem>
+</Tabs>
 
 :::tip
 
