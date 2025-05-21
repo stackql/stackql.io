@@ -169,6 +169,8 @@ const config = {
         '/registry/azure',
         '/registry/digitalocean',
         '/registry/confluent',
+        '/registry/snowflake',
+        '/registry/openai',
         '/registry/databricks',
         '/registry/github',
         '/registry/google',
