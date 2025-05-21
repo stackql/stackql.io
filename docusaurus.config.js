@@ -329,8 +329,6 @@ const config = {
           label: 'Providers',
           position: 'left',
           items: [
-
-            // AWS, Azure, Google, Databricks, Confluent, Okta, K8S, DigitalOcean, Linode, more
             {
               label: 'AWS',
               to: '/registry/aws',
@@ -344,38 +342,34 @@ const config = {
               to: '/registry/google',
             },
             {
+              label: 'Snowflake',
+              to: '/registry/snowflake',
+            },
+            {
               label: 'Databricks',
               to: '/registry/databricks',
             },
             {
               label: 'Confluent',
               to: '/registry/confluent',
-            },            
+            },
             {
               label: 'Okta',
               to: '/registry/okta',
-            },
-            {
-              label: 'Kubernetes',
-              to: '/registry/k8s',
-            },
-            {
-              label: 'DigitalOcean',
-              to: '/registry/digitalocean',
-            },
-            {
-              label: 'Linode',
-              to: '/registry/linode',
             },
             {
               label: 'GitHub',
               to: '/registry/github',
             },
             {
+              label: 'OpenAI',
+              to: '/registry/openai',
+            },
+            {
               label: '... More',
               to: '/registry',
-            },                                                                                                
-          ]                      
+            },
+          ],
         },        
         {
           to: '/stackql-deploy',
