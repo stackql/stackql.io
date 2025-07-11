@@ -1,7 +1,5 @@
 grammar INSERT;
-
 import common;
-
 insertStatement
     : INSERT
       awaitQueryHint? IGNORE? INTO? multipartIdentifier
@@ -13,5 +11,6 @@ insertStatement
         VALUES '(' fieldList ')'    
         )
       )
+      (RETURNING fieldList)?
       ';'
     ;
