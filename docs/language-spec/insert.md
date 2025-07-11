@@ -33,8 +33,20 @@ type="insert"
 ```sql
 INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 ( field_name [, field_name] ... )
-{ VALUES ( value [, value] ... ) | <selectExpression> };
+{ VALUES ( value [, value] ... ) | <selectExpression> }
+[ RETURNING field_name [, field_name] ... ];
 ```
+
+* * *
+
+## RETURNING Clause
+
+The `RETURNING` clause allows you to retrieve data from the `INSERT` operation response. This is particularly useful when:
+- The API returns important information like generated IDs, status codes, or other metadata
+- You need to capture the response data for further processing
+- You want to verify the operation result
+
+The fields specified in the `RETURNING` clause will be deserialized from the API response and displayed in the result set.
 
 * * *
 
@@ -112,4 +124,45 @@ INSERT INTO azure.network.interfaces
   WHERE subscriptionId = '0123456789'
   AND resourceGroupName = 'vmss-flex'
   AND networkInterfaceName = 'vmss-nic-01';
+```
+
+### `INSERT` statement with RETURNING clause
+Run an `INSERT` statement and retrieve specific fields from the API response.
+
+```sql
+-- Execute a Snowflake SQL statement and return the response data
+INSERT INTO snowflake.sqlapi.statements (
+    data__statement,
+    data__timeout,
+    data__database,
+    data__schema,
+    "User-Agent",
+    endpoint
+)
+SELECT
+    'SELECT
+        customer_id,
+        customer_name,
+        email,
+        credit_card_number,
+        purchase_amount,
+        purchase_date
+    FROM CUSTOMER_DATA',
+    10,
+    'MY_DATABASE',
+    'MY_SCHEMA',
+    'User-Agent',
+    'ABCDEF-XY12345'
+RETURNING code, sqlState, message, data;
+```
+
+Result:
+```
+|--------|----------|--------------------------------|-----------------------------------------------------------------------------|
+|  code  | sqlState |            message             |                                    data                                     |
+|--------|----------|--------------------------------|-----------------------------------------------------------------------------|
+| 090001 |    00000 | Statement executed             | [["1","John                                                                 |
+|        |          | successfully.                  | Smith","john.smith@example.com","***MASKED***","199.99","20262"],["1","John |
+|        |          |                                | Smith","john.smith@example.com","***MASKED***","199.99","20263"]]           |
+|--------|----------|--------------------------------|-----------------------------------------------------------------------------|
 ```
