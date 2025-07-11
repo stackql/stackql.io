@@ -1,4 +1,4 @@
-// Generated from /mnt/c/LocalGitRepos/stackql/web-properties/stackql.io/ref/antlr/common.g4 by ANTLR 4.13.1
+// Generated from c:/LocalGitRepos/stackql/web-properties/stackql.io/ref/antlr/common.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -196,6 +196,16 @@ public interface commonListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSelectStatement(commonParser.SelectStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link commonParser#replaceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterReplaceStatement(commonParser.ReplaceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link commonParser#replaceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitReplaceStatement(commonParser.ReplaceStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link commonParser#awaitQueryHint}.
 	 * @param ctx the parse tree

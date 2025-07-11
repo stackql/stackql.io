@@ -171,6 +171,7 @@ WINDOW: 'WINDOW';
 XOR: 'XOR';
 MATERIALIZED: 'MATERIALIZED';
 REFRESH: 'REFRESH';
+RETURNING: 'RETURNING';
 //============================
 // End Keywords list
 //============================
