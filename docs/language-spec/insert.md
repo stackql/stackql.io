@@ -39,7 +39,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 
 * * *
 
-## RETURNING Clause
+## `RETURNING` Clause
 
 The `RETURNING` clause allows you to retrieve data from the `INSERT` operation response. This is particularly useful when:
 - The API returns important information like generated IDs, status codes, or other metadata
