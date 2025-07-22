@@ -74,7 +74,7 @@ SELECT 'stackql-demo',
 'test10gbdisk', 10;
 ```
 
-### `INSERT` statement with SELECT
+### `INSERT` statement with `SELECT`
 Run an INSERT statement with SELECT.
 
 ```sql
@@ -126,7 +126,7 @@ INSERT INTO azure.network.interfaces
   AND networkInterfaceName = 'vmss-nic-01';
 ```
 
-### `INSERT` statement with RETURNING clause
+### `INSERT` statement with `RETURNING` clause
 Run an `INSERT` statement and retrieve specific fields from the API response.
 
 ```sql

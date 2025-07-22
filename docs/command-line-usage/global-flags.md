@@ -35,11 +35,11 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--http.log.enabled`</span> | flag | Display http request info in terminal | `false` |
 | <span class="nowrap">`--http.proxy.host`</span> | string | Proxy host (leave blank for no proxy) | `null` |
 | <span class="nowrap">`--http.proxy.password`</span> | string | Proxy password | `null` |
-| <span class="nowrap">`--http.proxy.port`</span> | integer | Proxy port, any number <=0 will result in the default port for a given scheme (e.g. `http -> 80`) | `-1` |
-| <span class="nowrap">`--http.proxy.scheme`</span> | string | Proxy scheme, {`http` or `https`} | `http` |
+| <span class="nowrap">`--http.proxy.port`</span> | integer | Proxy port, any number less than or equal to 0 will result in the default port for a given scheme (e.g. `http -> 80`) | `-1` |
+| <span class="nowrap">`--http.proxy.scheme`</span> | string | Proxy scheme, `http` or `https` | `http` |
 | <span class="nowrap">`--http.proxy.user`</span> | string | Proxy user | `null` |
-| <span class="nowrap">`--http.response.maxResults`</span> | integer | Maximum results per http request, any number <=0 results in no limitation | `-1` |
-| <span class="nowrap">`--http.response.pageLimit`</span> | integer | Maximum pages of results that will be returned per resource, any number <=0 results in no limitation | `20` |
+| <span class="nowrap">`--http.response.maxResults`</span> | integer | Maximum results per http request, any number less than or equal to 0 results in no limitation | `-1` |
+| <span class="nowrap">`--http.response.pageLimit`</span> | integer | Maximum pages of results that will be returned per resource, any number less than or equal to results in no limitation | `20` |
 | <span class="nowrap">`--indirect.depth.max`</span> | integer | Maximum depth for indirect queries: views and subqueries | `5` |
 | <span class="nowrap">`-i`, `--infile`</span> | string | Input file (IQL file) from which queries are read | `{stdin}` |
 | <span class="nowrap">`-q`, `--iqldata`</span> | string | Context (data) file for templating (`json` or `jsonnet` file)| |

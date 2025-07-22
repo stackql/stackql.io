@@ -10,7 +10,7 @@ keywords:
 description: Calculate the hyperbolic tangent of a number, returning the result using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic tangent of a specified value, which is the ratio of the hyperbolic sine to the hyperbolic cosine of the number, defined as \(\tanh(x) = \frac{\sinh(x)}{\cosh(x)}\).
+Calculates the hyperbolic tangent of a specified value.
 
 See also:  
 [[`SELECT`]](/docs/language-spec/select)
