@@ -12,8 +12,11 @@ const providersAnnouncement = `${azureSvg} Microsoft Azure and ${awsSvg} AWS pro
 const gitHubStarAccouncement = `<b>If you like StackQL, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/stackql" >Twitter</a></b> ${TwitterSvg}`;
 const hacktoberfestAccouncement = `<b>🎃 Join us for <a target="_blank" rel="noopener noreferrer" href="https://github.com/stackql/stackql/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest">Hacktoberfest</a>`;
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
+const nightOwlCodeTheme = themes.nightOwl;
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -34,6 +37,13 @@ const config = {
   //   locales: ['en', 'fr', 'pt-BR', 'ko', 'zh-CN'],
   // },  
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
     {
       tagName: 'link',
       attributes: {
@@ -83,12 +93,32 @@ const config = {
         color: '#0f4c81',
       },
     },
+    // schema.org structured data
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "StackQL",
+        "description": "Open-source infrastructure-as-code tool using SQL",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      })
+    },
   ],
   plugins: [
     '@docusaurus/plugin-ideal-image',
     // '@stackql/docusaurus-plugin-hubspot',
-    '@stackql/docusaurus-plugin-smartlook',
-    '@stackql/docusaurus-plugin-structured-data',
+    // '@stackql/docusaurus-plugin-smartlook',
+    // '@stackql/docusaurus-plugin-structured-data',
   ],
   presets: [
     [
@@ -145,8 +175,11 @@ const config = {
     ({
       metadata: [
         {name: 'robots', content: 'index,follow'},
+        {name: 'keywords', content: 'stackql, sql, infrastructure as code, cloud services, api, devops'},
         {name: 'twitter:site', content: '@stackql'},
         {name: 'twitter:creator', content: '@stackql'},
+        {name: 'twitter:title', content: 'StackQL - SQL for Cloud Infrastructure'},
+        {name: 'twitter:description', content: 'StackQL is an open-source infrastructure-as-code tool that enables you to deploy, configure, query and operate cloud and SaaS services using SQL.'},
         {name: 'og:locale', content: 'en_US'},
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
@@ -161,126 +194,126 @@ const config = {
     },
     announcementBarActive: false,
     announcementBarLink: "https://github.com/stackql/stackql",    
-    structuredData: {
-      excludedRoutes: [
-        '/registry',
-        '/registry/aws',
-        '/registry/awscc',
-        '/registry/azure',
-        '/registry/digitalocean',
-        '/registry/confluent',
-        '/registry/snowflake',
-        '/registry/openai',
-        '/registry/databricks',
-        '/registry/github',
-        '/registry/google',
-        '/registry/k8s',
-        '/registry/linode',
-        '/registry/okta',
-        '/stackql-deploy'
-      ],
-      verbose: true,
-      featuredImageDimensions: {
-        width: 1200,
-        height: 627,
-      },
-      authors:{
-        'Jeffrey Aven': {
-          authorId: '1',
-          url: 'https://www.linkedin.com/in/jeffreyaven/',
-          imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
-          sameAs: [
-            'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
-            'https://developers.google.com/community/experts/directory/profile/profile-jeffrey-aven',
-            'https://www.linkedin.com/in/jeffreyaven/',
-            'https://www.crunchbase.com/person/jeffrey-aven',
-            'https://github.com/jeffreyaven',
-            'https://dev.to/jeffreyaven',
-          ],
-        },
-        'Kieran Rimmer': {
-          authorId: '2',
-          url: 'https://www.linkedin.com/in/kieranrimmer/',
-          imageUrl: 'https://s.gravatar.com/avatar/068b9fab6cbd66529ae878e6c1b797ed?s=80',
-          sameAs: [
-            'https://github.com/general-kroll-4-life',
-          ],
-        },        
-        'Yuncheng Yang': {
-          authorId: '3',
-          url: 'https://www.linkedin.com/in/yuncheng-fabio-yang/',
-          imageUrl: 'https://avatars.githubusercontent.com/u/45674168?v=4',
-          sameAs: [
-            'https://github.com/FabioYyc',
-          ],
-        },        
-      },
-      organization: {
-        sameAs: [
-          // wikidata
-          'https://twitter.com/stackql',
-          'https://www.linkedin.com/company/stackql',
-          'https://github.com/stackql',
-          'https://www.youtube.com/@stackql',
-          'https://hub.docker.com/u/stackql',
-        ],
-        contactPoint: {
-          '@type': 'ContactPoint',
-          email: 'info@stackql.io',
-        },
-        logo: {
-          '@type': 'ImageObject',
-          inLanguage: 'en-US',
-          '@id': 'https://stackql.io/#logo',
-          url: 'https://stackql.io/img/stackql-cover.png',
-          contentUrl: 'https://stackql.io/img/stackql-cover.png',
-          width: 1440,
-          height: 900,
-          caption: 'StackQL - your cloud using SQL',
-        },
-        image: {
-          '@id': 'https://stackql.io/#logo'
-        },
-        address: {
-          '@type': 'PostalAddress',
-          addressCountry: 'AU',
-          postalCode: '3001',
-          streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
-        },
-        duns: '750469226',
-        taxID: 'ABN 65 656 147 054',
-      },
-      website: {
-        inLanguage: 'en-US',
-      },
-      webpage: {
-        inLanguage: 'en-US',
-        datePublished: '2021-07-01',
-      },
-      breadcrumbLabelMap: {
-        'developers': 'Developers',
-        'functions': 'Functions',
-        'aggregate': 'Aggregate',
-        'datetime': 'Date Time',
-        'json': 'JSON',
-        'math': 'Math',
-        'string': 'String',
-        'command-line-usage': 'Command Line Usage',
-        'getting-started': 'Getting Started',
-        'language-spec': 'Language Specification',
-        're': 'Regular Expressions',
-      }
-    },
+    // structuredData: {
+    //   excludedRoutes: [
+    //     '/registry',
+    //     '/registry/aws',
+    //     '/registry/awscc',
+    //     '/registry/azure',
+    //     '/registry/digitalocean',
+    //     '/registry/confluent',
+    //     '/registry/snowflake',
+    //     '/registry/openai',
+    //     '/registry/databricks',
+    //     '/registry/github',
+    //     '/registry/google',
+    //     '/registry/k8s',
+    //     '/registry/linode',
+    //     '/registry/okta',
+    //     '/stackql-deploy'
+    //   ],
+    //   verbose: true,
+    //   featuredImageDimensions: {
+    //     width: 1200,
+    //     height: 627,
+    //   },
+    //   authors:{
+    //     'Jeffrey Aven': {
+    //       authorId: '1',
+    //       url: 'https://www.linkedin.com/in/jeffreyaven/',
+    //       imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
+    //       sameAs: [
+    //         'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
+    //         'https://developers.google.com/community/experts/directory/profile/profile-jeffrey-aven',
+    //         'https://www.linkedin.com/in/jeffreyaven/',
+    //         'https://www.crunchbase.com/person/jeffrey-aven',
+    //         'https://github.com/jeffreyaven',
+    //         'https://dev.to/jeffreyaven',
+    //       ],
+    //     },
+    //     'Kieran Rimmer': {
+    //       authorId: '2',
+    //       url: 'https://www.linkedin.com/in/kieranrimmer/',
+    //       imageUrl: 'https://s.gravatar.com/avatar/068b9fab6cbd66529ae878e6c1b797ed?s=80',
+    //       sameAs: [
+    //         'https://github.com/general-kroll-4-life',
+    //       ],
+    //     },        
+    //     'Yuncheng Yang': {
+    //       authorId: '3',
+    //       url: 'https://www.linkedin.com/in/yuncheng-fabio-yang/',
+    //       imageUrl: 'https://avatars.githubusercontent.com/u/45674168?v=4',
+    //       sameAs: [
+    //         'https://github.com/FabioYyc',
+    //       ],
+    //     },        
+    //   },
+    //   organization: {
+    //     sameAs: [
+    //       // wikidata
+    //       'https://twitter.com/stackql',
+    //       'https://www.linkedin.com/company/stackql',
+    //       'https://github.com/stackql',
+    //       'https://www.youtube.com/@stackql',
+    //       'https://hub.docker.com/u/stackql',
+    //     ],
+    //     contactPoint: {
+    //       '@type': 'ContactPoint',
+    //       email: 'info@stackql.io',
+    //     },
+    //     logo: {
+    //       '@type': 'ImageObject',
+    //       inLanguage: 'en-US',
+    //       '@id': 'https://stackql.io/#logo',
+    //       url: 'https://stackql.io/img/stackql-cover.png',
+    //       contentUrl: 'https://stackql.io/img/stackql-cover.png',
+    //       width: 1440,
+    //       height: 900,
+    //       caption: 'StackQL - your cloud using SQL',
+    //     },
+    //     image: {
+    //       '@id': 'https://stackql.io/#logo'
+    //     },
+    //     address: {
+    //       '@type': 'PostalAddress',
+    //       addressCountry: 'AU',
+    //       postalCode: '3001',
+    //       streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
+    //     },
+    //     duns: '750469226',
+    //     taxID: 'ABN 65 656 147 054',
+    //   },
+    //   website: {
+    //     inLanguage: 'en-US',
+    //   },
+    //   webpage: {
+    //     inLanguage: 'en-US',
+    //     datePublished: '2021-07-01',
+    //   },
+    //   breadcrumbLabelMap: {
+    //     'developers': 'Developers',
+    //     'functions': 'Functions',
+    //     'aggregate': 'Aggregate',
+    //     'datetime': 'Date Time',
+    //     'json': 'JSON',
+    //     'math': 'Math',
+    //     'string': 'String',
+    //     'command-line-usage': 'Command Line Usage',
+    //     'getting-started': 'Getting Started',
+    //     'language-spec': 'Language Specification',
+    //     're': 'Regular Expressions',
+    //   }
+    // },
     // hubspot: {
     //   accountId: process.env.HUBSPOT_ACCT_ID,
     //   async: true,
     //   defer: true,
     // },
-    image: '/img/stackql-cover.png',        
-    smartlook: {
-      projectKey: process.env.SMARTLOOK_PROJECT_KEY,
-      useBetaNextGen: true,
-    },    
+    image: '/img/stackql-featured-image.png',        
+    // smartlook: {
+    //   projectKey: process.env.SMARTLOOK_PROJECT_KEY,
+    //   useBetaNextGen: true,
+    // },    
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
@@ -475,7 +508,7 @@ const config = {
       //theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
       theme: (() => {
-        var theme = require('prism-react-renderer/themes/nightOwl');
+        var theme = nightOwlCodeTheme;
         // Add additional rule to nightowl theme in order to change
         // the color of YAML keys (to be different than values).
         // There weren't many Prism themes that differentiated

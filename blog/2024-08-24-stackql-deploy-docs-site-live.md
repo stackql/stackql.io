@@ -10,7 +10,7 @@ keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/C
 tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
 ---
 
-The [__`stackql-deploy`__](https://stackql-deploy.io/docs) docs site is now available, offering a comprehensive guide to using `stackql-deploy` for your cloud resource deployments and tests. The site includes detailed documentation, examples, and best practices to help you get started quickly and effectively.   
+The [__`stackql-deploy`__](https://stackql-deploy.io/) docs site is now available, offering a comprehensive guide to using `stackql-deploy` for your cloud resource deployments and tests. The site includes detailed documentation, examples, and best practices to help you get started quickly and effectively.   
 
 :::tip
 

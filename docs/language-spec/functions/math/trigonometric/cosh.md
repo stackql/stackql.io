@@ -10,7 +10,7 @@ keywords:
 description: Calculate the hyperbolic cosine of a number, returning the result using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic cosine of a specified value, which is the average of \(e^x\) and \(e^{-x}\) where \(x\) is the given number.
+Calculates the hyperbolic cosine of a specified value.
 
 See also:  
 [[`SELECT`]](/docs/language-spec/select)

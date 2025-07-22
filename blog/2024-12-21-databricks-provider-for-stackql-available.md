@@ -169,6 +169,6 @@ To use either provider, set the following environment variables (either locally 
 
 These are the same variables that Terraform, the Databricks SDKs, and CLI use.  
 
-[__`stackql-deploy`__](https://stackql-deploy.io/docs/) examples coming soon, stay tuned!  
+[__`stackql-deploy`__](https://stackql-deploy.io/) examples coming soon, stay tuned!  
 
 ⭐ us on [__GitHub__](https://github.com/stackql/stackql) and join our community!

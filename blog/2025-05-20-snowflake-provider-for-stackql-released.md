@@ -149,7 +149,7 @@ Other notable resources which can be provisioned, managed or queried using the `
 
 The Snowflake provider for StackQL opens up numerous possibilities:
 
-1. **Infrastructure as Code**: Manage your Snowflake resources alongside other cloud providers in a unified IaC approach, see [__`stackql-deploy`__](https://stackql-deploy.io/docs/).
+1. **Infrastructure as Code**: Manage your Snowflake resources alongside other cloud providers in a unified IaC approach, see [__`stackql-deploy`__](https://stackql-deploy.io/).
 
 2. **Cost Optimization**: Identify unused resources, inefficient warehouses, and opportunities for cost savings.
 
