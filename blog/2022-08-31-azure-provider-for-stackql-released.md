@@ -10,7 +10,7 @@ keywords: [azure, microsoft, microsoft azure, stackql, stackql provider registry
 tags: [azure, microsoft, microsoft azure, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
-Proud to announce the release of the [__Microsoft Azure provider for StackQL__](https://registry.stackql.io/providers/azure/).  
+Proud to announce the release of the [__Microsoft Azure provider for StackQL__](/providers/azure/).  
 
 > StackQL allows you to query and interact with your cloud and SaaS assets using a simple SQL framework
 
@@ -20,6 +20,6 @@ Created using the [Autorest](https://github.com/Azure/autorest) project using Az
 
 Core services are available in the `azure` provider, all other services are available using the `azure_extras` provider.  
 
-We will be adding integrated interactive authentication, for now this is cli/sdk based, all of the documentation is [here](https://registry.stackql.io/providers/azure/).  
+We will be adding integrated interactive authentication, for now this is cli/sdk based, all of the documentation is [here](/providers/azure/).  
 
 Give it a test run and let us know what you think!

@@ -17,7 +17,7 @@ Pleased to announce the initial release of the AWS provider for StackQL.
 
 > StackQL allows you to query, provision, and manage cloud and SaaS resources using a simple, SQL-based framework.
 
-The initial release of the AWS provider covers EC2, S3, and the [Cloud Control API](https://aws.amazon.com/cloudcontrolapi/) - with support for other services to be released soon. The documentation for the StackQL AWS provider is available [__here__](https://registry.stackql.io/providers/aws/).  
+The initial release of the AWS provider covers EC2, S3, and the [Cloud Control API](https://aws.amazon.com/cloudcontrolapi/) - with support for other services to be released soon. The documentation for the StackQL AWS provider is available [__here__](/providers/aws/).  
 
 Follow the steps below to get started querying AWS in the StackQL interactive command shell:  
 

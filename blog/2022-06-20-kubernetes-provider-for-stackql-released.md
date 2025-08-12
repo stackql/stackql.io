@@ -16,7 +16,7 @@ Excited to announce the release of the __Kubernetes provider for StackQL__.
 
 The `k8s` provider can be used to query and interact with [__events__](https://registry.stackql.io/providers/k8s/core_v1/event/), [__namespaces__](https://registry.stackql.io/providers/k8s/core_v1/namespace/), [__nodes__](https://registry.stackql.io/providers/k8s/core_v1/node/), [__persistent volumes__](https://registry.stackql.io/providers/k8s/core_v1/persistent_volume/), [__pvcs__](https://registry.stackql.io/providers/k8s/core_v1/persistent_volume_claim/), [__pods__](https://registry.stackql.io/providers/k8s/core_v1/pod/), [__services__](https://registry.stackql.io/providers/k8s/core_v1/service/), [__service accounts__](https://registry.stackql.io/providers/k8s/core_v1/service_account/) and more.  
 
-Complete provider documentation for all of the Kubernetes resources, properties and methods is available [here](https://registry.stackql.io/providers/k8s).
+Complete provider documentation for all of the Kubernetes resources, properties and methods is available [here](/providers/k8s).
 
 Here are the steps to get started with the Kubernetes provider:  
 

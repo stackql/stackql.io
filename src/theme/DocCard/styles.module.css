@@ -1,0 +1,53 @@
+/* Make the title line a flex row so icon + text are vertically centered */
+.cardTitle {
+  display: inline-flex;   /* or 'flex' — inline-flex keeps it tight */
+  align-items: center;    /* vertical centering */
+  gap: .5rem;             /* space between icon and text */
+  font-size: 1rem;
+}
+
+/* Wrap for any icon you inject (img/svg/emoji) */
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;         /* kills extra baseline space */
+}
+
+/* Normalize common icon types */
+.cardTitle img,
+.cardTitle svg {
+  display: block;         /* remove baseline gap for SVG/img */
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.cardEmoji {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 1.1em;       /* optional nudge */
+}
+
+.cardContainer {
+  --ifm-link-color: var(--ifm-color-emphasis-800);
+  --ifm-link-hover-color: var(--ifm-color-emphasis-700);
+  --ifm-link-hover-decoration: none;
+
+  box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all var(--ifm-transition-fast) ease;
+  transition-property: border, box-shadow;
+}
+
+.cardContainer:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+}
+
+.cardContainer *:last-child {
+  margin-bottom: 0;
+}
+
+.cardDescription {
+  font-size: 0.8rem;
+}

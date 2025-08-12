@@ -23,7 +23,7 @@ With the GoDaddy provider, users can leverage StackQL to interact with their GoD
 - **Order Management**: Report on orders related to GoDaddy services.
 
 ## Getting Started
-To begin using the GoDaddy provider, with `stackql` installed (see [here](https://stackql.io/downloads)), create a [GoDaddy API token](https://developer.godaddy.com/keys), populate an environment variable named `GODADDY_API_KEY` with this value, using `stackql exec` or `stackql shell` pull the latest provider for GoDaddy using:
+To begin using the GoDaddy provider, with `stackql` installed (see [here](/install)), create a [GoDaddy API token](https://developer.godaddy.com/keys), populate an environment variable named `GODADDY_API_KEY` with this value, using `stackql exec` or `stackql shell` pull the latest provider for GoDaddy using:
 
 ```
 REGISTRY PULL godaddy;

@@ -10,7 +10,7 @@ keywords: [stackql, anthropic, claude, llms, genai, iac, analytics]
 tags: [stackql, anthropic, claude, llms, genai, iac, analytics]
 ---
 
-The __`anthropic`__ provider for [__`stackql`__](https://github.com/stackql/stackql) is now available in the dev stackql provider registry. The `anthropic` provider for `stackql` includes services for interacting with Claude models via the Messages API. To get started download [`stackql`](https://stackql.io/downloads), set the `ANTHROPIC_API_KEY` environment variable and use the dev registry as shown here:  
+The __`anthropic`__ provider for [__`stackql`__](https://github.com/stackql/stackql) is now available in the dev stackql provider registry. The `anthropic` provider for `stackql` includes services for interacting with Claude models via the Messages API. To get started download [`stackql`](/install), set the `ANTHROPIC_API_KEY` environment variable and use the dev registry as shown here:  
 
 ```bash
 export DEV_REG="{ \"url\": \"https://registry-dev.stackql.app/providers\" }"

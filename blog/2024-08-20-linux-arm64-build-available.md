@@ -9,6 +9,6 @@ keywords: [stackql, linux, arm, arm64, devops, infrastructure, cloud security, C
 tags: [stackql, linux, arm, arm64, devops, infrastructure, cloud security, CI/CD, iac, infrastructure-as-code]
 ---
 
-StackQL is now available for ARM64-based Linux systems.  To download the ARM64 binary, please visit our [__downloads page__](/downloads), where you can find the appropriate version for your system.  
+StackQL is now available for ARM64-based Linux systems.  To download the ARM64 binary, please visit our [__downloads page__](/install), where you can find the appropriate version for your system.  
 
 Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).

@@ -1,3 +1,4 @@
+// for backward compatibility, no longer linked from site
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';

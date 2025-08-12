@@ -16,6 +16,6 @@ Using stackql and the [__`aws`__](https://aws.stackql.io/providers/aws/) provide
 
 ![aws-inventory-example](/img/blog/aws-inventory.png)
 
-Check out the code at [__AWS Global Inventory__](/docs/cookbooks/aws/aws-global-inventory)!  
+Check out the code at [__AWS Global Inventory__](/docs/tutorials/aws/aws-global-inventory)!  
 
 Visit us and give us a ⭐ on [__GitHub__](https://github.com/stackql/stackql)

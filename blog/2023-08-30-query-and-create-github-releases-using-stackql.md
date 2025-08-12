@@ -9,7 +9,7 @@ keywords: [stackql, github, github releases]
 tags: [stackql, github, github releases]
 ---
 
-[StackQL](https://github.com/stackql/stackql) and the [StackQL GitHub provider](https://registry.stackql.io/github) can be used to query objects in GitHub, including releases, tags, forks, commits, and much more.  This article shows how you can automate releases using StackQL.  
+[StackQL](https://github.com/stackql/stackql) and the [StackQL GitHub provider](/providers/github) can be used to query objects in GitHub, including releases, tags, forks, commits, and much more.  This article shows how you can automate releases using StackQL.  
 
 ## Push tags
 
@@ -101,6 +101,6 @@ You will see output like the following:
 |--------------------------------|-------------|------------------|----------------------|              
 ```
 
-More information about the GitHub Provider for StackQL can be found [here](https://registry.stackql.io/github).  
+More information about the GitHub Provider for StackQL can be found [here](/providers/github).  
 
 Enjoy!

@@ -37,7 +37,7 @@ All the materials required for this exercise are:
 
 First, please do the following:
 
-1. Download and install `stackql` [__from our website__](https://stackql.io/downloads).
+1. Download and install `stackql` [__from our website__](/install).
 2. For google:
     - (i) Create and download a Google Service Account Key as per [__Google documentation__](https://cloud.google.com/iam/docs/creating-managing-service-account-keys). Remember the location of your key file.
     - (ii) You will need to grant the Service Account at least read, list, create, and delete privileges. For more information about google `iam` and Service Accounts in particular, please consult the [__documentation__](https://cloud.google.com/iam/docs/service-accounts). For this exercise, grant your service account the [__`roles/compute.storageAdmin`__](https://cloud.google.com/iam/docs/understanding-roles#compute.storageAdmin) role would be adequate.

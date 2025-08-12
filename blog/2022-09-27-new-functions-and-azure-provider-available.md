@@ -26,4 +26,4 @@ json_extract(properties, '$.hardwareProfile.vmSize') as vm_size
 FROM azure.compute.virtual_machines WHERE resourceGroupName = 'stackql-ops-cicd-dev-01' AND subscriptionId = '242c6a2d-16f9-4912-90f6-59b1cf85509d';
 ```
 
-You can find more information on the latest Azure provider [__here__](https://registry.stackql.io/providers/azure/).  
+You can find more information on the latest Azure provider [__here__](/providers/azure/).  

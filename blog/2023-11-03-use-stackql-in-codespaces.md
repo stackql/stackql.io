@@ -51,7 +51,7 @@ Note that the `devcontainer` configuration includes the essential extensions for
 
 ### Provider Authentication
 
-The environment variables required to authenticate to your specific provider or providers can be supplied using Codespaces secrets and passed securely to the Codespaces container using the `containerEnv` object in the example above.  For specifics about variables required for different providers, see the provider documentation for your provider in the [StackQL Provider Registry](https://registry.stackql.io/).
+The environment variables required to authenticate to your specific provider or providers can be supplied using Codespaces secrets and passed securely to the Codespaces container using the `containerEnv` object in the example above.  For specifics about variables required for different providers, see the provider documentation for your provider in the [StackQL Provider Registry](/providers).
 
 
 ## Launching the Codespaces Environment
