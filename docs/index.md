@@ -1,7 +1,7 @@
 ---
 title: Welcome to StackQL
 hide_title: true
-hide_table_of_contents: false
+hide_table_of_contents: true
 keywords:
   - stackql
   - infrastructure-as-code
@@ -14,14 +14,25 @@ slug: /
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ImageSwitcher from '/js/ImageSwitcher/ImageSwitcher.js';
+import DocsHero from '@site/src/components/DocsHero/DocsHero';
 
-<ImageSwitcher 
-lightImageSrc="/img/stackql-logo-bold-light-mode.png"
-darkImageSrc="/img/stackql-logo-bold-dark-mode.png"
-alttext="StackQL"/>
-
-## Welcome to the Revolution!
+<DocsHero
+  lightSrc="/img/stackql-logo-bold-light-mode.png"
+  darkSrc="/img/stackql-logo-bold-dark-mode.png"
+  alt="StackQL"
+  title={
+  <>
+  Open Source<br/>
+  Multi Cloud Analytics,<br/>
+  IaC, Automation and more
+  </>
+  }
+  byline={
+    <>
+    Provision. Query. Secure.
+    </>
+    }
+/>
 
 ---
 
@@ -37,7 +48,7 @@ StackQL is a new approach to Cloud Infrastructure coding. With StackQL you can d
 <TabItem value="iql">
 
 ```sql
-SELECT instanceState, COUNT(*) as num_instances 
+SELECT instance_state, COUNT(*) as num_instances 
 FROM aws.ec2.instances 
 WHERE region = 'us-west-1' 
 GROUP BY instanceState;

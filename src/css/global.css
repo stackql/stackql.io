@@ -656,7 +656,7 @@ table td .nowrap {
     transform: translateY(-50%);
   }
 
-  .cookbook_tested_on {
+  .tutorial_tested_on {
     --docusaurus-tag-list-border: var(--ifm-link-color);
     text-decoration: none;
     border-radius: var(--ifm-global-radius);
@@ -668,3 +668,58 @@ table td .nowrap {
     text-decoration: var(--ifm-link-decoration);
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
   }
+
+/* custom css for providers page */
+
+/* Make the TOC sticky so it scrolls with the page */
+.table-of-contents {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Style for TOC headings */
+.table-of-contents .toc-headings {
+  padding-left: 0;
+}
+
+/* Main category items */
+.table-of-contents .toc-headings > li {
+  margin-bottom: 0.75rem;
+}
+
+.table-of-contents .toc-headings > li > a {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* Provider items (second level) */
+.table-of-contents .toc-headings > li > ul {
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.table-of-contents .toc-headings > li > ul > li {
+  margin-bottom: 0.25rem;
+}
+
+.table-of-contents .toc-headings > li > ul > li > a {
+  font-size: 0.9rem;
+  color: var(--ifm-color-content);
+}
+
+/* Hover effects */
+.table-of-contents .toc-headings a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+/* Active state - you can add JavaScript to add an active class based on scroll position */
+.table-of-contents .toc-headings a.active {
+  font-weight: bold;
+  color: var(--ifm-color-primary-darker);
+}
+
+/* END custom css for providers page */

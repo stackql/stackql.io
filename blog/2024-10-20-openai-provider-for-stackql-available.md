@@ -10,7 +10,7 @@ keywords: [stackql, openai, llms, genai, iac, analytics]
 tags: [stackql, openai, llms, genai, iac, analytics]
 ---
 
-The __`openai`__ provider for [__`stackql`__](https://github.com/stackql/stackql) is now available in the dev stackql provider registry. The `openai` provider for `stackql` includes services `assistants`, `audit_logs`, `batch`, `chat`, `completions`, `embeddings`, `files`, `images`, `models`, `moderations`, `projects`, `uploads`, `vector_stores`, and more. To get started download [`stackql`](https://stackql.io/downloads), set the `OPENAI_API_KEY` environment variable and use the dev registry as shown here:  
+The __`openai`__ provider for [__`stackql`__](https://github.com/stackql/stackql) is now available in the dev stackql provider registry. The `openai` provider for `stackql` includes services `assistants`, `audit_logs`, `batch`, `chat`, `completions`, `embeddings`, `files`, `images`, `models`, `moderations`, `projects`, `uploads`, `vector_stores`, and more. To get started download [`stackql`](/install), set the `OPENAI_API_KEY` environment variable and use the dev registry as shown here:  
 
 ```bash
 export DEV_REG="{ \"url\": \"https://registry-dev.stackql.app/providers\" }"

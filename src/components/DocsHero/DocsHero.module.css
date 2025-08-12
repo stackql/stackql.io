@@ -1,0 +1,35 @@
+/* src/components/DocsHero/DocsHero.module.css */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 980px;
+  margin: 0 0 1.25rem 0;
+  padding: 0;
+}
+
+.logo img {
+  width: clamp(160px, 26vw, 320px);
+  max-width: 100%;
+  display: block;
+}
+
+.headline,
+.byline {
+  margin: 0;
+  line-height: 1.06;
+}
+
+.headline {
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #2B5F82;
+}
+
+.byline {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.1vw, 1.6rem);
+  color: #7ed957;
+}

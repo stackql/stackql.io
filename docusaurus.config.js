@@ -184,6 +184,7 @@ const config = {
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
         {name: 'theme-color', content: '#ffffff'},
+        {name: 'wot-verification', content: '38f4ae79b091dc8046a0'},
       ],
       announcementBar: {
       id: 'support_us',
@@ -194,126 +195,7 @@ const config = {
     },
     announcementBarActive: false,
     announcementBarLink: "https://github.com/stackql/stackql",    
-    // structuredData: {
-    //   excludedRoutes: [
-    //     '/registry',
-    //     '/registry/aws',
-    //     '/registry/awscc',
-    //     '/registry/azure',
-    //     '/registry/digitalocean',
-    //     '/registry/confluent',
-    //     '/registry/snowflake',
-    //     '/registry/openai',
-    //     '/registry/databricks',
-    //     '/registry/github',
-    //     '/registry/google',
-    //     '/registry/k8s',
-    //     '/registry/linode',
-    //     '/registry/okta',
-    //     '/stackql-deploy'
-    //   ],
-    //   verbose: true,
-    //   featuredImageDimensions: {
-    //     width: 1200,
-    //     height: 627,
-    //   },
-    //   authors:{
-    //     'Jeffrey Aven': {
-    //       authorId: '1',
-    //       url: 'https://www.linkedin.com/in/jeffreyaven/',
-    //       imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
-    //       sameAs: [
-    //         'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
-    //         'https://developers.google.com/community/experts/directory/profile/profile-jeffrey-aven',
-    //         'https://www.linkedin.com/in/jeffreyaven/',
-    //         'https://www.crunchbase.com/person/jeffrey-aven',
-    //         'https://github.com/jeffreyaven',
-    //         'https://dev.to/jeffreyaven',
-    //       ],
-    //     },
-    //     'Kieran Rimmer': {
-    //       authorId: '2',
-    //       url: 'https://www.linkedin.com/in/kieranrimmer/',
-    //       imageUrl: 'https://s.gravatar.com/avatar/068b9fab6cbd66529ae878e6c1b797ed?s=80',
-    //       sameAs: [
-    //         'https://github.com/general-kroll-4-life',
-    //       ],
-    //     },        
-    //     'Yuncheng Yang': {
-    //       authorId: '3',
-    //       url: 'https://www.linkedin.com/in/yuncheng-fabio-yang/',
-    //       imageUrl: 'https://avatars.githubusercontent.com/u/45674168?v=4',
-    //       sameAs: [
-    //         'https://github.com/FabioYyc',
-    //       ],
-    //     },        
-    //   },
-    //   organization: {
-    //     sameAs: [
-    //       // wikidata
-    //       'https://twitter.com/stackql',
-    //       'https://www.linkedin.com/company/stackql',
-    //       'https://github.com/stackql',
-    //       'https://www.youtube.com/@stackql',
-    //       'https://hub.docker.com/u/stackql',
-    //     ],
-    //     contactPoint: {
-    //       '@type': 'ContactPoint',
-    //       email: 'info@stackql.io',
-    //     },
-    //     logo: {
-    //       '@type': 'ImageObject',
-    //       inLanguage: 'en-US',
-    //       '@id': 'https://stackql.io/#logo',
-    //       url: 'https://stackql.io/img/stackql-cover.png',
-    //       contentUrl: 'https://stackql.io/img/stackql-cover.png',
-    //       width: 1440,
-    //       height: 900,
-    //       caption: 'StackQL - your cloud using SQL',
-    //     },
-    //     image: {
-    //       '@id': 'https://stackql.io/#logo'
-    //     },
-    //     address: {
-    //       '@type': 'PostalAddress',
-    //       addressCountry: 'AU',
-    //       postalCode: '3001',
-    //       streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
-    //     },
-    //     duns: '750469226',
-    //     taxID: 'ABN 65 656 147 054',
-    //   },
-    //   website: {
-    //     inLanguage: 'en-US',
-    //   },
-    //   webpage: {
-    //     inLanguage: 'en-US',
-    //     datePublished: '2021-07-01',
-    //   },
-    //   breadcrumbLabelMap: {
-    //     'developers': 'Developers',
-    //     'functions': 'Functions',
-    //     'aggregate': 'Aggregate',
-    //     'datetime': 'Date Time',
-    //     'json': 'JSON',
-    //     'math': 'Math',
-    //     'string': 'String',
-    //     'command-line-usage': 'Command Line Usage',
-    //     'getting-started': 'Getting Started',
-    //     'language-spec': 'Language Specification',
-    //     're': 'Regular Expressions',
-    //   }
-    // },
-    // hubspot: {
-    //   accountId: process.env.HUBSPOT_ACCT_ID,
-    //   async: true,
-    //   defer: true,
-    // },
     image: '/img/stackql-featured-image.png',        
-    // smartlook: {
-    //   projectKey: process.env.SMARTLOOK_PROJECT_KEY,
-    //   useBetaNextGen: true,
-    // },    
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
@@ -340,91 +222,69 @@ const config = {
         srcDark: 'img/logo-white.svg',
       },
       items: [
-        // {
-        //   to: '/features',
-        //   activeBasePath: 'features',
-        //   label: 'Features',
-        //   position: 'left',
-        // },
         {
-          to: 'docs',
-          //activeBaseRegex: '^((?!/blog).)*$',
-          label: 'Docs',
-          position: 'left',
-        },        
-        {
-          to: '/downloads',
-          activeBasePath: 'downloads',
-          label: 'Downloads',
+          to: '/install',
+          label: 'Install',
           position: 'left',
         },                
         {
-          to: '/registry',
+          to: '/stackql-deploy',
+          label: 'stackql-deploy',
+          position: 'left',
+        },
+        {
+          to: '/providers',
           type: 'dropdown',
           label: 'Providers',
           position: 'left',
           items: [
             {
               label: 'AWS',
-              to: '/registry/aws',
+              to: '/providers/aws',
             },
             {
               label: 'Azure',
-              to: '/registry/azure',
+              to: '/providers/azure',
             },
             {
               label: 'Google',
-              to: '/registry/google',
+              to: '/providers/google',
             },
             {
               label: 'Snowflake',
-              to: '/registry/snowflake',
+              to: '/providers/snowflake',
             },
             {
               label: 'Databricks',
-              to: '/registry/databricks',
+              to: '/providers/databricks',
             },
             {
               label: 'Confluent',
-              to: '/registry/confluent',
+              to: '/providers/confluent',
             },
             {
               label: 'Okta',
-              to: '/registry/okta',
+              to: '/providers/okta',
             },
             {
               label: 'GitHub',
-              to: '/registry/github',
+              to: '/providers/github',
             },
             {
               label: 'OpenAI',
-              to: '/registry/openai',
+              to: '/providers/openai',
             },
             {
               label: '... More',
-              to: '/registry',
+              to: '/providers',
             },
           ],
-        },        
-        {
-          to: '/stackql-deploy',
-          // activeBasePath: 'downloads',
-          label: 'stackql-deploy',
-          position: 'left',
         },
         {
           type: 'dropdown',
           label: 'More',
           position: 'left',
           items: [
-            // {
-            //   href: 'https://stackql-deploy.io/',
-            //   label: 'stackql-deploy',
-            // },
-            {
-              href: 'https://github.com/stackql/stackql-actions-demo',
-              label: 'GitHub Actions',
-            },            
             {
               to: 'blog',
               label: 'Blog',
@@ -432,14 +292,16 @@ const config = {
             },
             {
               type: 'doc',
-              docId: '/stackql-cookbooks',
-              label: 'Cookbooks',
+              docId: '/tutorials',
+              label: 'Tutorials',
             },
           ],
-        },
+        },        
         // {
-        //   type: 'localeDropdown',
+        //   to: 'blog',
+        //   label: 'Blog',
         //   position: 'left',
+        //   activeBasePath: 'blog',
         // },        
         {
           href: 'https://github.com/stackql/stackql',
@@ -453,7 +315,7 @@ const config = {
       style: 'dark',
       logo: {
         alt: 'StackQL',
-        href: 'https://stackql.io/',
+        href: '/',
         src: 'img/logo-original.svg',
         srcDark: 'img/logo-white.svg',
       },
@@ -462,16 +324,16 @@ const config = {
           title: 'StackQL',
           items: [
             {
-              label: 'Home',
-              to: '/',
+              label: 'Documentation',
+              to: '/docs',
             },
+            // {
+            //   label: 'Features',
+            //   to: '/features',
+            // },
             {
-              label: 'Features',
-              to: '/features',
-            },
-            {
-              label: 'Downloads',
-              to: '/downloads',
+              label: 'Install',
+              to: '/install',
             },
             {
               label: 'Contact us',
@@ -483,17 +345,21 @@ const config = {
           title: 'More',
           items: [
             {
-              label: 'Documentation',
-              to: '/docs',
+              label: 'Providers',
+              to: '/providers',
             },
             {
-              label: 'Providers',
-              to: 'https://registry.stackql.io/',
-            },
+              label: 'stackql-deploy',
+              to: '/stackql-deploy',
+            },            
             {
               label: 'Blog',
               to: '/blog',
             },
+            {
+              label: 'Tutorials',
+              to: '/tutorials',
+            },            
           ],
         },
       ],

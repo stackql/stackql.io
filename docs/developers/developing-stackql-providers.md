@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 See also:  
-[[ StackQL Provider Registry ]](https://registry.stackql.io/) [[ Using a Provider ]](/docs/getting-started/using-a-provider)
+[[ StackQL Provider Registry ]](/providers) [[ Using a Provider ]](/docs/getting-started/using-a-provider)
 
 ## Overview
 

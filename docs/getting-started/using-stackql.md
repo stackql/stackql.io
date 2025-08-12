@@ -22,7 +22,7 @@ StackQL has several usage modes, these include: the StackQL interactive shell, t
 ### Using the StackQL Interactive Shell
 The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/docs/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
 
-The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](https://registry.stackql.io/)) for information about provider authentication:
+The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](/providers)) for information about provider authentication:
 
 ```shell
 # Launching the StackQL Interactive Shell
