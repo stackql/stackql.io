@@ -51,7 +51,7 @@ StackQL is a new approach to Cloud Infrastructure coding. With StackQL you can d
 SELECT instance_state, COUNT(*) as num_instances 
 FROM aws.ec2.instances 
 WHERE region = 'us-west-1' 
-GROUP BY instanceState;
+GROUP BY instance_state;
 ```
 
 </TabItem>
