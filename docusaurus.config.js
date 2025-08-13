@@ -17,6 +17,82 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
+const providerDropDownListItems = [
+  {
+    label: 'AWS',
+    to: '/providers/aws',
+  },
+  {
+    label: 'Azure',
+    to: '/providers/azure',
+  },
+  {
+    label: 'Google',
+    to: '/providers/google',
+  },
+  {
+    label: 'Databricks',
+    to: '/providers/databricks',
+  },
+  {
+    label: 'Snowflake',
+    to: '/providers/snowflake',
+  },
+  {
+    label: 'Confluent',
+    to: '/providers/confluent',
+  },
+  {
+    label: 'Okta',
+    to: '/providers/okta',
+  },
+  {
+    label: 'GitHub',
+    to: '/providers/github',
+  },
+  {
+    label: 'OpenAI',
+    to: '/providers/openai',
+  },
+  {
+    label: '... More',
+    to: '/providers',
+  },
+];
+
+const footerStackQLItems = [
+  {
+    label: 'Documentation',
+    to: '/stackqldocs',
+  },
+  {
+    label: 'Install',
+    to: '/install',
+  },
+  {
+    label: 'Contact us',
+    to: '/contact-us',
+  },
+];
+
+const footerMoreItems = [
+  {
+    label: 'Providers',
+    to: '/providers',
+  },
+  {
+    label: 'stackql-deploy',
+    to: '/stackql-deploy',
+  },            
+  {
+    label: 'Blog',
+    to: '/blog',
+  },
+  {
+    label: 'Tutorials',
+    to: '/tutorials',
+  },            
+];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -237,48 +313,7 @@ const config = {
           type: 'dropdown',
           label: 'Providers',
           position: 'left',
-          items: [
-            {
-              label: 'AWS',
-              to: '/providers/aws',
-            },
-            {
-              label: 'Azure',
-              to: '/providers/azure',
-            },
-            {
-              label: 'Google',
-              to: '/providers/google',
-            },
-            {
-              label: 'Snowflake',
-              to: '/providers/snowflake',
-            },
-            {
-              label: 'Databricks',
-              to: '/providers/databricks',
-            },
-            {
-              label: 'Confluent',
-              to: '/providers/confluent',
-            },
-            {
-              label: 'Okta',
-              to: '/providers/okta',
-            },
-            {
-              label: 'GitHub',
-              to: '/providers/github',
-            },
-            {
-              label: 'OpenAI',
-              to: '/providers/openai',
-            },
-            {
-              label: '... More',
-              to: '/providers',
-            },
-          ],
+          items: providerDropDownListItems,
         },
         {
           type: 'dropdown',
@@ -297,7 +332,7 @@ const config = {
             },
           ],
         },        
-        // {
+        //
         //   to: 'blog',
         //   label: 'Blog',
         //   position: 'left',
@@ -322,45 +357,11 @@ const config = {
       links: [
         {
           title: 'StackQL',
-          items: [
-            {
-              label: 'Documentation',
-              to: '/docs',
-            },
-            // {
-            //   label: 'Features',
-            //   to: '/features',
-            // },
-            {
-              label: 'Install',
-              to: '/install',
-            },
-            {
-              label: 'Contact us',
-              to: '/contact-us',
-            },
-          ],
+          items: footerStackQLItems,
         },
         {
           title: 'More',
-          items: [
-            {
-              label: 'Providers',
-              to: '/providers',
-            },
-            {
-              label: 'stackql-deploy',
-              to: '/stackql-deploy',
-            },            
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'Tutorials',
-              to: '/tutorials',
-            },            
-          ],
+          items: footerMoreItems,
         },
       ],
       copyright: `© ${new Date().getFullYear()} StackQL Studios ABN 65 656 147 054`,
