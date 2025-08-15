@@ -8,6 +8,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/Footer/Layout';
+import type { JSX } from 'react';
 
 export default function FooterLayout({
   style,

@@ -7,6 +7,7 @@
 
 import React from 'react';
 import type {Props} from '@theme/Footer/Copyright';
+import type { JSX } from 'react';
 
 export default function FooterCopyright({copyright}: Props): JSX.Element {
   return (
