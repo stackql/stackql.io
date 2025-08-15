@@ -13,7 +13,7 @@ import styles from './styles.module.css';
 export default function IconExternalLink({
   width = 13.5,
   height = 13.5,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   return (
     <svg
       width={width}

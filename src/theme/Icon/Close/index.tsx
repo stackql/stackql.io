@@ -15,7 +15,7 @@ export default function IconClose({
   strokeWidth = 1.2,
   className,
   ...restProps
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   return (
     <svg viewBox="0 0 15 15" width={width} height={height} {...restProps}>
       <g stroke={color} strokeWidth={strokeWidth}>

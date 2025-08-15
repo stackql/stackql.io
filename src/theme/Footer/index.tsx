@@ -68,7 +68,7 @@ const FooterLogo = ({
   />
 );
 
-function Footer(): JSX.Element | null {
+function Footer(): React.ReactElement | null {
   const socialLinks = {
     linkedin: "https://www.linkedin.com/company/stackql",
     twitter: "https://twitter.com/stackql",
@@ -83,9 +83,17 @@ function Footer(): JSX.Element | null {
   const {footer} = useThemeConfig();
 
   const {copyright, links = [], logo = {}} = footer || {};
+  // Extend logo type to allow srcDark
+  type LogoType = {
+    src?: string;
+    srcDark?: string;
+    href?: string;
+    alt?: string;
+  };
+  const typedLogo = logo as LogoType;
   const sources = {
-    light: useBaseUrl(logo.src),
-    dark: useBaseUrl(logo.srcDark || logo.src),
+    light: useBaseUrl(typedLogo?.src),
+    dark: useBaseUrl(typedLogo?.srcDark || typedLogo?.src),
   };
 
   if (!footer) {
@@ -102,14 +110,14 @@ function Footer(): JSX.Element | null {
         {links && links.length > 0 && (
           <div className="row footer__links">
             <div className="col col--6 footer__col">
-              {logo && (logo.src || logo.srcDark) && (
+              {typedLogo && (typedLogo.src || typedLogo.srcDark) && (
                 <div className="margin-bottom--sm">
-                  {logo.href ? (
-                    <Link href={logo.href} className={styles.footerLogoLink}>
-                      <FooterLogo alt={logo.alt} sources={sources} />
+                  {typedLogo.href ? (
+                    <Link href={typedLogo.href} className={styles.footerLogoLink}>
+                      <FooterLogo alt={typedLogo.alt} sources={sources} />
                     </Link>
                   ) : (
-                    <FooterLogo alt={logo.alt} sources={sources} />
+                    <FooterLogo alt={typedLogo.alt} sources={sources} />
                   )}
                 </div>
               )}

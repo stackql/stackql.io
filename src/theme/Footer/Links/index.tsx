@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import type { JSX } from 'react';
 
 import {isMultiColumnFooterLinks} from '@docusaurus/theme-common';
 import FooterLinksMultiColumn from '@theme/Footer/Links/MultiColumn';
