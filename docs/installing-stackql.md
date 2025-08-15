@@ -417,17 +417,17 @@ Setup StackQL in your GitHub Actions workflow.
 __Example usage__
 
 ```yaml
-    - name: setup StackQL
-      uses: stackql/setup-stackql@v2.2.3
-      with:
-        use_wrapper: true
+- name: setup StackQL
+  uses: stackql/setup-stackql@v2.2.3
+  with:
+    use_wrapper: true
 
-    - name: Use GitHub Provider
-      run: |
-        stackql exec -i ./examples/github-example.iql
-      env: 
-        STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
-        STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
+- name: Use GitHub Provider
+  run: |
+    stackql exec -i ./examples/github-example.iql
+  env: 
+    STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
+    STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
 ```
 
 </TabItem>
@@ -452,16 +452,16 @@ Execute StackQL commands in your GitHub Actions workflow.  Queries can be suppli
 __Example usage__
 
 ```yaml
-    - name: exec github example
-      uses: stackql/stackql-exec@v2.2.3
-      with:
-        query: |
-          select total_private_repos
-          from github.orgs.orgs
-          where org = 'stackql'"
-      env: 
-        STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
-        STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
+- name: exec github example
+  uses: stackql/stackql-exec@v2.2.3
+  with:
+    query: |
+      select total_private_repos
+      from github.orgs.orgs
+      where org = 'stackql'"
+  env: 
+    STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
+    STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
 ```
 
 </TabItem>
@@ -486,16 +486,16 @@ Perform unit tests in your GitHub Actions workflow (for assurance, governance or
 __Example usage__
 
 ```yaml
-    - name: Use test query string and expected rows
-      uses: stackql/stackql-assert@v2.2.3
-      with:
-        test_query: |
-            SELECT name
-            FROM google.compute.instances 
-            WHERE project = 'stackql-demo' AND zone = 'australia-southeast1-a' AND name = 'stackql-demo-001';
-        expected_rows: 1
-      env: 
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+- name: Use test query string and expected rows
+  uses: stackql/stackql-assert@v2.2.3
+  with:
+    test_query: |
+        SELECT name
+        FROM google.compute.instances 
+        WHERE project = 'stackql-demo' AND zone = 'australia-southeast1-a' AND name = 'stackql-demo-001';
+    expected_rows: 1
+  env: 
+    GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 ```
 
 </TabItem>  
