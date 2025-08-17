@@ -89,6 +89,8 @@ function Footer(): React.ReactElement | null {
     srcDark?: string;
     href?: string;
     alt?: string;
+    width?: number;
+    height?: number;
   };
   const typedLogo = logo as LogoType;
   const sources = {
@@ -114,10 +116,10 @@ function Footer(): React.ReactElement | null {
                 <div className="margin-bottom--sm">
                   {typedLogo.href ? (
                     <Link href={typedLogo.href} className={styles.footerLogoLink}>
-                      <FooterLogo alt={typedLogo.alt} sources={sources} />
+                      <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 120} height={typedLogo.height || 40} />
                     </Link>
                   ) : (
-                    <FooterLogo alt={typedLogo.alt} sources={sources} />
+                    <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 120} height={typedLogo.height || 40} />
                   )}
                 </div>
               )}

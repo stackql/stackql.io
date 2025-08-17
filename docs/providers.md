@@ -31,7 +31,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Google Cloud Platform',
-        href: 'https://googlecloud.stackql.io/providers/google/',
+        href: 'https://google.stackql.io/providers/google/',
         icon: '/img/providers/google/favicon.ico'
       },
       { 
