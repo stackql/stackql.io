@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function Registry() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='https://google.stackql.io/providers/google/'" />
+    <meta http-equiv="refresh" content="0;URL='https://google-provider.stackql.io/'" />
     </Head>
   );
 };

@@ -31,7 +31,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Google Cloud Platform',
-        href: 'https://google.stackql.io/providers/google/',
+        href: 'https://google-provider.stackql.io/',
         icon: '/img/providers/google/favicon.ico'
       },
       { 
@@ -78,7 +78,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Google Admin',
-        href: 'https://googleadmin.stackql.io/providers/googleadmin/',
+        href: 'https://googleadmin-provider.stackql.io/',
         icon: '/img/providers/googleadmin/favicon.ico'
       }
     ]
@@ -115,7 +115,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Firebase',
-        href: 'https://firebase.stackql.io/providers/firebase/',
+        href: 'https://firebase-provider.stackql.io/',
         icon: '/img/providers/firebase/favicon.png'
       },
       { 
@@ -155,6 +155,11 @@ export const PROVIDER_CATEGORIES = [
     id: 'other-providers',
     name: 'Other Providers',
     providers: [
+      { 
+        name: 'Google Workspace',
+        href: 'https://googleworkspace-provider.stackql.io/',
+        icon: '/img/providers/googleworkspace/favicon.ico'
+      },
       { 
         name: 'GoDaddy',
         href: 'https://godaddy.stackql.io/providers/godaddy/',
