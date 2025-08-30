@@ -51,10 +51,15 @@ export const PROVIDER_CATEGORIES = [
     name: 'Data & Analytics',
     providers: [
       { 
-        name: 'Databricks',
-        href: 'https://databricks-workspace.stackql.io/providers/databricks_workspace/',
+        name: 'Databricks Account',
+        href: 'https://databricks-account-provider.stackql.io/',
         icon: '/img/providers/databricks/favicon.ico'
       },
+      { 
+        name: 'Databricks Workspace',
+        href: 'https://databricks-workspace-provider.stackql.io/',
+        icon: '/img/providers/databricks/favicon.ico'
+      },      
       { 
         name: 'Snowflake',
         href: 'https://snowflake-provider.stackql.io/',
