@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function Registry() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='https://databricks-account.stackql.io/providers/databricks_account/'" />
+    <meta http-equiv="refresh" content="0;URL='https://databricks-account-provider.stackql.io/'" />
     </Head>
   );
 };
