@@ -78,7 +78,7 @@ export const PROVIDER_CATEGORIES = [
     providers: [
       { 
         name: 'Okta',
-        href: 'https://okta.stackql.io/providers/okta/',
+        href: 'https://okta-provider.stackql.io/',
         icon: '/img/providers/okta/favicon.png'
       },
       { 
