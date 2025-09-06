@@ -13,7 +13,7 @@ tags: [stackql, digitalocean, iac, analytics]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The latest `digitalocean` provider for StackQL is available now (`v25.09.00122`), featuring a comprehensive reorganization of services and resources that better aligns with DigitalOcean's API structure. This update improves discoverability, logical grouping, and overall usability when working with DigitalOcean resources through StackQL, while adding exciting new capabilities like support for __Gradient AI Platform__ through the `genai` service.
+The latest `digitalocean` provider for StackQL is available now (`v25.09.00345`), featuring a comprehensive reorganization of services and resources that better aligns with DigitalOcean's API structure. This update improves discoverability, logical grouping, and overall usability when working with DigitalOcean resources through StackQL, while adding exciting new capabilities like support for __Gradient AI Platform__ through the `genai` service.
 
 ## What's Changed
 
@@ -39,7 +39,7 @@ The updated DigitalOcean provider features a more granular and logical organizat
 
 :::note
 
-The improved organization including service and resource naming and mapping will introduce changes to queries against the previous provider version. You can pin the previous version in `stackql-deploy` or via `registry pull` in the interim while you make necessary query modifications.
+The improved organization including service and resource naming and mapping will introduce changes to queries against the previous provider version (`v24.11.00274`). You can pin the previous version in `stackql-deploy` or via `registry pull` in the interim while you make necessary query modifications.
 
 :::
 
