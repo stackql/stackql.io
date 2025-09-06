@@ -36,7 +36,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Digital Ocean',
-        href: 'https://digitalocean.stackql.io/providers/digitalocean/',
+        href: 'https://digitalocean-provider.stackql.io/',
         icon: '/img/providers/digitalocean/favicon.png'
       },
       { 
