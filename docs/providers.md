@@ -132,7 +132,12 @@ export const PROVIDER_CATEGORIES = [
         name: 'Netlify',
         href: 'https://netlify.stackql.io/providers/netlify/',
         icon: '/img/providers/netlify/favicon.ico'
-      }
+      },
+      { 
+        name: 'Deno Deploy',
+        href: 'https://deno-provider.stackql.io/',
+        icon: '/img/providers/deno/favicon.ico'
+      }      
     ]
   },
   {
