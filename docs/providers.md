@@ -41,7 +41,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Linode',
-        href: 'https://linode.stackql.io/providers/linode/',
+        href: 'https://linode-provider.stackql.io/',
         icon: '/img/providers/linode/favicon.ico'
       }
     ]
