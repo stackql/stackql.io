@@ -146,7 +146,7 @@ export const PROVIDER_CATEGORIES = [
     providers: [
       { 
         name: 'DataDog',
-        href: 'https://datadog.stackql.io/providers/datadog/',
+        href: 'https://datadog-provider.stackql.io/',
         icon: '/img/providers/datadog/favicon.ico'
       },
       { 
