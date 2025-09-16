@@ -130,7 +130,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Netlify',
-        href: 'https://netlify.stackql.io/providers/netlify/',
+        href: 'https://netlify-provider.stackql.io/',
         icon: '/img/providers/netlify/favicon.ico'
       },
       { 
