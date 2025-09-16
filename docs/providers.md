@@ -172,7 +172,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'GoDaddy',
-        href: 'https://godaddy.stackql.io/providers/godaddy/',
+        href: 'https://godaddy-provider.stackql.io/',
         icon: '/img/providers/godaddy/favicon.png'
       },
       { 
