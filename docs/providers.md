@@ -26,7 +26,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Microsoft Azure',
-        href: 'https://azure.stackql.io/providers/azure/',
+        href: 'https://azure-provider.stackql.io/',
         icon: '/img/providers/azure/favicon.ico'
       },
       { 
@@ -43,7 +43,17 @@ export const PROVIDER_CATEGORIES = [
         name: 'Linode',
         href: 'https://linode-provider.stackql.io/',
         icon: '/img/providers/linode/favicon.ico'
-      }
+      },
+      { 
+        name: 'Azure Stack',
+        href: 'https://azure-stack-provider.stackql.io/',
+        icon: '/img/providers/azure/favicon.ico'
+      },
+      { 
+        name: 'Azure ISV',
+        href: 'https://azure-isv-provider.stackql.io/',
+        icon: '/img/providers/azure/favicon.ico'
+      },            
     ]
   },
   {
@@ -156,7 +166,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'PagerDuty',
-        href: 'https://pagerduty.stackql.io/providers/pagerduty/',
+        href: 'https://pagerduty-provider.stackql.io/',
         icon: '/img/providers/pagerduty/icon.svg'
       }
     ]
@@ -175,6 +185,11 @@ export const PROVIDER_CATEGORIES = [
         href: 'https://godaddy-provider.stackql.io/',
         icon: '/img/providers/godaddy/favicon.png'
       },
+      { 
+        name: 'Azure Extras',
+        href: 'https://azure-extras-provider.stackql.io/',
+        icon: '/img/providers/azure/favicon.ico'
+      },      
       { 
         name: 'Homebrew',
         href: 'https://homebrew.stackql.io/providers/homebrew/',
