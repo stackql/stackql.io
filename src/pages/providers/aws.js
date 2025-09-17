@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function Registry() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='https://aws.stackql.io/providers/aws/'" />
+    <meta http-equiv="refresh" content="0;URL='https://aws-provider.stackql.io/'" />
     </Head>
   );
 };
