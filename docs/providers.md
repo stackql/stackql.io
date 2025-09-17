@@ -21,7 +21,7 @@ export const PROVIDER_CATEGORIES = [
     providers: [
       { 
         name: 'Amazon Web Services',
-        href: 'https://aws.stackql.io/providers/aws/',
+        href: 'https://aws-provider.stackql.io/',
         icon: '/img/providers/aws/favicon.ico'
       },
       { 
