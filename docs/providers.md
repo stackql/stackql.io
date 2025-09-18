@@ -104,12 +104,12 @@ export const PROVIDER_CATEGORIES = [
     providers: [
       { 
         name: 'OpenAI',
-        href: 'https://openai.stackql.io/providers/openai/',
+        href: 'https://openai-provider.stackql.io/',
         icon: '/img/providers/openai/favicon.ico'
       },
       { 
         name: 'Anthropic',
-        href: 'https://anthropic.stackql.io/providers/anthropic/',
+        href: 'https://anthropic-provider.stackql.io/',
         icon: '/img/providers/anthropic/favicon.png'
       }
     ]

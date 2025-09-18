@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function Registry() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='https://openai.stackql.io/providers/openai/'" />
+    <meta http-equiv="refresh" content="0;URL='https://openai-provider.stackql.io/'" />
     </Head>
   );
 };
