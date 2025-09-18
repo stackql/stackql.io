@@ -135,7 +135,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Vercel',
-        href: 'https://vercel.stackql.io/providers/vercel/',
+        href: 'https://vercel-provider.stackql.io/',
         icon: '/img/providers/vercel/favicon.ico'
       },
       { 
@@ -161,7 +161,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'SumoLogic',
-        href: 'https://sumologic.stackql.io/providers/sumologic/',
+        href: 'https://sumologic-provider.stackql.io/',
         icon: '/img/providers/sumologic/favicon.png'
       },
       { 
