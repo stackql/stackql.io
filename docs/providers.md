@@ -77,7 +77,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Confluent',
-        href: 'https://confluent.stackql.io/providers/confluent/',
+        href: 'https://confluent-provider.stackql.io/',
         icon: '/img/providers/confluent/favicon.ico'
       }
     ]
@@ -120,7 +120,7 @@ export const PROVIDER_CATEGORIES = [
     providers: [
       { 
         name: 'GitHub',
-        href: 'https://github.stackql.io/providers/github/',
+        href: 'https://github-provider.stackql.io/',
         icon: '/img/providers/github/favicon.ico'
       },
       { 
