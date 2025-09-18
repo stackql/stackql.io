@@ -125,7 +125,7 @@ export const PROVIDER_CATEGORIES = [
       },
       { 
         name: 'Kubernetes',
-        href: 'https://k8s.stackql.io/providers/k8s/',
+        href: 'https://k8s-provider.stackql.io/',
         icon: '/img/providers/k8s/favicon.png'
       },
       { 
@@ -192,7 +192,7 @@ export const PROVIDER_CATEGORIES = [
       },      
       { 
         name: 'Homebrew',
-        href: 'https://homebrew.stackql.io/providers/homebrew/',
+        href: 'https://homebrew-provider.stackql.io/',
         icon: '/img/providers/homebrew/favicon.ico'
       }
     ]
