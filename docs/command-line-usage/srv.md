@@ -11,7 +11,7 @@ description: Query and Deploy Cloud Infrastructure and Resources using SQL
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS.
+Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/docs/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
 
 * * * 
 
@@ -35,9 +35,24 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 |<span class="nowrap">`--pgsrv.port`</span>|Port the server is listening on (e.g. `5444`)|
 |<span class="nowrap">`--pgsrv.tls`</span>|mTLS configuration object, see the [example](#examples) below|
 |<span class="nowrap">`--pgsrv.loglevel`</span>|Log level (default `WARN`)|
-&nbsp;  
-&nbsp;  
+&nbsp;
+&nbsp;
 > see [Global Flags](/docs/command-line-usage/global-flags) for additional options
+
+### MCP Server Options
+
+When running the `srv` command with MCP support, the following additional options are available:
+
+| Option | Description |
+|--|--|
+|<span class="nowrap">`--mcp.server.type`</span>|MCP server type: `http` (in-memory) or `reverse_proxy` (TCP-based)|
+|<span class="nowrap">`--mcp.config`</span>|JSON configuration object for the MCP server (see [MCP documentation](/docs/command-line-usage/mcp))|
+
+:::tip
+
+See the [MCP command documentation](/docs/command-line-usage/mcp) for detailed information on configuring and using the MCP server, including deployment modes, configuration options, and integration with AI assistants.
+
+:::
 
 :::info
 
