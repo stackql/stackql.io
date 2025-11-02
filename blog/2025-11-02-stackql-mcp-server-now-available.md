@@ -3,14 +3,14 @@ slug: stackql-mcp-server-now-available
 title: StackQL MCP Server Now Available
 hide_table_of_contents: false
 authors:
-  - jeffreyaven
-image: "/img/blog/stackql-mcp-server-feature-released.png"
+  - kieranrimmer
+image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: Enable AI agents to query and manage cloud infrastructure using the Model Context Protocol.
 keywords: [stackql, mcp, model context protocol, ai agents, claude, chatgpt, infrastructure-as-code, cloud management, anthropic]
 tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code]
 ---
 
-We're excited to announce that __StackQL__ now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/), starting with version __0.9.250__. This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.
+__StackQL__ now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/). This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.
 
 ## What is the Model Context Protocol?
 
