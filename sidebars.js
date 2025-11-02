@@ -36,6 +36,7 @@ const sidebars = {
         'command-line-usage/exec',
         'command-line-usage/shell',
         'command-line-usage/srv',
+        'command-line-usage/mcp',
         'command-line-usage/registry',
         'command-line-usage/global-flags',
       ]
