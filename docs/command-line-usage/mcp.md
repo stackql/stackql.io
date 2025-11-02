@@ -13,13 +13,13 @@ description: Query and Deploy Cloud Infrastructure and Resources using SQL via M
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch StackQL as a Model Context Protocol (MCP) server, enabling AI agents and assistants to interact with cloud infrastructure using StackQL's query capabilities.
+Command used to launch StackQL as a Model Context Protocol (MCP) server, enabling AI agents and assistants to interact with cloud infrastructure using StackQL's query capabilities.  
 
-* * *
-
-## What is MCP?
+:::info[What is MCP?]
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open protocol that standardizes how AI applications interact with external data sources and tools. By running StackQL as an MCP server, you can enable AI agents (like Claude, ChatGPT, and others) to query and manage cloud infrastructure across multiple providers using natural language.
+
+:::
 
 * * *
 
