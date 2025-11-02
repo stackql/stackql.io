@@ -10,7 +10,7 @@ keywords: [stackql, mcp, model context protocol, ai agents, claude, chatgpt, inf
 tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code]
 ---
 
-__StackQL__ now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/). This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.
+[__StackQL__](https://github.com/stackql/stackql) now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/). This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.
 
 ## What is the Model Context Protocol?
 
