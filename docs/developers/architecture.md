@@ -18,7 +18,56 @@ See also:
 
 StackQL is a unified SQL interface for querying and managing cloud infrastructure across multiple providers. The following container diagram illustrates the major components of the StackQL system and their interactions.
 
-![StackQL Container Diagram](/img/stackql-container-diagram.png)
+```mermaid
+flowchart TB
+    subgraph User["User (DevOps, Analyst, or Automation)"]
+        direction LR
+    end
+
+    subgraph StackQL["StackQL"]
+        subgraph EntryPoints["Entry Points"]
+            CLI["CLI / Shell<br/><i>Go</i>"]
+            PGWire["PostgreSQL Wire Protocol<br/><i>Go, psql-wire</i>"]
+            MCP["MCP Server<br/><i>Go</i>"]
+        end
+
+        subgraph Processing["Query Processing"]
+            Parser["SQL Parser<br/><i>Go, Yacc</i>"]
+            QueryEngine["Query Engine<br/><i>Go</i>"]
+            SDK["Provider SDK<br/><i>Go, any-sdk</i>"]
+        end
+
+        subgraph Backend["SQL Backend"]
+            SQLBackend["SQL Backend<br/><i>Go</i>"]
+            SQLite[("SQLite<br/><i>Embedded</i>")]
+            Postgres[("PostgreSQL<br/><i>External, Optional</i>")]
+        end
+    end
+
+    subgraph External["External Systems"]
+        Providers["Cloud Providers<br/><i>AWS, GCP, Azure, K8s, GitHub...</i>"]
+        Registry["StackQL Registry<br/><i>Provider definitions</i>"]
+    end
+
+    User --> CLI
+    User --> PGWire
+    User --> MCP
+
+    CLI --> Parser
+    PGWire --> Parser
+    MCP --> Parser
+
+    Parser --> QueryEngine
+    QueryEngine --> SDK
+    QueryEngine --> SQLBackend
+
+    SDK --> Providers
+    SDK --> Registry
+    SDK --> SQLBackend
+
+    SQLBackend --> SQLite
+    SQLBackend --> Postgres
+```
 
 ## Core Components
 
