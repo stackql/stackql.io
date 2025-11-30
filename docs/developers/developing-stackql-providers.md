@@ -81,6 +81,21 @@ To develop a StackQL provider, you'll need a provider's OpenAPI or Swagger speci
 
 Once you have the OpenAPI specification, you can use the [__`stackql-provider-utils`__](https://github.com/stackql/stackql-provider-utils) utility project and the [__`stackql-provider-TEMPLATE`__](https://github.com/stackql/stackql-provider-TEMPLATE) template project to generate a StackQL provider document.
 
+## Using Claude Code for Provider Development
+
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) can assist with StackQL provider development through a specialized skill that provides comprehensive guidance on creating and configuring providers.
+
+The [__StackQL Provider Development Skill__](https://github.com/stackql/any-sdk/blob/main/.claude/skills/stackql-provider-development.md) teaches Claude about:
+
+- **Provider Architecture**: The hierarchical structure organizing providers into services, resources, methods, and operations
+- **StackQL Extensions**: All custom `x-stackQL-*` OpenAPI extensions for resource definitions, SQL verb mappings, and query semantics
+- **Authentication Configuration**: Setting up API keys, OAuth 2.0, AWS signing, service accounts, and other authentication methods
+- **Pagination Strategies**: Configuring token-based, offset-based, and link header pagination
+- **Query Optimization**: Implementing predicate pushdown for filtering, sorting, and projection at the API level
+- **Response Transformation**: Extracting and transforming nested API responses into flat table structures
+
+To use this skill, clone the [any-sdk](https://github.com/stackql/any-sdk) repository and work with Claude Code in that directory. Claude will automatically have access to the provider development skill and can help you create new providers, troubleshoot configuration issues, and implement advanced features like custom authentication flows or complex pagination handling.
+
 ## Testing Your Provider
 
 To ensure that your provider works as expected, you can test it using the `dev` registry before deploying it. Here's how:
