@@ -11,70 +11,86 @@ description: Query and Deploy Cloud Infrastructure and Resources using SQL
 image: "/img/stackql-featured-image.png"
 ---
 
-See also:  
+See also:
 [[ Using StackQL ]](/docs/getting-started/using-stackql) [[ Using Variables ]](/docs/getting-started/variables) [[ Templating ]](/docs/getting-started/templating)
 
 ## Overview
 
-The following diagram describes the internals of the StackQL at a high level.
+StackQL is a unified SQL interface for querying and managing cloud infrastructure across multiple providers. The following container diagram illustrates the major components of the StackQL system and their interactions.
 
-[![StackQL Component Diagram](/img/stackql-component-diagram.svg)](/img/stackql-component-diagram.png)
+[![StackQL Container Diagram](/img/stackql-container-diagram.png)](/img/stackql-container-diagram.png)
 
-### Driver
-The StackQL Driver is invoked by either a command being run in the [StackQL Interactive Command Shell](/docs/command-line-usage/shell) or a command or commands being submitted using the [`stackql exec`](/docs/command-line-usage/exec) command. The Driver is responsible for the orchestration of StackQL commands. 
+## Core Components
 
-### QueryPreProcessor
-The QueryPreProcessor is responsible for the preprossing of variables (if provided), using either Json or [Jsonnet](https://jsonnet.org/).  For more information see [[ Templating ]](/docs/getting-started/templating).
+### Entry Points
 
-### QueryParser
-The QueryParser parses the IQL statement and ensures the validity of the syntax provided as well as attribute references and mandatory attributes. 
+StackQL supports multiple entry points for executing SQL queries:
 
-### ProviderInterface
-The ProviderInterface consumes signed extended API specs from the StackQL Provider Registry.
+- **CLI / Shell**: An interactive shell and command-line interface for executing SQL queries directly from the terminal. Users can run ad-hoc queries, scripts, or use the interactive shell for exploration.
 
-> StackQL provider interface documents are used to enumerate and define all available resources and their associated methods and attributes for a given provider.  This information - collected at execution time - is cached internally for the current session.
+- **PostgreSQL Wire Protocol**: Enables connections from standard PostgreSQL clients such as `psql`, DBeaver, or any other PostgreSQL-compatible tool. This allows seamless integration with existing database workflows and BI tools.
 
-### QueryPlanner
-The QueryPlanner determines which components of the query will be executed remotely through the relevant Cloud Provider API, and which components will be executed locally (such as aggregate operations).
+- **MCP Server**: A Model Context Protocol server that enables AI assistant integration, allowing large language models to query and manage infrastructure through natural language.
 
-### RemoteExecutor
-The RemoteExecutor is responsible for interacting with the relevant Cloud Provider's API, this includes the handling of asynchronous operations and paginated responses.
+### Query Processing Pipeline
 
-### LocalExecutor
-The LocalExector is the local embedded SQL engine responsible for operations on provider resource data, such as scalar functions and aggegation operations.
+1. **SQL Parser**: Parses SQL input into an Abstract Syntax Tree (AST) using a custom grammar based on Yacc. The parser (implemented as `stackql-parser`) validates SQL syntax and prepares it for query planning.
 
-## Detailed Design
+2. **Query Engine**: The central orchestration layer that plans and executes queries. It determines which operations can be pushed down to the API layer versus which require local SQL processing. The query engine handles:
+   - Query planning and optimization
+   - Coordination between API calls and local SQL execution
+   - Result aggregation and transformation
 
-The following diagram is a detailed description of the `stackql` application
+### Provider SDK (any-sdk)
 
-```mermaid
-graph TB
-    OpenapiStackQL("Openapi-StackQL")
-    StackQLParser("StackQL Parser")
-    PsqlWire("psql-wire")
-    
-    Shell[Shell] --> CommandRunner[Command Runner]
-    Exec[Exec] --> CommandRunner
-    CommandRunner --> Driver[Driver]
-    Server[Server] --> Driver
-    Server --> WireServer[Wire Server]
-    WireServer --> PsqlWire
-    Driver --> QuerySubmitter[Query Submitter]
-    QuerySubmitter --> PlanBuilder[Plan Builder]
-    
-    PlanBuilder --> InitialPassesScreenerAnalyzer[Mature the AST]
-    InitialPassesScreenerAnalyzer --> NestedIndirection[Nested Indirection]
-    NestedIndirection --> IndirectExpansion[Indirect Expansion]
-    PlanBuilder --> Parser[Parser]
-    IndirectExpansion --> Parser
-    Parser --> StackQLParser
+The Provider SDK is a critical component that manages all interactions with cloud providers. Key responsibilities include:
 
-    PlanBuilder --> RoutePass[Route Pass]
-    PlanBuilder --> PrimitiveBuilder[Primitive Builder]
-    PrimitiveBuilder --> PrimitiveGraph[Primitive Graph]
-    PlanBuilder --> PrimitiveGraph
-    PrimitiveBuilder --> OpenapiStackQL
-    RoutePass --> ParameterRouter[Parameter Router]
-    ParameterRouter --> OpenapiStackQL
-    RoutePass --> NestingComposition[Nesting / Composition]
-```
+- **Provider Discovery**: Fetches provider specifications from the StackQL Registry, which contains OpenAPI-based definitions for each supported cloud provider.
+
+- **Authentication**: Handles authentication for each provider, supporting various auth methods including API keys, OAuth tokens, service account credentials, and more. Each provider definition specifies its authentication requirements.
+
+- **API Request Building**: Transforms SQL queries into appropriate REST API calls for each provider, handling endpoint construction, parameter mapping, and request formatting.
+
+- **Pagination**: Automatically handles paginated API responses, abstracting away the complexity of different pagination schemes used by various providers (cursor-based, offset-based, token-based, etc.).
+
+- **Predicate Pushdown**: Where supported, pushes query predicates (WHERE clause conditions) to the provider API to minimize data transfer and improve query performance.
+
+- **Response Transformation**: Converts API responses into relational data that can be processed by the SQL backend.
+
+### SQL Backend
+
+The SQL Backend executes relational operations on materialized API data:
+
+- **SQLite**: An embedded database used for temporary table storage and relational processing. Ideal for ad-hoc queries and smaller datasets.
+
+- **PostgreSQL**: An optional external database for persistent storage, larger datasets, and advanced analytics workloads.
+
+The SQL backend handles operations such as:
+- JOIN operations across multiple providers or resources
+- Aggregate functions (COUNT, SUM, AVG, etc.)
+- Sorting and filtering on materialized data
+- Complex SQL expressions and subqueries
+
+## External Systems
+
+### Cloud Providers
+
+StackQL connects to cloud providers (AWS, GCP, Azure, Kubernetes, GitHub, and many more) via their REST APIs. All communication is over HTTPS, and the Provider SDK handles the specifics of each provider's API conventions.
+
+### StackQL Registry
+
+The StackQL Registry hosts provider definitions - OpenAPI-based specifications that describe available resources, methods, and their mappings. Providers are versioned and can be pulled on-demand using the `REGISTRY PULL` command.
+
+## Query Execution Flow
+
+1. User submits a SQL query through one of the entry points (CLI, PostgreSQL protocol, or MCP)
+2. The SQL Parser validates and converts the query into an AST
+3. The Query Engine analyzes the AST and creates an execution plan
+4. For provider operations, the Provider SDK:
+   - Fetches the relevant provider specification from the Registry (if not cached)
+   - Authenticates with the cloud provider
+   - Builds and executes API requests, handling pagination automatically
+   - Pushes predicates to the API where possible
+   - Materializes results into the SQL backend
+5. The SQL Backend executes any remaining relational operations
+6. Results are returned to the user in the requested format
