@@ -86,7 +86,7 @@ FROM weekly_totals
 ORDER BY week;
 ```
 
-### Combining data from multiple sources with UNION ALL
+### Combining data from multiple sources with `UNION ALL`
 
 CTEs are useful for combining data from multiple sources before performing analysis.
 

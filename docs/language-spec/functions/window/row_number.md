@@ -69,7 +69,7 @@ WHERE owner = 'stackql'
 ORDER BY created_at;
 ```
 
-### Compare ROW_NUMBER with RANK and DENSE_RANK
+### Compare `ROW_NUMBER` with `RANK` and `DENSE_RANK`
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors

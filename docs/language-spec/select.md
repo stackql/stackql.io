@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Returns an instance or instances of a resource.  
 
 See also:
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[` WITH (CTEs) `]](/docs/language-spec/with) [[ Window Functions ]](/docs/language-spec/functions/window/row_number)
+[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[` WITH (CTEs) `]](/docs/language-spec/with) [[` Window Functions `]](/docs/language-spec/windowing_functions)
 
 * * * 
 
@@ -32,7 +32,7 @@ type="select"
 
 ```sql
 [ WITH [ RECURSIVE ] <cteName> [ ( <columnList> ) ] AS ( <selectStatement> ) [, ...] ]
-SELECT { * | <fieldList> | <windowFunction> OVER ( <windowSpec> ) }
+SELECT { * | <fieldList> }
 FROM { <multipartIdentifier> | <joinStatement(s)> }
 [ WHERE <expression> ]
 [ GROUP BY <fieldList> ]
@@ -40,13 +40,6 @@ FROM { <multipartIdentifier> | <joinStatement(s)> }
 [ ORDER BY <fieldList> [ ASC | DESC ] ]
 [ LIMIT <integer> ]
 [ UNION <selectStatement> ];
-```
-
-*windowSpec::=*
-
-```sql
-[ PARTITION BY <fieldList> ] [ ORDER BY <fieldList> [ ASC | DESC ] ]
-[ ROWS BETWEEN <frameStart> AND <frameEnd> ]
 ```
 
 * * *
@@ -134,81 +127,7 @@ AND resourceGroupName = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
 
-### Using Window Functions to rank results
-
-Use window functions like `ROW_NUMBER`, `RANK`, and `DENSE_RANK` to assign rankings to rows based on column values.
-
-```sql
--- Rank contributors by contribution count
-SELECT
-    login,
-    contributions,
-    ROW_NUMBER() OVER (ORDER BY contributions DESC) as row_num,
-    RANK() OVER (ORDER BY contributions DESC) as rank,
-    DENSE_RANK() OVER (ORDER BY contributions DESC) as dense_rank
-FROM github.repos.contributors
-WHERE owner = 'stackql'
-  AND repo = 'stackql';
-```
-
-For more information on window functions, see [Window Functions](/docs/language-spec/functions/window/row_number).
-
-### Using Window Functions for running totals and percentages
-
-Aggregate functions like `SUM` and `COUNT` can be used as window functions to calculate running totals and percentages.
-
-```sql
--- Running total and percentage of contributions
-SELECT
-    login,
-    contributions,
-    SUM(contributions) OVER (ORDER BY contributions DESC) as running_total,
-    SUM(contributions) OVER () as total_contributions,
-    ROUND(100.0 * contributions / SUM(contributions) OVER (), 2) as pct_of_total
-FROM github.repos.contributors
-WHERE owner = 'stackql'
-  AND repo = 'stackql';
-```
-
-### Using `LAG` and `LEAD` to compare rows
-
-Use `LAG` and `LEAD` window functions to access values from previous or subsequent rows.
-
-```sql
--- Compare each release to previous release
-SELECT
-    tag_name,
-    name,
-    published_at,
-    LAG(tag_name, 1) OVER (ORDER BY published_at) as previous_release,
-    LEAD(tag_name, 1) OVER (ORDER BY published_at) as next_release,
-    julianday(published_at) - julianday(LAG(published_at, 1) OVER (ORDER BY published_at)) as days_since_last_release
-FROM github.repos.releases
-WHERE owner = 'stackql'
-  AND repo = 'stackql'
-ORDER BY published_at;
-```
-
-### Using `NTILE` to create groups
-
-Use `NTILE` to divide rows into a specified number of groups.
-
-```sql
--- Group contributors into quartiles
-SELECT
-    login,
-    contributions,
-    NTILE(4) OVER (ORDER BY contributions DESC) as quartile,
-    CASE NTILE(4) OVER (ORDER BY contributions DESC)
-        WHEN 1 THEN 'Top Contributors'
-        WHEN 2 THEN 'Active Contributors'
-        WHEN 3 THEN 'Moderate Contributors'
-        WHEN 4 THEN 'Occasional Contributors'
-    END as tier
-FROM github.repos.contributors
-WHERE owner = 'stackql'
-  AND repo = 'stackql';
-```
+For more information on window functions, see [Window Functions](/docs/language-spec/windowing_functions).
 
 ### Using Common Table Expressions (CTEs) with `WITH`
 
@@ -240,27 +159,3 @@ ORDER BY total_contributions DESC;
 ```
 
 For more information on CTEs, see [WITH (CTEs)](/docs/language-spec/with).
-
-### Using CTEs with Window Functions for analytics
-
-Combine CTEs with window functions for advanced analytics queries.
-
-```sql
--- Calculate moving average of commit activity
-WITH weekly_totals AS (
-    SELECT
-        week,
-        SUM(json_each.value) as commits_this_week
-    FROM github.repos.stats_commit_activity, JSON_EACH(days)
-    WHERE owner = 'stackql'
-      AND repo = 'stackql'
-    GROUP BY week
-)
-SELECT
-    week,
-    commits_this_week,
-    ROUND(AVG(commits_this_week) OVER (ORDER BY week ROWS BETWEEN 3 PRECEDING AND CURRENT ROW), 1) as four_week_moving_avg,
-    SUM(commits_this_week) OVER (ORDER BY week) as cumulative_commits
-FROM weekly_totals
-ORDER BY week;
-```

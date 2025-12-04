@@ -55,7 +55,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Compare RANK with DENSE_RANK and ROW_NUMBER
+### Compare `RANK` with `DENSE_RANK` and `ROW_NUMBER`
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors
@@ -70,7 +70,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Rank contributors within each repository using PARTITION BY
+### Rank contributors within each repository using `PARTITION BY`
 
 ```sql
 -- Rank contributors within each repo
