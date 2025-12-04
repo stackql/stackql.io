@@ -47,6 +47,7 @@ const sidebars = {
       items: [
         'language-spec/select',
         'language-spec/with',
+        'language-spec/windowing_functions',
         'language-spec/insert',
         'language-spec/update',
         'language-spec/replace',
