@@ -57,7 +57,7 @@ WHERE owner = 'stackql'
 ORDER BY contributions DESC;
 ```
 
-### Compare DENSE_RANK with RANK and ROW_NUMBER
+### Compare `DENSE_RANK` with `RANK` and `ROW_NUMBER`
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors
