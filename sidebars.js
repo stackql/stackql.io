@@ -46,6 +46,7 @@ const sidebars = {
       label: 'Language Specification',
       items: [
         'language-spec/select',
+        'language-spec/with',
         'language-spec/insert',
         'language-spec/update',
         'language-spec/replace',
