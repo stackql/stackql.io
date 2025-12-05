@@ -63,4 +63,25 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
+### Use `AVG` as a window function to calculate moving averages
+
+```sql
+-- Calculate moving average of commit activity
+WITH weekly_totals AS (
+    SELECT
+        week,
+        SUM(json_each.value) as commits_this_week
+    FROM github.repos.stats_commit_activity, JSON_EACH(days)
+    WHERE owner = 'stackql'
+      AND repo = 'stackql'
+    GROUP BY week
+)
+SELECT
+    week,
+    commits_this_week,
+    ROUND(AVG(commits_this_week) OVER (ORDER BY week ROWS BETWEEN 3 PRECEDING AND CURRENT ROW), 1) as four_week_moving_avg
+FROM weekly_totals
+ORDER BY week;
+```
+
 For more information, see [https://www.sqlite.org/lang_aggfunc.html#avg](https://www.sqlite.org/lang_aggfunc.html#avg).

@@ -76,10 +76,10 @@ type="windowSpec"
 
 | Category | Functions |
 |----------|-----------|
-| **Ranking** | `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, `NTILE()` |
-| **Offset** | `LAG()`, `LEAD()`, `FIRST_VALUE()`, `LAST_VALUE()`, `NTH_VALUE()` |
-| **Distribution** | `PERCENT_RANK()`, `CUME_DIST()` |
-| **Aggregate** | `SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()` with `OVER` clause |
+| **Ranking** | [__`ROW_NUMBER()`__](/docs/language-spec/functions/window/row_number), [__`RANK()`__](/docs/language-spec/functions/window/rank), [__`DENSE_RANK()`__](/docs/language-spec/functions/window/dense_rank), [__`NTILE()`__](/docs/language-spec/functions/window/ntile) |
+| **Offset** | [__`LAG()`__](/docs/language-spec/functions/window/lag), [__`LEAD()`__](/docs/language-spec/functions/window/lead), [__`FIRST_VALUE()`__](/docs/language-spec/functions/window/first_value), [__`LAST_VALUE()`__](/docs/language-spec/functions/window/last_value), [__`NTH_VALUE()`__](/docs/language-spec/functions/window/nth_value) |
+| **Distribution** | [__`PERCENT_RANK()`__](/docs/language-spec/functions/window/percent_rank), [__`CUME_DIST()`__](/docs/language-spec/functions/window/cume_dist) |
+| **Aggregate** | [__`SUM()`__](/docs/language-spec/functions/aggregate/sum), [__`COUNT()`__](/docs/language-spec/functions/aggregate/count), [__`AVG()`__](/docs/language-spec/functions/aggregate/avg), [__`MIN()`__](/docs/language-spec/functions/aggregate/min), [__`MAX()`__](/docs/language-spec/functions/aggregate/max) with the __`OVER`__ clause |
 
 * * *
 

@@ -61,4 +61,21 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
+### Use `COUNT` as a window function to calculate cumulative counts
+
+```sql
+-- Track cumulative issue counts over time
+SELECT
+    number,
+    title,
+    state,
+    created_at,
+    COUNT(*) OVER (ORDER BY created_at) as cumulative_issues,
+    COUNT(*) OVER (PARTITION BY state ORDER BY created_at) as cumulative_by_state
+FROM github.issues.issues
+WHERE owner = 'stackql'
+  AND repo = 'stackql'
+ORDER BY created_at;
+```
+
 For more information, see [https://www.sqlite.org/lang_aggfunc.html#count](https://www.sqlite.org/lang_aggfunc.html#count).
