@@ -97,44 +97,8 @@ Never commit your `claude_desktop_config.json` file with actual credentials to v
 
 ### Provider-Specific Credentials
 
-Different cloud providers require different authentication methods. Below are examples for common providers:
+Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/docs/providers](https://stackql.io/docs/providers))for the environment variables required for your desired provider(s).
 
-#### Google Cloud Platform (GCP)
-
-```json
-"GOOGLE_CREDENTIALS": "/path/to/service-account-key.json"
-```
-
-Or use Application Default Credentials:
-```json
-"GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
-```
-
-#### Amazon Web Services (AWS)
-
-```json
-"AWS_ACCESS_KEY_ID": "your-access-key-id",
-"AWS_SECRET_ACCESS_KEY": "your-secret-access-key",
-"AWS_REGION": "us-east-1"
-```
-
-#### Microsoft Azure
-
-```json
-"AZURE_CLIENT_ID": "your-client-id",
-"AZURE_CLIENT_SECRET": "your-client-secret",
-"AZURE_TENANT_ID": "your-tenant-id",
-"AZURE_SUBSCRIPTION_ID": "your-subscription-id"
-```
-
-#### Databricks
-
-```json
-"DATABRICKS_CLIENT_ID": "your-client-id",
-"DATABRICKS_CLIENT_SECRET": "your-client-secret"
-```
-
-For more information on provider authentication, see the [StackQL Provider Registry](/providers).
 
 ## Restarting Claude Desktop
 
