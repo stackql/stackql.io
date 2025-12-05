@@ -32,11 +32,12 @@ type="select"
 
 ```sql
 [ WITH [ RECURSIVE ] <cteName> [ ( <columnList> ) ] AS ( <selectStatement> ) [, ...] ]
-SELECT { * | <fieldList> }
+SELECT { * | <fieldList> | <windowFunctionCall> [ AS <alias> ] }
 FROM { <multipartIdentifier> | <joinStatement(s)> }
 [ WHERE <expression> ]
 [ GROUP BY <fieldList> ]
 [ HAVING <expression> ]
+[ WINDOW <windowName> AS ( <windowSpec> ) [, ...] ]
 [ ORDER BY <fieldList> [ ASC | DESC ] ]
 [ LIMIT <integer> ]
 [ UNION <selectStatement> ];
