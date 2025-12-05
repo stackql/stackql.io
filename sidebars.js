@@ -24,6 +24,7 @@ const sidebars = {
         'getting-started/resource-hierarchy',
         'getting-started/using-stackql',
         'getting-started/using-a-provider',
+        'getting-started/claude-desktop',
         'getting-started/output-modes',
         'getting-started/variables',
         'getting-started/templating',
