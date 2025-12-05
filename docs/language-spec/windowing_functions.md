@@ -10,6 +10,7 @@ keywords:
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
 image: "/img/stackql-featured-image.png"
 ---
+import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
 Window functions perform calculations across a set of rows that are related to the current row. Unlike aggregate functions that return a single result for a group of rows, window functions return a value for each row while considering a "window" of related rows.
 
@@ -26,21 +27,59 @@ Window functions use the `OVER` clause to define the window specification:
 SELECT <windowFunction> OVER ( <windowSpec> ) FROM <multipartIdentifier>;
 ```
 
-*windowSpec::=*
+*windowFunctionCall::=*
+
+<RailroadDiagram 
+type="windowFunctionCall"
+/>
+
+### Window Function
+
+Window functions are specialized functions that perform calculations across a set of rows defined by the window specification. They can be either dedicated window functions (like `ROW_NUMBER` or `LAG`) or aggregate functions (like `SUM` or `COUNT`) used with an `OVER` clause.
 
 ```sql
-[ PARTITION BY <fieldList> ] [ ORDER BY <fieldList> [ ASC | DESC ] ]
-[ ROWS BETWEEN <frameStart> AND <frameEnd> ]
+{ <aggregateFunction> | ROW_NUMBER() | RANK() | DENSE_RANK() | PERCENT_RANK() 
+  | CUME_DIST() | NTILE(<int>) | LAG(<expr> [,<offset> [,<default>]]) 
+  | LEAD(<expr> [,<offset> [,<default>]]) | FIRST_VALUE(<expr>) 
+  | LAST_VALUE(<expr>) | NTH_VALUE(<expr>, <int>) }
+```  
+
+*windowFunction::=*
+
+<RailroadDiagram 
+type="windowFunction"
+/>
+
+### Window Specification
+
+The window specification defines how rows are partitioned, ordered, and framed for the window function calculation. `PARTITION BY` divides rows into groups, `ORDER BY` determines the sequence within each partition, and the optional frame clause specifies which rows relative to the current row are included in the calculation.
+
+```sql
+[ <windowName> ]
+[ PARTITION BY <fieldList> ]
+[ ORDER BY <fieldList> [ ASC | DESC ] ]
+[ { ROWS | RANGE | GROUPS } 
+    { UNBOUNDED PRECEDING | <int> PRECEDING | CURRENT ROW }
+  | { ROWS | RANGE | GROUPS } BETWEEN 
+    { UNBOUNDED PRECEDING | <int> PRECEDING | CURRENT ROW | <int> FOLLOWING }
+    AND
+    { <int> PRECEDING | CURRENT ROW | <int> FOLLOWING | UNBOUNDED FOLLOWING } ]
 ```
+
+*windowSpec::=*
+
+<RailroadDiagram 
+type="windowSpec"
+/>
 
 ## Available Window Functions
 
 | Category | Functions |
 |----------|-----------|
-| **Ranking** | `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, `NTILE()` |
-| **Offset** | `LAG()`, `LEAD()`, `FIRST_VALUE()`, `LAST_VALUE()`, `NTH_VALUE()` |
-| **Distribution** | `PERCENT_RANK()`, `CUME_DIST()` |
-| **Aggregate** | `SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()` with `OVER` clause |
+| **Ranking** | [__`ROW_NUMBER()`__](/docs/language-spec/functions/window/row_number), [__`RANK()`__](/docs/language-spec/functions/window/rank), [__`DENSE_RANK()`__](/docs/language-spec/functions/window/dense_rank), [__`NTILE()`__](/docs/language-spec/functions/window/ntile) |
+| **Offset** | [__`LAG()`__](/docs/language-spec/functions/window/lag), [__`LEAD()`__](/docs/language-spec/functions/window/lead), [__`FIRST_VALUE()`__](/docs/language-spec/functions/window/first_value), [__`LAST_VALUE()`__](/docs/language-spec/functions/window/last_value), [__`NTH_VALUE()`__](/docs/language-spec/functions/window/nth_value) |
+| **Distribution** | [__`PERCENT_RANK()`__](/docs/language-spec/functions/window/percent_rank), [__`CUME_DIST()`__](/docs/language-spec/functions/window/cume_dist) |
+| **Aggregate** | [__`SUM()`__](/docs/language-spec/functions/aggregate/sum), [__`COUNT()`__](/docs/language-spec/functions/aggregate/count), [__`AVG()`__](/docs/language-spec/functions/aggregate/avg), [__`MIN()`__](/docs/language-spec/functions/aggregate/min), [__`MAX()`__](/docs/language-spec/functions/aggregate/max) with the __`OVER`__ clause |
 
 * * *
 

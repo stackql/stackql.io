@@ -91,4 +91,20 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
+### Use `MIN` as a window function to find minimum values within partitions
+
+```sql
+-- Find the earliest issue in each state
+SELECT
+    number,
+    title,
+    state,
+    created_at,
+    MIN(created_at) OVER (PARTITION BY state) as earliest_in_state
+FROM github.issues.issues
+WHERE owner = 'stackql'
+  AND repo = 'stackql'
+ORDER BY state, created_at;
+```
+
 For more information, see [https://www.sqlite.org/lang_aggfunc.html#min_agg](https://www.sqlite.org/lang_aggfunc.html#min_agg) or [https://www.sqlite.org/lang_corefunc.html#min_scalar](https://www.sqlite.org/lang_corefunc.html#min_scalar)

@@ -24,7 +24,13 @@ See also:
 *withClause::=*
 
 <RailroadDiagram
-type="with"
+type="withClause"
+/>
+
+*cteDefinition::=*
+
+<RailroadDiagram
+type="cteDefinition"
 />
 
 &nbsp;

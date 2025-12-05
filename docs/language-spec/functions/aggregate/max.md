@@ -91,4 +91,20 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
+### Use `MAX` as a window function to find maximum values within partitions
+
+```sql
+-- Find the most recent issue in each state
+SELECT
+    number,
+    title,
+    state,
+    created_at,
+    MAX(created_at) OVER (PARTITION BY state) as latest_in_state
+FROM github.issues.issues
+WHERE owner = 'stackql'
+  AND repo = 'stackql'
+ORDER BY state, created_at DESC;
+```
+
 For more information, see [https://www.sqlite.org/lang_aggfunc.html#max_agg](https://www.sqlite.org/lang_aggfunc.html#max_agg) or [https://www.sqlite.org/lang_corefunc.html#max_scalar](https://www.sqlite.org/lang_corefunc.html#max_scalar)

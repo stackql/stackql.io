@@ -69,4 +69,19 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
+### Use `SUM` as a window function to calculate running totals
+
+```sql
+-- Calculate running total and percentage of contributions
+SELECT
+    login,
+    contributions,
+    SUM(contributions) OVER (ORDER BY contributions DESC) as running_total,
+    SUM(contributions) OVER () as total_contributions,
+    ROUND(100.0 * contributions / SUM(contributions) OVER (), 2) as pct_of_total
+FROM github.repos.contributors
+WHERE owner = 'stackql'
+  AND repo = 'stackql';
+```
+
 For more information, see [https://www.sqlite.org/lang_aggfunc.html#sumunc](https://www.sqlite.org/lang_aggfunc.html#sumunc).
