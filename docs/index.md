@@ -24,19 +24,19 @@ import DocsHero from '@site/src/components/DocsHero/DocsHero';
   <>
   Open Source<br/>
   Multi Cloud Analytics,<br/>
-  IaC, Automation and more
+  IaC, Automation and Agent Tooling
   </>
   }
   byline={
     <>
-    Provision. Query. Secure.
+    The Declarative Substrate for Cloud and AI Agents
     </>
     }
 />
 
 ---
 
-StackQL is a new approach to Cloud Infrastructure coding. With StackQL you can deploy, query and interact with cloud services and resources from major cloud providers using a familiar language...SQL! Querying cloud services in your account is as easy as writing a [`SELECT`](/docs/language-spec/select) statement...
+StackQL provides a single, declarative interface for querying and mutating cloud control planes and data planes. As AI agents move from assistance to autonomous execution, they need a safe, auditable way to read state, change state, enforce constraints, and integrate across systems. StackQL fills this gap by modeling the world as a database — making infrastructure, services, and APIs accessible through familiar SQL semantics.
 
 <Tabs
   defaultValue="iql"
@@ -81,8 +81,11 @@ SELECT 'stackql-demo',
 'test10gbdisk', 10;
 ```
 
-Using StackQL you can develop your way: declarative or procedural. With an easy grammar to learn and no state file to manage, you can get started quickly and use StackQL interchangeably with other infrastructure as code tools, cloud native or otherwise. Uses for StackQL include:
+Using StackQL you can develop your way: declarative or procedural. With an easy grammar to learn and no state file to manage, you can get started quickly and use StackQL interchangeably with other infrastructure as code tools, cloud native or otherwise. StackQL provides a universal interface for AI agents to interact with cloud infrastructure. Uses for StackQL include:
 
+- **AI Agent Integration** - Enable agents to provision and query cloud resources
+- **Control Plane Communication** - Programmatic infrastructure provisioning for agentic workflows
+- **Data Plane Observability** - Real-time monitoring and analytics for AI-driven operations
 - Cloud infrastructure deployment (using SQL)
 - Cloud asset inventory and reporting (using SQL)
 - Cloud compliance and control attestation (using SQL)
