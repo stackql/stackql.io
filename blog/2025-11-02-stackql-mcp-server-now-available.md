@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: Enable AI agents to query and manage cloud infrastructure using the Model Context Protocol.
 keywords: [stackql, mcp, model context protocol, ai agents, claude, chatgpt, infrastructure-as-code, cloud management, anthropic]
-tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code]
+tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code, ai]
 ---
 
 [__StackQL__](https://github.com/stackql/stackql) now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/). This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.

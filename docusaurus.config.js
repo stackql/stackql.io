@@ -98,7 +98,7 @@ const footerMoreItems = [
 const config = {
   title: 'StackQL',
   staticDirectories: ['static'],
-  tagline: 'Provision and Query Cloud and SaaS Resources using SQL',
+  tagline: 'The substrate for AI agents to interact with cloud control planes and data planes using SQL',
   url: 'https://stackql.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -251,11 +251,11 @@ const config = {
     ({
       metadata: [
         {name: 'robots', content: 'index,follow'},
-        {name: 'keywords', content: 'stackql, sql, infrastructure as code, cloud services, api, devops'},
+        {name: 'keywords', content: 'stackql, sql, ai agents, agentic ai, infrastructure as code, cloud services, api, devops, control plane, data plane'},
         {name: 'twitter:site', content: '@stackql'},
         {name: 'twitter:creator', content: '@stackql'},
-        {name: 'twitter:title', content: 'StackQL - SQL for Cloud Infrastructure'},
-        {name: 'twitter:description', content: 'StackQL is an open-source infrastructure-as-code tool that enables you to deploy, configure, query and operate cloud and SaaS services using SQL.'},
+        {name: 'twitter:title', content: 'StackQL - SQL for Cloud Infrastructure and AI Agents'},
+        {name: 'twitter:description', content: 'StackQL is an open-source infrastructure-as-code tool and the substrate for AI agents to communicate with cloud control planes and data planes using SQL.'},
         {name: 'og:locale', content: 'en_US'},
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
@@ -302,7 +302,22 @@ const config = {
           to: '/install',
           label: 'Install',
           position: 'left',
-        },                
+        },
+        {
+          type: 'dropdown',
+          label: 'AI Agents',
+          position: 'left',
+          items: [
+            {
+              to: '/docs/command-line-usage/mcp',
+              label: 'MCP Server',
+            },
+            {
+              to: 'blog/tags/ai',
+              label: 'AI Resources',
+            },
+          ],
+        },
         {
           to: '/stackql-deploy',
           label: 'stackql-deploy',
