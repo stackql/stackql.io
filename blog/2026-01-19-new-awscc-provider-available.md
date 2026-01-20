@@ -20,8 +20,10 @@ Resources follow a clear pattern to differentiate operations:
 |------------------|------------|----------|
 | `{resource}` (e.g., `s3.buckets`) | `SELECT`, `INSERT`, `UPDATE`, `DELETE` | Full CRUD with complete resource properties |
 | `{resource}_list_only` (e.g., `s3.buckets_list_only`) | `SELECT` | Fast enumeration of resource identifiers |
+<br/>
 
-This separation means listing thousands of resources won't trigger rate limits from individual GET calls:
+This separation means listing thousands of resources won't trigger rate limits from individual `GET` calls:
+
 ```sql
 -- Fast enumeration (list operation only)
 SELECT bucket_name 
