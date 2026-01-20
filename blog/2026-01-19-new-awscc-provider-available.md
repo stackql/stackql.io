@@ -10,7 +10,7 @@ keywords: [stackql, aws, awscc, cloud control, provider, infrastructure-as-code,
 tags: [stackql, aws, awscc, cloud control, provider, infrastructure-as-code]
 ---
 
-We've released a new dedicated [__StackQL AWS Cloud Control provider__](https://awscc.stackql.io/providers/awscc/) (`awscc`), providing full CRUDL operations across AWS services via the Cloud Control API including purpose-built resource definitions leveraging Cloud Control's consistent schema.
+We've released a new dedicated [__StackQL AWS Cloud Control provider__](https://awscc-provider.stackql.io), providing full CRUDL operations across AWS services via the Cloud Control API including purpose-built resource definitions leveraging Cloud Control's consistent schema.
 
 ## Resource Naming Convention
 
