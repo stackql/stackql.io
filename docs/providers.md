@@ -45,6 +45,11 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/linode/favicon.ico'
       },
       { 
+        name: 'AWS Cloud Control',
+        href: 'https://awscc-provider.stackql.io/',
+        icon: '/img/providers/aws/favicon.ico'
+      },      
+      { 
         name: 'Azure Stack',
         href: 'https://azure-stack-provider.stackql.io/',
         icon: '/img/providers/azure/favicon.ico'
