@@ -18,8 +18,8 @@ Resources follow a clear pattern to differentiate operations:
 
 | Resource Pattern | Operations | Use Case |
 |------------------|------------|----------|
-| `{resource}` (e.g., `s3.buckets`) | SELECT, INSERT, UPDATE, DELETE | Full CRUD with complete resource properties |
-| `{resource}_list_only` (e.g., `s3.buckets_list_only`) | SELECT | Fast enumeration of resource identifiers |
+| `{resource}` (e.g., `s3.buckets`) | `SELECT`, `INSERT`, `UPDATE`, `DELETE` | Full CRUD with complete resource properties |
+| `{resource}_list_only` (e.g., `s3.buckets_list_only`) | `SELECT` | Fast enumeration of resource identifiers |
 
 This separation means listing thousands of resources won't trigger rate limits from individual GET calls:
 ```sql
@@ -80,7 +80,7 @@ The provider documentation at [awscc.stackql.io](https://awscc.stackql.io/provid
 
 - **Interactive schema explorer** with expandable nested property trees
 - **Complete field documentation** including complex object structures
-- **Ready-to-use SQL examples** for SELECT, INSERT, and DELETE operations
+- **Ready-to-use SQL examples** for `SELECT`, `INSERT`, and `DELETE` operations
 - **IAM permissions reference** for each resource operation
 
 ## Get Started
