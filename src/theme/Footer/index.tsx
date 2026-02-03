@@ -110,23 +110,31 @@ function Footer(): React.ReactElement | null {
     >
       <div className="container">
         {links && links.length > 0 && (
-          <div className="row footer__links">
+          <div className="row footer__links" style={{ alignItems: 'flex-start' }}>
             <div className="col col--6 footer__col">
               {typedLogo && (typedLogo.src || typedLogo.srcDark) && (
-                <div className="margin-bottom--sm">
+                <>
                   {typedLogo.href ? (
                     <Link href={typedLogo.href} className={styles.footerLogoLink}>
-                      <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 120} height={typedLogo.height || 40} />
+                      <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 208} height={typedLogo.height || 70} />
                     </Link>
                   ) : (
-                    <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 120} height={typedLogo.height || 40} />
+                    <FooterLogo alt={typedLogo.alt} sources={sources} width={typedLogo.width || 208} height={typedLogo.height || 70} />
                   )}
-                </div>
+                </>
               )}
-              <p className="footer__subtitle">
+              <p className="footer__subtitle" style={{ marginTop: '0', marginBottom: '0.5rem' }}>
                 A new approach to querying and <br />
                 provisioning cloud services.
               </p>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', alignItems: 'center' }}>
+                <Link href="https://aaif.io/members/" className={styles.footerLogoLink} target="_blank" rel="noopener">
+                  <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '90px' }} />
+                </Link>
+                <Link href="https://www.linuxfoundation.org/about/members" className={styles.footerLogoLink} target="_blank" rel="noopener">
+                  <img src="/img/LF_MemberLevel_silver.svg" alt="Linux Foundation Member" style={{ height: '90px' }} />
+                </Link>
+              </div>
             </div>
             {links.map((linkItem, i) => (
               <div key={i} className="col footer__col">

@@ -25,7 +25,20 @@ export default function FooterLayout({
         {links}
         {(logo || copyright) && (
           <div className="footer__bottom text--center">
-            {logo && <div className="margin-bottom--sm">{logo}</div>}
+            {logo && (
+              <div className="margin-bottom--sm">
+                {logo}
+                <div style={{ marginTop: '1rem' }}>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--ifm-footer-color)', marginBottom: '0.75rem' }}>
+                    A new approach to querying and provisioning cloud services.
+                  </p>
+                  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '50px' }} />
+                    <img src="/img/LF_MemberLevel_silver.svg" alt="Linux Foundation Member" style={{ height: '50px' }} />
+                  </div>
+                </div>
+              </div>
+            )}
             {copyright}
           </div>
         )}
