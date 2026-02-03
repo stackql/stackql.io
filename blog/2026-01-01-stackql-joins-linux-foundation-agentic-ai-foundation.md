@@ -2,7 +2,7 @@
 slug: stackql-joins-linux-foundation-agentic-ai-foundation
 title: StackQL Joins the Linux Foundation and Agentic AI Foundation
 hide_table_of_contents: true
-image: "/img/blog/stackql-aws-provider-featured-image.png"
+image: "/img/blog/aaif-silver-member-featured-image.png"
 description: StackQL Studios joins the Linux Foundation and Agentic AI Foundation as a Silver Member.
 keywords: [stackql, linux-foundation, aaif, agentic-ai, mcp, open-source]
 authors:
