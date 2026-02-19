@@ -180,7 +180,8 @@ html[data-theme='dark'] .hero--primary {
     width: 140px;
     height: 28px;
 	display: flex;
-    background: url("https://img.shields.io/github/stars/stackql/stackql?logo=github&style=social") no-repeat center/contain;
+    /* background: url("https://img.shields.io/github/stars/stackql/stackql?logo=github&style=social") no-repeat center/contain; */
+	background: url("https://badgen.net/github/stars/stackql/stackql") no-repeat center/contain;
 }
 
  .footer__items {
