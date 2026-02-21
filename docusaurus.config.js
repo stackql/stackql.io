@@ -20,7 +20,7 @@ const nightOwlCodeTheme = themes.nightOwl;
 const providerDropDownListItems = [
   {
     label: 'AWS',
-    to: '/providers/awscc',
+    to: '/providers/aws',
   },
   {
     label: 'Azure',
