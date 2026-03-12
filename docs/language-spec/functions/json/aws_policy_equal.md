@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Compares two AWS IAM policy JSON strings (or AWS tags arrays) and returns `true` if they are semantically equivalent according to AWS policy evaluation rules, `false` otherwise.
 See also:
-[[` SELECT `]](__/docs/language-spec/select__) [[` DESCRIBE `]](__/docs/language-spec/describe__) [[` JSON_EQUAL `]](__/docs/language-spec/functions/json/json_equal__) [[` JSON_EXTRACT `]](__/docs/language-spec/functions/json/json_extract__) [[ Data Types ]](__/docs/language-spec/data-types__)
+[__[` SELECT `]__](/docs/language-spec/select) [__[` DESCRIBE `]__](/docs/language-spec/describe) [__[` JSON_EQUAL `]__](/docs/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/docs/language-spec/functions/json/json_extract) [__[ Data Types ]__](/docs/language-spec/data-types)
 * * *
 :::tip
 The `aws_policy_equal` function is a custom StackQL extension function. It handles AWS IAM policy comparison according to AWS policy evaluation rules, where certain elements (like `Action`, `Resource`, `Principal`, and `Tags`) are treated as unordered sets. When both arguments are top-level JSON arrays (e.g. a raw AWS tags array), they are also compared as unordered sets. The `aws_policy_equal` function is available in StackQL versions `0.8.175` and above and is only supported with the default embedded, in-memory SQL backend for StackQL.
