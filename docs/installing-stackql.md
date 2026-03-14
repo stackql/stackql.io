@@ -418,7 +418,7 @@ __Example usage__
 
 ```yaml
 - name: setup StackQL
-  uses: stackql/setup-stackql@v2.2.3
+  uses: stackql/setup-stackql@v2
   with:
     use_wrapper: true
 
@@ -453,7 +453,7 @@ __Example usage__
 
 ```yaml
 - name: exec github example
-  uses: stackql/stackql-exec@v2.2.3
+  uses: stackql/stackql-exec@v2
   with:
     query: |
       select total_private_repos
@@ -487,7 +487,7 @@ __Example usage__
 
 ```yaml
 - name: Use test query string and expected rows
-  uses: stackql/stackql-assert@v2.2.3
+  uses: stackql/stackql-assert@v2
   with:
     test_query: |
         SELECT name
