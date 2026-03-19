@@ -211,38 +211,31 @@ Instructions for installing StackQL on various different platforms are provided 
   mb: 2
 }}>
 
-  ## `stackql-deploy`
+## `stackql-deploy`
 
-  StackQL Deploy is a Python package that enables infrastructure deployment using StackQL. It provides a simplified interface for managing cloud resources across multiple providers with SQL-like syntax.  For more detailed information see [__StackQL Deploy Docs__](https://stackql-deploy.io/).  
+`stackql-deploy` is a stateless IaC framework built on StackQL. For full documentation see [__StackQL Deploy Docs__](https://stackql-deploy.io/).
 
-  __PyPi__  
+__Linux / macOS__
 
-  The package is available on PyPI and can be installed using `pip`.
+Downloads and extracts the latest `stackql-deploy` binary in one step. The URL detects your OS and redirects to the correct release asset automatically.
+```bash
+curl -L https://get-stackql-deploy.io | tar xzf -
+```
 
-  <Tabs
-    defaultValue="direct"
-    values={[
-      { label: 'Direct Install', value: 'direct', },
-      { label: 'Virtual Environment', value: 'venv', },
-    ]}
-  >
-  <TabItem value="direct">
+__Windows__
 
-  ```bash
-  pip install stackql-deploy
-  ```
+Downloads the latest binary as a `.zip` and extracts it to the current directory.
+```powershell
+Invoke-WebRequest https://get-stackql-deploy.io -OutFile stackql-deploy.zip
+Expand-Archive stackql-deploy.zip -DestinationPath .
+```
 
-  </TabItem>
-  <TabItem value="venv">
+__cargo__
 
-  ```bash
-  python -m venv stackql-env
-  source stackql-env/bin/activate  # On Windows, use: stackql-env\Scripts\activate
-  pip install stackql-deploy
-  ```
-
-  </TabItem>  
-  </Tabs>
+If you have the Rust toolchain installed, this builds and installs the binary directly from [__crates.io__](https://crates.io/crates/stackql-deploy).
+```bash
+cargo install stackql-deploy
+```
 
 </Box>
 
