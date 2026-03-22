@@ -52,7 +52,7 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
 | <span class="nowrap">`--registry`</span> | string | openapi registry context keyvals in json form |  |
 | <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |
-| <span class="nowrap">`--sqlBackend`</span> | string | JSON / YAML string representing SQL Backend System Config | `{}` |
+| <span class="nowrap">`--sqlBackend`</span> | string | JSON / YAML string representing SQL Backend System Config | see [`--sqlBackend`](#--sqlbackend) |
 | <span class="nowrap">`--store.txn`</span> | string | JSON / YAML string representing Txn store config | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | Path to CA bundle, if not specified then system defaults used |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | Allow trust of insecure certificates (not recommended) |  |
@@ -60,3 +60,37 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | Verbose output | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | Context specific help for stackql | |
 | <span class="nowrap">`--version`</span> | | Displays the version of the StackQL program | |
+
+## `--sqlBackend`
+
+The `--sqlBackend` flag configures an external SQL backend for StackQL, allowing you to use an external database engine (such as PostgreSQL) instead of the default embedded SQL engine. This is useful for leveraging an external database for query processing, persistent storage, or integration with existing database infrastructure.
+
+The value is a JSON string with the following keys:
+
+| Key | Description | Example Values |
+| -- | -- | -- |
+| `dbEngine` | The database engine type | `postgres_tcp` |
+| `sqlDialect` | The SQL dialect to use | `postgres` |
+| `dsn` | The data source name (connection string) for the database | See examples below |
+
+### Example: Using a PostgreSQL Backend
+
+```bash
+./stackql \
+  --sqlBackend='{"dbEngine": "postgres_tcp", "sqlDialect": "postgres", "dsn": "postgres://user:password@hostname:port/dbname?sslmode=require"}' \
+  shell
+```
+
+### Example: Using Databricks PostgreSQL Interface
+
+Databricks exposes a PostgreSQL-compatible interface that can be used as a StackQL SQL backend. The DSN uses the standard PostgreSQL connection string format with your Databricks credentials:
+
+```bash
+./stackql \
+  --sqlBackend='{"dbEngine": "postgres_tcp", "sqlDialect": "postgres", "dsn": "postgres://user%40domain.com:your-access-token@your-databricks-host.cloud.databricks.com/databricks_postgres?sslmode=require"}' \
+  shell
+```
+
+:::note
+Special characters in the username or password (such as `@`) must be URL-encoded in the DSN (e.g., `@` becomes `%40`).
+:::
