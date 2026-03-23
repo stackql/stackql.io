@@ -29,7 +29,7 @@ import DocsHero from '@site/src/components/DocsHero/DocsHero';
   }
   byline={
     <>
-    The Declarative Substrate for Cloud and AI Agents
+    Configuration as Data, for Developers and AI Agents
     </>
     }
 />
