@@ -4,7 +4,7 @@ title: GitHub Provider Update - April 2026
 hide_table_of_contents: false
 authors:
   - jeffreyaven
-image: "/img/blog/stackql-github-provider-featured-image.png"
+image: "/img/blog/stackql-provider-for-github-released.png"
 description: Update to the StackQL GitHub provider adding six new services including agent_tasks, campaigns, classroom, hosted_compute, private_registries, and enterprise_teams, along with resource additions across existing services.
 keywords: [stackql, github, provider, github actions, github classroom, hosted compute, security campaigns, agent tasks]
 tags: [stackql, github, provider, github actions, github classroom, hosted compute]
