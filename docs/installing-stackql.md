@@ -374,18 +374,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} # add additional cloud provider creds here as needed
-    
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Deploy a Stack
-        uses: stackql/stackql-deploy-action@v1.0.2
+        uses: stackql/stackql-deploy-action@v2
         with:
           command: 'build'
           stack_dir: 'examples/k8s-the-hard-way'
           stack_env: 'dev'
-          env_vars: 'GOOGLE_PROJECT=stackql-k8s-the-hard-way-demo'
+          env_vars: |
+            GOOGLE_PROJECT=stackql-k8s-the-hard-way-demo
+            GOOGLE_REGION=australia-southeast1
 ```
 
 </TabItem>
