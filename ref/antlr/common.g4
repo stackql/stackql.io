@@ -165,6 +165,7 @@ UTC_DATE: 'UTC_DATE';
 UTC_TIME: 'UTC_TIME';
 UTC_TIMESTAMP: 'UTC_TIMESTAMP';
 VALUES: 'VALUES';
+VERSION: 'VERSION';
 VIEW: 'VIEW';
 WHEN: 'WHEN';
 WINDOW: 'WINDOW';
@@ -179,6 +180,7 @@ FOLLOWING: 'FOLLOWING';
 CURRENT: 'CURRENT';
 ROW: 'ROW';
 PARTITION: 'PARTITION';
+METHOD: 'METHOD';
 //============================
 // End Keywords list
 //============================
