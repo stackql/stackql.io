@@ -3,5 +3,5 @@ grammar DESCRIBE;
 import common;
 
 describeStatement
-    : DESCRIBE EXTENDED? multipartIdentifier ';'
+    : DESCRIBE METHOD? EXTENDED? multipartIdentifier ';'
     ;

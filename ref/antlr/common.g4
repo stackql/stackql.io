@@ -179,6 +179,7 @@ FOLLOWING: 'FOLLOWING';
 CURRENT: 'CURRENT';
 ROW: 'ROW';
 PARTITION: 'PARTITION';
+METHOD: 'METHOD';
 //============================
 // End Keywords list
 //============================
