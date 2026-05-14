@@ -3,11 +3,11 @@ grammar SHOW;
 import common;
 
 showStatement
-    : SHOW 
-    (
-    EXTENDED? 
-    (SERVICES | RESOURCES | METHODS ) 
-    ((FROM | IN) multipartIdentifier 
-    (LIKE pattern | WHERE expression)?)? | PROVIDERS | INSERT INTO? multipartIdentifier
-    ) ';'
+    : SHOW EXTENDED?
+        (
+              PROVIDERS
+            | (SERVICES | RESOURCES | METHODS) ((FROM | IN) multipartIdentifier (LIKE pattern | WHERE expression)?)?
+            | INSERT INTO? multipartIdentifier
+            | VERSION
+        ) ';'
     ;
