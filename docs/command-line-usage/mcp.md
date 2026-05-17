@@ -586,5 +586,5 @@ When using TLS with enterprise Certificate Authorities (CAs), additional configu
 
 ### Further reading
 
-- The package-developer reference is the [`pkg/mcp_server` README](/pkg/mcp_server/README.md) inside this repo.
-- The contributor-facing technical doc lives at [`docs/mcp.md`](/docs/mcp.md) inside this repo and includes worked example responses for every tool.
+- The package-developer reference is the [`pkg/mcp_server` README](https://github.com/stackql/stackql/blob/main/pkg/mcp_server/README.md) in the stackql repo.
+- The contributor-facing technical doc lives at [`docs/mcp.md`](https://github.com/stackql/stackql/blob/main/docs/mcp.md) in the stackql repo and includes worked example responses for every tool.
