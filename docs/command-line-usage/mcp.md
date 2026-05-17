@@ -231,7 +231,14 @@ stackql mcp \
   }'
 ```
 
-If `audit.file.path` is empty, the sink generates `stackql_mcp_server_<RFC3339-utc-second>.log` in the current working directory.  The resolved absolute path is logged to stderr at startup as `audit log: /path/to/file.log`.
+Two ways to specify the location:
+
+- `audit.file.path` -- a complete file path (absolute, or relative to cwd).
+- `audit.file.dir` -- a directory; the sink picks the basename `stackql_mcp_server_<RFC3339-utc-second>.log` inside it.
+
+When neither is set in `mcp.config`, the MCP server defaults `dir` to cwd so existing operators see the same behaviour as before.  The underlying generic sink package itself refuses to silently pick a directory -- the "where do logs land" decision is always made by the caller.
+
+The resolved absolute path is logged to stderr at startup as `sink file: /path/to/file.log`.
 
 #### Failure modes
 
