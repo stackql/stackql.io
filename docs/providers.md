@@ -40,6 +40,11 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/digitalocean/favicon.png'
       },
       { 
+        name: 'Cloudflare',
+        href: 'https://cloudflare-provider.stackql.io/',
+        icon: '/img/providers/cloudflare/favicon.ico'
+      },
+      { 
         name: 'Linode',
         href: 'https://linode-provider.stackql.io/',
         icon: '/img/providers/linode/favicon.ico'

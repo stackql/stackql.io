@@ -1,3 +1,13 @@
+/* Home page card icons - blue in light, green in dark */
+.homeCardIcon {
+	color: #0f4c81;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+[data-theme='dark'] .homeCardIcon {
+	color: #7ed957;
+}
+
 /* Brand Colour */
  :root {
 	 --gamma-blue: #0f4c81;

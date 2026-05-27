@@ -15,6 +15,7 @@ slug: /
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import DocsHero from '@site/src/components/DocsHero/DocsHero';
+import { FaRobot, FaCode, FaSatelliteDish } from 'react-icons/fa';
 
 <DocsHero
   lightSrc="/img/stackql-logo-bold-light-mode.png"
@@ -22,21 +23,51 @@ import DocsHero from '@site/src/components/DocsHero/DocsHero';
   alt="StackQL"
   title={
   <>
-  Open Source<br/>
-  Multi Cloud Analytics,<br/>
-  IaC, Automation and Agent Tooling
+  The Universal Interface<br/>
+  for the Agentic Era
   </>
   }
   byline={
     <>
-    Configuration as Data, for Developers and AI Agents
+    Configuration-as-Data. Infrastructure-as-Context.
     </>
     }
 />
 
 ---
 
-StackQL provides a single, declarative interface for querying and mutating cloud control planes and data planes. As AI agents move from assistance to autonomous execution, they need a safe, auditable way to read state, change state, enforce constraints, and integrate across systems. StackQL fills this gap by modeling the world as a database — making infrastructure, services, and APIs accessible through familiar SQL semantics.
+<div className="row margin-top--lg margin-bottom--lg">
+  <div className="col col--4 margin-bottom--md">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3><FaRobot size={22} className="homeCardIcon" />Agentic Platform Engineering</h3>
+      </div>
+      <div className="card__body">
+        A universal surface for agents and humans to author changes side by side, at machine speed. Multiple writers, live state, and policy-bounded execution as first-class concerns - the foundation autonomous systems need to operate safely.
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--md">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3><FaCode size={22} className="homeCardIcon" />IaC for the Agentic Era</h3>
+      </div>
+      <div className="card__body">
+        Code is still intent. Reality is data. StackQL gives agents and operators one declarative interface to query live state across providers, assert desired state idempotently, and traverse control and data planes through a single grammar - no state file, no per-cloud SDK.
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--md">
+    <div className="card" style={{height: '100%'}}>
+      <div className="card__header">
+        <h3><FaSatelliteDish size={22} className="homeCardIcon" />Autonomous Observability</h3>
+      </div>
+      <div className="card__body">
+        Treat cloud APIs as your data layer, not your deployment target. Every read is live, every change is an event, and drift becomes a signal an agent can reason about - not an alarm a human has to chase.
+      </div>
+    </div>
+  </div>
+</div>
 
 <Tabs
   defaultValue="iql"
