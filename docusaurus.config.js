@@ -55,6 +55,10 @@ const providerDropDownListItems = [
     to: '/providers/openai',
   },
   {
+    label: 'Cloudflare',
+    to: '/providers/cloudflare',
+  },
+  {
     label: '... More',
     to: '/providers',
   },

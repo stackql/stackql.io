@@ -17,6 +17,7 @@ export const providers = [
     {name: 'confluent', description: 'Managed Kafka clusters and streaming services.', title: 'Confluent Cloud'},
     {name: 'firebase', description: 'Mobile and web application development platform.', title: 'Firebase'},
     {name: 'netlify', description: 'Web development and content distribution platform.', title: 'Netlify'},
+    {name: 'cloudflare', description: 'CDN, DNS, security and edge compute platform.', title: 'Cloudflare'},
     {name: 'vercel', description: 'Cloud platform for serverless web application deployment.', title: 'Vercel'},
     {name: 'digitalocean', description: 'Cloud computing services and Infrastructure as a Service.', title: 'Digital Ocean'},
     {name: 'pagerduty', description: 'Incident management platform for real-time operations.', title: 'PagerDuty'},
