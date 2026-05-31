@@ -89,6 +89,12 @@ export const PROVIDER_CATEGORIES = [
         name: 'Confluent',
         href: 'https://confluent-provider.stackql.io/',
         icon: '/img/providers/confluent/favicon.ico'
+      },
+      { 
+        name: 'Kafka',
+        href: 'https://kafka-provider.stackql.io/',
+        icon: '/img/providers/kafka/kafka.png',
+        invertOnDark: true
       }
     ]
   },
@@ -99,7 +105,8 @@ export const PROVIDER_CATEGORIES = [
       { 
         name: 'Okta',
         href: 'https://okta-provider.stackql.io/',
-        icon: '/img/providers/okta/favicon.png'
+        icon: '/img/providers/okta/favicon.png',
+        invertOnDark: true
       },
       { 
         name: 'Google Admin',
@@ -115,7 +122,8 @@ export const PROVIDER_CATEGORIES = [
       { 
         name: 'OpenAI',
         href: 'https://openai-provider.stackql.io/',
-        icon: '/img/providers/openai/favicon.ico'
+        icon: '/img/providers/openai/favicon.ico',
+        invertOnDark: true
       },
       { 
         name: 'Anthropic',
@@ -131,7 +139,8 @@ export const PROVIDER_CATEGORIES = [
       { 
         name: 'GitHub',
         href: 'https://github-provider.stackql.io/',
-        icon: '/img/providers/github/favicon.ico'
+        icon: '/img/providers/github/favicon.ico',
+        invertOnDark: true
       },
       { 
         name: 'Kubernetes',
@@ -250,7 +259,7 @@ export const ProviderContent = () => {
               type: 'link',
               label: provider.name,
               href: provider.href,
-              customProps: { icon: provider.icon }
+              customProps: { icon: provider.icon, invertOnDark: provider.invertOnDark }
             }))}
           />
         </div>

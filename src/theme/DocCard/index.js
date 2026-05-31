@@ -87,7 +87,10 @@ function getItemIcon(item, defaultIcon) {
   if (cp.iconComponent) return cp.iconComponent;        // React node (e.g., imported SVG component)
   if (cp.icon) {
     const src = useBaseUrl(cp.icon);                    // string path like '/img/icons/install.svg'
-    return <img src={src} alt="" className={styles.cardIcon} />;
+    const className = cp.invertOnDark
+      ? `${styles.cardIcon} ${styles.cardIconInvert}`
+      : styles.cardIcon;
+    return <img src={src} alt="" className={className} />;
   }
   if (cp.emoji) return <span className={styles.cardEmoji}>{cp.emoji}</span>;
   return defaultIcon;

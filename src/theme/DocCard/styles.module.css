@@ -19,6 +19,12 @@
   display: block;         /* remove baseline gap for SVG/img */
   width: 1.25rem;
   height: 1.25rem;
+  object-fit: contain;    /* preserve aspect ratio for non-square icons */
+}
+
+/* Invert monochrome icons in dark mode so they remain visible */
+[data-theme='dark'] .cardIconInvert {
+  filter: invert(1);
 }
 
 .cardEmoji {
