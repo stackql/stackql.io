@@ -270,19 +270,23 @@ stackql mcp \
 
 When running as an MCP server, StackQL exposes the following tools.  Each returns both a rendered text view (for the LLM) and a typed structured payload (for programmatic clients).  Rendering is fixed per tool: a markdown table for uniform multi-row results, a markdown KV block for sparse / single-record results.
 
+Click any tool name for a full reference page, including inputs, gating behaviour, and an example prompt.
+
 | Tool | Renderer | Description | Inputs |
 |--|--|--|--|
-|`server_info`|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call once at session start.|none|
-|`list_providers`|Table|Available cloud/SaaS providers -- top of the hierarchy.|none|
-|`list_services`|Table|Services under a provider.|`provider`|
-|`list_resources`|Table|Resources under a `provider`.`service`.|`provider`, `service`|
-|`list_methods`|Table|Access methods (HTTP operations) for a resource.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
-|`describe_resource`|KV|Output fields for a resource's primary read method.|`provider`, `service`, `resource`|
-|`describe_method`|KV|Full I/O contract for one method (always EXTENDED).|`provider`, `service`, `resource`, `method`|
-|`validate_select_query`|KV|Parse and plan a `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only.|`sql`|
-|`run_select_query`|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
-|`run_mutation_query`|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
-|`run_lifecycle_operation`|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
+|[`server_info`](/docs/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call once at session start.|none|
+|[`list_providers`](/docs/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
+|[`list_services`](/docs/mcp/list_services)|Table|Services under a provider.|`provider`|
+|[`list_resources`](/docs/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
+|[`list_methods`](/docs/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
+|[`describe_resource`](/docs/mcp/describe_resource)|KV|Output fields for a resource's primary read method.|`provider`, `service`, `resource`|
+|[`describe_method`](/docs/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED).|`provider`, `service`, `resource`, `method`|
+|[`validate_select_query`](/docs/mcp/validate_select_query)|KV|Parse and plan a `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only.|`sql`|
+|[`run_select_query`](/docs/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
+|[`run_mutation_query`](/docs/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
+|[`run_lifecycle_operation`](/docs/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
+|[`list_registry`](/docs/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
+|[`pull_provider`](/docs/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
 
 ### Available MCP prompts
 
@@ -441,11 +445,24 @@ Note that `stackql_mcp_client` does **not** advertise the MCP elicitation capabi
   --url=http://127.0.0.1:9912 \
   --exec.action server_info
 
-# List providers
+# List providers already pulled into the local cache
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \
   --exec.action list_providers
+
+# List providers (and versions) available in the registry
+./build/stackql_mcp_client exec \
+  --client-type=http \
+  --url=http://127.0.0.1:9912 \
+  --exec.action list_registry
+
+# Install a provider from the registry into the local cache
+./build/stackql_mcp_client exec \
+  --client-type=http \
+  --url=http://127.0.0.1:9912 \
+  --exec.action pull_provider \
+  --exec.args '{"provider": "kafka"}'
 
 # List services for a provider
 ./build/stackql_mcp_client exec \
