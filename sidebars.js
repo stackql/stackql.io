@@ -44,6 +44,29 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'MCP',
+      link: {
+        type: 'doc',
+        id: 'command-line-usage/mcp',
+      },
+      items: [
+        'mcp/server_info',
+        'mcp/list_providers',
+        'mcp/list_services',
+        'mcp/list_resources',
+        'mcp/list_methods',
+        'mcp/describe_resource',
+        'mcp/describe_method',
+        'mcp/list_registry',
+        'mcp/pull_provider',
+        'mcp/validate_select_query',
+        'mcp/run_select_query',
+        'mcp/run_mutation_query',
+        'mcp/run_lifecycle_operation',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Language Specification',
       items: [
         'language-spec/select',

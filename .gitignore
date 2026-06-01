@@ -13,6 +13,7 @@ ref/antlr/.antlr/
 
 # Misc
 /env
+/.venv
 .DS_Store
 .env.local
 .env.development.local
@@ -26,3 +27,6 @@ build.log
 
 vars.sh
 vars.ps1
+
+# Claude Code local settings
+.claude/settings.local.json
