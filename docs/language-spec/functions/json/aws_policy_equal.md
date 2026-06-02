@@ -125,4 +125,4 @@ SELECT
 |--------------------|
 */
 ```
-For more information, see [aws_policy_equal](__https://github.com/stackql/sqlite-ext-functions/blob/main/docs/aws_policy_equal.md__).
+For more information, see [aws_policy_equal](https://github.com/stackql/sqlite-ext-functions/blob/main/sqlpkg/aws_policy_equal.json).
