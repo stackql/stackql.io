@@ -106,7 +106,6 @@ const config = {
   url: 'https://stackql.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: '/favicon.ico',
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
@@ -247,6 +246,9 @@ const config = {
   ],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
   
