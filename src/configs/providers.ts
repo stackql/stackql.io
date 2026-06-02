@@ -13,6 +13,7 @@ export const providers = [
     {name: 'k8s', description: 'Open source container management platform.', title: 'Kubernetes'},
     {name: 'googleadmin', description: 'Google Workspace identity services.', title: 'Google Admin'},
     {name: 'okta', description: 'Authentication and authorization services.', title: 'Okta'},
+    {name: 'entra_id', description: 'Microsoft Entra ID identity and access management.', title: 'Microsoft Entra ID'},
     {name: 'datadog', description: 'Monitoring, alerting and reporting platform.', title: 'Datadog'},
     {name: 'confluent', description: 'Managed Kafka clusters and streaming services.', title: 'Confluent Cloud'},
     {name: 'kafka', description: 'Kafka dataplane operations for topics, consumer groups and ACLs.', title: 'Kafka'},
