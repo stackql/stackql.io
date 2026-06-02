@@ -112,6 +112,11 @@ export const PROVIDER_CATEGORIES = [
         name: 'Google Admin',
         href: 'https://googleadmin-provider.stackql.io/',
         icon: '/img/providers/googleadmin/favicon.ico'
+      },
+      { 
+        name: 'Microsoft Entra ID',
+        href: 'https://entra-id-provider.stackql.io/',
+        icon: '/img/providers/entra_id/entra_id_icon.svg'
       }
     ]
   },
