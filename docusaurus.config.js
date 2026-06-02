@@ -319,9 +319,13 @@ const config = {
               label: 'MCP Server',
             },
             {
-              to: 'blog/tags/ai',
-              label: 'AI Resources',
+              to: '/docs/mcp',
+              label: 'MCP Tools',
             },
+            // {
+            //   to: 'blog/tags/ai',
+            //   label: 'AI Resources',
+            // },
           ],
         },
         {

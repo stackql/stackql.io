@@ -47,7 +47,7 @@ const sidebars = {
       label: 'MCP',
       link: {
         type: 'doc',
-        id: 'command-line-usage/mcp',
+        id: 'mcp/index',
       },
       items: [
         'mcp/server_info',
