@@ -4,7 +4,7 @@ title: Autonomous Edge Defense with AI Agents and SQL
 hide_table_of_contents: false
 authors:
   - jeffreyaven
-image: "/img/blog/stackql-edgepilot-featured-image.png"
+image: "/img/blog/stackql-cloudflare-provider-featured-image.png"
 description: An agentic loop that observes Cloudflare edge traffic, tightens rate limits in response, and writes an auditable decision trail to Kafka - all through one SQL interface.
 keywords: [stackql, mcp, model context protocol, anthropic, claude, cloudflare, confluent, kafka, ai agents, agentic, rate limiting, edge security, sql]
 tags: [stackql, mcp, anthropic, cloudflare, confluent, kafka, ai-agents, agentic, edge-security]
