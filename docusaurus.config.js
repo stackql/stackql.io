@@ -172,32 +172,32 @@ const config = {
         color: '#0f4c81',
       },
     },
-    // schema.org structured data
-    {
-      tagName: 'script',
-      attributes: {
-        type: 'application/ld+json',
-      },
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "StackQL",
-        "description": "Open-source infrastructure-as-code tool using SQL",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Cross-platform",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      })
-    },
   ],
   plugins: [
     '@docusaurus/plugin-ideal-image',
-    // '@stackql/docusaurus-plugin-hubspot',
-    // '@stackql/docusaurus-plugin-smartlook',
-    // '@stackql/docusaurus-plugin-structured-data',
+    '@stackql/docusaurus-plugin-structured-data',
+    [
+      '@stackql/docusaurus-plugin-aeo',
+      {
+        llmsTxt: {
+          instanceSections: {
+            'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
+            'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
+            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 3 },
+          },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai',
+        path: 'ai-content',
+        routeBasePath: '/ai',
+        sidebarPath: false,
+        editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
+      },
+    ],
   ],
   presets: [
     [
@@ -255,7 +255,86 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      structuredData: {
+        excludedRoutes: [
+          '/providers',
+        ],
+        verbose: false,
+        techArticleRoutePrefixes: ['/docs/', '/ai/'],
+        featuredImageDimensions: {
+          width: 1200,
+          height: 627,
+        },
+        authors: {
+          'Jeffrey Aven': {
+            authorId: '1',
+            url: 'https://www.linkedin.com/in/jeffreyaven/',
+            imageUrl: 'https://s.gravatar.com/avatar/f96573d092470c74be233e1dded5376f?s=80',
+            sameAs: [
+              'https://www.amazon.com/stores/Jeffrey-Aven/author/B0BSP78VVL',
+              'https://developers.google.com/community/experts/directory/profile/profile-jeffrey-aven',
+              'https://www.linkedin.com/in/jeffreyaven/',
+              'https://www.crunchbase.com/person/jeffrey-aven',
+              'https://github.com/jeffreyaven',
+              'https://dev.to/jeffreyaven',
+            ],
+          },
+        },
+        organization: {
+          sameAs: [
+            'https://twitter.com/stackql',
+            'https://www.linkedin.com/company/stackql',
+            'https://github.com/stackql',
+            'https://www.youtube.com/@stackql',
+            'https://hub.docker.com/u/stackql',
+          ],
+          contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'info@stackql.io',
+          },
+          logo: {
+            '@type': 'ImageObject',
+            inLanguage: 'en-US',
+            '@id': 'https://stackql.io/#logo',
+            url: 'https://stackql.io/img/stackql-cover.png',
+            contentUrl: 'https://stackql.io/img/stackql-cover.png',
+            width: 1440,
+            height: 900,
+            caption: 'StackQL - your cloud using SQL',
+          },
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'AU',
+            postalCode: '3001',
+            streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
+          },
+          taxID: 'ABN 65 656 147 054',
+        },
+        website: {
+          inLanguage: 'en-US',
+        },
+        webpage: {
+          inLanguage: 'en-US',
+          datePublished: '2021-07-01',
+        },
+        breadcrumbLabelMap: {
+          'developers': 'Developers',
+          'functions': 'Functions',
+          'aggregate': 'Aggregate',
+          'datetime': 'Date Time',
+          'json': 'JSON',
+          'math': 'Math',
+          'string': 'String',
+          'command-line-usage': 'Command Line Usage',
+          'getting-started': 'Getting Started',
+          'language-spec': 'Language Specification',
+          're': 'Regular Expressions',
+          'mcp': 'MCP',
+        },
+      },
       metadata: [
+        {name: 'description', content: 'StackQL is an open-source infrastructure-as-code tool and the substrate for AI agents to communicate with cloud control planes and data planes using SQL.'},
+        {property: 'og:description', content: 'StackQL is an open-source infrastructure-as-code tool and the substrate for AI agents to communicate with cloud control planes and data planes using SQL.'},
         {name: 'robots', content: 'index,follow'},
         {name: 'keywords', content: 'stackql, sql, ai agents, agentic ai, infrastructure as code, cloud services, api, devops, control plane, data plane'},
         {name: 'twitter:site', content: '@stackql'},
@@ -279,16 +358,38 @@ const config = {
     announcementBarLink: "https://github.com/stackql/stackql",    
     image: '/img/stackql-featured-image.png',        
     algolia: {
+      // The application ID provided by Algolia
       appId: process.env.ALGOLIA_APP_ID,
+
+      // Public API key: it is safe to commit it
       apiKey: process.env.ALGOLIA_API_KEY,
+
       indexName: process.env.ALGOLIA_INDEX_NAME,
 
       // Optional: see doc section below
       contextualSearch: false,
+
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      // externalUrlRegex: 'external\\.com|domain\\.com',
+      externalUrlRegex: 'external\\.com|domain\\.com',
+
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: '/docs/', // or as RegExp: /\/docs\//
+        to: '/',
+      },
+
       // Optional: Algolia search parameters
-      // searchParameters: {},
+      searchParameters: {},
+
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+
+      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+      insights: false,
+
+      // Optional: whether you want to use the new Ask AI feature (undefined by default)
+      askAi: process.env.ALGOLIA_AGENTID,
+
       //... other Algolia params
     },    
     docs: {

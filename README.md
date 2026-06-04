@@ -24,6 +24,7 @@ This command starts a local development server and opens up a browser window. Mo
 export ALGOLIA_API_KEY="<your algolia api key>"
 export ALGOLIA_APP_ID="<your algolia app id>"
 export ALGOLIA_INDEX_NAME="<your algolia index name>"
+export ALGOLIA_AGENTID="<your algolia agentid>"
 export HUBSPOT_ACCT_ID="<your hubspot account id>"
 export HUBSPOT_FORM_ID="<your hubspot form id>"
 export HUBSPOT_REGION="<your hubspot region>"

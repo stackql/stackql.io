@@ -10,7 +10,7 @@ keywords: [stackql, jupyter, python, ipython, multicloud, asset management, clou
 tags: [stackql, jupyter, python, ipython, multicloud, asset management, cloud security, analysis, analytics]
 ---
 
-import Gist from 'react-gist';
+import Gist from '@site/src/components/Gist';
 
 > StackQL is an intelligent API client which uses SQL as a front-end language with support for multi-cloud and SaaS provider environments, you can find more information at [__github.com/stackql/stackql__](https://github.com/stackql/stackql) 
 

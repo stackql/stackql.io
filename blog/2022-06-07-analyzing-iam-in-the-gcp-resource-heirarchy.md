@@ -9,7 +9,7 @@ keywords: [gcp, stackql, stackql provider registry, entitlements, iam, uam, user
 tags: [gcp, stackql, stackql provider registry, entitlements, iam, uam, user access management, user access review]
 ---
 
-import Gist from 'react-gist';
+import Gist from '@site/src/components/Gist';
 
 > StackQL allows you to query and interact with your cloud and SaaS assets using a simple SQL framework
 

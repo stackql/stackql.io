@@ -1,0 +1,36 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Serve raw markdown companion files with the correct MIME type so AI
+# crawlers and the Ask-AI button's deep links get plain text rather than
+# HTML or a download prompt.
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+# Same treatment for nested .md files (e.g. /docs/intro.md, /ai/.../foo.md).
+[[headers]]
+  for = "/**/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+# llms.txt + llms-full.txt: plain text, edge-cached, robot-friendly.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
