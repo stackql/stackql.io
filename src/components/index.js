@@ -11,3 +11,4 @@ export { default as HubspotContactForm } from './HubspotContactForm';
 export { default as FeaturesContent } from './FeaturesContent';
 export { default as FeaturesHeader } from './FeaturesHeader';
 export { default as BinaryDownloadLink } from './BinaryDownloadLink';
+export { default as Gist } from './Gist';

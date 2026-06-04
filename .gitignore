@@ -12,6 +12,7 @@ ref/antlr/.antlr/
 .cache-loader
 
 # Misc
+.env
 /env
 /.venv
 .DS_Store
