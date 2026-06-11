@@ -26,18 +26,18 @@ The interface is SQL because SQL is a stable, well-understood query language wit
 
 ## Example
 
-List all S3 buckets across an AWS account with public access enabled:
+List all EC2 instances in a region with their type and public IP address:
 
 ```sql
 SELECT
-  name,
-  region,
-  policy_status
-FROM aws.s3.buckets
-WHERE policy_status::json ->> 'IsPublic' = 'true';
+  instance_id,
+  instance_type,
+  public_ip_address
+FROM aws.ec2.instances
+WHERE region = 'us-east-1';
 ```
 
-That query runs against the live AWS S3 API. There is no state file to refresh, no cached snapshot to invalidate, and no provider-specific SDK to learn. The same shape works for any provider - swap `aws.s3.buckets` for `github.repos.repos` or `azure.compute.virtual_machines` and the query model is identical.
+That query runs against the live AWS EC2 API. There is no state file to refresh, no cached snapshot to invalidate, and no provider-specific SDK to learn. The same shape works for any provider - swap `aws.ec2.instances` for `github.repos.repos` or `azure.compute.virtual_machines` and the query model is identical.
 
 ## Why it exists
 
@@ -50,10 +50,9 @@ StackQL exists to make cloud infrastructure as queryable as a database, across p
 
 ## Related concepts
 
-Other pages in this section that will link from here once written:
-
-- **What is Queryable Infrastructure?** - the broader category StackQL belongs to
-- **What is SQL for APIs?** - the design pattern StackQL implements
-- **Control Plane vs Data Plane** - how StackQL unifies both
-- **StackQL vs Terraform** - comparison with the dominant IaC tool
-- **StackQL vs Steampipe** - comparison with the closest peer
+- [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - the broader category StackQL belongs to
+- [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the design pattern StackQL implements
+- [Control Plane vs Data Plane](/ai/canonical-definitions/control-plane-vs-data-plane) - how StackQL unifies both
+- [StackQL vs Terraform](/ai/comparisons/stackql-vs-terraform) - comparison with the dominant IaC tool
+- [StackQL vs Steampipe](/ai/comparisons/stackql-vs-steampipe) - comparison with the closest peer
+- [Getting started with StackQL](/ai/tutorials/getting-started-with-stackql) - install to first query

@@ -12,6 +12,7 @@ ref/antlr/.antlr/
 .cache-loader
 
 # Misc
+/tmp
 .env
 /env
 /.venv

@@ -6,3 +6,7 @@ description: End-to-end walkthroughs - building multi-cloud inventory systems, A
 # Tutorials
 
 Longer end-to-end walkthroughs that combine multiple StackQL features and providers to build something concrete.
+
+## Pages
+
+- [Getting started with StackQL](/ai/tutorials/getting-started-with-stackql) - install, first unauthenticated query, schema discovery, first cloud query
