@@ -553,6 +553,32 @@ Sample audit log line for the same mutation:
 
 To integrate StackQL's MCP server with an AI assistant, register `stackql` as an MCP server in the assistant's configuration.  Most editor-embedded MCP clients run the server over `stdio`; for those, use `--mcp.server.type=stdio` and the assistant launches the process directly.  Standalone agents that speak HTTP can connect to a long-running `stackql mcp --mcp.server.type=http` process.
 
+#### Claude Desktop (one-click bundle)
+
+The easiest way to use the StackQL MCP server with Claude Desktop is the prebuilt MCP Bundle (`.mcpb`) - a one-click installable package containing the signed `stackql` binary and the server configuration.  No separate StackQL installation is required.
+
+Download the bundle for your platform from the latest release:
+
+| Platform | Bundle |
+|--|--|
+|macOS (universal)|[stackql-mcp-darwin-universal.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb)|
+|Windows x64|[stackql-mcp-windows-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb)|
+|Linux x64|[stackql-mcp-linux-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb)|
+|Linux arm64|[stackql-mcp-linux-arm64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb)|
+
+Then in Claude Desktop: **Settings -> Extensions -> Install Extension** and select the downloaded file.  The embedded binary is Authenticode-signed (Windows) and Apple-notarised (macOS); each bundle has a `.sha256` checksum alongside it on the [release page](https://github.com/stackql/stackql/releases/latest).  To verify before installing:
+
+```bash
+# macOS / Linux
+shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
+```
+
+The server is also listed on the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, which pins these checksums.
+
+#### Manual configuration
+
+If you already have `stackql` installed (see [Installation](/docs/installing-stackql)), you can register it as an MCP server in your assistant's configuration directly.
+
 **For Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
 ```json

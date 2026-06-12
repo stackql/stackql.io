@@ -32,6 +32,7 @@ Instructions for installing StackQL on various different platforms are provided 
     { label: 'Linux', value: 'linux', },
     { label: 'Windows', value: 'windows', },
     { label: 'Docker', value: 'docker', },
+    { label: 'Claude Desktop / MCP', value: 'mcp', },
     { label: 'stackql-deploy', value: 'deploy', },
     { label: 'Cloud Shells', value: 'shells', },
   ]}
@@ -199,6 +200,22 @@ Instructions for installing StackQL on various different platforms are provided 
   ```bash
   docker pull stackql/stackql
   ```
+</Box>
+
+</TabItem>
+<TabItem value="mcp">
+
+<Box sx={{ 
+  border: '1px solid #e0e0e0', 
+  borderRadius: '4px', 
+  p: 3, 
+  mb: 2
+}}>
+
+  ## Claude Desktop / MCP clients
+
+  Prebuilt MCP Bundles (`.mcpb`) are attached to every StackQL release for one-click installation of the StackQL MCP server into Claude Desktop - no separate StackQL installation is required.  Bundles are available for macOS, Windows and Linux, and the server is listed on the Official MCP Registry as `io.github.stackql/stackql-mcp`.  See [Claude Desktop (one-click bundle)](/docs/command-line-usage/mcp#claude-desktop-one-click-bundle) for download links and installation instructions.
+
 </Box>
 
 </TabItem>
