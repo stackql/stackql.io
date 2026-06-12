@@ -16,7 +16,35 @@ image: "/img/stackql-featured-image.png"
 
 StackQL integrates with Claude Desktop via the Model Context Protocol (MCP), enabling you to query and provision cloud resources across multiple cloud providers using natural language. This powerful combination allows you to interact with your cloud infrastructure conversationally while leveraging StackQL's SQL-based interface under the hood.
 
-## Prerequisites
+## One-Click Install (MCP Bundle)
+
+The easiest way to use the StackQL MCP server with Claude Desktop is the prebuilt MCP Bundle (`.mcpb`) - a one-click installable package containing the signed `stackql` binary and the server configuration. No separate StackQL installation is required.
+
+Download the bundle for your platform from the latest release:
+
+| Platform | Bundle |
+|---|---|
+| macOS (universal) | [stackql-mcp-darwin-universal.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb) |
+| Windows x64 | [stackql-mcp-windows-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb) |
+| Linux x64 | [stackql-mcp-linux-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb) |
+| Linux arm64 | [stackql-mcp-linux-arm64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb) |
+
+<br/>
+
+Then in Claude Desktop: **Settings -> Extensions -> Install Extension** and select the downloaded file. The embedded binary is Authenticode-signed (Windows) and Apple-notarised (macOS); each bundle has a `.sha256` checksum alongside it on the [release page](https://github.com/stackql/stackql/releases/latest). To verify before installing:
+
+```bash
+# macOS / Linux
+shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
+```
+
+The server is also listed on the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, which pins these checksums.
+
+## Manual Configuration
+
+If you already have StackQL installed, you can register the StackQL MCP server in Claude Desktop's configuration file directly.
+
+### Prerequisites
 
 Before setting up StackQL with Claude Desktop, ensure you have:
 
@@ -29,8 +57,6 @@ Verify StackQL is in your system PATH by running:
 ```bash
 stackql --version
 ```
-
-## Configuration
 
 ### Setting Up the MCP Server
 
@@ -95,12 +121,14 @@ You only need to include environment variables for the cloud providers you plan 
 Never commit your `claude_desktop_config.json` file with actual credentials to version control. Use secure credential management practices.
 :::
 
+Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation. Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+
 ### Provider-Specific Credentials
 
 Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/docs/providers](https://stackql.io/docs/providers))for the environment variables required for your desired provider(s).
 
 
-## Restarting Claude Desktop
+### Restarting Claude Desktop
 
 After updating the configuration file, restart Claude Desktop to load the new MCP server configuration. The StackQL MCP server will be automatically started when you begin a new conversation.
 

@@ -204,10 +204,15 @@ const config = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        gtag: {
-          trackingID: 'G-M7GH68KJ3F',
-          anonymizeIP: true,
-        },        
+        // gtag only on Netlify builds - local production builds write gtag codegen
+        // into .docusaurus, which a concurrently running dev server hot-reloads,
+        // breaking window.gtag on every route change
+        ...(process.env.NETLIFY === 'true' ? {
+          gtag: {
+            trackingID: 'G-M7GH68KJ3F',
+            anonymizeIP: true,
+          },
+        } : {}),
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,

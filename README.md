@@ -39,6 +39,7 @@ or PowerShell:
 $env:ALGOLIA_API_KEY="<your algolia api key>"
 $env:ALGOLIA_APP_ID="<your algolia app id>"
 $env:ALGOLIA_INDEX_NAME="<your algolia index name>"
+$env:ALGOLIA_AGENTID="<your algolia agent id>"
 $env:HUBSPOT_ACCT_ID="<your hubspot account id>"
 $env:HUBSPOT_FORM_ID="<your hubspot form id>"
 $env:HUBSPOT_REGION="<your hubspot region>"

@@ -5,8 +5,25 @@
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   float: left;
   align-items: center;
   justify-content: center;
   margin-left: 16px;
+}
+
+@media (max-width: 576px) {
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .buttons > :global(.button) {
+    padding-left: 12px;
+    padding-right: 12px;
+    white-space: normal;
+  }
 }

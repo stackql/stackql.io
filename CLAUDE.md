@@ -17,7 +17,7 @@ The two surfaces serve the same URLs to all visitors (no UA-based cloaking). The
 - Docusaurus 3.10.1, classic preset
 - React 18 (pinned - several deps require it)
 - MUI 5/6 (already in deps - Material UI and emotion)
-- Node 22 toolchain
+- Node 22 toolchain, yarn is the package manager (yarn.lock is the only lockfile - package-lock.json is gitignored)
 - Deployed via Netlify, build = `npm run build`, publish = `build/`
 - Search via Algolia DocSearch (`ALGOLIA_APP_ID`, `ALGOLIA_API_KEY`, `ALGOLIA_INDEX_NAME` env vars required for prod builds)
 
@@ -157,8 +157,8 @@ When `faq:` is present, the plugin emits a `FAQPage` JSON-LD node and links it t
 The two AEO plugins are developed in sibling repos. To bump:
 
 ```
-npm install @stackql/docusaurus-plugin-structured-data@<version> --save
-npm install @stackql/docusaurus-plugin-aeo@<version> --save
+yarn add @stackql/docusaurus-plugin-structured-data@<version>
+yarn add @stackql/docusaurus-plugin-aeo@<version>
 ```
 
 If the build breaks after a bump, the plugin's CHANGELOG.md is the first place to look. Both plugins maintain detailed changelogs noting breaking changes and config migrations.

@@ -116,6 +116,8 @@ The `--mcp.config` flag accepts a JSON object with the following structure.
 |--|--|--|
 |`backend.dsn`|PostgreSQL connection string for the backend StackQL server.|Yes (for `reverse_proxy`)|
 
+<br />
+
 :::info
 
 The backend DSN should include the `default_query_exec_mode=simple_protocol` parameter for optimal compatibility.
@@ -128,6 +130,8 @@ The backend DSN should include the `default_query_exec_mode=simple_protocol` par
 |--|--|
 |`enabled_tools`|Array of tool names that the server is permitted to publish.  When omitted or empty, every built-in tool is registered.  Used to expose a narrow subset (e.g., a read-only inventory server).|
 |`enabled_prompts`|Array of prompt names.  Same semantics as `enabled_tools` but for the prompt surface.|
+
+<br/>
 
 Example -- a server that publishes only `server_info` and `list_providers`:
 
@@ -150,6 +154,8 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 |`safe` (default)|allow|needs approval|needs approval|needs approval|
 |`delete_safe`|allow|allow|needs approval|needs approval|
 |`full_access`|allow|allow|allow|allow|
+
+<br />
 
 **Refuse** returns an error immediately to the client.
 
@@ -205,6 +211,8 @@ Every tool call writes one JSONL record to the configured audit sink.  Audit is 
 |`args`|Hierarchy fields for metadata tools (`list_*`, `describe_*`); SQL + `row_limit` for query tools.|
 |`duration_ms`|Wall-clock duration of the gate + handler.|
 |`error`|Error message if the tool errored or was refused.|
+
+<br />
 
 Result rows from `SELECT` statements are deliberately excluded -- they can be very large and may carry sensitive data.
 
@@ -553,51 +561,7 @@ Sample audit log line for the same mutation:
 
 To integrate StackQL's MCP server with an AI assistant, register `stackql` as an MCP server in the assistant's configuration.  Most editor-embedded MCP clients run the server over `stdio`; for those, use `--mcp.server.type=stdio` and the assistant launches the process directly.  Standalone agents that speak HTTP can connect to a long-running `stackql mcp --mcp.server.type=http` process.
 
-#### Claude Desktop (one-click bundle)
-
-The easiest way to use the StackQL MCP server with Claude Desktop is the prebuilt MCP Bundle (`.mcpb`) - a one-click installable package containing the signed `stackql` binary and the server configuration.  No separate StackQL installation is required.
-
-Download the bundle for your platform from the latest release:
-
-| Platform | Bundle |
-|--|--|
-|macOS (universal)|[stackql-mcp-darwin-universal.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb)|
-|Windows x64|[stackql-mcp-windows-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb)|
-|Linux x64|[stackql-mcp-linux-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb)|
-|Linux arm64|[stackql-mcp-linux-arm64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb)|
-
-Then in Claude Desktop: **Settings -> Extensions -> Install Extension** and select the downloaded file.  The embedded binary is Authenticode-signed (Windows) and Apple-notarised (macOS); each bundle has a `.sha256` checksum alongside it on the [release page](https://github.com/stackql/stackql/releases/latest).  To verify before installing:
-
-```bash
-# macOS / Linux
-shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
-```
-
-The server is also listed on the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, which pins these checksums.
-
-#### Manual configuration
-
-If you already have `stackql` installed (see [Installation](/docs/installing-stackql)), you can register it as an MCP server in your assistant's configuration directly.
-
-**For Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
-
-```json
-{
-  "mcpServers": {
-    "stackql": {
-      "command": "stackql",
-      "args": [
-        "mcp",
-        "--mcp.server.type=stdio",
-        "--mcp.config",
-        "{\"server\": {\"transport\": \"stdio\", \"mode\": \"safe\"}}"
-      ]
-    }
-  }
-}
-```
-
-Claude Desktop advertises the elicitation capability, so `mode: safe` (the default) will prompt the user for approval on each mutation.  Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts.
+For Claude Desktop - including the prebuilt one-click MCP Bundle (`.mcpb`) and manual configuration - see [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop).
 
 :::note
 

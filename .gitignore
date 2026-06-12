@@ -4,6 +4,9 @@ ref/antlr/.antlr/
 # Dependencies
 /node_modules
 
+# yarn is the package manager for this repo - keep npm's lockfile out
+package-lock.json
+
 # Production
 /build
 
