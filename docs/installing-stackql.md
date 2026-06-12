@@ -19,6 +19,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ArticleIcon from '@mui/icons-material/Article';
 import {
   BinaryDownloadLink,
+  DropDownBinaryDownloadLink,
 } from '../src/components';
 import buttonStyles from '../src/components/BinaryDownloadLink/binarydownloadlink.module.css';
 import clsx from 'clsx';
@@ -32,6 +33,7 @@ Instructions for installing StackQL on various different platforms are provided 
     { label: 'Linux', value: 'linux', },
     { label: 'Windows', value: 'windows', },
     { label: 'Docker', value: 'docker', },
+    { label: 'Claude Desktop / MCP', value: 'mcp', },
     { label: 'stackql-deploy', value: 'deploy', },
     { label: 'Cloud Shells', value: 'shells', },
   ]}
@@ -199,6 +201,58 @@ Instructions for installing StackQL on various different platforms are provided 
   ```bash
   docker pull stackql/stackql
   ```
+</Box>
+
+</TabItem>
+<TabItem value="mcp">
+
+<Box sx={{ 
+  border: '1px solid #e0e0e0', 
+  borderRadius: '4px', 
+  p: 3, 
+  mb: 2
+}}>
+
+  ## Claude Desktop / MCP clients
+
+  Prebuilt MCP Bundles (`.mcpb`) are attached to every StackQL release for one-click installation of the StackQL MCP server into Claude Desktop - no separate StackQL installation is required.  Bundles are available for macOS, Windows and Linux.
+  
+  <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+      <BinaryDownloadLink 
+        iconSize={20} 
+        text="Download macOS MCPB"
+        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb"
+      />
+      <DropDownBinaryDownloadLink 
+        iconSize={20} 
+        text="Download Linux MCPB (x64)"
+        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb"
+        options={[
+          { text: 'Download Linux MCPB (arm64)', to: 'https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb' },
+        ]}
+      />
+      <BinaryDownloadLink 
+        iconSize={20} 
+        text="Download Windows MCPB"
+        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb"
+      />      
+    </div>
+  </Box>
+
+<br />
+:::info
+
+The StackQL MCP server is also listed on the Official MCP Registry as `io.github.stackql/stackql-mcp`, see [__MCP Registry__](https://github.com/mcp).  
+
+:::
+
+:::tip
+
+See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for download links and installation instructions.
+
+:::
+
 </Box>
 
 </TabItem>
