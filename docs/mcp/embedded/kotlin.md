@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 Embed the StackQL MCP server in a Kotlin or JVM application, as a library or a Gradle plugin. The client is the official Kotlin MCP SDK.
 
 :::info
-The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded).
+The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded#common-contract).
 :::
 
 * * *

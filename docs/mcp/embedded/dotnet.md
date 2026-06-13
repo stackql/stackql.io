@@ -18,7 +18,7 @@ image: "/img/stackql-featured-image.png"
 Embed the StackQL MCP server in a .NET application, either as a downloaded sidecar or vendored into your build as a self-contained executable. The client is the official C# MCP SDK.
 
 :::info
-The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded).
+The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded#common-contract).
 :::
 
 * * *

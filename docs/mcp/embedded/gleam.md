@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 Embed the StackQL MCP server in a Gleam application on the Erlang/BEAM target. The library integrates with OTP supervision, downloads and verifies the signed binary, and spawns it over stdio.
 
 :::info
-The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded).
+The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded#common-contract).
 :::
 
 * * *

@@ -18,7 +18,7 @@ image: "/img/stackql-featured-image.png"
 Embed the StackQL MCP server in a macOS application. The signed, notarised binary can be bundled inside your `.app`, and the client is the official Swift MCP SDK.
 
 :::info
-The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded).
+The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/docs/mcp/embedded#common-contract).
 :::
 
 * * *
