@@ -63,6 +63,20 @@ const sidebars = {
         'mcp/run_select_query',
         'mcp/run_mutation_query',
         'mcp/run_lifecycle_operation',
+        {
+          type: 'category',
+          label: 'Embedded',
+          link: {
+            type: 'doc',
+            id: 'mcp/embedded/index',
+          },
+          items: [
+            'mcp/embedded/go',
+            'mcp/embedded/rust',
+            'mcp/embedded/swift',
+            'mcp/embedded/kotlin',
+          ]
+        },
       ]
     },
     {
