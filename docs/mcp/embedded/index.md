@@ -45,6 +45,16 @@ export const EMBEDDED_LIBRARIES = [
     name: 'Kotlin / JVM',
     href: '/docs/mcp/embedded/kotlin',
     description: 'Library + Gradle plugin; official Kotlin MCP SDK. Demo: costgate, a cost gate for CI/CD.'
+  },
+  {
+    name: '.NET / C#',
+    href: '/docs/mcp/embedded/dotnet',
+    description: 'Sidecar or vendored bundle; official C# MCP SDK. Demo: driftwatch, a scheduled drift-check worker.'
+  },
+  {
+    name: 'Gleam',
+    href: '/docs/mcp/embedded/gleam',
+    description: 'OTP-supervised on the Erlang/BEAM target; downloads and verifies the signed binary. Demo: pipewatch (planned).'
   }
 ];
 

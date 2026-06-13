@@ -75,6 +75,8 @@ const sidebars = {
             'mcp/embedded/rust',
             'mcp/embedded/swift',
             'mcp/embedded/kotlin',
+            'mcp/embedded/dotnet',
+            'mcp/embedded/gleam',
           ]
         },
       ]
