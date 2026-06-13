@@ -428,6 +428,10 @@ const config = {
               to: '/docs/mcp',
               label: 'MCP Tools',
             },
+            {
+              to: '/docs/mcp/embedded',
+              label: 'Embedded MCP',
+            },
             // {
             //   to: 'blog/tags/ai',
             //   label: 'AI Resources',

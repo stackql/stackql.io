@@ -24,3 +24,12 @@ Each page is one task. Pages follow a consistent shape: prerequisites, the steps
 
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents)
 - [How to use StackQL with Claude](/ai/how-tos/use-stackql-with-claude)
+
+## Embedded MCP
+
+- [How to embed the StackQL MCP server in a Go application](/ai/how-tos/embed-stackql-mcp-server-in-go)
+- [How to embed the StackQL MCP server in a Rust application](/ai/how-tos/embed-stackql-mcp-server-in-rust)
+- [How to embed the StackQL MCP server in a macOS Swift application](/ai/how-tos/embed-stackql-mcp-server-in-swift)
+- [How to embed the StackQL MCP server in a Kotlin or JVM application](/ai/how-tos/embed-stackql-mcp-server-in-kotlin)
+- [How to embed the StackQL MCP server in a .NET application](/ai/how-tos/embed-stackql-mcp-server-in-dotnet)
+- [How to embed the StackQL MCP server in a Gleam application](/ai/how-tos/embed-stackql-mcp-server-in-gleam)
