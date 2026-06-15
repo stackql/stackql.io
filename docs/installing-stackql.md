@@ -511,6 +511,199 @@ The image is [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mc
 
 See the [action README](https://github.com/stackql/setup-stackql-mcp) for more agentic recipes (cloud audits, cost estimates, and so on).
 
+### Embedded MCP
+
+**When to use:** you are building an agentic app and want to vendor the MCP server into your own binary - no `npx`, no separate install, no runtime dependency.
+
+Native libraries spawn the signed `stackql` binary over stdio behind each language's official MCP SDK client, so your app gets the same governed SQL interface to every provider in the registry. Each library defaults to `read_only` - escalation to a writable mode is always explicit - and can either download-and-verify the binary on first run or vendor it into your build for a single self-contained executable. The full per-language API is in the [Embedded MCP reference](/docs/mcp/embedded).
+
+<Tabs
+  defaultValue="rust"
+  values={[
+    { label: 'Rust', value: 'rust', },
+    { label: 'Go', value: 'go', },
+    { label: 'Kotlin / JVM', value: 'kotlin', },
+    { label: '.NET', value: 'dotnet', },
+    { label: 'Gleam', value: 'gleam', },
+    { label: 'Swift', value: 'swift', },
+  ]}
+>
+<TabItem value="rust">
+
+The `stackql-mcp` crate spawns the binary behind an `rmcp` client. The default `sidecar` feature downloads and verifies the binary on first run; the `vendored` feature embeds it with `include_bytes!` for a single self-contained binary. MSRV Rust 1.88.
+
+```toml
+# Cargo.toml
+stackql-mcp = "0.1"
+```
+
+```rust
+use stackql_mcp::{Mode, StackqlMcp};
+
+let server = StackqlMcp::builder()
+    .mode(Mode::ReadOnly)
+    .start()
+    .await?;
+let tools = server.list_all_tools().await?;
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-rs" isOpenInNewTab={true} />
+    <BinaryDownloadLink iconSize={20} text="View on crates.io" to="https://crates.io/crates/stackql-mcp" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: Rust](/docs/mcp/embedded/rust).
+
+</TabItem>
+<TabItem value="go">
+
+The `stackql-mcp-go` library spawns the binary behind the official Go MCP SDK client. Vendor the binary with `go:embed` for a single self-contained binary, or let it download and verify on first run. Starts in `read_only` mode by default.
+
+```bash
+go get github.com/stackql/stackql-mcp-go
+```
+
+```go
+import (
+    "context"
+    stackqlmcp "github.com/stackql/stackql-mcp-go/embed"
+)
+
+client, err := stackqlmcp.StartServer(ctx, stackqlmcp.Options{
+    Binary: StackqlMCPBinary(),
+})
+defer client.Close()
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-go" isOpenInNewTab={true} />
+    <BinaryDownloadLink iconSize={20} text="View on pkg.go.dev" to="https://pkg.go.dev/github.com/stackql/stackql-mcp-go" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: Go](/docs/mcp/embedded/go).
+
+</TabItem>
+<TabItem value="kotlin">
+
+The `io.stackql:stackql-mcp` library spawns the binary behind the official Kotlin MCP SDK client, and a companion Gradle plugin wires the same launch into a build. Requires JDK 17 and Kotlin 2.x.
+
+```kotlin
+dependencies {
+    implementation("io.stackql:stackql-mcp:0.1.0")
+}
+```
+
+```kotlin
+import io.stackql.mcp.Mode
+import io.stackql.mcp.StackqlMcp
+
+val server = StackqlMcp.builder().mode(Mode.ReadOnly).start()
+server.use {
+    val tools = server.client.listTools().tools
+}
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-kotlin" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: Kotlin / JVM](/docs/mcp/embedded/kotlin).
+
+</TabItem>
+<TabItem value="dotnet">
+
+The `StackQL.Mcp` package spawns the binary behind the official C# MCP SDK client. Sidecar by default, or vendor the bundle as a build resource for a self-contained executable. Requires .NET 8 or later.
+
+```bash
+dotnet add package StackQL.Mcp
+```
+
+```csharp
+using StackQL.Mcp;
+
+await using var server = await StackqlMcp.CreateBuilder()
+    .WithMode(StackqlMode.ReadOnly)
+    .StartAsync();
+
+var tools = await server.ListToolsAsync();
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-dotnet" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: .NET / C#](/docs/mcp/embedded/dotnet).
+
+</TabItem>
+<TabItem value="gleam">
+
+The `stackql_mcp` library targets the Erlang/BEAM runtime and exposes the server as an OTP child via `child_spec()`, so it can sit inside your own supervision tree. Starts in `read_only` mode by default.
+
+```bash
+gleam add stackql_mcp
+```
+
+```gleam
+import envoy
+import stackql_mcp
+
+let assert Ok(server) =
+  stackql_mcp.start(
+    config: stackql_mcp.default_config(),
+    home: "/home/u", os: "linux", arch: "x86_64",
+    getenv: envoy.get,
+  )
+let assert Ok(tools) = stackql_mcp.list_tools(server)
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-gleam" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: Gleam](/docs/mcp/embedded/gleam).
+
+</TabItem>
+<TabItem value="swift">
+
+The `stackql-mcp-swift` package spawns the binary behind the official Swift MCP SDK client. The `darwin-universal` binary is Developer ID signed and Apple-notarised, so you can bundle it inside a signed `.app` and keep the app's notarisation valid. Requires macOS 13+ and Swift 6.1 (Xcode 16.3+).
+
+```swift
+// Package.swift
+.package(url: "https://github.com/stackql/stackql-mcp-swift.git", from: "0.1.0")
+```
+
+```swift
+import StackQLMCP
+
+var options = Options()
+options.mode = .readOnly
+
+let server = try await StackQLServer.start(options)
+let tools = try await server.listToolNames()
+await server.stop()
+```
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+  <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+    <BinaryDownloadLink iconSize={20} text="View on GitHub" to="https://github.com/stackql/stackql-mcp-swift" isOpenInNewTab={true} />
+  </div>
+</Box>
+
+Full reference: [Embedded MCP: Swift](/docs/mcp/embedded/swift).
+
+</TabItem>
+</Tabs>
+
 ### Trust model
 
 The same security properties hold across every channel:
