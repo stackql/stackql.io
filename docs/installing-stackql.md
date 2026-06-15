@@ -418,14 +418,41 @@ The StackQL MCP server lets AI agents query and provision cloud resources using 
 
 **When to use:** you want a vetted, one-click listing and would rather not manage download URLs yourself.
 
-The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; registry-fed directories pick the listing up from there.
+The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; the package registries below carry the distributable artifacts, and downstream directories pick the listing up from there. Once the Anthropic Desktop Extensions review is approved, it will also appear in Claude Desktop's **Browse Extensions**.
 
-| Registry / directory | StackQL listing | Notes |
+<Tabs
+  defaultValue="registries"
+  values={[
+    { label: 'Registries', value: 'registries', },
+    { label: 'Directories', value: 'directories', },
+  ]}
+>
+<TabItem value="registries">
+
+| Registry | Type | Published via | Listing | Notes |
+|---|---|---|---|---|
+| Official MCP Registry | Canonical metadata registry | `mcp-publisher` CLI + `server.json` | [modelcontextprotocol.io/search](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)<br/>[modelcontextprotocol.io/direct](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.stackql/stackql-mcp) | v0.10.500.2 now advertises all 7 package types (mcpb x4, oci, npm, pypi) |
+| npm | Package registry | `npm publish` | [@stackql/mcp-server](https://www.npmjs.com/package/@stackql/mcp-server) | npx launcher |
+| PyPI | Package registry | `twine upload` | [stackql-mcp-server](https://pypi.org/project/stackql-mcp-server/) | uvx / pip launcher |
+| Docker Hub | Container registry | `docker buildx --push` | [stackql/stackql-mcp](https://hub.docker.com/r/stackql/stackql-mcp) | multi-arch amd64 + arm64 |
+| GitHub Actions Marketplace | CI marketplace (setup-stackql-mcp action) | Public repo + release + marketplace listing | [setup-stackql-mcp-server](https://github.com/marketplace/actions/setup-stackql-mcp-server) | Verified publisher; own repo [stackql/setup-stackql-mcp](https://github.com/stackql/setup-stackql-mcp) |
+
+</TabItem>
+<TabItem value="directories">
+
+Directory and aggregator listings, in rough order of significance for discovery:
+
+| Directory | Type | Listing |
 |---|---|---|
-| Official MCP Registry | [`io.github.stackql/stackql-mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) | Canonical entry; attests the per-platform hashes |
-| Glama | [glama.ai/mcp/servers/stackql/stackql](https://glama.ai/mcp/servers/stackql/stackql) | Fed from the MCP Registry |
-| PulseMCP | [pulsemcp.com/servers/stackql](https://www.pulsemcp.com/servers/stackql) | Fed from the MCP Registry |
-| Claude Desktop | **Browse Extensions** -> search "StackQL" | Pending the Anthropic Desktop Extensions review |
+| mcp.so | Largest aggregator | [mcp.so](https://mcp.so/server/stackql/stackql) |
+| PulseMCP | Discovery, registry backer | [pulsemcp](https://www.pulsemcp.com/servers/stackql) |
+| Glama.ai MCP | Searchable marketplace | [glama.ai](https://glama.ai/mcp/servers/stackql/stackql) |
+| Cursor Directory | IDE client directory | [cursor.directory](https://cursor.directory/plugins/stackql-mcp-server) |
+| mcpmarket.com | Aggregator | [mcpmarket](https://mcpmarket.com/server/stackql) |
+| mcpservers.org | Awesome-list site | [mcpservers.org](https://mcpservers.org/servers/stackql-mcp-server) |
+
+</TabItem>
+</Tabs>
 
 ### Prebuilt `.mcpb` bundle (Claude Desktop)
 
