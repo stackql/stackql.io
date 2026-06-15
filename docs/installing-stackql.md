@@ -395,7 +395,14 @@ The StackQL MCP server lets AI agents query and provision cloud resources using 
 
 **When to use:** you want a vetted, one-click listing and would rather not manage download URLs yourself.
 
-The server is published to the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, and registry-fed directories carry the listing - including [__Glama__](https://glama.ai/mcp/servers/stackql/stackql) and [__PulseMCP__](https://www.pulsemcp.com/servers/stackql). Once the Anthropic Desktop Extensions review is approved, you will also be able to install it from inside Claude Desktop via **Browse Extensions** - search for "StackQL".
+The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; registry-fed directories pick the listing up from there.
+
+| Registry / directory | StackQL listing | Notes |
+|---|---|---|
+| Official MCP Registry | [`io.github.stackql/stackql-mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) | Canonical entry; attests the per-platform hashes |
+| Glama | [glama.ai/mcp/servers/stackql/stackql](https://glama.ai/mcp/servers/stackql/stackql) | Fed from the MCP Registry |
+| PulseMCP | [pulsemcp.com/servers/stackql](https://www.pulsemcp.com/servers/stackql) | Fed from the MCP Registry |
+| Claude Desktop | **Browse Extensions** -> search "StackQL" | Pending the Anthropic Desktop Extensions review |
 
 ### Prebuilt `.mcpb` bundle (Claude Desktop)
 
