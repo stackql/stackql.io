@@ -243,13 +243,13 @@ Instructions for installing StackQL on various different platforms are provided 
 <br />
 :::info
 
-The StackQL MCP server is also listed on the Official MCP Registry as `io.github.stackql/stackql-mcp`, see [__MCP Registry__](https://github.com/mcp).  
+The StackQL MCP server is also listed on the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`.
 
 :::
 
 :::tip
 
-See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for download links and installation instructions.
+The bundle is one of several ways to run the StackQL MCP server.  See [__Installing the MCP server__](#installing-the-mcp-server) for the npx, Docker, Python, CI and manual options, or [__Using StackQL with Claude Desktop__](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for the full Claude Desktop walkthrough.
 
 :::
 
@@ -386,6 +386,132 @@ cargo install stackql-deploy
 
 </TabItem>
 </Tabs>
+
+## Installing the MCP server
+
+The StackQL MCP server lets AI agents query and provision cloud resources using StackQL. It ships through several channels - they all run the same server, so pick the channel that matches your client and your trust requirements. The options below are listed roughly in order of trust and ease.
+
+### Marketplaces and directories
+
+**When to use:** you want a vetted, one-click listing and would rather not manage download URLs yourself.
+
+The server is published to the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, and registry-fed directories carry the listing - including [__Glama__](https://glama.ai/mcp/servers/stackql/stackql) and [__PulseMCP__](https://www.pulsemcp.com/servers/stackql). Once the Anthropic Desktop Extensions review is approved, you will also be able to install it from inside Claude Desktop via **Browse Extensions** - search for "StackQL".
+
+### Prebuilt `.mcpb` bundle (Claude Desktop)
+
+**When to use:** Claude Desktop, no separate StackQL install, and you want a signed one-click bundle.
+
+A prebuilt MCP Bundle is attached to every StackQL release for each platform:
+
+```
+https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-<platform>.mcpb
+```
+
+where `<platform>` is one of `darwin-universal`, `windows-x64`, `linux-x64`, or `linux-arm64`. Download buttons for each platform are in the **Claude Desktop / MCP** tab above. Each bundle has a matching `.sha256` checksum on the [release page](https://github.com/stackql/stackql/releases/latest). Verify it, then install via **Settings -> Extensions** in Claude Desktop:
+
+```bash
+shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
+```
+
+See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for the full walkthrough.
+
+### Manual `claude_desktop_config.json` (existing binary)
+
+**When to use:** you already have the `stackql` binary on your PATH and use Claude Desktop or any other stdio MCP client.
+
+```json
+{
+  "mcpServers": {
+    "stackql": {
+      "command": "stackql",
+      "args": [
+        "mcp",
+        "--mcp.server.type=stdio",
+        "--approot", "/Users/you/.stackql",
+        "--mcp.config", "{\"server\": {\"audit\": {\"disabled\": true}}}"
+      ]
+    }
+  }
+}
+```
+
+All three arguments are load-bearing:
+
+- `--mcp.server.type=stdio` selects the stdio transport that editor-embedded clients speak.
+- `--approot` points the provider cache at a writable directory. MCP clients may launch the server with the working directory set to `/`, which is not writable.
+- `--mcp.config '{"server": {"audit": {"disabled": true}}}'` disables the audit log, which otherwise defaults its directory to the (possibly non-writable) working directory.
+
+Add provider credentials with an `"env"` block and tune the safety contract with `"mode"` - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+
+### `npx` (no install)
+
+**When to use:** any Node environment, when you do not want a global StackQL install.
+
+```json
+{ "mcpServers": { "stackql": { "command": "npx", "args": ["-y", "@stackql/mcp-server"] } } }
+```
+
+The [`@stackql/mcp-server`](https://www.npmjs.com/package/@stackql/mcp-server) launcher downloads the signed `stackql` binary on first run, verifies its SHA-256, and caches it for subsequent runs.
+
+### `uvx` / `pip` (Python)
+
+**When to use:** a Python environment - the same launcher packaged for Python, sharing the binary cache the npx launcher populates.
+
+```json
+{ "mcpServers": { "stackql": { "command": "uvx", "args": ["stackql-mcp-server"] } } }
+```
+
+Or install it into the current environment with `pip install stackql-mcp-server` (Python 3.9+). The package is [`stackql-mcp-server`](https://pypi.org/project/stackql-mcp-server/) on PyPI.
+
+### Docker
+
+**When to use:** a containerised or otherwise isolated runtime. The image is multi-arch (amd64 and arm64).
+
+```bash
+docker run -i --rm stackql/stackql-mcp
+```
+
+As a client configuration:
+
+```json
+{ "mcpServers": { "stackql": { "command": "docker", "args": ["run", "-i", "--rm", "stackql/stackql-mcp"] } } }
+```
+
+The image is [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mcp) on Docker Hub.
+
+### CI and agentic workflows (GitHub Actions)
+
+**When to use:** run the server inside a GitHub Actions job so an agent can query - and, if you allow it, act on - your cloud as part of CI.
+
+[`stackql/setup-stackql-mcp@v1`](https://github.com/marketplace/actions/setup-stackql-mcp-server) installs the binary and writes an MCP config (defaulting to `read_only` mode). Pass that config to [`anthropics/claude-code-action`](https://github.com/anthropics/claude-code-action) through `claude_args`:
+
+```yaml
+- id: stackql
+  uses: stackql/setup-stackql-mcp@v1
+  with:
+    auth: '{"github":{"type":"null_auth"}}'
+
+- uses: anthropics/claude-code-action@v1
+  with:
+    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+    prompt: |
+      Using stackql, list the public repositories in the stackql org and
+      summarise them as a markdown table.
+    claude_args: |
+      --mcp-config ${{ steps.stackql.outputs.mcp-config-file }}
+      --allowedTools 'mcp__stackql__*'
+```
+
+See the [action README](https://github.com/stackql/setup-stackql-mcp) for more agentic recipes (cloud audits, cost estimates, and so on).
+
+### Trust model
+
+The same security properties hold across every channel:
+
+- The embedded `stackql` binary is Authenticode-signed (Windows) and Apple-notarised (macOS).
+- Every `.mcpb` bundle ships with a published SHA-256 checksum on the release page.
+- The `npx` and `uvx` launchers verify the downloaded binary's SHA-256 before first use.
+- The [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) entry attests the per-platform hashes.
 
 ## Using GitHub Actions
 
