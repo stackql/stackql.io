@@ -305,7 +305,7 @@ cargo install stackql-deploy
 
   ## Cloud Shells
 
-  StackQL can be used directly from major cloud providers' built-in cloud shells. This provides a seamless experience as these cloud shells are pre-authorized with your credentials for the cloud provider account you're logged into, eliminating the need for separate authentication setup.
+  StackQL can be used directly from major cloud and data platforms' built-in cloud shells and web terminals. This provides a seamless experience as these environments are pre-authorized with the identity you're logged into, eliminating the need for separate authentication setup.
 
   <Tabs
     defaultValue="aws"
@@ -313,6 +313,7 @@ cargo install stackql-deploy
       { label: 'AWS', value: 'aws', },
       { label: 'Azure', value: 'azure', },
       { label: 'Google', value: 'google', },
+      { label: 'Databricks', value: 'databricks', },
     ]}
   >
   <TabItem value="aws">
@@ -378,6 +379,28 @@ cargo install stackql-deploy
   ```
   
   The script sets up StackQL to use your Google Cloud Shell credentials, allowing you to immediately start querying your GCP resources using SQL syntax.
+
+  </TabItem>
+  <TabItem value="databricks">
+
+  ### Databricks Web Terminal
+
+  Databricks workspaces include a web terminal that runs as the logged-in user. Running StackQL there lets you query your workspace using your Databricks identity, with no separate authentication setup. For example queries and account-level auth, see our [Databricks Web Terminal guide](/blog/stackql-in-databricks-web-terminal).
+
+  First, download the StackQL package:
+
+  ```bash
+  curl -L https://bit.ly/stackql-zip -O \
+  && unzip stackql-zip
+  ```
+
+  Then run the StackQL Databricks shell script:
+
+  ```bash
+  sh stackql-databricks-shell.sh
+  ```
+
+  This starts a StackQL session using your Databricks workspace identity, so you can immediately query workspace-scoped resources such as `databricks_workspace.iam.vw_user_entitlements`. For account-level queries (provisioning, billing, account IAM), set the Databricks OAuth2 service principal variables as described in the guide.
 
   </TabItem>    
   </Tabs>
