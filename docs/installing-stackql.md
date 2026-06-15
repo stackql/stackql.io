@@ -6,6 +6,8 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
+  - mcp
+  - mcp-server
 description: Query and Deploy Cloud Infrastructure and Resources using SQL
 image: "/img/stackql-featured-image.png"
 slug: /installing-stackql
@@ -416,9 +418,7 @@ The StackQL MCP server lets AI agents query and provision cloud resources using 
 
 ### Marketplaces and directories
 
-**When to use:** you want a vetted, one-click listing and would rather not manage download URLs yourself.
-
-The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; the package registries below carry the distributable artifacts, and downstream directories pick the listing up from there. Once the Anthropic Desktop Extensions review is approved, it will also appear in Claude Desktop's **Browse Extensions**.
+The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; the package registries below carry the distributable artifacts, and downstream directories pick the listing up from there.  
 
 <Tabs
   defaultValue="registries"
@@ -431,11 +431,11 @@ The server is published to the Official MCP Registry as `io.github.stackql/stack
 
 | Registry | Type | Published via | Listing | Notes |
 |---|---|---|---|---|
-| Official MCP Registry | Canonical metadata registry | `mcp-publisher` CLI + `server.json` | [modelcontextprotocol.io/search](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)<br/>[modelcontextprotocol.io/direct](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.stackql/stackql-mcp) | v0.10.500.2 now advertises all 7 package types (mcpb x4, oci, npm, pypi) |
-| npm | Package registry | `npm publish` | [@stackql/mcp-server](https://www.npmjs.com/package/@stackql/mcp-server) | npx launcher |
-| PyPI | Package registry | `twine upload` | [stackql-mcp-server](https://pypi.org/project/stackql-mcp-server/) | uvx / pip launcher |
-| Docker Hub | Container registry | `docker buildx --push` | [stackql/stackql-mcp](https://hub.docker.com/r/stackql/stackql-mcp) | multi-arch amd64 + arm64 |
-| GitHub Actions Marketplace | CI marketplace (setup-stackql-mcp action) | Public repo + release + marketplace listing | [setup-stackql-mcp-server](https://github.com/marketplace/actions/setup-stackql-mcp-server) | Verified publisher; own repo [stackql/setup-stackql-mcp](https://github.com/stackql/setup-stackql-mcp) |
+| Official MCP Registry | Canonical metadata registry | `mcp-publisher` CLI + `server.json` | [`modelcontextprotocol.io/search`](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)<br/>[`modelcontextprotocol.io/direct`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.stackql/stackql-mcp) | advertises all 7 package types (`mcpb x4`, `oci`, `npm`, `pypi`) |
+| npm | Package registry | `npm publish` | [`@stackql/mcp-server`](https://www.npmjs.com/package/@stackql/mcp-server) | `npx` launcher |
+| PyPI | Package registry | `twine upload` | [`stackql-mcp-server`](https://pypi.org/project/stackql-mcp-server/) | `uvx` / `pip` launcher |
+| Docker Hub | Container registry | `docker buildx --push` | [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mcp) | multi-arch `amd64` + `arm64` |
+| GitHub Actions Marketplace | CI marketplace (`setup-stackql-mcp` action) | Public repo + release + marketplace listing | [`setup-stackql-mcp-server`](https://github.com/marketplace/actions/setup-stackql-mcp-server) | Verified publisher; [`stackql/setup-stackql-mcp`](https://github.com/stackql/setup-stackql-mcp) |
 
 </TabItem>
 <TabItem value="directories">
@@ -444,17 +444,17 @@ Directory and aggregator listings, in rough order of significance for discovery:
 
 | Directory | Type | Listing |
 |---|---|---|
-| mcp.so | Largest aggregator | [mcp.so](https://mcp.so/server/stackql/stackql) |
-| PulseMCP | Discovery, registry backer | [pulsemcp](https://www.pulsemcp.com/servers/stackql) |
-| Glama.ai MCP | Searchable marketplace | [glama.ai](https://glama.ai/mcp/servers/stackql/stackql) |
-| Cursor Directory | IDE client directory | [cursor.directory](https://cursor.directory/plugins/stackql-mcp-server) |
-| mcpmarket.com | Aggregator | [mcpmarket](https://mcpmarket.com/server/stackql) |
-| mcpservers.org | Awesome-list site | [mcpservers.org](https://mcpservers.org/servers/stackql-mcp-server) |
+| __Cursor Directory__ | IDE client directory | [cursor.directory](https://cursor.directory/plugins/stackql-mcp-server) |
+| __mcp.so__ | Largest aggregator | [mcp.so](https://mcp.so/server/stackql/stackql) |
+| __PulseMCP__ | Discovery, registry backer | [pulsemcp](https://www.pulsemcp.com/servers/stackql) |
+| __Glama.ai MCP__ | Searchable marketplace | [glama.ai](https://glama.ai/mcp/servers/stackql/stackql) |
+| __mcpmarket.com__ | Aggregator | [mcpmarket](https://mcpmarket.com/server/stackql) |
+| __mcpservers.org__ | Awesome-list site | [mcpservers.org](https://mcpservers.org/servers/stackql-mcp-server) |
 
 </TabItem>
 </Tabs>
 
-### Prebuilt `.mcpb` bundle (Claude Desktop)
+### Prebuilt `.mcpb` bundle
 
 **When to use:** Claude Desktop, no separate StackQL install, and you want a signed one-click bundle.
 
@@ -472,7 +472,7 @@ shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 
 See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for the full walkthrough.
 
-### Manual `claude_desktop_config.json` (existing binary)
+### Manual `claude_desktop_config.json`
 
 **When to use:** you already have the `stackql` binary on your PATH and use Claude Desktop or any other stdio MCP client.
 

@@ -14,7 +14,7 @@ The [__StackQL MCP server__](/docs/command-line-usage/mcp) is now available thro
 
 ## What the StackQL MCP server is
 
-StackQL exposes 40+ cloud and SaaS providers - AWS, Google Cloud, Azure, GitHub, Kubernetes, Snowflake, Databricks and more - as a single SQL surface. The MCP server puts that surface in front of an AI agent: the agent discovers providers, services, resources and methods, then runs `SELECT` queries to read state and (when you allow it) `INSERT` / `UPDATE` / `DELETE` to change it. Reads and writes are gated by a [server mode](/docs/command-line-usage/mcp#server-modes) and recorded to an [audit log](/docs/command-line-usage/mcp#audit-log), so "what the agent did" is always answerable.
+StackQL exposes cloud and SaaS providers - AWS, Google Cloud, Azure, GitHub, Kubernetes, Snowflake, Databricks and more - as a single SQL surface. The MCP server puts that surface in front of an AI agent: the agent discovers providers, services, resources and methods, then runs `SELECT` queries to read state and (when you allow it) `INSERT` / `UPDATE` / `DELETE` to change it. Reads and writes are gated by a [server mode](/docs/command-line-usage/mcp#server-modes) and recorded to an [audit log](/docs/command-line-usage/mcp#audit-log), so "what the agent did" is always answerable.
 
 For background on the protocol itself, see the original [__StackQL MCP Server Now Available__](/blog/stackql-mcp-server-now-available) post and the [__MCP command reference__](/docs/command-line-usage/mcp).
 
@@ -57,14 +57,13 @@ The GitHub Action is where the multi-vector story pays off. [`stackql/setup-stac
 ```yaml
 - id: stackql
   uses: stackql/setup-stackql-mcp@v1
-  with:
-    mode: read_only
-    auth: '{"aws":{"type":"aws_signing_v4","credentialsenvvar":"AWS_SECRET_ACCESS_KEY","keyID":"AWS_ACCESS_KEY_ID"}}'
-
-- uses: anthropics/claude-code-action@v1
   env:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  with:
+    mode: read_only
+
+- uses: anthropics/claude-code-action@v1
   with:
     anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
     prompt: |
