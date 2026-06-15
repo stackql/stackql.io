@@ -722,6 +722,7 @@ The same security properties hold across every channel:
   values={[
     { label: 'stackql-deploy', value: 'deploy', },
     { label: 'setup-stackql', value: 'setup', },
+    { label: 'setup-stackql-mcp', value: 'setup-mcp', },
     { label: 'stackql-exec', value: 'exec', },
     { label: 'stackql-assert', value: 'assert', },    
   ]}
@@ -803,6 +804,50 @@ __Example usage__
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
+```
+
+</TabItem>
+<TabItem value="setup-mcp">
+
+### `setup-stackql-mcp`
+
+Install the StackQL MCP server in your GitHub Actions workflow.  The action installs the signed binary and writes an `mcpServers` config (defaulting to `read_only` mode) that an agentic step such as `anthropics/claude-code-action` consumes via `claude_args`.
+
+<Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
+      <BinaryDownloadLink 
+        iconSize={20} 
+        text="View on the GitHub Marketplace"
+        to="https://github.com/marketplace/actions/setup-stackql-mcp-server"
+        isOpenInNewTab={true}
+        />
+      <BinaryDownloadLink 
+        iconSize={20} 
+        text="View on GitHub"
+        to="https://github.com/stackql/setup-stackql-mcp"
+        isOpenInNewTab={true}
+        />
+    </div>
+</Box>
+<br/>
+
+__Example usage__
+
+```yaml
+- id: stackql
+  uses: stackql/setup-stackql-mcp@v1
+  with:
+    auth: '{"github":{"type":"null_auth"}}'
+
+- uses: anthropics/claude-code-action@v1
+  with:
+    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+    prompt: |
+      Using stackql, list the public repositories in the stackql org and
+      summarise them as a markdown table.
+    claude_args: |
+      --mcp-config ${{ steps.stackql.outputs.mcp-config-file }}
+      --allowedTools 'mcp__stackql__*'
 ```
 
 </TabItem>
