@@ -273,9 +273,9 @@ The bundle is one of several ways to run the StackQL MCP server.  See [__Install
 
 __Linux / macOS__
 
-Downloads and extracts the latest `stackql-deploy` binary in one step. The URL detects your OS and redirects to the correct release asset automatically.
+Downloads and extracts the latest `stackql-deploy` binary in one step. The installer detects your OS and architecture (including Apple Silicon and Intel via a universal macOS binary) and fetches the correct release asset automatically.
 ```bash
-curl -L https://get-stackql-deploy.io | tar xzf -
+curl -fsSL https://get-stackql-deploy.io/install.sh | sh
 ```
 
 __Windows__
