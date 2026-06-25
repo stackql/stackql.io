@@ -65,7 +65,15 @@ Instructions for installing StackQL on various different platforms are provided 
   
   StackQL is available on macOS via Homebrew and the `pkg` Installer, both ARM (M1/Apple Silicon) and AMD architectures are supported with a single multi-arch installer.
 
-  __Homebrew__
+  <Tabs
+    defaultValue="homebrew"
+    values={[
+      { label: 'Homebrew', value: 'homebrew', },
+      { label: 'curl (signed and notarized binary)', value: 'curl', },
+      { label: 'Package download', value: 'package', },
+    ]}
+  >
+  <TabItem value="homebrew">
 
   To install via Homebrew, run the following command in your terminal:
 
@@ -73,7 +81,17 @@ Instructions for installing StackQL on various different platforms are provided 
   brew install stackql
   ```
 
-  __Package download__
+  </TabItem>
+  <TabItem value="curl">
+
+  To install a signed and notarized `stackql` executable binary in the current directory, run the following command in your terminal:
+
+  ```bash
+  curl -fsSL https://get-stackql.io/install | sh
+  ```
+
+  </TabItem>
+  <TabItem value="package">
 
   StackQL is available as a signed and notarized, interactive `pkg` installer for MacOS.
 
@@ -86,6 +104,10 @@ Instructions for installing StackQL on various different platforms are provided 
           />
       </div>
   </Box>
+
+  </TabItem>
+
+  </Tabs>    
 
 </Box>
 
@@ -103,35 +125,24 @@ Instructions for installing StackQL on various different platforms are provided 
 
   StackQL is available for all Linux architectures.
 
-  __using curl__
-
   <Tabs
-    defaultValue="amd64"
+    defaultValue="curl"
     values={[
-      { label: 'amd64', value: 'amd64', },
-      { label: 'arm64', value: 'arm64', },
+      { label: 'curl', value: 'curl', },
+      { label: 'Package download', value: 'package', },
     ]}
   >
-  <TabItem value="amd64">
+  <TabItem value="curl">
+
+  To install a `stackql` executable binary in the current directory for your linux architecture (amd64 or arm64), run the following command in your terminal:
 
   ```bash
-  curl -L https://bit.ly/stackql-zip -O \
-  && unzip stackql-zip
+  curl -fsSL https://get-stackql.io/install | sh
   ```
 
   </TabItem>
-  <TabItem value="arm64">
+  <TabItem value="package">
 
-  ```bash
-  curl -L https://bit.ly/stackql-arm64 -O \
-  && unzip stackql-arm64
-  ```
-
-  </TabItem>  
-  </Tabs>
-
-  __Package download__  
-  
   Alternatively, you can download the binaries here:
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
@@ -149,6 +160,9 @@ Instructions for installing StackQL on various different platforms are provided 
     </div>
   </Box>
 
+  </TabItem>  
+  </Tabs>
+
 </Box>
 
 </TabItem>
@@ -161,11 +175,17 @@ Instructions for installing StackQL on various different platforms are provided 
   mb: 2
 }}>
 
-  ## Windows
-  
-  StackQL is available on Windows via Chocolatey and the `msi` Installer, x64 and x86 architectures are supported.
+  StackQL is available on Windows via Chocolatey, PowerShell install script, and the MSI installer. The x64 (AMD64) build is supported and also runs on ARM64 via emulation. All executables are signed with an Authenticode code-signing certificate.
 
-  __Chocolatey__
+  <Tabs
+    defaultValue="chocolatey"
+    values={[
+      { label: 'Chocolatey', value: 'chocolatey', },
+      { label: 'Invoke-RestMethod', value: 'irm', },
+      { label: 'MSI/ZIP download', value: 'package', },
+    ]}
+  >
+  <TabItem value="chocolatey">
 
   To install via Chocolatey, run the following command in your PowerShell or `cmd` terminal:
 
@@ -173,9 +193,21 @@ Instructions for installing StackQL on various different platforms are provided 
   choco install stackql
   ```
 
-  __Package download__  
+  </TabItem>
+  <TabItem value="irm">
 
-  Alternatively, the Windows `stackql` binary can be downloaded here.
+  To install an Authenticode executable in the current directory, run the following in a Powershell terminal: 
+
+  ```powershell
+  Invoke-RestMethod https://get-stackql.io/install | Invoke-Expression
+  # or
+  irm https://get-stackql.io/install | iex
+  ```
+
+  </TabItem>
+  <TabItem value="package">
+
+  Alternatively, the signed Windows `stackql` installer package or executable can be downloaded here.
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
     <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
@@ -190,7 +222,11 @@ Instructions for installing StackQL on various different platforms are provided 
         to="https://releases.stackql.io/stackql/latest/stackql_windows_amd64.zip"
       />      
     </div>
-  </Box>  
+  </Box>
+
+  </TabItem>
+
+  </Tabs>  
 
 </Box>
 
@@ -339,13 +375,12 @@ cargo install stackql-deploy
   First, download the StackQL package:
 
   ```bash
-  curl -L https://bit.ly/stackql-zip -O \
-  && unzip stackql-zip
+  curl -fsSL https://get-stackql.io/install/aws | sh
   ```
   Then run the StackQL AWS CloudShell script:
   
   ```bash
-  sh stackql-aws-cloud-shell.sh
+  ./stackql-aws-cloud-shell.sh
   ```  
   
   This script starts a StackQL command shell using your AWS CloudShell credentials, allowing you to immediately start querying AWS resources.
@@ -360,14 +395,13 @@ cargo install stackql-deploy
   First, download the StackQL package:
 
   ```bash
-  curl -L https://bit.ly/stackql-zip -O \
-  && unzip stackql-zip
+  curl -fsSL https://get-stackql.io/install/azure | sh
   ```
 
   Then run the StackQL Azure Cloud Shell script:
 
   ```bash
-  sh stackql-azure-cloud-shell.sh
+  ./stackql-azure-cloud-shell.sh
   ```
 
   This script automatically configures a StackQL session to use your Azure Cloud Shell credentials, enabling immediate access to query your Azure resources.
@@ -382,14 +416,13 @@ cargo install stackql-deploy
   First, download the StackQL package:
   
   ```bash
-  curl -L https://bit.ly/stackql-zip -O \
-  && unzip stackql-zip
+  curl -fsSL https://get-stackql.io/install/google | sh
   ```
 
   Then run the StackQL Google Cloud Shell script:
 
   ```bash
-  sh stackql-google-cloud-shell.sh
+  ./stackql-google-cloud-shell.sh
   ```
   
   The script sets up StackQL to use your Google Cloud Shell credentials, allowing you to immediately start querying your GCP resources using SQL syntax.
@@ -404,14 +437,13 @@ cargo install stackql-deploy
   First, download the StackQL package:
 
   ```bash
-  curl -L https://bit.ly/stackql-zip -O \
-  && unzip stackql-zip
+  curl -fsSL https://get-stackql.io/install/databricks | sh
   ```
 
   Then run the StackQL Databricks shell script:
 
   ```bash
-  sh stackql-databricks-shell.sh
+  ./stackql-databricks-shell.sh
   ```
 
   This starts a StackQL session using your Databricks workspace identity, so you can immediately query workspace-scoped resources such as `databricks_workspace.iam.vw_user_entitlements`. For account-level queries (provisioning, billing, account IAM), set the Databricks OAuth2 service principal variables as described in the guide.
