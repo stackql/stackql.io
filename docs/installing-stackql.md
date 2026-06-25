@@ -207,8 +207,6 @@ Instructions for installing StackQL on various different platforms are provided 
   </TabItem>
   <TabItem value="package">
 
-  </TabItem>
-
   Alternatively, the signed Windows `stackql` installer package or executable can be downloaded here.
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
@@ -225,6 +223,8 @@ Instructions for installing StackQL on various different platforms are provided 
       />      
     </div>
   </Box>
+
+  </TabItem>
 
   </Tabs>  
 
