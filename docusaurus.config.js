@@ -349,7 +349,7 @@ const config = {
         {name: 'og:locale', content: 'en_US'},
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
-        {name: 'theme-color', content: '#ffffff'},
+        {name: 'theme-color', content: '#0f4c81'},
         {name: 'wot-verification', content: '38f4ae79b091dc8046a0'},
       ],
       announcementBar: {
