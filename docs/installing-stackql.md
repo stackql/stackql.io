@@ -100,7 +100,7 @@ Instructions for installing StackQL on various different platforms are provided 
         <BinaryDownloadLink 
           iconSize={20} 
           text="Download macOS PKG"
-          to="https://storage.googleapis.com/stackql-public-releases/latest/stackql_darwin_multiarch.pkg"
+          to="https://releases.stackql.io/stackql/latest/stackql_darwin_multiarch.pkg"
           />
       </div>
   </Box>
@@ -272,20 +272,20 @@ Instructions for installing StackQL on various different platforms are provided 
       <BinaryDownloadLink 
         iconSize={20} 
         text="Download macOS MCPB"
-        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb"
+        to="https://releases.stackql.io/stackql/latest/stackql-mcp-darwin-universal.mcpb"
       />
       <DropDownBinaryDownloadLink 
         iconSize={20} 
         text="Download Linux MCPB (x64)"
-        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb"
+        to="https://releases.stackql.io/stackql/latest/stackql-mcp-linux-x64.mcpb"
         options={[
-          { text: 'Download Linux MCPB (arm64)', to: 'https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb' },
+          { text: 'Download Linux MCPB (arm64)', to: 'https://releases.stackql.io/stackql/latest/stackql-mcp-linux-arm64.mcpb' },
         ]}
       />
       <BinaryDownloadLink 
         iconSize={20} 
         text="Download Windows MCPB"
-        to="https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb"
+        to="https://releases.stackql.io/stackql/latest/stackql-mcp-windows-x64.mcpb"
       />      
     </div>
   </Box>
@@ -505,7 +505,7 @@ Directory and aggregator listings, in rough order of significance for discovery:
 A prebuilt MCP Bundle is attached to every StackQL release for each platform:
 
 ```
-https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-<platform>.mcpb
+https://releases.stackql.io/stackql/latest/stackql-mcp-<platform>.mcpb
 ```
 
 where `<platform>` is one of `darwin-universal`, `windows-x64`, `linux-x64`, or `linux-arm64`. Download buttons for each platform are in the **Claude Desktop / MCP** tab above. Each bundle has a matching `.sha256` checksum on the [release page](https://github.com/stackql/stackql/releases/latest). Verify it, then install via **Settings -> Extensions** in Claude Desktop:
