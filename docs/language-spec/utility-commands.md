@@ -16,3 +16,4 @@ StackQL utility commands are listed in the table below:
 | Utility Command | Description | Example |
 |--|--|--|
 | `clear` | Clears the shell of results and commands, does not need to be terminated with a semicolon | `clear` or `CLEAR` |
+| `sleep n` | Sleeps for `n` milliseconds  | `sleep 5000` or `SLEEP 5000` |
