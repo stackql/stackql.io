@@ -134,7 +134,12 @@ export const PROVIDER_CATEGORIES = [
         name: 'Anthropic',
         href: 'https://anthropic-provider.stackql.io/',
         icon: '/img/providers/anthropic/favicon.png'
-      }
+      },
+      { 
+        name: 'Anthropic Admin',
+        href: 'https://anthropic-admin-provider.stackql.io/',
+        icon: '/img/providers/anthropic/favicon.png'
+      }      
     ]
   },
   {
