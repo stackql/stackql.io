@@ -131,6 +131,12 @@ export const PROVIDER_CATEGORIES = [
         invertOnDark: true
       },
       { 
+        name: 'OpenAI Admin',
+        href: 'https://openai-admin-provider.stackql.io/',
+        icon: '/img/providers/openai/favicon.ico',
+        invertOnDark: true
+      },      
+      { 
         name: 'Anthropic',
         href: 'https://anthropic-provider.stackql.io/',
         icon: '/img/providers/anthropic/favicon.png'
