@@ -16,9 +16,29 @@ image: "/img/stackql-featured-image.png"
 
 StackQL integrates with Claude Desktop via the Model Context Protocol (MCP), enabling you to query and provision cloud resources across multiple cloud providers using natural language. This powerful combination allows you to interact with your cloud infrastructure conversationally while leveraging StackQL's SQL-based interface under the hood.
 
-## One-Click Install (MCP Bundle)
+There are three installation options, presented here in recommended order: install from the Anthropic Connector Directory, install from a downloaded bundle, or register a locally installed StackQL binary manually.
 
-The easiest way to use the StackQL MCP server with Claude Desktop is the prebuilt MCP Bundle (`.mcpb`) - a one-click installable package containing the signed `stackql` binary and the server configuration. No separate StackQL installation is required.
+## Install from the Connector Directory (recommended)
+
+The easiest way to use the StackQL MCP server with Claude Desktop is to install it from the Anthropic Connector Directory. In Claude Desktop: **Settings -> Connectors -> Add -> Browse Connectors**, search for **StackQL**, and click **Install**. There is nothing to download and no separate StackQL installation is required.
+
+![StackQL in the Anthropic Connector Directory](/img/stackql-anthropic-directory-listing.png)
+
+You can also view the listing directly at [claude.ai/directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql).
+
+This installs the StackQL MCP server in-process for your platform: the listing serves a combined multiplatform bundle containing the signed binaries for every supported platform (macOS universal, Windows x64, Linux x64 and arm64), and Claude Desktop selects the right one for your machine automatically. The Windows binary is Authenticode-signed and the macOS binary is Apple-notarised - the same binaries as the standalone StackQL release.
+
+![Installing the StackQL connector](/img/stackql-anthropic-directory-install.png)
+
+A directory-installed connector inherits Claude Desktop's environment, so set the environment variables for your providers at the operating-system level before launching Claude Desktop - see [Provider-Specific Credentials](#provider-specific-credentials). Claude Desktop captures its environment at launch: after changing variables you must fully quit Claude Desktop (including the tray icon on Windows) and relaunch. Asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) reports per-provider credential status and is the fastest way to confirm what the server can and cannot see.
+
+Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+
+## Install from a downloaded bundle
+
+Use this installation option to pin a specific version, install without Connector Directory access, or verify checksums yourself before installing.
+
+The prebuilt MCP Bundle (`.mcpb`) is a one-click installable package containing the signed `stackql` binary and the server configuration. No separate StackQL installation is required.
 
 Download the bundle for your platform from the latest release:
 
@@ -122,6 +142,46 @@ Never commit your `claude_desktop_config.json` file with actual credentials to v
 :::
 
 Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation. Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+
+### Using a Credentials File (`--env.file`)
+
+An alternative to the `env` block - and on Windows the recommended one - is to keep credentials in a dotenv-style file and pass it with the [`--env.file`](/docs/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) flag:
+
+```json
+{
+  "mcpServers": {
+    "stackql": {
+      "command": "stackql",
+      "args": [
+        "mcp",
+        "--mcp.server.type=stdio",
+        "--tls.allowInsecure",
+        "--env.file=C:\\Users\\me\\stackql-credentials.env"
+      ]
+    }
+  }
+}
+```
+
+With a minimal credentials file:
+
+```bash
+# stackql-credentials.env
+GOOGLE_CREDENTIALS=/path/to/google-credentials.json
+AWS_ACCESS_KEY_ID=your-aws-access-key-id
+AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
+```
+
+Why this beats the `env` block:
+
+- Changes to the `env` block require a full Claude Desktop restart (including quitting the tray icon) before the MCP subprocess sees them, and on Windows `setx` writes the registry - it never reaches the running Desktop process.
+- The `--env.file` file can be created or rotated at any time - it does not even need to exist when the server starts - and asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) picks up the changes without any restart.
+
+:::note
+
+`--env.file` and `reload_credentials` are available in StackQL releases after `v0.10.542`.
+
+:::
 
 ### Provider-Specific Credentials
 
@@ -243,7 +303,7 @@ If you receive authentication errors:
 
 1. Verify your cloud provider credentials are correct
 2. Ensure credential files exist at the specified paths
-3. Check that environment variables are properly formatted in the configuration
+3. Check that environment variables are properly formatted in the configuration - asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) reports per-provider credential status and is the fastest way to see which variable is missing
 4. Confirm your credentials have the necessary permissions
 
 ### Permission Errors

@@ -26,6 +26,11 @@ export const MCP_TOOL_CATEGORIES = [
         name: 'server_info',
         href: '/docs/mcp/server_info',
         description: 'Identity and runtime of the connected MCP server'
+      },
+      {
+        name: 'reload_credentials',
+        href: '/docs/mcp/reload_credentials',
+        description: 'Re-source credentials from the --env.file dotenv file and report per-provider status'
       }
     ]
   },

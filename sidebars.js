@@ -51,6 +51,7 @@ const sidebars = {
       },
       items: [
         'mcp/server_info',
+        'mcp/reload_credentials',
         'mcp/list_providers',
         'mcp/list_services',
         'mcp/list_resources',

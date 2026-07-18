@@ -5,7 +5,7 @@ keywords: [stackql, ai agents, mcp, model context protocol, agentic infrastructu
 proficiencyLevel: Intermediate
 faq:
   - question: What MCP tools does the StackQL server expose?
-    answer: Discovery tools (list_providers, list_services, list_resources, list_methods, describe_resource, describe_method), registry tools (list_registry, pull_provider), validation (validate_select_query), execution (run_select_query, run_mutation_query, run_lifecycle_operation), and server_info. The enabled_tools allowlist can narrow this set, for example to publish a read-only inventory server.
+    answer: Discovery tools (list_providers, list_services, list_resources, list_methods, describe_resource, describe_method), registry tools (list_registry, pull_provider), validation (validate_select_query), execution (run_select_query, run_mutation_query, run_lifecycle_operation), server_info, and reload_credentials (re-sources the --env.file dotenv file and reports per-provider credential status). The enabled_tools allowlist can narrow this set, for example to publish a read-only inventory server.
   - question: How are agent mutations kept safe?
     answer: By the server mode. The default safe mode allows SELECT and metadata calls but requires human approval (via the MCP elicitation flow) for INSERT, UPDATE, DELETE, and EXEC. read_only refuses mutations outright; delete_safe allows create/update but gates deletes; full_access allows everything. Every tool call is written to a JSONL audit log, on by default.
   - question: Which transports are supported?
@@ -24,6 +24,8 @@ StackQL ships a built-in Model Context Protocol (MCP) server. Any MCP-capable ag
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID
 export AWS_SECRET_ACCESS_KEY=YOURSECRETACCESSKEY
 ```
+
+Alternatively (in StackQL releases after v0.10.542), nominate a dotenv-style credentials file with `--env.file`; the `reload_credentials` MCP tool re-sources it mid-session so rotated credentials reach a running server without a restart.
 
 2. **Start the MCP server.** For a standalone HTTP server:
 

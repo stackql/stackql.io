@@ -41,7 +41,7 @@ SHOW PROVIDERS;
 
 Authenticating to a cloud provider is often the first step in an StackQL routine. Meta commands such as [`SHOW`](/docs/language-spec/show) and [`DESCRIBE`](/docs/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/docs/language-spec/select), [`INSERT`](/docs/language-spec/insert) and [`EXEC`](/docs/language-spec/exec) commands generally require an authenticated session.  
 
-Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have it's own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  
+Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have it's own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  The variables can also be sourced from a dotenv-style file at startup using the [`--env.file`](/docs/command-line-usage/global-flags) global flag.  
 
 :::tip
 
