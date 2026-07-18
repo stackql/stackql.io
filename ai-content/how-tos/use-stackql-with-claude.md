@@ -9,7 +9,7 @@ faq:
   - question: Will Claude ask before changing my infrastructure?
     answer: Yes, under the default configuration. The StackQL MCP server defaults to safe mode, and Claude Desktop advertises the MCP elicitation capability, so every INSERT, UPDATE, DELETE, or lifecycle operation triggers an approval prompt showing the SQL before it runs. Set mode to read_only to prevent mutations entirely.
   - question: Where do my cloud credentials go?
-    answer: In the env block of the stackql entry in the MCP configuration file, or in the environment the server process inherits. Credentials stay on your machine with the StackQL binary; they are not sent to the model.
+    answer: In the env block of the stackql entry in the MCP configuration file, or in the environment the server process inherits. In StackQL releases after v0.10.542 a dotenv-style credentials file can be passed with the --env.file flag instead, which the reload_credentials tool can re-source without restarting Claude Desktop. Credentials stay on your machine with the StackQL binary; they are not sent to the model.
 ---
 
 # How to use StackQL with Claude

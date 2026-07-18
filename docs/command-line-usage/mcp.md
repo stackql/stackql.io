@@ -144,6 +144,58 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 
 * * *
 
+### Credential (re)sourcing (`--env.file` + `reload_credentials`)
+
+:::note
+
+`--env.file` and the `reload_credentials` tool are available in StackQL releases after `v0.10.542`.
+
+:::
+
+A process environment block is fixed at spawn.  This creates two problems for MCP servers:
+
+- An MCP `stdio` server spawned by a desktop client (Claude Desktop, Cursor, etc) without the credential environment variables can never see them - the client passes its own environment to the subprocess.
+- Rotated short-lived credentials never reach a long-running server session.
+
+The `--env.file` flag bridges both gaps by nominating a dotenv-style file that acts as a mutable credential store:
+
+```bash
+stackql mcp --mcp.server.type=stdio --env.file /path/to/stackql-credentials.env
+```
+
+#### Sourcing semantics
+
+The file is sourced into the process environment at startup for every entrypoint (`exec`, `shell`, `srv`, `registry`, `mcp`):
+
+- When the flag is empty or unset, nothing happens - credentials resolve lazily from the process environment at request time, exactly the historical behaviour.
+- A missing file at the given path is a tolerated no-op (the file may be created later).
+- A malformed or unreadable file is fatal at startup.
+- Only keys with non-empty values are set; existing process environment variables **are** overwritten (the file is the source of truth); nothing is ever unset.
+- The flag is command line only - it is not sourced from `.stackqlrc`.
+
+The file format is one `KEY=VALUE` per line.  `#` comments, blank lines, an optional `export ` prefix, optional single or double quotes around the value, and CRLF line endings are all tolerated:
+
+```bash
+# stackql-credentials.env
+export OKTA_SECRET_KEY="00abc...xyz"
+STACKQL_GITHUB_USERNAME=myuser
+STACKQL_GITHUB_PASSWORD='ghp_mytoken'
+```
+
+#### `reload_credentials`
+
+The [`reload_credentials`](/docs/mcp/reload_credentials) tool re-sources the `--env.file` file into the process environment mid-session, then reports per-provider credential resolution status.  Secret values are never returned, logged, or audited - names and statuses only.  Without `--env.file` configured the tool degrades to a pure status probe.
+
+When a query fails on credential resolution, the MCP error carries a hint directing the agent to call `reload_credentials` and retry, so agentic clients self-heal: write the credential to the file, ask the agent to reload, and the failed query succeeds on retry - no server restart required.
+
+`reload_credentials` is not supported in `reverse_proxy` backend mode - queries execute in the remote stackql server process, so the tool returns an error directing the user to reload on the backing server.
+
+#### Windows and Claude Desktop
+
+`setx` writes the registry, not running processes, and Claude Desktop passes its own (stale) environment to MCP subprocesses - so credential changes normally require a full Claude Desktop restart.  With `--env.file` the credentials file can be created or rotated at any time and `reload_credentials` picks it up without any restart.  See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop) for a worked configuration.
+
+* * *
+
 ### Server modes
 
 `server.mode` chooses one of four safety contracts.  All four allow `SELECT` and metadata reads; they differ in how they handle mutations and lifecycle operations.
@@ -295,6 +347,7 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`run_lifecycle_operation`](/docs/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
 |[`list_registry`](/docs/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
 |[`pull_provider`](/docs/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
+|[`reload_credentials`](/docs/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
 
 ### Available MCP prompts
 
@@ -312,6 +365,7 @@ One static prompt is published.
 |--|--|
 |`--mcp.server.type`|MCP server type: `http`, `stdio`, or `reverse_proxy` (the latter is used with `stackql srv`).|
 |`--mcp.config`|JSON configuration object for the MCP server.  YAML is also accepted.|
+|`--env.file`|Dotenv-style credentials file sourced at startup and re-sourced on demand by the `reload_credentials` tool.  See [Credential (re)sourcing](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|TCP port for the PostgreSQL wire-protocol server (used with `stackql srv`).|
 |`-H`, `--help`|Print help information.|
 |`-v`, `--verbose`|Run in verbose mode with additional output.|
@@ -322,7 +376,7 @@ One static prompt is published.
 
 :::info
 
-You need to set environment variables required for provider authentication before starting the MCP server.  See [Using a Provider](/docs/getting-started/using-a-provider) for more information.
+You need to set environment variables required for provider authentication before starting the MCP server, or nominate a dotenv-style credentials file with [`--env.file`](#credential-resourcing---envfile--reload_credentials).  See [Using a Provider](/docs/getting-started/using-a-provider) for more information.
 
 :::
 
@@ -453,6 +507,13 @@ Note that `stackql_mcp_client` does **not** advertise the MCP elicitation capabi
   --url=http://127.0.0.1:9912 \
   --exec.action server_info
 
+# Re-source the --env.file credentials file and report per-provider
+# credential status - a good first diagnostic when queries fail on auth
+./build/stackql_mcp_client exec \
+  --client-type=http \
+  --url=http://127.0.0.1:9912 \
+  --exec.action reload_credentials
+
 # List providers already pulled into the local cache
 ./build/stackql_mcp_client exec \
   --client-type=http \
@@ -561,7 +622,7 @@ Sample audit log line for the same mutation:
 
 To integrate StackQL's MCP server with an AI assistant, register `stackql` as an MCP server in the assistant's configuration.  Most editor-embedded MCP clients run the server over `stdio`; for those, use `--mcp.server.type=stdio` and the assistant launches the process directly.  Standalone agents that speak HTTP can connect to a long-running `stackql mcp --mcp.server.type=http` process.
 
-For Claude Desktop - including the prebuilt one-click MCP Bundle (`.mcpb`) and manual configuration - see [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop).
+For Claude Desktop - including the Anthropic Connector Directory listing (the recommended installation method), the downloadable MCP Bundle (`.mcpb`), and manual configuration - see [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop).
 
 :::note
 

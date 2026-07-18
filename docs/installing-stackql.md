@@ -265,7 +265,7 @@ Instructions for installing StackQL on various different platforms are provided 
 
   ## Claude Desktop / MCP clients
 
-  Prebuilt MCP Bundles (`.mcpb`) are attached to every StackQL release for one-click installation of the StackQL MCP server into Claude Desktop - no separate StackQL installation is required.  Bundles are available for macOS, Windows and Linux.
+  The recommended way to install the StackQL MCP server into Claude Desktop is from the [Anthropic Connector Directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) (**Settings -> Connectors -> Add -> Browse Connectors**, search for **StackQL**) - Claude Desktop selects the correct signed binary for your platform automatically.  Alternatively, prebuilt MCP Bundles (`.mcpb`) are attached to every StackQL release for installation from a downloaded file - no separate StackQL installation is required either way.  Bundles are available for macOS, Windows and Linux.
   
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
     <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
@@ -299,7 +299,7 @@ The StackQL MCP server is also listed on the [__Official MCP Registry__](https:/
 
 :::tip
 
-The bundle is one of several ways to run the StackQL MCP server.  See [__Installing the MCP server__](#installing-the-mcp-server) for the npx, Docker, Python, CI and manual options, or [__Using StackQL with Claude Desktop__](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for the full Claude Desktop walkthrough.
+The bundle is one of several ways to run the StackQL MCP server.  See [__Installing the MCP server__](#installing-the-mcp-server) for the npx, Docker, Python, CI and manual options, or [__Using StackQL with Claude Desktop__](/docs/getting-started/claude-desktop) for the full Claude Desktop walkthrough.
 
 :::
 
@@ -488,6 +488,7 @@ Directory and aggregator listings, in rough order of significance for discovery:
 
 | Directory | Type | Listing |
 |---|---|---|
+| __Anthropic Connector Directory__ | Claude Desktop in-app directory | [claude.ai/directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) |
 | __Cursor Directory__ | IDE client directory | [cursor.directory](https://cursor.directory/plugins/stackql-mcp-server) |
 | __mcp.so__ | Largest aggregator | [mcp.so](https://mcp.so/server/stackql/stackql) |
 | __PulseMCP__ | Discovery, registry backer | [pulsemcp](https://www.pulsemcp.com/servers/stackql) |
@@ -500,7 +501,7 @@ Directory and aggregator listings, in rough order of significance for discovery:
 
 ### Prebuilt `.mcpb` bundle
 
-**When to use:** Claude Desktop, no separate StackQL install, and you want a signed one-click bundle.
+**When to use:** Claude Desktop without Connector Directory access, or when you want to pin a specific version or verify checksums yourself before installing.  For most Claude Desktop users the [Anthropic Connector Directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) is the recommended installation method.
 
 A prebuilt MCP Bundle is attached to every StackQL release for each platform:
 
@@ -514,7 +515,7 @@ where `<platform>` is one of `darwin-universal`, `windows-x64`, `linux-x64`, or 
 shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 ```
 
-See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#one-click-install-mcp-bundle) for the full walkthrough.
+See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#install-from-a-downloaded-bundle) for the full walkthrough.
 
 ### Manual `claude_desktop_config.json`
 

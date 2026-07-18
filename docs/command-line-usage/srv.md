@@ -35,8 +35,9 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 |<span class="nowrap">`--pgsrv.port`</span>|Port the server is listening on (e.g. `5444`)|
 |<span class="nowrap">`--pgsrv.tls`</span>|mTLS configuration object, see the [example](#examples) below|
 |<span class="nowrap">`--pgsrv.loglevel`</span>|Log level (default `WARN`)|
-&nbsp;
-&nbsp;
+
+<br/>
+
 > see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
 ### MCP Server Options
@@ -47,6 +48,8 @@ When running the `srv` command with MCP support, the following additional option
 |--|--|
 |<span class="nowrap">`--mcp.server.type`</span>|MCP server type: `http` (in-memory) or `reverse_proxy` (TCP-based)|
 |<span class="nowrap">`--mcp.config`</span>|JSON configuration object for the MCP server (see [MCP documentation](/docs/command-line-usage/mcp))|
+
+<br/>
 
 :::tip
 
@@ -60,14 +63,23 @@ You need to set environment variables required for provider authentication befor
 
 :::
 
+For long-running servers, the [`--env.file`](/docs/command-line-usage/global-flags) flag lets you lay down or rotate credentials in a dotenv-style file on disk before startup rather than exporting variables into the shell:
+
+```bash
+stackql srv --pgsrv.port 5444 --env.file /etc/stackql/credentials.env
+```
+
+For `stackql srv` the file is read once at startup; the mid-session re-source path is the MCP [`reload_credentials`](/docs/mcp/reload_credentials) tool.
+
 ### Flags
 
 | Flag | Description |
 |--|--|
 |`-H,--help`|Print help information|
 |`-v,--verbose`|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected<br/>this additional logging information will be written to the output file along with the query results|
-&nbsp;  
-&nbsp;  
+
+<br/>
+
 > see [Global Flags](/docs/command-line-usage/global-flags) for additional options
 
 * * *
