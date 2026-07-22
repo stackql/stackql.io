@@ -42,8 +42,8 @@ Returns a JSON array containing all the aggregated values from the specified col
 ```sql
 -- Collects all resource group names into a JSON array
 SELECT JSON_GROUP_ARRAY(name) as res_groups
-FROM azure.resources.resource_groups
-WHERE subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+FROM azure.resource.resource_groups
+WHERE subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 This query returns a JSON array of resource group names such as `["stackqlenv1","stackqlenv2","stackqlenv3"]`.
@@ -56,9 +56,9 @@ SELECT
   location,
   JSON_GROUP_ARRAY(name) AS resource_groups
 FROM
-  azure.resources.resource_groups
+  azure.resource.resource_groups
 WHERE
-  subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
+  subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 GROUP BY
   location;
 ```

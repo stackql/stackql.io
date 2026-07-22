@@ -23,41 +23,39 @@ Then pull the `anthropic` provider using:
 REGISTRY PULL anthropic;
 ```
 
-Now you can run some queries. Here's a simple example using the high-level claude_35_chat interface:
+Now you can run some queries. Here's an example running inference against Claude using the Messages API - the request parameters are supplied in the `WHERE` clause and the response is projected using `JSON_EXTRACT`:
 
-```shell
-stackql  >>select * from anthropic.messages.claude_35_chat;
-|----------------------------|-----------|-------------|---------------|--------------|---------------|--------------------------------|
-|           model            |   role    | stop_reason | stop_sequence | input_tokens | output_tokens |            content             |
-|----------------------------|-----------|-------------|---------------|--------------|---------------|--------------------------------|
-| claude-3-5-sonnet-20240620 | assistant | end_turn    | null          |           13 |            39 | StackQL is a SQL-like query    |
-|                            |           |             |               |              |               | language and universal API     |
-|                            |           |             |               |              |               | client that allows users to    |
-|                            |           |             |               |              |               | query, analyze, and manage     |
-|                            |           |             |               |              |               | cloud infrastructure and       |
-|                            |           |             |               |              |               | services across multiple       |
-|                            |           |             |               |              |               | providers using familiar SQL   |
-|                            |           |             |               |              |               | syntax.                        |
-|----------------------------|-----------|-------------|---------------|--------------|---------------|--------------------------------|
+```sql
+SELECT
+  id,
+  model,
+  stop_reason,
+  JSON_EXTRACT(content, '$[0].text') AS assistant_message,
+  JSON_EXTRACT(usage, '$.output_tokens') AS output_tokens
+FROM anthropic.messages.messages
+WHERE model = 'claude-sonnet-5'
+AND max_tokens = 1024
+AND messages = '[{"role": "user", "content": "What is StackQL?"}]';
+|------------------------------|-----------------|-------------|-------------------------------------------------------------|---------------|
+|              id              |      model      | stop_reason |                      assistant_message                      | output_tokens |
+|------------------------------|-----------------|-------------|-------------------------------------------------------------|---------------|
+| msg_01MLTLVY6XCTT2cNBeFeJzfj | claude-sonnet-5 | end_turn    | StackQL is a SQL-based framework that lets you query and    |            48 |
+|                              |                 |             | manage cloud and SaaS resources using familiar SQL syntax.  |               |
+|------------------------------|-----------------|-------------|-------------------------------------------------------------|---------------|
 ```
 
-Or you can use the lower-level messages interface directly:
+You can also discover which models are available and their capabilities using the `vw_model_capabilities` view:
 
-```shell
-stackql  >>select * from anthropic.messages.message
-stackql  >>where "anthropic-version" = '2023-06-01'
-stackql  >>and data__model = 'claude-3-5-sonnet-20240620'
-stackql  >>and data__max_tokens = 1024
-stackql  >>and data__messages = '[{"role": "user", "content": "Hello, world"}]';
-|--------------------------------|------------------------------|----------------------------|-----------|-------------|---------------|---------|----------------------------------------|
-|            content             |              id              |           model            |   role    | stop_reason | stop_sequence |  type   |                 usage                  |     
-|--------------------------------|------------------------------|----------------------------|-----------|-------------|---------------|---------|----------------------------------------|     
-| [{"text":"Hello! How can I     | msg_01MLTLVY6XCTT2cNBeFeJzfj | claude-3-5-sonnet-20240620 | assistant | end_turn    | null          | message | {"input_tokens":10,"output_tokens":30} |     
-| assist you today? Feel free    |                              |                            |           |             |               |         |                                        |     
-| to ask me any questions or let |                              |                            |           |             |               |         |                                        |     
-| me know if you need help with  |                              |                            |           |             |               |         |                                        |     
-| anything.","type":"text"}]     |                              |                            |           |             |               |         |                                        |     
-|--------------------------------|------------------------------|----------------------------|-----------|-------------|---------------|---------|----------------------------------------|
+```sql
+SELECT id, display_name, thinking, adaptive, xhigh, max_input_tokens, max_tokens
+FROM anthropic.models.vw_model_capabilities;
+|-------------------|-----------------|----------|----------|-------|------------------|------------|
+|        id         |  display_name   | thinking | adaptive | xhigh | max_input_tokens | max_tokens |
+|-------------------|-----------------|----------|----------|-------|------------------|------------|
+| claude-sonnet-5   | Claude Sonnet 5 | 1        | 1        | 1     |           200000 |      64000 |
+| claude-opus-4-8   | Claude Opus 4.8 | 1        | 1        | 1     |           200000 |      32000 |
+| claude-haiku-4-5  | Claude Haiku 4.5| 1        | 0        | 0     |           200000 |      64000 |
+|-------------------|-----------------|----------|----------|-------|------------------|------------|
 ```
 
 Like other language models, Claude's responses are stochastic, so you'll get slightly different responses each time you query.

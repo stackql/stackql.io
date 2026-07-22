@@ -53,7 +53,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  '{{ .stackqlQuery.filter }}'
-AND subscriptionId = '{{ .stackqlQuery.subscriptionId }}';
+AND subscription_id = '{{ .stackqlQuery.subscriptionId }}';
 ```
 
 ## Running the query interactively
@@ -126,7 +126,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp le ''2024-01-25T00:00:00Z'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 ### Getting activities for a resource group
@@ -149,7 +149,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp le ''2024-01-25T00:00:00Z'' and resourceGroupName eq ''MC_kube-03_aks862a_australiaeast'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 ### Getting activities for a resource type
@@ -173,7 +173,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp le ''2024-01-25T00:00:00Z'' and resourceProvider eq ''Microsoft.Compute'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 ### Getting activities for a specific resource
@@ -199,7 +199,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp le ''2024-01-25T00:00:00Z'' and resourceUri eq ''/subscriptions/631d1c6d-2a65-43e7-93c2-688bfe4e1468/resourceGroups/MC_kube-03_aks862a_australiaeast/providers/Microsoft.Compute/virtualMachines/aks-agentpool-35064155-1'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 ### Getting activities for a specific resource
@@ -225,7 +225,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp le ''2024-01-25T00:00:00Z'' and correlationId eq ''30b92c6d-4a82-401f-ac73-e28377669539'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
 ## Client-side filtering with the `WHERE` Clause
@@ -255,7 +255,7 @@ SELECT
  JSON_EXTRACT(status, '$.localizedValue') as status 
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-01T00:00:00Z'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 AND caller = 'javen@stackql.io';
 ```
 
@@ -276,7 +276,7 @@ SELECT
  COUNT(*) as num_events
 FROM azure.monitor.activity_logs
 WHERE $filter =  'eventTimestamp ge ''2024-01-29T00:00:00Z'''
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 GROUP BY level;
 /* returns..
 |---------------|------------|                                                                                                                                                                               
@@ -304,8 +304,8 @@ JSON_EXTRACT(vm.properties, '$.timeCreated') as time_created
 FROM azure.monitor.activity_logs l
 INNER JOIN azure.compute.virtual_machines vm
 ON vm.name = SPLIT_PART(l.resourceId, '/', -1)
-WHERE vm.resourceGroupName = 'MC_kube-03_aks862a_australiaeast'
-AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
+WHERE vm.resource_group_name = 'MC_kube-03_aks862a_australiaeast'
+AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupName eq ''MC_kube-03_aks862a_australiaeast''';
 ```
 
@@ -330,8 +330,8 @@ JSON_EXTRACT(vm.properties, '$.timeCreated') as time_created
 FROM azure.monitor.activity_logs l
 INNER JOIN azure.compute.virtual_machines vm
 ON vm.name = SPLIT_PART(l.resourceId, '/', -1)
-WHERE vm.resourceGroupName = '{{ .stackqlQuery.resourceGroupName}}'
-AND subscriptionId = '{{ .stackqlQuery.subscriptionId}}'
+WHERE vm.resource_group_name = '{{ .stackqlQuery.resourceGroupName}}'
+AND subscription_id = '{{ .stackqlQuery.subscriptionId}}'
 AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupName eq ''{{ .stackqlQuery.resourceGroupName}}''';
 ```
 

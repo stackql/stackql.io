@@ -79,10 +79,10 @@ import { FaRobot, FaCode, FaSatelliteDish } from 'react-icons/fa';
 <TabItem value="iql">
 
 ```sql
-SELECT instance_state, COUNT(*) as num_instances 
+SELECT state, COUNT(*) as num_instances 
 FROM aws.ec2.instances 
 WHERE region = 'us-west-1' 
-GROUP BY instance_state;
+GROUP BY state;
 ```
 
 </TabItem>
@@ -90,7 +90,7 @@ GROUP BY instance_state;
 
 ```
 |---------------------------------|
-|  instanceState  | num_instances |
+|      state      | num_instances |
 |---------------------------------|
 |     running     |     342       |
 |---------------------------------|

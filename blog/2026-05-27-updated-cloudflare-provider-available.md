@@ -50,7 +50,7 @@ List your zones:
 ```sql
 SELECT id, name, status, plan
 FROM cloudflare.zones.zones
-WHERE account_id = '<account_id>';
+WHERE account.id = '<account_id>';
 ```
 
 Inspect Workers scripts in an account:
@@ -73,7 +73,7 @@ Pull a Radar BGP summary:
 
 ```sql
 SELECT *
-FROM cloudflare.radar.bgp_routes_stats;
+FROM cloudflare.radar.routes_stats;
 ```
 
 ## Binary and non-JSON responses
@@ -83,7 +83,7 @@ A number of Cloudflare endpoints return binary or plain-text payloads - PDF LOAs
 ```sql
 SELECT contents
 FROM cloudflare.browser_rendering.screenshot
-WHERE account_id = '<account_id>' AND data__url = 'https://example.com';
+WHERE account_id = '<account_id>' AND url = 'https://example.com';
 ```
 
 ## Get started

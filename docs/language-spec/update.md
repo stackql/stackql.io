@@ -72,7 +72,7 @@ Run an `UPDATE` statement to modify a resource using JSON manipulation.
 
 ```sql
 -- Update an Azure Network Interface's properties
-UPDATE azure.network.interfaces
+UPDATE azure.network.network_interfaces
 SET data__properties = json_replace(
   json_remove(data__properties,
     '$.auxiliarySku',
@@ -83,7 +83,7 @@ SET data__properties = json_replace(
   '$.ipConfigurations[0].name',
   'newIpConfigurationName'
 )
-WHERE subscriptionId = '0123456789'
-AND resourceGroupName = 'vmss-flex'
-AND networkInterfaceName = 'vmss-nic-01';
+WHERE subscription_id = '0123456789'
+AND resource_group_name = 'vmss-flex'
+AND network_interface_name = 'vmss-nic-01';
 ```

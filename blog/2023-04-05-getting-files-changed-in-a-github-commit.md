@@ -32,7 +32,7 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
   run: |
     ORG=$(echo "$GITHUB_REPOSITORY" | cut -d '/' -f1)
     REPO=$(echo "$GITHUB_REPOSITORY" | cut -d '/' -f2)
-    QUERY="select filename FROM github.repos.commit_files where owner = '${ORG}' and ref = '${GITHUB_SHA}' and repo = '${REPO}'"
+    QUERY="WITH changed_files AS (SELECT json_each.value AS file FROM github.repos.commits, JSON_EACH(files) WHERE owner = '${ORG}' AND repo = '${REPO}' AND ref = '${GITHUB_SHA}') SELECT JSON_EXTRACT(file, '$.filename') AS filename FROM changed_files"
     echo "pulling github provider"
     stackql exec "REGISTRY PULL github"
     echo "running query: ${QUERY}"
@@ -59,13 +59,13 @@ You could then do something with the changed files in a further step like:
     done < <(jq -r '.[] | .filename' changed_files.txt)
 ```
 
-The `github.repos.commit_files` StackQL resource has other interesting fields which could be projected and used for actioning or reporting, these can be seen using:  
+Each element of the `files` array returned by `github.repos.commits` has other interesting fields which could be projected (via `JSON_EXTRACT`) and used for actioning or reporting. You can inspect the `files` structure using:  
 
 ```
-DESCRIBE EXTENDED github.repos.commit_files;
+DESCRIBE EXTENDED github.repos.commits;
 ```
 
-Fields available in this resource include:
+Fields available within each `files` array element include:
 
 - `status` - one of `added`, `removed`, `modified`, `renamed`, `copied`, `changed` or `unchanged`
 - `filename` - filename which has changed

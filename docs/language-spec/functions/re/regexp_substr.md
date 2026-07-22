@@ -60,7 +60,7 @@ regexp_substr(
   json_extract(properties, '$.storageProfile.imageReference.exactVersion'), 
   '[0-9][0-9]\.[0-9][0-9]') as os_version 
 from azure.compute.virtual_machines 
-WHERE subscriptionId = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
+WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```
 
 </TabItem>

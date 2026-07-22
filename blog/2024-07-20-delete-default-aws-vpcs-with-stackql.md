@@ -32,30 +32,30 @@ sh stackql-aws-cloud-shell.sh
 
 ## How it works
 
-Default VPCs in AWS regions have a CIDR block of __`172.31.0.0/16`__, before deleting anything, the program ensures it is not in use by using:
+This example uses the [__`awscc`__](https://awscc-provider.stackql.io) (AWS Cloud Control) provider. Cloud Control resources are read in two steps: a `_list_only` view returns the resource identifiers in a region, and the resource view returns the full properties for a single resource selected by its `Identifier`.
+
+Default VPCs in AWS regions have a CIDR block of __`172.31.0.0/16`__, before deleting anything, the program ensures it is not in use by listing the network interfaces in the region and checking whether any belong to the VPC:
 
 ```sql
-SELECT
-id
-FROM aws.ec2.network_interfaces
+SELECT id
+FROM awscc.ec2.network_interfaces_list_only
 WHERE region = '{region}'
-AND vpc_id = '{vpc_id}'
 ```
 
 If any resources are using the VPC (such as EC2, RDS, ELB/ALB, VPC attached Lambda functions, etc), it will skip these VPCs.  Once determined that the VPC is not in use, all of the resources associated with the VPC must be deleted before the VPC itself can be deleted; this includes:
 
-- External Routes (aws.ec2.routes)
-- Internet Gateways (aws.ec2.internet_gateways)
-- NACLs (aws.ec2.network_acls)
-- Subnets (aws.ec2.subnets)
-- and then finally, the VPC (aws.ec2.vpcs)
+- External Routes (awscc.ec2.routes)
+- Internet Gateways (awscc.ec2.internet_gateways)
+- NACLs (awscc.ec2.network_acls)
+- Subnets (awscc.ec2.subnets)
+- and then finally, the VPC (awscc.ec2.vpcs)
 
 > The default route table and default security group are deleted automatically when deleting the VPC
 
 This is done by discovering the resources using StackQL `SELECT` queries and deleting them using StackQL `DELETE` queries, like:
 
 ```
-DELETE FROM aws.ec2.network_acls
+DELETE FROM awscc.ec2.network_acls
 WHERE data__Identifier = '{nacl_id}'
 AND region = '{region}'
 ```
@@ -71,7 +71,7 @@ The following Python program uses StackQL to list and delete default VPCs and th
 ```python
 from pystackql import StackQL
 stackql = StackQL()
-stackql.executeStmt("REGISTRY PULL aws")
+stackql.executeStmt("REGISTRY PULL awscc")
 
 def ensure_one_or_zero(resource_list, resource_name, region):
     if len(resource_list) > 1:
@@ -80,6 +80,25 @@ def ensure_one_or_zero(resource_list, resource_name, region):
         print(f"/* no default {resource_name} found in {region} */\n")
         return False
     return True
+
+def get_resource(region, resource, identifier):
+    # fetch the full properties of a single Cloud Control resource by its identifier
+    rows = stackql.execute(f"""
+        SELECT *
+        FROM awscc.ec2.{resource}
+        WHERE region = '{region}'
+        AND Identifier = '{identifier}'
+    """)
+    return rows[0] if len(rows) else None
+
+def find_in_vpc(region, resource, id_col, vpc_id):
+    # list all identifiers for a resource in a region, then keep those attached to the target VPC
+    matches = []
+    for row in stackql.execute(f"SELECT {id_col} FROM awscc.ec2.{resource}_list_only WHERE region = '{region}'"):
+        detail = get_resource(region, resource, row[id_col])
+        if detail and detail.get('vpc_id') == vpc_id:
+            matches.append(detail)
+    return matches
 
 regions = [
     'us-east-1', 'us-east-2', 'us-west-1', 'us-west-2',
@@ -90,125 +109,81 @@ regions = [
 ]
 
 for region in regions:
-    vpc_ids = stackql.execute(
-        f"""
-        SELECT
-        vpc_id
-        FROM aws.ec2.vpcs
-        WHERE region = '{region}'
-        AND cidr_block = '172.31.0.0/16'
-        AND JSON_ARRAY_LENGTH(tags) = 0
-        """
-    )
-    if not ensure_one_or_zero(vpc_ids, 'VPC', region): continue 
-    vpc_id = vpc_ids[0]['vpc_id']
-    
-    # check if vpc is in use
-    network_interfaces = stackql.execute(
-        f"""
-        SELECT
-        id
-        FROM aws.ec2.network_interfaces
-        WHERE region = '{region}'
-        AND vpc_id = '{vpc_id}'
-        """
-    )
+    # find the default VPC (CIDR 172.31.0.0/16, untagged) by listing VPCs then inspecting each
+    default_vpcs = []
+    for row in stackql.execute(f"SELECT vpc_id FROM awscc.ec2.vpcs_list_only WHERE region = '{region}'"):
+        vpc = get_resource(region, 'vpcs', row['vpc_id'])
+        if vpc and vpc.get('cidr_block') == '172.31.0.0/16' and not vpc.get('tags'):
+            default_vpcs.append(vpc)
+    if not ensure_one_or_zero(default_vpcs, 'VPC', region): continue
+    vpc_id = default_vpcs[0]['vpc_id']
+
+    # check if the VPC is in use
+    network_interfaces = find_in_vpc(region, 'network_interfaces', 'id', vpc_id)
     if len(network_interfaces) > 0:
         print(f"/* skipping deletion of default VPC ({vpc_id}) in {region} because it is in use */\n")
         continue
-        
+
     print(f"/* deleting resources for default VPC ({vpc_id}) in {region} */\n")
 
-    # get route table
-    route_table_ids = stackql.execute(
-        f"""
-        SELECT
-        route_table_id
-        FROM aws.ec2.route_tables
-        WHERE region = '{region}'
-        AND vpc_id = '{vpc_id}'
-        """
-    )
-    ensure_one_or_zero(route_table_ids, 'route table', region)
-    route_table_id = route_table_ids[0]['route_table_id']
+    # get the default route table for the VPC
+    route_tables = find_in_vpc(region, 'route_tables', 'route_table_id', vpc_id)
+    ensure_one_or_zero(route_tables, 'route table', region)
+    route_table_id = route_tables[0]['route_table_id']
 
-    # get inet gateway id
-    inet_gateway_ids = stackql.execute(
-        f"""
-        SELECT gateway_id 
-        FROM aws.ec2.routes 
-        WHERE data__Identifier = '{route_table_id}|0.0.0.0/0' 
-        AND region = '{region}'
-        """
-    )
-    ensure_one_or_zero(inet_gateway_ids, 'internet gateway', region)
-    inet_gateway_id = inet_gateway_ids[0]['gateway_id']
+    # get the internet gateway from the default (0.0.0.0/0) route
+    default_route = get_resource(region, 'routes', f'{route_table_id}|0.0.0.0/0')
+    inet_gateway_id = default_route['gateway_id'] if default_route else None
 
-    # delete routes
+    # delete the default route
     print(f"/* deleting default VPC routes in route table ({route_table_id}) in {region} */")
     print(f"""
-DELETE FROM aws.ec2.routes
+DELETE FROM awscc.ec2.routes
 WHERE data__Identifier = '{route_table_id}|0.0.0.0/0'
 AND region = '{region}';
     """)
 
-    # detatch inet gateway
+    # detach the internet gateway
     print(f"/* detaching default VPC internet gateway ({inet_gateway_id}) in {region} */")
     print(f"""
-DELETE FROM aws.ec2.vpc_gateway_attachments
+DELETE FROM awscc.ec2.vpc_gateway_attachments
 WHERE data__Identifier = 'IGW|{vpc_id}'
 AND region = '{region}';
     """)
 
-    # delete inet gateway
+    # delete the internet gateway
     print(f"/* deleting default VPC internet gateway ({inet_gateway_id}) in {region} */")
     print(f"""
-DELETE FROM aws.ec2.internet_gateways
+DELETE FROM awscc.ec2.internet_gateways
 WHERE data__Identifier = '{inet_gateway_id}'
 AND region = '{region}';
     """)
 
-    # delete nacl
-    nacl_ids = stackql.execute(
-        f"""
-        SELECT
-        id
-        FROM aws.ec2.network_acls
-        WHERE vpc_id = '{vpc_id}'
-        AND region = '{region}'
-        """
-    )
-    ensure_one_or_zero(nacl_ids, 'network acl', region)
-    nacl_id = nacl_ids[0]['id']
+    # delete the network ACL
+    nacls = find_in_vpc(region, 'network_acls', 'id', vpc_id)
+    ensure_one_or_zero(nacls, 'network acl', region)
+    nacl_id = nacls[0]['id']
     print(f"/* deleting default VPC NACL ({nacl_id}) in {region} */")
     print(f"""
-DELETE FROM aws.ec2.network_acls
+DELETE FROM awscc.ec2.network_acls
 WHERE data__Identifier = '{nacl_id}'
 AND region = '{region}';
     """)
 
-    # delete subnets
-    subnet_ids = stackql.execute(
-        f"""
-        SELECT
-        subnet_id
-        FROM aws.ec2.subnets
-        WHERE vpc_id = '{vpc_id}'
-        AND region = '{region}'
-        """
-    )
-    for subnet_id in subnet_ids:
-        print(f"/* deleting default VPC subnet ({subnet_id['subnet_id']}) in {region} */")
+    # delete the subnets
+    subnets = find_in_vpc(region, 'subnets', 'subnet_id', vpc_id)
+    for subnet in subnets:
+        print(f"/* deleting default VPC subnet ({subnet['subnet_id']}) in {region} */")
         print(f"""
-DELETE FROM aws.ec2.subnets
-WHERE data__Identifier = '{subnet_id['subnet_id']}'
+DELETE FROM awscc.ec2.subnets
+WHERE data__Identifier = '{subnet['subnet_id']}'
 AND region = '{region}';
         """)
 
-    # delete vpc
+    # delete the VPC
     print(f"/* deleting default VPC ({vpc_id}) in {region} */")
     print(f"""
-DELETE FROM aws.ec2.vpcs
+DELETE FROM awscc.ec2.vpcs
 WHERE data__Identifier = '{vpc_id}'
 AND region = '{region}';
     """)

@@ -41,7 +41,7 @@ regions= ["us-east-1","us-east-2","us-west-1","us-west-2","ap-south-1","ap-north
 # list functions from all regions asynchronously
 get_fns = [
     f"""
-    SELECT *
+    SELECT region, FunctionName AS function_name
     FROM aws.lambda.functions
     WHERE region = '{region}'
     """
@@ -54,14 +54,14 @@ functions = run(stackql_async_queries(get_fns))
 get_fn_details = [
     f"""
     SELECT 
-    function_name,
+    JSON_EXTRACT(Configuration, '$.FunctionName') AS function_name,
     region,
-    arn,
-    description,
-    architectures,
-    memory_size,
-    runtime
-    FROM aws.lambda.function
+    JSON_EXTRACT(Configuration, '$.FunctionArn') AS arn,
+    JSON_EXTRACT(Configuration, '$.Description') AS description,
+    JSON_EXTRACT(Configuration, '$.Architectures') AS architectures,
+    JSON_EXTRACT(Configuration, '$.MemorySize') AS memory_size,
+    JSON_EXTRACT(Configuration, '$.Runtime') AS runtime
+    FROM aws.lambda.functions
     WHERE region = '{function['region']}'
     AND data__Identifier = '{function['function_name']}'
     """

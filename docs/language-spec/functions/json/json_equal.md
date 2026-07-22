@@ -53,9 +53,9 @@ SELECT
 public_access_block_configuration as current_state,
 '{"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true}' as desired_state,
 JSON_EQUAL(public_access_block_configuration, '{"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true}') as comp
-FROM aws.s3.buckets 
+FROM awscc.s3.buckets 
 WHERE region = 'ap-southeast-2' 
-AND data__Identifier = 'my-bucket';
+AND Identifier = 'my-bucket';
 /* returns...
 |--------------------------------------------------------------------------------------------------------|--------------------------------|------|
 |                                             current_state                                              |         desired_state          | comp |

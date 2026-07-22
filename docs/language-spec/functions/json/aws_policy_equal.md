@@ -37,11 +37,11 @@ An integer value: __1__ if the documents are semantically equivalent, __0__ if t
 ### Compare AWS IAM Policies
 ```sql
 SELECT
-assume_role_policy_document as current_policy,
+AssumeRolePolicyDocument as current_policy,
 '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}' as desired_policy,
-AWS_POLICY_EQUAL(assume_role_policy_document, '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}') as compliant
+AWS_POLICY_EQUAL(AssumeRolePolicyDocument, '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}') as compliant
 FROM aws.iam.roles
-WHERE role_name = 'my-lambda-role';
+WHERE RoleName = 'my-lambda-role';
 /* returns...
 |------------------------------------------------------------------|------------------------------------------------------------------|-----------|
 |                            current_policy                        |                           desired_policy                         | compliant |

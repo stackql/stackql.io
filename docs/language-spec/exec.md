@@ -74,11 +74,11 @@ Run an `EXEC` statement to start an AWS EC2 instance in an authenticated session
 
 ```sql
 -- Start an EC2 instance
-EXEC aws.ec2_native.instances.start 
+EXEC aws.ec2.instances.start_instances 
 @InstanceId = 'i-0fc989cf4efcd8b88', 
 @region = 'ap-southeast-2';
 -- Stop an EC2 instance
-EXEC aws.ec2_native.instances.stop 
+EXEC aws.ec2.instances.stop_instances 
 @InstanceId = 'i-0fc989cf4efcd8b88', 
 @region = 'ap-southeast-2';
 ```
@@ -103,8 +103,8 @@ EXEC google.compute.instances.attachDisk
 Run an `EXEC` statement to simulate eviction of Azure Spot VM Instance. 
 
 ```sql
-exec azure.compute.virtual_machine.simulate_eviction
-@subscriptionId = '0123456789',
-@resourceGroupName = 'vmss-flex',
-@vmName = 'vmss-flex-manual-1';
+exec azure.compute.virtual_machines.simulate_eviction
+@subscription_id = '0123456789',
+@resource_group_name = 'vmss-flex',
+@vm_name = 'vmss-flex-manual-1';
 ```
