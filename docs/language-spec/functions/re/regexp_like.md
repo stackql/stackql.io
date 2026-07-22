@@ -57,7 +57,7 @@ Returns a `0` if `false` and `1` if `true`.
 select name, 
 regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
-WHERE subscriptionId = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
+WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```
 
 </TabItem>

@@ -39,7 +39,7 @@ SELECT
 FROM
     azure.network.application_gateways
 WHERE
-	subscriptionId = '123e4567-e89b-12d3-a456-426614174000'
+	subscription_id = '123e4567-e89b-12d3-a456-426614174000'
     AND ssl_policy IS NOT NULL
     AND JSON_EXTRACT(properties, '$.sslPolicy') NOT LIKE '%TLS12%';
 ```
@@ -56,9 +56,9 @@ SELECT
 	JSON_EXTRACT(properties, '$.httpsOnly') as https_only,
 	JSON_EXTRACT(properties, '$.siteConfig.minTlsVersion') as min_tls_version
 FROM
-    azure.app_service.web_apps
+    azure.web.web_apps
 WHERE
-	subscriptionId = '123e4567-e89b-12d3-a456-426614174000'
+	subscription_id = '123e4567-e89b-12d3-a456-426614174000'
 	AND JSON_EXTRACT(properties, '$.siteConfig.minTlsVersion') < '1.2';
 ```
 
@@ -70,14 +70,14 @@ Azure SQL Databases and SQL Managed Instances may also have TLS configurations t
 ```sql
 SELECT
 	location,
-	fully_qualified_domain_name,
-	minimal_tls_version,
+	fullyQualifiedDomainName,
+	minimalTlsVersion,
 	state
 FROM 
-	azure.sql.vw_servers
+	azure.sql.servers
 WHERE 
-	subscriptionId = '123e4567-e89b-12d3-a456-426614174000'
-	AND minimal_tls_version < '1.2';
+	subscription_id = '123e4567-e89b-12d3-a456-426614174000'
+	AND minimalTlsVersion < '1.2';
 ```
 
 This shows all SQL servers with a minimal TLS version set below 1.2.  

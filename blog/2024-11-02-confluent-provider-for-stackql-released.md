@@ -29,7 +29,7 @@ The Confluent provider includes access to a range of services covering resources
 To view the organization associated with your Confluent account, use the following query:
 
 ```
-stackql >> select * from confluent.org.vw_organizations;
+stackql >> select * from confluent.org.organizations;
 |--------------------------------------|----------------|-------------------------------------------------------------------------|-----------------------------|-----------------------------|-------------|-------------|--------------|
 |                  id                  |  display_name  |                              resource_name                              |         created_at          |         updated_at          | jit_enabled | api_version |     kind     |
 |--------------------------------------|----------------|-------------------------------------------------------------------------|-----------------------------|-----------------------------|-------------|-------------|--------------|
@@ -42,7 +42,7 @@ stackql >> select * from confluent.org.vw_organizations;
 To list the available environments in your organization, use this query:
 
 ```
-select * from confluent.org.vw_environments;
+select * from confluent.org.environments;
 |------------|--------------|---------------------------|------------------------------------------------------------------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|-------------|-------------|
 |     id     | display_name | stream_governance_package |                                         resource_name                                          |         created_at          |         updated_at          |                            self                            | api_version |    kind     |
 |------------|--------------|---------------------------|------------------------------------------------------------------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------|-------------|-------------|

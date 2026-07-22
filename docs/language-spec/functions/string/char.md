@@ -66,9 +66,9 @@ To concatenate strings with a newline character between them:
 
 ```sql
 SELECT 
-'/* ' || displayName || ' */' || CHAR(10) || 'DELETE FROM databricks_account.iam.users WHERE account_id = ' || CHAR(39) || account_id || CHAR(39) || ' AND id = ' || CHAR(39) || id || CHAR(39)
+'/* ' || displayName || ' */' || CHAR(10) || 'DELETE FROM databricks_account.iam.account_users WHERE account_id = ' || CHAR(39) || account_id || CHAR(39) || ' AND id = ' || CHAR(39) || id || CHAR(39)
 FROM
-databricks_account.iam.users
+databricks_account.iam.account_users
 where account_id = 'abcd1234-1234-5678-90ab-abcdef123456'
 AND active = false;
 ```

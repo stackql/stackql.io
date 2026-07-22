@@ -53,7 +53,7 @@ stackql  >>show services in databricks_account;
 Some example databricks_account queries are shown here:
 
 ```
-stackql  >>select *  from  databricks_account.iam.users where account_id = 'ebfcc5a9-9d49-4c93-b651-b3ee6cf1c9ce' and active = true;
+stackql  >>select *  from  databricks_account.iam.account_users where account_id = 'ebfcc5a9-9d49-4c93-b651-b3ee6cf1c9ce' and active = true;
 |--------|--------------|-------------------------------------------------------------|------------|------------------|---------------------------------------------|---------------------------------------------|------------------|
 | active | displayName  |                           emails                            | externalId |        id        |                    name                     |                    roles         
  |     userName     |
@@ -65,7 +65,7 @@ or..
 
 ```
 stackql  >>SELECT applicationId,  displayName
-stackql  >>FROM databricks_account.iam.service_principals, JSON_EACH(roles)
+stackql  >>FROM databricks_account.iam.account_service_principals, JSON_EACH(roles)
 stackql  >>WHERE account_id = 'ebfcc5a9-9d49-4c93-b651-b3ee6cf1c9ce'
 stackql  >>AND JSON_EXTRACT(json_each.value, '$.value') = 'account_admin';
 |--------------------------------------|-------------|

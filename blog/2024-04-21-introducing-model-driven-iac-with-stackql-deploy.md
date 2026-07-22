@@ -127,9 +127,9 @@ Our `stackql_resources` directory must contain a `.iql` file (StackQL query file
 
 ```sql
 /*+ createorupdate */
-INSERT INTO azure.resources.resource_groups(
-  resourceGroupName,
-  subscriptionId,
+INSERT INTO azure.resource.resource_groups(
+  resource_group_name,
+  subscription_id,
   data__location
 )
 SELECT
@@ -138,22 +138,22 @@ SELECT
   '{{ location }}'
 
 /*+ delete */
-DELETE FROM azure.resources.resource_groups 
-WHERE resourceGroupName = '{{ resource_group_name }}' AND subscriptionId = '{{ subscription_id }}'
+DELETE FROM azure.resource.resource_groups 
+WHERE resource_group_name = '{{ resource_group_name }}' AND subscription_id = '{{ subscription_id }}'
 ```
 
 Similarly, our `stackql_tests` directory must contain a `.iql` file (StackQL query file) with the same name as each `resource` defined in the stack. Here is an example for `stackql_tests/monitor_resource_group.iql`:
 
 ```sql
 /*+ preflight */
-SELECT COUNT(*) as count FROM azure.resources.resource_groups
-WHERE subscriptionId = '{{ subscription_id }}'
-AND resourceGroupName = '{{ resource_group_name }}'
+SELECT COUNT(*) as count FROM azure.resource.resource_groups
+WHERE subscription_id = '{{ subscription_id }}'
+AND resource_group_name = '{{ resource_group_name }}'
 
 /*+ postdeploy, retries=2, retry_delay=2 */
-SELECT COUNT(*) as count FROM azure.resources.resource_groups
-WHERE subscriptionId = '{{ subscription_id }}'
-AND resourceGroupName = '{{ resource_group_name }}'
+SELECT COUNT(*) as count FROM azure.resource.resource_groups
+WHERE subscription_id = '{{ subscription_id }}'
+AND resource_group_name = '{{ resource_group_name }}'
 AND location = '{{ location }}'
 AND JSON_EXTRACT(properties, '$.provisioningState') = 'Succeeded'
 ```

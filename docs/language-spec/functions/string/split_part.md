@@ -67,8 +67,8 @@ SELECT name,
  split_part(id, '/', 5) as resource_group,
  json_extract(properties, '$.hardwareProfile.vmSize') as vm_size
 FROM azure.compute.virtual_machines 
- WHERE resourceGroupName = 'stackql-ops-cicd-dev-01' 
- AND subscriptionId = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
+ WHERE resource_group_name = 'stackql-ops-cicd-dev-01' 
+ AND subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```
 
 </TabItem>

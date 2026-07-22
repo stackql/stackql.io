@@ -110,7 +110,7 @@ Similar to the AWS script, you can also invoke `stackql exec` as well, an exampl
 ```shell
 sh stackql-azure-cloud-shell.sh exec \
 --output csv --outfile instances_by_location.csv \
-"SELECT location, COUNT(*) as num_instances FROM azure.compute.virtual_machines WHERE resourceGroupName =  'stackql-ops-cicd-dev-01' AND subscriptionId = '631d1c6d-2a65-43e7-93c2-688bfe4e1468' GROUP BY location"
+"SELECT location, COUNT(*) as num_instances FROM azure.compute.virtual_machines WHERE resource_group_name =  'stackql-ops-cicd-dev-01' AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468' GROUP BY location"
 ```
 
 ## Using StackQL in the Google Cloud Shell

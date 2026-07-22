@@ -58,7 +58,7 @@ SELECT
   description
 FROM databricks_workspace.tags.tag_policies
 WHERE deployment_name = 'dbc-74aa95f7-8c7e'
-AND key LIKE 'class%';
+AND tag_key LIKE 'class%';
 ```
 
 **Catalog count by type**

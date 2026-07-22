@@ -170,7 +170,7 @@ Now you are able to access protected resources, for example:
 
 ```sql
 select id, name, private 
-from github.repos_orgs.repos_orgs 
+from github.repos.repos 
 where org = 'stackql';
 ```
 

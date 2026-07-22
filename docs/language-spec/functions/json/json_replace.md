@@ -61,9 +61,9 @@ Returns a modified JSON document with the specified value replaced. If the speci
 SELECT sku as original,
 JSON_REPLACE(sku, '$.name', 'Standard_EU') as updated
 FROM azure.container_registry.registries 
-WHERE registryName = 'exampleRegistryProd' 
-AND subscriptionId = '12345678-abcd-1234-abcd-1234abcd5678' 
-AND resourceGroupName = 'exampleResourceGroupProd';
+WHERE registry_name = 'exampleRegistryProd' 
+AND subscription_id = '12345678-abcd-1234-abcd-1234abcd5678' 
+AND resource_group_name = 'exampleResourceGroupProd';
 /* expected output...
 |---------------------------------------|------------------------------------------|
 |               original                |                 updated                  |
@@ -115,10 +115,10 @@ select
   'vmss-flex-vnet-nic01-defaultIpConfiguration'
   ) afterchange
 from
-  azure.network.interfaces
-where subscriptionId = '0123456789'
-and resourceGroupName = 'vm-rg'
-and networkInterfaceName = 'vm1450_z1'
+  azure.network.network_interfaces
+where subscription_id = '0123456789'
+and resource_group_name = 'vm-rg'
+and network_interface_name = 'vm1450_z1'
 ```
 
 </TabItem><TabItem value="output">

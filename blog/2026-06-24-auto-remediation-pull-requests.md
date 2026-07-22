@@ -44,7 +44,7 @@ The audit emits each finding as JSON, and that JSON is the contract the rest of 
   "suggested_remediation": {
     "type": "delete",
     "tool": "stackql",
-    "preflight_query": "SELECT volumeId FROM aws.ec2_native.volumes WHERE region = 'ap-southeast-2' AND volumeId = 'vol-0a1b2c3d4e5f' AND status = 'available'",
+    "preflight_query": "SELECT VolumeId FROM aws.ec2.volumes WHERE region = 'ap-southeast-2' AND VolumeId = 'vol-0a1b2c3d4e5f' AND State = 'available'",
     "sql_query": "DELETE FROM aws.ec2.volumes WHERE region = 'ap-southeast-2' AND VolumeId = 'vol-0a1b2c3d4e5f'",
     "description": "Delete the unattached EBS volume (snapshot first if its data may be needed)."
   },
@@ -79,11 +79,11 @@ The preflight is the part worth dwelling on:
 
 ```sql
 -- pass criterion: returns >= 1 row
-SELECT volumeId
-FROM aws.ec2_native.volumes
+SELECT VolumeId
+FROM aws.ec2.volumes
 WHERE region = 'ap-southeast-2'
-  AND volumeId = 'vol-0a1b2c3d4e5f'
-  AND status = 'available';
+  AND VolumeId = 'vol-0a1b2c3d4e5f'
+  AND State = 'available';
 ```
 
 This runs as a required status check on the pull request. It is a live query against the cloud API, not a read of a cached state file, and it asserts that the resource is still in the state the finding assumed at the moment of merge, not at the moment of audit. Findings go stale. Between the audit run and someone clicking merge, the volume may have been re-attached, deleted by someone else, or moved. A state file would not know. The API does. If the preflight returns zero rows, the check fails and the change cannot land.
@@ -97,7 +97,7 @@ StackQL treats the cloud control plane as a queryable and mutable surface. You `
 ```sql
 DELETE FROM aws.ec2.volumes
 WHERE region = 'ap-southeast-2'
-  AND volume_id = 'vol-0a1b2c3d4e5f';
+  AND VolumeId = 'vol-0a1b2c3d4e5f';
 ```
 
 The statement is idempotent by shape. Run it twice and the end state is the same, which is exactly the property you want when a pipeline can retry. On merge, the apply workflow executes the remediation through the vendor CLI; `remediation.sql` is kept as the canonical, human-readable record of what was applied.

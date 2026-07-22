@@ -79,11 +79,11 @@ Run an INSERT statement with SELECT.
 
 ```sql
 -- Create a Azure Network Interface
-INSERT INTO azure.network.interfaces
+INSERT INTO azure.network.network_interfaces
   (
-    resourceGroupName,
-    subscriptionId,
-    networkInterfaceName,
+    resource_group_name,
+    subscription_id,
+    network_interface_name,
     data__location,
     data__properties
   )
@@ -120,10 +120,10 @@ INSERT INTO azure.network.interfaces
                       'vmss-flex-vnet-nic01-defaultIpConfiguration'
                       )
   FROM
-    azure.network.interfaces
-  WHERE subscriptionId = '0123456789'
-  AND resourceGroupName = 'vmss-flex'
-  AND networkInterfaceName = 'vmss-nic-01';
+    azure.network.network_interfaces
+  WHERE subscription_id = '0123456789'
+  AND resource_group_name = 'vmss-flex'
+  AND network_interface_name = 'vmss-nic-01';
 ```
 
 ### `INSERT` statement with `RETURNING` clause

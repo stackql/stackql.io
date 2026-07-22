@@ -79,38 +79,24 @@ stackql = StackQL(output='pandas', page_limit=-1, execution_concurrency_limit=-1
 
 def pull_stackql_providers():
     providers_df = stackql.execute("SHOW PROVIDERS")
-    is_aws_installed = 'aws' in providers_df['name'].values if not providers_df.empty else False
-    if not is_aws_installed:
-        print("aws not installed. Installing aws")
-        res = stackql.executeStmt("REGISTRY PULL aws")
-        print(res['message'])
+    installed = providers_df['name'].values if not providers_df.empty else []
+    for provider in ('aws', 'awscc'):
+        if provider not in installed:
+            print(f"{provider} not installed. Installing {provider}")
+            res = stackql.executeStmt(f"REGISTRY PULL {provider}")
+            print(res['message'])
 
 def get_s3_buckets():
-    # special case for s3 buckets
-    int_results_df = pd.DataFrame(columns=['bucket', 'region'])
-    buckets = stackql.execute("""
-        SELECT bucket_name   
-        FROM aws.s3.buckets WHERE region = 'us-east-1';
-    """)['bucket_name'].values.tolist()
-    for bucket in buckets:
-        regional_domain_query = f"""
-            SELECT 
-            bucket_name,
-            bucket_location
-            FROM aws.s3.bucket WHERE region = 'us-east-1' AND data__Identifier = '{bucket}'
-        """
-        print(f"Checking location for {bucket}...")
-        regional_domain_name_df = stackql.execute(regional_domain_query)
-        # Extract the region from the domain name
-        if not regional_domain_name_df.empty:
-            bucket_name = regional_domain_name_df['bucket_name'].values[0]
-            bucket_location = regional_domain_name_df['bucket_location'].values[0]
-            print("bucket_name: ", bucket_name)
-            print("bucket_location: ", bucket_location)
-            new_row = {'bucket': bucket_name, 'region': bucket_location}
-            int_results_df = pd.concat([int_results_df, pd.DataFrame([new_row])], ignore_index=True)
+    # special case for s3 buckets - use the awscc provider's list view, which
+    # returns each bucket alongside its region in a single query across all regions
+    regions_in = ", ".join([f"'{region}'" for region in regions])
+    buckets_df = stackql.execute(f"""
+        SELECT region, bucket_name
+        FROM awscc.s3.buckets_list_only
+        WHERE region IN ({regions_in});
+    """)
     # Group by region and count the total resources (buckets) in each region
-    grouped = int_results_df.groupby('region').size().reset_index(name='total_resources')
+    grouped = buckets_df.groupby('region').size().reset_index(name='total_resources')
     grouped['svc'] = 's3'
     grouped['res'] = 'buckets'
     output_df = grouped[['svc', 'res', 'region', 'total_resources']]

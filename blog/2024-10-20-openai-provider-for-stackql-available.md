@@ -102,49 +102,24 @@ stackql  >>select * from openai.models.models;
 |------------|------------------------------------|--------|-----------------|
 ```
 
-here is an example of a chat completion using the provider:
+The `openai` provider covers the control plane - models, files, fine-tuning jobs, batches, vector stores and more. Inference endpoints (chat completions, responses, embeddings, images and audio) are out of scope; use the vendor SDKs for invocation.
 
-```shell
-stackql  >>select choices from openai.chat.completions
-stackql  >>where data__model = 'gpt-4o'
-stackql  >>and data__messages = '[{"role": "system", "content": "what is stackql?"}]';
-|----------------------------------------------------------------------------------|
-|                                     choices                                      |
-|----------------------------------------------------------------------------------|
-| [{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"StackQL |
-| is a query language designed to interact with cloud infrastructure services      |
-| such as AWS, Google Cloud Platform, Microsoft Azure, and others. It allows users |
-| to manage and provision resources using a SQL-like syntax, enabling familiar     |
-| database-style querying for cloud infrastructure management. StackQL simplifies  |
-| the process of interacting with APIs from various cloud providers by providing   |
-| a unified interface, allowing for efficient resource management and automation   |
-| through queries that resemble SQL statements. This can make it easier for those  |
-| familiar with SQL to manage cloud resources without needing to dive deep into    |
-| the intricacies of each provider's API.","refusal":null,"role":"assistant"}}]    |
-|----------------------------------------------------------------------------------|
-```
-then run it again...
+For example, poll your fine-tuning jobs and batches:
 
-```shell
-stackql  >>select choices from openai.chat.completions
-stackql  >>where data__model = 'gpt-4o'
-stackql  >>and data__messages = '[{"role": "system", "content": "what is stackql?"}]';
-|----------------------------------------------------------------------------------|
-|                                     choices                                      |
-|----------------------------------------------------------------------------------|
-| [{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"StackQL |
-| is a query language and platform designed to simplify the management and         |
-| automation of cloud infrastructure. It allows users to interact with cloud       |
-| services using SQL-like queries, providing a familiar and powerful interface for |
-| developers and IT professionals. By abstracting the complexities of different    |
-| cloud providers, StackQL enables users to perform operations such as deploying,  |
-| configuring, and managing infrastructure resources across various cloud          |
-| platforms through a unified command-line interface or programmatic environment.  |
-| This can be particularly useful for tasks like resource provisioning,            |
-| monitoring, and compliance auditing, offering an efficient way to manage         |
-| multi-cloud environments.","refusal":null,"role":"assistant"}}]                  |
-|----------------------------------------------------------------------------------|
+```sql
+SELECT id, status, model, fine_tuned_model, trained_tokens
+FROM openai.fine_tuning.jobs;
+
+SELECT id, status, endpoint, request_counts
+FROM openai.batches.batches
+LIMIT 10;
 ```
-its stochastic of course so you will get slightly different answers each time 
+
+Vector stores expose a full CRUD surface with file membership:
+
+```sql
+SELECT id, name, status, usage_bytes, file_counts
+FROM openai.vector_stores.vector_stores;
+```
 
 More to come!  Let us know what you think! ⭐ us on [__GitHub__](https://github.com/stackql/stackql).

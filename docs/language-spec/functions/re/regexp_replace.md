@@ -61,7 +61,7 @@ Returns a string.
 select name,
 regexp_replace(json_extract(properties, '$.timeCreated'), 'T.*', '') as date_created
 from azure.compute.virtual_machines 
-WHERE subscriptionId = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
+WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```
 
 </TabItem>
