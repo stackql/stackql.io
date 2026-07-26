@@ -34,3 +34,36 @@
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
+
+# --- Query library (contract surface for the stackql MCP server) ---
+# The server fetches manifest.json, index.json and queries/<id>.json from
+# /docs/query-library/. CORS is open on the whole prefix so browser-based
+# MCP hosts can fetch too. .md files under here inherit the text/markdown
+# rules above.
+
+[[headers]]
+  for = "/docs/query-library/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+# Catalogue and manifest: short cache so new builds are picked up quickly
+# (the MCP server re-checks build_id on a 300s TTL).
+[[headers]]
+  for = "/docs/query-library/manifest.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/docs/query-library/index.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# Per-query JSON documents: content is cached by build_id upstream, so a
+# longer edge cache is safe.
+[[headers]]
+  for = "/docs/query-library/queries/*.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"

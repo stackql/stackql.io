@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stackql.io/docs/query-library/schema/front-matter.schema.json",
+  "title": "StackQL Query Library front matter",
+  "description": "Schema for the YAML front matter of query library entries under query-library/queries/. The entry id is derived from the file path (provider/service/slug) and is not declared in front matter because Docusaurus reserves the id key.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "description",
+    "format",
+    "verb",
+    "status",
+    "providers",
+    "services",
+    "tags",
+    "intent_keywords",
+    "params",
+    "cost"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 80,
+      "description": "Short human title, unique across the library."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 300,
+      "description": "One or two sentences. Drives index.json, the catalogue, JSON-LD and OG metadata."
+    },
+    "format": {
+      "const": "md",
+      "description": "Must be the literal string md. Forces Docusaurus to parse the page as CommonMark so braces in prose cannot break the MDX compiler."
+    },
+    "verb": {
+      "enum": ["select", "mutation", "lifecycle"],
+      "description": "Tool routing verb. select -> run_select_query, mutation -> run_mutation_query, lifecycle -> run_lifecycle_operation. The mutation boolean in emitted JSON is derived from this."
+    },
+    "status": {
+      "enum": ["stable", "draft", "deprecated"],
+      "description": "deprecated entries are excluded from search results by the MCP server but their URLs keep resolving."
+    },
+    "providers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "description": "StackQL provider names. The first element must equal the first path segment of the entry id."
+    },
+    "services": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "description": "StackQL service names touched by the query. Must include the second path segment of the entry id."
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+      "description": "Search facet tags (lowercase). Filterable in query_library_search."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Secondary retrieval terms: synonyms and jargon (e.g. bucket list, opt-in status)."
+    },
+    "intent_keywords": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "type": "string", "minLength": 5 },
+      "description": "Primary retrieval field. Phrase these exactly as users phrase asks, e.g. 'list all s3 buckets'."
+    },
+    "auth": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+      "description": "Environment variable names the query needs at execution time. Names only, never values."
+    },
+    "params": {
+      "type": "array",
+      "description": "Declared template parameters. Every {{placeholder}} in the template must be declared here and every declared param must appear in the template.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "type", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "description": "Placeholder name as it appears inside {{ }} in the template."
+          },
+          "type": {
+            "enum": ["string", "number", "boolean", "identifier", "enum"],
+            "description": "identifier values are validated against ^[A-Za-z_][A-Za-z0-9_-]*$ and inserted verbatim; string/enum values are escaped for the quoted literal position they occupy."
+          },
+          "required": { "type": "boolean", "default": false },
+          "default": {
+            "type": ["string", "number", "boolean"],
+            "description": "Value used when the caller omits the param. A param with a default is effectively optional."
+          },
+          "description": { "type": "string", "minLength": 5 },
+          "example": {
+            "type": ["string", "number", "boolean"],
+            "description": "Realistic example value. Required when there is no default; used by CI for the template render check."
+          },
+          "enum": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Allowed values when type is enum."
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Go RE2 regular expression the value must match (string params only)."
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "description": "Columns the query returns, in projection order.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fan_out", "expensive"],
+      "properties": {
+        "fan_out": {
+          "enum": ["none", "region", "project", "account", "subscription"],
+          "description": "Iteration dimension an agent should warn about before running the query at scale."
+        },
+        "expensive": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]+/[a-z0-9_-]+/[a-z0-9_-]+$"
+      },
+      "description": "Ids of related entries. Must resolve to existing entries."
+    },
+    "last_verified": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Date the query last executed successfully against a live provider. Maintained by the nightly verification job; set manually when first verified."
+    }
+  }
+}

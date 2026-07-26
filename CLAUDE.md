@@ -104,6 +104,34 @@ Each section has an `index.md` landing. Individual reference pages go directly i
 
 Without these rules Netlify serves `.md` as `application/octet-stream` (browsers download instead of display) and crawlers may skip it.
 
+### The query library
+
+`query-library/` masters the StackQL query library: curated, parameterized
+queries published at `/docs/query-library/*` and consumed by the stackql MCP
+server's `query_library_search` / `query_library_get` tools. Entries are
+Markdown with YAML front matter under `query-library/queries/<provider>/<service>/<slug>.md`;
+a Python build step (`query-library/scripts/build-artifacts.py`) compiles them
+into committed artifacts under `static/docs/query-library/` (index.json,
+index.md, manifest.json, per-query .json and .md). A third content-docs
+instance (`id: 'query-library'`, `routeBasePath: '/docs/query-library'`,
+`sidebarPath: false`) renders the HTML pages.
+
+Contract notes (breaking to change - deployed MCP servers depend on them):
+
+- URL paths under `/docs/query-library/` and the raw GitHub fallback path
+  `static/docs/query-library/`
+- `build_id` in manifest.json is a content hash of the library, not the site
+  build id; it must change when and only when library content changes
+- entry ids are permanent (path-derived, `provider/service/slug`)
+
+Query pages carry `format: md` front matter so Docusaurus parses them as
+CommonMark (template braces in prose would break MDX). Never hand-edit
+`static/docs/query-library/`; regenerate it. See
+[query-library/CONTRIBUTING.md](query-library/CONTRIBUTING.md) and
+[query-library/CLAUDE.md](query-library/CLAUDE.md). CI:
+`.github/workflows/query-library-ci.yml` (per PR) and
+`query-library-nightly.yml` (live verification).
+
 ### Hand-rolled local components
 
 [src/components/Gist/index.jsx](src/components/Gist/index.jsx) - local replacement for the unmaintained `react-gist` package (was blocking React 18 upgrade). Drop-in compatible: same `<Gist id="..." />` API. Used by two blog posts.

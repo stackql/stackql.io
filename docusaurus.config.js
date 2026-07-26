@@ -183,7 +183,8 @@ const config = {
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
             'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
-            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 3 },
+            'docusaurus-plugin-content-docs@query-library': { title: 'Query Library', order: 3 },
+            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 4 },
           },
         },
       },
@@ -195,6 +196,34 @@ const config = {
         path: 'ai-content',
         routeBasePath: '/ai',
         sidebarPath: false,
+        editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        // Query library content surface. Sources are authored under
+        // query-library/ and rendered at /docs/query-library/*; the
+        // tool-facing .md/.json artifacts at the same URL prefix are
+        // compiled by query-library/scripts/build-artifacts.py into
+        // static/docs/query-library/ (see query-library/CONTRIBUTING.md).
+        id: 'query-library',
+        path: 'query-library',
+        routeBasePath: '/docs/query-library',
+        sidebarPath: false,
+        // Only index.md and queries/** are docs; everything else in
+        // query-library/ is tooling. Underscore excludes mirror the defaults.
+        exclude: [
+          'schema/**',
+          'scripts/**',
+          'templates/**',
+          'CONTRIBUTING.md',
+          'CLAUDE.md',
+          'README.md',
+          '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          '**/_*/**',
+        ],
+        onInlineTags: 'ignore',
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
       },
     ],
@@ -335,6 +364,8 @@ const config = {
           'language-spec': 'Language Specification',
           're': 'Regular Expressions',
           'mcp': 'MCP',
+          'query-library': 'Query Library',
+          'queries': 'Queries',
         },
       },
       metadata: [
@@ -431,6 +462,10 @@ const config = {
             {
               to: '/docs/mcp/embedded',
               label: 'Embedded MCP',
+            },
+            {
+              to: '/docs/query-library',
+              label: 'Query Library',
             },
             // {
             //   to: 'blog/tags/ai',

@@ -1,0 +1,72 @@
+{
+  "id": "databricks_account/provisioning/workspaces-list",
+  "title": "Databricks workspaces in an account",
+  "description": "Lists all Databricks workspaces in an account with cloud, region and provisioning status.",
+  "mutation": false,
+  "verb": "select",
+  "status": "draft",
+  "providers": [
+    "databricks_account"
+  ],
+  "services": [
+    "provisioning"
+  ],
+  "auth": [
+    "DATABRICKS_CLIENT_ID",
+    "DATABRICKS_CLIENT_SECRET"
+  ],
+  "params": [
+    {
+      "name": "account_id",
+      "type": "string",
+      "required": true,
+      "description": "Databricks account id (GUID)",
+      "example": "00000000-0000-0000-0000-000000000000",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "workspace_id",
+      "type": "integer",
+      "description": "Numeric workspace id"
+    },
+    {
+      "name": "workspace_name",
+      "type": "string",
+      "description": "Workspace display name"
+    },
+    {
+      "name": "cloud",
+      "type": "string",
+      "description": "aws, azure or gcp"
+    },
+    {
+      "name": "aws_region",
+      "type": "string",
+      "description": "Region for AWS-hosted workspaces"
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "description": "Region for GCP-hosted workspaces"
+    },
+    {
+      "name": "workspace_status",
+      "type": "string",
+      "description": "RUNNING, PROVISIONING, FAILED, etc."
+    },
+    {
+      "name": "pricing_tier",
+      "type": "string",
+      "description": "Workspace pricing tier"
+    }
+  ],
+  "cost": {
+    "fan_out": "account",
+    "expensive": false
+  },
+  "template": "SELECT workspace_id, workspace_name, cloud, aws_region, location, workspace_status, pricing_tier FROM databricks_account.provisioning.workspaces WHERE account_id = '{{account_id}}';",
+  "notes": "The region column differs by cloud: aws_region for AWS workspaces, location for GCP, and azure_workspace_info for Azure. Per-workspace resources (clusters, jobs, catalogs) live in the separate databricks_workspace provider keyed by deployment_name.",
+  "doc_url": "https://stackql.io/docs/query-library/queries/databricks_account/provisioning/workspaces-list"
+}

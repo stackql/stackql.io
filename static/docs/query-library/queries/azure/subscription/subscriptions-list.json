@@ -1,0 +1,39 @@
+{
+  "id": "azure/subscription/subscriptions-list",
+  "title": "Azure subscriptions",
+  "description": "Lists subscriptions visible to the credential, tenant-wide; audit only Enabled subscriptions.",
+  "mutation": false,
+  "verb": "select",
+  "status": "stable",
+  "providers": [
+    "azure"
+  ],
+  "services": [
+    "subscription"
+  ],
+  "auth": [
+    "AZURE_TENANT_ID",
+    "AZURE_CLIENT_ID",
+    "AZURE_CLIENT_SECRET"
+  ],
+  "params": [],
+  "outputs": [
+    {
+      "name": "subscriptionId",
+      "type": "string",
+      "description": "Subscription identifier"
+    },
+    {
+      "name": "state",
+      "type": "string",
+      "description": "Enabled, Disabled, Deleted, PastDue or Warned"
+    }
+  ],
+  "cost": {
+    "fan_out": "none",
+    "expensive": false
+  },
+  "template": "SELECT subscriptionId, state FROM azure.subscription.subscriptions;",
+  "notes": "For management-group scoping use azure.management_groups.descendants with groupId.",
+  "doc_url": "https://stackql.io/docs/query-library/queries/azure/subscription/subscriptions-list"
+}

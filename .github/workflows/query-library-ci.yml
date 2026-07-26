@@ -1,0 +1,48 @@
+name: Query Library CI
+
+on:
+  pull_request:
+    paths:
+      - 'query-library/**'
+      - 'static/docs/query-library/**'
+      - '.github/workflows/query-library-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'query-library/**'
+      - 'static/docs/query-library/**'
+      - '.github/workflows/query-library-ci.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install script dependencies
+        run: pip install -r query-library/scripts/requirements.txt
+
+      - name: Validate entries (schema, parity, ids, related refs)
+        run: python query-library/scripts/validate.py
+
+      - name: Check committed artifacts are up to date
+        run: |
+          python query-library/scripts/build-artifacts.py
+          if ! git diff --exit-code -- static/docs/query-library; then
+            echo "::error::static/docs/query-library is stale. Run 'python query-library/scripts/build-artifacts.py' and commit the result."
+            exit 1
+          fi
+
+      - name: Install stackql
+        run: |
+          curl -fsSL https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip -o /tmp/stackql.zip
+          unzip -o /tmp/stackql.zip -d "$HOME/stackql-bin"
+          chmod +x "$HOME/stackql-bin/stackql"
+          "$HOME/stackql-bin/stackql" --version
+
+      - name: Render templates and run stackql preprocessor check (no execution)
+        run: python query-library/scripts/render-check.py --stackql-bin "$HOME/stackql-bin/stackql" --require-binary

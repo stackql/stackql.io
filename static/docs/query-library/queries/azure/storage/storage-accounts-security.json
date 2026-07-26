@@ -1,0 +1,82 @@
+{
+  "id": "azure/storage/storage-accounts-security",
+  "title": "Azure storage accounts security posture",
+  "description": "Lists storage accounts in a subscription with public access, TLS and HTTPS-only settings flattened.",
+  "mutation": false,
+  "verb": "select",
+  "status": "draft",
+  "providers": [
+    "azure"
+  ],
+  "services": [
+    "storage"
+  ],
+  "auth": [
+    "AZURE_TENANT_ID",
+    "AZURE_CLIENT_ID",
+    "AZURE_CLIENT_SECRET"
+  ],
+  "params": [
+    {
+      "name": "subscription_id",
+      "type": "string",
+      "required": true,
+      "description": "Azure subscription id (GUID)",
+      "example": "00000000-0000-0000-0000-000000000000",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "accountName",
+      "type": "string",
+      "description": "Storage account name"
+    },
+    {
+      "name": "resourceGroupName",
+      "type": "string",
+      "description": "Resource group containing the account"
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "description": "Azure region"
+    },
+    {
+      "name": "kind",
+      "type": "string",
+      "description": "StorageV2, BlobStorage, etc."
+    },
+    {
+      "name": "allow_blob_public_access",
+      "type": "string",
+      "description": "Whether containers may be configured for anonymous access"
+    },
+    {
+      "name": "minimum_tls_version",
+      "type": "string",
+      "description": "Minimum TLS version accepted"
+    },
+    {
+      "name": "supports_https_traffic_only",
+      "type": "string",
+      "description": "Whether plain HTTP is rejected"
+    },
+    {
+      "name": "public_network_access",
+      "type": "string",
+      "description": "Enabled or Disabled at the account level"
+    }
+  ],
+  "cost": {
+    "fan_out": "subscription",
+    "expensive": false,
+    "notes": "One list call per subscription when swept tenant-wide"
+  },
+  "related": [
+    "azure/subscription/subscriptions-list"
+  ],
+  "template": "SELECT accountName, resourceGroupName, location, kind, allow_blob_public_access, minimum_tls_version, supports_https_traffic_only, public_network_access FROM azure.storage.vw_accounts_properties WHERE subscriptionId = '{{subscription_id}}';",
+  "notes": "vw_accounts_properties is a provider-defined view over azure.storage.accounts that flattens the properties object. allow_blob_public_access = true only means containers may be configured for anonymous access; actual exposure also requires a public container ACL.",
+  "doc_url": "https://stackql.io/docs/query-library/queries/azure/storage/storage-accounts-security"
+}

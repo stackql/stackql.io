@@ -1,0 +1,83 @@
+name: Query Library Nightly Verification
+
+on:
+  schedule:
+    # 15:00 UTC, after most provider maintenance windows, ~1am AEST
+    - cron: '0 15 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install script dependencies
+        run: pip install -r query-library/scripts/requirements.txt
+
+      - name: Install stackql
+        run: |
+          curl -fsSL https://releases.stackql.io/stackql/latest/stackql_linux_amd64.zip -o /tmp/stackql.zip
+          unzip -o /tmp/stackql.zip -d "$HOME/stackql-bin"
+          chmod +x "$HOME/stackql-bin/stackql"
+          "$HOME/stackql-bin/stackql" --version
+
+      - name: Execute read-only entries against sandbox credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.QL_VERIFY_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.QL_VERIFY_AWS_SECRET_ACCESS_KEY }}
+          GOOGLE_CREDENTIALS: ${{ secrets.QL_VERIFY_GOOGLE_CREDENTIALS }}
+          AZURE_TENANT_ID: ${{ secrets.QL_VERIFY_AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.QL_VERIFY_AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.QL_VERIFY_AZURE_CLIENT_SECRET }}
+          STACKQL_GITHUB_USERNAME: ${{ secrets.QL_VERIFY_GITHUB_USERNAME }}
+          STACKQL_GITHUB_PASSWORD: ${{ secrets.QL_VERIFY_GITHUB_PASSWORD }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.QL_VERIFY_CLOUDFLARE_API_TOKEN }}
+          DATABRICKS_CLIENT_ID: ${{ secrets.QL_VERIFY_DATABRICKS_CLIENT_ID }}
+          DATABRICKS_CLIENT_SECRET: ${{ secrets.QL_VERIFY_DATABRICKS_CLIENT_SECRET }}
+          QUERY_LIBRARY_VERIFY_PARAMS: ${{ secrets.QUERY_LIBRARY_VERIFY_PARAMS }}
+        run: |
+          python query-library/scripts/nightly-verify.py \
+            --stackql-bin "$HOME/stackql-bin/stackql" \
+            --report nightly-verify-report.json
+
+      - name: Regenerate artifacts
+        run: python query-library/scripts/build-artifacts.py
+
+      - name: Commit verification results
+        run: |
+          if git diff --quiet -- query-library static/docs/query-library; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add query-library static/docs/query-library
+          git commit -m 'chore(query-library): nightly verification results'
+          git push
+
+      - name: Open or update issue on failures
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FAILED=$(jq '.failed | length' nightly-verify-report.json)
+          if [ "$FAILED" -eq 0 ]; then
+            echo "no failures"
+            exit 0
+          fi
+          TITLE="Nightly query library verification failures"
+          BODY=$(jq -r '"The following query library entries failed nightly verification and were flipped to draft where previously stable:\n\n" + ([.failed[] | "- `" + .id + "`: " + .error] | join("\n"))' nightly-verify-report.json)
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
