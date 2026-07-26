@@ -38,4 +38,5 @@ vars.sh
 vars.ps1
 
 # Claude Code local settings
-.claude/settings.local.json__pycache__/
+.claude/settings.local.json
+__pycache__/
