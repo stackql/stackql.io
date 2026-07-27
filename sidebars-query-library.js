@@ -27,6 +27,14 @@ function labelFor(id) {
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   queryLibrarySidebar: [
+    // Escape hatch back to the main docs - this instance replaces the main
+    // docs sidebar, so without it there is no visible way back.
+    {
+      type: 'link',
+      href: '/docs',
+      label: 'Back to docs',
+      className: 'ql-sidebar-back-link',
+    },
     {type: 'doc', id: 'index', label: 'Overview'},
     ...providerIds.map((id) => ({
       type: 'category',

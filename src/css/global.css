@@ -735,3 +735,19 @@ table td .nowrap {
 }
 
 /* END custom css for providers page */
+/* Query library sidebar: back link to the main docs (this docs instance
+   replaces the main sidebar, so it needs a visible way back). */
+.ql-sidebar-back-link {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem !important;
+}
+
+.ql-sidebar-back-link .menu__link {
+  font-weight: 600;
+}
+
+.ql-sidebar-back-link .menu__link::before {
+  content: '\2190';
+  margin-right: 0.5rem;
+}
