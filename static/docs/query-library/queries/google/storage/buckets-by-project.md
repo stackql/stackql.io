@@ -13,6 +13,7 @@ intent_keywords:
   - what buckets exist in my project
   - cloud storage bucket inventory
 auth: [GOOGLE_CREDENTIALS]
+permissions: [storage.buckets.list]
 params:
   - name: project
     type: identifier

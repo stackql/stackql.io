@@ -13,6 +13,7 @@ intent_keywords:
   - projects in my organization
   - enumerate google projects
 auth: [GOOGLE_CREDENTIALS]
+permissions: [resourcemanager.projects.list]
 params:
   - name: parent
     type: string

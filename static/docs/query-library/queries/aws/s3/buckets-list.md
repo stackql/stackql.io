@@ -13,6 +13,7 @@ intent_keywords:
   - bucket inventory
   - enumerate buckets
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["cloudcontrol:ListResources", "s3:ListAllMyBuckets"]
 params:
   - name: region
     type: identifier

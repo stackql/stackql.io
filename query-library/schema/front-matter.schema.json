@@ -77,6 +77,11 @@
       "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
       "description": "Environment variable names the query needs at execution time. Names only, never values."
     },
+    "permissions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Provider-native permissions/actions required to execute the template, eg iam:ListUsers, Microsoft.Compute/virtualMachines/read, resourcemanager.projects.list. Declare only what the template's wire calls require; omit entirely when unsure - this feeds least-privilege policy generation and 403 remediation guidance."
+    },
     "params": {
       "type": "array",
       "description": "Declared template parameters. Every {{placeholder}} in the template must be declared here and every declared param must appear in the template.",

@@ -155,6 +155,8 @@ def entry_to_doc(entry: Entry) -> dict:
     }
     if fm.get("auth"):
         doc["auth"] = fm["auth"]
+    if fm.get("permissions"):
+        doc["permissions"] = fm["permissions"]
     doc["params"] = [_param_to_json(p) for p in fm.get("params", [])]
     if fm.get("outputs"):
         doc["outputs"] = [

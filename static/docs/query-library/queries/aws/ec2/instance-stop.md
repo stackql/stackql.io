@@ -13,6 +13,7 @@ intent_keywords:
   - shut down an instance
   - power off ec2
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["ec2:StopInstances"]
 params:
   - name: region
     type: identifier

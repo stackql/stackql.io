@@ -35,6 +35,18 @@ a published id.
      every declared param must appear in the template.
    - Params without a `default` need an `example`; CI uses it to render the
      template for the parse check.
+   - `permissions` (optional) lists the provider-native authorization actions
+     the template's wire calls require - distinct from `auth`, which names the
+     credential env vars for identity. Use the provider's own IAM syntax
+     exactly: AWS `service:Action`, Azure `Microsoft.<RP>/<type>/<verb>`, GCP
+     `service.resource.verb`. Declare only what the calls actually need (this
+     feeds least-privilege policy generation, so over-declaration defeats its
+     purpose), and when unsure omit the field entirely - a wrong permission
+     list is worse than none, because agents relay it verbatim to operators as
+     403 remediation guidance. AWS actions usually mirror the underlying API
+     operation (ListUsers -> `iam:ListUsers`); entries that go through Cloud
+     Control need both the `cloudcontrol:*` action and the underlying service
+     actions.
    - Do not add an `id` key. The id is derived from the file path (`id` is a
      reserved Docusaurus front matter key).
 3. Write the body:
@@ -74,6 +86,10 @@ Nightly:
 - read-only (`verb: select`) stable entries are executed against sandbox
   credentials; `last_verified` is updated on success
 - failing entries are flipped to `status: draft` and an issue is opened
+- aspirational: run the read-only subset under a role built from each entry's
+  declared `permissions` rather than a broad read-only role, turning the
+  declaration into a tested claim (a 403 then means the declaration is
+  incomplete and flags the entry, same as a functional failure)
 
 ## Human surface
 

@@ -13,6 +13,7 @@ intent_keywords:
   - what instances are running
   - ec2 instance inventory
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["ec2:DescribeInstances"]
 params:
   - name: region
     type: identifier

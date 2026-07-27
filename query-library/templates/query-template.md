@@ -12,6 +12,9 @@ intent_keywords:
   - phrase it exactly as a user would ask
   - second phrasing of the same ask
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+# permissions: provider-native IAM actions the wire calls require (optional -
+# omit entirely when unsure; it feeds least-privilege policy generation)
+permissions: ["ec2:DescribeRegions"]
 params:
   - name: region
     type: identifier

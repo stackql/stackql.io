@@ -13,6 +13,7 @@ intent_keywords:
   - which storage accounts allow public access
   - storage account security settings
 auth: [AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET]
+permissions: [Microsoft.Storage/storageAccounts/read]
 params:
   - name: subscription_id
     type: string

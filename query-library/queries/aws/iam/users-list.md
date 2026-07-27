@@ -13,6 +13,7 @@ intent_keywords:
   - what users exist in the account
   - iam user inventory
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["cloudcontrol:ListResources", "iam:ListUsers"]
 params:
   - name: region
     type: identifier

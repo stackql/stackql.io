@@ -13,6 +13,7 @@ intent_keywords:
   - which regions are enabled
   - enumerate aws regions
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["ec2:DescribeRegions"]
 params:
   - name: seed_region
     type: identifier

@@ -16,6 +16,9 @@
     "AZURE_CLIENT_ID",
     "AZURE_CLIENT_SECRET"
   ],
+  "permissions": [
+    "Microsoft.Storage/storageAccounts/read"
+  ],
   "params": [
     {
       "name": "subscription_id",

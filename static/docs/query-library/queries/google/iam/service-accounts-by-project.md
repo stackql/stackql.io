@@ -13,6 +13,7 @@ intent_keywords:
   - what service accounts exist
   - service account inventory
 auth: [GOOGLE_CREDENTIALS]
+permissions: [iam.serviceAccounts.list]
 params:
   - name: project
     type: identifier

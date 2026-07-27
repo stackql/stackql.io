@@ -13,6 +13,7 @@ intent_keywords:
   - what lambda functions exist
   - lambda function inventory
 auth: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY]
+permissions: ["cloudcontrol:ListResources", "lambda:ListFunctions"]
 params:
   - name: region
     type: identifier

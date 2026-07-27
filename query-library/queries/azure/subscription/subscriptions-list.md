@@ -12,6 +12,7 @@ intent_keywords:
   - list azure subscriptions
   - enumerate subscriptions
 auth: [AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET]
+permissions: [Microsoft.Resources/subscriptions/read]
 params: []
 outputs:
   - name: subscriptionId

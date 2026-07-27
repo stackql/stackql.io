@@ -13,6 +13,7 @@ intent_keywords:
   - what vms are running in gcp
   - compute engine instance inventory
 auth: [GOOGLE_CREDENTIALS]
+permissions: [compute.instances.list]
 params:
   - name: project
     type: identifier

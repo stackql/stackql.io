@@ -32,6 +32,7 @@ export default function QueryPageHeader({frontMatter}) {
     verb = 'select',
     status,
     auth = [],
+    permissions = [],
     cost,
     last_verified: lastVerified,
   } = frontMatter;
@@ -68,6 +69,14 @@ export default function QueryPageHeader({frontMatter}) {
           <span className={styles.metaLabel}>Credentials</span>
           <span className={styles.metaValue}>
             <CodeList items={auth} />
+          </span>
+        </div>
+      )}
+      {permissions.length > 0 && (
+        <div className={styles.metaRow}>
+          <span className={styles.metaLabel}>Permissions</span>
+          <span className={styles.metaValue}>
+            <CodeList items={permissions} />
           </span>
         </div>
       )}

@@ -13,6 +13,7 @@ intent_keywords:
   - what virtual machines exist in my subscription
   - azure vm inventory
 auth: [AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET]
+permissions: [Microsoft.Compute/virtualMachines/read]
 params:
   - name: subscription_id
     type: string

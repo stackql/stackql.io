@@ -16,6 +16,9 @@
     "AZURE_CLIENT_ID",
     "AZURE_CLIENT_SECRET"
   ],
+  "permissions": [
+    "Microsoft.Resources/subscriptions/read"
+  ],
   "params": [],
   "outputs": [
     {

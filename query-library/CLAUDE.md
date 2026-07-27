@@ -36,6 +36,13 @@ core repo (`pkg/mcp_server/content/query_library/`).
   stackql instance (the stackql MCP tools `describe_resource` and
   `validate_select_query` are the fastest check). Wrong field names poison agent
   retrieval downstream. New unverified entries stay `status: draft`.
+- `permissions` is provider-native IAM action syntax (`iam:ListUsers`,
+  `Microsoft.Compute/virtualMachines/read`, `compute.instances.list`) and must
+  list only what the template's wire calls require. Omit the field when
+  unsure - agents relay it verbatim as 403 remediation, so a wrong list is
+  worse than none. AWS entries backed by Cloud Control (methods like
+  `create_resource`, `data__Identifier` keys) need `cloudcontrol:ListResources`
+  or `cloudcontrol:GetResource` plus the underlying service actions.
 - Write `intent_keywords` as user asks, not as descriptions ("list all s3
   buckets", not "s3 bucket enumeration").
 
