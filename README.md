@@ -60,12 +60,13 @@ The AI/machine surface (query library artifacts, `.md` companions, `llms.txt`, J
 pip install -r query-library/scripts/requirements.txt
 ```
 
-2. Validate the entries and regenerate the artifacts (`static/docs/query-library/` plus the per-provider `.mdx` stubs - commit both if changed):
+2. Regenerate the artifacts (`static/docs/query-library/` plus the per-provider `.mdx` stubs - commit both if changed):
 
 ```
-yarn ql:validate
 yarn ql:build
 ```
+
+This validates the entry sources first and refuses to emit artifacts if they fail. `yarn ql:validate` runs the same source validation on its own, useful as a fast check while editing entries.
 
 3. Run a full production build and serve it. Algolia values can be dummies for local testing:
 
