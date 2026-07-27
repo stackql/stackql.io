@@ -210,7 +210,7 @@ const config = {
         id: 'query-library',
         path: 'query-library',
         routeBasePath: '/docs/query-library',
-        sidebarPath: false,
+        sidebarPath: require.resolve('./sidebars-query-library.js'),
         // Only index.md and queries/** are docs; everything else in
         // query-library/ is tooling. Underscore excludes mirror the defaults.
         exclude: [
@@ -227,6 +227,9 @@ const config = {
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
       },
     ],
+    // Human browse surface for the query library (landing card grid +
+    // per-provider tables), generated from the built index.json.
+    require.resolve('./plugins/query-library-pages'),
   ],
   presets: [
     [

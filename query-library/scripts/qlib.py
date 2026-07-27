@@ -219,7 +219,11 @@ def render_value(param: dict, value) -> str:
 
 
 def entry_to_index_entry(entry: Entry) -> dict:
-    """Compile one entry to the index.json catalogue row shape (libIndexEntry)."""
+    """Compile one entry to the index.json catalogue row shape (libIndexEntry).
+
+    verb is additive to the frozen contract: the MCP server's libIndexEntry
+    ignores unknown fields, and the site's provider pages need it to badge
+    entries without fetching every per-query document."""
     fm = entry.front_matter
     return {
         "id": entry.id,
@@ -231,6 +235,7 @@ def entry_to_index_entry(entry: Entry) -> dict:
         "keywords": fm.get("keywords", []),
         "intent_keywords": fm.get("intent_keywords", []),
         "mutation": entry.mutation,
+        "verb": entry.verb,
         "status": fm.get("status", "draft"),
         "required_params": [
             p["name"] for p in fm.get("params", []) if p.get("required", False)

@@ -1,5 +1,5 @@
 {
-  "build_id": "ql-8c815a6d88707ffa",
+  "build_id": "ql-78e89b2ea7c92355",
   "entries": [
     {
       "id": "aws/cloud_control/log-group-retention-update",
@@ -28,6 +28,7 @@
         "change cloudwatch retention days"
       ],
       "mutation": true,
+      "verb": "mutation",
       "status": "stable",
       "required_params": [
         "region",
@@ -62,6 +63,7 @@
         "power off ec2"
       ],
       "mutation": true,
+      "verb": "lifecycle",
       "status": "draft",
       "required_params": [
         "region",
@@ -96,6 +98,7 @@
         "ec2 instance inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "region"
@@ -128,6 +131,7 @@
         "enumerate aws regions"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": []
     },
@@ -159,6 +163,7 @@
         "iam user inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": []
     },
@@ -189,6 +194,7 @@
         "lambda function inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "region"
@@ -221,6 +227,7 @@
         "s3 bucket detail"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": [
         "region",
@@ -254,6 +261,7 @@
         "enumerate buckets"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": [
         "region"
@@ -286,6 +294,7 @@
         "azure vm inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "subscription_id"
@@ -319,6 +328,7 @@
         "storage account security settings"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "subscription_id"
@@ -348,6 +358,7 @@
         "enumerate subscriptions"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": []
     },
@@ -378,6 +389,7 @@
         "cloudflare zone inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": []
     },
@@ -407,6 +419,7 @@
         "databricks workspace inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "account_id"
@@ -438,6 +451,7 @@
         "github repository inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": [
         "org"
@@ -470,6 +484,7 @@
         "enumerate google projects"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "stable",
       "required_params": [
         "parent"
@@ -502,6 +517,7 @@
         "compute engine instance inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "project",
@@ -537,6 +553,7 @@
         "service account inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "project"
@@ -569,6 +586,7 @@
         "cloud storage bucket inventory"
       ],
       "mutation": false,
+      "verb": "select",
       "status": "draft",
       "required_params": [
         "project"

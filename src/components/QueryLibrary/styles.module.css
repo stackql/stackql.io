@@ -1,0 +1,115 @@
+.providerCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.providerCard:hover {
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.providerCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.providerLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.providerLogoFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.providerCardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.providerCardBlurb {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.countBadge {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.entryTable {
+  display: table;
+  width: 100%;
+}
+
+.metaPanel {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.metaBadges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.metaRow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 0.25rem;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  min-width: 6.5rem;
+}
+
+.metaValue code {
+  font-size: 0.8rem;
+}
+
+.costAlert {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.lastVerified {
+  margin-left: auto;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.8rem;
+}
+
+.relatedSection {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}

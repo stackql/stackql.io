@@ -1,6 +1,15 @@
 [build]
-  command = "yarn build"
+  # Belt and braces: regenerate the query library artifacts at deploy time so
+  # a stale static/docs/query-library/ commit cannot ship (the PR freshness
+  # gate in query-library-ci.yml stays in force for the raw-GitHub fallback
+  # tier, which serves the committed files). build_id is content-hashed, so
+  # per-deploy regeneration does not invalidate MCP caches on unchanged
+  # content.
+  command = "pip install -r query-library/scripts/requirements.txt && python query-library/scripts/validate.py && python query-library/scripts/build-artifacts.py && yarn build"
   publish = "build"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
 
 # Serve raw markdown companion files with the correct MIME type so AI
 # crawlers and the Ask-AI button's deep links get plain text rather than

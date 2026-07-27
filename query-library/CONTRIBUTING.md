@@ -75,6 +75,22 @@ Nightly:
   credentials; `last_verified` is updated on success
 - failing entries are flipped to `status: draft` and an issue is opened
 
+## Human surface
+
+The rendered site generates its browse pages from the built artifacts, so a
+new provider or entry appears with no extra step once artifacts are rebuilt:
+
+- `/docs/query-library` - landing page with one card per provider, generated
+  from index.json by the site's `query-library-pages` plugin
+- `/docs/query-library/<provider>` - entry table per provider, same source
+- `/docs/query-library/queries/<id>` - the rendered entry, with a metadata
+  panel (verb, providers, credentials, cost warning, last_verified) and
+  related-entry links driven entirely by front matter
+
+For a proper display name, blurb and logo on a brand-new provider's card, add
+it to `src/configs/providers.ts` and `static/img/providers/<provider>/` in the
+site repo; until then a capitalized fallback renders.
+
 ## Publishing model
 
 - `build_id` in `manifest.json` is a content hash of the compiled library, not the
