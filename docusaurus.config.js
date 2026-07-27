@@ -179,6 +179,14 @@ const config = {
     [
       '@stackql/docusaurus-plugin-aeo',
       {
+        companions: {
+          // The query library landing and provider pages are MDX stubs that
+          // mount React components - their raw source is meaningless to LLM
+          // consumers, and the markdown catalogue already lives at
+          // /docs/query-library/index.md (single-segment glob: query pages
+          // under /docs/query-library/queries/** keep their companions).
+          exclude: ['/docs/query-library', '/docs/query-library/*'],
+        },
         llmsTxt: {
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
@@ -227,9 +235,6 @@ const config = {
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
       },
     ],
-    // Human browse surface for the query library (landing card grid +
-    // per-provider tables), generated from the built index.json.
-    require.resolve('./plugins/query-library-pages'),
   ],
   presets: [
     [

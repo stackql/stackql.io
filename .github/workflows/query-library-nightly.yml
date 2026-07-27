@@ -54,7 +54,7 @@ jobs:
 
       - name: Commit verification results
         run: |
-          if git diff --quiet -- query-library static/docs/query-library; then
+          if [ -z "$(git status --porcelain -- query-library static/docs/query-library)" ]; then
             echo "no changes to commit"
             exit 0
           fi

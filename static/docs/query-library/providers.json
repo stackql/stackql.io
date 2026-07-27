@@ -1,0 +1,44 @@
+[
+  {
+    "id": "aws",
+    "title": "AWS",
+    "description": "Cloud computing services by AWS.",
+    "count": 8,
+    "logo": "/img/providers/aws/favicon.ico"
+  },
+  {
+    "id": "azure",
+    "title": "Microsoft Azure",
+    "description": "Cloud computing services offered by Microsoft.",
+    "count": 3,
+    "logo": "/img/providers/azure/favicon.ico"
+  },
+  {
+    "id": "cloudflare",
+    "title": "Cloudflare",
+    "description": "CDN, DNS, security and edge compute platform.",
+    "count": 1,
+    "logo": "/img/providers/cloudflare/favicon.ico"
+  },
+  {
+    "id": "databricks_account",
+    "title": "Databricks Account",
+    "description": "Account management and provisioning for Databricks.",
+    "count": 1,
+    "logo": "/img/providers/databricks/favicon.ico"
+  },
+  {
+    "id": "github",
+    "title": "GitHub",
+    "description": "Web-based version-control and collaboration.",
+    "count": 1,
+    "logo": "/img/providers/github/favicon.ico"
+  },
+  {
+    "id": "google",
+    "title": "Google",
+    "description": "Cloud computing services offered by Google.",
+    "count": 4,
+    "logo": "/img/providers/google/favicon.ico"
+  }
+]

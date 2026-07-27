@@ -78,18 +78,27 @@ Nightly:
 ## Human surface
 
 The rendered site generates its browse pages from the built artifacts, so a
-new provider or entry appears with no extra step once artifacts are rebuilt:
+new provider or entry appears with no extra step once artifacts are rebuilt
+(`build-artifacts.py` also writes the per-provider `.mdx` stubs - commit them
+with the artifacts; the CI freshness gate checks both):
 
-- `/docs/query-library` - landing page with one card per provider, generated
-  from index.json by the site's `query-library-pages` plugin
-- `/docs/query-library/<provider>` - entry table per provider, same source
+- `/docs/query-library` - landing page with one card per provider, driven by
+  the generated `providers.json`
+- `/docs/query-library/<provider>` - entry table per provider (generated
+  `<provider>.mdx` stub in this directory)
 - `/docs/query-library/queries/<id>` - the rendered entry, with a metadata
   panel (verb, providers, credentials, cost warning, last_verified) and
   related-entry links driven entirely by front matter
 
-For a proper display name, blurb and logo on a brand-new provider's card, add
-it to `src/configs/providers.ts` and `static/img/providers/<provider>/` in the
-site repo; until then a capitalized fallback renders.
+All three levels share the query library sidebar, generated per provider
+directory by `sidebars-query-library.js`.
+
+For a proper display name and blurb on a brand-new provider's card, add it to
+`src/configs/providers-data.json`; until then a capitalized fallback renders.
+Logos resolve favicon-first from `static/img/providers/<provider>/`
+(`favicon.svg`, `favicon.png`, `favicon.ico`, then `<provider>.png`); drop a
+favicon file there to change the mark. `_account`/`_workspace` suffixed
+providers fall back to the base brand directory.
 
 ## Publishing model
 

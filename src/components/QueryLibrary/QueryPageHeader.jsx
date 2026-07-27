@@ -1,8 +1,13 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import VerbBadge, {StatusBadge} from './VerbBadge';
-import {providerMeta} from './providerMeta';
+import providersSummary from '@site/static/docs/query-library/providers.json';
 import styles from './styles.module.css';
+
+function providerTitle(id) {
+  const summary = providersSummary.find((p) => p.id === id);
+  return summary ? summary.title : id;
+}
 
 const FAN_OUT_TEXT = {
   region: 'one call per region when swept across regions',
@@ -45,7 +50,7 @@ export default function QueryPageHeader({frontMatter}) {
             to={`/docs/query-library/${p}`}
             style={{textDecoration: 'none'}}
           >
-            {providerMeta(p).title}
+            {providerTitle(p)}
           </Link>
         ))}
         {lastVerified && (

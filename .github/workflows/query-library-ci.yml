@@ -32,8 +32,12 @@ jobs:
       - name: Check committed artifacts are up to date
         run: |
           python query-library/scripts/build-artifacts.py
-          if ! git diff --exit-code -- static/docs/query-library; then
-            echo "::error::static/docs/query-library is stale. Run 'python query-library/scripts/build-artifacts.py' and commit the result."
+          # Covers the static artifacts and the generated provider .mdx
+          # stubs; --porcelain also catches newly created (untracked) files.
+          if [ -n "$(git status --porcelain -- query-library static/docs/query-library)" ]; then
+            git status --porcelain -- query-library static/docs/query-library
+            git diff -- query-library static/docs/query-library | head -100
+            echo "::error::generated files are stale. Run 'python query-library/scripts/build-artifacts.py' and commit the result."
             exit 1
           fi
 
