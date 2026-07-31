@@ -34,3 +34,16 @@
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
+
+# Query library is a separate site (query-library.stackql.io repo) proxied
+# under the canonical path. 200 = proxy rewrite, URL stays on stackql.io.
+# Response headers (content types, CORS, cache) are set by the origin site.
+# CONTRACT: the `from` prefix here must equal `baseUrl` in the
+# query-library.stackql.io repo's docusaurus.config.js (and the `to` strips
+# it, so that origin serves at its root - see the comments in that repo's
+# docusaurus.config.js and netlify.toml). These values must agree forever.
+[[redirects]]
+  from = "/docs/query-library/*"
+  to = "https://query-library.stackql.io/:splat"
+  status = 200
+  force = true

@@ -145,6 +145,11 @@ export const PROVIDER_CATEGORIES = [
         name: 'Anthropic Admin',
         href: 'https://anthropic-admin-provider.stackql.io/',
         icon: '/img/providers/anthropic/favicon.png'
+      },
+      { 
+        name: 'Google Gemini',
+        href: 'https://gemeni-provider.stackql.io/',
+        icon: '/img/providers/gemeni/favicon.png'
       }      
     ]
   },

@@ -50,6 +50,27 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Building the AI surface locally
+
+The AI/machine surface (`.md` companions, `llms.txt`, JSON-LD) is only produced by a full production build - `yarn start` skips all of it because the AEO plugins run in `postBuild`. Run a full production build and serve it; Algolia values can be dummies for local testing:
+
+```
+ALGOLIA_APP_ID=dummy ALGOLIA_API_KEY=dummy ALGOLIA_INDEX_NAME=dummy yarn build
+yarn serve
+```
+
+or PowerShell:
+
+```
+$env:ALGOLIA_APP_ID="dummy"; $env:ALGOLIA_API_KEY="dummy"; $env:ALGOLIA_INDEX_NAME="dummy"
+yarn build
+yarn serve
+```
+
+The served site at `http://localhost:3000` now includes `/llms.txt` and the `.md` twin for every doc and blog page.
+
+The StackQL query library lives in its own repo (query-library.stackql.io) and is served under the canonical path `https://stackql.io/docs/query-library/*` via a Netlify 200 proxy rewrite (see `netlify.toml`). The path 404s when serving this site locally - that is expected, the rewrite only exists on Netlify.
+
 ### Deployment
 
 ```

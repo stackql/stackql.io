@@ -104,6 +104,20 @@ Each section has an `index.md` landing. Individual reference pages go directly i
 
 Without these rules Netlify serves `.md` as `application/octet-stream` (browsers download instead of display) and crawlers may skip it.
 
+### The query library (proxied, not in this repo)
+
+The StackQL query library lives in its own repo/site (query-library.stackql.io)
+and is served under the canonical path `https://stackql.io/docs/query-library/*`
+via a Netlify 200 proxy rewrite in [netlify.toml](netlify.toml). This repo
+holds no library content, build tooling or CI - just the rewrite rule and a
+navbar link to `/docs/query-library/` (an `href`, not `to`, so it is a full
+page load rather than a client-side route). Response headers for the proxied
+path (content types, CORS, cache) come from the origin site, not this repo's
+netlify.toml. The path 404s under `yarn serve`/`yarn start` - expected,
+Netlify-only behaviour. Do not add files under `static/docs/query-library/`:
+Netlify serves matching static files in preference to redirect rules, so any
+file there would shadow the proxied site.
+
 ### Hand-rolled local components
 
 [src/components/Gist/index.jsx](src/components/Gist/index.jsx) - local replacement for the unmaintained `react-gist` package (was blocking React 18 upgrade). Drop-in compatible: same `<Gist id="..." />` API. Used by two blog posts.

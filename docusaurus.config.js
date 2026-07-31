@@ -432,6 +432,16 @@ const config = {
               to: '/docs/mcp/embedded',
               label: 'Embedded MCP',
             },
+            {
+              // Separate site proxied under this path via the Netlify 200
+              // rewrite. pathname:// renders a plain anchor (full page load,
+              // no SPA route, no broken-link check); html label instead of
+              // label suppresses the external-link icon (same-domain URL);
+              // target keeps it in the same tab.
+              href: 'pathname:///docs/query-library/',
+              html: 'Query Library',
+              target: '_self',
+            },
             // {
             //   to: 'blog/tags/ai',
             //   label: 'AI Resources',
