@@ -1,15 +1,6 @@
 [build]
-  # Belt and braces: regenerate the query library artifacts at deploy time so
-  # a stale static/docs/query-library/ commit cannot ship (the PR freshness
-  # gate in query-library-ci.yml stays in force for the raw-GitHub fallback
-  # tier, which serves the committed files). build_id is content-hashed, so
-  # per-deploy regeneration does not invalidate MCP caches on unchanged
-  # content.
-  command = "pip install -r query-library/scripts/requirements.txt && python query-library/scripts/validate.py && python query-library/scripts/build-artifacts.py && yarn build"
+  command = "yarn build"
   publish = "build"
-
-[build.environment]
-  PYTHON_VERSION = "3.12"
 
 # Serve raw markdown companion files with the correct MIME type so AI
 # crawlers and the Ask-AI button's deep links get plain text rather than
@@ -44,35 +35,15 @@
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
 
-# --- Query library (contract surface for the stackql MCP server) ---
-# The server fetches manifest.json, index.json and queries/<id>.json from
-# /docs/query-library/. CORS is open on the whole prefix so browser-based
-# MCP hosts can fetch too. .md files under here inherit the text/markdown
-# rules above.
-
-[[headers]]
-  for = "/docs/query-library/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-
-# Catalogue and manifest: short cache so new builds are picked up quickly
-# (the MCP server re-checks build_id on a 300s TTL).
-[[headers]]
-  for = "/docs/query-library/manifest.json"
-  [headers.values]
-    Content-Type = "application/json; charset=utf-8"
-    Cache-Control = "public, max-age=300, must-revalidate"
-
-[[headers]]
-  for = "/docs/query-library/index.json"
-  [headers.values]
-    Content-Type = "application/json; charset=utf-8"
-    Cache-Control = "public, max-age=300, must-revalidate"
-
-# Per-query JSON documents: content is cached by build_id upstream, so a
-# longer edge cache is safe.
-[[headers]]
-  for = "/docs/query-library/queries/*.json"
-  [headers.values]
-    Content-Type = "application/json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
+# Query library is a separate site (query-library.stackql.io repo) proxied
+# under the canonical path. 200 = proxy rewrite, URL stays on stackql.io.
+# Response headers (content types, CORS, cache) are set by the origin site.
+# CONTRACT: the `from` prefix here must equal `baseUrl` in the
+# query-library.stackql.io repo's docusaurus.config.js (and the `to` strips
+# it, so that origin serves at its root - see the comments in that repo's
+# docusaurus.config.js and netlify.toml). These values must agree forever.
+[[redirects]]
+  from = "/docs/query-library/*"
+  to = "https://query-library.stackql.io/:splat"
+  status = 200
+  force = true

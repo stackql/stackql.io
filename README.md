@@ -52,23 +52,7 @@ This command generates static content into the `build` directory and can be serv
 
 ### Building the AI surface locally
 
-The AI/machine surface (query library artifacts, `.md` companions, `llms.txt`, JSON-LD) is only produced by a full production build - `yarn start` skips all of it because the AEO plugins run in `postBuild`. The Netlify deploy regenerates the query library artifacts automatically; to do the same locally:
-
-1. Install the query library script dependencies (once):
-
-```
-pip install -r query-library/scripts/requirements.txt
-```
-
-2. Regenerate the artifacts (`static/docs/query-library/` plus the per-provider `.mdx` stubs - commit both if changed):
-
-```
-yarn ql:build
-```
-
-This validates the entry sources first and refuses to emit artifacts if they fail. `yarn ql:validate` runs the same source validation on its own, useful as a fast check while editing entries.
-
-3. Run a full production build and serve it. Algolia values can be dummies for local testing:
+The AI/machine surface (`.md` companions, `llms.txt`, JSON-LD) is only produced by a full production build - `yarn start` skips all of it because the AEO plugins run in `postBuild`. Run a full production build and serve it; Algolia values can be dummies for local testing:
 
 ```
 ALGOLIA_APP_ID=dummy ALGOLIA_API_KEY=dummy ALGOLIA_INDEX_NAME=dummy yarn build
@@ -83,25 +67,9 @@ yarn build
 yarn serve
 ```
 
-The served site at `http://localhost:3000` now includes `/llms.txt`, the `.md` twin for every doc and blog page, and the query library contract surface (`/docs/query-library/manifest.json`, `index.json`, `queries/<id>.json|.md`).
+The served site at `http://localhost:3000` now includes `/llms.txt` and the `.md` twin for every doc and blog page.
 
-To test the query library end to end against a local stackql MCP server, point the server's query library base URL at the local site instead of stackql.io:
-
-```
-export STACKQL_QUERY_LIBRARY_BASE_URL="http://localhost:3000/docs/query-library"
-stackql mcp \
-  --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
-```
-
-or PowerShell:
-
-```
-$env:STACKQL_QUERY_LIBRARY_BASE_URL="http://localhost:3000/docs/query-library"
-stackql mcp --mcp.server.type=http --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
-```
-
-A `query_library_search` call against that server should then return `source_tier: primary` with a `source` URL on localhost, and `query_library_get` responses should carry `doc_url` links into the locally served rendered pages. The catalogue is cached against the `build_id` in `manifest.json` on a 300 second TTL (`STACKQL_QUERY_LIBRARY_TTL` to shorten while iterating); re-run `yarn ql:build && yarn build` after editing entries under `query-library/queries/` to pick up changes.
+The StackQL query library lives in its own repo (query-library.stackql.io) and is served under the canonical path `https://stackql.io/docs/query-library/*` via a Netlify 200 proxy rewrite (see `netlify.toml`). The path 404s when serving this site locally - that is expected, the rewrite only exists on Netlify.
 
 ### Deployment
 

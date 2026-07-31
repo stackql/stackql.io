@@ -179,20 +179,11 @@ const config = {
     [
       '@stackql/docusaurus-plugin-aeo',
       {
-        companions: {
-          // The query library landing and provider pages are MDX stubs that
-          // mount React components - their raw source is meaningless to LLM
-          // consumers, and the markdown catalogue already lives at
-          // /docs/query-library/index.md (single-segment glob: query pages
-          // under /docs/query-library/queries/** keep their companions).
-          exclude: ['/docs/query-library', '/docs/query-library/*'],
-        },
         llmsTxt: {
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
             'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
-            'docusaurus-plugin-content-docs@query-library': { title: 'Query Library', order: 3 },
-            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 4 },
+            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 3 },
           },
         },
       },
@@ -204,34 +195,6 @@ const config = {
         path: 'ai-content',
         routeBasePath: '/ai',
         sidebarPath: false,
-        editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        // Query library content surface. Sources are authored under
-        // query-library/ and rendered at /docs/query-library/*; the
-        // tool-facing .md/.json artifacts at the same URL prefix are
-        // compiled by query-library/scripts/build-artifacts.py into
-        // static/docs/query-library/ (see query-library/CONTRIBUTING.md).
-        id: 'query-library',
-        path: 'query-library',
-        routeBasePath: '/docs/query-library',
-        sidebarPath: require.resolve('./sidebars-query-library.js'),
-        // Only index.md and queries/** are docs; everything else in
-        // query-library/ is tooling. Underscore excludes mirror the defaults.
-        exclude: [
-          'schema/**',
-          'scripts/**',
-          'templates/**',
-          'CONTRIBUTING.md',
-          'CLAUDE.md',
-          'README.md',
-          '**/_*.{js,jsx,ts,tsx,md,mdx}',
-          '**/_*/**',
-        ],
-        onInlineTags: 'ignore',
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
       },
     ],
@@ -372,8 +335,6 @@ const config = {
           'language-spec': 'Language Specification',
           're': 'Regular Expressions',
           'mcp': 'MCP',
-          'query-library': 'Query Library',
-          'queries': 'Queries',
         },
       },
       metadata: [
@@ -472,8 +433,14 @@ const config = {
               label: 'Embedded MCP',
             },
             {
-              to: '/docs/query-library',
-              label: 'Query Library',
+              // Separate site proxied under this path via the Netlify 200
+              // rewrite. pathname:// renders a plain anchor (full page load,
+              // no SPA route, no broken-link check); html label instead of
+              // label suppresses the external-link icon (same-domain URL);
+              // target keeps it in the same tab.
+              href: 'pathname:///docs/query-library/',
+              html: 'Query Library',
+              target: '_self',
             },
             // {
             //   to: 'blog/tags/ai',
