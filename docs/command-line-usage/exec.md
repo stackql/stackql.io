@@ -32,7 +32,7 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 | Flag | Description |
 |--|--|
-|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|Output mode, valid values include: `table`(default) `json`, `csv` and `text`, example: `--output json` |
+|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|Output mode, valid values include: `table`(default) `json`, `jsonl` (newline delimited JSON, `ndjson` is accepted as an alias), `csv` and `text`, example: `--output jsonl` |
 |<span class="nowrap">`-i`</span><br/><span class="nowrap">`--infile`</span>|Run query from the specified file if required, if specified any query provided as an argument will be ignored, example: `--infile myquery.iql` |
 |<span class="nowrap">`-q`</span><br/><span class="nowrap">`--iqldata`</span>|Source data for the command using a `json` or `jsonnet` file, example: `--iqldata vars.jsonnet`|
 |<span class="nowrap">`--dryrun`</span>|Dry run flag; preprocessor only will run and output will returned |

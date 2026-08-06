@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Once in a shell authenticated to a cloud provider, you can begin running StackQL queries (`SELECT` queries or DDL - Infrastructure as Code - operations).
 
-By default the StackQL shell will return tabular results, however `json`, `csv` and `text` output formats are available using the `--output` flag, see [Output Modes](/docs/getting-started/output-modes).  
+By default the StackQL shell will return tabular results, however `json`, `jsonl`, `csv` and `text` output formats are available using the `--output` flag, see [Output Modes](/docs/getting-started/output-modes).  
 
 You can change the color scheme for the StackQL shell using the `--colorscheme` flag, as shown below:  
 

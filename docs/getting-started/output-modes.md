@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 See also:  
 [[` exec `]](/docs/command-line-usage/exec) [[` shell `]](/docs/command-line-usage/shell)
 
-Results returned from StackQL queries can be formatted in tabular (table) format, as well as json or csv format.  JSON and CSV formats can be used to interchange data with other programs.  The desired output format is configured using the `--output` StackQL flag.
+Results returned from StackQL queries can be formatted in tabular (table) format, as well as json, jsonl (newline delimited JSON) or csv format.  JSON, JSONL and CSV formats can be used to interchange data with other programs.  The desired output format is configured using the `--output` StackQL flag.
 
 ### `table` Output Format
 Results can be formatted in a table format using the `table` value for the `--output` parameter as shown below (this is the default value for the StackQL interactive shell):
@@ -47,6 +47,21 @@ and zone = 'australia-southeast1-a'" \
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
 ,{"id":"2586731219281477960","name":"demo-instance-2"}]
+```
+
+
+### `jsonl` Output
+Results can be returned in newline delimited JSON (JSON Lines) format using the `jsonl` value for the `--output` parameter as shown below (`ndjson` is accepted as an alias).  Each row is written as a single JSON object on its own line and rows are flushed as they are written, making this output format useful for streaming results to line-oriented tools or piping large result sets to other programs:
+
+```shell
+stackql exec "select id, name from google.compute.instances \
+where project = 'stackql-demo' \
+and zone = 'australia-southeast1-a'" \
+--keyfilepath stackql-demo.json --output jsonl
+
+{"id":"5584456226809282885","name":"demo-instance-3"}
+{"id":"1257085253691867467","name":"demo-instance-1"}
+{"id":"2586731219281477960","name":"demo-instance-2"}
 ```
 
 
