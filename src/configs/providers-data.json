@@ -6,6 +6,7 @@
   {"name": "snowflake", "description": "Cloud data platform for data warehousing and analytics.", "title": "Snowflake"},
   {"name": "databricks_workspace", "description": "Workspace resources and ML operations for Databricks.", "title": "Databricks Workspace"},
   {"name": "databricks_account", "description": "Account management and provisioning for Databricks.", "title": "Databricks Account"},
+  {"name": "clickhouse", "description": "Cloud service for real-time analytics and data warehousing.", "title": "ClickHouse"},
   {"name": "openai", "description": "AI models and services by OpenAI.", "title": "OpenAI"},
   {"name": "anthropic", "description": "AI language models and services powered by Claude.", "title": "Anthropic"},
   {"name": "k8s", "description": "Open source container management platform.", "title": "Kubernetes"},
