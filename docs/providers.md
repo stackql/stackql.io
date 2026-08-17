@@ -86,6 +86,11 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/snowflake/favicon.ico'
       },
       { 
+        name: 'ClickHouse',
+        href: 'https://clickhouse-provider.stackql.io/',
+        icon: '/img/providers/clickhouse/favicon.ico'
+      },
+      { 
         name: 'Confluent',
         href: 'https://confluent-provider.stackql.io/',
         icon: '/img/providers/confluent/favicon.ico'
