@@ -10,7 +10,45 @@ keywords: [stackql, aws, amazon web services, provider, s3, objects, terraform s
 tags: [stackql, aws, amazon web services, provider, s3]
 ---
 
-We've released an update to the [__StackQL AWS provider__](https://aws-provider.stackql.io/), regenerated from the latest AWS service definitions. The `aws` provider now covers __419 services, 6,199 resources and over 18,000 operations__ - up from 414 services, 5,986 resources and 17,451 operations in the previous release.
+We've released an update to the [__StackQL AWS provider__](https://aws-provider.stackql.io/), regenerated from the latest AWS service definitions. Significant additions include:
+
+- 9 new services
+- Over 200 new resources
+- Over 500 new operations
+- Full support for S3 object level CRUD operations
+
+## New Services
+
+Nine services are new in this release:
+
+| Service | Description |
+|---------|-------------|
+| `resiliencehubv2` | The next generation of AWS Resilience Hub - assess and improve the resilience of critical applications at scale, the largest new service in this release |
+| `lambda_microvms` | Create, manage and operate AWS Lambda MicroVMs and their associated MicroVM image environments |
+| `lambda_core` | Shared infrastructure resources for Lambda, including network connectors that give MicroVMs access to resources in your VPC |
+| `agent_registry_control` | Managed catalog for publishing and discovering MCP servers, agents and agent skills - control plane for registries and records |
+| `agent_registry` | Data-plane discovery of approved records published to an Agent Registry |
+| `account_access` | Account access manager - manage applications and entitlements that grant IAM Identity Center principals access to IAM roles across accounts |
+| `supportauthz` | Support authorization - cryptographically signed support permits controlling which actions AWS support operators can perform on your resources |
+| `pricing_plan_manager` | Flat-rate pricing subscriptions - create, approve and cancel subscriptions and associate resources with them |
+| `sagemakerjobruntime` | Agentic RFT runtime - trajectory and transition data for reinforcement fine-tuning jobs |
+
+## Expanded Coverage in Existing Services
+
+- `ec2` - the largest operation count increase in this release: account-level VPC encryption controls (`account_vpc_encryption_controls`), application status checks, capacity reservation cancellation quotes, and a major IPAM build-out covering internet registry associations, route origin authorizations, route protection findings and discovered routes
+- `acm` - public ACME issuance: `acme_accounts`, `acme_endpoints`, `acme_domain_validations` and external account bindings, plus per-domain certificate validation status
+- `quicksight` - agentic BI: `agents`, `spaces`, `knowledge_bases`, approval policies, DLP settings and OAuth client applications
+- `bedrock_agentcore_control` - `datasets`, dataset versions and examples, evaluation `harness_endpoints` and versions, capacity providers and gateway rate limits
+- `wellarchitected` - AI-assisted reviews: agent profiles, goals, contexts and `agent_recommendations` with per-item detail
+- `odb` (Oracle Database@AWS) - autonomous database coverage: `autonomous_databases`, backups, clones, peers, wallet details, Exadata VM clusters and Exascale storage vaults
+- `iotsitewise` - industrial data pipelines: `pipelines`, pipeline executions, enrichment jobs, dataset export jobs, ad hoc `queries` and search
+- `glue` - business catalog additions: `assets`, `asset_types`, `glossaries` and `glossary_terms`
+- `drs` - orchestrated disaster recovery: `recovery_plans`, plan steps and execution tracking
+- `billing` - `credits`, credit allocation histories, billing preferences and enterprise support charge summaries
+- `appconfig` - feature experiments: `experiment_definitions`, runs and run events
+- `healthlake` - FHIR data transformation profiles and jobs
+
+Another 180+ services picked up incremental operations and resources, including `connect`, `securityagent`, `cleanrooms`, `socialmessaging`, `devops_agent` and `artifact`.
 
 ## S3 Object Content Lifecycles
 
@@ -56,38 +94,6 @@ WHERE region = 'ap-southeast-2' AND bucket = 'my-bucket';
 
 Content round-trips byte-for-byte, including multi-MB objects and objects uploaded via multipart upload. Text objects only for now - binary content is not supported and base64 support is deferred.
 
-## New Services
-
-Nine services are new in this release:
-
-| Service | Description |
-|---------|-------------|
-| `resiliencehubv2` | The next generation of AWS Resilience Hub - assess and improve the resilience of critical applications at scale, the largest new service in this release |
-| `lambda_microvms` | Create, manage and operate AWS Lambda MicroVMs and their associated MicroVM image environments |
-| `lambda_core` | Shared infrastructure resources for Lambda, including network connectors that give MicroVMs access to resources in your VPC |
-| `agent_registry_control` | Managed catalog for publishing and discovering MCP servers, agents and agent skills - control plane for registries and records |
-| `agent_registry` | Data-plane discovery of approved records published to an Agent Registry |
-| `account_access` | Account access manager - manage applications and entitlements that grant IAM Identity Center principals access to IAM roles across accounts |
-| `supportauthz` | Support authorization - cryptographically signed support permits controlling which actions AWS support operators can perform on your resources |
-| `pricing_plan_manager` | Flat-rate pricing subscriptions - create, approve and cancel subscriptions and associate resources with them |
-| `sagemakerjobruntime` | Agentic RFT runtime - trajectory and transition data for reinforcement fine-tuning jobs |
-
-## Expanded Coverage in Existing Services
-
-- `ec2` - the largest operation count increase in this release: account-level VPC encryption controls (`account_vpc_encryption_controls`), application status checks, capacity reservation cancellation quotes, and a major IPAM build-out covering internet registry associations, route origin authorizations, route protection findings and discovered routes
-- `acm` - public ACME issuance: `acme_accounts`, `acme_endpoints`, `acme_domain_validations` and external account bindings, plus per-domain certificate validation status
-- `quicksight` - agentic BI: `agents`, `spaces`, `knowledge_bases`, approval policies, DLP settings and OAuth client applications
-- `bedrock_agentcore_control` - `datasets`, dataset versions and examples, evaluation `harness_endpoints` and versions, capacity providers and gateway rate limits
-- `wellarchitected` - AI-assisted reviews: agent profiles, goals, contexts and `agent_recommendations` with per-item detail
-- `odb` (Oracle Database@AWS) - autonomous database coverage: `autonomous_databases`, backups, clones, peers, wallet details, Exadata VM clusters and Exascale storage vaults
-- `iotsitewise` - industrial data pipelines: `pipelines`, pipeline executions, enrichment jobs, dataset export jobs, ad hoc `queries` and search
-- `glue` - business catalog additions: `assets`, `asset_types`, `glossaries` and `glossary_terms`
-- `drs` - orchestrated disaster recovery: `recovery_plans`, plan steps and execution tracking
-- `billing` - `credits`, credit allocation histories, billing preferences and enterprise support charge summaries
-- `appconfig` - feature experiments: `experiment_definitions`, runs and run events
-- `healthlake` - FHIR data transformation profiles and jobs
-
-Another 180+ services picked up incremental operations and resources, including `connect`, `securityagent`, `cleanrooms`, `socialmessaging`, `devops_agent` and `artifact`.
 
 ## Get Started
 
