@@ -45,11 +45,14 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-i`, `--infile`</span> | string | Input file (IQL file) from which queries are read | `{stdin}` |
 | <span class="nowrap">`-q`, `--iqldata`</span> | string | Context (data) file for templating (`json` or `jsonnet` file)| |
 | <span class="nowrap">`--loglevel`</span> | string | Log level, must be one of {`info`, `warn`, `debug`, `fatal`} | `fatal` |
+| <span class="nowrap">`--mcp.config`</span> | string | JSON / YAML configuration object for the [MCP server](/docs/command-line-usage/mcp#mcp-configuration-object) (`stackql mcp` and `stackql srv`) | `{}` |
+| <span class="nowrap">`--mcp.log.format`</span> | string | MCP audit log encoding, `jsonl` or `otel` (OTLP/JSON log records); overrides `server.audit.format` in `--mcp.config`.  See [Log format](/docs/command-line-usage/mcp#log-format).  Available in StackQL releases from `v0.11.660`. | `jsonl` |
+| <span class="nowrap">`--mcp.server.type`</span> | string | MCP server type, one of {`http`, `stdio`, `reverse_proxy`}.  See [MCP server type](/docs/command-line-usage/mcp#mcp-server-type). | `http` |
 | <span class="nowrap">`--metadatattl`</span> | integer | TTL for cached metadata documents, in seconds | `3600` |
 | <span class="nowrap">`--namespaces`</span> | string | JSON / YAML string representing namespaces for caching, views etc | `{}` |
 | <span class="nowrap">`--offline`</span> | flag | Work offline, using cached data | `false` |
 | <span class="nowrap">`-f`, `--outfile`</span> | string | Output file into which results are written | `{stdout}` |
-| <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`} (`ndjson` is accepted as an alias for `jsonl`) | `table` |
+| <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` is accepted as an alias for `jsonl`).  `otel` emits OpenTelemetry log records, see [Output Modes](/docs/getting-started/output-modes#otel-output); available in StackQL releases from `v0.11.660` | `table` |
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
 | <span class="nowrap">`--registry`</span> | string | openapi registry context keyvals in json form |  |
 | <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |
