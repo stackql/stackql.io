@@ -48,6 +48,7 @@ When running the `srv` command with MCP support, the following additional option
 |--|--|
 |<span class="nowrap">`--mcp.server.type`</span>|MCP server type: `http` (in-memory) or `reverse_proxy` (TCP-based)|
 |<span class="nowrap">`--mcp.config`</span>|JSON configuration object for the MCP server (see [MCP documentation](/docs/command-line-usage/mcp))|
+|<span class="nowrap">`--mcp.log.format`</span>|MCP audit log encoding: `jsonl` (default) or `otel` (OTLP/JSON log records); overrides `server.audit.format` in the configuration object|
 
 <br/>
 
