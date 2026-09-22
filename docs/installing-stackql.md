@@ -175,6 +175,8 @@ Instructions for installing StackQL on various different platforms are provided 
   mb: 2
 }}>
 
+  ## Windows
+
   StackQL is available on Windows via Chocolatey, PowerShell install script, and the MSI installer. The x64 (AMD64) build is supported and also runs on ARM64 via emulation. All executables are signed with an Authenticode code-signing certificate.
 
   <Tabs
