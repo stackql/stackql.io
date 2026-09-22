@@ -111,6 +111,7 @@ const config = {
   projectName: 'stackql.io', 
   baseUrlIssueBanner: false,
   trailingSlash: false,
+  clientModules: [require.resolve('./src/clientModules/revealTabAnchors.js')],
   // i18n: {
   //   defaultLocale: 'en',
   //   locales: ['en', 'fr', 'pt-BR', 'ko', 'zh-CN'],
