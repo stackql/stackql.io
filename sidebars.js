@@ -26,6 +26,7 @@ const sidebars = {
         'getting-started/using-a-provider',
         'getting-started/claude-desktop',
         'getting-started/output-modes',
+        'getting-started/otel-recipes',
         'getting-started/variables',
         'getting-started/templating',
       ]
