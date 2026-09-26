@@ -10,6 +10,7 @@
   {"name": "openai", "description": "AI models and services by OpenAI.", "title": "OpenAI"},
   {"name": "anthropic", "description": "AI language models and services powered by Claude.", "title": "Anthropic"},
   {"name": "k8s", "description": "Open source container management platform.", "title": "Kubernetes"},
+  {"name": "gitlab", "description": "Source control, CI/CD and DevSecOps platform (read-only).", "title": "GitLab"},
   {"name": "googleadmin", "description": "Google Workspace identity services.", "title": "Google Admin"},
   {"name": "okta", "description": "Authentication and authorization services.", "title": "Okta"},
   {"name": "entra_id", "description": "Microsoft Entra ID identity and access management.", "title": "Microsoft Entra ID"},
