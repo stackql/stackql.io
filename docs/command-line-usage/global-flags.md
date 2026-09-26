@@ -52,7 +52,8 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--namespaces`</span> | string | JSON / YAML string representing namespaces for caching, views etc | `{}` |
 | <span class="nowrap">`--offline`</span> | flag | Work offline, using cached data | `false` |
 | <span class="nowrap">`-f`, `--outfile`</span> | string | Output file into which results are written | `{stdout}` |
-| <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` is accepted as an alias for `jsonl`).  `otel` emits OpenTelemetry log records, see [Output Modes](/docs/getting-started/output-modes#otel-output); available in StackQL releases from `v0.11.660` | `table` |
+| <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` is accepted as an alias for `jsonl`).  `otel` emits OpenTelemetry log records, see [Output Modes](/docs/getting-started/output-modes#otel-output); available in StackQL releases from `v0.11.660`.  With an exporter configured in `--otel.config`, `otel` records are also pushed to that endpoint | `table` |
+| <span class="nowrap">`--otel.config`</span> | string | JSON / YAML string configuring the `otel` output format; `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms` and `exporter.batch_size` push the records to an OTLP/HTTP logs endpoint, see [Pushing to an OTLP endpoint](/docs/getting-started/output-modes#pushing-to-an-otlp-endpoint) | `{}` |
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
 | <span class="nowrap">`--registry`</span> | string | openapi registry context keyvals in json form |  |
 | <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |

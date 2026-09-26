@@ -174,6 +174,11 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/k8s/favicon.png'
       },
       { 
+        name: 'GitLab',
+        href: 'https://gitlab-provider.stackql.io/',
+        icon: '/img/providers/gitlab/favicon.ico'
+      },
+      { 
         name: 'Firebase',
         href: 'https://firebase-provider.stackql.io/',
         icon: '/img/providers/firebase/favicon.png'
