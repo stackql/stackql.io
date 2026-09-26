@@ -36,13 +36,12 @@ Each query has a stable `stackql.query.hash`, and the recipes filter on it so a 
 
 ## ClickHouse
 
-The OpenTelemetry Collector's ClickHouse exporter, which ClickStack ships, lands log records in `otel_logs` with the attributes as string maps (`ResourceAttributes`, `LogAttributes`) alongside `Timestamp`, `Body`, `TraceId` and `ScopeName`.  Push the records straight to ClickStack's OTLP intake or through a Collector:
+The OpenTelemetry Collector's ClickHouse exporter, which ClickStack ships, lands log records in `otel_logs` with the attributes as string maps (`ResourceAttributes`, `LogAttributes`) alongside `Timestamp`, `Body`, `TraceId` and `ScopeName`.  Point the exporter at ClickStack's OTLP intake or at a Collector:
 
 ```shell
-OTEL_EXPORTER_OTLP_ENDPOINT=http://clickstack.example:4318 \
-OTEL_EXPORTER_OTLP_HEADERS=authorization=$CLICKSTACK_INGESTION_KEY \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\' \
 "select id as identity, name, status, machineType, zone from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'"
 ```
@@ -214,17 +213,16 @@ ORDER BY last_seen DESC, principal, role;
 Send the records to the OTLP receiver of a Datadog Agent (enable the HTTP receiver in the Agent's `otlp_config`, port `4318`) or of an OpenTelemetry Collector running the Datadog exporter.  Datadog's own OTLP intake takes the records directly with the API key as a header; take the regional URL from Datadog's OTLP ingestion documentation.
 
 ```shell
-OTEL_EXPORTER_OTLP_ENDPOINT=http://datadog-agent.example:4318 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://datadog-agent.example:4318/v1/logs" } }' \
 "select id as identity, name, status, machineType, zone from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'"
 ```
 
 ```shell
-OTEL_EXPORTER_OTLP_LOGS_ENDPOINT=<regional OTLP logs intake URL> \
-OTEL_EXPORTER_OTLP_HEADERS=dd-api-key=$DD_API_KEY \
-stackql exec --output otel ...
+stackql exec --output otel ... \
+--otel.config '{ "exporter": { "endpoint": "<regional OTLP logs intake URL>", "headers": { "dd-api-key": "'"$DD_API_KEY"'" } } }'
 ```
 
 ### Attribute mapping
@@ -264,7 +262,7 @@ Monitors on the completion records watch the pipeline itself: a log monitor on `
 
 ## Scheduled CI
 
-A scheduled job makes the series.  The example runs both queries hourly from GitHub Actions: `TRACEPARENT` gives every statement of a run the same trace id, `OTEL_RESOURCE_ATTRIBUTES` stamps the environment, the job name and the run id on every record, and the `.otlp.jsonl` files are kept as artifacts so a failed push still leaves a copy.
+A scheduled job makes the series.  The example runs both queries hourly from GitHub Actions: the exporter is configured once in `OTEL_CONFIG` and passed to `--otel.config`, `TRACEPARENT` gives every statement of a run the same trace id, `OTEL_RESOURCE_ATTRIBUTES` stamps the environment, the job name and the run id on every record, and the `.otlp.jsonl` files are kept as artifacts so a failed push still leaves a copy.
 
 ```yaml
 name: cloud-inventory
@@ -277,18 +275,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      OTEL_EXPORTER_OTLP_ENDPOINT: ${{ vars.OTLP_ENDPOINT }}
-      OTEL_EXPORTER_OTLP_HEADERS: authorization=${{ secrets.OTLP_INGESTION_KEY }}
+      OTEL_CONFIG: '{ "exporter": { "endpoint": "${{ vars.OTLP_LOGS_ENDPOINT }}", "headers": { "authorization": "${{ secrets.OTLP_INGESTION_KEY }}" } } }'
       OTEL_RESOURCE_ATTRIBUTES: deployment.environment=prod,stackql.job=cloud-inventory,stackql.run=${{ github.run_id }}
     steps:
       - uses: stackql/setup-stackql@v2
       - name: snapshot
         run: |
           export TRACEPARENT="00-$(openssl rand -hex 16)-$(openssl rand -hex 8)-01"
-          stackql exec --output otel -f instances.otlp.jsonl \
+          stackql exec --output otel -f instances.otlp.jsonl --otel.config "$OTEL_CONFIG" \
             "select id as identity, name, status, machineType, zone from google.compute.instances \
              where project = 'stackql-demo' and zone = 'australia-southeast1-a'"
-          stackql exec --output otel -f entitlements.otlp.jsonl \
+          stackql exec --output otel -f entitlements.otlp.jsonl --otel.config "$OTEL_CONFIG" \
             "select iam.role || '/' || split_part(json_each.value, ':', 2) as identity, \
              iam.role, split_part(json_each.value, ':', 2) as principal \
              from google.cloudresourcemanager.projects_iam_policies iam, json_each(members) \
@@ -299,4 +296,4 @@ jobs:
           path: "*.otlp.jsonl"
 ```
 
-The same job on any other scheduler needs only the environment variables; `TRACEPARENT` is optional and is generated per process when absent, in which case the statements of one run still share a trace id.
+The same job on any other scheduler needs only the flag and the two environment variables; `TRACEPARENT` is optional and is generated per process when absent, in which case the statements of one run still share a trace id.

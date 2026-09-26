@@ -197,29 +197,24 @@ Each line is also, byte for byte, the body of an OTLP/HTTP `POST /v1/logs` reque
 
 #### Pushing to an OTLP endpoint
 
-The records can be pushed straight to an OTLP/HTTP logs endpoint, as well as being written to the file or stdout, with no additional flags: the exporter is switched on by the standard OpenTelemetry environment variables.
+The records can be pushed straight to an OTLP/HTTP logs endpoint, as well as being written to the file or stdout, by configuring an exporter in the `--otel.config` flag, a JSON or YAML string like the other configuration flags:
 
-| Variable | Purpose |
+```shell
+stackql exec "select id, name from google.compute.instances \
+where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
+--keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+```
+
+| Key | Purpose |
 |--|--|
-|`OTEL_EXPORTER_OTLP_LOGS_ENDPOINT`|Full URL of the logs endpoint, used verbatim, for example `http://localhost:4318/v1/logs`|
-|`OTEL_EXPORTER_OTLP_ENDPOINT`|Base URL used when the logs endpoint is not set; `/v1/logs` is appended|
-|`OTEL_EXPORTER_OTLP_LOGS_HEADERS`, `OTEL_EXPORTER_OTLP_HEADERS`|Request headers as `key=value,key=value` (values may be percent-encoded), typically an ingestion token or API key|
-|`OTEL_EXPORTER_OTLP_LOGS_TIMEOUT`, `OTEL_EXPORTER_OTLP_TIMEOUT`|Request timeout in milliseconds, default `10000`|
-|`OTEL_BLRP_MAX_EXPORT_BATCH_SIZE`|Records per request, default `512`|
+|`exporter.endpoint`|Full URL of the logs endpoint, for example `http://localhost:4318/v1/logs`; required to enable the exporter|
+|`exporter.headers`|Request headers sent with every export, typically an ingestion token or API key|
+|`exporter.timeout_ms`|Request timeout in milliseconds, default `10000`|
+|`exporter.batch_size`|Records per request, default `512`|
 
 <br />
 
-The logs-specific variable wins over its generic counterpart in each case.
+Each statement is one batch: its row records and completion record are sent as a single OTLP/JSON `LogsData` (one resource and scope envelope, one entry in `logRecords` per record), and a large result set is split into requests of at most `batch_size` records as the rows stream, with the final request following the completion record.  `429` and `5xx` responses and connection failures are retried up to four attempts with a doubling backoff from 500ms, honouring `Retry-After` when the server sends one; other errors are not retried.  The file or stream is written regardless, so a failed push leaves a local copy and an error line on stderr.  The exporter speaks OTLP/JSON over HTTP; an endpoint that only accepts protobuf needs a Collector in front of it.
 
-```shell
-OTEL_EXPORTER_OTLP_ENDPOINT=http://clickstack.example:4318 \
-OTEL_EXPORTER_OTLP_HEADERS=authorization=$CLICKSTACK_INGESTION_KEY \
-OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
-stackql exec "select id, name from google.compute.instances \
-where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
-```
-
-Each statement is one batch: its row records and completion record are sent as a single OTLP/JSON `LogsData` (one resource and scope envelope, one entry in `logRecords` per record), and a large result set is split into requests of at most `OTEL_BLRP_MAX_EXPORT_BATCH_SIZE` records as the rows stream, with the final request following the completion record.  `429` and `5xx` responses and connection failures are retried up to four attempts with a doubling backoff from 500ms, honouring `Retry-After` when the server sends one; other errors are not retried.  The file or stream is written regardless, so a failed push leaves a local copy and an error line on stderr.  The exporter speaks OTLP/JSON over HTTP; an endpoint that only accepts protobuf needs a Collector in front of it.
-
-This targets ClickStack's OTLP intake (`http://<host>:4318`, header `authorization=<ingestion API key>`), the OTLP receiver of a Datadog Agent or the Datadog OTLP intake (`dd-api-key=<key>`), and any OpenTelemetry Collector `otlp` receiver.  See [OTel Backend Recipes](/docs/getting-started/otel-recipes) for the inventory, drift and entitlement queries on the receiving side.
+This targets ClickStack's OTLP intake (`http://<host>:4318/v1/logs`, header `authorization: <ingestion API key>`), the OTLP receiver of a Datadog Agent or the Datadog OTLP intake (`dd-api-key: <key>`), and any OpenTelemetry Collector `otlp` receiver.  See [OTel Backend Recipes](/docs/getting-started/otel-recipes) for the inventory, drift and entitlement queries on the receiving side.
