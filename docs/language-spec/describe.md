@@ -34,7 +34,10 @@ type="describe"
 
 ```sql
 DESCRIBE [ METHOD ] [ EXTENDED ] <multipartIdentifier> ;
+DESC [ EXTENDED ] <multipartIdentifier> ;
 ```
+
+`DESC` is accepted as an alias for `DESCRIBE` when describing a resource; `DESCRIBE METHOD` requires the full keyword.
 
 ## Response
 
@@ -85,6 +88,14 @@ Run an extended DESCRIBE statement to list the fields in a resource and their de
 ```sql
 -- Show the available fields in a Compute Engine resource
 DESCRIBE EXTENDED google.compute.instances;
+```
+
+### `DESC` Alias
+`DESC` is shorthand for `DESCRIBE` on a resource, with or without `EXTENDED`.  It is treated as a read-only statement everywhere `DESCRIBE` is, including the MCP server's `run_select_query` tool in `read_only` and `safe` modes.
+
+```sql
+-- Same result as DESCRIBE EXTENDED google.compute.instances
+DESC EXTENDED google.compute.instances;
 ```
 
 ### Basic `DESCRIBE METHOD` Statement

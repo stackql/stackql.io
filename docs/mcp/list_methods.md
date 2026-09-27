@@ -11,7 +11,7 @@ description: MCP tool listing access methods for a StackQL resource
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the access methods (HTTP operations) bound to a resource -- the read methods, mutations, and lifecycle operations available.  This is the tool an agent should call **before writing any query**, because the required `WHERE` parameters are inferred from the chosen read method.
+Returns the access methods (HTTP operations) bound to a resource -- the read methods, mutations, and lifecycle operations available.  This is the tool an agent should call **before writing any query**, because the required `WHERE` parameters are inferred from the chosen read method.  Pick the method whose SQL verb matches the intent and whose required parameters can be supplied, then call [`describe_method`](/docs/mcp/describe_method) on it for the full contract, including the output fields.
 
 See also:
 [[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_resources` ]](/docs/mcp/list_resources) [[ `describe_method` ]](/docs/mcp/describe_method) [[ `validate_select_query` ]](/docs/mcp/validate_select_query)

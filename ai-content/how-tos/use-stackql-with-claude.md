@@ -5,7 +5,7 @@ keywords: [stackql, claude, claude desktop, claude code, mcp, anthropic, cloud i
 proficiencyLevel: Beginner
 faq:
   - question: Does Claude need to know StackQL syntax?
-    answer: No special training is required. Claude discovers the provider schema at runtime through the MCP discovery tools (list_providers, list_methods, describe_resource) and writes standard SQL, which it already does fluently. You interact in natural language; Claude translates to StackQL queries.
+    answer: No special training is required. Claude discovers the provider schema at runtime through the MCP discovery tools (list_providers, list_methods, describe_method) and writes standard SQL, which it already does fluently. You interact in natural language; Claude translates to StackQL queries.
   - question: Will Claude ask before changing my infrastructure?
     answer: Yes, under the default configuration. The StackQL MCP server defaults to safe mode, and Claude Desktop advertises the MCP elicitation capability, so every INSERT, UPDATE, DELETE, or lifecycle operation triggers an approval prompt showing the SQL before it runs. Set mode to read_only to prevent mutations entirely.
   - question: Where do my cloud credentials go?

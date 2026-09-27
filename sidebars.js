@@ -57,7 +57,6 @@ const sidebars = {
         'mcp/list_services',
         'mcp/list_resources',
         'mcp/list_methods',
-        'mcp/describe_resource',
         'mcp/describe_method',
         'mcp/list_registry',
         'mcp/pull_provider',
