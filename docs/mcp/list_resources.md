@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Returns the resources under a `provider.service` -- the third level of the StackQL [resource hierarchy](/docs/getting-started/resource-hierarchy).  Resources are the targets that appear in the `FROM` clause of a StackQL query.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_services` ]](/docs/mcp/list_services) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `describe_resource` ]](/docs/mcp/describe_resource)
+[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_services` ]](/docs/mcp/list_services) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `describe_method` ]](/docs/mcp/describe_method)
 
 * * *
 

@@ -98,6 +98,10 @@ stackql srv \
 
 The `--mcp.log.format` flag selects the audit log encoding: `jsonl` (default) or `otel` (OpenTelemetry OTLP/JSON log records).  It overrides `server.audit.format` in the configuration object.  See [Log format](#log-format).
 
+#### MCP protocol version
+
+The `--mcp.protocol.version` flag sets the newest protocol revision the server advertises: `auto` (default, every supported revision), `2026-07-28` (sessionless only) or an older revision such as `2025-11-25` (that revision and earlier).  It overrides `server.protocol_version` in the configuration object.  See [Pinning the revision](#pinning-the-revision).
+
 #### MCP configuration object
 
 The `--mcp.config` flag accepts a JSON object with the following structure.
@@ -113,6 +117,7 @@ The `--mcp.config` flag accepts a JSON object with the following structure.
 |`server.mode`|Safety contract that gates mutation and lifecycle operations.  One of `read_only`, `safe` (default), `delete_safe`, `full_access`.  See [Server modes](#server-modes).|No|
 |`server.read_only`|**Legacy** boolean alias for `mode: read_only`.  When both fields are set, `mode` wins.|No|
 |`server.stateless`|Serve Streamable HTTP without sessions (no `Mcp-Session-Id`), which is how protocol revision `2026-07-28` is served over HTTP.  Default `false`.  Ignored for `stdio`.  See [Protocol revision support](#protocol-revision-support).|No|
+|`server.protocol_version`|Newest protocol revision advertised: `auto` (default), `2026-07-28` or an older revision such as `2025-11-25`.  `2026-07-28` implies `stateless` for Streamable HTTP.  See [Pinning the revision](#pinning-the-revision).|No|
 |`server.audit`|Audit subsystem configuration, including `audit.format` (`jsonl` or `otel`).  See [Audit log](#audit-log).|No|
 
 ##### Backend configuration (reverse-proxy mode only)
@@ -151,7 +156,7 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 
 ### Protocol revision support
 
-Protocol revision `2026-07-28`, `server.stateless` and the `otel` audit log format are available in StackQL releases from `v0.11.660`.
+Protocol revision `2026-07-28`, `server.stateless` and the `otel` audit log format are available in StackQL releases from `v0.11.660`.  `server.protocol_version` and the `--mcp.protocol.version` flag are available in StackQL releases after `v0.12.718`.
 
 The server speaks every revision of the Model Context Protocol supported by the [Go MCP SDK](https://github.com/modelcontextprotocol/go-sdk) and negotiates per client, so a fleet of mixed clients works against one server.
 
@@ -165,7 +170,7 @@ The server speaks every revision of the Model Context Protocol supported by the 
 
 **stdio** serves every revision on one process: a `2026-07-28` client's first request is served without a handshake and an older client's `initialize` still works.  Nothing needs configuring for Claude Desktop, the npm / PyPI launchers or the Docker image.
 
-**Streamable HTTP** defaults to the stateful, session-per-client model (`Mcp-Session-Id`), which the SDK serves for revisions up to `2025-11-25`.  A `2026-07-28` client learns that from `server/discover` and negotiates down, so existing HTTP integrations keep their sessions and their approval prompts unchanged.  Set `server.stateless` to serve `2026-07-28` natively over HTTP:
+**Streamable HTTP** defaults to the stateful, session-per-client model (`Mcp-Session-Id`), which the SDK serves for revisions up to `2025-11-25`.  A `2026-07-28` request is answered with JSON-RPC error `-32022` (unsupported protocol version; a plain HTTP 400 in releases up to `v0.12.718`) whose `data.supported` lists the handshake revisions, and `server/discover` advertises the same, so the client negotiates down and existing HTTP integrations keep their sessions and their approval prompts unchanged.  Set `server.stateless` (or pin the revision to `2026-07-28`, [below](#pinning-the-revision)) to serve `2026-07-28` natively over HTTP:
 
 ```bash
 stackql mcp \
@@ -173,9 +178,38 @@ stackql mcp \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "stateless": true}}'
 ```
 
-A sessionless server issues no `Mcp-Session-Id`, keeps `tools/list`, `prompts/list` and `resources/list` connection-invariant, and runs the approval round trip through `input_required`.  It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at initialise (each request gets an ephemeral session), so older clients cannot approve gated writes on a sessionless server.  Choose `stateless` for current-revision hosts and the default for a fleet that still includes older clients.
+A sessionless server issues no `Mcp-Session-Id`, answers `GET` and `DELETE` with 405 (there is no session to tear down), keeps `tools/list`, `prompts/list` and `resources/list` connection-invariant, and runs the approval round trip through `input_required`.  It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at initialise (each request gets an ephemeral session), so older clients cannot approve gated writes on a sessionless server.  Choose `stateless` for current-revision hosts and the default for a fleet that still includes older clients.
 
 The server holds no cross-call state: mode, audit and provider credentials are process-level configuration, so nothing needs to move behind explicit handles.
+
+#### Pinning the revision
+
+By default the server advertises every supported revision and negotiates per client.  The `--mcp.protocol.version` flag, or `server.protocol_version` in the configuration object (the flag wins), sets the newest revision advertised:
+
+```bash
+# sessionless only; stateless Streamable HTTP is implied
+stackql mcp \
+  --mcp.server.type=http \
+  --mcp.protocol.version=2026-07-28 \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
+
+# handshake lifecycle only
+stackql mcp --mcp.server.type=stdio --mcp.protocol.version=2025-11-25
+```
+
+| Value | Advertised | Effect |
+|--|--|--|
+|`auto` (default) or absent|Every supported revision.|Negotiation as above: the highest revision both sides speak.|
+|`2026-07-28`|`2026-07-28` only.|Sessionless only, and `stateless` is implied for Streamable HTTP.  An older client's `initialize` is answered with `2025-11-25`, the cue for that client to disconnect rather than read the answer as the new lifecycle.|
+|`2025-11-25` (or any older revision)|That revision and everything before it.|Handshake lifecycle only: a `2026-07-28` request gets JSON-RPC error `-32022` with `data.supported` listing the advertised revisions, so the client can renegotiate.  Older handshake clients keep their own revision.|
+
+<br />
+
+Any other value fails configuration validation at startup, and the error names the legal values.
+
+#### Transport limits
+
+Streamable HTTP request bodies are capped at 4 MiB (HTTP 413 beyond it) and a single `stdio` frame at 8 MiB.  Neither limit is configurable; both sit far above any SQL statement the server accepts.
 
 * * *
 
@@ -295,7 +329,7 @@ Every tool call writes one record to the configured audit sink, as JSONL by defa
 |`decision`|`allow` / `refuse_immediate` / `needs_approval_accepted` / `needs_approval_declined` / `needs_approval_cancelled` / `needs_approval_unavailable`.|
 |`query_class`|`select` / `mutation_create` / `mutation_delete` / `lifecycle` / `unknown`.|
 |`sql`|SQL string for query tools (`run_select_query`, `run_mutation_query`, `run_lifecycle_operation`, `validate_select_query`).|
-|`args`|Hierarchy fields for metadata tools (`list_*`, `describe_*`); SQL + `row_limit` for query tools.|
+|`args`|Hierarchy fields for metadata tools (`list_*`, `describe_method`); SQL + `row_limit` for query tools.|
 |`duration_ms`|Wall-clock duration of the gate + handler.|
 |`error`|Error message if the tool errored or was refused.|
 
@@ -424,9 +458,8 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`list_providers`](/docs/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
 |[`list_services`](/docs/mcp/list_services)|Table|Services under a provider.|`provider`|
 |[`list_resources`](/docs/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
-|[`list_methods`](/docs/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
-|[`describe_resource`](/docs/mcp/describe_resource)|KV|Output fields for a resource's primary read method.|`provider`, `service`, `resource`|
-|[`describe_method`](/docs/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED).|`provider`, `service`, `resource`, `method`|
+|[`list_methods`](/docs/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
+|[`describe_method`](/docs/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
 |[`validate_select_query`](/docs/mcp/validate_select_query)|KV|Parse and plan a `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only.|`sql`|
 |[`run_select_query`](/docs/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
 |[`run_mutation_query`](/docs/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
@@ -434,6 +467,12 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`list_registry`](/docs/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
 |[`pull_provider`](/docs/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
 |[`reload_credentials`](/docs/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
+
+:::note
+
+`describe_resource` was retired in StackQL releases after `v0.12.718`.  A resource has no single field list, because each access method returns its own shape, so column names come from [`describe_method`](/docs/mcp/describe_method) for the method a query routes to.  The SQL [`DESCRIBE`](/docs/language-spec/describe) statement is unchanged.
+
+:::
 
 ### Available MCP prompts
 
@@ -451,6 +490,7 @@ One static prompt is published.
 |--|--|
 |`--mcp.server.type`|MCP server type: `http`, `stdio`, or `reverse_proxy` (the latter is used with `stackql srv`).|
 |`--mcp.config`|JSON configuration object for the MCP server.  YAML is also accepted.|
+|`--mcp.protocol.version`|Newest protocol revision advertised: `auto` (default), `2026-07-28` or an older revision such as `2025-11-25`.  See [Pinning the revision](#pinning-the-revision).|
 |`--env.file`|Dotenv-style credentials file sourced at startup and re-sourced on demand by the `reload_credentials` tool.  See [Credential (re)sourcing](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|TCP port for the PostgreSQL wire-protocol server (used with `stackql srv`).|
 |`-H`, `--help`|Print help information.|

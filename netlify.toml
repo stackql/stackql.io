@@ -47,3 +47,10 @@
   to = "https://query-library.stackql.io/:splat"
   status = 200
   force = true
+
+# describe_resource was retired as an MCP tool (stackql PR #796); its page
+# redirects to describe_method, the per-method source of column names.
+[[redirects]]
+  from = "/docs/mcp/describe_resource"
+  to = "/docs/mcp/describe_method"
+  status = 301

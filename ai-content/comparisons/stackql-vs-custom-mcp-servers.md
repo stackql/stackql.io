@@ -27,7 +27,7 @@ Build a **custom MCP server** when:
 Use **StackQL's MCP server** when:
 
 - The domain is cloud and SaaS infrastructure - AWS, Azure, Google Cloud, GitHub, Databricks, Snowflake, Okta, and the rest of the provider registry - where the operation count makes per-operation tools impractical.
-- You want the agent to discover capability at runtime (`list_providers` -> `list_services` -> `list_resources` -> `list_methods` -> `describe_resource`) instead of being limited to tools someone anticipated.
+- You want the agent to discover capability at runtime (`list_providers` -> `list_services` -> `list_resources` -> `list_methods` -> `describe_method`) instead of being limited to tools someone anticipated.
 - You need governed writes: the four-mode safety contract (`read_only`, `safe`, `delete_safe`, `full_access`) with elicitation-based human approval and an always-on audit log, rather than safety logic you write and maintain yourself.
 - You want one credential and policy surface for the whole estate instead of one bespoke server per provider.
 

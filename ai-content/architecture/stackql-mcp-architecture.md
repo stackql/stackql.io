@@ -31,7 +31,7 @@ Configuration is a JSON (or YAML) object passed via `--mcp.config`, covering tra
 
 Fourteen tools, each returning a rendered text view for the LLM plus a typed structured payload:
 
-- **Discovery**: `list_providers`, `list_services`, `list_resources`, `list_methods`, `describe_resource`, `describe_method` - the hierarchy walk that reveals required `WHERE` parameters before any query is written.
+- **Discovery**: `list_providers`, `list_services`, `list_resources`, `list_methods`, `describe_method` - the hierarchy walk that reveals required `WHERE` parameters before any query is written.
 - **Registry**: `list_registry` (available providers and versions), `pull_provider` (install into the local cache).
 - **Validation**: `validate_select_query` - parse and plan a `SELECT` without executing.
 - **Execution**: `run_select_query` (reads), `run_mutation_query` (`INSERT`/`UPDATE`/`REPLACE`/`DELETE` - real side effects), `run_lifecycle_operation` (`EXEC`).

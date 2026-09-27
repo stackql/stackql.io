@@ -47,6 +47,7 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--loglevel`</span> | string | Log level, must be one of {`info`, `warn`, `debug`, `fatal`} | `fatal` |
 | <span class="nowrap">`--mcp.config`</span> | string | JSON / YAML configuration object for the [MCP server](/docs/command-line-usage/mcp#mcp-configuration-object) (`stackql mcp` and `stackql srv`) | `{}` |
 | <span class="nowrap">`--mcp.log.format`</span> | string | MCP audit log encoding, `jsonl` or `otel` (OTLP/JSON log records); overrides `server.audit.format` in `--mcp.config`.  See [Log format](/docs/command-line-usage/mcp#log-format).  Available in StackQL releases from `v0.11.660`. | `jsonl` |
+| <span class="nowrap">`--mcp.protocol.version`</span> | string | Newest MCP protocol revision advertised, `auto`, `2026-07-28` (sessionless only) or an older revision such as `2025-11-25`; overrides `server.protocol_version` in `--mcp.config`.  See [Pinning the revision](/docs/command-line-usage/mcp#pinning-the-revision).  Available in StackQL releases after `v0.12.718`. | `auto` |
 | <span class="nowrap">`--mcp.server.type`</span> | string | MCP server type, one of {`http`, `stdio`, `reverse_proxy`}.  See [MCP server type](/docs/command-line-usage/mcp#mcp-server-type). | `http` |
 | <span class="nowrap">`--metadatattl`</span> | integer | TTL for cached metadata documents, in seconds | `3600` |
 | <span class="nowrap">`--namespaces`</span> | string | JSON / YAML string representing namespaces for caching, views etc | `{}` |

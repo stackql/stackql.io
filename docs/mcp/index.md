@@ -59,14 +59,9 @@ export const MCP_TOOL_CATEGORIES = [
         description: 'Access methods available for a resource'
       },
       {
-        name: 'describe_resource',
-        href: '/docs/mcp/describe_resource',
-        description: 'Output fields of a resource'
-      },
-      {
         name: 'describe_method',
         href: '/docs/mcp/describe_method',
-        description: 'Full I/O contract of one access method'
+        description: 'Full I/O contract of one access method: inputs and output fields'
       }
     ]
   },
