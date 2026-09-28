@@ -91,6 +91,11 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/clickhouse/favicon.ico'
       },
       { 
+        name: 'Fivetran',
+        href: 'https://fivetran-provider.stackql.io/',
+        icon: '/img/providers/fivetran/favicon.png'
+      },
+      { 
         name: 'Confluent',
         href: 'https://confluent-provider.stackql.io/',
         icon: '/img/providers/confluent/favicon.ico'
