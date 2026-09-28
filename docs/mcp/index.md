@@ -13,6 +13,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 import DocCardList from '@theme/DocCardList';
+import ThemedImage from '@theme/ThemedImage';
 import React from 'react';
 import { FaRobot } from 'react-icons/fa';
 
@@ -142,7 +143,7 @@ export const ToolContent = () => {
   return (
     <>
       <blockquote>
-        These are the tools exposed by the StackQL <a href="/docs/command-line-usage/mcp">MCP server</a>.  Availability of mutation and lifecycle tools depends on the server mode (<code>read_only</code>, <code>safe</code>, <code>delete_safe</code>, <code>full_access</code>).
+        These are the tools exposed by the StackQL <a href="/docs/command-line-usage/mcp">MCP server</a>.  Availability of mutation and lifecycle tools depends on the server mode (<code>read_only</code>, <code>safe</code>, <code>delete_safe</code>, <code>full_access</code>). For information on installing the MCP server locally see <a href="/docs/installing-stackql#prebuilt-mcpb-bundle">here</a>.
       </blockquote>
 
       {MCP_TOOL_CATEGORIES.map(category => (
@@ -165,6 +166,19 @@ export const ToolContent = () => {
 
 <div className="row">
   <div className="col col--9">
+    <p>
+      <a href="https://www.claudeai.directory/launches/stackql-mcp-server" target="_blank" rel="noopener noreferrer">
+        <ThemedImage
+          alt="StackQL MCP Server - Listed on Claude AI Directory"
+          width="220"
+          height="54"
+          sources={{
+            light: 'https://www.claudeai.directory/badge/stackql-mcp-server',
+            dark: 'https://www.claudeai.directory/badge/stackql-mcp-server?theme=dark',
+          }}
+        />
+      </a>
+    </p>
     <ToolContent />
   </div>
   <div className="col col--3">
