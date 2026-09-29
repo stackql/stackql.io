@@ -189,6 +189,12 @@ export const PROVIDER_CATEGORIES = [
         icon: '/img/providers/firebase/favicon.png'
       },
       { 
+        name: 'Railway',
+        href: 'https://railway-provider.stackql.io/',
+        icon: '/img/providers/railway/favicon.ico',
+        invertOnDark: true
+      },
+      { 
         name: 'Vercel',
         href: 'https://vercel-provider.stackql.io/',
         icon: '/img/providers/vercel/favicon.ico'
