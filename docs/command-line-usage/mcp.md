@@ -156,7 +156,7 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 
 ### Protocol revision support
 
-Protocol revision `2026-07-28`, `server.stateless` and the `otel` audit log format are available in StackQL releases from `v0.11.660`.  `server.protocol_version` and the `--mcp.protocol.version` flag are available in StackQL releases after `v0.12.718`.
+Protocol revision `2026-07-28`, `server.stateless` and the `otel` audit log format are available in StackQL releases from `v0.11.660`.  `server.protocol_version` and the `--mcp.protocol.version` flag are available in StackQL releases from `v0.12.732`.
 
 The server speaks every revision of the Model Context Protocol supported by the [Go MCP SDK](https://github.com/modelcontextprotocol/go-sdk) and negotiates per client, so a fleet of mixed clients works against one server.
 
@@ -209,7 +209,7 @@ Any other value fails configuration validation at startup, and the error names t
 
 #### Transport limits
 
-Streamable HTTP request bodies are capped at 4 MiB (HTTP 413 beyond it) and a single `stdio` frame at 8 MiB.  Neither limit is configurable; both sit far above any SQL statement the server accepts.
+Streamable HTTP request bodies are capped at 4 MiB (HTTP 413 beyond it), JSON nested deeper than 1000 levels is rejected before parsing, and a single `stdio` frame is capped at 8 MiB.  None of these limits is configurable; all sit far above any SQL statement the server accepts.
 
 * * *
 
@@ -470,7 +470,7 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 
 :::note
 
-`describe_resource` was retired in StackQL releases after `v0.12.718`.  A resource has no single field list, because each access method returns its own shape, so column names come from [`describe_method`](/docs/mcp/describe_method) for the method a query routes to.  The SQL [`DESCRIBE`](/docs/language-spec/describe) statement is unchanged.
+`describe_resource` was retired in StackQL `v0.12.732`; MCP clients, prompts or agent instructions that called it should call [`list_methods`](/docs/mcp/list_methods) followed by `describe_method` instead.  A resource has no single field list, because each access method returns its own shape, so column names come from [`describe_method`](/docs/mcp/describe_method) for the method a query routes to.  The SQL [`DESCRIBE`](/docs/language-spec/describe) statement is unchanged.
 
 :::
 

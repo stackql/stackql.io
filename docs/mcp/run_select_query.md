@@ -24,7 +24,7 @@ See also:
 
 | Argument | Required | Description |
 |--|--|--|
-|`sql`|Yes|A `SELECT` statement.|
+|`sql`|Yes|A `SELECT` statement.  Metadata statements (`SHOW`, `DESCRIBE`, `DESC`, `EXPLAIN`) are classed as read-only by the policy gate and accepted too; `DESC` is recognised in StackQL releases from `v0.12.732`.|
 |`row_limit`|No|Cap on the number of rows returned to the client.  `0` (default) means no client-side cap.|
 
 * * *

@@ -43,6 +43,8 @@ FROM { <multipartIdentifier> | <joinStatement(s)> }
 [ UNION <selectStatement> ];
 ```
 
+A `JOIN` with no `ON` clause is treated as a `CROSS JOIN`, so the join condition can be given in the `WHERE` clause instead.  StackQL releases before `v0.12.732` fail to plan a condition-less `JOIN`.
+
 * * *
 
 ## Examples
