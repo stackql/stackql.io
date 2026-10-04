@@ -25,7 +25,7 @@ StackQL's MCP server is built into the engine binary and publishes the StackQL c
 | Dual-server, in-memory | `stackql srv --mcp.server.type=http --pgsrv.port <port>` | MCP and PostgreSQL wire protocol from one process |
 | Reverse proxy | `stackql srv --mcp.server.type=reverse_proxy` | MCP requests dispatched to a backing StackQL Postgres server via DSN; supports workload separation and TLS |
 
-Configuration is a JSON (or YAML) object passed via `--mcp.config`, covering transport, address, TLS certificate paths, mode, audit settings, and optional `enabled_tools` / `enabled_prompts` allowlists for publishing a narrowed surface (for example, a read-only inventory server exposing only `server_info` and `list_providers`).
+Configuration is a JSON (or YAML) object passed via `--mcp.config`, covering transport, address, TLS certificate paths, client authentication, mode, audit settings, and optional `enabled_tools` / `enabled_prompts` allowlists for publishing a narrowed surface (for example, a read-only inventory server exposing only `server_info` and `list_providers`).  From `v0.12.742` the HTTP transport requires either a pre-shared bearer token (`server.auth_token_env_var`) or the explicit `server.allow_unauthenticated` opt-in; cross-origin browser requests are refused.
 
 ## The tool surface
 
@@ -51,7 +51,7 @@ One static prompt, `write_safe_select`, teaches the method-discovery workflow.
 | `delete_safe` | allow | needs approval | needs approval |
 | `full_access` | allow | allow | allow |
 
-"Needs approval" is implemented with MCP elicitation: the server sends the pending action - tool, query class, SQL - to the client, and a human accepts or declines. Clients that do not advertise elicitation get a refusal pointing the operator at `full_access`, which makes unattended mutation an explicit opt-in rather than a default. The mode is global per server; there are no per-tool overrides.
+"Needs approval" is implemented with MCP elicitation: the server sends the pending action - tool, query class, SQL - to the client, and a human accepts or declines. Clients that do not advertise elicitation get a refusal pointing the operator at `full_access`, which makes unattended mutation an explicit opt-in rather than a default. The mode is global per server; there are no per-tool overrides.  A payload holding several statements is gated by its most privileged statement (from `v0.12.742`), and `validate_select_query` accepts exactly one statement.
 
 ## The audit subsystem
 

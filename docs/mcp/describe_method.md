@@ -27,6 +27,14 @@ See also:
 |`resource`|Yes|Resource under `provider.service`.|
 |`method`|Yes|Method name as returned by [`list_methods`](/docs/mcp/list_methods).|
 
+<br/>
+
+:::info
+
+Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built.
+
+:::
+
 * * *
 
 ## Output

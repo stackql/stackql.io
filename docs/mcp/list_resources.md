@@ -25,6 +25,14 @@ See also:
 |`provider`|Yes|Provider name.|
 |`service`|Yes|Service under that provider.|
 
+<br/>
+
+:::info
+
+Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built.
+
+:::
+
 * * *
 
 ## Output

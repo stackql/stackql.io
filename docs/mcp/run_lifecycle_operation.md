@@ -22,6 +22,14 @@ Gated by the server [mode](/docs/command-line-usage/mcp#server-modes):
 |`delete_safe`|needs approval|
 |`full_access`|allowed|
 
+<br/>
+
+:::info
+
+A payload holding several statements is gated by its most privileged statement
+
+:::
+
 When approval is needed and the client did not advertise elicitation, the call is refused.
 
 See also:

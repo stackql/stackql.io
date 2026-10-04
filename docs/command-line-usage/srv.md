@@ -27,6 +27,8 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 
 :::
 
+Parameters sent over the extended query protocol (`Parse` / `Bind` / `Execute`, as used by `psycopg` 3, `pgx` and JDBC) are bound server side as string literals.  From `v0.12.742` a `$n` placeholder inside a string literal, quoted identifier or comment is left alone, backslashes in parameter values are escaped, and a text value of `NULL` stays the string `NULL` (SQL `NULL` is carried separately).
+
 ### Server Options
 
 | Option | Description |
@@ -52,6 +54,12 @@ When running the `srv` command with MCP support, the following additional option
 |<span class="nowrap">`--mcp.protocol.version`</span>|Newest MCP protocol revision advertised: `auto` (default), `2026-07-28` (sessionless only) or an older revision such as `2025-11-25`; overrides `server.protocol_version` in the configuration object|
 
 <br/>
+
+:::info[Breaking change in v0.12.742]
+
+From `v0.12.742` the MCP HTTP transport (`--mcp.server.type=http` or `reverse_proxy`) refuses to start unless the configuration object names a bearer token with `server.auth_token_env_var` or opts out explicitly with `"allow_unauthenticated": true`.  See [HTTP client authentication](/docs/command-line-usage/mcp#http-client-authentication).
+
+:::
 
 :::tip
 
