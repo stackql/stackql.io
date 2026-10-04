@@ -17,11 +17,12 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
-// The provider catalog (src/data/providers.js) drives the tiles on
-// /docs/providers, this dropdown and the /providers/<slug> and
-// /registry/<slug> alias routes (plugins/provider-redirects). The dropdown
-// lists the entries flagged `featured`, in catalog order.
-const { FEATURED_PROVIDERS } = require('./src/data/providers');
+// The provider catalog (config: src/configs/providers.json, read by
+// src/lib/providers.js) drives the tiles on /docs/providers, this dropdown
+// and the /providers/<slug> and /registry/<name> redirect routes
+// (plugins/provider-redirects). The dropdown lists the entries flagged
+// `featured`, in catalog order.
+const { FEATURED_PROVIDERS } = require('./src/lib/providers');
 
 const providerDropDownListItems = [
   ...FEATURED_PROVIDERS.map(({ name, shortName, slug }) => ({

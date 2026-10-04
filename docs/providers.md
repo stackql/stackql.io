@@ -13,10 +13,10 @@ image: "/img/stackql-featured-image.png"
 import DocCardList from '@theme/DocCardList';
 import React from 'react';
 
-{/* Provider catalog: src/data/providers.js is the single source of truth for the
+{/* Provider catalog: src/configs/providers.json is the single source of truth for the
     tiles below, the navbar Providers dropdown and the /providers/<slug> and
     /registry/<slug> redirects. Add providers there, not here. */}
-import { PROVIDER_CATEGORIES } from '@site/src/data/providers';
+import { PROVIDER_CATEGORIES } from '@site/src/lib/providers';
 
 {/* Custom TOC Component - Now generated from data */}
 export const CustomTOC = () => {

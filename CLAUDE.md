@@ -140,16 +140,16 @@ file there would shadow the proxied site.
 
 ### Provider catalog and the `/providers/<slug>` aliases
 
-[src/data/providers.js](src/data/providers.js) is the single source of truth for everything provider-related on this site. Its `PROVIDER_CATEGORIES` (categories of `{ name, href, icon, invertOnDark?, featured?, shortName?, registryAliases? }`) drives:
+[src/configs/providers.json](src/configs/providers.json) is the single source of truth for everything provider-related on this site: config, not code. It is an array of categories, each with `providers` of `{ name, href, icon, invertOnDark?, featured?, shortName?, registryAliases? }`. The code that reads it is [src/lib/providers.js](src/lib/providers.js), which validates it, derives each provider's `slug` and `path` and exposes `PROVIDER_CATEGORIES`, `FEATURED_PROVIDERS`, `providerRoutes()` and `registryRoutes()`. Nothing else in the repo holds provider lists; the former `src/configs/providers-data.json`, `providers.ts` and the unused `ProviderCards` component were removed. The catalog drives:
 
-- the tiles and table of contents on [docs/providers.md](docs/providers.md), which imports it. Tiles link to `/providers/<slug>`, not straight to the microsite.
+- the tiles and table of contents on [docs/providers.md](docs/providers.md), which imports from `src/lib/providers`. Tiles link to `/providers/<slug>`, not straight to the microsite.
 - the navbar "Providers" dropdown in [docusaurus.config.js](docusaurus.config.js): entries with `featured: true`, labelled by `shortName` or `name`, in catalog order
 - two families of redirect routes registered by the local plugin [plugins/provider-redirects/index.js](plugins/provider-redirects/index.js), each rendering [src/components/ProviderRedirect/index.jsx](src/components/ProviderRedirect/index.jsx), a Docusaurus head redirect (meta refresh plus canonical) to `https://<slug>-provider.stackql.io/`:
   - `/providers/<slug>` is explicit: exactly one route per catalog entry, no exceptions. Internal use (tiles, navbar).
   - `/registry/<name>` is the inbound surface for external links: one route per catalog entry plus each entry's `registryAliases`, so a provider family exposes one canonical inbound link (`/registry/databricks` -> the Databricks Account microsite).
   - the bare `/providers` and `/registry` redirect to `/docs/providers`.
 
-The slug is derived from `href`, which must be exactly `https://<slug>-provider.stackql.io/`; the module throws at config load on a malformed href or a duplicate slug or alias. To add a provider, add one catalog entry and nothing else. Do not create pages under `src/pages/providers` or `src/pages/registry` - those directories were removed and a file there would clash with the generated routes. The retired `/providers/databricks` URL is a Netlify 301 to `/registry/databricks`.
+The slug is derived from `href`, which must be exactly `https://<slug>-provider.stackql.io/`; the module throws at config load on a missing field, a malformed href or a duplicate slug or alias. To add a provider, add one entry to the JSON and nothing else. Do not create pages under `src/pages/providers` or `src/pages/registry` - those directories were removed and a file there would clash with the generated routes. The retired `/providers/databricks` URL is a Netlify 301 to `/registry/databricks`.
 
 The provider microsites' own nav comes from `../docusaurus-config`, which keeps its own featured list (`PROVIDER_SLUGS`). Update it by hand when `featured` changes here.
 

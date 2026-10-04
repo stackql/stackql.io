@@ -86,8 +86,8 @@
   status = 301
 
 # /providers/<slug> is strictly one route per catalog entry
-# (src/data/providers.js); family-level names live under /registry. The
-# retired /providers/databricks stub is steered to its registry alias.
+# (src/configs/providers.json); family-level names live under /registry.
+# The retired /providers/databricks stub is steered to its registry alias.
 [[redirects]]
   from = "/providers/databricks"
   to = "/registry/databricks"

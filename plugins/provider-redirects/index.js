@@ -2,7 +2,7 @@
 //
 // Registers Docusaurus head redirects (meta refresh) from this site to the
 // provider microsites at https://<slug>-provider.stackql.io/, driven by the
-// catalog in src/data/providers.js:
+// catalog in src/configs/providers.json (read through src/lib/providers.js):
 //
 //   /providers/<slug>   one route per catalog entry, no exceptions. This is
 //                       the internal surface: the tiles on /docs/providers
@@ -24,7 +24,7 @@
 //              @site/src/components/ProviderRedirect/index.jsx); receives
 //              `target`: { to, name }
 
-const { providerRoutes, registryRoutes } = require('../../src/data/providers');
+const { providerRoutes, registryRoutes } = require('../../src/lib/providers');
 
 module.exports = function providerRedirectsPlugin(context, options) {
   const {
