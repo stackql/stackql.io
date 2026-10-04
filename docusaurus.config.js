@@ -17,47 +17,17 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
+// The provider catalog (src/data/providers.js) drives the tiles on
+// /docs/providers, this dropdown and the /providers/<slug> and
+// /registry/<slug> alias routes (plugins/provider-redirects). The dropdown
+// lists the entries flagged `featured`, in catalog order.
+const { FEATURED_PROVIDERS } = require('./src/data/providers');
+
 const providerDropDownListItems = [
-  {
-    label: 'AWS',
-    to: '/providers/aws',
-  },
-  {
-    label: 'Azure',
-    to: '/providers/azure',
-  },
-  {
-    label: 'Google',
-    to: '/providers/google',
-  },
-  {
-    label: 'Databricks',
-    to: '/providers/databricks',
-  },
-  {
-    label: 'Snowflake',
-    to: '/providers/snowflake',
-  },
-  {
-    label: 'Confluent',
-    to: '/providers/confluent',
-  },
-  {
-    label: 'Okta',
-    to: '/providers/okta',
-  },
-  {
-    label: 'GitHub',
-    to: '/providers/github',
-  },
-  {
-    label: 'OpenAI',
-    to: '/providers/openai',
-  },
-  {
-    label: 'Cloudflare',
-    to: '/providers/cloudflare',
-  },
+  ...FEATURED_PROVIDERS.map(({ name, shortName, slug }) => ({
+    label: shortName || name,
+    to: `/providers/${slug}`,
+  })),
   {
     label: '... More',
     to: '/providers',
@@ -267,6 +237,9 @@ const config = {
         postsPerSection: 5,
       },
     ],
+    // /providers/<slug> and /registry/<slug> head redirects to the provider
+    // microsites, one pair per catalog entry
+    require.resolve('./plugins/provider-redirects'),
   ],
   presets: [
     [

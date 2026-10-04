@@ -85,6 +85,14 @@
   to = "/docs/quick-starts"
   status = 301
 
+# /providers/<slug> is strictly one route per catalog entry
+# (src/data/providers.js); family-level names live under /registry. The
+# retired /providers/databricks stub is steered to its registry alias.
+[[redirects]]
+  from = "/providers/databricks"
+  to = "/registry/databricks"
+  status = 301
+
 # Blog split (#288): the single blog at /blog/<slug> became three plugin
 # instances at /blog/<section>/<slug>. Tag, pagination and archive routes
 # of the old instance go to the landing page. The old feed URLs go to the
