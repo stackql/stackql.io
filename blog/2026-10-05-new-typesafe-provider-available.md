@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-typesafe-provider-featured-image.png"
 description: A new StackQL provider for TypeSafe AI that brings Jev, TypeSafe's System One decision model, into StackQL agent routines over MCP - rows from aws, k8s, okta or github become the state, Jev returns a typed decision with a probability or confidence, and a StackQL mutation runs only when the decision clears the routine's threshold. Tagging hygiene, rightsizing, incident triage, access review, public ingress review and audit findings, as SQL.
 keywords: [stackql, typesafe, jev, system one, provider, mcp, ai agents, agentic infrastructure, finops, greenops, sre, cspm, access review, audit, sql]
-tags: [stackql, typesafe, jev, provider, mcp, ai-agents]
+tags: [provider-announcement, stackql, typesafe, jev, provider, mcp, ai-agents]
 ---
 
 We've released a new StackQL provider for TypeSafe AI:

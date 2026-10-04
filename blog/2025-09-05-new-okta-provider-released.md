@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-okta-provider-featured-image.png"
 description: Query and interact with Okta resources using SQL.
 keywords: [stackql, okta, iac, analytics]
-tags: [stackql, okta, iac, analytics]
+tags: [provider-announcement, stackql, okta, iac, analytics]
 ---
 
 import Tabs from '@theme/Tabs';

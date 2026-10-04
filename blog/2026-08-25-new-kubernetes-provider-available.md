@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-provider-for-k8s-released.png"
 description: A ground-up rebuild of the StackQL k8s provider - every built-in Kubernetes control plane API group as SQL, with subresources, server-side filtering, transparent pagination, and a full write lifecycle, pointable at any conformant cluster - available in the StackQL Provider Registry now.
 keywords: [stackql, kubernetes, k8s, provider, cloud native, rbac, audit, gitops, infrastructure as code, kubectl]
-tags: [stackql, kubernetes, k8s, provider, cloud-native, rbac, audit]
+tags: [provider-announcement, stackql, kubernetes, k8s, provider, cloud-native, rbac, audit]
 ---
 
 We've rebuilt the StackQL Kubernetes provider from the ground up:

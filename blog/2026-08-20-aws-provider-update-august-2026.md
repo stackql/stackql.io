@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Update to the StackQL AWS provider adding nine new services including Resilience Hub V2, Lambda MicroVMs, Agent Registry and Support AuthZ, expanded coverage across EC2, ACM, QuickSight, Bedrock AgentCore and more, plus full S3 object content lifecycles - read, write, replace and delete object contents with SQL.
 keywords: [stackql, aws, amazon web services, provider, s3, objects, terraform state, resilience hub, lambda microvms, agent registry, sql]
-tags: [stackql, aws, amazon web services, provider, s3]
+tags: [provider-announcement, stackql, aws, amazon web services, provider, s3]
 ---
 
 We've released an update to the [__StackQL AWS provider__](https://aws-provider.stackql.io/), regenerated from the latest AWS service definitions. Significant additions include:

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-googleadmin-provider-featured-image.png"
 description: Deploy, configure and query GCP resources using SQL.
 keywords: [stackql, google, gcp, google cloud platform, iac, analytics]
-tags: [stackql, google, gcp, google cloud platform, iac, analytics]
+tags: [provider-announcement, stackql, google, gcp, google cloud platform, iac, analytics]
 ---
 
 We have released the latest StackQL provider for Google, which includes:

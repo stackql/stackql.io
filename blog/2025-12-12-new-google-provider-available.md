@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-google-provider-featured-image.png"
 description: Major update to the StackQL Google provider featuring a new Speech-to-Text v2 service, enhanced Vertex AI with RAG capabilities, and significant improvements across BigQuery, Spanner, and 15+ other Google Cloud services.
 keywords: [stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigquery, spanner]
-tags: [stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigquery, spanner]
+tags: [provider-announcement, stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigquery, spanner]
 ---
 
 We've released a major update to the [__StackQL Google provider__](https://stackql.io/docs/providers) with a new service, enhanced AI/ML capabilities, and improvements across 177 service files.

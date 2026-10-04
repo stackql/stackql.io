@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: The StackQL MCP server now ships via npm, PyPI, Docker, GitHub Actions, prebuilt Claude Desktop bundles, and the Official MCP Registry - one server, every runtime, signed and SHA-pinned.
 keywords: [stackql, mcp, model context protocol, ai agents, claude, npm, pypi, docker, github actions, mcp registry, infrastructure-as-code, cloud, agentic ci]
-tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code, ai]
+tags: [product-announcement, stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code, ai]
 ---
 
 The [__StackQL MCP server__](/docs/command-line-usage/mcp) is now available through every runtime an agent is likely to live in: prebuilt Claude Desktop bundles, [__npm__](https://www.npmjs.com/package/@stackql/mcp-server), [__PyPI__](https://pypi.org/project/stackql-mcp-server/), [__Docker__](https://hub.docker.com/r/stackql/stackql-mcp), a [__GitHub Action__](https://github.com/marketplace/actions/setup-stackql-mcp-server), and the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql). It is the same server in each case - one binary, pulled and launched the way your environment prefers.

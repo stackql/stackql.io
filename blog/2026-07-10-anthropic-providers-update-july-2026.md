@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-claude-featured-image.png"
 description: Latest release of the StackQL Anthropic providers - anthropic for the Claude API (messages, agents, sessions, skills, files, vaults and more) and anthropic_admin for enterprise organization management, usage and cost reporting, and Claude Code analytics - are available in the StackQL Provider Registry now.
 keywords: [stackql, anthropic, claude, provider, admin api, usage reporting, cost reporting, claude code, agents, enterprise]
-tags: [stackql, anthropic, claude, provider, admin api, usage reporting, cost reporting, claude code, agents, enterprise]
+tags: [provider-announcement, stackql, anthropic, claude, provider, admin api, usage reporting, cost reporting, claude code, agents, enterprise]
 ---
 
 We've released an update to the StackQL providers for the Anthropic platform:

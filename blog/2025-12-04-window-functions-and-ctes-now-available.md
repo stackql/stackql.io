@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-blog-post-featured-image.png"
 description: Window functions and Common Table Expressions (CTEs) are now available in StackQL for advanced analytics across cloud and SaaS resources.
 keywords: [stackql, analytics, window functions, cte, sql]
-tags: [stackql, analytics, window functions, cte, sql]
+tags: [product-announcement, stackql, analytics, window functions, cte, sql]
 ---
 
 Window functions and Common Table Expressions (CTEs) are now generally available in StackQL. These features work with both the embedded SQLite backend and PostgreSQL backend.

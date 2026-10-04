@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-deploy-featured-image.png"
 description: Inventory all resources across all regions in an AWS account.
 keywords: [stackql, iac, infrastructure-as-code, dbt]
-tags: [stackql, iac, infrastructure-as-code, dbt]
+tags: [product-announcement, stackql, iac, infrastructure-as-code, dbt]
 ---
 
 [__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is a multi-cloud resource provisioning framework using [__`stackql`__](https://github.com/stackql/stackql). It is inspired by dbt (data build tool), which manages data transformation workflows in analytics engineering by treating SQL scripts as models that can be built, tested, and materialized incrementally. With StackQL, you can create a similar framework for cloud and SaaS provisioning. The goal is to treat infrastructure-as-code (IaC) queries as __*models*__ that can be deployed, managed, and interconnected.  

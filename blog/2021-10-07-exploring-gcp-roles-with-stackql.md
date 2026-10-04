@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-gcp-roles.png"
 description: This article provides a primer on roles in GCP with demonstrations of creating and querying roles using StackQL.
 keywords: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
-tags: [stackql, infracoding, IaC, infrastructure as code, gcp, iam]
+tags: [tutorial, stackql, infracoding, IaC, infrastructure as code, gcp, iam]
 hide_table_of_contents: false
 ---
 

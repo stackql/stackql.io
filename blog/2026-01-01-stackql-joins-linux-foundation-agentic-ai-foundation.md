@@ -7,7 +7,7 @@ description: StackQL Studios joins the Linux Foundation and Agentic AI Foundatio
 keywords: [stackql, linux-foundation, aaif, agentic-ai, mcp, open-source]
 authors:
   - jeffreyaven
-tags: [stackql, open-source, linux-foundation, agentic-ai, mcp]
+tags: [product-announcement, stackql, open-source, linux-foundation, agentic-ai, mcp]
 ---
 
 <a href="https://aaif.io/members/"><img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '90px', marginRight: '15px' }} /></a>

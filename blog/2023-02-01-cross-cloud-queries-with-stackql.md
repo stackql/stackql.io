@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/cross-cloud-queries-with-stackql.png"
 description: This is a how-to article demonstrating the use of stackql to query across AWS and Google cloud environments and combine data in real-time.
 keywords: [stackql, aws, google, multicloud, observability, cloud security, analysis, analytics]
-tags: [stackql, aws, google, multicloud, observability, cloud security, analysis, analytics]
+tags: [tutorial, stackql, aws, google, multicloud, observability, cloud security, analysis, analytics]
 ---
 
 This exercise will show you how to run a real-time query across your AWS and Google cloud environments.  You may do this for inventory analysis, security analysis, or any other reason you can think of.  We will use `stackql` to query the state of your cloud resources across your AWS and Google environments.  You can also use `stackql` to provision, de-provision or manage resources across different cloud and SaaS providers.   

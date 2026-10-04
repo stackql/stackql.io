@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-provider-for-openai-released.png"
 description: Latest release of the StackQL OpenAI providers - openai for the platform API (models, files, fine-tuning, batches, vector stores, evals and more) and openai_admin for organization management, usage and cost reporting, projects, RBAC and audit logs - are available in the StackQL Provider Registry now.
 keywords: [stackql, openai, provider, admin api, usage reporting, cost reporting, finops, projects, audit logs, enterprise]
-tags: [stackql, openai, provider, admin api, usage reporting, cost reporting, finops, projects, audit logs, enterprise]
+tags: [provider-announcement, stackql, openai, provider, admin api, usage reporting, cost reporting, finops, projects, audit logs, enterprise]
 ---
 
 We've released an update to the StackQL providers for the OpenAI platform:

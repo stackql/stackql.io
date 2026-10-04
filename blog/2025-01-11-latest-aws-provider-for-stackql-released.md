@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Query and interact with AWS resources using SQL.
 keywords: [stackql, aws, amazon web services, iac, analytics]
-tags: [stackql, aws, amazon web services, iac, analytics]
+tags: [provider-announcement, stackql, aws, amazon web services, iac, analytics]
 ---
 
 :::info

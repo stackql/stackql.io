@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-gemini-provider-featured-image.png"
 description: A new StackQL provider for the Google Gemini API - run Gemini inference, count tokens, generate embeddings, and manage models, tuned models, files, cached contents, corpora, file search stores and batches using SQL - available in the StackQL Provider Registry now.
 keywords: [stackql, gemini, google, generative language, provider, inference, embeddings, tuned models, file search]
-tags: [stackql, gemini, google, generative language, provider, inference, embeddings, tuned models, file search]
+tags: [provider-announcement, stackql, gemini, google, generative language, provider, inference, embeddings, tuned models, file search]
 ---
 
 We've released a new StackQL provider for the Google Gemini API:

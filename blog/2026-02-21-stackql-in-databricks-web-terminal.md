@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-databricks-provider-featured-image.png"
 description: Run StackQL SQL queries against your Databricks workspace directly from the Databricks web terminal.
 keywords: [stackql, databricks, sql, databricks workspace]
-tags: [stackql, databricks, sql, databricks workspace]
+tags: [tutorial, stackql, databricks, sql, databricks workspace]
 ---
 
 If you have access to a Databricks workspace, you can run StackQL queries directly from the Databricks Web Terminal using your Databricks identity.

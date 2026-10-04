@@ -6,7 +6,7 @@ authors:
   - kieranrimmer
 image: "/img/blog/stackql-featured-image.png"
 keywords: [stackql, analytics]
-tags: [stackql, analytics]
+tags: [tutorial, stackql, analytics]
 ---
 
 Five minute dashboards with StackQL and Superset, check it out!

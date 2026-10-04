@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-deploy-rust-featured-image.png"
 description: stackql-deploy 2.0 is a full rewrite in Rust - single static binary, no Python runtime, embedded StackQL server, and same CLI interface.
 keywords: [stackql, stackql-deploy, rust, infrastructure-as-code, cloud, iac]
-tags: [stackql, stackql-deploy, rust, infrastructure-as-code]
+tags: [product-announcement, stackql, stackql-deploy, rust, infrastructure-as-code]
 ---
 
 import Tabs from '@theme/Tabs';

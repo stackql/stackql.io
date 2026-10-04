@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/stackql-provider-for-github-released.png"
 description: The StackQL provider for GitHub is now available, you can use this provider to query public and protected resources in GitHub.
 keywords: [github, stackql, stackql provider registry, multicloud, asset management, cloud security]
-tags: [github, stackql, stackql provider registry, multicloud, asset management, cloud security]
+tags: [provider-announcement, github, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
 The __GitHub provider for StackQL__ is now generally available.  This can be used to query resources in GitHub Cloud or GitHub Enterprise, including orgs, teams, users, repositories, branches, pull requests, issues, workflows/actions and much more!  

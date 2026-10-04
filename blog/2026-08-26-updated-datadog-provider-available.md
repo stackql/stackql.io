@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-datadog-provider-featured-image.png"
 description: The StackQL Datadog provider now covers the v1 and v2 REST APIs together - monitors, dashboards, synthetics, SLOs, downtimes, incidents, cases, on-call, logs configuration, metrics, security monitoring, cloud cost, users, roles and keys, integrations, RUM, LLM Observability and fleet automation.
 keywords: [stackql, datadog, provider, monitors, dashboards, synthetics, slo, observability, security monitoring, cloud cost, infrastructure as code]
-tags: [stackql, datadog, provider, observability, monitors, security, finops]
+tags: [provider-announcement, stackql, datadog, provider, observability, monitors, security, finops]
 ---
 
 We've released an updated [__StackQL Datadog provider__](https://datadog-provider.stackql.io) covering the Datadog v1 and v2 REST APIs together: __18 services__, __597 resources__ and __1658 operations__, up from 16 services and 575 operations in the previous release.

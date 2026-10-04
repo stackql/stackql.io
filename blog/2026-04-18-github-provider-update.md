@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-provider-for-github-released.png"
 description: Update to the StackQL GitHub provider adding six new services including agent_tasks, campaigns, classroom, hosted_compute, private_registries, and enterprise_teams, along with resource additions across existing services.
 keywords: [stackql, github, provider, github actions, github classroom, hosted compute, security campaigns, agent tasks]
-tags: [stackql, github, provider, github actions, github classroom, hosted compute]
+tags: [provider-announcement, stackql, github, provider, github actions, github classroom, hosted compute]
 ---
 
 We've released an update to the [__StackQL GitHub provider__](https://github-provider.stackql.io/) adding new services and expanding coverage across several existing ones.

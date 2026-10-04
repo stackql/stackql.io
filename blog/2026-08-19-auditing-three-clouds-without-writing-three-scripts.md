@@ -6,7 +6,7 @@ authors:
   - nirmalchhodvadiya
 description: A hands-on walkthrough of the StackQL multi-cloud bucket audit. One Docker command, one SQL query, and you get a normalised table of AWS, GCP, and Azure storage buckets with encryption class, public flag, and HTTPS enforcement side by side.
 keywords: [stackql, multi-cloud, audit, security, aws, gcp, azure, s3, gcs, azure storage, docker, cross-cloud, cloud security posture]
-tags: [stackql, multi-cloud, audit, security, aws, gcp, azure, docker]
+tags: [tutorial, stackql, multi-cloud, audit, security, aws, gcp, azure, docker]
 ---
 
 If you've audited buckets in more than one cloud, you already know what this is like. Three consoles. Three CLIs. Three auth patterns. And a bit of glue code to pull the outputs together every time someone asks a question that spans all three.

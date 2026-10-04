@@ -6,7 +6,7 @@ authors:
   - yunchengyang
 image: "/img/blog/stackql-vercel-provider-featured-image.png"
 keywords: [stackql, vercel, analytics, reporting, nextjs]
-tags: [stackql, vercel, analytics, reporting, nextjs]
+tags: [provider-announcement, stackql, vercel, analytics, reporting, nextjs]
 ---
 
 import Tabs from '@theme/Tabs';

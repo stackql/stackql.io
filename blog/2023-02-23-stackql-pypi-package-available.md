@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-pypi-package-available.png"
 description: This how-to article demonstrates how to use stackql with Python using the pystackql package
 keywords: [stackql, python]
-tags: [stackql, python]
+tags: [product-announcement, stackql, python]
 ---
 
 <details>

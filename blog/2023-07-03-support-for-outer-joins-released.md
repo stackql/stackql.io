@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-featured-image.png"
 description: Announcing the addition of support for OUTER JOIN operations in StackQL queries.
 keywords: [stackql, analytics, reporting, dashboards, cloud security, cspm]
-tags: [stackql, analytics, reporting, dashboards, cloud security, cspm]
+tags: [product-announcement, stackql, analytics, reporting, dashboards, cloud security, cspm]
 ---
 
 :::info

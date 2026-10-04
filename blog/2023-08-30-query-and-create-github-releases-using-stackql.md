@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-provider-for-github-released.png"
 keywords: [stackql, github, github releases]
-tags: [stackql, github, github releases]
+tags: [tutorial, stackql, github, github releases]
 ---
 
 [StackQL](https://github.com/stackql/stackql) and the [StackQL GitHub provider](/providers/github) can be used to query objects in GitHub, including releases, tags, forks, commits, and much more.  This article shows how you can automate releases using StackQL.  

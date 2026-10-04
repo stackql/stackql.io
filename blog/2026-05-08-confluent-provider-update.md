@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-confluent-provider-featured-image.png"
 description: Update to the StackQL Confluent provider adding eight new services including ccl, ccpm, endpoints, pipelines, share_group, streams_group, tableflow, and usm, along with 40 additional resources across existing services.
 keywords: [stackql, confluent, provider, kafka, tableflow, stream designer, share groups, unified stream manager, ccpm]
-tags: [stackql, confluent, provider, kafka, tableflow, stream-designer]
+tags: [provider-announcement, stackql, confluent, provider, kafka, tableflow, stream-designer]
 ---
 
 We've released an update to the [__StackQL Confluent provider__](https://confluent-provider.stackql.io/) adding eight new services and 40 additional resources across existing services.

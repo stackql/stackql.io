@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/setup-stackql-github-action.png"
 description: This is a how-to article demonstrating the use of setup-stackql github action to run stackql with github actions
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
-tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
+tags: [product-announcement, stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 ---
 
 <details>

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-azure-provider-featured-image.png"
 description: Use StackQL to identify Azure resources with outdated TLS versions and ensure compliance with security best practices.
 keywords: [azure, microsoft, microsoft azure, stackql, stackql provider registry, multicloud, asset management, cloud security]
-tags: [azure, microsoft, microsoft azure, stackql, stackql provider registry, multicloud, asset management, cloud security]
+tags: [tutorial, azure, microsoft, microsoft azure, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
 Have you received one of these?

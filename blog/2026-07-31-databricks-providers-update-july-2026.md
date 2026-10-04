@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-databricks-provider-featured-image.png"
 description: Update to the StackQL Databricks providers adding four new services including disaster recovery, AI Search, bundle deployments and supervisor agents, a major expansion of Lakebase (Postgres) and identity coverage, and improved SQL statement execution semantics including DELETE to cancel running statements.
 keywords: [stackql, databricks, provider, lakebase, ai search, agent bricks, asset bundles, disaster recovery, unity catalog, sql statement execution]
-tags: [stackql, databricks, provider, lakebase, unity-catalog, agent-bricks]
+tags: [provider-announcement, stackql, databricks, provider, lakebase, unity-catalog, agent-bricks]
 ---
 
 We've released an update to the StackQL Databricks providers, regenerated from the latest Databricks platform APIs (SDK v0.123.0):

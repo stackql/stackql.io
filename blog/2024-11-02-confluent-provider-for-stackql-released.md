@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-confluent-provider-featured-image.png"
 description: Query and interact with Confluent Cloud resources using SQL.
 keywords: [stackql, confluent, kafka, flink, iac, analytics]
-tags: [stackql, confluent, kafka, flink, iac, analytics]
+tags: [provider-announcement, stackql, confluent, kafka, flink, iac, analytics]
 ---
 
 We're excited to announce the release of the new Confluent provider for StackQL! With this new provider, users can now seamlessly query, manage, and integrate Confluent Cloud resources using familiar SQL syntax. The Confluent provider opens up possibilities for managing Kafka clusters, environments, organizations, and more, providing unparalleled flexibility for building data and event-driven architectures as infrastructure-as-code.

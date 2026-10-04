@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 keywords: [stackql, aws, inventory, cpsm, analytics]
-tags: [stackql, aws, inventory, cpsm, analytics]
+tags: [tutorial, stackql, aws, inventory, cpsm, analytics]
 ---
 
 :::info

@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/stackql-provider-for-netlify-released.png"
 description: The StackQL provider for Netlify has been released, you can use this to query sites, builds and more in Netlify.
 keywords: [netlify, stackql, stackql provider registry, multicloud, asset management, cloud security]
-tags: [netlify, stackql, stackql provider registry, multicloud, asset management, cloud security]
+tags: [provider-announcement, netlify, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
 Excited to announce the release of the __Netlify provider for StackQL__.  

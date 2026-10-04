@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-provider-for-github-released.png"
 keywords: [stackql, analytics, github, codespaces]
-tags: [stackql, analytics, github, codespaces]
+tags: [tutorial, stackql, analytics, github, codespaces]
 ---
 
 GitHub Codespaces is a development environment completely hosted online, enabling seamless development without setting up local machines.  One of the great features of Codespaces is its compatibility with IPython, providing an interactive computing environment to test and prototype StackQL queries.

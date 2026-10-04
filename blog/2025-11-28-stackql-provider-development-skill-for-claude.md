@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-claude-featured-image.png"
 description: A Claude Skill for developing StackQL providers, covering OpenAPI extensions, resource definitions, SQL verb mappings, and more.
 keywords: [stackql, claude, ai, provider development, openapi, infrastructure-as-code, any-sdk]
-tags: [stackql, claude, ai, provider development]
+tags: [product-announcement, stackql, claude, ai, provider development]
 ---
 
 We've published a Claude Skill for [__StackQL__](https://github.com/stackql/stackql) provider development. It provides Claude with the context needed to help you build providers using the [__any-sdk__](https://github.com/stackql/any-sdk) library (interface used by StackQL to interact with the cloud providers).

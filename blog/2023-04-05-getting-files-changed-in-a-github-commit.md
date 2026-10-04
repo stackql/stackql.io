@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/setup-stackql-github-action.png"
 description: This article demonstrates how to use stackql with github actions to get details about changed files in a commit.
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
-tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
+tags: [tutorial, stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 ---
 
 :::info

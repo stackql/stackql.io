@@ -7,7 +7,7 @@ hide_table_of_contents: false
 image: "/img/blog/infraql-gcs-blog.png"
 description: StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as to query buckets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS]
-tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS]
+tags: [tutorial, stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, google cloud storage, cloud storage, GCS]
 ---
 
 import Tabs from '@theme/Tabs';

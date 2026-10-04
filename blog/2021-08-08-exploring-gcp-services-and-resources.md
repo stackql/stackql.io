@@ -7,7 +7,7 @@ hide_table_of_contents: false
 image: "/img/blog/infraql-blog-post-featured-image.png"
 description: This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.
 keywords: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
-tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
+tags: [tutorial, stackql, google cloud, GCP, infracoding, IaC, infrastructure as code]
 ---
 
 import Tabs from '@theme/Tabs';

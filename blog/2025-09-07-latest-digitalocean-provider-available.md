@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-digitalocean-provider-featured-image.png"
 description: Query and interact with DigitalOcean resources using SQL.
 keywords: [stackql, digitalocean, iac, analytics]
-tags: [stackql, digitalocean, iac, analytics]
+tags: [provider-announcement, stackql, digitalocean, iac, analytics]
 ---
 
 import Tabs from '@theme/Tabs';

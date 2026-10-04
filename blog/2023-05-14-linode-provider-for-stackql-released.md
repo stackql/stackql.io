@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-linode-provider-featured-image.png"
 description: The Linode provider for StackQL enables you to provision, query and manage Linode resources using StackQL SQL.
 keywords: [stackql, linode, devops, infrastructure, github actions, cloud security, CI/CD]
-tags: [stackql, linode, devops, infrastructure, github actions, cloud security, CI/CD]
+tags: [provider-announcement, stackql, linode, devops, infrastructure, github actions, cloud security, CI/CD]
 ---
 
 :::info

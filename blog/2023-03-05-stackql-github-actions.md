@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/cross-cloud-queries-with-stackql.png"
 description: This is a demonstration of how to use stackql with github actions.
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
-tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
+tags: [tutorial, stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 ---
 
 :::info

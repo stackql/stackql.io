@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-azure-provider-featured-image.png"
 description: Major update to the StackQL Azure provider - 268 services covering the ARM control plane and Azure data planes in one provider, with expanded AI coverage including Azure AI Foundry, AI Language, Document Intelligence, Content Safety and more, available in the StackQL Provider Registry now.
 keywords: [stackql, azure, provider, arm, azure ai, ai foundry, key vault, cosmos db, data plane, cloud inventory, finops]
-tags: [stackql, azure, provider, arm, azure ai, ai foundry, key vault, cosmos db, data plane, cloud inventory, finops]
+tags: [provider-announcement, stackql, azure, provider, arm, azure ai, ai foundry, key vault, cosmos db, data plane, cloud inventory, finops]
 ---
 
 We've released a major update to the StackQL Azure provider family:

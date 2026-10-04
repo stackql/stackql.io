@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-cloud-asset-inventory-blog.png"
 description: This article shows how to use the Google Cloud Asset Inventory service using SQL.
 keywords: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
-tags: [stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
+tags: [tutorial, stackql, google cloud, GCP, cloud asset, cloud asset inventory, asset inventory]
 ---
 
 import Tabs from '@theme/Tabs';

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/setup-stackql-github-action.png"
 description: Use stackql-deploy in a GitHub Actions workflow to provision, update and test infrastructure.
 keywords: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
-tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
+tags: [product-announcement, stackql, devops, infrastructure, github actions, cloud security, CI/CD, iac, infrastructure-as-code, dbt]
 ---
 
 [__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is now available in the [__GitHub Actions Marketplace__](https://github.com/marketplace/actions/stackql-deploy).  

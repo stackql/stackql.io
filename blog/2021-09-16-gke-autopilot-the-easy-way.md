@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-gke-blog.png"
 description: This article shows how to use StackQL to deploy a GKE Autopilot cluster in a Shared VPC in GCP.
 keywords: [stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilot]
-tags: [stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilot]
+tags: [tutorial, stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilot]
 ---
 
 <head>

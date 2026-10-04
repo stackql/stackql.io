@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-superset-featured-image.png"
 description: This quick start guide lays out how to create a StackQL dashboard using Apache Superset.
 keywords: [stackql, superset, analytics, reporting, dashboards, cloud security, cspm]
-tags: [stackql, superset, analytics, reporting, dashboards, cloud security, cspm]
+tags: [tutorial, stackql, superset, analytics, reporting, dashboards, cloud security, cspm]
 ---
 
 :::info

@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-powerbi-featured-image.png"
 keywords: [stackql, powerbi, inventory, cpsm, analytics, reporting, dashboards]
-tags: [stackql, powerbi, inventory, cpsm, analytics, reporting, dashboards]
+tags: [tutorial, stackql, powerbi, inventory, cpsm, analytics, reporting, dashboards]
 ---
 
 :::info

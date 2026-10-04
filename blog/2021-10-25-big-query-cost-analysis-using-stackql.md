@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-bq-cost-analysis.png"
 description: This article demonstrates how to use StackQL to summarize or drill down into detail Big Query billing data for analysis into billing spikes or anomalies.
 keywords: [stackql, bigquery, gcp, costs, cost management]
-tags: [stackql, bigquery, gcp, costs, cost management]
+tags: [tutorial, stackql, bigquery, gcp, costs, cost management]
 ---
 
 import Tabs from '@theme/Tabs';

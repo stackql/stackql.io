@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-datadog-provider-featured-image.png"
 description: Query and interact with Datadog resources using SQL.
 keywords: [stackql, datadog, iac, analytics]
-tags: [stackql, datadog, iac, analytics]
+tags: [provider-announcement, stackql, datadog, iac, analytics]
 ---
 
 Latest release or the `datadog` provider for StackQL is now available, enabling SQL-based querying and management of Datadog cloud resources.  The new `datadog` provider includes:

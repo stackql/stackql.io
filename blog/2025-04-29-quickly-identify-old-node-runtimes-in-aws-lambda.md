@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Query and interact with AWS resources using SQL.
 keywords: [stackql, aws, amazon web services, iac, analytics, lambda]
-tags: [stackql, aws, amazon web services, iac, analytics, lambda]
+tags: [tutorial, stackql, aws, amazon web services, iac, analytics, lambda]
 ---
 
 import Tabs from '@theme/Tabs';

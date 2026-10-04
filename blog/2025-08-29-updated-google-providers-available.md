@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-googleadmin-provider-featured-image.png"
 description: Query and interact with Google resources using SQL.
 keywords: [stackql, google, firebase, iac, analytics]
-tags: [stackql, google, firebase, iac, analytics]
+tags: [provider-announcement, stackql, google, firebase, iac, analytics]
 ---
 
 The latest versions of the Google-related providers for StackQL: `google`, `googleadmin`, `googleworkspace`, and `firebase` are available now. These updates include the latest services, resources and methods available from Google.

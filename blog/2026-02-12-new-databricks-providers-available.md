@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-databricks-provider-featured-image.png"
 description: Updated providers for Databricks released covering account and workspace operations, with over 30 services, 300 resources, and nearly 1,000 operations queryable using SQL.
 keywords: [stackql, databricks, provider, infrastructure-as-code, iac, sql, databricks account, databricks workspace]
-tags: [stackql, databricks, provider, infrastructure-as-code]
+tags: [provider-announcement, stackql, databricks, provider, infrastructure-as-code]
 ---
 
 Updated StackQL providers for Databricks are now available: [__`databricks_account`__](https://databricks-account-provider.stackql.io/) and [__`databricks_workspace`__](https://databricks-workspace-provider.stackql.io/), giving you SQL access to the full Databricks control plane across account-level and workspace-level operations.

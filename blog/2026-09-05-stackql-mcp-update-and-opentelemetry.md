@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: "StackQL v0.11 brings the MCP server up to protocol revision 2026-07-28, and adds an OpenTelemetry (OTLP/JSON) output format for the agent audit log so any OTel collector can consume it without a custom parser."
 keywords: [stackql, mcp, model context protocol, 2026-07-28, opentelemetry, otlp, observability, ai agents, claude, audit log, genai semantic conventions]
-tags: [stackql, mcp, model context protocol, opentelemetry, ai agents, ai]
+tags: [product-announcement, stackql, mcp, model context protocol, opentelemetry, ai agents, ai]
 ---
 
 [__StackQL v0.11__](https://github.com/stackql/stackql/releases/tag/v0.11.669) is out. The [__StackQL MCP server__](/docs/command-line-usage/mcp): now includes the current Model Context Protocol revision, `2026-07-28`, alongside every earlier revision it already supported, and the audit log that records what an agent did can be written as OpenTelemetry log records instead of the bespoke JSONL format. Both are available today through every install channel.

@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-jsonnet-blog.png"
 description: This article demonstrates the use of the map and format functions in the Jsonnet standard library.
 keywords: [jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
-tags: [jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
+tags: [tutorial, jsonnet, map, stackql, infracoding, IaC, infrastructure as code]
 ---
 
 import Tabs from '@theme/Tabs';

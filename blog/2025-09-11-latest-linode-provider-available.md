@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-linode-provider-featured-image.png"
 description: Query and interact with Linode resources using SQL.
 keywords: [stackql, linode, iac, analytics]
-tags: [stackql, linode, iac, analytics]
+tags: [provider-announcement, stackql, linode, iac, analytics]
 ---
 
 Latest release or the Linode provider for StackQL is available, enabling SQL-based querying and management of Linode cloud resources.

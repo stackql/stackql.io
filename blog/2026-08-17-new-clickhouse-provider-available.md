@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-clickhouse-provider-featured-image.png"
 description: A new StackQL provider for the ClickHouse Cloud API - query and provision organizations, services, API keys, members and roles, backups, ClickPipes, ClickStack dashboards and alerts, UDFs and Managed Postgres, and report usage cost by day and entity, using SQL - available in the StackQL Provider Registry now.
 keywords: [stackql, clickhouse, clickhouse cloud, provider, finops, clickstack, clickpipes, observability, infrastructure as code]
-tags: [stackql, clickhouse, clickhouse-cloud, provider, finops, clickstack, observability]
+tags: [provider-announcement, stackql, clickhouse, clickhouse-cloud, provider, finops, clickstack, observability]
 ---
 
 We've released a new StackQL provider for ClickHouse Cloud:

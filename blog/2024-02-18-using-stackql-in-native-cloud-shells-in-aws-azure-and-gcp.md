@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-multicloud.png"
 description: Run StackQL direct in AWS, Azure and GCP Cloud Shells.
 keywords: [azure, aws, google, stackql, stackql provider registry, multicloud, asset management, cloud security]
-tags: [azure, aws, google, stackql, stackql provider registry, multicloud, asset management, cloud security]
+tags: [tutorial, azure, aws, google, stackql, stackql provider registry, multicloud, asset management, cloud security]
 ---
 
 > [__StackQL__](https://github.com/stackql/stackql) allows you to query and interact with your cloud and SaaS assets using a simple SQL framework.  Use cases include CSPM, asset inventory and analysis, finops and more, as well as our IaC and ops (lifecycle management).  

@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-godaddy-provider-featured-image.png"
 keywords: [stackql, godaddy, analytics, reporting]
-tags: [stackql, godaddy, analytics, reporting]
+tags: [provider-announcement, stackql, godaddy, analytics, reporting]
 ---
 
 import Tabs from '@theme/Tabs';

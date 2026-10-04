@@ -6,7 +6,7 @@ authors:
   - kieranrimmer
 image: "/img/blog/stackql-datadog-pagerduty-blog-post-image.png"
 keywords: [stackql, inventory, cpsm, analytics, pagerduty, datadog]
-tags: [stackql, inventory, cpsm, analytics, pagerduty, datadog]
+tags: [provider-announcement, stackql, inventory, cpsm, analytics, pagerduty, datadog]
 ---
 
 :::info

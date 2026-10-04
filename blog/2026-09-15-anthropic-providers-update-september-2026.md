@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-claude-featured-image.png"
 description: Update to the StackQL anthropic provider regenerated from the current Claude API spec - a new dreams service for memory consolidation jobs, files and skills on their GA endpoints, and workspace-scoped queries through the anthropic-workspace-id parameter. The anthropic_admin provider is unchanged.
 keywords: [stackql, anthropic, claude, provider, dreams, memory stores, files, skills, workspaces, agents, sql]
-tags: [stackql, anthropic, claude, provider, agents]
+tags: [provider-announcement, stackql, anthropic, claude, provider, agents]
 ---
 
 We've released an update to the [__StackQL `anthropic` provider__](https://anthropic-provider.stackql.io), regenerated from the current Claude API specification. The provider now covers 12 services, 27 resources and 108 operations (up from 11, 26 and 103 in the [July release](/blog/anthropic-providers-update-july-2026)). Changes in this release:

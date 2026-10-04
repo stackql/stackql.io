@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: "An audit tells you what is wrong. This is the other half - a GitHub Actions loop that opens one pull request per finding, checks live state before it mutates, and applies on merge. OIDC only, no agents in the estate, GitHub as the audit trail."
 keywords: [stackql, github-actions, finops, remediation, oidc, sre]
-tags: [stackql, github-actions, finops, remediation, oidc, sre]
+tags: [tutorial, stackql, github-actions, finops, remediation, oidc, sre]
 ---
 
 A cloud audit tells you what is wrong. The work starts when you have to fix it. Most tooling stops at the findings list and hands a spreadsheet to an engineer, and the findings sit there until someone has a quiet afternoon.

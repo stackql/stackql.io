@@ -6,7 +6,7 @@ authors:
   - kieranrimmer
 image: "/img/blog/stackql-featured-image.png"
 keywords: [stackql, analytics]
-tags: [stackql, analytics]
+tags: [product-announcement, stackql, analytics]
 ---
 
 Materialized Views are now available in StackQL.  Materialized Views can be used to improve performance for dependent or repetetive queries within StackQL provisioning or analytics routines.

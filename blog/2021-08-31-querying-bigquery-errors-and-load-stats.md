@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/infraql-bq-errors-and-stats.png"
 description: This article demonstrates some queries you can run using StackQL to bring back live statistics from Big Query as well as detail regarding encountered during the loading of data into Big Query.
 keywords: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
-tags: [stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
+tags: [tutorial, stackql, bigquery, gcp, load errors, load statistics, troubleshooting]
 ---
 
 import Tabs from '@theme/Tabs';

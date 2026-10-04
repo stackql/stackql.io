@@ -6,7 +6,7 @@ authors:
   - jeffreyaven
 image: "/img/blog/stackql-blog-post-featured-image.png"
 keywords: [stackql, inventory, cpsm, analytics]
-tags: [stackql, inventory, cpsm, analytics]
+tags: [product-announcement, stackql, inventory, cpsm, analytics]
 ---
 
 :::info

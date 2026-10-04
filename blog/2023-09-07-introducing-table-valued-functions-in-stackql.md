@@ -6,7 +6,7 @@ authors:
   - kieranrimmer
 image: "/img/blog/stackql-featured-image.png"
 keywords: [stackql, analytics]
-tags: [stackql, analytics]
+tags: [product-announcement, stackql, analytics]
 ---
 
 Many provider query responses include columns which are arrays, the iam policy related resources in google are a classic example of this.  for example, this query:

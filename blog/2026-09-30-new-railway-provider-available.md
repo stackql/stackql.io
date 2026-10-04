@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-railway-provider-featured-image.png"
 description: A new StackQL provider for Railway - query and manage workspaces, projects, environments, services, deployments, variables, domains, volumes and usage using SQL - available in the StackQL Provider Registry now.
 keywords: [stackql, railway, provider, paas, deployments, environments, variables, finops, infrastructure as code, cloud inventory, sql]
-tags: [stackql, railway, provider, paas, deployments, finops]
+tags: [provider-announcement, stackql, railway, provider, paas, deployments, finops]
 ---
 
 We've released a new StackQL provider for Railway:

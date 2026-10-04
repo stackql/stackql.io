@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Inventory all resources across all regions in an AWS account.
 keywords: [aws, stackql, cloud inventory, finops, asset management, cloud security]
-tags: [aws, stackql, cloud inventory, finops, asset management, cloud security]
+tags: [tutorial, aws, stackql, cloud inventory, finops, asset management, cloud security]
 ---
 
 > [__StackQL__](https://github.com/stackql/stackql) allows you to query and interact with your cloud and SaaS assets using a simple SQL framework.  Use cases include CSPM, asset inventory and analysis, finops and more, as well as IaC and sysops (lifecycle management).  

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-jupyter-featured-image.png"
 description: StackQL can be used with Jupyter to provide valuable insights into your cloud and SaaS estates, whether for security posture management, cross-cloud entitlements reporting, cost optimization, or asset/inventory management.
 keywords: [stackql, jupyter, python, ipython, multicloud, asset management, cloud security, analysis, analytics]
-tags: [stackql, jupyter, python, ipython, multicloud, asset management, cloud security, analysis, analytics]
+tags: [tutorial, stackql, jupyter, python, ipython, multicloud, asset management, cloud security, analysis, analytics]
 ---
 
 import Gist from '@site/src/components/Gist';

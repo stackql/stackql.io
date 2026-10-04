@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-provider-for-anthropic-released.png"
 description: Query and interact with Anthropic Claude using SQL.
 keywords: [stackql, anthropic, claude, llms, genai, iac, analytics]
-tags: [stackql, anthropic, claude, llms, genai, iac, analytics]
+tags: [provider-announcement, stackql, anthropic, claude, llms, genai, iac, analytics]
 ---
 
 The __`anthropic`__ provider for [__`stackql`__](https://github.com/stackql/stackql) is now available in the dev stackql provider registry. The `anthropic` provider for `stackql` includes services for interacting with Claude models via the Messages API. To get started download [`stackql`](/install), set the `ANTHROPIC_API_KEY` environment variable and use the dev registry as shown here:  

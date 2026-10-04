@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Use StackQL to delete default AWS VPCs across all regions to improve your cloud security posture.
 keywords: [aws, amazon web services, stackql, cloud security]
-tags: [aws, amazon web services, stackql, cloud security]
+tags: [tutorial, aws, amazon web services, stackql, cloud security]
 ---
 
 AWS creates default VPCs in each region for convenience. However, these default VPCs often contain noncompliant network ACLs and security group rules that do not align with best practices for AWS Config and Security Hub. Deleting these default VPCs is beneficial, especially for regions not used by your organization or architectures that do not utilize a VPC.  

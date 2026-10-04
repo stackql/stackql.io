@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-aws-provider-featured-image.png"
 description: Introducing the standalone StackQL AWS Cloud Control provider with full CRUDL support, optimized resource naming, and comprehensive coverage of AWS Cloud Control API resources.
 keywords: [stackql, aws, awscc, cloud control, provider, infrastructure-as-code, iac]
-tags: [stackql, aws, awscc, cloud control, provider, infrastructure-as-code]
+tags: [provider-announcement, stackql, aws, awscc, cloud control, provider, infrastructure-as-code]
 ---
 
 We've released a new dedicated [__StackQL AWS Cloud Control provider__](https://awscc-provider.stackql.io), providing full CRUDL operations across AWS services via the Cloud Control API including purpose-built resource definitions leveraging Cloud Control's consistent schema.

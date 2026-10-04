@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-gitlab-provider-featured-image.png"
 description: A new read-only StackQL provider for GitLab, generated from the GitLab GraphQL schema - projects, groups, members, issues, merge requests, pipelines, jobs, runners, releases, environments, packages, vulnerabilities and more as SQL, with transparent Relay pagination and pushed-down filters - available in the StackQL Provider Registry now.
 keywords: [stackql, gitlab, provider, graphql, devops, ci/cd, merge requests, pipelines, runners, vulnerabilities, cloud inventory, sql]
-tags: [stackql, gitlab, provider, graphql, devops, ci-cd, security]
+tags: [provider-announcement, stackql, gitlab, provider, graphql, devops, ci-cd, security]
 ---
 
 We've released a new StackQL provider for GitLab:

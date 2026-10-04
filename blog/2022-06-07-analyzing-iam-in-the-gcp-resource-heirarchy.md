@@ -6,7 +6,7 @@ authors:
 image: "/img/blog/stackql-gcp-roles-jupyter.png"
 description: Data-centric approach to understanding entitlements across a GCP org with a complex hierarchy.
 keywords: [gcp, stackql, stackql provider registry, entitlements, iam, uam, user access management, user access review]
-tags: [gcp, stackql, stackql provider registry, entitlements, iam, uam, user access management, user access review]
+tags: [tutorial, gcp, stackql, stackql provider registry, entitlements, iam, uam, user access management, user access review]
 ---
 
 import Gist from '@site/src/components/Gist';

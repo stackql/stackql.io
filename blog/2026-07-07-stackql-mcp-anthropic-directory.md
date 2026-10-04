@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-mcp-server-featured-image.png"
 description: "The StackQL MCP server is listed in the Anthropic MCP Directory. It is now discoverable and installable directly from Claude Desktop, with future releases flowing through automatically from GitHub."
 keywords: [stackql, mcp, anthropic, claude, claude-desktop, connectors]
-tags: [stackql, mcp, anthropic, claude]
+tags: [product-announcement, stackql, mcp, anthropic, claude]
 ---
 
 The StackQL MCP server has been reviewed by Anthropic and is now listed in the [Anthropic MCP Directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql). StackQL is a member of the Claude Partner Network, and the directory listing makes the MCP server discoverable and installable directly from within Claude Desktop - no manual bundle download, no custom connector configuration.  

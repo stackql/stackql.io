@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-databricks-provider-featured-image.png"
 description: Query and interact with Databricks resources using SQL.
 keywords: [stackql, databricks, spark, iac, analytics]
-tags: [stackql, databricks, spark, iac, analytics]
+tags: [provider-announcement, stackql, databricks, spark, iac, analytics]
 ---
 
 We are pleased to announce the release of the Databricks provider for StackQL today.  The Databricks provider is two different providers, __`databricks_account`__ and __`databricks_workspace`__.  

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-snowflake-provider-featured-image.png"
 description: Query and interact with Snowflake resources using SQL.
 keywords: [stackql, snowflake, iac, analytics]
-tags: [stackql, snowflake, iac, analytics]
+tags: [provider-announcement, stackql, snowflake, iac, analytics]
 ---
 
 import Tabs from '@theme/Tabs';

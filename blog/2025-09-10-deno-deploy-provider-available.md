@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-deno-provider-featured-image.png"
 description: Query and interact with Deno Deploy resources using SQL.
 keywords: [stackql, deno, deno deploy, iac, analytics]
-tags: [stackql, deno, deno deploy, iac, analytics]
+tags: [provider-announcement, stackql, deno, deno deploy, iac, analytics]
 ---
 
 import Tabs from '@theme/Tabs';

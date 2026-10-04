@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-google-provider-featured-image.png"
 description: Update to the StackQL Google provider adding eleven new services including Agent Registry, Agent Identity, Cluster Director, Database Center and Google Threat Intelligence, a major expansion of Compute Engine and Vertex AI coverage, and removal of APIs retired by Google.
 keywords: [stackql, google cloud, gcp, provider, agent registry, vertex ai, compute engine, cluster director, threat intelligence, dataplex]
-tags: [stackql, google cloud, gcp, provider, vertex-ai, compute-engine]
+tags: [provider-announcement, stackql, google cloud, gcp, provider, vertex-ai, compute-engine]
 ---
 
 We've released an update to the [__StackQL Google provider__](https://google-provider.stackql.io/), regenerated from the latest Google API discovery documents. The `google` provider now covers __187 services, 2,183 resources and over 9,100 operations__ - up from 179 services, 1,966 resources and 8,423 operations in the previous release. The companion providers in the google family (`googleworkspace`, `googleadmin` and `firebase`) were regenerated in the same pass.

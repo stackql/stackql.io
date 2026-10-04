@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-cloudflare-provider-featured-image.png"
 description: Initial release of the StackQL Cloudflare provider with 108 services, 1259 resources, and 2840 operations spanning Zero Trust, Workers, R2, DNS, Zones, Radar, AI, Stream, Magic Transit, and more.
 keywords: [stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, ai, stream, magic transit]
-tags: [stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, ai, stream, magic transit]
+tags: [provider-announcement, stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, ai, stream, magic transit]
 ---
 
 We've released the latest version of the [__StackQL Cloudflare provider__](https://stackql.io/docs/providers), including the full Cloudflare V4 API surface under SQL with __108 services__, __1259 resources__, and __2840 operations__.

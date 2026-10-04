@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-googleadmin-provider-featured-image.png"
 description: Announcing the release of the StackQL provider for the Google Workspace Admin API.
 keywords: [stackql, google, google workspace, google admin, analytics, reporting, dashboards, cloud security, cspm]
-tags: [stackql, google, google workspace, google admin, analytics, reporting, dashboards, cloud security, cspm]
+tags: [tutorial, stackql, google, google workspace, google admin, analytics, reporting, dashboards, cloud security, cspm]
 ---
 
 :::info

@@ -7,7 +7,7 @@ authors:
 image: "/img/blog/stackql-ai-featured-image.png"
 description: New output format in pystackql optimizes cloud infrastructure data for LLM processing based on research showing accuracy improvement over CSV.
 keywords: [stackql, pystackql, markdown-kv, llm, ai, infrastructure-as-code, cloud management, data formats]
-tags: [stackql, pystackql, llm, ai, infrastructure-as-code]
+tags: [product-announcement, stackql, pystackql, llm, ai, infrastructure-as-code]
 ---
 
 [__pystackql__](https://github.com/stackql/pystackql) now includes a `markdownkv` output format optimized for LLM processing of control plane and data plane data from cloud providers.
