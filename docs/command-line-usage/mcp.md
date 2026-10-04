@@ -33,7 +33,7 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open 
 
 ### Deployment modes
 
-StackQL's MCP server can be deployed in three different configurations to suit various architectural requirements.
+StackQL's MCP server can be deployed in three different configurations to suit various architectural requirements.  The examples below opt into unauthenticated service with `"allow_unauthenticated": true`, which suits local development; for anything another process or host can reach, configure a bearer token instead (see [HTTP client authentication](#http-client-authentication)).
 
 #### 1. Standalone MCP server
 
@@ -42,7 +42,7 @@ Run StackQL as a dedicated MCP server on a specified port.
 ```bash
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}'
 ```
 
 **Use case:** when you only need MCP protocol access and don't require PostgreSQL wire protocol compatibility.
@@ -54,7 +54,7 @@ Run both MCP and PostgreSQL servers simultaneously with in-memory communication 
 ```bash
 stackql srv \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}' \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665
 ```
 
@@ -67,7 +67,7 @@ Run both servers with TCP-based communication, supporting distributed deployment
 ```bash
 stackql srv \
   --mcp.server.type=reverse_proxy \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9004"}, "backend": {"dsn": "postgres://stackql:stackql@127.0.0.1:5446?default_query_exec_mode=simple_protocol"}}' \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9004", "allow_unauthenticated": true}, "backend": {"dsn": "postgres://stackql:stackql@127.0.0.1:5446?default_query_exec_mode=simple_protocol"}}' \
   --pgsrv.port 5446
 ```
 
@@ -76,9 +76,11 @@ stackql srv \
 ```bash
 stackql srv \
   --mcp.server.type=reverse_proxy \
-  --mcp.config '{"server": {"tls_cert_file": "/path/to/server_cert.pem", "tls_key_file": "/path/to/server_key.pem", "transport": "http", "address": "127.0.0.1:9004"}, "backend": {"dsn": "postgres://stackql:stackql@127.0.0.1:5446?default_query_exec_mode=simple_protocol"}}' \
+  --mcp.config '{"server": {"tls_cert_file": "/path/to/server_cert.pem", "tls_key_file": "/path/to/server_key.pem", "transport": "http", "address": "127.0.0.1:9004", "auth_token_env_var": "STACKQL_MCP_TOKEN"}, "backend": {"dsn": "postgres://stackql:stackql@127.0.0.1:5446?default_query_exec_mode=simple_protocol"}}' \
   --pgsrv.port 5446
 ```
+
+TLS encrypts the transport but does not authenticate the client, so this example also requires the bearer token held in `STACKQL_MCP_TOKEN`.
 
 **Use case:** when you need to separate MCP and PostgreSQL workloads across different processes or hosts, or when you require TLS encryption for the MCP endpoint.
 
@@ -114,6 +116,8 @@ The `--mcp.config` flag accepts a JSON object with the following structure.
 |`server.address`|Address and port to bind the MCP server (e.g., `127.0.0.1:9912`).  HTTP transport only.|For `http`|
 |`server.tls_cert_file`|Path to TLS certificate file for HTTPS.|No|
 |`server.tls_key_file`|Path to TLS private key file for HTTPS.|No|
+|`server.auth_token_env_var`|Name of an environment variable holding a pre-shared bearer token.  When set, every HTTP request must carry `Authorization: Bearer <token>`; the server refuses to start if the variable is unset or empty.  See [HTTP client authentication](#http-client-authentication).|One of this or `allow_unauthenticated`, for `http`|
+|`server.allow_unauthenticated`|Explicit opt-in to serve the HTTP transport with no client authentication.  Default `false`.|One of this or `auth_token_env_var`, for `http`|
 |`server.mode`|Safety contract that gates mutation and lifecycle operations.  One of `read_only`, `safe` (default), `delete_safe`, `full_access`.  See [Server modes](#server-modes).|No|
 |`server.read_only`|**Legacy** boolean alias for `mode: read_only`.  When both fields are set, `mode` wins.|No|
 |`server.stateless`|Serve Streamable HTTP without sessions (no `Mcp-Session-Id`), which is how protocol revision `2026-07-28` is served over HTTP.  Default `false`.  Ignored for `stdio`.  See [Protocol revision support](#protocol-revision-support).|No|
@@ -147,7 +151,7 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 
 ```json
 {
-  "server": {"transport": "http", "address": "127.0.0.1:9912"},
+  "server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true},
   "enabled_tools": ["server_info", "list_providers"]
 }
 ```
@@ -175,7 +179,7 @@ The server speaks every revision of the Model Context Protocol supported by the 
 ```bash
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "stateless": true}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "stateless": true}}'
 ```
 
 A sessionless server issues no `Mcp-Session-Id`, answers `GET` and `DELETE` with 405 (there is no session to tear down), keeps `tools/list`, `prompts/list` and `resources/list` connection-invariant, and runs the approval round trip through `input_required`.  It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at initialise (each request gets an ephemeral session), so older clients cannot approve gated writes on a sessionless server.  Choose `stateless` for current-revision hosts and the default for a fleet that still includes older clients.
@@ -191,7 +195,7 @@ By default the server advertises every supported revision and negotiates per cli
 stackql mcp \
   --mcp.server.type=http \
   --mcp.protocol.version=2026-07-28 \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}'
 
 # handshake lifecycle only
 stackql mcp --mcp.server.type=stdio --mcp.protocol.version=2025-11-25
@@ -265,6 +269,34 @@ When a query fails on credential resolution, the MCP error carries a hint direct
 
 * * *
 
+### HTTP client authentication
+
+:::note
+
+`server.auth_token_env_var` and `server.allow_unauthenticated` are available in StackQL releases from `v0.12.742`.
+
+:::
+
+The HTTP transport requires client authentication.  `server.auth_token_env_var` names an environment variable holding a pre-shared bearer token; every request must carry `Authorization: Bearer <token>` or it is answered with `401`.  The token is read from the environment, so it never appears in `--mcp.config` or the process arguments.
+
+```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
+stackql mcp \
+  --mcp.server.type=http \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}'
+```
+
+:::info[Server Authentication Required]
+
+Serving without a token is an explicit opt-in: set `"allow_unauthenticated": true` in `server`.  With neither key the server exits at startup with a message naming both; it also exits if the token variable is unset or empty.  As of the `v0.12.742` release you must add either `auth_token_env_var` or `"allow_unauthenticated": true` to `server` when using the `http` transport.
+
+:::
+
+TLS (`tls_cert_file` / `tls_key_file`) encrypts the transport but does not authenticate the client; combine it with a token for any listener beyond loopback.  Cross-origin browser requests (a mismatched `Origin`, or a cross-site `Sec-Fetch-Site`) are refused with `403` regardless of authentication.  The bundled `stackql_mcp_client` sends no `Authorization` header, so a server it drives must opt into unauthenticated service.
+
+* * *
+
 ### Server modes
 
 `server.mode` chooses one of four safety contracts.  All four allow `SELECT` and metadata reads; they differ in how they handle mutations and lifecycle operations.
@@ -285,7 +317,15 @@ When a query fails on credential resolution, the MCP error carries a hint direct
 - If the client advertised the elicitation capability (at initialise, or in the per-request `_meta` client capabilities on `2026-07-28`), the server asks the user to approve the action with a short message (tool name, query class, SQL).  On `2026-07-28` the prompt is returned as an `input_required` result carrying an `elicitation/create` input request under the id `stackql_approval`, and the client retries the call with the answer in `inputResponses`; on earlier revisions the server sends the `elicitation/create` request itself mid-call.  The user accepts, declines, or cancels.
 - If the client did **not** advertise elicitation, the tool is refused with a message that explains the gap and points the operator at `full_access` mode.
 
+Approval is answered by the client, so it guards against an agent acting without its user, not against an untrusted caller.  Pair the HTTP transport with [client authentication](#http-client-authentication) where callers are not trusted.
+
 The mode is global per server.  There is no per-tool override.
+
+:::info[Payload Gating]
+
+From release `v0.12.742`, a payload holding several statements is gated by its most privileged statement in every mode, so `SELECT 1; DELETE ...` is treated as a `DELETE` and the audit record carries `query_class` `mutation_delete`.  `validate_select_query` accepts exactly one statement.
+
+:::
 
 #### Default-mode behaviour change
 
@@ -299,18 +339,18 @@ The legacy `read_only: true` JSON / YAML key is still accepted for back-compat a
 # Read-only: SELECTs proceed; mutations and lifecycle refused immediately.
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "mode": "read_only"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "mode": "read_only"}}'
 
 # Delete-safe: INSERT/UPDATE proceed; DELETE and EXEC need approval.
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "mode": "delete_safe"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "mode": "delete_safe"}}'
 
 # Full access: everything proceeds without prompting.  Use only with trusted
 # clients and operators.
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "mode": "full_access"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "mode": "full_access"}}'
 ```
 
 * * *
@@ -327,7 +367,7 @@ Every tool call writes one record to the configured audit sink, as JSONL by defa
 |`tool`|Tool name (e.g., `run_select_query`).|
 |`mode`|Server mode in effect at call time.|
 |`decision`|`allow` / `refuse_immediate` / `needs_approval_accepted` / `needs_approval_declined` / `needs_approval_cancelled` / `needs_approval_unavailable`.|
-|`query_class`|`select` / `mutation_create` / `mutation_delete` / `lifecycle` / `unknown`.|
+|`query_class`|`select` / `mutation_create` / `mutation_delete` / `lifecycle` / `unknown`.  For a payload holding several statements, the class of the most privileged one.|
 |`sql`|SQL string for query tools (`run_select_query`, `run_mutation_query`, `run_lifecycle_operation`, `validate_select_query`).|
 |`args`|Hierarchy fields for metadata tools (`list_*`, `describe_method`); SQL + `row_limit` for query tools.|
 |`duration_ms`|Wall-clock duration of the gate + handler.|
@@ -348,6 +388,7 @@ stackql mcp \
     "server": {
       "transport": "http",
       "address": "127.0.0.1:9912",
+      "allow_unauthenticated": true,
       "audit": {
         "file": {
           "path": "/var/log/stackql-mcp.log",
@@ -441,7 +482,7 @@ To turn audit off entirely (the pre-PR2 behaviour):
 ```bash
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "audit": {"disabled": true}}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "audit": {"disabled": true}}}'
 ```
 
 * * *
@@ -460,7 +501,7 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`list_resources`](/docs/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
 |[`list_methods`](/docs/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
 |[`describe_method`](/docs/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
-|[`validate_select_query`](/docs/mcp/validate_select_query)|KV|Parse and plan a `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only.|`sql`|
+|[`validate_select_query`](/docs/mcp/validate_select_query)|KV|Parse and plan a single `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only; exactly one statement.|`sql`|
 |[`run_select_query`](/docs/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
 |[`run_mutation_query`](/docs/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
 |[`run_lifecycle_operation`](/docs/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
@@ -512,14 +553,15 @@ You need to set environment variables required for provider authentication befor
 
 #### Basic standalone MCP server
 
-Launch a standalone MCP server with provider authentication:
+Launch a standalone MCP server with provider authentication and a bearer token for its clients:
 
 ```bash
 export GOOGLE_CREDENTIALS=$(cat /path/to/google-credentials.json)
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
 
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}' \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}' \
   --registry='{"url": "https://registry.stackql.io/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
@@ -533,7 +575,7 @@ export GOOGLE_CREDENTIALS=$(cat /path/to/google-credentials.json)
 
 stackql srv \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}' \
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665 \
   --registry='{"url": "https://registry.stackql.io/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
@@ -550,6 +592,7 @@ stackql mcp \
     "server": {
       "transport": "http",
       "address": "127.0.0.1:9912",
+      "allow_unauthenticated": true,
       "mode": "read_only",
       "audit": {"file": {"path": "/var/log/stackql-mcp-audit.log"}}
     }
@@ -560,7 +603,7 @@ stackql mcp \
 
 #### Full-access automation server
 
-For trusted automation pipelines that need mutations and can't respond to elicitation prompts:
+For trusted automation pipelines that need mutations and can't respond to elicitation prompts.  The pipeline presents the bearer token held in `STACKQL_MCP_TOKEN`:
 
 ```bash
 stackql mcp \
@@ -569,6 +612,7 @@ stackql mcp \
     "server": {
       "transport": "http",
       "address": "127.0.0.1:9912",
+      "auth_token_env_var": "STACKQL_MCP_TOKEN",
       "mode": "full_access"
     }
   }' \
@@ -596,7 +640,8 @@ stackql srv \
       "tls_cert_file": "server_cert.pem",
       "tls_key_file": "server_key.pem",
       "transport": "http",
-      "address": "127.0.0.1:9004"
+      "address": "127.0.0.1:9004",
+      "auth_token_env_var": "STACKQL_MCP_TOKEN"
     },
     "backend": {
       "dsn": "postgres://stackql:stackql@127.0.0.1:5446?default_query_exec_mode=simple_protocol"
@@ -619,7 +664,7 @@ python cicd/python/build.py --build-mcp-client
 
 This produces `./build/stackql_mcp_client`.
 
-Note that `stackql_mcp_client` does **not** advertise the MCP elicitation capability -- it's for non-interactive scripting.  Against a `safe` or `delete_safe` server it will receive the "client does not support elicitation" refusal on mutation and lifecycle calls.  For interactive testing with elicitation prompts, use an editor-embedded MCP client (Claude Desktop, Cursor, Continue).
+Note that `stackql_mcp_client` sends no `Authorization` header, so the server it targets must set `"allow_unauthenticated": true` (as the examples above do); a token-protected server answers it with `401`.  It also does **not** advertise the MCP elicitation capability -- it's for non-interactive scripting.  Against a `safe` or `delete_safe` server it will receive the "client does not support elicitation" refusal on mutation and lifecycle calls.  For interactive testing with elicitation prompts, use an editor-embedded MCP client (Claude Desktop, Cursor, Continue).
 
 ```bash
 # List all available tools
@@ -776,6 +821,7 @@ And separately, on safety:
 - Pin `mode: read_only` for inventory or analytics agents that should never write.
 - Pin `mode: delete_safe` when you want create/update freedom but want a human in the loop for destructive operations.
 - Reserve `mode: full_access` for trusted automation pipelines, and only in conjunction with an audit log that someone reviews.
+- Set `server.auth_token_env_var` on any HTTP listener that other processes or hosts can reach; `allow_unauthenticated` is for local development.  TLS alone does not authenticate clients.
 
 :::caution
 

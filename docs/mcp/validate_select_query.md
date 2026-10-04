@@ -11,9 +11,9 @@ description: MCP tool parsing and planning a StackQL SELECT without executing it
 image: "/img/stackql-featured-image.png"
 ---
 
-Parses and plans a `SELECT` statement without executing it.  Returns `{valid, errors}`.  Useful when an agent wants to verify its query compiles and binds against the discovered method before committing to a real API call.
+Parses and plans a single `SELECT` statement without executing it.  Returns `{valid, errors}`.  Useful when an agent wants to verify its query compiles and binds against the discovered method before committing to a real API call.
 
-`SELECT` only.  Mutations and lifecycle operations are not accepted.
+`SELECT` only, and exactly one statement: from `v0.12.742` a payload holding more than one statement is refused with `validate_select_query accepts exactly one statement`.
 
 See also:
 [[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `run_select_query` ]](/docs/mcp/run_select_query)
@@ -24,7 +24,7 @@ See also:
 
 | Argument | Required | Description |
 |--|--|--|
-|`sql`|Yes|A `SELECT` statement.|
+|`sql`|Yes|A single `SELECT` statement.|
 
 * * *
 

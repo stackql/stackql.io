@@ -39,7 +39,7 @@ See also:
 
 ## Gating
 
-Allowed in every server mode (`read_only`, `safe`, `delete_safe`, `full_access`).
+Allowed in every server mode (`read_only`, `safe`, `delete_safe`, `full_access`) when every statement in the payload is read-only.  From `v0.12.742` a payload holding several statements is gated by its most privileged statement, so a mutation behind a leading `SELECT` is refused or needs approval exactly as it would through `run_mutation_query`.
 
 * * *
 

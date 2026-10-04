@@ -21,6 +21,8 @@ Gated by the server [mode](/docs/command-line-usage/mcp#server-modes):
 |`safe` (default)|needs approval (elicitation)|needs approval|
 |`delete_safe`|allowed|needs approval|
 |`full_access`|allowed|allowed|
+
+A payload holding several statements is gated by its most privileged statement (from `v0.12.742`).
 <br/>
 When a mutation needs approval and the client did not advertise the MCP elicitation capability, the call is refused.
 

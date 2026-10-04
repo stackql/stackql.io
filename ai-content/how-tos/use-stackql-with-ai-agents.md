@@ -32,8 +32,10 @@ Alternatively (in StackQL releases after v0.10.542), nominate a dotenv-style cre
 ```bash
 stackql mcp \
   --mcp.server.type=http \
-  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
+  --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}'
 ```
+
+From `v0.12.742` the HTTP transport needs either `server.auth_token_env_var` (an environment variable holding a pre-shared bearer token that every request must carry) or the explicit `allow_unauthenticated` opt-in shown here, otherwise the server refuses to start; use the token for any listener other processes or hosts can reach.  `stdio` is unaffected.
 
 For editor-embedded clients, use `--mcp.server.type=stdio` and let the client launch the process (see [How to use StackQL with Claude](/ai/how-tos/use-stackql-with-claude)). To serve MCP and the PostgreSQL wire protocol from one process, use `stackql srv` with the same MCP flags plus `--pgsrv.port`.
 
@@ -46,7 +48,7 @@ For editor-embedded clients, use `--mcp.server.type=stdio` and let the client la
 | `delete_safe` | allow | allow | needs approval | needs approval |
 | `full_access` | allow | allow | allow | allow |
 
-"Needs approval" uses the MCP elicitation flow: the client shows the user the pending SQL and the user accepts or declines. Pin `read_only` for inventory agents; reserve `full_access` for trusted pipelines with a reviewed audit log.
+"Needs approval" uses the MCP elicitation flow: the client shows the user the pending SQL and the user accepts or declines. Pin `read_only` for inventory agents; reserve `full_access` for trusted pipelines with a reviewed audit log.  A payload holding several statements is gated by its most privileged statement (from `v0.12.742`), so a mutation cannot ride behind a leading `SELECT`.
 
 4. **Let the agent discover, then query.** A typical agent session: `server_info` once, then `list_providers` -> `list_methods` (which reveals required `WHERE` parameters) -> `validate_select_query` -> `run_select_query`:
 

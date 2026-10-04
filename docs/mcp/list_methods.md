@@ -26,6 +26,8 @@ See also:
 |`service`|Yes|Service under that provider.|
 |`resource`|Yes|Resource under `provider.service`.|
 
+Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built (from `v0.12.742`).
+
 * * *
 
 ## Output

@@ -24,6 +24,8 @@ See also:
 |--|--|--|
 |`provider`|Yes|Provider name (e.g., `google`, `aws`, `azure`, `github`).|
 
+Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built (from `v0.12.742`).
+
 * * *
 
 ## Output
