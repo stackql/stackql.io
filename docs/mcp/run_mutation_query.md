@@ -22,6 +22,8 @@ Gated by the server [mode](/docs/command-line-usage/mcp#server-modes):
 |`delete_safe`|allowed|needs approval|
 |`full_access`|allowed|allowed|
 
+<br/>
+
 :::info
 
 A payload holding several statements is gated by its most privileged statement
