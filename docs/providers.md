@@ -160,6 +160,11 @@ export const PROVIDER_CATEGORIES = [
         name: 'Google Gemini',
         href: 'https://gemeni-provider.stackql.io/',
         icon: '/img/providers/gemeni/favicon.png'
+      },
+      { 
+        name: 'TypeSafe AI',
+        href: 'https://typesafe-provider.stackql.io/',
+        icon: '/img/providers/typesafe/favicon.png'
       }      
     ]
   },
