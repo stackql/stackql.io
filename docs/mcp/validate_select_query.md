@@ -13,7 +13,11 @@ image: "/img/stackql-featured-image.png"
 
 Parses and plans a single `SELECT` statement without executing it.  Returns `{valid, errors}`.  Useful when an agent wants to verify its query compiles and binds against the discovered method before committing to a real API call.
 
-`SELECT` only, and exactly one statement: from `v0.12.742` a payload holding more than one statement is refused with `validate_select_query accepts exactly one statement`.
+:::info
+
+`SELECT` only, and exactly one statement, a payload holding more than one statement is refused with `validate_select_query accepts exactly one statement`.
+
+:::
 
 See also:
 [[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `run_select_query` ]](/docs/mcp/run_select_query)

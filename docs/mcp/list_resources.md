@@ -25,7 +25,11 @@ See also:
 |`provider`|Yes|Provider name.|
 |`service`|Yes|Service under that provider.|
 
-Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built (from `v0.12.742`).
+:::info
+
+Identifiers may not contain whitespace, semicolons or backslashes; such input is refused before any statement is built.
+
+:::
 
 * * *
 
