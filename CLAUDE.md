@@ -6,7 +6,7 @@ Project guide for Claude Code working in this repository. Tells you what this si
 
 stackql.io is the marketing and documentation site for StackQL, built on Docusaurus 3.10. Three audiences:
 
-- **Humans** - default site nav, docs at `/docs/*`, blog at `/blog/*`, install/provider/tutorial landings at top-level React pages.
+- **Humans** - default site nav, docs at `/docs/*` (Quick Starts at `/docs/quick-starts/*`), blog at `/blog/<section>/*` (three sections, see "The blog" below), install/provider landings at top-level React pages.
 - **AI agents and answer engines** - a parallel content surface at `/ai/*` (canonical definitions, comparisons, how-tos, FAQs, troubleshooting, etc.) reachable by deep link or via `llms.txt`, but **not** linked from the human nav.
 - **LLM crawlers** - `llms.txt` and `llms-full.txt` at site root; raw markdown twin (`/foo.md`) for every doc and blog page.
 
@@ -34,7 +34,7 @@ Lifecycle: `postBuild` + `allContentLoaded`
 Emits JSON-LD `<script type="application/ld+json">` blocks into the `<head>` of every emitted HTML page. The shape:
 
 - `WebPage` + `BreadcrumbList` + `WebSite` + `Organization` on every page
-- `Article` + `ImageObject` + `Person` on `/blog/*` (real blog posts)
+- `Article` + `ImageObject` + `Person` on blog posts (`/blog/<section>/<slug>`). Breadcrumbs follow the blog instance base path (Home > Blog > Section > Post) and `Article.articleSection` is `['Blog', '<Section>']` - needs plugin >= 1.6.0
 - `TechArticle` on `/docs/*` and `/ai/*` (configured via `techArticleRoutePrefixes`)
 - `FAQPage`, `HowTo`, `SoftwareApplication` opt-in via frontmatter (`faq:`, `howTo:`, `softwareApplication:`)
 - `SpeakableSpecification` on every WebPage with default selectors
@@ -65,7 +65,7 @@ Four features:
 
 Config lives at the plugin options object in the plugins array in [docusaurus.config.js](docusaurus.config.js):
 
-- `llmsTxt.instanceSections` - section titles + ordering for the `llms.txt` index (AI Reference -> Documentation -> Blog)
+- `llmsTxt.instanceSections` - section titles + ordering for the `llms.txt` index (AI Reference -> Documentation -> one "Blog - <Section>" section per blog instance, generated from `blogSections`)
 - `askAi.providerOrder` - dropdown ordering (defaults to claude, chatgpt, perplexity)
 - `askAi.promptTemplate` - the prefilled prompt sent to the AI surface. Default is self-contained ("Read {pageUrl}.md and help me understand it. Summarize the key points, then ask me one clarifying question to dig deeper."). The user can edit it before submitting.
 
@@ -93,6 +93,26 @@ ai-content/
 Each section has an `index.md` landing. Individual reference pages go directly inside each section dir.
 
 `sidebarPath: false` is what keeps these out of the human nav. They're reachable via direct URL, the sitemap, and `llms.txt`.
+
+### The blog: three content-blog instances
+
+The preset blog is disabled (`blog: false`). Three `@docusaurus/plugin-content-blog` instances are generated from the `blogSections` array near the top of [docusaurus.config.js](docusaurus.config.js) (GitHub issue #288). A tag-based split was ruled out because the blog sidebar is built per instance and cannot be filtered by tag.
+
+| Instance id | Content dir | Routes | Nav label |
+|---|---|---|---|
+| `product` | `blog/product/` | `/blog/product/*` | Product Announcements |
+| `providers` | `blog/providers/` | `/blog/providers/*` | Provider Announcements |
+| `tutorials` | `blog/tutorials/` | `/blog/tutorials/*` | Tutorials |
+
+- Each instance has its own list page, sidebar (`blogSidebarCount: 'ALL'`), tags, pagination and feeds (`/blog/<id>/rss.xml`, `atom.xml`, `feed.json`). [blog/authors.yml](blog/authors.yml) is shared by all three via `authorsMapPath: '../authors.yml'`.
+- New posts go straight into the section directory. The directory is the type - there is no marker tag. Slugs are set in front matter as before and must be unique across all three sections (the redirect generator checks this).
+- `/blog` is a landing page built by the local plugin [plugins/blog-landing/index.js](plugins/blog-landing/index.js). It reads the three instances in `allContentLoaded` (the only hook that sees other plugins' content) and adds a route rendering [src/components/BlogLanding/index.jsx](src/components/BlogLanding/index.jsx) with the newest five posts per section.
+- Every pre-split post URL (`/blog/<slug>` and its `.md` companion) has a 301 to its new home in [netlify.toml](netlify.toml). The per-post block between the `BEGIN/END generated blog redirects` markers is owned by [scripts/generate-blog-redirects.js](scripts/generate-blog-redirects.js), which derives rules from front matter slugs. Rerun it only if a pre-split post's slug or section changes; posts written after the split never had an old URL and need no rule. Old `/blog/tags/*`, `/blog/page/*` and `/blog/archive` go to `/blog`; the old feed URLs go to the product announcements feeds.
+- The navbar "More" dropdown and the footer list the three sections plus Quick Starts; both are derived from `blogSections`.
+- "Tutorials" in the nav means the blog section. The docs walkthroughs formerly at `/docs/tutorials/*` are "Quick Starts" at `/docs/quick-starts/*` (directory `docs/quick-starts/`, sidebar category in [sidebars.js](sidebars.js)). Old URLs are 301'd in netlify.toml, including `/tutorials` -> `/blog/tutorials` and `/cookbooks` -> `/docs/quick-starts` (both were meta-refresh React stubs, now deleted).
+- Sitemap `ignorePatterns` cover `/blog/*/tags/**` and `/blog/*/page/**`.
+- The `breadcrumbLabelMap` entries for the section ids are generated from `blogSections`, so JSON-LD breadcrumbs read "Product Announcements" rather than "product".
+- The shared nav used by the provider microsites lives in `../docusaurus-config` (vendored by those sites at build time). Its Blog/Tutorials links must be kept in step with the main site nav.
 
 ### Netlify configuration
 
@@ -198,9 +218,9 @@ After plugin changes, dev cache must be cleared: `rm -rf .docusaurus && npm run 
 
 When the live site changes, AI fetch tools (Claude.ai's web_fetch, ChatGPT's browse, Perplexity) may serve cached responses for some hours. If a recently-deployed `.md` URL appears as 404 in an LLM response, check the URL directly with `curl` first - if curl returns 200, the bot is using a stale cache. Wait a few hours and retest.
 
-### `/install`, `/blog`, `/providers`, `/stackql-deploy`, `/tutorials`, `/mcp`, `/stackqldocs`
+### `/install`, `/blog`, `/blog/<section>`, `/providers`, `/stackql-deploy`, `/mcp`, `/stackqldocs`
 
-These top-level routes are React pages or auto-generated index landings with **no source markdown**. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission.
+These top-level routes are React pages, the blog landing plugin route, blog list pages, or auto-generated index landings with **no source markdown**. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission. `/tutorials` and `/cookbooks` are no longer pages at all - they are Netlify 301s, so they 404 under `yarn serve`.
 
 ### Mobile breakpoint for Ask AI
 
@@ -223,12 +243,16 @@ rm -rf .docusaurus build
 
 # Inspect emitted JSON-LD on a page
 grep -A1 'application/ld+json' build/docs/command-line-usage/exec.html | head -20
+grep -A1 'application/ld+json' build/blog/product/stackql-mcp-server-now-available.html | head -20
 
 # Count .md companions
 find build -name "*.md" -type f | wc -l
 
 # Check llms.txt structure
 grep -E '^## ' build/llms.txt
+
+# Regenerate the per-post blog redirect block in netlify.toml
+node scripts/generate-blog-redirects.js
 ```
 
 ## Related repositories

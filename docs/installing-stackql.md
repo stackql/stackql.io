@@ -372,7 +372,7 @@ cargo install stackql-deploy
 
   ### AWS Cloud Shell
 
-  AWS CloudShell provides a browser-based shell with AWS CLI pre-installed and authenticated. Running StackQL in AWS CloudShell allows you to query and manage AWS resources without additional authentication steps. For detailed instructions, see our [AWS CloudShell tutorial](/docs/tutorials/aws/aws-cloud-shell).
+  AWS CloudShell provides a browser-based shell with AWS CLI pre-installed and authenticated. Running StackQL in AWS CloudShell allows you to query and manage AWS resources without additional authentication steps. For detailed instructions, see our [AWS CloudShell tutorial](/docs/quick-starts/aws/aws-cloud-shell).
 
   First, download the StackQL package:
 
@@ -392,7 +392,7 @@ cargo install stackql-deploy
 
   ### Azure Cloud Shell
 
-  Azure Cloud Shell provides a browser-accessible shell environment with Azure CLI pre-authenticated with your Azure account. Using StackQL in Azure Cloud Shell enables seamless querying of your Azure resources without additional setup. For complete details, check our [Azure Cloud Shell guide](https://docs.stackql.io/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-azure-cloud-shell).  
+  Azure Cloud Shell provides a browser-accessible shell environment with Azure CLI pre-authenticated with your Azure account. Using StackQL in Azure Cloud Shell enables seamless querying of your Azure resources without additional setup. For complete details, check our [Azure Cloud Shell guide](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-azure-cloud-shell).  
 
   First, download the StackQL package:
 
@@ -413,7 +413,7 @@ cargo install stackql-deploy
 
   ### Google Cloud Shell
 
-  Google Cloud Shell offers a development and operations environment with Google Cloud CLI already authenticated. Running StackQL in Google Cloud Shell lets you query GCP resources using your existing authentication. Learn more in our [Google Cloud Shell guide](https://docs.stackql.io/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-google-cloud-shell).  
+  Google Cloud Shell offers a development and operations environment with Google Cloud CLI already authenticated. Running StackQL in Google Cloud Shell lets you query GCP resources using your existing authentication. Learn more in our [Google Cloud Shell guide](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-google-cloud-shell).  
 
   First, download the StackQL package:
   
@@ -434,7 +434,7 @@ cargo install stackql-deploy
 
   ### Databricks Web Terminal
 
-  Databricks workspaces include a web terminal that runs as the logged-in user. Running StackQL there lets you query your workspace using your Databricks identity, with no separate authentication setup. For example queries and account-level auth, see our [Databricks Web Terminal guide](/blog/stackql-in-databricks-web-terminal).
+  Databricks workspaces include a web terminal that runs as the logged-in user. Running StackQL there lets you query your workspace using your Databricks identity, with no separate authentication setup. For example queries and account-level auth, see our [Databricks Web Terminal guide](/blog/tutorials/stackql-in-databricks-web-terminal).
 
   First, download the StackQL package:
 

@@ -54,3 +54,1129 @@
   from = "/docs/mcp/describe_resource"
   to = "/docs/mcp/describe_method"
   status = 301
+
+# Docs "Tutorials" were renamed "Quick Starts" (#288) so that "Tutorials"
+# means the blog tutorials section. The splat covers the .md companions.
+# /docs/azure was the mis-slugged Azure index before the rename.
+[[redirects]]
+  from = "/docs/tutorials"
+  to = "/docs/quick-starts"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tutorials/*"
+  to = "/docs/quick-starts/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/azure"
+  to = "/docs/quick-starts/azure"
+  status = 301
+
+# Former top-level meta-refresh stubs (src/pages/tutorials.js and
+# cookbooks.js), now real 301s.
+[[redirects]]
+  from = "/tutorials"
+  to = "/blog/tutorials"
+  status = 301
+
+[[redirects]]
+  from = "/cookbooks"
+  to = "/docs/quick-starts"
+  status = 301
+
+# Blog split (#288): the single blog at /blog/<slug> became three plugin
+# instances at /blog/<section>/<slug>. Tag, pagination and archive routes
+# of the old instance go to the landing page. The old feed URLs go to the
+# product announcements feeds (each section now has its own feeds).
+[[redirects]]
+  from = "/blog/tags"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/tags/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/page/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/archive"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/rss.xml"
+  to = "/blog/product/rss.xml"
+  status = 301
+
+[[redirects]]
+  from = "/blog/atom.xml"
+  to = "/blog/product/atom.xml"
+  status = 301
+
+[[redirects]]
+  from = "/blog/feed.json"
+  to = "/blog/product/feed.json"
+  status = 301
+
+# Per-post rules: one for the page and one for its .md companion. The block
+# is owned by scripts/generate-blog-redirects.js, which derives the rules
+# from each post's front matter slug.
+# BEGIN generated blog redirects - do not edit by hand, run scripts/generate-blog-redirects.js
+
+[[redirects]]
+  from = "/blog/introducing-the-stackql-provider-registry"
+  to = "/blog/product/introducing-the-stackql-provider-registry"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-the-stackql-provider-registry.md"
+  to = "/blog/product/introducing-the-stackql-provider-registry.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-middleware-and-playground-available"
+  to = "/blog/product/stackql-middleware-and-playground-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-middleware-and-playground-available.md"
+  to = "/blog/product/stackql-middleware-and-playground-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/setup-stackql-github-action"
+  to = "/blog/product/setup-stackql-github-action"
+  status = 301
+
+[[redirects]]
+  from = "/blog/setup-stackql-github-action.md"
+  to = "/blog/product/setup-stackql-github-action.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-pypi-package-available"
+  to = "/blog/product/stackql-pypi-package-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-pypi-package-available.md"
+  to = "/blog/product/stackql-pypi-package-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/support-for-outer-joins-released"
+  to = "/blog/product/support-for-outer-joins-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/support-for-outer-joins-released.md"
+  to = "/blog/product/support-for-outer-joins-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-table-valued-functions-in-stackql"
+  to = "/blog/product/introducing-table-valued-functions-in-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-table-valued-functions-in-stackql.md"
+  to = "/blog/product/introducing-table-valued-functions-in-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-materialized-views-with-stackql"
+  to = "/blog/product/introducing-materialized-views-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-materialized-views-with-stackql.md"
+  to = "/blog/product/introducing-materialized-views-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/builtin-parallel-query-execution-in-stackql"
+  to = "/blog/product/builtin-parallel-query-execution-in-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/builtin-parallel-query-execution-in-stackql.md"
+  to = "/blog/product/builtin-parallel-query-execution-in-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-model-driven-iac-with-stackql-deploy"
+  to = "/blog/product/introducing-model-driven-iac-with-stackql-deploy"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-model-driven-iac-with-stackql-deploy.md"
+  to = "/blog/product/introducing-model-driven-iac-with-stackql-deploy.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-github-action-available"
+  to = "/blog/product/stackql-deploy-github-action-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-github-action-available.md"
+  to = "/blog/product/stackql-deploy-github-action-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/linux-arm64-build-available"
+  to = "/blog/product/linux-arm64-build-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/linux-arm64-build-available.md"
+  to = "/blog/product/linux-arm64-build-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-docs-site-live"
+  to = "/blog/product/stackql-deploy-docs-site-live"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-docs-site-live.md"
+  to = "/blog/product/stackql-deploy-docs-site-live.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-server-now-available"
+  to = "/blog/product/stackql-mcp-server-now-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-server-now-available.md"
+  to = "/blog/product/stackql-mcp-server-now-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/markdownkv-output-format-available-in-pystackql"
+  to = "/blog/product/markdownkv-output-format-available-in-pystackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/markdownkv-output-format-available-in-pystackql.md"
+  to = "/blog/product/markdownkv-output-format-available-in-pystackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-provider-development-skill-for-claude"
+  to = "/blog/product/stackql-provider-development-skill-for-claude"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-provider-development-skill-for-claude.md"
+  to = "/blog/product/stackql-provider-development-skill-for-claude.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/window-functions-and-ctes-now-available"
+  to = "/blog/product/window-functions-and-ctes-now-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/window-functions-and-ctes-now-available.md"
+  to = "/blog/product/window-functions-and-ctes-now-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-joins-linux-foundation-agentic-ai-foundation"
+  to = "/blog/product/stackql-joins-linux-foundation-agentic-ai-foundation"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-joins-linux-foundation-agentic-ai-foundation.md"
+  to = "/blog/product/stackql-joins-linux-foundation-agentic-ai-foundation.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-2-0-rust-rewrite"
+  to = "/blog/product/stackql-deploy-2-0-rust-rewrite"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-deploy-2-0-rust-rewrite.md"
+  to = "/blog/product/stackql-deploy-2-0-rust-rewrite.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/run-the-stackql-mcp-server-anywhere"
+  to = "/blog/product/run-the-stackql-mcp-server-anywhere"
+  status = 301
+
+[[redirects]]
+  from = "/blog/run-the-stackql-mcp-server-anywhere.md"
+  to = "/blog/product/run-the-stackql-mcp-server-anywhere.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-anthropic-directory"
+  to = "/blog/product/stackql-mcp-anthropic-directory"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-anthropic-directory.md"
+  to = "/blog/product/stackql-mcp-anthropic-directory.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-2026-07-28-and-opentelemetry"
+  to = "/blog/product/stackql-mcp-2026-07-28-and-opentelemetry"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-mcp-2026-07-28-and-opentelemetry.md"
+  to = "/blog/product/stackql-mcp-2026-07-28-and-opentelemetry.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/github-provider-for-stackql-released"
+  to = "/blog/providers/github-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/github-provider-for-stackql-released.md"
+  to = "/blog/providers/github-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/netlify-provider-for-stackql-released"
+  to = "/blog/providers/netlify-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/netlify-provider-for-stackql-released.md"
+  to = "/blog/providers/netlify-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/kubernetes-provider-for-stackql-released"
+  to = "/blog/providers/kubernetes-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/kubernetes-provider-for-stackql-released.md"
+  to = "/blog/providers/kubernetes-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/azure-provider-for-stackql-released"
+  to = "/blog/providers/azure-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/azure-provider-for-stackql-released.md"
+  to = "/blog/providers/azure-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-aws-provider-released"
+  to = "/blog/providers/stackql-aws-provider-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-aws-provider-released.md"
+  to = "/blog/providers/stackql-aws-provider-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-functions-and-azure-provider-available"
+  to = "/blog/providers/new-functions-and-azure-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-functions-and-azure-provider-available.md"
+  to = "/blog/providers/new-functions-and-azure-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/sumologic-provider-for-stackql-now-available"
+  to = "/blog/providers/sumologic-provider-for-stackql-now-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/sumologic-provider-for-stackql-now-available.md"
+  to = "/blog/providers/sumologic-provider-for-stackql-now-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/digitalocean-provider-for-stackql-released"
+  to = "/blog/providers/digitalocean-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/digitalocean-provider-for-stackql-released.md"
+  to = "/blog/providers/digitalocean-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/linode-provider-for-stackql-released"
+  to = "/blog/providers/linode-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/linode-provider-for-stackql-released.md"
+  to = "/blog/providers/linode-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/vercel-provider-for-stackql-available"
+  to = "/blog/providers/vercel-provider-for-stackql-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/vercel-provider-for-stackql-available.md"
+  to = "/blog/providers/vercel-provider-for-stackql-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/godaddy-provider-for-stackql-now-available"
+  to = "/blog/providers/godaddy-provider-for-stackql-now-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/godaddy-provider-for-stackql-now-available.md"
+  to = "/blog/providers/godaddy-provider-for-stackql-now-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-providers-for-datadog-and-pagerduty-now-available"
+  to = "/blog/providers/stackql-providers-for-datadog-and-pagerduty-now-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-providers-for-datadog-and-pagerduty-now-available.md"
+  to = "/blog/providers/stackql-providers-for-datadog-and-pagerduty-now-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-azure-providers-for-stackql-available"
+  to = "/blog/providers/new-azure-providers-for-stackql-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-azure-providers-for-stackql-available.md"
+  to = "/blog/providers/new-azure-providers-for-stackql-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-google-provider-available"
+  to = "/blog/providers/new-google-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-google-provider-available.md"
+  to = "/blog/providers/new-google-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-stackql-azure-providers-jun-2024"
+  to = "/blog/providers/new-stackql-azure-providers-jun-2024"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-stackql-azure-providers-jun-2024.md"
+  to = "/blog/providers/new-stackql-azure-providers-jun-2024.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-google-provider-available"
+  to = "/blog/providers/latest-google-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-google-provider-available.md"
+  to = "/blog/providers/latest-google-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/openai-provider-for-stackql-available"
+  to = "/blog/providers/openai-provider-for-stackql-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/openai-provider-for-stackql-available.md"
+  to = "/blog/providers/openai-provider-for-stackql-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-provider-for-stackql-available"
+  to = "/blog/providers/anthropic-provider-for-stackql-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-provider-for-stackql-available.md"
+  to = "/blog/providers/anthropic-provider-for-stackql-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/confluent-provider-for-stackql-released"
+  to = "/blog/providers/confluent-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/confluent-provider-for-stackql-released.md"
+  to = "/blog/providers/confluent-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/databricks-provider-for-stackql-available"
+  to = "/blog/providers/databricks-provider-for-stackql-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/databricks-provider-for-stackql-available.md"
+  to = "/blog/providers/databricks-provider-for-stackql-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-aws-provider-for-stackql-released"
+  to = "/blog/providers/latest-aws-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-aws-provider-for-stackql-released.md"
+  to = "/blog/providers/latest-aws-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/snowflake-provider-for-stackql-released"
+  to = "/blog/providers/snowflake-provider-for-stackql-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/snowflake-provider-for-stackql-released.md"
+  to = "/blog/providers/snowflake-provider-for-stackql-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-google-providers-available"
+  to = "/blog/providers/updated-google-providers-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-google-providers-available.md"
+  to = "/blog/providers/updated-google-providers-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-okta-provider-released"
+  to = "/blog/providers/new-okta-provider-released"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-okta-provider-released.md"
+  to = "/blog/providers/new-okta-provider-released.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-digitalocean-provider-available"
+  to = "/blog/providers/latest-digitalocean-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-digitalocean-provider-available.md"
+  to = "/blog/providers/latest-digitalocean-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/deno-deploy-provider-available"
+  to = "/blog/providers/deno-deploy-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/deno-deploy-provider-available.md"
+  to = "/blog/providers/deno-deploy-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-linode-provider-available"
+  to = "/blog/providers/latest-linode-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-linode-provider-available.md"
+  to = "/blog/providers/latest-linode-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-datadog-provider-available"
+  to = "/blog/providers/latest-datadog-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/latest-datadog-provider-available.md"
+  to = "/blog/providers/latest-datadog-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-provider-december-2025-update"
+  to = "/blog/providers/google-provider-december-2025-update"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-provider-december-2025-update.md"
+  to = "/blog/providers/google-provider-december-2025-update.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-awscc-provider-available"
+  to = "/blog/providers/new-awscc-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-awscc-provider-available.md"
+  to = "/blog/providers/new-awscc-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-databricks-providers-available"
+  to = "/blog/providers/new-databricks-providers-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-databricks-providers-available.md"
+  to = "/blog/providers/new-databricks-providers-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/github-provider-april-2026-update"
+  to = "/blog/providers/github-provider-april-2026-update"
+  status = 301
+
+[[redirects]]
+  from = "/blog/github-provider-april-2026-update.md"
+  to = "/blog/providers/github-provider-april-2026-update.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/confluent-provider-may-2026-update"
+  to = "/blog/providers/confluent-provider-may-2026-update"
+  status = 301
+
+[[redirects]]
+  from = "/blog/confluent-provider-may-2026-update.md"
+  to = "/blog/providers/confluent-provider-may-2026-update.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-cloudflare-provider-available"
+  to = "/blog/providers/updated-cloudflare-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-cloudflare-provider-available.md"
+  to = "/blog/providers/updated-cloudflare-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-providers-update-july-2026"
+  to = "/blog/providers/anthropic-providers-update-july-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-providers-update-july-2026.md"
+  to = "/blog/providers/anthropic-providers-update-july-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/azure-provider-update-july-2026"
+  to = "/blog/providers/azure-provider-update-july-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/azure-provider-update-july-2026.md"
+  to = "/blog/providers/azure-provider-update-july-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/openai-providers-update-july-2026"
+  to = "/blog/providers/openai-providers-update-july-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/openai-providers-update-july-2026.md"
+  to = "/blog/providers/openai-providers-update-july-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/databricks-providers-update-july-2026"
+  to = "/blog/providers/databricks-providers-update-july-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/databricks-providers-update-july-2026.md"
+  to = "/blog/providers/databricks-providers-update-july-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-gemini-provider-available"
+  to = "/blog/providers/new-gemini-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-gemini-provider-available.md"
+  to = "/blog/providers/new-gemini-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-provider-update-august-2026"
+  to = "/blog/providers/google-provider-update-august-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-provider-update-august-2026.md"
+  to = "/blog/providers/google-provider-update-august-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-clickhouse-provider-available"
+  to = "/blog/providers/new-clickhouse-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-clickhouse-provider-available.md"
+  to = "/blog/providers/new-clickhouse-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/aws-provider-update-august-2026"
+  to = "/blog/providers/aws-provider-update-august-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/aws-provider-update-august-2026.md"
+  to = "/blog/providers/aws-provider-update-august-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-kubernetes-provider-available"
+  to = "/blog/providers/new-kubernetes-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-kubernetes-provider-available.md"
+  to = "/blog/providers/new-kubernetes-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-datadog-provider-available"
+  to = "/blog/providers/updated-datadog-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/updated-datadog-provider-available.md"
+  to = "/blog/providers/updated-datadog-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-providers-update-september-2026"
+  to = "/blog/providers/anthropic-providers-update-september-2026"
+  status = 301
+
+[[redirects]]
+  from = "/blog/anthropic-providers-update-september-2026.md"
+  to = "/blog/providers/anthropic-providers-update-september-2026.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-gitlab-provider-available"
+  to = "/blog/providers/new-gitlab-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-gitlab-provider-available.md"
+  to = "/blog/providers/new-gitlab-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-railway-provider-available"
+  to = "/blog/providers/new-railway-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-railway-provider-available.md"
+  to = "/blog/providers/new-railway-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-typesafe-provider-available"
+  to = "/blog/providers/new-typesafe-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-typesafe-provider-available.md"
+  to = "/blog/providers/new-typesafe-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-gcp-services-and-resources-using-stackql"
+  to = "/blog/tutorials/exploring-gcp-services-and-resources-using-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-gcp-services-and-resources-using-stackql.md"
+  to = "/blog/tutorials/exploring-gcp-services-and-resources-using-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/deploying-and-querying-gcs-buckets-using-stackql"
+  to = "/blog/tutorials/deploying-and-querying-gcs-buckets-using-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/deploying-and-querying-gcs-buckets-using-stackql.md"
+  to = "/blog/tutorials/deploying-and-querying-gcs-buckets-using-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/enable-google-cloud-storage-logging"
+  to = "/blog/tutorials/enable-google-cloud-storage-logging"
+  status = 301
+
+[[redirects]]
+  from = "/blog/enable-google-cloud-storage-logging.md"
+  to = "/blog/tutorials/enable-google-cloud-storage-logging.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/analyze-gcs-usage-logs-in-bigquery"
+  to = "/blog/tutorials/analyze-gcs-usage-logs-in-bigquery"
+  status = 301
+
+[[redirects]]
+  from = "/blog/analyze-gcs-usage-logs-in-bigquery.md"
+  to = "/blog/tutorials/analyze-gcs-usage-logs-in-bigquery.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/preventing-public-access-for-gcs-buckets"
+  to = "/blog/tutorials/preventing-public-access-for-gcs-buckets"
+  status = 301
+
+[[redirects]]
+  from = "/blog/preventing-public-access-for-gcs-buckets.md"
+  to = "/blog/tutorials/preventing-public-access-for-gcs-buckets.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-the-google-cloud-asset-api"
+  to = "/blog/tutorials/exploring-the-google-cloud-asset-api"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-the-google-cloud-asset-api.md"
+  to = "/blog/tutorials/exploring-the-google-cloud-asset-api.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/querying-bigquery-errors-and-load-stats"
+  to = "/blog/tutorials/querying-bigquery-errors-and-load-stats"
+  status = 301
+
+[[redirects]]
+  from = "/blog/querying-bigquery-errors-and-load-stats.md"
+  to = "/blog/tutorials/querying-bigquery-errors-and-load-stats.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/using-the-jsonnet-map-function"
+  to = "/blog/tutorials/using-the-jsonnet-map-function"
+  status = 301
+
+[[redirects]]
+  from = "/blog/using-the-jsonnet-map-function.md"
+  to = "/blog/tutorials/using-the-jsonnet-map-function.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/gke-autopilot-the-easy-way"
+  to = "/blog/tutorials/gke-autopilot-the-easy-way"
+  status = 301
+
+[[redirects]]
+  from = "/blog/gke-autopilot-the-easy-way.md"
+  to = "/blog/tutorials/gke-autopilot-the-easy-way.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-gcp-roles-with-stackql"
+  to = "/blog/tutorials/exploring-gcp-roles-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/exploring-gcp-roles-with-stackql.md"
+  to = "/blog/tutorials/exploring-gcp-roles-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/big-query-cost-analysis-using-stackql"
+  to = "/blog/tutorials/big-query-cost-analysis-using-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/big-query-cost-analysis-using-stackql.md"
+  to = "/blog/tutorials/big-query-cost-analysis-using-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/analyzing-iam-in-the-gcp-resource-heirarchy"
+  to = "/blog/tutorials/analyzing-iam-in-the-gcp-resource-heirarchy"
+  status = 301
+
+[[redirects]]
+  from = "/blog/analyzing-iam-in-the-gcp-resource-heirarchy.md"
+  to = "/blog/tutorials/analyzing-iam-in-the-gcp-resource-heirarchy.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cloud-security-and-inventory-analysis-with-stackql-and-jupyter"
+  to = "/blog/tutorials/cloud-security-and-inventory-analysis-with-stackql-and-jupyter"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cloud-security-and-inventory-analysis-with-stackql-and-jupyter.md"
+  to = "/blog/tutorials/cloud-security-and-inventory-analysis-with-stackql-and-jupyter.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cross-cloud-queries-with-stackql"
+  to = "/blog/tutorials/cross-cloud-queries-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cross-cloud-queries-with-stackql.md"
+  to = "/blog/tutorials/cross-cloud-queries-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-github-actions"
+  to = "/blog/tutorials/stackql-github-actions"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-github-actions.md"
+  to = "/blog/tutorials/stackql-github-actions.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/getting-files-changed-in-a-github-commit"
+  to = "/blog/tutorials/getting-files-changed-in-a-github-commit"
+  status = 301
+
+[[redirects]]
+  from = "/blog/getting-files-changed-in-a-github-commit.md"
+  to = "/blog/tutorials/getting-files-changed-in-a-github-commit.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-dashboards-with-superset"
+  to = "/blog/tutorials/stackql-dashboards-with-superset"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-dashboards-with-superset.md"
+  to = "/blog/tutorials/stackql-dashboards-with-superset.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-and-manage-google-workspace-users-and-groups-with-stackql"
+  to = "/blog/tutorials/query-and-manage-google-workspace-users-and-groups-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-and-manage-google-workspace-users-and-groups-with-stackql.md"
+  to = "/blog/tutorials/query-and-manage-google-workspace-users-and-groups-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-and-create-github-releases-using-stackql"
+  to = "/blog/tutorials/query-and-create-github-releases-using-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-and-create-github-releases-using-stackql.md"
+  to = "/blog/tutorials/query-and-create-github-releases-using-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/five-minute-dashboards-with-stackql.md"
+  to = "/blog/tutorials/five-minute-dashboards-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/five-minute-dashboards-with-stackql.md.md"
+  to = "/blog/tutorials/five-minute-dashboards-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/use-stackql-in-codespaces"
+  to = "/blog/tutorials/use-stackql-in-codespaces"
+  status = 301
+
+[[redirects]]
+  from = "/blog/use-stackql-in-codespaces.md"
+  to = "/blog/tutorials/use-stackql-in-codespaces.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-resources-across-aws-regions-asynchronously"
+  to = "/blog/tutorials/query-resources-across-aws-regions-asynchronously"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-resources-across-aws-regions-asynchronously.md"
+  to = "/blog/tutorials/query-resources-across-aws-regions-asynchronously.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cloud-and-saas-visibility-with-stackql-and-powerbi"
+  to = "/blog/tutorials/cloud-and-saas-visibility-with-stackql-and-powerbi"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cloud-and-saas-visibility-with-stackql-and-powerbi.md"
+  to = "/blog/tutorials/cloud-and-saas-visibility-with-stackql-and-powerbi.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp"
+  to = "/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp"
+  status = 301
+
+[[redirects]]
+  from = "/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp.md"
+  to = "/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-5-minute-global-aws-inventory"
+  to = "/blog/tutorials/the-5-minute-global-aws-inventory"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-5-minute-global-aws-inventory.md"
+  to = "/blog/tutorials/the-5-minute-global-aws-inventory.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-firewall-analysis-using-stackql"
+  to = "/blog/tutorials/google-firewall-analysis-using-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/google-firewall-analysis-using-stackql.md"
+  to = "/blog/tutorials/google-firewall-analysis-using-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/delete-default-aws-vpcs-with-stackql"
+  to = "/blog/tutorials/delete-default-aws-vpcs-with-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/delete-default-aws-vpcs-with-stackql.md"
+  to = "/blog/tutorials/delete-default-aws-vpcs-with-stackql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/use-stackql-to-identify-old-tls-versions-for-azure-services"
+  to = "/blog/tutorials/use-stackql-to-identify-old-tls-versions-for-azure-services"
+  status = 301
+
+[[redirects]]
+  from = "/blog/use-stackql-to-identify-old-tls-versions-for-azure-services.md"
+  to = "/blog/tutorials/use-stackql-to-identify-old-tls-versions-for-azure-services.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/quickly-identify-old-node-runtimes-in-aws-lambda"
+  to = "/blog/tutorials/quickly-identify-old-node-runtimes-in-aws-lambda"
+  status = 301
+
+[[redirects]]
+  from = "/blog/quickly-identify-old-node-runtimes-in-aws-lambda.md"
+  to = "/blog/tutorials/quickly-identify-old-node-runtimes-in-aws-lambda.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-in-databricks-web-terminal"
+  to = "/blog/tutorials/stackql-in-databricks-web-terminal"
+  status = 301
+
+[[redirects]]
+  from = "/blog/stackql-in-databricks-web-terminal.md"
+  to = "/blog/tutorials/stackql-in-databricks-web-terminal.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/autonomous-edge-defense-ai-agents-sql"
+  to = "/blog/tutorials/autonomous-edge-defense-ai-agents-sql"
+  status = 301
+
+[[redirects]]
+  from = "/blog/autonomous-edge-defense-ai-agents-sql.md"
+  to = "/blog/tutorials/autonomous-edge-defense-ai-agents-sql.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/ai-remediation-pull-requests"
+  to = "/blog/tutorials/ai-remediation-pull-requests"
+  status = 301
+
+[[redirects]]
+  from = "/blog/ai-remediation-pull-requests.md"
+  to = "/blog/tutorials/ai-remediation-pull-requests.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/auditing-three-clouds-without-writing-three-scripts"
+  to = "/blog/tutorials/auditing-three-clouds-without-writing-three-scripts"
+  status = 301
+
+[[redirects]]
+  from = "/blog/auditing-three-clouds-without-writing-three-scripts.md"
+  to = "/blog/tutorials/auditing-three-clouds-without-writing-three-scripts.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-before-you-mutate-agents-infrastructure"
+  to = "/blog/tutorials/query-before-you-mutate-agents-infrastructure"
+  status = 301
+
+[[redirects]]
+  from = "/blog/query-before-you-mutate-agents-infrastructure.md"
+  to = "/blog/tutorials/query-before-you-mutate-agents-infrastructure.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/continuous-cloud-audit-github-actions"
+  to = "/blog/tutorials/continuous-cloud-audit-github-actions"
+  status = 301
+
+[[redirects]]
+  from = "/blog/continuous-cloud-audit-github-actions.md"
+  to = "/blog/tutorials/continuous-cloud-audit-github-actions.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/declarative-cloud-stacks-stackql-deploy"
+  to = "/blog/tutorials/declarative-cloud-stacks-stackql-deploy"
+  status = 301
+
+[[redirects]]
+  from = "/blog/declarative-cloud-stacks-stackql-deploy.md"
+  to = "/blog/tutorials/declarative-cloud-stacks-stackql-deploy.md"
+  status = 301
+
+# END generated blog redirects

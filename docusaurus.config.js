@@ -79,6 +79,59 @@ const footerStackQLItems = [
   },
 ];
 
+// Blog sections. Each is its own @docusaurus/plugin-content-blog instance
+// (content in blog/<id>, routes at /blog/<id>) with its own list page,
+// sidebar and feeds. The /blog landing page is built from the same list by
+// plugins/blog-landing. Pre-split post URLs (/blog/<slug>) are 301'd in
+// netlify.toml - see scripts/generate-blog-redirects.js.
+const blogSections = [
+  {
+    id: 'product',
+    label: 'Product Announcements',
+    description: 'New StackQL releases, features and capabilities',
+  },
+  {
+    id: 'providers',
+    label: 'Provider Announcements',
+    description: 'New and updated StackQL providers',
+  },
+  {
+    id: 'tutorials',
+    label: 'Tutorials',
+    description: 'Practical walkthroughs for cloud operations, security and automation using SQL',
+  },
+];
+
+const blogSectionLinks = blogSections.map(({id, label}) => ({
+  label,
+  to: `/blog/${id}`,
+  activeBasePath: `/blog/${id}`,
+}));
+
+const blogPlugins = blogSections.map(({id, label, description}) => [
+  '@docusaurus/plugin-content-blog',
+  {
+    id,
+    path: `blog/${id}`,
+    routeBasePath: `/blog/${id}`,
+    // one authors file shared by every instance, relative to the content dir
+    authorsMapPath: '../authors.yml',
+    blogTitle: label,
+    blogDescription: description,
+    blogSidebarTitle: `All ${label.toLowerCase()}`,
+    blogSidebarCount: 'ALL',
+    postsPerPage: 5,
+    showReadingTime: true,
+    editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
+    feedOptions: {
+      type: 'all',
+      title: `StackQL Blog - ${label}`,
+      description,
+      copyright: `Copyright © ${new Date().getFullYear()} StackQL Studios`,
+    },
+  },
+]);
+
 const footerMoreItems = [
   {
     label: 'Providers',
@@ -87,15 +140,16 @@ const footerMoreItems = [
   {
     label: 'stackql-deploy',
     to: '/stackql-deploy',
-  },            
+  },
   {
     label: 'Blog',
     to: '/blog',
   },
+  ...blogSectionLinks.map(({label, to}) => ({label, to})),
   {
-    label: 'Tutorials',
-    to: '/tutorials',
-  },            
+    label: 'Quick Starts',
+    to: '/docs/quick-starts',
+  },
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -184,7 +238,11 @@ const config = {
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
             'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
-            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 3 },
+            // one llms.txt section per blog instance, in blogSections order
+            ...Object.fromEntries(blogSections.map(({id, label}, i) => [
+              `docusaurus-plugin-content-blog@${id}`,
+              { title: `Blog - ${label}`, order: 3 + i },
+            ])),
           },
         },
       },
@@ -197,6 +255,16 @@ const config = {
         routeBasePath: '/ai',
         sidebarPath: false,
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
+      },
+    ],
+    // three blog instances (the preset blog is disabled below) plus the
+    // /blog landing page that lists the newest posts from each
+    ...blogPlugins,
+    [
+      require.resolve('./plugins/blog-landing'),
+      {
+        sections: blogSections,
+        postsPerSection: 5,
       },
     ],
   ],
@@ -217,7 +285,8 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['/blog/tags/**', '/search', '/blog/page/**'],
+          // tag and pagination routes of every blog instance
+          ignorePatterns: ['/blog/*/tags/**', '/blog/*/page/**', '/search'],
           filename: 'sitemap.xml',
         },
         pages: {},
@@ -228,22 +297,9 @@ const config = {
           showLastUpdateTime: true,
           editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
         },
-        blog: {
-          path: 'blog',
-          blogTitle: 'StackQL Blog',
-          blogDescription: 'Cloud operations, security and automation using SQL',
-          postsPerPage: 5,
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          feedOptions: {
-            type: 'all',
-            title: 'StackQL Blog Feed',
-            description: 'Cloud operations, security and automation using SQL',
-            copyright: `Copyright © ${new Date().getFullYear()} StackQL Studios`,
-          },
-          showReadingTime: true,
-          editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
-        },
+        // the blog is three plugin instances (blogPlugins above), not the
+        // preset's single instance
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/global.css'),
         },
@@ -336,6 +392,9 @@ const config = {
           'language-spec': 'Language Specification',
           're': 'Regular Expressions',
           'mcp': 'MCP',
+          'quick-starts': 'Quick Starts',
+          // blog section crumbs (/blog/<section>/<slug>)
+          ...Object.fromEntries(blogSections.map(({id, label}) => [id, label])),
         },
       },
       metadata: [
@@ -467,17 +526,18 @@ const config = {
           position: 'left',
           items: [
             {
-              to: 'blog',
+              to: '/blog',
               label: 'Blog',
-              activeBasePath: 'blog',
+              activeBaseRegex: '^/blog/?$',
             },
+            ...blogSectionLinks,
             {
-              type: 'doc',
-              docId: '/tutorials',
-              label: 'Tutorials',
+              to: '/docs/quick-starts',
+              label: 'Quick Starts',
+              activeBasePath: '/docs/quick-starts',
             },
           ],
-        },        
+        },
         //
         //   to: 'blog',
         //   label: 'Blog',
