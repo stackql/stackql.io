@@ -35,6 +35,18 @@
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
 
+# /providers.json: the provider catalog published for the shared chrome in
+# the docusaurus-config repo (written by plugins/provider-catalog). The
+# provider microsites and the query library fetch it at build time, so a
+# short cache lets a new provider reach their next build; CORS lets a
+# browser read it too.
+[[headers]]
+  for = "/providers.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
 # Query library is a separate site (query-library.stackql.io repo) proxied
 # under the canonical path. 200 = proxy rewrite, URL stays on stackql.io.
 # Response headers (content types, CORS, cache) are set by the origin site.

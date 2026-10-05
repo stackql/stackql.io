@@ -131,6 +131,7 @@ The preset blog is disabled (`blog: false`). Three `@docusaurus/plugin-content-b
 - `*.md` -> `text/markdown; charset=utf-8` (top-level and nested)
 - `/llms.txt` and `/llms-full.txt` -> `text/plain; charset=utf-8`
 - All three get `X-Robots-Tag: index, follow` and `max-age=300` cache
+- `/providers.json` (the published provider catalog, see "Provider catalog" below) -> `application/json; charset=utf-8`, the same 5-minute cache and `Access-Control-Allow-Origin: *`
 
 Without these rules Netlify serves `.md` as `application/octet-stream` (browsers download instead of display) and crawlers may skip it.
 
@@ -152,10 +153,11 @@ file there would shadow the proxied site.
 
 ### Provider catalog and the `/providers/<slug>` aliases
 
-[src/configs/providers.json](src/configs/providers.json) is the single source of truth for everything provider-related on this site: config, not code. It is an array of categories, each with `providers` of `{ name, href, icon, invertOnDark?, featured?, shortName?, registryAliases? }`. The code that reads it is [src/lib/providers.js](src/lib/providers.js), which validates it, derives each provider's `slug` and `path` and exposes `PROVIDER_CATEGORIES`, `FEATURED_PROVIDERS`, `providerRoutes()` and `registryRoutes()`. Nothing else in the repo holds provider lists; the former `src/configs/providers-data.json`, `providers.ts` and the unused `ProviderCards` component were removed. The catalog drives:
+[src/configs/providers.json](src/configs/providers.json) is the single source of truth for everything provider-related on this site: config, not code. It is an array of categories, each with `providers` of `{ name, href, icon, invertOnDark?, registryAliases? }`. The code that reads it is [src/lib/providers.js](src/lib/providers.js), which validates it, derives each provider's `slug` and `path` and exposes `PROVIDER_CATEGORIES`, `PROVIDERS`, `providerRoutes()` and `registryRoutes()`. Nothing else in the repo holds provider lists; the former `src/configs/providers-data.json`, `providers.ts` and the unused `ProviderCards` component were removed. The catalog drives:
 
 - the tiles and table of contents on [docs/providers.md](docs/providers.md), which imports from `src/lib/providers`. Tiles link to `/providers/<slug>`, not straight to the microsite.
-- the navbar "Providers" dropdown in [docusaurus.config.js](docusaurus.config.js): entries with `featured: true`, labelled by `shortName` or `name`, in catalog order
+- the navbar "Providers" menu: a two-level dropdown (category -> provider, every entry, catalog order) rendered by the custom navbar item type `custom-providersDropdown` in [src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js](src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js) and configured as the "Providers" entry in [docusaurus.config.js](docusaurus.config.js). Category rows link to `/providers#<category id>`, provider rows to `/providers/<slug>`. Desktop is a hover/focus flyout per category; the mobile sidebar gets nested collapsibles.
+- the published catalog at `/providers.json`, written into the build by [plugins/provider-catalog/index.js](plugins/provider-catalog/index.js) (postBuild only, so not under `npm run start`). It is a cross-repo contract: the shared chrome in `../docusaurus-config`, vendored at build time by every provider microsite and by the query library, fetches it when those sites build and generates their own two-level Providers menu from it. The shape (version 1) is documented in the plugin. Adding a field is fine; renaming or removing one, or moving the file, breaks those builds, so bump the version and change the consumer first. Netlify serves it with CORS and a 5-minute cache.
 - two families of redirect routes registered by the local plugin [plugins/provider-redirects/index.js](plugins/provider-redirects/index.js), each rendering [src/components/ProviderRedirect/index.jsx](src/components/ProviderRedirect/index.jsx), a Docusaurus head redirect (meta refresh plus canonical) to `https://<slug>-provider.stackql.io/`:
   - `/providers/<slug>` is explicit: exactly one route per catalog entry, no exceptions. Internal use (tiles, navbar).
   - `/registry/<name>` is the inbound surface for external links: one route per catalog entry plus each entry's `registryAliases`, so a provider family exposes one canonical inbound link (`/registry/databricks` -> the Databricks Account microsite).
@@ -163,13 +165,15 @@ file there would shadow the proxied site.
 
 The slug is derived from `href`, which must be exactly `https://<slug>-provider.stackql.io/`; the module throws at config load on a missing field, a malformed href or a duplicate slug or alias. To add a provider, add one entry to the JSON and nothing else. Do not create pages under `src/pages/providers` or `src/pages/registry` - those directories were removed and a file there would clash with the generated routes. The retired `/providers/databricks` URL is a Netlify 301 to `/registry/databricks`.
 
-The provider microsites' own nav comes from `../docusaurus-config`, which keeps its own featured list (`PROVIDER_SLUGS`). Update it by hand when `featured` changes here.
+The provider microsites and the query library get their nav from `../docusaurus-config`, which builds its own Providers menu from this site's `/providers.json` at build time (see the bullet above), so there is no featured list to keep in step any more. A new catalog entry shows up on those sites on their next build after this site deploys.
 
 ### Hand-rolled local components
 
 [src/components/Gist/index.jsx](src/components/Gist/index.jsx) - local replacement for the unmaintained `react-gist` package (was blocking React 18 upgrade). Drop-in compatible: same `<Gist id="..." />` API. Used by two blog posts.
 
 [src/theme/DocItem/Footer/index.js](src/theme/DocItem/Footer/index.js) - copy of the theme-classic doc footer with one addition: a doc with `hide_last_update: true` in its front matter drops the "Last updated" row while keeping tags and the edit link. Only the homepage uses it, so search results do not show a modification date on a landing page. `showLastUpdateTime` stays on globally. Keep this file in step with theme-classic when Docusaurus is upgraded.
+
+[src/theme/NavbarItem/ComponentTypes.js](src/theme/NavbarItem/ComponentTypes.js) - wraps the theme-classic navbar item registry and adds the site's custom types. One so far: `custom-providersDropdown` (see "Provider catalog" above). Its desktop and mobile markup copy theme-classic's `DropdownNavbarItem`; keep them in step when Docusaurus is upgraded.
 
 [src/theme/DocCard/index.js](src/theme/DocCard/index.js) - copy of the theme-classic doc card with one addition: a sidebar item's `customProps` can replace the default emoji with `iconComponent` (a React node), `icon` (an image path under `static/`, with `invertOnDark` to invert it in dark mode) or `emoji`. Link items and category items both honour it. The tiles on [docs/providers.md](docs/providers.md) and the four Quick Starts provider categories in [sidebars.js](sidebars.js) use `icon`; the Quick Starts entries look the icon up in the provider catalog by slug, so the cards follow [src/configs/providers.json](src/configs/providers.json).
 
@@ -207,6 +211,7 @@ When `faq:` is present, the plugin emits a `FAQPage` JSON-LD node and links it t
 - Build with the AEO env vars set: `ALGOLIA_APP_ID=dummy ALGOLIA_API_KEY=dummy ALGOLIA_INDEX_NAME=dummy npm run build` (local builds only - production gets real values).
 - Check that the build emits expected `.md` companions: `find build -name "*.md" -type f | wc -l` should be ~300.
 - Check that `build/llms.txt` and `build/llms-full.txt` exist and are non-empty.
+- Check that `build/providers.json` exists and lists every catalog category: the provider microsites and the query library build their Providers menu from it.
 - For `/ai/*` pages, verify the JSON-LD by inspecting the rendered HTML for `TechArticle` + `FAQPage` types (script we wrote in earlier sessions can be reproduced if needed).
 
 ### When adding `/ai/*` content
@@ -294,4 +299,5 @@ node scripts/generate-blog-redirects.js
 
 - `../docusaurus-plugin-structured-data` - JSON-LD emission plugin source. Bug fixes for stackql.io-specific issues land here first, then ship to npm.
 - `../docusaurus-plugin-aeo` - AEO plugin source. Same pattern.
+- `../docusaurus-config` - the shared chrome vendored at build time by the provider microsites and the query library. It fetches this site's `/providers.json` to build its Providers menu, and its `theme/NavbarItem` is a copy of [src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js](src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js) adapted to that data source; change the two together.
 - `../../stackql-registry` - StackQL provider registry. Houses the StackqlDeployDropdown component whose styling the Ask AI button was modeled on.
