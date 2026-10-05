@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "REGEXP_SUBSTR function in StackQL: extract the substring of an input that matches a regular expression."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Returns a substring from an input string matching a specified pattern.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Regular Expression Reference ]](/docs/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regular Expression Reference ]](/language-spec/functions/re/reference) 
 
 * * * 
 

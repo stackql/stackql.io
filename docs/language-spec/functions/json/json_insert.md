@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Inserts new values into a JSON document at specified paths without overwriting existing values.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[` JSON_SET `]](/docs/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/docs/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
 
 * * * 
 
@@ -41,9 +41,9 @@ Returns the JSON document with the new value inserted if the specified path does
 
 | Function                                                     | Overwrite if already exists? | Create if does not exist? |
 |--------------------------------------------------------------|------------------------------|---------------------------|
-| [`json_insert()`](/docs/language-spec/functions/json/json_insert) | No                           | Yes                       |
-| [`json_replace()`](/docs/language-spec/functions/json/json_replace) | Yes                          | No                        |
-| [`json_set()`](/docs/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
+| [`json_insert()`](/language-spec/functions/json/json_insert) | No                           | Yes                       |
+| [`json_replace()`](/language-spec/functions/json/json_replace) | Yes                          | No                        |
+| [`json_set()`](/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
 
 :::
 

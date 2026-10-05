@@ -11,10 +11,10 @@ description: MCP tool listing resources under a StackQL provider.service
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the resources under a `provider.service` -- the third level of the StackQL [resource hierarchy](/docs/getting-started/resource-hierarchy).  Resources are the targets that appear in the `FROM` clause of a StackQL query.
+Returns the resources under a `provider.service` -- the third level of the StackQL [resource hierarchy](/getting-started/resource-hierarchy).  Resources are the targets that appear in the `FROM` clause of a StackQL query.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_services` ]](/docs/mcp/list_services) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `describe_method` ]](/docs/mcp/describe_method)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_services` ]](/mcp/list_services) [[ `list_methods` ]](/mcp/list_methods) [[ `describe_method` ]](/mcp/describe_method)
 
 * * *
 

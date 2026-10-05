@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "INSTR function in StackQL: the one-based position of the first occurrence of one string inside another, or 0 when it is not found."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the character position of first occurrence of string within another string, returns 0 if the string being searched for is not found.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

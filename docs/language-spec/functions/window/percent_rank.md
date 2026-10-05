@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "PERCENT_RANK window function in StackQL: the relative rank of the current row within its partition as a value between 0.0 and 1.0."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a value between 0.0 and 1.0 representing the relative rank of the current row within its partition.
@@ -15,7 +15,7 @@ Returns a value between 0.0 and 1.0 representing the relative rank of the curren
 Despite the name, this function returns a value equal to `(rank - 1) / (partition-rows - 1)`, where `rank` is the value returned by the built-in window function `RANK()` and `partition-rows` is the total number of rows in the partition. If the partition contains only one row, this function returns 0.0.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` RANK `]](/docs/language-spec/functions/window/rank) [[` CUME_DIST `]](/docs/language-spec/functions/window/cume_dist)
+[[` SELECT `]](/language-spec/select) [[` RANK `]](/language-spec/functions/window/rank) [[` CUME_DIST `]](/language-spec/functions/window/cume_dist)
 
 * * *
 

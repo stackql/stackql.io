@@ -7,19 +7,19 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_ARRAY_LENGTH function in StackQL: the number of elements in a JSON array, at the top level or at a path within a JSON value."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the number of elements in a JSON array.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` DESCRIBE `]](/docs/language-spec/describe) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::tip 
 
-Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/docs/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
+Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
 
 :::
 

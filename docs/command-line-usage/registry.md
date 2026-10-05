@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The stackql registry command lists, pulls and manages providers from the StackQL provider registry from the command line."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -37,7 +37,7 @@ Command used to interact with the StackQL Provider Registry.
 |<span class="nowrap">`-H, --help`</span>|Print help information|
 &nbsp;  
 &nbsp;  
-> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
+> see [Global Flags](/command-line-usage/global-flags) for additional options
 
 * * *
 

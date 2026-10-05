@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the tangent of a specified angle given in radians.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

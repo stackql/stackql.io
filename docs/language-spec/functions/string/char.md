@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "CHAR function in StackQL: the characters for one or more character codes, for putting newlines, quotes, tabs and other control characters into strings."
 image: "/img/stackql-featured-image.png"
 ---
 
 The `CHAR()` function returns the character corresponding to the specified ASCII code.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * *
 

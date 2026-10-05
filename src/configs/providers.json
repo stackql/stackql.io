@@ -1,0 +1,267 @@
+[
+  {
+    "id": "cloud-providers",
+    "name": "Cloud Providers",
+    "providers": [
+      {
+        "name": "Amazon Web Services",
+        "shortName": "AWS",
+        "featured": true,
+        "href": "https://aws-provider.stackql.io/",
+        "icon": "/img/providers/aws/favicon.ico"
+      },
+      {
+        "name": "Microsoft Azure",
+        "shortName": "Azure",
+        "featured": true,
+        "href": "https://azure-provider.stackql.io/",
+        "icon": "/img/providers/azure/favicon.ico"
+      },
+      {
+        "name": "Google Cloud Platform",
+        "shortName": "Google",
+        "featured": true,
+        "href": "https://google-provider.stackql.io/",
+        "icon": "/img/providers/google/favicon.ico"
+      },
+      {
+        "name": "Digital Ocean",
+        "href": "https://digitalocean-provider.stackql.io/",
+        "icon": "/img/providers/digitalocean/favicon.png"
+      },
+      {
+        "name": "Cloudflare",
+        "featured": true,
+        "href": "https://cloudflare-provider.stackql.io/",
+        "icon": "/img/providers/cloudflare/favicon.ico"
+      },
+      {
+        "name": "Linode",
+        "href": "https://linode-provider.stackql.io/",
+        "icon": "/img/providers/linode/favicon.ico"
+      },
+      {
+        "name": "AWS Cloud Control",
+        "href": "https://awscc-provider.stackql.io/",
+        "icon": "/img/providers/aws/favicon.ico"
+      },
+      {
+        "name": "Azure Stack",
+        "href": "https://azure-stack-provider.stackql.io/",
+        "icon": "/img/providers/azure/favicon.ico"
+      },
+      {
+        "name": "Azure ISV",
+        "href": "https://azure-isv-provider.stackql.io/",
+        "icon": "/img/providers/azure/favicon.ico"
+      }
+    ]
+  },
+  {
+    "id": "data-analytics",
+    "name": "Data & Analytics",
+    "providers": [
+      {
+        "name": "Databricks Account",
+        "shortName": "Databricks",
+        "featured": true,
+        "registryAliases": [
+          "databricks"
+        ],
+        "href": "https://databricks-account-provider.stackql.io/",
+        "icon": "/img/providers/databricks/favicon.ico"
+      },
+      {
+        "name": "Databricks Workspace",
+        "href": "https://databricks-workspace-provider.stackql.io/",
+        "icon": "/img/providers/databricks/favicon.ico"
+      },
+      {
+        "name": "Snowflake",
+        "featured": true,
+        "href": "https://snowflake-provider.stackql.io/",
+        "icon": "/img/providers/snowflake/favicon.ico"
+      },
+      {
+        "name": "ClickHouse",
+        "href": "https://clickhouse-provider.stackql.io/",
+        "icon": "/img/providers/clickhouse/favicon.ico"
+      },
+      {
+        "name": "Fivetran",
+        "href": "https://fivetran-provider.stackql.io/",
+        "icon": "/img/providers/fivetran/favicon.png"
+      },
+      {
+        "name": "Confluent",
+        "featured": true,
+        "href": "https://confluent-provider.stackql.io/",
+        "icon": "/img/providers/confluent/favicon.ico"
+      },
+      {
+        "name": "Kafka",
+        "href": "https://kafka-provider.stackql.io/",
+        "icon": "/img/providers/kafka/kafka.png",
+        "invertOnDark": true
+      }
+    ]
+  },
+  {
+    "id": "identity-security",
+    "name": "Identity & Security",
+    "providers": [
+      {
+        "name": "Okta",
+        "featured": true,
+        "href": "https://okta-provider.stackql.io/",
+        "icon": "/img/providers/okta/favicon.png",
+        "invertOnDark": true
+      },
+      {
+        "name": "Google Admin",
+        "href": "https://googleadmin-provider.stackql.io/",
+        "icon": "/img/providers/googleadmin/favicon.ico"
+      },
+      {
+        "name": "Microsoft Entra ID",
+        "href": "https://entra-id-provider.stackql.io/",
+        "icon": "/img/providers/entra_id/entra_id_icon.svg"
+      }
+    ]
+  },
+  {
+    "id": "ai-machine-learning",
+    "name": "AI & Machine Learning",
+    "providers": [
+      {
+        "name": "OpenAI",
+        "featured": true,
+        "href": "https://openai-provider.stackql.io/",
+        "icon": "/img/providers/openai/favicon.ico",
+        "invertOnDark": true
+      },
+      {
+        "name": "OpenAI Admin",
+        "href": "https://openai-admin-provider.stackql.io/",
+        "icon": "/img/providers/openai/favicon.ico",
+        "invertOnDark": true
+      },
+      {
+        "name": "Anthropic",
+        "href": "https://anthropic-provider.stackql.io/",
+        "icon": "/img/providers/anthropic/favicon.png"
+      },
+      {
+        "name": "Anthropic Admin",
+        "href": "https://anthropic-admin-provider.stackql.io/",
+        "icon": "/img/providers/anthropic/favicon.png"
+      },
+      {
+        "name": "Google Gemini",
+        "href": "https://gemeni-provider.stackql.io/",
+        "icon": "/img/providers/gemeni/favicon.png"
+      },
+      {
+        "name": "TypeSafe AI",
+        "href": "https://typesafe-provider.stackql.io/",
+        "icon": "/img/providers/typesafe/favicon.png"
+      }
+    ]
+  },
+  {
+    "id": "devops-development",
+    "name": "DevOps & Development",
+    "providers": [
+      {
+        "name": "GitHub",
+        "featured": true,
+        "href": "https://github-provider.stackql.io/",
+        "icon": "/img/providers/github/favicon.ico",
+        "invertOnDark": true
+      },
+      {
+        "name": "Kubernetes",
+        "href": "https://k8s-provider.stackql.io/",
+        "icon": "/img/providers/k8s/favicon.png"
+      },
+      {
+        "name": "GitLab",
+        "href": "https://gitlab-provider.stackql.io/",
+        "icon": "/img/providers/gitlab/favicon.ico"
+      },
+      {
+        "name": "Firebase",
+        "href": "https://firebase-provider.stackql.io/",
+        "icon": "/img/providers/firebase/favicon.png"
+      },
+      {
+        "name": "Railway",
+        "href": "https://railway-provider.stackql.io/",
+        "icon": "/img/providers/railway/favicon.ico",
+        "invertOnDark": true
+      },
+      {
+        "name": "Vercel",
+        "href": "https://vercel-provider.stackql.io/",
+        "icon": "/img/providers/vercel/favicon.ico"
+      },
+      {
+        "name": "Netlify",
+        "href": "https://netlify-provider.stackql.io/",
+        "icon": "/img/providers/netlify/favicon.ico"
+      },
+      {
+        "name": "Deno Deploy",
+        "href": "https://deno-provider.stackql.io/",
+        "icon": "/img/providers/deno/favicon.ico"
+      }
+    ]
+  },
+  {
+    "id": "monitoring-observability",
+    "name": "Monitoring & Observability",
+    "providers": [
+      {
+        "name": "DataDog",
+        "href": "https://datadog-provider.stackql.io/",
+        "icon": "/img/providers/datadog/favicon.ico"
+      },
+      {
+        "name": "SumoLogic",
+        "href": "https://sumologic-provider.stackql.io/",
+        "icon": "/img/providers/sumologic/favicon.png"
+      },
+      {
+        "name": "PagerDuty",
+        "href": "https://pagerduty-provider.stackql.io/",
+        "icon": "/img/providers/pagerduty/icon.svg"
+      }
+    ]
+  },
+  {
+    "id": "other-providers",
+    "name": "Other Providers",
+    "providers": [
+      {
+        "name": "Google Workspace",
+        "href": "https://googleworkspace-provider.stackql.io/",
+        "icon": "/img/providers/googleworkspace/favicon.ico"
+      },
+      {
+        "name": "GoDaddy",
+        "href": "https://godaddy-provider.stackql.io/",
+        "icon": "/img/providers/godaddy/favicon.png"
+      },
+      {
+        "name": "Azure Extras",
+        "href": "https://azure-extras-provider.stackql.io/",
+        "icon": "/img/providers/azure/favicon.ico"
+      },
+      {
+        "name": "Homebrew",
+        "href": "https://homebrew-provider.stackql.io/",
+        "icon": "/img/providers/homebrew/favicon.ico"
+      }
+    ]
+  }
+]

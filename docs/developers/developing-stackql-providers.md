@@ -16,7 +16,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 See also:
-[[ StackQL Provider Registry ]](/providers) [[ Using a Provider ]](/docs/getting-started/using-a-provider) [[ REGISTRY ]](/docs/language-spec/registry) [[ Architecture ]](/docs/developers/architecture)
+[[ StackQL Provider Registry ]](/providers) [[ Using a Provider ]](/getting-started/using-a-provider) [[ REGISTRY ]](/language-spec/registry) [[ Architecture ]](/developers/architecture)
 
 ## Overview
 

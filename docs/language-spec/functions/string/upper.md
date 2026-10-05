@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "UPPER function in StackQL: convert a string to uppercase."
 image: "/img/stackql-featured-image.png"
 ---
 Returns an input string in uppercase.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` LOWER `]](/docs/language-spec/functions/string/lower) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` LOWER `]](/language-spec/functions/string/lower) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 

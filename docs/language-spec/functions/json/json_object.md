@@ -7,19 +7,19 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_OBJECT function in StackQL: build a JSON object from key and value arguments, for example to construct request bodies for INSERT and UPDATE."
 image: "/img/stackql-featured-image.png"
 ---
 Returns an object constructred from arguments provided.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` DESCRIBE `]](/docs/language-spec/describe) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::tip 
 
-Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
+Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
 
 :::
 

@@ -11,12 +11,12 @@ description: MCP tool executing a StackQL SELECT against a provider
 image: "/img/stackql-featured-image.png"
 ---
 
-Executes a `SELECT` statement against the configured providers and returns the result rows.  Read only -- mutations and lifecycle operations are not accepted; use [`run_mutation_query`](/docs/mcp/run_mutation_query) or [`run_lifecycle_operation`](/docs/mcp/run_lifecycle_operation) for those.
+Executes a `SELECT` statement against the configured providers and returns the result rows.  Read only -- mutations and lifecycle operations are not accepted; use [`run_mutation_query`](/mcp/run_mutation_query) or [`run_lifecycle_operation`](/mcp/run_lifecycle_operation) for those.
 
 Result rows are returned to the client but are deliberately excluded from the audit log.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `validate_select_query` ]](/docs/mcp/validate_select_query) [[ `list_methods` ]](/docs/mcp/list_methods) [[ SELECT language spec ]](/docs/language-spec/select)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `validate_select_query` ]](/mcp/validate_select_query) [[ `list_methods` ]](/mcp/list_methods) [[ SELECT language spec ]](/language-spec/select)
 
 * * *
 

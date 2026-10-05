@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "SHOW in StackQL: list providers, services, resources and the methods on a resource, generate INSERT templates with SHOW INSERT, and show the StackQL version."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Used to list items in a collection, for instance show all of the services available in a provider, or show all of the resources available in a given service. Also exposes server metadata such as the current StackQL version.
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
 
 * * * 
 
@@ -197,9 +197,9 @@ SELECT
 
 </details>
 
-> The fields returned can be limited to only those required by the provider, see [__Creating Infrastructure Templates__](/docs/getting-started/templating) for examples of this.
+> The fields returned can be limited to only those required by the provider, see [__Creating Infrastructure Templates__](/getting-started/templating) for examples of this.
 
-> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [__Using Variables__](/docs/getting-started/variables).
+> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [__Using Variables__](/getting-started/variables).
 
 ### Show the StackQL version
 

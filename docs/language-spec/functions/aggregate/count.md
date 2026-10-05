@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "COUNT aggregate function in StackQL: the number of rows in a resource, or the non-NULL values of a column within a grouping."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the total number of records in a resource or a count of the non `NULL` instances of a column in a grouping.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

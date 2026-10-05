@@ -20,7 +20,7 @@ Parses and plans a single `SELECT` statement without executing it.  Returns `{va
 :::
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `run_select_query` ]](/docs/mcp/run_select_query)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_methods` ]](/mcp/list_methods) [[ `run_select_query` ]](/mcp/run_select_query)
 
 * * *
 

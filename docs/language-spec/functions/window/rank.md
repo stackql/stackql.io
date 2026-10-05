@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "RANK window function in StackQL: the rank of the current row within its partition with gaps, so tied rows share a rank and the following ranks are skipped."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the rank of the current row with gaps. This is the `ROW_NUMBER` of the first peer in each group. Rows with equal values for the ordering columns receive the same rank, and the next rank value is incremented by the number of tied rows (leaving gaps).
@@ -15,7 +15,7 @@ Returns the rank of the current row with gaps. This is the `ROW_NUMBER` of the f
 If there is no `ORDER BY` clause, then all rows are considered peers and this function always returns 1.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` ROW_NUMBER `]](/docs/language-spec/functions/window/row_number) [[` DENSE_RANK `]](/docs/language-spec/functions/window/dense_rank)
+[[` SELECT `]](/language-spec/select) [[` ROW_NUMBER `]](/language-spec/functions/window/row_number) [[` DENSE_RANK `]](/language-spec/functions/window/dense_rank)
 
 * * *
 

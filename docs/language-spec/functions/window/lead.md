@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "LEAD window function in StackQL: evaluate an expression against a following row in the partition, with an optional offset and default."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the result of evaluating an expression against a subsequent row in the partition.
@@ -19,7 +19,7 @@ If the offset argument is provided, it must be a non-negative integer. The value
 If a default value is also provided, it is returned instead of `NULL` if the row identified by offset does not exist.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` LAG `]](/docs/language-spec/functions/window/lag)
+[[` SELECT `]](/language-spec/select) [[` LAG `]](/language-spec/functions/window/lag)
 
 * * *
 

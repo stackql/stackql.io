@@ -1,13 +1,15 @@
 ---
-title: Welcome to StackQL
+title: SQL for cloud infrastructure, SaaS APIs and AI agents
+sidebar_label: Welcome to StackQL
 hide_title: true
+hide_last_update: true
 hide_table_of_contents: true
 keywords:
   - stackql
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: StackQL is an open-source engine that lets humans and AI agents query, provision and operate cloud and SaaS services with SQL, with no state file and no per-cloud SDK.
 image: "/img/stackql-featured-image.png"
 slug: /
 ---
@@ -103,7 +105,7 @@ GROUP BY state;
 </TabItem>
 </Tabs>
 
-Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/docs/language-spec/insert) statement...
+Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/language-spec/insert) statement...
 
 ```sql
 INSERT INTO google.compute.disks (project, zone, name, sizeGb) 
@@ -123,9 +125,11 @@ Using StackQL you can develop your way: declarative or procedural. With an easy 
 - Configuration drift detection (using SQL)
 - and more, only limited by your imagination!
 
-## OK, Let's Get Started!
+## Get started
 
-[Installing StackQL](/docs/installing-stackql)  
-[StackQL Resource Hierarchy](/docs/getting-started/resource-hierarchy)  
-[Using Providers](/docs/getting-started/using-a-provider)  
-[Using StackQL](/docs/getting-started/using-stackql)  
+- [Installation](/installing-stackql) - install the StackQL binary on macOS, Linux or Windows, or run it from Docker, a package manager or a cloud shell
+- [Getting started](/getting-started) - the resource hierarchy, your first queries, using a provider, output modes, variables and templating
+- [Available providers](/providers) - the cloud and SaaS providers you can query and manage, each with its own reference site
+- [Command line usage](/command-line-usage) - `exec`, `shell`, `srv`, `mcp`, `registry` and the global flags
+- [MCP tools](/mcp) - the Model Context Protocol server and tools that give AI agents the same SQL interface
+- [Language specification](/language-spec/select) - `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `SHOW`, `DESCRIBE`, functions and data types

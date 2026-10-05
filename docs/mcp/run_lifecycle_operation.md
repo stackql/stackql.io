@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 
 Executes a StackQL `EXEC` lifecycle operation -- the non-CRUD provider actions (start/stop a VM, rotate a key, trigger a workflow, etc.).  **Real side effects.**
 
-Gated by the server [mode](/docs/command-line-usage/mcp#server-modes):
+Gated by the server [mode](/command-line-usage/mcp#server-modes):
 
 | Mode | Lifecycle `EXEC` |
 |--|--|
@@ -33,7 +33,7 @@ A payload holding several statements is gated by its most privileged statement
 When approval is needed and the client did not advertise elicitation, the call is refused.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `run_mutation_query` ]](/docs/mcp/run_mutation_query) [[ `describe_method` ]](/docs/mcp/describe_method) [[ EXEC language spec ]](/docs/language-spec/exec)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `run_mutation_query` ]](/mcp/run_mutation_query) [[ `describe_method` ]](/mcp/describe_method) [[ EXEC language spec ]](/language-spec/exec)
 
 * * *
 

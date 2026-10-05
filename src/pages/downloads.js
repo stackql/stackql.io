@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function RedirectToInstalling() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='/install'" />
+    <meta http-equiv="refresh" content="0;URL='/installing-stackql'" />
     </Head>
   );
 };

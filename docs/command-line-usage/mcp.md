@@ -9,7 +9,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL via MCP
+description: "The stackql mcp command runs StackQL as a Model Context Protocol server for AI agents: deployment modes, safety modes, credential reloading and the audit log."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -257,7 +257,7 @@ STACKQL_GITHUB_PASSWORD='ghp_mytoken'
 
 #### `reload_credentials`
 
-The [`reload_credentials`](/docs/mcp/reload_credentials) tool re-sources the `--env.file` file into the process environment mid-session, then reports per-provider credential resolution status.  Secret values are never returned, logged, or audited - names and statuses only.  Without `--env.file` configured the tool degrades to a pure status probe.
+The [`reload_credentials`](/mcp/reload_credentials) tool re-sources the `--env.file` file into the process environment mid-session, then reports per-provider credential resolution status.  Secret values are never returned, logged, or audited - names and statuses only.  Without `--env.file` configured the tool degrades to a pure status probe.
 
 When a query fails on credential resolution, the MCP error carries a hint directing the agent to call `reload_credentials` and retry, so agentic clients self-heal: write the credential to the file, ask the agent to reload, and the failed query succeeds on retry - no server restart required.
 
@@ -265,7 +265,7 @@ When a query fails on credential resolution, the MCP error carries a hint direct
 
 #### Windows and Claude Desktop
 
-`setx` writes the registry, not running processes, and Claude Desktop passes its own (stale) environment to MCP subprocesses - so credential changes normally require a full Claude Desktop restart.  With `--env.file` the credentials file can be created or rotated at any time and `reload_credentials` picks it up without any restart.  See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop) for a worked configuration.
+`setx` writes the registry, not running processes, and Claude Desktop passes its own (stale) environment to MCP subprocesses - so credential changes normally require a full Claude Desktop restart.  With `--env.file` the credentials file can be created or rotated at any time and `reload_credentials` picks it up without any restart.  See [Using StackQL with Claude Desktop](/getting-started/claude-desktop) for a worked configuration.
 
 * * *
 
@@ -495,23 +495,23 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 
 | Tool | Renderer | Description | Inputs |
 |--|--|--|--|
-|[`server_info`](/docs/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call once at session start.|none|
-|[`list_providers`](/docs/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
-|[`list_services`](/docs/mcp/list_services)|Table|Services under a provider.|`provider`|
-|[`list_resources`](/docs/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
-|[`list_methods`](/docs/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
-|[`describe_method`](/docs/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
-|[`validate_select_query`](/docs/mcp/validate_select_query)|KV|Parse and plan a single `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only; exactly one statement.|`sql`|
-|[`run_select_query`](/docs/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
-|[`run_mutation_query`](/docs/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
-|[`run_lifecycle_operation`](/docs/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
-|[`list_registry`](/docs/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
-|[`pull_provider`](/docs/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
-|[`reload_credentials`](/docs/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
+|[`server_info`](/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call once at session start.|none|
+|[`list_providers`](/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
+|[`list_services`](/mcp/list_services)|Table|Services under a provider.|`provider`|
+|[`list_resources`](/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
+|[`list_methods`](/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
+|[`describe_method`](/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
+|[`validate_select_query`](/mcp/validate_select_query)|KV|Parse and plan a single `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only; exactly one statement.|`sql`|
+|[`run_select_query`](/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
+|[`run_mutation_query`](/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
+|[`run_lifecycle_operation`](/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
+|[`list_registry`](/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
+|[`pull_provider`](/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
+|[`reload_credentials`](/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
 
 :::note
 
-`describe_resource` was retired in StackQL `v0.12.732`; MCP clients, prompts or agent instructions that called it should call [`list_methods`](/docs/mcp/list_methods) followed by `describe_method` instead.  A resource has no single field list, because each access method returns its own shape, so column names come from [`describe_method`](/docs/mcp/describe_method) for the method a query routes to.  The SQL [`DESCRIBE`](/docs/language-spec/describe) statement is unchanged.
+`describe_resource` was retired in StackQL `v0.12.732`; MCP clients, prompts or agent instructions that called it should call [`list_methods`](/mcp/list_methods) followed by `describe_method` instead.  A resource has no single field list, because each access method returns its own shape, so column names come from [`describe_method`](/mcp/describe_method) for the method a query routes to.  The SQL [`DESCRIBE`](/language-spec/describe) statement is unchanged.
 
 :::
 
@@ -539,11 +539,11 @@ One static prompt is published.
 
 &nbsp;
 &nbsp;
-> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
+> see [Global Flags](/command-line-usage/global-flags) for additional options
 
 :::info
 
-You need to set environment variables required for provider authentication before starting the MCP server, or nominate a dotenv-style credentials file with [`--env.file`](#credential-resourcing---envfile--reload_credentials).  See [Using a Provider](/docs/getting-started/using-a-provider) for more information.
+You need to set environment variables required for provider authentication before starting the MCP server, or nominate a dotenv-style credentials file with [`--env.file`](#credential-resourcing---envfile--reload_credentials).  See [Using a Provider](/getting-started/using-a-provider) for more information.
 
 :::
 
@@ -793,7 +793,7 @@ Sample audit log line for the same mutation:
 
 To integrate StackQL's MCP server with an AI assistant, register `stackql` as an MCP server in the assistant's configuration.  Most editor-embedded MCP clients run the server over `stdio`; for those, use `--mcp.server.type=stdio` and the assistant launches the process directly.  Standalone agents that speak HTTP can connect to a long-running `stackql mcp --mcp.server.type=http` process.
 
-For Claude Desktop - including the Anthropic Connector Directory listing (the recommended installation method), the downloadable MCP Bundle (`.mcpb`), and manual configuration - see [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop).
+For Claude Desktop - including the Anthropic Connector Directory listing (the recommended installation method), the downloadable MCP Bundle (`.mcpb`), and manual configuration - see [Using StackQL with Claude Desktop](/getting-started/claude-desktop).
 
 :::note
 

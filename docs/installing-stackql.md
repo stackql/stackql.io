@@ -8,7 +8,7 @@ keywords:
   - cloud inventory
   - mcp
   - mcp-server
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Install StackQL on macOS, Linux, Windows, Docker or a cloud shell, and the StackQL MCP server via npx, uvx, pip, Docker, Claude Desktop or GitHub Actions."
 image: "/img/stackql-featured-image.png"
 slug: /installing-stackql
 ---
@@ -301,7 +301,7 @@ The StackQL MCP server is also listed on the [__Official MCP Registry__](https:/
 
 :::tip
 
-The bundle is one of several ways to run the StackQL MCP server.  See [__Installing the MCP server__](#installing-the-mcp-server) for the npx, Docker, Python, CI and manual options, or [__Using StackQL with Claude Desktop__](/docs/getting-started/claude-desktop) for the full Claude Desktop walkthrough.
+The bundle is one of several ways to run the StackQL MCP server.  See [__Installing the MCP server__](#installing-the-mcp-server) for the npx, Docker, Python, CI and manual options, or [__Using StackQL with Claude Desktop__](/getting-started/claude-desktop) for the full Claude Desktop walkthrough.
 
 :::
 
@@ -372,7 +372,7 @@ cargo install stackql-deploy
 
   ### AWS Cloud Shell
 
-  AWS CloudShell provides a browser-based shell with AWS CLI pre-installed and authenticated. Running StackQL in AWS CloudShell allows you to query and manage AWS resources without additional authentication steps. For detailed instructions, see our [AWS CloudShell tutorial](/docs/tutorials/aws/aws-cloud-shell).
+  AWS CloudShell provides a browser-based shell with AWS CLI pre-installed and authenticated. Running StackQL in AWS CloudShell allows you to query and manage AWS resources without additional authentication steps. For detailed instructions, see our [AWS CloudShell tutorial](/quick-starts/aws/aws-cloud-shell).
 
   First, download the StackQL package:
 
@@ -392,7 +392,7 @@ cargo install stackql-deploy
 
   ### Azure Cloud Shell
 
-  Azure Cloud Shell provides a browser-accessible shell environment with Azure CLI pre-authenticated with your Azure account. Using StackQL in Azure Cloud Shell enables seamless querying of your Azure resources without additional setup. For complete details, check our [Azure Cloud Shell guide](https://docs.stackql.io/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-azure-cloud-shell).  
+  Azure Cloud Shell provides a browser-accessible shell environment with Azure CLI pre-authenticated with your Azure account. Using StackQL in Azure Cloud Shell enables seamless querying of your Azure resources without additional setup. For complete details, check our [Azure Cloud Shell guide](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-azure-cloud-shell).  
 
   First, download the StackQL package:
 
@@ -413,7 +413,7 @@ cargo install stackql-deploy
 
   ### Google Cloud Shell
 
-  Google Cloud Shell offers a development and operations environment with Google Cloud CLI already authenticated. Running StackQL in Google Cloud Shell lets you query GCP resources using your existing authentication. Learn more in our [Google Cloud Shell guide](https://docs.stackql.io/blog/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-google-cloud-shell).  
+  Google Cloud Shell offers a development and operations environment with Google Cloud CLI already authenticated. Running StackQL in Google Cloud Shell lets you query GCP resources using your existing authentication. Learn more in our [Google Cloud Shell guide](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-google-cloud-shell).  
 
   First, download the StackQL package:
   
@@ -434,7 +434,7 @@ cargo install stackql-deploy
 
   ### Databricks Web Terminal
 
-  Databricks workspaces include a web terminal that runs as the logged-in user. Running StackQL there lets you query your workspace using your Databricks identity, with no separate authentication setup. For example queries and account-level auth, see our [Databricks Web Terminal guide](/blog/stackql-in-databricks-web-terminal).
+  Databricks workspaces include a web terminal that runs as the logged-in user. Running StackQL there lets you query your workspace using your Databricks identity, with no separate authentication setup. For example queries and account-level auth, see our [Databricks Web Terminal guide](/blog/tutorials/stackql-in-databricks-web-terminal).
 
   First, download the StackQL package:
 
@@ -517,7 +517,7 @@ where `<platform>` is one of `darwin-universal`, `windows-x64`, `linux-x64`, or 
 shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 ```
 
-See [Using StackQL with Claude Desktop](/docs/getting-started/claude-desktop#install-from-a-downloaded-bundle) for the full walkthrough.
+See [Using StackQL with Claude Desktop](/getting-started/claude-desktop#install-from-a-downloaded-bundle) for the full walkthrough.
 
 ### Manual `claude_desktop_config.json`
 
@@ -545,7 +545,7 @@ All three arguments are load-bearing:
 - `--approot` points the provider cache at a writable directory. MCP clients may launch the server with the working directory set to `/`, which is not writable.
 - `--mcp.config '{"server": {"audit": {"disabled": true}}}'` disables the audit log, which otherwise defaults its directory to the (possibly non-writable) working directory.
 
-Add provider credentials with an `"env"` block and tune the safety contract with `"mode"` - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+Add provider credentials with an `"env"` block and tune the safety contract with `"mode"` - see [Server modes](/command-line-usage/mcp#server-modes).
 
 ### `npx` (no install)
 
@@ -612,7 +612,7 @@ See the [action README](https://github.com/stackql/setup-stackql-mcp) for more a
 
 **When to use:** you are building an agentic app and want to vendor the MCP server into your own binary - no `npx`, no separate install, no runtime dependency.
 
-Native libraries spawn the signed `stackql` binary over stdio behind each language's official MCP SDK client, so your app gets the same governed SQL interface to every provider in the registry. Each library defaults to `read_only` - escalation to a writable mode is always explicit - and can either download-and-verify the binary on first run or vendor it into your build for a single self-contained executable. The full per-language API is in the [Embedded MCP reference](/docs/mcp/embedded).
+Native libraries spawn the signed `stackql` binary over stdio behind each language's official MCP SDK client, so your app gets the same governed SQL interface to every provider in the registry. Each library defaults to `read_only` - escalation to a writable mode is always explicit - and can either download-and-verify the binary on first run or vendor it into your build for a single self-contained executable. The full per-language API is in the [Embedded MCP reference](/mcp/embedded).
 
 <Tabs
   defaultValue="rust"
@@ -651,7 +651,7 @@ let tools = server.list_all_tools().await?;
   </div>
 </Box>
 
-Full reference: [Embedded MCP: Rust](/docs/mcp/embedded/rust).
+Full reference: [Embedded MCP: Rust](/mcp/embedded/rust).
 
 </TabItem>
 <TabItem value="go">
@@ -681,7 +681,7 @@ defer client.Close()
   </div>
 </Box>
 
-Full reference: [Embedded MCP: Go](/docs/mcp/embedded/go).
+Full reference: [Embedded MCP: Go](/mcp/embedded/go).
 
 </TabItem>
 <TabItem value="kotlin">
@@ -710,7 +710,7 @@ server.use {
   </div>
 </Box>
 
-Full reference: [Embedded MCP: Kotlin / JVM](/docs/mcp/embedded/kotlin).
+Full reference: [Embedded MCP: Kotlin / JVM](/mcp/embedded/kotlin).
 
 </TabItem>
 <TabItem value="dotnet">
@@ -737,7 +737,7 @@ var tools = await server.ListToolsAsync();
   </div>
 </Box>
 
-Full reference: [Embedded MCP: .NET / C#](/docs/mcp/embedded/dotnet).
+Full reference: [Embedded MCP: .NET / C#](/mcp/embedded/dotnet).
 
 </TabItem>
 <TabItem value="gleam">
@@ -767,7 +767,7 @@ let assert Ok(tools) = stackql_mcp.list_tools(server)
   </div>
 </Box>
 
-Full reference: [Embedded MCP: Gleam](/docs/mcp/embedded/gleam).
+Full reference: [Embedded MCP: Gleam](/mcp/embedded/gleam).
 
 </TabItem>
 <TabItem value="swift">
@@ -796,7 +796,7 @@ await server.stop()
   </div>
 </Box>
 
-Full reference: [Embedded MCP: Swift](/docs/mcp/embedded/swift).
+Full reference: [Embedded MCP: Swift](/mcp/embedded/swift).
 
 </TabItem>
 </Tabs>

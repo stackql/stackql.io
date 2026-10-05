@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "DENSE_RANK window function in StackQL: the rank of the current row in its partition without gaps, so tied rows share a rank and the next rank follows at once."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the rank of the current row without gaps. This is the number of the current row's peer group within its partition. Rows with equal values for the ordering columns receive the same rank, and the next rank value is always incremented by 1 (no gaps).
@@ -15,7 +15,7 @@ Returns the rank of the current row without gaps. This is the number of the curr
 Rows are numbered starting from 1 in the order defined by the `ORDER BY` clause in the window definition. If there is no `ORDER BY` clause, then all rows are considered peers and this function always returns 1.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` ROW_NUMBER `]](/docs/language-spec/functions/window/row_number) [[` RANK `]](/docs/language-spec/functions/window/rank)
+[[` SELECT `]](/language-spec/select) [[` ROW_NUMBER `]](/language-spec/functions/window/row_number) [[` RANK `]](/language-spec/functions/window/rank)
 
 * * *
 

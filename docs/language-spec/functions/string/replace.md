@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "REPLACE function in StackQL: substitute every occurrence of a substring within a string with another string."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a string formed by substituting a portion of a string for every occurrence of another string.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

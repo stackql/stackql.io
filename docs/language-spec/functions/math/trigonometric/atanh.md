@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, which is the value \( \theta \) in radians whose hyperbolic tangent is the specified number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

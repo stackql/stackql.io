@@ -6,7 +6,7 @@ import { MdLibraryBooks } from "react-icons/md";
 
 const DocumentationLink = props => {
   const { styles, iconSize } = props;
-  const docs = useBaseUrl('/docs');
+  const docs = useBaseUrl('/');
   return(
     <Link
     className={clsx('button', styles ? styles : 'button--outline button--primary')}

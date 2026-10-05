@@ -28,32 +28,32 @@ All four libraries share one contract: `read_only` mode by default, a cwd-indepe
 export const EMBEDDED_LIBRARIES = [
   {
     name: 'Go',
-    href: '/docs/mcp/embedded/go',
+    href: '/mcp/embedded/go',
     description: 'Embed via go:embed or sidecar; official Go MCP SDK. Demo: sandboxctl, an on-demand infrastructure concierge.'
   },
   {
     name: 'Rust',
-    href: '/docs/mcp/embedded/rust',
+    href: '/mcp/embedded/rust',
     description: 'Sidecar or include_bytes! vendoring; rmcp client. Demo: auditron, a terminal compliance copilot.'
   },
   {
     name: 'Swift',
-    href: '/docs/mcp/embedded/swift',
+    href: '/mcp/embedded/swift',
     description: 'Bundle the notarised binary in a signed macOS app; official Swift MCP SDK. Demo: CloudLens, a menu-bar cloud sentinel.'
   },
   {
     name: 'Kotlin / JVM',
-    href: '/docs/mcp/embedded/kotlin',
+    href: '/mcp/embedded/kotlin',
     description: 'Library + Gradle plugin; official Kotlin MCP SDK. Demo: costgate, a cost gate for CI/CD.'
   },
   {
     name: '.NET / C#',
-    href: '/docs/mcp/embedded/dotnet',
+    href: '/mcp/embedded/dotnet',
     description: 'Sidecar or vendored bundle; official C# MCP SDK. Demo: driftwatch, a scheduled drift-check worker.'
   },
   {
     name: 'Gleam',
-    href: '/docs/mcp/embedded/gleam',
+    href: '/mcp/embedded/gleam',
     description: 'OTP-supervised on the Erlang/BEAM target; downloads and verifies the signed binary. Demo: pipewatch (planned).'
   }
 ];
@@ -75,4 +75,4 @@ export const EMBEDDED_LIBRARIES = [
 - sha256 pins are published per release.
 - mcp-name `io.github.stackql/stackql-mcp` on the Official MCP Registry.
 
-See the [MCP tools reference](/docs/mcp) and the [install vectors](/docs/installing-stackql).
+See the [MCP tools reference](/mcp) and the [install vectors](/installing-stackql).

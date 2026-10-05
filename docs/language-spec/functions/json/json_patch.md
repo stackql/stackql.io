@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Applies a JSON MergePatch (RFC-7396) to a JSON document, modifying it according to specified operations. This function is used to add, modify, or delete elements within JSON objects but treats JSON arrays as atomic units.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)
 
 * * * 
 

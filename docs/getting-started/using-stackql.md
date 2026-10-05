@@ -7,20 +7,20 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Using StackQL: run queries interactively in the shell, non-interactively with exec, or as a server, and discover providers, services and resources as you go."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  
-[[` exec `]](/docs/command-line-usage/exec) [[` shell `]](/docs/command-line-usage/shell)
+[[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell)
 
 StackQL has several usage modes, these include: the StackQL interactive shell, the StackQL command line using StackQL statements, or executing one or more StackQL statements in an input file (IQL file).  Each of the modes is described in more detail below:
 
-- Using the StackQL Interactive Shell ([`stackql shell`](/docs/command-line-usage/shell))
-- Using the StackQL Command Line Utility ([`stackql exec`](/docs/command-line-usage/exec))
-- Using an Input File (IQL File) ([`stackql exec -i`](/docs/command-line-usage/exec))
+- Using the StackQL Interactive Shell ([`stackql shell`](/command-line-usage/shell))
+- Using the StackQL Command Line Utility ([`stackql exec`](/command-line-usage/exec))
+- Using an Input File (IQL File) ([`stackql exec -i`](/command-line-usage/exec))
 
 ### Using the StackQL Interactive Shell
-The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/docs/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
+The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
 
 The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](/providers)) for information about provider authentication:
 
@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Once in a shell authenticated to a cloud provider, you can begin running StackQL queries (`SELECT` queries or DDL - Infrastructure as Code - operations).
 
-By default the StackQL shell will return tabular results, however `json`, `jsonl`, `csv` and `text` output formats are available using the `--output` flag, see [Output Modes](/docs/getting-started/output-modes).  
+By default the StackQL shell will return tabular results, however `json`, `jsonl`, `csv` and `text` output formats are available using the `--output` flag, see [Output Modes](/getting-started/output-modes).  
 
 You can change the color scheme for the StackQL shell using the `--colorscheme` flag, as shown below:  
 

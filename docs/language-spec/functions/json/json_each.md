@@ -7,19 +7,19 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_EACH table-valued function in StackQL: expand a JSON array or object into one row per element or member, to join and filter nested API responses."
 image: "/img/stackql-featured-image.png"
 ---
 Table-valued function which returns a table consisting of one row for each array element or object member.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` DESCRIBE `]](/docs/language-spec/describe) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/docs/language-spec/functions/json/json_array_length) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::tip 
 
-Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` datatypes which can be used with the `json_each` function.
+Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` datatypes which can be used with the `json_each` function.
 
 :::
 

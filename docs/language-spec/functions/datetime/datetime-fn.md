@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "DATETIME function in StackQL: compute a datetime value from an input and one or more modifiers, returned as YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a calculated datetime value from an input datetime and one or more modifiers.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Date Modifiers ]](/docs/language-spec/functions/datetime/date_modifiers) 
+[[` SELECT `]](/language-spec/select) [[ Date Modifiers ]](/language-spec/functions/datetime/date_modifiers) 
 
 * * * 
 
@@ -29,7 +29,7 @@ __*datetime_expression*__
 The datetime value.
 
 __*modifier*__  
-Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/docs/language-spec/functions/datetime/date_modifiers)
+Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
 ## Return Value(s)
 
@@ -88,7 +88,7 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/docs/language-spec/functions/datetime/julianday).
+To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/language-spec/functions/datetime/julianday).
 
 :::
 

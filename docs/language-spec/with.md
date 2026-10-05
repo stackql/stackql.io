@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "WITH in StackQL: define common table expressions (CTEs), temporary named result sets scoped to a single SELECT, INSERT, UPDATE or DELETE statement."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Defines a Common Table Expression (CTE) for use in a subsequent `SELECT`, `INSERT`, `UPDATE`, or `DELETE` statement. CTEs act as temporary named result sets that exist only for the duration of the query.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` INSERT `]](/docs/language-spec/insert) [[` UPDATE `]](/docs/language-spec/update) [[` DELETE `]](/docs/language-spec/delete)
+[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
 
 * * *
 

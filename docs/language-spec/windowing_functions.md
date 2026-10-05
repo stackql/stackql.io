@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Window functions in StackQL: ranks, running totals, offsets and distributions across related rows, with PARTITION BY, ORDER BY and frame clauses."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Window functions perform calculations across a set of rows that are related to the current row. Unlike aggregate functions that return a single result for a group of rows, window functions return a value for each row while considering a "window" of related rows.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` WITH (CTEs) `]](/docs/language-spec/with) [[ Window Function Reference ]](/docs/language-spec/functions/window/row_number)
+[[` SELECT `]](/language-spec/select) [[` WITH (CTEs) `]](/language-spec/with) [[ Window Function Reference ]](/language-spec/functions/window/row_number)
 
 * * *
 
@@ -76,10 +76,10 @@ type="windowSpec"
 
 | Category | Functions |
 |----------|-----------|
-| **Ranking** | [__`ROW_NUMBER()`__](/docs/language-spec/functions/window/row_number), [__`RANK()`__](/docs/language-spec/functions/window/rank), [__`DENSE_RANK()`__](/docs/language-spec/functions/window/dense_rank), [__`NTILE()`__](/docs/language-spec/functions/window/ntile) |
-| **Offset** | [__`LAG()`__](/docs/language-spec/functions/window/lag), [__`LEAD()`__](/docs/language-spec/functions/window/lead), [__`FIRST_VALUE()`__](/docs/language-spec/functions/window/first_value), [__`LAST_VALUE()`__](/docs/language-spec/functions/window/last_value), [__`NTH_VALUE()`__](/docs/language-spec/functions/window/nth_value) |
-| **Distribution** | [__`PERCENT_RANK()`__](/docs/language-spec/functions/window/percent_rank), [__`CUME_DIST()`__](/docs/language-spec/functions/window/cume_dist) |
-| **Aggregate** | [__`SUM()`__](/docs/language-spec/functions/aggregate/sum), [__`COUNT()`__](/docs/language-spec/functions/aggregate/count), [__`AVG()`__](/docs/language-spec/functions/aggregate/avg), [__`MIN()`__](/docs/language-spec/functions/aggregate/min), [__`MAX()`__](/docs/language-spec/functions/aggregate/max) with the __`OVER`__ clause |
+| **Ranking** | [__`ROW_NUMBER()`__](/language-spec/functions/window/row_number), [__`RANK()`__](/language-spec/functions/window/rank), [__`DENSE_RANK()`__](/language-spec/functions/window/dense_rank), [__`NTILE()`__](/language-spec/functions/window/ntile) |
+| **Offset** | [__`LAG()`__](/language-spec/functions/window/lag), [__`LEAD()`__](/language-spec/functions/window/lead), [__`FIRST_VALUE()`__](/language-spec/functions/window/first_value), [__`LAST_VALUE()`__](/language-spec/functions/window/last_value), [__`NTH_VALUE()`__](/language-spec/functions/window/nth_value) |
+| **Distribution** | [__`PERCENT_RANK()`__](/language-spec/functions/window/percent_rank), [__`CUME_DIST()`__](/language-spec/functions/window/cume_dist) |
+| **Aggregate** | [__`SUM()`__](/language-spec/functions/aggregate/sum), [__`COUNT()`__](/language-spec/functions/aggregate/count), [__`AVG()`__](/language-spec/functions/aggregate/avg), [__`MIN()`__](/language-spec/functions/aggregate/min), [__`MAX()`__](/language-spec/functions/aggregate/max) with the __`OVER`__ clause |
 
 * * *
 
@@ -203,6 +203,6 @@ FROM weekly_totals
 ORDER BY week;
 ```
 
-For detailed documentation on each window function, see the [Window Function Reference](/docs/language-spec/functions/window/row_number).
+For detailed documentation on each window function, see the [Window Function Reference](/language-spec/functions/window/row_number).
 
 For more information, see [https://sqlite.org/windowfunctions.html](https://sqlite.org/windowfunctions.html).

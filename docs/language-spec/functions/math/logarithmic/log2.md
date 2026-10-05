@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the base-2 logarithm of a given number, returning the power to which the number 2 must be raised to obtain the value.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

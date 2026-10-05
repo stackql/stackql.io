@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "SELECT in StackQL: query cloud and SaaS resources with SQL, with WHERE filters that map to API parameters, joins, grouping, ordering and JSON field access."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Returns an instance or instances of a resource.  
 
 See also:
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[` WITH (CTEs) `]](/docs/language-spec/with) [[` Window Functions `]](/docs/language-spec/windowing_functions)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy) [[` WITH (CTEs) `]](/language-spec/with) [[` Window Functions `]](/language-spec/windowing_functions)
 
 * * * 
 
@@ -111,10 +111,10 @@ GROUP BY location
 HAVING location != 'ASIA';
 ```
 
-For more information on the `COUNT` function and other aggregate functions supported by StackQL see [Aggregate Functions](/docs/language-spec/functions/aggregate/count).
+For more information on the `COUNT` function and other aggregate functions supported by StackQL see [Aggregate Functions](/language-spec/functions/aggregate/count).
 
 ### Get list of On Demand VMs and corresponding network interface from Azure VM Scaleset
-Run a `SELECT` statement using the [`SPLIT_PART`](/docs/language-spec/functions/string/split_part) and [`JSON_EXTRACT`](/docs/language-spec/functions/json/json_extract) functions to get list of OD VMs and their NICs. Note that without a qualifier the subscription_id and resource_group_name is applied to all the three Resources.
+Run a `SELECT` statement using the [`SPLIT_PART`](/language-spec/functions/string/split_part) and [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) functions to get list of OD VMs and their NICs. Note that without a qualifier the subscription_id and resource_group_name is applied to all the three Resources.
 
 ```sql
 SELECT  c.name AS vm_name,
@@ -130,7 +130,7 @@ AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
 
-For more information on window functions, see [Window Functions](/docs/language-spec/windowing_functions).
+For more information on window functions, see [Window Functions](/language-spec/windowing_functions).
 
 ### Using Common Table Expressions (CTEs) with `WITH`
 
@@ -161,4 +161,4 @@ GROUP BY login
 ORDER BY total_contributions DESC;
 ```
 
-For more information on CTEs, see [WITH (CTEs)](/docs/language-spec/with).
+For more information on CTEs, see [WITH (CTEs)](/language-spec/with).

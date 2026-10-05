@@ -25,12 +25,12 @@ export const MCP_TOOL_CATEGORIES = [
     tools: [
       {
         name: 'server_info',
-        href: '/docs/mcp/server_info',
+        href: '/mcp/server_info',
         description: 'Identity and runtime of the connected MCP server'
       },
       {
         name: 'reload_credentials',
-        href: '/docs/mcp/reload_credentials',
+        href: '/mcp/reload_credentials',
         description: 'Re-source credentials from the --env.file dotenv file and report per-provider status'
       }
     ]
@@ -41,27 +41,27 @@ export const MCP_TOOL_CATEGORIES = [
     tools: [
       {
         name: 'list_providers',
-        href: '/docs/mcp/list_providers',
+        href: '/mcp/list_providers',
         description: 'Providers pulled into the local StackQL cache'
       },
       {
         name: 'list_services',
-        href: '/docs/mcp/list_services',
+        href: '/mcp/list_services',
         description: 'Services available under a provider'
       },
       {
         name: 'list_resources',
-        href: '/docs/mcp/list_resources',
+        href: '/mcp/list_resources',
         description: 'Resources available under a provider.service'
       },
       {
         name: 'list_methods',
-        href: '/docs/mcp/list_methods',
+        href: '/mcp/list_methods',
         description: 'Access methods available for a resource'
       },
       {
         name: 'describe_method',
-        href: '/docs/mcp/describe_method',
+        href: '/mcp/describe_method',
         description: 'Full I/O contract of one access method: inputs and output fields'
       }
     ]
@@ -72,12 +72,12 @@ export const MCP_TOOL_CATEGORIES = [
     tools: [
       {
         name: 'list_registry',
-        href: '/docs/mcp/list_registry',
+        href: '/mcp/list_registry',
         description: 'Providers and versions available in the registry'
       },
       {
         name: 'pull_provider',
-        href: '/docs/mcp/pull_provider',
+        href: '/mcp/pull_provider',
         description: 'Install a provider from the registry into the local cache'
       }
     ]
@@ -88,12 +88,12 @@ export const MCP_TOOL_CATEGORIES = [
     tools: [
       {
         name: 'validate_select_query',
-        href: '/docs/mcp/validate_select_query',
+        href: '/mcp/validate_select_query',
         description: 'Parse and plan a SELECT without executing it'
       },
       {
         name: 'run_select_query',
-        href: '/docs/mcp/run_select_query',
+        href: '/mcp/run_select_query',
         description: 'Execute a SELECT against a provider'
       }
     ]
@@ -104,12 +104,12 @@ export const MCP_TOOL_CATEGORIES = [
     tools: [
       {
         name: 'run_mutation_query',
-        href: '/docs/mcp/run_mutation_query',
+        href: '/mcp/run_mutation_query',
         description: 'Run INSERT, UPDATE, REPLACE, or DELETE against a provider'
       },
       {
         name: 'run_lifecycle_operation',
-        href: '/docs/mcp/run_lifecycle_operation',
+        href: '/mcp/run_lifecycle_operation',
         description: 'Execute a StackQL EXEC lifecycle operation'
       }
     ]
@@ -143,7 +143,7 @@ export const ToolContent = () => {
   return (
     <>
       <blockquote>
-        These are the tools exposed by the StackQL <a href="/docs/command-line-usage/mcp">MCP server</a>.  Availability of mutation and lifecycle tools depends on the server mode (<code>read_only</code>, <code>safe</code>, <code>delete_safe</code>, <code>full_access</code>). For information on installing the MCP server locally see <a href="/docs/installing-stackql#prebuilt-mcpb-bundle">here</a>.
+        These are the tools exposed by the StackQL <a href="/command-line-usage/mcp">MCP server</a>.  Availability of mutation and lifecycle tools depends on the server mode (<code>read_only</code>, <code>safe</code>, <code>delete_safe</code>, <code>full_access</code>). For information on installing the MCP server locally see <a href="/installing-stackql#prebuilt-mcpb-bundle">here</a>.
       </blockquote>
 
       {MCP_TOOL_CATEGORIES.map(category => (

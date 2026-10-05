@@ -7,11 +7,11 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Generate INSERT templates for any resource with SHOW INSERT in StackQL, full or required parameters only, as the starting point for infrastructure definitions."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  
-[[` exec `]](/docs/command-line-usage/exec) [[` INSERT `]](/docs/language-spec/insert) [[` SHOW `]](/docs/language-spec/show) [[ Using Variables ]](/docs/getting-started/variables)
+[[` exec `]](/command-line-usage/exec) [[` INSERT `]](/language-spec/insert) [[` SHOW `]](/language-spec/show) [[ Using Variables ]](/getting-started/variables)
 
 Cloud resources are deployed with StackQL using `INSERT` statements.  `INSERT` templates for different cloud resources using the `SHOW INSERT` command.
 
@@ -60,7 +60,7 @@ SELECT
   '{{ .values.data__subnetwork }}'
 ```
 
-> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](/docs/getting-started/variables).
+> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](/getting-started/variables).
 
 ### Generating an `INSERT` template with only required parameters
 

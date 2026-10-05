@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "CREATE VIEW in StackQL: save a query, including cross-cloud UNIONs, as a named view, or as a materialized view whose results are stored for reuse."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
@@ -16,7 +16,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Creates a `view` or a `materialized view` within a session which can be used to represent a long or complex `stackql` query.  
 
 See also:  
-[[ `SELECT` ]](/docs/language-spec/select) [[ `REFRESH` ]](/docs/language-spec/refreshview) [[ `DROP` ]](/docs/language-spec/dropview)
+[[ `SELECT` ]](/language-spec/select) [[ `REFRESH` ]](/language-spec/refreshview) [[ `DROP` ]](/language-spec/dropview)
 
 * * * 
 

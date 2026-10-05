@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Returns the StackQL MCP server's identity and runtime: version, backing SQL engine, provider registry location, server mode, and the legacy read-only flag.  Call this once at session start so the agent knows what it is connected to.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_providers` ]](/docs/mcp/list_providers) [[ `list_registry` ]](/docs/mcp/list_registry)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)
 
 * * *
 

@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "TOTAL aggregate function in StackQL: the total of the non-NULL values in a column or grouping, always returned as a floating point number."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the sum of all non `NULL` values in a column or grouping of columns.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` SUM `]](/docs/language-spec/functions/aggregate/sum)
+[[` SELECT `]](/language-spec/select) [[` SUM `]](/language-spec/functions/aggregate/sum)
 
 * * * 
 

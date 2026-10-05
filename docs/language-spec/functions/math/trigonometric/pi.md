@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the mathematical constant π (pi), which is the ratio of a circle's circumference to its diameter.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

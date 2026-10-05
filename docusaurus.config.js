@@ -17,67 +17,106 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
+// The provider catalog (config: src/configs/providers.json, read by
+// src/lib/providers.js) drives the tiles on /providers, this dropdown
+// and the /providers/<slug> and /registry/<name> redirect routes
+// (plugins/provider-redirects). The dropdown lists the entries flagged
+// `featured`, in catalog order.
+const { FEATURED_PROVIDERS } = require('./src/lib/providers');
+
 const providerDropDownListItems = [
-  {
-    label: 'AWS',
-    to: '/providers/aws',
-  },
-  {
-    label: 'Azure',
-    to: '/providers/azure',
-  },
-  {
-    label: 'Google',
-    to: '/providers/google',
-  },
-  {
-    label: 'Databricks',
-    to: '/providers/databricks',
-  },
-  {
-    label: 'Snowflake',
-    to: '/providers/snowflake',
-  },
-  {
-    label: 'Confluent',
-    to: '/providers/confluent',
-  },
-  {
-    label: 'Okta',
-    to: '/providers/okta',
-  },
-  {
-    label: 'GitHub',
-    to: '/providers/github',
-  },
-  {
-    label: 'OpenAI',
-    to: '/providers/openai',
-  },
-  {
-    label: 'Cloudflare',
-    to: '/providers/cloudflare',
-  },
+  ...FEATURED_PROVIDERS.map(({ name, shortName, slug }) => ({
+    label: shortName || name,
+    to: `/providers/${slug}`,
+  })),
   {
     label: '... More',
     to: '/providers',
   },
 ];
 
+// Nav and footer link straight to the canonical pages. The top-level
+// meta-refresh stubs (/install, /stackqldocs, /downloads) stay as inbound
+// aliases but are not linked from the chrome, so crawlers see the real
+// site structure rather than a ring of redirects.
 const footerStackQLItems = [
   {
     label: 'Documentation',
-    to: '/stackqldocs',
+    to: '/',
   },
   {
     label: 'Install',
-    to: '/install',
+    to: '/installing-stackql',
   },
   {
     label: 'Contact us',
     to: '/contact-us',
   },
 ];
+
+// Blog sections. Each is its own @docusaurus/plugin-content-blog instance
+// (content in blog/<id>, routes at /blog/<id>) with its own list page,
+// sidebar and feeds. The /blog landing page is built from the same list by
+// plugins/blog-landing. Pre-split post URLs (/blog/<slug>) are 301'd in
+// netlify.toml - see scripts/generate-blog-redirects.js.
+const blogSections = [
+  {
+    id: 'product',
+    label: 'Product Announcements',
+    navLabel: '📣 Product Announcements',
+    description: 'New StackQL releases, features and capabilities',
+  },
+  {
+    id: 'providers',
+    label: 'Provider Announcements',
+    navLabel: '📣 Provider Announcements',
+    description: 'New and updated StackQL providers',
+  },
+  {
+    id: 'tutorials',
+    label: 'Tutorials',
+    description: 'Practical walkthroughs for cloud operations, security and automation using SQL',
+  },
+];
+
+// Header dropdown entries (navLabel carries the bullhorn on the two
+// announcement sections) and plain footer entries. The /blog landing page
+// itself is reachable by URL and from the sitemap but is deliberately not
+// linked from the header or footer.
+const blogSectionNavItems = blogSections.map(({id, label, navLabel}) => ({
+  label: navLabel || label,
+  to: `/blog/${id}`,
+  activeBasePath: `/blog/${id}`,
+}));
+
+const blogSectionFooterItems = blogSections.map(({id, label}) => ({
+  label,
+  to: `/blog/${id}`,
+}));
+
+const blogPlugins = blogSections.map(({id, label, description}) => [
+  '@docusaurus/plugin-content-blog',
+  {
+    id,
+    path: `blog/${id}`,
+    routeBasePath: `/blog/${id}`,
+    // one authors file shared by every instance, relative to the content dir
+    authorsMapPath: '../authors.yml',
+    blogTitle: label,
+    blogDescription: description,
+    blogSidebarTitle: `All ${label.toLowerCase()}`,
+    blogSidebarCount: 'ALL',
+    postsPerPage: 5,
+    showReadingTime: true,
+    editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
+    feedOptions: {
+      type: 'all',
+      title: `StackQL Blog - ${label}`,
+      description,
+      copyright: `Copyright © ${new Date().getFullYear()} StackQL Studios`,
+    },
+  },
+]);
 
 const footerMoreItems = [
   {
@@ -87,15 +126,12 @@ const footerMoreItems = [
   {
     label: 'stackql-deploy',
     to: '/stackql-deploy',
-  },            
-  {
-    label: 'Blog',
-    to: '/blog',
   },
+  ...blogSectionFooterItems,
   {
-    label: 'Tutorials',
-    to: '/tutorials',
-  },            
+    label: 'Quick Starts',
+    to: '/quick-starts',
+  },
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -184,7 +220,11 @@ const config = {
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
             'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
-            'docusaurus-plugin-content-blog@default': { title: 'Blog', order: 3 },
+            // one llms.txt section per blog instance, in blogSections order
+            ...Object.fromEntries(blogSections.map(({id, label}, i) => [
+              `docusaurus-plugin-content-blog@${id}`,
+              { title: `Blog - ${label}`, order: 3 + i },
+            ])),
           },
         },
       },
@@ -199,6 +239,19 @@ const config = {
         editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
       },
     ],
+    // three blog instances (the preset blog is disabled below) plus the
+    // /blog landing page that lists the newest posts from each
+    ...blogPlugins,
+    [
+      require.resolve('./plugins/blog-landing'),
+      {
+        sections: blogSections,
+        postsPerSection: 5,
+      },
+    ],
+    // /providers/<slug> and /registry/<slug> head redirects to the provider
+    // microsites, one pair per catalog entry
+    require.resolve('./plugins/provider-redirects'),
   ],
   presets: [
     [
@@ -217,33 +270,25 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['/blog/tags/**', '/search', '/blog/page/**'],
+          // tag and pagination routes of every blog instance
+          ignorePatterns: ['/blog/*/tags/**', '/blog/*/page/**', '/search'],
           filename: 'sitemap.xml',
         },
         pages: {},
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           path: 'docs',
+          // Docs-only site: the docs tree is the site root and docs/index.md
+          // (slug /) is the homepage. Inbound /docs/* links are 301'd in
+          // netlify.toml. The query library stays proxied at /docs/query-library/.
+          routeBasePath: '/',
 		      sidebarCollapsible: true, 
           showLastUpdateTime: true,
           editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
         },
-        blog: {
-          path: 'blog',
-          blogTitle: 'StackQL Blog',
-          blogDescription: 'Cloud operations, security and automation using SQL',
-          postsPerPage: 5,
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          feedOptions: {
-            type: 'all',
-            title: 'StackQL Blog Feed',
-            description: 'Cloud operations, security and automation using SQL',
-            copyright: `Copyright © ${new Date().getFullYear()} StackQL Studios`,
-          },
-          showReadingTime: true,
-          editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
-        },
+        // the blog is three plugin instances (blogPlugins above), not the
+        // preset's single instance
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/global.css'),
         },
@@ -262,11 +307,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       structuredData: {
-        excludedRoutes: [
-          '/providers',
-        ],
+        excludedRoutes: [],
         verbose: false,
-        techArticleRoutePrefixes: ['/docs/', '/ai/'],
+        // TechArticle on every page owned by these content-docs instances
+        // (except each instance's root), since the default docs instance
+        // has no URL prefix any more. The prefix list still covers /ai/ for
+        // plugin versions before 1.6.0.
+        techArticleRoutePrefixes: ['/ai/'],
+        techArticleDocsInstances: ['default', 'ai'],
+        // category index pages (/getting-started, /command-line-usage,
+        // /quick-starts/*) become linked crumbs rather than leaf-name prefixes
+        breadcrumbLinkAncestors: true,
         featuredImageDimensions: {
           width: 1200,
           height: 627,
@@ -298,15 +349,17 @@ const config = {
             '@type': 'ContactPoint',
             email: 'info@stackql.io',
           },
+          // Google's Organization logo guidance wants an actual logo mark
+          // (square, >= 112px, legible on white), not a cover image.
           logo: {
             '@type': 'ImageObject',
             inLanguage: 'en-US',
             '@id': 'https://stackql.io/#logo',
-            url: 'https://stackql.io/img/stackql-cover.png',
-            contentUrl: 'https://stackql.io/img/stackql-cover.png',
-            width: 1440,
-            height: 900,
-            caption: 'StackQL - your cloud using SQL',
+            url: 'https://stackql.io/android-chrome-512x512.png',
+            contentUrl: 'https://stackql.io/android-chrome-512x512.png',
+            width: 512,
+            height: 512,
+            caption: 'StackQL',
           },
           address: {
             '@type': 'PostalAddress',
@@ -336,6 +389,28 @@ const config = {
           'language-spec': 'Language Specification',
           're': 'Regular Expressions',
           'mcp': 'MCP',
+          'quick-starts': 'Quick Starts',
+          'providers': 'Providers',
+          'ai': 'AI Reference',
+          // full-path keys where the segment alone would be ambiguous or
+          // unreadable; a full-path key wins over a segment key
+          '/quick-starts/aws': 'AWS',
+          '/quick-starts/azure': 'Microsoft Azure',
+          '/quick-starts/google': 'Google Cloud Platform',
+          '/quick-starts/github': 'GitHub',
+          '/ai/canonical-definitions': 'Canonical Definitions',
+          '/ai/comparisons': 'Comparisons',
+          '/ai/how-tos': 'How-tos',
+          '/ai/concepts': 'Concepts',
+          '/ai/faqs': 'FAQs',
+          '/ai/architecture': 'Architecture',
+          '/ai/troubleshooting': 'Troubleshooting',
+          '/ai/industry-positioning': 'Industry Positioning',
+          '/ai/tutorials': 'Tutorials',
+          '/ai/providers': 'Providers',
+          // blog section crumbs, keyed by full path so "providers" here does
+          // not collide with the /providers catalog page
+          ...Object.fromEntries(blogSections.map(({id, label}) => [`/blog/${id}`, label])),
         },
       },
       metadata: [
@@ -412,7 +487,7 @@ const config = {
       },
       items: [
         {
-          to: '/install',
+          to: '/installing-stackql',
           label: 'Install',
           position: 'left',
         },
@@ -422,15 +497,15 @@ const config = {
           position: 'left',
           items: [
             {
-              to: '/docs/command-line-usage/mcp',
+              to: '/command-line-usage/mcp',
               label: 'MCP Server',
             },
             {
-              to: '/docs/mcp',
+              to: '/mcp',
               label: 'MCP Tools',
             },
             {
-              to: '/docs/mcp/embedded',
+              to: '/mcp/embedded',
               label: 'Embedded MCP',
             },
             {
@@ -466,18 +541,14 @@ const config = {
           label: 'More',
           position: 'left',
           items: [
+            ...blogSectionNavItems,
             {
-              to: 'blog',
-              label: 'Blog',
-              activeBasePath: 'blog',
-            },
-            {
-              type: 'doc',
-              docId: '/tutorials',
-              label: 'Tutorials',
+              to: '/quick-starts',
+              label: 'Quick Starts',
+              activeBasePath: '/quick-starts',
             },
           ],
-        },        
+        },
         //
         //   to: 'blog',
         //   label: 'Blog',

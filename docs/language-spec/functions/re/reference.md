@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Regular expression reference for StackQL: syntax, character classes, anchors, quantifiers and groups for REGEXP_LIKE, REGEXP_REPLACE and REGEXP_SUBSTR."
 image: "/img/stackql-featured-image.png"
 ---
 Reference for regular expressions used in StackQL.  
 
 See also:  
-[[` REGEXP_LIKE `]](/docs/language-spec/functions/re/regexp_like)  [[` REGEXP_SUBSTR `]](/docs/language-spec/functions/re/regexp_substr)  [[` REGEXP_REPLACE `]](/docs/language-spec/functions/re/regexp_replace)
+[[` REGEXP_LIKE `]](/language-spec/functions/re/regexp_like)  [[` REGEXP_SUBSTR `]](/language-spec/functions/re/regexp_substr)  [[` REGEXP_REPLACE `]](/language-spec/functions/re/regexp_replace)
 
 * * * 
 

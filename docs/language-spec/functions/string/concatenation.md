@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The || concatenation operator in StackQL: join two or more string values into one string."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the resultant string from the concatenation, or joining, of two or more string values.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

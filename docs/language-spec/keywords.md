@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "StackQL keywords: the reserved words of the StackQL grammar, which can be written in any case and must be quoted when used as identifiers."
 image: "/img/stackql-featured-image.png"
 ---
 

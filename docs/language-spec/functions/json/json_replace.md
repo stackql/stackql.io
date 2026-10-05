@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Updates existing values in a JSON object based on their path. `JSON_REPLACE` does not add new keys to the document; it only replaces the values of existing keys.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[` JSON_SET `]](/docs/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/docs/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
 
 * * * 
 
@@ -45,9 +45,9 @@ Returns a modified JSON document with the specified value replaced. If the speci
 
 | Function                                                     | Overwrite if already exists? | Create if does not exist? |
 |--------------------------------------------------------------|------------------------------|---------------------------|
-| [`json_insert()`](/docs/language-spec/functions/json/json_insert) | No                           | Yes                       |
-| [`json_replace()`](/docs/language-spec/functions/json/json_replace) | Yes                          | No                        |
-| [`json_set()`](/docs/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
+| [`json_insert()`](/language-spec/functions/json/json_insert) | No                           | Yes                       |
+| [`json_replace()`](/language-spec/functions/json/json_replace) | Yes                          | No                        |
+| [`json_set()`](/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
 
 :::
 

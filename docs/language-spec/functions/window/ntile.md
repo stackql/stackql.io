@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "NTILE window function in StackQL: split a partition into N groups as evenly as possible and number each row's group from 1 to N."
 image: "/img/stackql-featured-image.png"
 ---
 Divides the partition into N groups as evenly as possible and assigns an integer between 1 and N to each group, in the order defined by the `ORDER BY` clause, or in arbitrary order otherwise. If necessary, larger groups occur first.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` RANK `]](/docs/language-spec/functions/window/rank)
+[[` SELECT `]](/language-spec/select) [[` RANK `]](/language-spec/functions/window/rank)
 
 * * *
 

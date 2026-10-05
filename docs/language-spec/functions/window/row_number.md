@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "ROW_NUMBER window function in StackQL: number the rows within a partition from 1 in the order given by the window's ORDER BY clause."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the number of the row within the current partition. Rows are numbered starting from 1 in the order defined by the `ORDER BY` clause in the window definition, or in arbitrary order otherwise.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` RANK `]](/docs/language-spec/functions/window/rank) [[` DENSE_RANK `]](/docs/language-spec/functions/window/dense_rank)
+[[` SELECT `]](/language-spec/select) [[` RANK `]](/language-spec/functions/window/rank) [[` DENSE_RANK `]](/language-spec/functions/window/dense_rank)
 
 * * *
 

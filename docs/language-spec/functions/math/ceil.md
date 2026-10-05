@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "CEIL function in StackQL: round a numeric argument up to the nearest integer."
 image: "/img/stackql-featured-image.png"
 ---
 Rounds a numeric argument up to the nearest integer.  
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

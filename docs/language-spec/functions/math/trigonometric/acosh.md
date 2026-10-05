@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, which is the non-negative value \( \theta \) in radians whose hyperbolic cosine is the specified number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

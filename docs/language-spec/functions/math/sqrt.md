@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the square root of a non-negative numeric expression.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

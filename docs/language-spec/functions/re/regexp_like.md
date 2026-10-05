@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "REGEXP_LIKE function in StackQL: test whether a string matches a regular expression, returning true or false, for pattern filters in WHERE clauses."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Checks if source string matches pattern and returns `true` or `false`.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Regular Expression Reference ]](/docs/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regular Expression Reference ]](/language-spec/functions/re/reference) 
 
 * * * 
 

@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates *x* raised to the power *y*.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

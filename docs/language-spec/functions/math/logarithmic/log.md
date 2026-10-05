@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the logarithm of a number to a specified base, which is a more general form of logarithmic function compared to LN, which uses base \(e\).
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

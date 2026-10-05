@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Date and time modifiers in StackQL: shift DATE, TIME, DATETIME, JULIANDAY and STRFTIME results by days, months or years, to a period start, a weekday and more."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -89,6 +89,6 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/docs/language-spec/functions/datetime/julianday).
+To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/language-spec/functions/datetime/julianday).
 
 :::

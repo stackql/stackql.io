@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "LOWER function in StackQL: convert a string to lowercase."
 image: "/img/stackql-featured-image.png"
 ---
 Returns an input string in lowercase.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` UPPER `]](/docs/language-spec/functions/string/upper) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` UPPER `]](/language-spec/functions/string/upper) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 

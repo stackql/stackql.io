@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the remainder of *x* divided by *y*, returning the modulus. This is similar to using the '%' operator but is compatible with non-integer arguments.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

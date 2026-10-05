@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the base-10 logarithm of a given number, determining the power to which the number 10 must be raised to achieve the value.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

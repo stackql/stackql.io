@@ -7,11 +7,11 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The stackql srv command runs StackQL as a PostgreSQL wire protocol server, so psql, BI tools and language drivers can query cloud and SaaS APIs with SQL."
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/docs/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
+Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
 
 * * * 
 
@@ -40,7 +40,7 @@ Parameters sent over the extended query protocol (`Parse` / `Bind` / `Execute`, 
 
 <br/>
 
-> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
+> see [Global Flags](/command-line-usage/global-flags) for additional options
 
 ### MCP Server Options
 
@@ -49,7 +49,7 @@ When running the `srv` command with MCP support, the following additional option
 | Option | Description |
 |--|--|
 |<span class="nowrap">`--mcp.server.type`</span>|MCP server type: `http` (in-memory) or `reverse_proxy` (TCP-based)|
-|<span class="nowrap">`--mcp.config`</span>|JSON configuration object for the MCP server (see [MCP documentation](/docs/command-line-usage/mcp))|
+|<span class="nowrap">`--mcp.config`</span>|JSON configuration object for the MCP server (see [MCP documentation](/command-line-usage/mcp))|
 |<span class="nowrap">`--mcp.log.format`</span>|MCP audit log encoding: `jsonl` (default) or `otel` (OTLP/JSON log records); overrides `server.audit.format` in the configuration object|
 |<span class="nowrap">`--mcp.protocol.version`</span>|Newest MCP protocol revision advertised: `auto` (default), `2026-07-28` (sessionless only) or an older revision such as `2025-11-25`; overrides `server.protocol_version` in the configuration object|
 
@@ -57,29 +57,29 @@ When running the `srv` command with MCP support, the following additional option
 
 :::info[Breaking change in v0.12.742]
 
-From `v0.12.742` the MCP HTTP transport (`--mcp.server.type=http` or `reverse_proxy`) refuses to start unless the configuration object names a bearer token with `server.auth_token_env_var` or opts out explicitly with `"allow_unauthenticated": true`.  See [HTTP client authentication](/docs/command-line-usage/mcp#http-client-authentication).
+From `v0.12.742` the MCP HTTP transport (`--mcp.server.type=http` or `reverse_proxy`) refuses to start unless the configuration object names a bearer token with `server.auth_token_env_var` or opts out explicitly with `"allow_unauthenticated": true`.  See [HTTP client authentication](/command-line-usage/mcp#http-client-authentication).
 
 :::
 
 :::tip
 
-See the [MCP command documentation](/docs/command-line-usage/mcp) for detailed information on configuring and using the MCP server, including deployment modes, configuration options, and integration with AI assistants.
+See the [MCP command documentation](/command-line-usage/mcp) for detailed information on configuring and using the MCP server, including deployment modes, configuration options, and integration with AI assistants.
 
 :::
 
 :::info
 
-You need to set environment variables required for provider authentication before starting the server, see [Using a Provider](/docs/getting-started/using-a-provider) for more information.
+You need to set environment variables required for provider authentication before starting the server, see [Using a Provider](/getting-started/using-a-provider) for more information.
 
 :::
 
-For long-running servers, the [`--env.file`](/docs/command-line-usage/global-flags) flag lets you lay down or rotate credentials in a dotenv-style file on disk before startup rather than exporting variables into the shell:
+For long-running servers, the [`--env.file`](/command-line-usage/global-flags) flag lets you lay down or rotate credentials in a dotenv-style file on disk before startup rather than exporting variables into the shell:
 
 ```bash
 stackql srv --pgsrv.port 5444 --env.file /etc/stackql/credentials.env
 ```
 
-For `stackql srv` the file is read once at startup; the mid-session re-source path is the MCP [`reload_credentials`](/docs/mcp/reload_credentials) tool.
+For `stackql srv` the file is read once at startup; the mid-session re-source path is the MCP [`reload_credentials`](/mcp/reload_credentials) tool.
 
 ### Flags
 
@@ -90,7 +90,7 @@ For `stackql srv` the file is read once at startup; the mid-session re-source pa
 
 <br/>
 
-> see [Global Flags](/docs/command-line-usage/global-flags) for additional options
+> see [Global Flags](/command-line-usage/global-flags) for additional options
 
 * * *
 

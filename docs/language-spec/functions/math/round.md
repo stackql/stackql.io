@@ -7,13 +7,13 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "ROUND function in StackQL: round a numeric argument to a given number of decimal places, defaulting to zero."
 image: "/img/stackql-featured-image.png"
 ---
 Rounds a numeric argument.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

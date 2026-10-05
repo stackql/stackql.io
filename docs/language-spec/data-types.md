@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "StackQL data types: the types used for resource properties and parameters in queries and results, and how they map to provider API schemas."
 image: "/img/stackql-featured-image.png"
 ---
 
