@@ -2815,10 +2815,10 @@
   dependencies:
     gray-matter "^4.0.3"
 
-"@stackql/docusaurus-plugin-structured-data@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.5.1.tgz#ab70476710cc01933994d6200c782865b697689b"
-  integrity sha512-Q1RV9RxOwwDJyDfmQ0/ydTr2qAIkVIrlBIZ4JI2+cWJjPkaR6gSNBRYhk9b5z+2QsVXpDTxfdC/xyjXAPQbC0w==
+"@stackql/docusaurus-plugin-structured-data@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.6.0.tgz#caffcf6bfede64679b4ee05132494605d9449c73"
+  integrity sha512-vRGJHITOP54bPNLas5iIBpMXDQidB2ILDBVOhdj/Et4O175ux+taj7ZEcvS5pGmLpaHhZUKGCYG8jIxkb/uu0A==
   dependencies:
     jsdom "^21.0.0"
 
