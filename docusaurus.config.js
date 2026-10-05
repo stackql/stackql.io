@@ -31,18 +31,22 @@ const providerDropDownListItems = [
   })),
   {
     label: '... More',
-    to: '/providers',
+    to: '/docs/providers',
   },
 ];
 
+// Nav and footer link straight to the canonical pages. The top-level
+// meta-refresh stubs (/install, /stackqldocs, /providers, /downloads) stay
+// as inbound aliases but are not linked from the chrome, so crawlers see
+// the real site structure rather than a ring of redirects.
 const footerStackQLItems = [
   {
     label: 'Documentation',
-    to: '/stackqldocs',
+    to: '/docs',
   },
   {
     label: 'Install',
-    to: '/install',
+    to: '/docs/installing-stackql',
   },
   {
     label: 'Contact us',
@@ -106,7 +110,7 @@ const blogPlugins = blogSections.map(({id, label, description}) => [
 const footerMoreItems = [
   {
     label: 'Providers',
-    to: '/providers',
+    to: '/docs/providers',
   },
   {
     label: 'stackql-deploy',
@@ -328,15 +332,17 @@ const config = {
             '@type': 'ContactPoint',
             email: 'info@stackql.io',
           },
+          // Google's Organization logo guidance wants an actual logo mark
+          // (square, >= 112px, legible on white), not a cover image.
           logo: {
             '@type': 'ImageObject',
             inLanguage: 'en-US',
             '@id': 'https://stackql.io/#logo',
-            url: 'https://stackql.io/img/stackql-cover.png',
-            contentUrl: 'https://stackql.io/img/stackql-cover.png',
-            width: 1440,
-            height: 900,
-            caption: 'StackQL - your cloud using SQL',
+            url: 'https://stackql.io/android-chrome-512x512.png',
+            contentUrl: 'https://stackql.io/android-chrome-512x512.png',
+            width: 512,
+            height: 512,
+            caption: 'StackQL',
           },
           address: {
             '@type': 'PostalAddress',
@@ -445,7 +451,7 @@ const config = {
       },
       items: [
         {
-          to: '/install',
+          to: '/docs/installing-stackql',
           label: 'Install',
           position: 'left',
         },
@@ -488,7 +494,7 @@ const config = {
           position: 'left',
         },
         {
-          to: '/providers',
+          to: '/docs/providers',
           type: 'dropdown',
           label: 'Providers',
           position: 'left',

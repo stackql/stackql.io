@@ -235,7 +235,7 @@ When the live site changes, AI fetch tools (Claude.ai's web_fetch, ChatGPT's bro
 
 ### `/install`, `/blog`, `/blog/<section>`, `/providers`, `/stackql-deploy`, `/mcp`, `/stackqldocs`
 
-These top-level routes are React pages, the blog landing plugin route, blog list pages, or auto-generated index landings with **no source markdown**. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission. `/tutorials` and `/cookbooks` are no longer pages at all - they are Netlify 301s, so they 404 under `yarn serve`.
+These top-level routes are React pages, the blog landing plugin route, blog list pages, or auto-generated index landings with **no source markdown**. Several of them (`/install`, `/stackqldocs`, `/providers`, `/downloads`, and `/` itself since the August 2025 revamp) are meta-refresh stubs. The navbar and footer deliberately link to the canonical pages (`/docs`, `/docs/installing-stackql`, `/docs/providers`) rather than to these stubs, so crawlers see real site structure; keep it that way when adding chrome links. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission. `/tutorials` and `/cookbooks` are no longer pages at all - they are Netlify 301s, so they 404 under `yarn serve`.
 
 ### Mobile breakpoint for Ask AI
 
