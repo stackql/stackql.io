@@ -63,9 +63,33 @@ function CardLayout({className, href, icon, title, description}) {
     </CardContainer>
   );
 }
+/**
+ * Resolve a card's icon from the sidebar item's customProps, falling back to
+ * the theme default. Link items (the tiles on docs/providers.md, the homepage
+ * cards) and category items (the per-provider Quick Starts groups in
+ * sidebars.js) both support:
+ *   iconComponent  a React node, e.g. a react-icons component
+ *   icon           an image path under static/, e.g. '/img/providers/aws/favicon.ico'
+ *   invertOnDark   with `icon`, invert the image in dark mode
+ *   emoji          a string rendered in place of the default emoji
+ */
+function useItemIcon(item, defaultIcon) {
+  const cp = item?.customProps || {};
+  // Hooks must run unconditionally, so resolve the path even when unused.
+  const src = useBaseUrl(cp.icon || '');
+  if (cp.iconComponent) return cp.iconComponent;
+  if (cp.icon) {
+    const className = clsx(styles.cardIcon, cp.invertOnDark && styles.cardIconInvert);
+    return <img src={src} alt="" className={className} />;
+  }
+  if (cp.emoji) return <span className={styles.cardEmoji}>{cp.emoji}</span>;
+  return defaultIcon;
+}
+
 function CardCategory({item}) {
   const href = findFirstSidebarItemLink(item);
   const categoryItemsPlural = useCategoryItemsPlural();
+  const icon = useItemIcon(item, '🗃️');
   // Unexpected: categories that don't have a link have been filtered upfront
   if (!href) {
     return null;
@@ -74,31 +98,16 @@ function CardCategory({item}) {
     <CardLayout
       className={item.className}
       href={href}
-      icon="🗃️"
+      icon={icon}
       title={item.label}
       description={item.description ?? categoryItemsPlural(item.items.length)}
     />
   );
 }
 
-/** Resolve a custom icon if provided; otherwise use the default */
-function getItemIcon(item, defaultIcon) {
-  const cp = item?.customProps || {};
-  if (cp.iconComponent) return cp.iconComponent;        // React node (e.g., imported SVG component)
-  if (cp.icon) {
-    const src = useBaseUrl(cp.icon);                    // string path like '/img/icons/install.svg'
-    const className = cp.invertOnDark
-      ? `${styles.cardIcon} ${styles.cardIconInvert}`
-      : styles.cardIcon;
-    return <img src={src} alt="" className={className} />;
-  }
-  if (cp.emoji) return <span className={styles.cardEmoji}>{cp.emoji}</span>;
-  return defaultIcon;
-}
-
 function CardLink({item}) {
   const defaultIcon = isInternalUrl(item.href) ? '📄️' : '🔗';
-  const icon = getItemIcon(item, defaultIcon);
+  const icon = useItemIcon(item, defaultIcon);
 
   const doc = useDocById(item.docId ?? undefined);
   return (
