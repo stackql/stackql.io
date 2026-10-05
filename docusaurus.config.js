@@ -17,24 +17,6 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
-// The provider catalog (config: src/configs/providers.json, read by
-// src/lib/providers.js) drives the tiles on /providers, this dropdown
-// and the /providers/<slug> and /registry/<name> redirect routes
-// (plugins/provider-redirects). The dropdown lists the entries flagged
-// `featured`, in catalog order.
-const { FEATURED_PROVIDERS } = require('./src/lib/providers');
-
-const providerDropDownListItems = [
-  ...FEATURED_PROVIDERS.map(({ name, shortName, slug }) => ({
-    label: shortName || name,
-    to: `/providers/${slug}`,
-  })),
-  {
-    label: '... More',
-    to: '/providers',
-  },
-];
-
 // Nav and footer link straight to the canonical pages. The top-level
 // meta-refresh stubs (/install, /stackqldocs, /downloads) stay as inbound
 // aliases but are not linked from the chrome, so crawlers see the real
@@ -252,6 +234,9 @@ const config = {
     // /providers/<slug> and /registry/<slug> head redirects to the provider
     // microsites, one pair per catalog entry
     require.resolve('./plugins/provider-redirects'),
+    // /providers.json: the catalog published for the shared chrome in
+    // ../docusaurus-config (provider microsites, query library).
+    require.resolve('./plugins/provider-catalog'),
   ],
   presets: [
     [
@@ -530,11 +515,15 @@ const config = {
           position: 'left',
         },
         {
-          to: '/providers',
-          type: 'dropdown',
+          // Two-level menu (category -> provider) generated from the
+          // provider catalog (src/configs/providers.json) by the custom
+          // navbar item type in src/theme/NavbarItem. The catalog also
+          // drives the tiles on /providers and the /providers/<slug> and
+          // /registry/<name> redirect routes (plugins/provider-redirects).
+          type: 'custom-providersDropdown',
           label: 'Providers',
+          to: '/providers',
           position: 'left',
-          items: providerDropDownListItems,
         },
         {
           type: 'dropdown',

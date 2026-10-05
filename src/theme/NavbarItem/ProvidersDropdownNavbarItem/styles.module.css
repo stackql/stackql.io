@@ -1,0 +1,91 @@
+/* Desktop: the two-level Providers menu. The top-level list is a normal
+   Infima .dropdown__menu; each category row owns a flyout list of its
+   providers that opens to the right on hover or keyboard focus. */
+
+/* Infima gives .dropdown__menu overflow-y: auto for long lists, which
+   would clip the flyouts. ul.menu outranks the single-class Infima rule. */
+ul.menu {
+  overflow: visible;
+}
+
+.category {
+  position: relative;
+}
+
+.categoryLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Right-pointing caret, built the same way as Infima's dropdown caret. */
+.categoryLink::after {
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  border-color: transparent transparent transparent currentColor;
+}
+
+/* Deliberately not .dropdown__menu: Infima opens every .dropdown__menu
+   under a hovered .dropdown, which would open all flyouts at once. The
+   box styling is copied from Infima's .dropdown__menu instead. */
+.submenu {
+  position: absolute;
+  /* flush with the parent list's inner edge, so there is no dead zone
+     between the category row and its flyout for the pointer to cross */
+  left: 100%;
+  /* cancel the parent list's padding so the first provider lines up
+     with its category row */
+  top: -0.5rem;
+  z-index: 1;
+  min-width: 10rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 0.5rem;
+  list-style: none;
+  background-color: var(--ifm-dropdown-background-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-0.625rem);
+  transition-property: opacity, transform, visibility;
+  transition-duration: var(--ifm-transition-fast);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.category:hover > .submenu,
+.category:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: none;
+}
+
+/* The menu sits about 560px from the left edge and is about 280px wide,
+   and the widest flyout adds about 260px more, so on a desktop window
+   narrower than roughly 1100px (the desktop navbar starts at 997px) a
+   right-opening flyout would run off screen. Open to the left instead;
+   there is always room there. */
+@media (max-width: 1199px) {
+  .submenu {
+    left: auto;
+    right: 100%;
+    transform: translateX(0.625rem);
+  }
+}
+
+/* keep the category row highlighted while its flyout is open */
+.category:hover > .categoryLink,
+.category:focus-within > .categoryLink {
+  background-color: var(--ifm-dropdown-hover-background-color);
+  text-decoration: none;
+}
+
+/* Mobile sidebar */
+.mobileSublistLink {
+  cursor: pointer;
+}

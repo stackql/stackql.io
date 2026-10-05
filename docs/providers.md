@@ -11,6 +11,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 import DocCardList from '@theme/DocCardList';
+import Heading from '@theme/Heading';
 import React from 'react';
 
 {/* Provider catalog: src/configs/providers.json is the single source of truth for the
@@ -53,7 +54,11 @@ export const ProviderContent = () => {
 
       {PROVIDER_CATEGORIES.map(category => (
         <div key={category.id}>
-          <h2 id={category.id}>{category.name}</h2>
+          {/* theme Heading, not a bare h2: it registers the id with the
+              broken-anchor checker (the navbar Providers menu links to
+              /providers#<category id> from every page) and offsets the
+              anchor below the sticky navbar */}
+          <Heading as="h2" id={category.id}>{category.name}</Heading>
           <DocCardList
             items={category.providers.map(provider => ({
               type: 'link',

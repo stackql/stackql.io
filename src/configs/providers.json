@@ -5,28 +5,21 @@
     "providers": [
       {
         "name": "Amazon Web Services",
-        "shortName": "AWS",
-        "featured": true,
         "href": "https://aws-provider.stackql.io/",
         "icon": "/img/providers/aws/favicon.ico"
       },
       {
         "name": "Microsoft Azure",
-        "shortName": "Azure",
-        "featured": true,
         "href": "https://azure-provider.stackql.io/",
         "icon": "/img/providers/azure/favicon.ico"
       },
       {
         "name": "Google Cloud Platform",
-        "shortName": "Google",
-        "featured": true,
         "href": "https://google-provider.stackql.io/",
         "icon": "/img/providers/google/favicon.ico"
       },
       {
         "name": "Oracle Cloud Infrastructure",
-        "shortName": "OCI",
         "href": "https://oci-provider.stackql.io/",
         "icon": "/img/providers/oci/favicon.ico"
       },
@@ -37,7 +30,6 @@
       },
       {
         "name": "Cloudflare",
-        "featured": true,
         "href": "https://cloudflare-provider.stackql.io/",
         "icon": "/img/providers/cloudflare/favicon.ico"
       },
@@ -69,8 +61,6 @@
     "providers": [
       {
         "name": "Databricks Account",
-        "shortName": "Databricks",
-        "featured": true,
         "registryAliases": [
           "databricks"
         ],
@@ -84,7 +74,6 @@
       },
       {
         "name": "Snowflake",
-        "featured": true,
         "href": "https://snowflake-provider.stackql.io/",
         "icon": "/img/providers/snowflake/favicon.ico"
       },
@@ -100,7 +89,6 @@
       },
       {
         "name": "Confluent",
-        "featured": true,
         "href": "https://confluent-provider.stackql.io/",
         "icon": "/img/providers/confluent/favicon.ico"
       },
@@ -118,7 +106,6 @@
     "providers": [
       {
         "name": "Okta",
-        "featured": true,
         "href": "https://okta-provider.stackql.io/",
         "icon": "/img/providers/okta/favicon.png",
         "invertOnDark": true
@@ -141,7 +128,6 @@
     "providers": [
       {
         "name": "OpenAI",
-        "featured": true,
         "href": "https://openai-provider.stackql.io/",
         "icon": "/img/providers/openai/favicon.ico",
         "invertOnDark": true
@@ -180,7 +166,6 @@
     "providers": [
       {
         "name": "GitHub",
-        "featured": true,
         "href": "https://github-provider.stackql.io/",
         "icon": "/img/providers/github/favicon.ico",
         "invertOnDark": true

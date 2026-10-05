@@ -5,7 +5,6 @@
 //   PROVIDER_CATEGORIES  the catalog with `slug` and `path` added to every
 //                        provider (the tiles and TOC on /providers)
 //   PROVIDERS            flat list in catalog order, with `category`
-//   FEATURED_PROVIDERS   entries flagged `featured` (navbar dropdown)
 //   providerRoutes()     /providers/<slug>: one per entry, no exceptions
 //   registryRoutes()     /registry/<name>: entries plus registryAliases
 //
@@ -15,14 +14,15 @@
 //                    (the slug is derived from it)
 //   icon             tile icon, a path under static/
 //   invertOnDark     optional, invert the icon in dark mode
-//   featured         optional, true to list it in the navbar dropdown
-//   shortName        optional, menu label when `name` is too long for a menu
 //   registryAliases  optional, extra names that redirect to this microsite
 //                    under /registry only (never under /providers), so a
 //                    provider family can expose one canonical inbound link
 //
 // To add a provider, add one entry to the JSON. Nothing else changes: the
-// tile, both redirect routes and (if featured) the menu item all follow.
+// tile, both redirect routes, the navbar menu entry
+// (src/theme/NavbarItem/ProvidersDropdownNavbarItem) and the catalog
+// published at /providers.json (plugins/provider-catalog), which the
+// provider microsites' shared chrome reads at build time, all follow.
 //
 // CommonJS on purpose: docusaurus.config.js and plugins/provider-redirects
 // require() this at config time; docs/providers.md imports it via webpack.
@@ -115,9 +115,6 @@ function registryRoutes() {
   return routes;
 }
 
-// Navbar dropdown entries, in catalog order.
-const FEATURED_PROVIDERS = PROVIDERS.filter((provider) => provider.featured === true);
-
 // Validate at load so a bad entry fails the config, not a page render.
 providerRoutes();
 registryRoutes();
@@ -125,7 +122,6 @@ registryRoutes();
 module.exports = {
   PROVIDER_CATEGORIES,
   PROVIDERS,
-  FEATURED_PROVIDERS,
   providerRoutes,
   registryRoutes,
   slugFromHref,
