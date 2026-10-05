@@ -6,7 +6,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The StackQL provider catalog: every cloud and SaaS provider you can query and manage with SQL, grouped by category, each linking to its own reference site."
 image: "/img/stackql-featured-image.png"
 ---
 

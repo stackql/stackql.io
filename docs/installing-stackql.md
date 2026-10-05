@@ -8,7 +8,7 @@ keywords:
   - cloud inventory
   - mcp
   - mcp-server
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Install StackQL on macOS, Linux, Windows, Docker or a cloud shell, and the StackQL MCP server via npx, uvx, pip, Docker, Claude Desktop or GitHub Actions."
 image: "/img/stackql-featured-image.png"
 slug: /installing-stackql
 ---

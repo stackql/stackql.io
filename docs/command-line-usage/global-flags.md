@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Global flags for the stackql binary: authentication, output format, registry location, logging and SQL backend settings, available on every command."
 image: "/img/stackql-featured-image.png"
 ---
 

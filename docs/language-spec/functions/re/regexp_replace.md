@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "REGEXP_REPLACE function in StackQL: replace the parts of a string that match a regular expression with a replacement string."
 image: "/img/stackql-featured-image.png"
 ---
 

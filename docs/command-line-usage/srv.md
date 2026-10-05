@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The stackql srv command runs StackQL as a PostgreSQL wire protocol server, so psql, BI tools and language drivers can query cloud and SaaS APIs with SQL."
 image: "/img/stackql-featured-image.png"
 ---
 

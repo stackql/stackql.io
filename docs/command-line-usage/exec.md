@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The stackql exec command runs one StackQL statement or a script of statements, with flags for output format, authentication and the provider registry."
 image: "/img/stackql-featured-image.png"
 ---
 

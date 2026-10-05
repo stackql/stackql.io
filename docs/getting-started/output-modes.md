@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "StackQL output modes: table, json, jsonl, csv and otel, how to select them, and what each emits for shell, exec and server use."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "StackQL shell utility commands such as clear and sleep, with their syntax and when to use them in interactive sessions and scripts."
 image: "/img/stackql-featured-image.png"
 ---
 

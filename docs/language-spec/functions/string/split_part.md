@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "SPLIT_PART function in StackQL: split a string on a separator and return the part at a one-based position, handy for picking apart resource IDs and ARNs."
 image: "/img/stackql-featured-image.png"
 ---
 

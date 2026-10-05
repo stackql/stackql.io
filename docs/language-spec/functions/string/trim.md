@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "TRIM function in StackQL: remove whitespace, or a given set of characters, from both ends of a string."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a string formed by removing white space or any characters that appear from the left and right side of an input string.  

@@ -169,6 +169,12 @@ The provider microsites' own nav comes from `../docusaurus-config`, which keeps 
 
 [src/components/Gist/index.jsx](src/components/Gist/index.jsx) - local replacement for the unmaintained `react-gist` package (was blocking React 18 upgrade). Drop-in compatible: same `<Gist id="..." />` API. Used by two blog posts.
 
+[src/theme/DocItem/Footer/index.js](src/theme/DocItem/Footer/index.js) - copy of the theme-classic doc footer with one addition: a doc with `hide_last_update: true` in its front matter drops the "Last updated" row while keeping tags and the edit link. Only the homepage uses it, so search results do not show a modification date on a landing page. `showLastUpdateTime` stays on globally. Keep this file in step with theme-classic when Docusaurus is upgraded.
+
+### Meta descriptions
+
+Every doc has its own `description:`; the old boilerplate ("Query and Deploy Cloud Infrastructure and Resources using SQL") was shared by 89 pages and is gone. Google uses the description as the snippet under a sitelink and treats repetition as a reason to withhold sitelinks, so a new doc needs a one-sentence description written from its content, not a copied one. The homepage title is deliberately descriptive ("SQL for cloud infrastructure, SaaS APIs and AI agents") with `sidebar_label: Welcome to StackQL` keeping the sidebar entry short.
+
 ## Frontmatter conventions for AEO content
 
 The structured-data plugin reads several frontmatter fields directly. Use these on `/ai/*` pages especially.

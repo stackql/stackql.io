@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "DATE function in StackQL: return a date as a YYYY-MM-DD string from a time value and optional modifiers."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a date string in the format YYYY-MM-DD.  

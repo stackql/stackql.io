@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_EACH table-valued function in StackQL: expand a JSON array or object into one row per element or member, to join and filter nested API responses."
 image: "/img/stackql-featured-image.png"
 ---
 Table-valued function which returns a table consisting of one row for each array element or object member.

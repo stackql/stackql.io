@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Date and time modifiers in StackQL: shift DATE, TIME, DATETIME, JULIANDAY and STRFTIME results by days, months or years, to a period start, a weekday and more."
 image: "/img/stackql-featured-image.png"
 ---
 

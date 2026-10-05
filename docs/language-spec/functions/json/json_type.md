@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_TYPE function in StackQL: the type (object, array, text, integer, real, true, false or null) of a JSON value's outermost element, or of a path within it."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the datatype of the outermost element of an input JSON object or array and path.  

@@ -10,7 +10,7 @@ keywords:
   - cspm
   - aws
   - amazon web services
-description: Query and Deploy AWS Cloud Infrastructure and Resources using SQL
+description: "Run StackQL in AWS CloudShell as the logged-in user: download the Linux package, use the stackql shell, assume an IAM role and run batch queries with exec."
 image: "/img/tutorials/aws/stackql-aws-provider-featured-image.png"
 ---
 

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "FIRST_VALUE window function in StackQL: the value of an expression for the first row of the window frame."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the value of the expression evaluated against the first row in the window frame.

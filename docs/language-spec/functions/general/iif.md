@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "IIF function in StackQL: return one of two values depending on whether a condition is true, an inline if-then-else expression."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a value based upon the evaluation of an input expression.  

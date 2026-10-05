@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "How StackQL works internally: entry points, the query pipeline, the any-sdk provider SDK, the SQL backend, and how a statement reaches cloud providers."
 image: "/img/stackql-featured-image.png"
 ---
 

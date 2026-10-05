@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_OBJECT function in StackQL: build a JSON object from key and value arguments, for example to construct request bodies for INSERT and UPDATE."
 image: "/img/stackql-featured-image.png"
 ---
 Returns an object constructred from arguments provided.  

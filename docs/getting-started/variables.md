@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Using variables in StackQL: supply values from Jsonnet or JSON data files, reference them in statements, source external values and preview with dry run."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  

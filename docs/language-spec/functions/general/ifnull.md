@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "IFNULL function in StackQL: return the first of exactly two arguments that is not NULL, a two-argument form of COALESCE."
 image: "/img/stackql-featured-image.png"
 ---
 Accepts exactly two arguments and returns the first non `NULL` argument, can be used to substitute a default value for a `NULL` value.  

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Generate INSERT templates for any resource with SHOW INSERT in StackQL, full or required parameters only, as the starting point for infrastructure definitions."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  

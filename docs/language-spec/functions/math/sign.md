@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "SIGN function in StackQL: return -1, 0 or 1 depending on whether a numeric argument is negative, zero or positive."
 image: "/img/stackql-featured-image.png"
 ---
 Returns -1 if the input value is negative, 0 if the input value is 0, and 1 is the input value is positive.  

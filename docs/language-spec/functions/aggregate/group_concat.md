@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "GROUP_CONCAT aggregate function in StackQL: concatenate the non-NULL values of a column or grouping into one string with an optional separator."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a string which is the concatenation of all non `NULL` values of an input column or grouping.  

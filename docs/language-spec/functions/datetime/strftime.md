@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "STRFTIME function in StackQL: format a datetime value with a format string, using the same substitutions as the C strftime function."
 image: "/img/stackql-featured-image.png"
 ---
 Return a formatted datetime value based on a specified format.  

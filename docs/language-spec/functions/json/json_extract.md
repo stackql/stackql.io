@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_EXTRACT function in StackQL: pull one or more values out of a JSON object or array by path, the main tool for flattening nested API response fields."
 image: "/img/stackql-featured-image.png"
 ---
 Returns one or more values from a well-formed JSON object or array.  

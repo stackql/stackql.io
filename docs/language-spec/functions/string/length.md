@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "LENGTH function in StackQL: the number of characters in a string, or the number of bytes in a BLOB."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the number of characters in a string input expression prior to the first `NULL` character, or the number of bytes in a BLOB expression.  

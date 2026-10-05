@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The StackQL resource hierarchy: how providers, services, resources and methods map cloud and SaaS APIs onto queryable SQL tables."
 image: "/img/stackql-featured-image.png"
 ---
 import ImageSwitcher from '/js/ImageSwitcher/ImageSwitcher.js';

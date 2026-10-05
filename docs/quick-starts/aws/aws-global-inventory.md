@@ -10,7 +10,7 @@ keywords:
   - cspm
   - aws
   - amazon web services
-description: Query and Deploy AWS Cloud Infrastructure and Resources using SQL
+description: "Inventory every AWS resource across all regions with StackQL: asynchronous queries, excluded resource types and filters for AWS-managed defaults."
 image: "/img/tutorials/aws/stackql-aws-provider-featured-image.png"
 ---
 

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "PERCENT_RANK window function in StackQL: the relative rank of the current row within its partition as a value between 0.0 and 1.0."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a value between 0.0 and 1.0 representing the relative rank of the current row within its partition.

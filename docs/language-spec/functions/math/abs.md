@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "ABS function in StackQL: the absolute value of a numeric argument."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the absolute value of the numeric argument.  

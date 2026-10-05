@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "SUBSTRING function in StackQL (alias SUBSTR): return part of a string or binary value by start position and length."
 image: "/img/stackql-featured-image.png"
 ---
 Returns part of a character or binary expression.  `SUBSTR` is an alias for `SUBSTRING`.

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The stackql shell command launches the interactive StackQL command shell for running queries and provider commands against your cloud and SaaS accounts."
 image: "/img/stackql-featured-image.png"
 ---
 

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "CHAR function in StackQL: the characters for one or more character codes, for putting newlines, quotes, tabs and other control characters into strings."
 image: "/img/stackql-featured-image.png"
 ---
 

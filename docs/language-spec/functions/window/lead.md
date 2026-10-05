@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "LEAD window function in StackQL: evaluate an expression against a following row in the partition, with an optional offset and default."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the result of evaluating an expression against a subsequent row in the partition.

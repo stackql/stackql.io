@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "NULLIF function in StackQL: return NULL when two arguments are equal, otherwise return the first argument."
 image: "/img/stackql-featured-image.png"
 ---
 Accepts two arguments and returns a `NULL` value if they are equal, otherwise the first argument is returned.  

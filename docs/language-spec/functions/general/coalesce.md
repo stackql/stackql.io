@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "COALESCE function in StackQL: return the first non-NULL argument from two or more, typically to substitute a default for a missing value."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the first argument which is not `NULL` from a series of two or more arguments, can be used to substitute a default value for a `NULL` value.  

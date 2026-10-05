@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "The lexical structure of StackQL: how statements, identifiers, quoting, literals, comments and whitespace are tokenised by the parser."
 image: "/img/stackql-featured-image.png"
 ---
 

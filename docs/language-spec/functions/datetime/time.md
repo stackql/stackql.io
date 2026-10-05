@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "TIME function in StackQL: return a time as an HH:MM:SS string from a time value and optional modifiers."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a time string in the format HH:MM:SS.  

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "AVG aggregate function in StackQL: the average of the non-NULL values in a column or grouping."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the average value of all non `NULL` values within a column or grouping of columns.  

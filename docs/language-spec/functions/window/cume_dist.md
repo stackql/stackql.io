@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "CUME_DIST window function in StackQL: the cumulative distribution of the current row within its partition, as row number divided by partition rows."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the cumulative distribution of a value within a partition. This is calculated as `row-number / partition-rows`, where `row-number` is the value returned by `ROW_NUMBER()` for the last peer in the group and `partition-rows` is the number of rows in the partition.

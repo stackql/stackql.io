@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "TRUNC function in StackQL: the integer part of a number, rounding towards zero and discarding any fraction."
 image: "/img/stackql-featured-image.png"
 ---
 

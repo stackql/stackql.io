@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "LAG window function in StackQL: evaluate an expression against a previous row in the partition, with an optional offset and default."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the result of evaluating an expression against a previous row in the partition.

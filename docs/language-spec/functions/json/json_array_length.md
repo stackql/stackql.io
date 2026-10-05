@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "JSON_ARRAY_LENGTH function in StackQL: the number of elements in a JSON array, at the top level or at a path within a JSON value."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the number of elements in a JSON array.  

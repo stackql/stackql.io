@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "Using a provider in StackQL: pull it from the registry, authenticate with environment variables or credentials, and query its services and resources."
 image: "/img/stackql-featured-image.png"
 ---
 

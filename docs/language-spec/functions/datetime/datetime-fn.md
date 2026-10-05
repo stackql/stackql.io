@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "DATETIME function in StackQL: compute a datetime value from an input and one or more modifiers, returned as YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
 Returns a calculated datetime value from an input datetime and one or more modifiers.  

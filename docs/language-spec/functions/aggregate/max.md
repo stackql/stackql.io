@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL
+description: "MAX aggregate function in StackQL: the largest value in a column or grouping of columns."
 image: "/img/stackql-featured-image.png"
 ---
 Returns the maximum value based upon a column input or grouping of columns.  

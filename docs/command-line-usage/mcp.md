@@ -9,7 +9,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query and Deploy Cloud Infrastructure and Resources using SQL via MCP
+description: "The stackql mcp command runs StackQL as a Model Context Protocol server for AI agents: deployment modes, safety modes, credential reloading and the audit log."
 image: "/img/stackql-featured-image.png"
 ---
 
