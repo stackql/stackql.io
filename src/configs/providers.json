@@ -25,6 +25,12 @@
         "icon": "/img/providers/google/favicon.ico"
       },
       {
+        "name": "Oracle Cloud Infrastructure",
+        "shortName": "OCI",
+        "href": "https://oci-provider.stackql.io/",
+        "icon": "/img/providers/oci/favicon.ico"
+      },
+      {
         "name": "Digital Ocean",
         "href": "https://digitalocean-provider.stackql.io/",
         "icon": "/img/providers/digitalocean/favicon.png"
