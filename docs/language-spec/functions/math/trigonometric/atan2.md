@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the arc tangent of two numbers, specifically the angle \( \theta \) in radians for which the tangent is the ratio of two specified numbers (y divided by x), correctly handling the signs of the inputs to determine the correct quadrant.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

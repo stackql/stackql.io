@@ -16,7 +16,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Creates a `view` or a `materialized view` within a session which can be used to represent a long or complex `stackql` query.  
 
 See also:  
-[[ `SELECT` ]](/docs/language-spec/select) [[ `REFRESH` ]](/docs/language-spec/refreshview) [[ `DROP` ]](/docs/language-spec/dropview)
+[[ `SELECT` ]](/language-spec/select) [[ `REFRESH` ]](/language-spec/refreshview) [[ `DROP` ]](/language-spec/dropview)
 
 * * * 
 

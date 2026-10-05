@@ -11,7 +11,7 @@ description: MCP tool re-sourcing credentials from the --env.file dotenv file an
 image: "/img/stackql-featured-image.png"
 ---
 
-Re-sources the dotenv-style file nominated by the [`--env.file`](/docs/command-line-usage/global-flags) flag into the server's process environment, then reports credential resolution status for each provider.  This solves the fixed-at-spawn environment problem: credentials written or rotated on disk mid-session reach the running server without a restart.
+Re-sources the dotenv-style file nominated by the [`--env.file`](/command-line-usage/global-flags) flag into the server's process environment, then reports credential resolution status for each provider.  This solves the fixed-at-spawn environment problem: credentials written or rotated on disk mid-session reach the running server without a restart.
 
 The env file overlays the process environment rather than replacing it: credential resolution always reads the live process environment at request time, so variables already present at spawn (from the shell or the client's `env` block) keep working with or without `--env.file`.  On reload, only keys present in the file with non-empty values are written and nothing is ever unset, so a failed or partial reload preserves previously working credentials.
 
@@ -24,7 +24,7 @@ Available in StackQL releases after `v0.10.542`.
 :::
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ Credential (re)sourcing ]](/docs/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) [[ `server_info` ]](/docs/mcp/server_info) [[ Claude Desktop ]](/docs/getting-started/claude-desktop)
+[[ MCP overview ]](/command-line-usage/mcp) [[ Credential (re)sourcing ]](/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) [[ `server_info` ]](/mcp/server_info) [[ Claude Desktop ]](/getting-started/claude-desktop)
 
 * * *
 

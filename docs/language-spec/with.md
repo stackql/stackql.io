@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Defines a Common Table Expression (CTE) for use in a subsequent `SELECT`, `INSERT`, `UPDATE`, or `DELETE` statement. CTEs act as temporary named result sets that exist only for the duration of the query.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` INSERT `]](/docs/language-spec/insert) [[` UPDATE `]](/docs/language-spec/update) [[` DELETE `]](/docs/language-spec/delete)
+[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
 
 * * *
 

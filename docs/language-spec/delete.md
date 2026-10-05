@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Deletes an instance or instances of a resource. 
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
 
 * * * 
 

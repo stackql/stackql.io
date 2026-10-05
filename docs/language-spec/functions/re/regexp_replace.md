@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Replaces a matching substring with replacement string.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Regular Expression Reference ]](/docs/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regular Expression Reference ]](/language-spec/functions/re/reference) 
 
 * * * 
 

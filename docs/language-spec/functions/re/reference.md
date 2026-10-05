@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Reference for regular expressions used in StackQL.  
 
 See also:  
-[[` REGEXP_LIKE `]](/docs/language-spec/functions/re/regexp_like)  [[` REGEXP_SUBSTR `]](/docs/language-spec/functions/re/regexp_substr)  [[` REGEXP_REPLACE `]](/docs/language-spec/functions/re/regexp_replace)
+[[` REGEXP_LIKE `]](/language-spec/functions/re/regexp_like)  [[` REGEXP_SUBSTR `]](/language-spec/functions/re/regexp_substr)  [[` REGEXP_REPLACE `]](/language-spec/functions/re/regexp_replace)
 
 * * * 
 

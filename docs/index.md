@@ -103,7 +103,7 @@ GROUP BY state;
 </TabItem>
 </Tabs>
 
-Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/docs/language-spec/insert) statement...
+Deploying resources using your cloud provider is as easy as writing an [`INSERT`](/language-spec/insert) statement...
 
 ```sql
 INSERT INTO google.compute.disks (project, zone, name, sizeGb) 
@@ -125,7 +125,7 @@ Using StackQL you can develop your way: declarative or procedural. With an easy 
 
 ## OK, Let's Get Started!
 
-[Installing StackQL](/docs/installing-stackql)  
-[StackQL Resource Hierarchy](/docs/getting-started/resource-hierarchy)  
-[Using Providers](/docs/getting-started/using-a-provider)  
-[Using StackQL](/docs/getting-started/using-stackql)  
+[Installing StackQL](/installing-stackql)  
+[StackQL Resource Hierarchy](/getting-started/resource-hierarchy)  
+[Using Providers](/getting-started/using-a-provider)  
+[Using StackQL](/getting-started/using-stackql)  

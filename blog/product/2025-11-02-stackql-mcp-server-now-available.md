@@ -146,7 +146,7 @@ stackql mcp \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912"}}'
 ```
 
-4. **Configure your AI assistant** to use the StackQL MCP server (see [MCP documentation](/docs/command-line-usage/mcp) for details)
+4. **Configure your AI assistant** to use the StackQL MCP server (see [MCP documentation](/command-line-usage/mcp) for details)
 
 ## Documentation
 
@@ -156,7 +156,7 @@ For comprehensive documentation on configuring and using the MCP server, includi
 - Architecture considerations
 - Testing and troubleshooting
 
-Visit the [MCP command documentation](/docs/command-line-usage/mcp).
+Visit the [MCP command documentation](/command-line-usage/mcp).
 
 ## What's Next?
 

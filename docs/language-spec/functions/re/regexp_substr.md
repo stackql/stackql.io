@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Returns a substring from an input string matching a specified pattern.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Regular Expression Reference ]](/docs/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regular Expression Reference ]](/language-spec/functions/re/reference) 
 
 * * * 
 

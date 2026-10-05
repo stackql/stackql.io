@@ -87,7 +87,7 @@ You can exit at any time with `ctrl + C`.
 
 ## Setup and meta queries to get started
 
-StackQL providers are installed from the StackQL Provider Registry using the [__`REGISTRY`__](https://stackql.io/docs/language-spec/registry) command.  StackQL supports *meta queries* such as [__`SHOW`__](https://stackql.io/docs/language-spec/show) and [__`DESCRIBE`__](https://stackql.io/docs/language-spec/describe) which can be used to explore the available services, resources, fields, and operations available in a given cloud or SaaS provider.    
+StackQL providers are installed from the StackQL Provider Registry using the [__`REGISTRY`__](/language-spec/registry) command.  StackQL supports *meta queries* such as [__`SHOW`__](/language-spec/show) and [__`DESCRIBE`__](/language-spec/describe) which can be used to explore the available services, resources, fields, and operations available in a given cloud or SaaS provider.    
 
 ```sql
 -- see available providers

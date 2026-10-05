@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Returns the integer part of a number by rounding towards zero, stripping away any fractional component.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

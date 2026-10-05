@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the character position of first occurrence of string within another string, returns 0 if the string being searched for is not found.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

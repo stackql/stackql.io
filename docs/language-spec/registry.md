@@ -16,7 +16,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Changes the context to a specified provider or service.  
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
 
 * * * 
 

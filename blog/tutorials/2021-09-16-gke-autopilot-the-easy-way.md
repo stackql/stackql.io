@@ -27,7 +27,7 @@ Step 1: Using the GCP console, navigate to your service project, go to **Kuberne
 
 Step 2: At the bottom of the dialog used to configure the cluster in the console, use the __Equivalent REST__ button to generate the GKE Autopilot API request body.
 
-Step 3: Supply this as input data to an StackQL [__`INSERT`__](/docs/language-spec/insert) command, either via an `iql` file, on as inline configuration.  Optionally you can convert this to Jsonnet and parameterise for use in other environments.
+Step 3: Supply this as input data to an StackQL [__`INSERT`__](/language-spec/insert) command, either via an `iql` file, on as inline configuration.  Optionally you can convert this to Jsonnet and parameterise for use in other environments.
 
 ```jsx
 <<<json

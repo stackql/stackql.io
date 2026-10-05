@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the cumulative distribution of a value within a partition. This is calculated as `row-number / partition-rows`, where `row-number` is the value returned by `ROW_NUMBER()` for the last peer in the group and `partition-rows` is the number of rows in the partition.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` PERCENT_RANK `]](/docs/language-spec/functions/window/percent_rank) [[` RANK `]](/docs/language-spec/functions/window/rank)
+[[` SELECT `]](/language-spec/select) [[` PERCENT_RANK `]](/language-spec/functions/window/percent_rank) [[` RANK `]](/language-spec/functions/window/rank)
 
 * * *
 

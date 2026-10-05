@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Rounds a numeric argument down to the nearest integer.  
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

@@ -11,10 +11,10 @@ description: MCP tool returning the full I/O contract for one StackQL access met
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the full I/O contract for a single access method -- always EXTENDED, meaning inputs, request body schema, and full output shape.  This is where an agent gets column names: each row carries a `param_type` of `input_required` (a mandatory, exact-match `WHERE` predicate), `input_optional`, or `output` (a field a `SELECT` or `RETURNING` can reference).  A resource has no single field list, because each method returns its own shape, so call this for the method chosen from [`list_methods`](/docs/mcp/list_methods) before the first query against it.
+Returns the full I/O contract for a single access method -- always EXTENDED, meaning inputs, request body schema, and full output shape.  This is where an agent gets column names: each row carries a `param_type` of `input_required` (a mandatory, exact-match `WHERE` predicate), `input_optional`, or `output` (a field a `SELECT` or `RETURNING` can reference).  A resource has no single field list, because each method returns its own shape, so call this for the method chosen from [`list_methods`](/mcp/list_methods) before the first query against it.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_methods` ]](/docs/mcp/list_methods) [[ `run_select_query` ]](/docs/mcp/run_select_query)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_methods` ]](/mcp/list_methods) [[ `run_select_query` ]](/mcp/run_select_query)
 
 * * *
 
@@ -25,7 +25,7 @@ See also:
 |`provider`|Yes|Provider name.|
 |`service`|Yes|Service under that provider.|
 |`resource`|Yes|Resource under `provider.service`.|
-|`method`|Yes|Method name as returned by [`list_methods`](/docs/mcp/list_methods).|
+|`method`|Yes|Method name as returned by [`list_methods`](/mcp/list_methods).|
 
 <br/>
 

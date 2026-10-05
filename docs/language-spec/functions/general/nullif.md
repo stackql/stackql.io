@@ -14,10 +14,10 @@ Accepts two arguments and returns a `NULL` value if they are equal, otherwise th
 
 > The `NULLIF` function is equvalent to `CASE WHEN expression1 = expression2 THEN NULL ELSE expression1 END`
 
-> `NULLIF` is useful with aggregate functions such as [`AVG`](/docs/language-spec/functions/aggregate/avg), [`MAX`](/docs/language-spec/functions/aggregate/max), [`MIN`](/docs/language-spec/functions/aggregate/min), [`SUM`](/docs/language-spec/functions/aggregate/sum), and [`COUNT`](/docs/language-spec/functions/aggregate/count), where the result set contains special values that are not `NULL`, but that you want to treat as `NULL` for the purposes of aggregation.
+> `NULLIF` is useful with aggregate functions such as [`AVG`](/language-spec/functions/aggregate/avg), [`MAX`](/language-spec/functions/aggregate/max), [`MIN`](/language-spec/functions/aggregate/min), [`SUM`](/language-spec/functions/aggregate/sum), and [`COUNT`](/language-spec/functions/aggregate/count), where the result set contains special values that are not `NULL`, but that you want to treat as `NULL` for the purposes of aggregation.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` COALESCE `]](/docs/language-spec/functions/general/coalesce) [[` IFNULL `]](/docs/language-spec/functions/general/ifnull)
+[[` SELECT `]](/language-spec/select) [[` COALESCE `]](/language-spec/functions/general/coalesce) [[` IFNULL `]](/language-spec/functions/general/ifnull)
 
 * * * 
 

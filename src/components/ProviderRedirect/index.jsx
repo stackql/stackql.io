@@ -15,6 +15,7 @@ export default function ProviderRedirect({ target }) {
   return (
     <>
       <Head>
+        <title>{`${name} | ${siteConfig.title}`}</title>
         <meta httpEquiv="refresh" content={`0;URL='${to}'`} />
         <link rel="canonical" href={canonical} />
       </Head>

@@ -13,13 +13,13 @@ image: "/img/stackql-featured-image.png"
 Returns one or more values from a well-formed JSON object or array.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` DESCRIBE `]](/docs/language-spec/describe) [[` JSON_ARRAY_LENGTH `]](/docs/language-spec/functions/json/json_array_length) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::tip 
 
-Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/docs/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
+Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
 
 :::
 

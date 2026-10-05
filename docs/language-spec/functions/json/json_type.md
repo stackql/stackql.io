@@ -13,13 +13,13 @@ image: "/img/stackql-featured-image.png"
 Returns the datatype of the outermost element of an input JSON object or array and path.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` DESCRIBE `]](/docs/language-spec/describe) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::tip 
 
-Use the [**DESCRIBE**](/docs/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
+Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
 
 :::
 

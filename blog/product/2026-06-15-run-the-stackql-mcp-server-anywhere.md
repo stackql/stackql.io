@@ -10,13 +10,13 @@ keywords: [stackql, mcp, model context protocol, ai agents, claude, npm, pypi, d
 tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-as-code, ai]
 ---
 
-The [__StackQL MCP server__](/docs/command-line-usage/mcp) is now available through every runtime an agent is likely to live in: prebuilt Claude Desktop bundles, [__npm__](https://www.npmjs.com/package/@stackql/mcp-server), [__PyPI__](https://pypi.org/project/stackql-mcp-server/), [__Docker__](https://hub.docker.com/r/stackql/stackql-mcp), a [__GitHub Action__](https://github.com/marketplace/actions/setup-stackql-mcp-server), and the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql). It is the same server in each case - one binary, pulled and launched the way your environment prefers.
+The [__StackQL MCP server__](/command-line-usage/mcp) is now available through every runtime an agent is likely to live in: prebuilt Claude Desktop bundles, [__npm__](https://www.npmjs.com/package/@stackql/mcp-server), [__PyPI__](https://pypi.org/project/stackql-mcp-server/), [__Docker__](https://hub.docker.com/r/stackql/stackql-mcp), a [__GitHub Action__](https://github.com/marketplace/actions/setup-stackql-mcp-server), and the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql). It is the same server in each case - one binary, pulled and launched the way your environment prefers.
 
 ## What the StackQL MCP server is
 
-StackQL exposes cloud and SaaS providers - AWS, Google Cloud, Azure, GitHub, Kubernetes, Snowflake, Databricks and more - as a single SQL surface. The MCP server puts that surface in front of an AI agent: the agent discovers providers, services, resources and methods, then runs `SELECT` queries to read state and (when you allow it) `INSERT` / `UPDATE` / `DELETE` to change it. Reads and writes are gated by a [server mode](/docs/command-line-usage/mcp#server-modes) and recorded to an [audit log](/docs/command-line-usage/mcp#audit-log), so "what the agent did" is always answerable.
+StackQL exposes cloud and SaaS providers - AWS, Google Cloud, Azure, GitHub, Kubernetes, Snowflake, Databricks and more - as a single SQL surface. The MCP server puts that surface in front of an AI agent: the agent discovers providers, services, resources and methods, then runs `SELECT` queries to read state and (when you allow it) `INSERT` / `UPDATE` / `DELETE` to change it. Reads and writes are gated by a [server mode](/command-line-usage/mcp#server-modes) and recorded to an [audit log](/command-line-usage/mcp#audit-log), so "what the agent did" is always answerable.
 
-For background on the protocol itself, see the original [__StackQL MCP Server Now Available__](/blog/product/stackql-mcp-server-now-available) post and the [__MCP command reference__](/docs/command-line-usage/mcp).
+For background on the protocol itself, see the original [__StackQL MCP Server Now Available__](/blog/product/stackql-mcp-server-now-available) post and the [__MCP command reference__](/command-line-usage/mcp).
 
 ## One server, every runtime
 
@@ -37,7 +37,7 @@ A typical stdio client config is three lines. For npx:
 { "mcpServers": { "stackql": { "command": "npx", "args": ["-y", "@stackql/mcp-server"] } } }
 ```
 
-Swap `npx` for `uvx stackql-mcp-server` or `docker run -i --rm stackql/stackql-mcp` and you have the Python or Docker form. The npm and PyPI launchers download the signed `stackql` binary on first run, verify its checksum, and share a single cache. The full matrix - including the manual `claude_desktop_config.json` form for an existing binary - is in [__Installing the MCP server__](/docs/installing-stackql#installing-the-mcp-server).
+Swap `npx` for `uvx stackql-mcp-server` or `docker run -i --rm stackql/stackql-mcp` and you have the Python or Docker form. The npm and PyPI launchers download the signed `stackql` binary on first run, verify its checksum, and share a single cache. The full matrix - including the manual `claude_desktop_config.json` form for an existing binary - is in [__Installing the MCP server__](/installing-stackql#installing-the-mcp-server).
 
 ## The approvable MCP server
 
@@ -48,7 +48,7 @@ Letting an agent touch your cloud is a trust decision, so the supply chain is bu
 - The npm and PyPI launchers verify the downloaded binary's SHA-256 before first use.
 - The [__MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) entry attests the per-platform hashes, so a directory or marketplace can confirm what it is shipping.
 
-On top of the supply chain, the server defaults to `mode: safe` - reads run freely, mutations and lifecycle operations need approval through the MCP elicitation flow. Pin `read_only` for inventory agents that should never write, or `full_access` for trusted automation. See [__Server modes__](/docs/command-line-usage/mcp#server-modes).
+On top of the supply chain, the server defaults to `mode: safe` - reads run freely, mutations and lifecycle operations need approval through the MCP elicitation flow. Pin `read_only` for inventory agents that should never write, or `full_access` for trusted automation. See [__Server modes__](/command-line-usage/mcp#server-modes).
 
 ## A worked example: cloud audit in CI
 
@@ -97,8 +97,8 @@ From there the agent can call `list_resources` and `list_methods` to discover th
 
 ## Get started
 
-- Install docs for every channel: [__Installing the MCP server__](/docs/installing-stackql#installing-the-mcp-server)
-- Command reference, modes and audit log: [__stackql mcp__](/docs/command-line-usage/mcp)
+- Install docs for every channel: [__Installing the MCP server__](/installing-stackql#installing-the-mcp-server)
+- Command reference, modes and audit log: [__stackql mcp__](/command-line-usage/mcp)
 - Registry entry: [__io.github.stackql/stackql-mcp__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)
 - Source and releases: [__github.com/stackql/stackql__](https://github.com/stackql/stackql)
 

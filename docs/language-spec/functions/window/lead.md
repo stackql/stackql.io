@@ -19,7 +19,7 @@ If the offset argument is provided, it must be a non-negative integer. The value
 If a default value is also provided, it is returned instead of `NULL` if the row identified by offset does not exist.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` LAG `]](/docs/language-spec/functions/window/lag)
+[[` SELECT `]](/language-spec/select) [[` LAG `]](/language-spec/functions/window/lag)
 
 * * *
 

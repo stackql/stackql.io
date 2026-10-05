@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Removes specified elements from a JSON document using path expressions. If a specified path does not exist in the document, it is ignored. Sequential processing of paths can affect the structure for subsequent removals.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)
 
 * * * 
 

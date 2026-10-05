@@ -4,7 +4,7 @@ import Head from '@docusaurus/Head';
 export default function RedirectToDocs() {
   return (
     <Head>
-    <meta http-equiv="refresh" content="0;URL='/docs'" />
+    <meta http-equiv="refresh" content="0;URL='/'" />
     </Head>
   );
 };

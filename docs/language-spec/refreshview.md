@@ -16,7 +16,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Refreshes the data in a `materialized view` within a session.  
 
 See also:  
-[[ `CREATE` ]](/docs/language-spec/createview) [[ `DROP` ]](/docs/language-spec/dropview)
+[[ `CREATE` ]](/language-spec/createview) [[ `DROP` ]](/language-spec/dropview)
 
 * * * 
 

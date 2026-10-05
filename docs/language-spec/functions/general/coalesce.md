@@ -15,7 +15,7 @@ Returns the first argument which is not `NULL` from a series of two or more argu
 > The `COALESCE` function is equivalent to the `NVL` function in Oracle or the `IFNULL` function in MySQL.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` IFNULL `]](/docs/language-spec/functions/general/ifnull) [[` NULLIF `]](/docs/language-spec/functions/general/nullif)
+[[` SELECT `]](/language-spec/select) [[` IFNULL `]](/language-spec/functions/general/ifnull) [[` NULLIF `]](/language-spec/functions/general/nullif)
 
 * * * 
 

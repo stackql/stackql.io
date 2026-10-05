@@ -89,6 +89,6 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/docs/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/docs/language-spec/functions/datetime/julianday).
+To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/language-spec/functions/datetime/julianday).
 
 :::

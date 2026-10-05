@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
 <meta name="author" content="Jeffrey Aven" />
 </head>
 
-StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as an easy way to query buckets in your environment for asset management reasons or to look for misconfigurations, such as public access, non-conformant encryption configuration and more.  It may be useful to review [__Exploring GCP services and resources using StackQL__](/blog/tutorials/exploring-gcp-services-and-resources-using-stackql), which walks working through the StackQL resource hierarchy including the [`SHOW`](/docs/language-spec/show) and [`DESCRIBE`](/docs/language-spec/describe) commands.  
+StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as an easy way to query buckets in your environment for asset management reasons or to look for misconfigurations, such as public access, non-conformant encryption configuration and more.  It may be useful to review [__Exploring GCP services and resources using StackQL__](/blog/tutorials/exploring-gcp-services-and-resources-using-stackql), which walks working through the StackQL resource hierarchy including the [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) commands.  
 
 ## Generate an `INSERT` template for a new bucket  
 
-The [`SHOW INSERT`](/docs/language-spec/show) command in StackQL can be used to generate an [`INSERT`](/docs/language-spec/show) template which can be used to create any resources in GCP.  The easiest way to use this command is via the command line using the text output type and supressing column headers using the `-H` flag, the StackQL interactive shell can be used as well.
+The [`SHOW INSERT`](/language-spec/show) command in StackQL can be used to generate an [`INSERT`](/language-spec/show) template which can be used to create any resources in GCP.  The easiest way to use this command is via the command line using the text output type and supressing column headers using the `-H` flag, the StackQL interactive shell can be used as well.
 
 <Tabs
   defaultValue="shell"
@@ -46,13 +46,13 @@ stackql exec "SHOW INSERT INTO google.storage.buckets" --output text -H
 
 To only show the mandatory fields for a resource, you can use the `/*+ REQUIRED */` query hint.  
 
-You could also use the [`--outfile`](/docs/command-line-usage/global-flags) flag to write the template to a new IQL file, or pipe the results to a file using the appropriate shell operator (e.g. `>` or `>>`).
+You could also use the [`--outfile`](/command-line-usage/global-flags) flag to write the template to a new IQL file, or pipe the results to a file using the appropriate shell operator (e.g. `>` or `>>`).
 
-> More information on generating templates can be found at [__Creating Infrastructure Templates__](/docs/getting-started/templating)
+> More information on generating templates can be found at [__Creating Infrastructure Templates__](/getting-started/templating)
 
 ## Create a bucket
 
-Now that you have a template, you can curate this to the fields you desire.  Executing an [`INSERT`](/docs/language-spec/insert) command to create a bucket is as easy as:  
+Now that you have a template, you can curate this to the fields you desire.  Executing an [`INSERT`](/language-spec/insert) command to create a bucket is as easy as:  
 
 ```jsx
 -- change this for your project and bucket names
@@ -74,7 +74,7 @@ SELECT
 
 ## Removing buckets
 
-In some cases you may want to retire and remove buckets that are no longer needed, doing so is easy in StackQL using the [`DELETE`](/docs/language-spec/delete) command this can be done individually or in a batch (as we will demonstrate later).
+In some cases you may want to retire and remove buckets that are no longer needed, doing so is easy in StackQL using the [`DELETE`](/language-spec/delete) command this can be done individually or in a batch (as we will demonstrate later).
 
 > __NOTE__ that buckets cannot be deleted if they contain any objects, we will show examples of working with objects in future posts  
 
@@ -89,7 +89,7 @@ WHERE bucket = 'stackql-demo-bucket';
 
 Although the previous example was simple, providing static values for attributes is not very scalable.  In most cases, configuration for resource creation and modification is provided as data associated with an StackQL script or module using `json` or `jsonnet` files.
 
-This can be supplied inline in the IQL script or provided as a separate file, e.g. `vars.jsonnet`.  For more information, see [__Using Variables__](/docs/getting-started/variables).
+This can be supplied inline in the IQL script or provided as a separate file, e.g. `vars.jsonnet`.  For more information, see [__Using Variables__](/getting-started/variables).
 
 The example below demonstrates how to create 3 different buckets using configuration data provided using `jsonnet`.
 
@@ -142,7 +142,7 @@ SELECT
 ```
 __Step 3:__  *(Optional)* Perform a `dryrun` operation to see what the resultant query would be  
 
-With any modification operation which sources data from a `jsonnet` file it is useful to perform a `dryrun` operation first to ensure the variable substitution is as you intended.  This is done by using the [`dryrun`](/docs/command-line-usage/global-flags) flag as shown here:
+With any modification operation which sources data from a `jsonnet` file it is useful to perform a `dryrun` operation first to ensure the variable substitution is as you intended.  This is done by using the [`dryrun`](/command-line-usage/global-flags) flag as shown here:
 
 ```bash
 stackql exec --iqldata ./cloud_storage_vars.jsonnet --infile ./deploy_buckets.iql --dryrun --output text -H

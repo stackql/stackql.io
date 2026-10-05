@@ -52,7 +52,12 @@
 # redirects to describe_method, the per-method source of column names.
 [[redirects]]
   from = "/docs/mcp/describe_resource"
-  to = "/docs/mcp/describe_method"
+  to = "/mcp/describe_method"
+  status = 301
+
+[[redirects]]
+  from = "/mcp/describe_resource"
+  to = "/mcp/describe_method"
   status = 301
 
 # Docs "Tutorials" were renamed "Quick Starts" (#288) so that "Tutorials"
@@ -60,17 +65,37 @@
 # /docs/azure was the mis-slugged Azure index before the rename.
 [[redirects]]
   from = "/docs/tutorials"
-  to = "/docs/quick-starts"
+  to = "/quick-starts"
   status = 301
 
 [[redirects]]
   from = "/docs/tutorials/*"
-  to = "/docs/quick-starts/:splat"
+  to = "/quick-starts/:splat"
   status = 301
 
 [[redirects]]
   from = "/docs/azure"
-  to = "/docs/quick-starts/azure"
+  to = "/quick-starts/azure"
+  status = 301
+
+# The docs tree moved from /docs/* to the site root: this is a docs-only
+# site and docs/index.md is the homepage. Every old docs URL and its .md
+# companion 301s to the same path without the prefix. These rules must stay
+# below the /docs/query-library/* proxy and the specific /docs/... rules
+# above, because Netlify applies the first matching rule.
+[[redirects]]
+  from = "/docs"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/docs.md"
+  to = "/index.md"
+  status = 301
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/:splat"
   status = 301
 
 # Former top-level meta-refresh stubs (src/pages/tutorials.js and
@@ -82,7 +107,7 @@
 
 [[redirects]]
   from = "/cookbooks"
-  to = "/docs/quick-starts"
+  to = "/quick-starts"
   status = 301
 
 # /providers/<slug> is strictly one route per catalog entry

@@ -10,7 +10,7 @@ keywords: [stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigq
 tags: [stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigquery, spanner]
 ---
 
-We've released a major update to the [__StackQL Google provider__](https://stackql.io/docs/providers) with a new service, enhanced AI/ML capabilities, and improvements across 177 service files.
+We've released a major update to the [__StackQL Google provider__](/providers) with a new service, enhanced AI/ML capabilities, and improvements across 177 service files.
 
 ## New Service: Speech-to-Text v2
 

@@ -18,7 +18,7 @@ const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
 // The provider catalog (config: src/configs/providers.json, read by
-// src/lib/providers.js) drives the tiles on /docs/providers, this dropdown
+// src/lib/providers.js) drives the tiles on /providers, this dropdown
 // and the /providers/<slug> and /registry/<name> redirect routes
 // (plugins/provider-redirects). The dropdown lists the entries flagged
 // `featured`, in catalog order.
@@ -31,22 +31,22 @@ const providerDropDownListItems = [
   })),
   {
     label: '... More',
-    to: '/docs/providers',
+    to: '/providers',
   },
 ];
 
 // Nav and footer link straight to the canonical pages. The top-level
-// meta-refresh stubs (/install, /stackqldocs, /providers, /downloads) stay
-// as inbound aliases but are not linked from the chrome, so crawlers see
-// the real site structure rather than a ring of redirects.
+// meta-refresh stubs (/install, /stackqldocs, /downloads) stay as inbound
+// aliases but are not linked from the chrome, so crawlers see the real
+// site structure rather than a ring of redirects.
 const footerStackQLItems = [
   {
     label: 'Documentation',
-    to: '/docs',
+    to: '/',
   },
   {
     label: 'Install',
-    to: '/docs/installing-stackql',
+    to: '/installing-stackql',
   },
   {
     label: 'Contact us',
@@ -110,7 +110,7 @@ const blogPlugins = blogSections.map(({id, label, description}) => [
 const footerMoreItems = [
   {
     label: 'Providers',
-    to: '/docs/providers',
+    to: '/providers',
   },
   {
     label: 'stackql-deploy',
@@ -123,7 +123,7 @@ const footerMoreItems = [
   ...blogSectionLinks.map(({label, to}) => ({label, to})),
   {
     label: 'Quick Starts',
-    to: '/docs/quick-starts',
+    to: '/quick-starts',
   },
 ];
 
@@ -271,6 +271,10 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           path: 'docs',
+          // Docs-only site: the docs tree is the site root and docs/index.md
+          // (slug /) is the homepage. Inbound /docs/* links are 301'd in
+          // netlify.toml. The query library stays proxied at /docs/query-library/.
+          routeBasePath: '/',
 		      sidebarCollapsible: true, 
           showLastUpdateTime: true,
           editUrl: 'https://github.com/stackql/stackql.io/edit/main/',
@@ -296,11 +300,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       structuredData: {
-        excludedRoutes: [
-          '/providers',
-        ],
+        excludedRoutes: [],
         verbose: false,
-        techArticleRoutePrefixes: ['/docs/', '/ai/'],
+        // TechArticle on every page owned by these content-docs instances
+        // (except each instance's root), since the default docs instance
+        // has no URL prefix any more. The prefix list still covers /ai/ for
+        // plugin versions before 1.6.0.
+        techArticleRoutePrefixes: ['/ai/'],
+        techArticleDocsInstances: ['default', 'ai'],
+        // category index pages (/getting-started, /command-line-usage,
+        // /quick-starts/*) become linked crumbs rather than leaf-name prefixes
+        breadcrumbLinkAncestors: true,
         featuredImageDimensions: {
           width: 1200,
           height: 627,
@@ -373,8 +383,27 @@ const config = {
           're': 'Regular Expressions',
           'mcp': 'MCP',
           'quick-starts': 'Quick Starts',
-          // blog section crumbs (/blog/<section>/<slug>)
-          ...Object.fromEntries(blogSections.map(({id, label}) => [id, label])),
+          'providers': 'Providers',
+          'ai': 'AI Reference',
+          // full-path keys where the segment alone would be ambiguous or
+          // unreadable; a full-path key wins over a segment key
+          '/quick-starts/aws': 'AWS',
+          '/quick-starts/azure': 'Microsoft Azure',
+          '/quick-starts/google': 'Google Cloud Platform',
+          '/quick-starts/github': 'GitHub',
+          '/ai/canonical-definitions': 'Canonical Definitions',
+          '/ai/comparisons': 'Comparisons',
+          '/ai/how-tos': 'How-tos',
+          '/ai/concepts': 'Concepts',
+          '/ai/faqs': 'FAQs',
+          '/ai/architecture': 'Architecture',
+          '/ai/troubleshooting': 'Troubleshooting',
+          '/ai/industry-positioning': 'Industry Positioning',
+          '/ai/tutorials': 'Tutorials',
+          '/ai/providers': 'Providers',
+          // blog section crumbs, keyed by full path so "providers" here does
+          // not collide with the /providers catalog page
+          ...Object.fromEntries(blogSections.map(({id, label}) => [`/blog/${id}`, label])),
         },
       },
       metadata: [
@@ -451,7 +480,7 @@ const config = {
       },
       items: [
         {
-          to: '/docs/installing-stackql',
+          to: '/installing-stackql',
           label: 'Install',
           position: 'left',
         },
@@ -461,15 +490,15 @@ const config = {
           position: 'left',
           items: [
             {
-              to: '/docs/command-line-usage/mcp',
+              to: '/command-line-usage/mcp',
               label: 'MCP Server',
             },
             {
-              to: '/docs/mcp',
+              to: '/mcp',
               label: 'MCP Tools',
             },
             {
-              to: '/docs/mcp/embedded',
+              to: '/mcp/embedded',
               label: 'Embedded MCP',
             },
             {
@@ -494,7 +523,7 @@ const config = {
           position: 'left',
         },
         {
-          to: '/docs/providers',
+          to: '/providers',
           type: 'dropdown',
           label: 'Providers',
           position: 'left',
@@ -512,9 +541,9 @@ const config = {
             },
             ...blogSectionLinks,
             {
-              to: '/docs/quick-starts',
+              to: '/quick-starts',
               label: 'Quick Starts',
-              activeBasePath: '/docs/quick-starts',
+              activeBasePath: '/quick-starts',
             },
           ],
         },

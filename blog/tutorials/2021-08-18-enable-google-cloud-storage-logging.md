@@ -88,7 +88,7 @@ WHERE project = 'stackql'
 and logging is not null;
 ```
 
-To unpack the `logging` object, you can use the [`JSON_EXTRACT`]](/docs/language-spec/functions/json/json_extract) built in function as shown here:  
+To unpack the `logging` object, you can use the [`JSON_EXTRACT`]](/language-spec/functions/json/json_extract) built in function as shown here:  
 
 ```jsx
 select name, json_extract(logging, '$.logBucket') as logBucket,

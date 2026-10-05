@@ -13,13 +13,13 @@ image: "/img/stackql-featured-image.png"
 Returns part of a character or binary expression.  `SUBSTR` is an alias for `SUBSTRING`.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 
 :::info
 
-To extract a field from a JSON object use the [**JSON_EXTRACT**](/docs/language-spec/functions/json/json_extract) function.
+To extract a field from a JSON object use the [**JSON_EXTRACT**](/language-spec/functions/json/json_extract) function.
 
 :::
 

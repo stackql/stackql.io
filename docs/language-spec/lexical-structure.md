@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[ Keywords ]](/docs/language-spec/keywords) [[ Data Types ]](/docs/language-spec/data-types) [[ DESCRIBE ]](/docs/language-spec/describe)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy) [[ Keywords ]](/language-spec/keywords) [[ Data Types ]](/language-spec/data-types) [[ DESCRIBE ]](/language-spec/describe)
 
 
 StackQL’s lexical structure and grammar is modelled upon MySQL’s language implementation (an adaptation of the ANSI SQL-92 standard) with some extensions.  StackQL statements are used to query cloud resources (using `SELECT` grammar) or create, modify or delete infrastructure using standard Data Manipulation Language (DML) statements such as `INSERT`, `UPDATE`, `REPLACE` and `DELETE`.  Additionally, non DML operations such as starting an instance, or getting or putting an object into a bucket in AWS S3 for example are implemented as built-in provider procedures (akin to Stored Procedures in a DBMS).  Built-in provider procedures are invoked using the `EXEC` statement.

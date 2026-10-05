@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the arc cosine (inverse cosine) of a number, which is the angle in radians whose cosine is the specified number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

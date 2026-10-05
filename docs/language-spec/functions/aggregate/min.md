@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the minimum value based upon a column input or grouping of columns.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

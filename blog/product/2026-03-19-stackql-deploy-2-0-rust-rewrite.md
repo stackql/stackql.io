@@ -183,4 +183,4 @@ Stack files and `stackql_manifest.yml` structure are unaffected - no migration w
 
 - GitHub: [github.com/stackql/stackql-deploy](https://github.com/stackql/stackql-deploy)
 - crates.io: [crates.io/crates/stackql-deploy](https://crates.io/crates/stackql-deploy)
-- StackQL docs: [stackql.io/docs](https://stackql.io/docs)
+- StackQL docs: [stackql.io/docs](/)

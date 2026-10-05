@@ -15,7 +15,7 @@ Returns the value of the expression evaluated against the last row in the window
 This built-in window function calculates the window frame for each row in the same way as an aggregate window function. It returns the value of the expression evaluated against the last row in the window frame for each row.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` FIRST_VALUE `]](/docs/language-spec/functions/window/first_value) [[` NTH_VALUE `]](/docs/language-spec/functions/window/nth_value)
+[[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` NTH_VALUE `]](/language-spec/functions/window/nth_value)
 
 * * *
 

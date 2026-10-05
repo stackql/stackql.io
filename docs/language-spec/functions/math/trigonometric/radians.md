@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Converts a specified angle from degrees to radians.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

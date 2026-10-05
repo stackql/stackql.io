@@ -5,12 +5,15 @@
 // catalog in src/configs/providers.json (read through src/lib/providers.js):
 //
 //   /providers/<slug>   one route per catalog entry, no exceptions. This is
-//                       the internal surface: the tiles on /docs/providers
-//                       and the navbar dropdown link here.
+//                       the internal surface: the tiles on /providers (the
+//                       catalog doc page) and the navbar dropdown link here.
 //   /registry/<name>    the inbound surface for external links: one route
 //                       per catalog entry plus each entry's registryAliases
 //                       (family-level names such as /registry/databricks).
-//   /providers, /registry   redirect to the catalog page.
+//   /registry           redirects to the catalog page at /providers.
+//
+// The bare /providers is not registered here: with the docs tree at the
+// site root it is docs/providers.md, the catalog page itself.
 //
 // Because the routes are registered with Docusaurus, `to:` links to them
 // pass the broken-link check and render without the external-link icon,
@@ -19,7 +22,7 @@
 // a file there would clash with these routes.
 //
 // Options:
-//   landing    where the bare prefixes redirect (default '/docs/providers')
+//   landing    where /registry redirects (default '/providers')
 //   component  the redirect component (default
 //              @site/src/components/ProviderRedirect/index.jsx); receives
 //              `target`: { to, name }
@@ -28,7 +31,7 @@ const { providerRoutes, registryRoutes } = require('../../src/lib/providers');
 
 module.exports = function providerRedirectsPlugin(context, options) {
   const {
-    landing = '/docs/providers',
+    landing = '/providers',
     component = '@site/src/components/ProviderRedirect/index.jsx',
   } = options || {};
 
@@ -51,15 +54,12 @@ module.exports = function providerRedirectsPlugin(context, options) {
         });
       }
 
-      const surfaces = [
-        ['/providers', providerRoutes()],
-        ['/registry', registryRoutes()],
-      ];
-      for (const [prefix, routes] of surfaces) {
-        await add(prefix, landing, 'the provider catalog');
-        for (const { slug, href, name } of routes) {
-          await add(`${prefix}/${slug}`, href, name);
-        }
+      for (const { slug, href, name } of providerRoutes()) {
+        await add(`/providers/${slug}`, href, name);
+      }
+      await add('/registry', landing, 'the provider catalog');
+      for (const { slug, href, name } of registryRoutes()) {
+        await add(`/registry/${slug}`, href, name);
       }
     },
   };

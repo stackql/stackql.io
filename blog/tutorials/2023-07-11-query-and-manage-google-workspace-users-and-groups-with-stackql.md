@@ -46,7 +46,7 @@ which would return the following results...
 
 ### Example Query Using Built-In Functions
 
-Here is an example using built-in functions in StackQL (more information about built-in functions is available in the [StackQL docs](https://stackql.io/docs)):    
+Here is an example using built-in functions in StackQL (more information about built-in functions is available in the [StackQL docs](/)):    
 
 ```sql
 SELECT

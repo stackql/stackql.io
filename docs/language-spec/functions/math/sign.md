@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns -1 if the input value is negative, 0 if the input value is 0, and 1 is the input value is positive.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

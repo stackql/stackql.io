@@ -16,7 +16,7 @@ This ELT/model-based framework for IaC allows you to provision, test, update, an
 
 ## Features
 
-StackQL simplifies the interaction with cloud resources by using SQL-like syntax, making it easier to define and execute complex cloud management operations. Resources are provisioned with [__`INSERT`__](/docs/language-spec/insert) statements, and tests are structured around [__`SELECT`__](/docs/language-spec/select) statements.
+StackQL simplifies the interaction with cloud resources by using SQL-like syntax, making it easier to define and execute complex cloud management operations. Resources are provisioned with [__`INSERT`__](/language-spec/insert) statements, and tests are structured around [__`SELECT`__](/language-spec/select) statements.
 
 Features include:
 

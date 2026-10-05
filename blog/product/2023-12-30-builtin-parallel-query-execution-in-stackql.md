@@ -30,6 +30,6 @@ You could do something similar for other hyperscalars, for example querying reso
 
 This capability was previously available using the [__`pystackql`__](https://pystackql.readthedocs.io/en/latest/) package, as discussed in the [__Query Resources Across AWS Regions Asynchronously__](/blog/tutorials/query-resources-across-aws-regions-asynchronously) blog post, but is now available natively in the StackQL query optimizer.   
 
-You just need to add __`--execution.concurrency.limit=-1`__ to your [__`stackql exec`__](/docs/command-line-usage/exec) or [__`stackql shell`__](/docs/command-line-usage/shell) commands or when starting a StackQL Server using [__`stackql srv`__](/docs/command-line-usage/srv).  More query optimizations coming!  Happy New Year! 🎉 🎉 🎉   
+You just need to add __`--execution.concurrency.limit=-1`__ to your [__`stackql exec`__](/command-line-usage/exec) or [__`stackql shell`__](/command-line-usage/shell) commands or when starting a StackQL Server using [__`stackql srv`__](/command-line-usage/srv).  More query optimizations coming!  Happy New Year! 🎉 🎉 🎉   
 
 Let us know your thoughts! Visit us and give us a ⭐ on [__GitHub__](https://github.com/stackql/stackql)

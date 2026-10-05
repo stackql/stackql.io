@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Describes a resource or a specific method on a resource.
 
 See also:
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
 
 * * *
 

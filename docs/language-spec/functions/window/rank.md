@@ -15,7 +15,7 @@ Returns the rank of the current row with gaps. This is the `ROW_NUMBER` of the f
 If there is no `ORDER BY` clause, then all rows are considered peers and this function always returns 1.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` ROW_NUMBER `]](/docs/language-spec/functions/window/row_number) [[` DENSE_RANK `]](/docs/language-spec/functions/window/dense_rank)
+[[` SELECT `]](/language-spec/select) [[` ROW_NUMBER `]](/language-spec/functions/window/row_number) [[` DENSE_RANK `]](/language-spec/functions/window/dense_rank)
 
 * * *
 

@@ -30,9 +30,9 @@ This installs the StackQL MCP server in-process for your platform: the listing s
 
 ![Installing the StackQL connector](/img/stackql-anthropic-directory-install.png)
 
-A directory-installed connector inherits Claude Desktop's environment, so set the environment variables for your providers at the operating-system level before launching Claude Desktop - see [Provider-Specific Credentials](#provider-specific-credentials). Claude Desktop captures its environment at launch: after changing variables you must fully quit Claude Desktop (including the tray icon on Windows) and relaunch. Asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) reports per-provider credential status and is the fastest way to confirm what the server can and cannot see.
+A directory-installed connector inherits Claude Desktop's environment, so set the environment variables for your providers at the operating-system level before launching Claude Desktop - see [Provider-Specific Credentials](#provider-specific-credentials). Claude Desktop captures its environment at launch: after changing variables you must fully quit Claude Desktop (including the tray icon on Windows) and relaunch. Asking the agent to run [`reload_credentials`](/mcp/reload_credentials) reports per-provider credential status and is the fastest way to confirm what the server can and cannot see.
 
-Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation - see [Server modes](/command-line-usage/mcp#server-modes).
 
 ## Install from a downloaded bundle
 
@@ -141,11 +141,11 @@ You only need to include environment variables for the cloud providers you plan 
 Never commit your `claude_desktop_config.json` file with actual credentials to version control. Use secure credential management practices.
 :::
 
-Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation. Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts - see [Server modes](/docs/command-line-usage/mcp#server-modes).
+Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation. Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts - see [Server modes](/command-line-usage/mcp#server-modes).
 
 ### Using a Credentials File (`--env.file`)
 
-An alternative to the `env` block - and on Windows the recommended one - is to keep credentials in a dotenv-style file and pass it with the [`--env.file`](/docs/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) flag:
+An alternative to the `env` block - and on Windows the recommended one - is to keep credentials in a dotenv-style file and pass it with the [`--env.file`](/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) flag:
 
 ```json
 {
@@ -175,7 +175,7 @@ AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
 Why this beats the `env` block:
 
 - Changes to the `env` block require a full Claude Desktop restart (including quitting the tray icon) before the MCP subprocess sees them, and on Windows `setx` writes the registry - it never reaches the running Desktop process.
-- The `--env.file` file can be created or rotated at any time - it does not even need to exist when the server starts - and asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) picks up the changes without any restart.
+- The `--env.file` file can be created or rotated at any time - it does not even need to exist when the server starts - and asking the agent to run [`reload_credentials`](/mcp/reload_credentials) picks up the changes without any restart.
 
 :::note
 
@@ -185,7 +185,7 @@ Why this beats the `env` block:
 
 ### Provider-Specific Credentials
 
-Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/docs/providers](https://stackql.io/docs/providers))for the environment variables required for your desired provider(s).
+Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/providers](/providers))for the environment variables required for your desired provider(s).
 
 
 ### Restarting Claude Desktop
@@ -303,7 +303,7 @@ If you receive authentication errors:
 
 1. Verify your cloud provider credentials are correct
 2. Ensure credential files exist at the specified paths
-3. Check that environment variables are properly formatted in the configuration - asking the agent to run [`reload_credentials`](/docs/mcp/reload_credentials) reports per-provider credential status and is the fastest way to see which variable is missing
+3. Check that environment variables are properly formatted in the configuration - asking the agent to run [`reload_credentials`](/mcp/reload_credentials) reports per-provider credential status and is the fastest way to see which variable is missing
 4. Confirm your credentials have the necessary permissions
 
 ### Permission Errors
@@ -316,9 +316,9 @@ If operations fail due to insufficient permissions:
 
 ## Learn More
 
-- [StackQL MCP Command Reference](/docs/command-line-usage/mcp)
+- [StackQL MCP Command Reference](/command-line-usage/mcp)
 - [StackQL Provider Registry](/providers)
-- [Language Specification](/docs/language-spec/select)
+- [Language Specification](/language-spec/select)
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io)
 
 ## Security Considerations

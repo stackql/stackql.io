@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the Julian day - the number of days since noon in Greenwich on November 24, 4714 B.C. [(Proleptic Gregorian calendar)](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Date Modifiers ]](/docs/language-spec/functions/datetime/date_modifiers) 
+[[` SELECT `]](/language-spec/select) [[ Date Modifiers ]](/language-spec/functions/datetime/date_modifiers) 
 
 * * * 
 
@@ -29,7 +29,7 @@ __*datetime_expression*__
 The datetime value.
 
 __*modifier*__  
-Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/docs/language-spec/functions/datetime/date_modifiers)
+Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
 ## Return Value(s)
 
@@ -49,7 +49,7 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-Use the [**ROUND**](/docs/language-spec/functions/math/round) to convert floating point numbers to the nearest integer.
+Use the [**ROUND**](/language-spec/functions/math/round) to convert floating point numbers to the nearest integer.
 
 :::
 

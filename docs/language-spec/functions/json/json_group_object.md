@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Aggregates key-value pairs into a JSON object, grouping by a specified column. `JSON_GROUP_OBJECT()` collects all key-value pairs for each group in specified columns and combines them into a single JSON object for each group.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

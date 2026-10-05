@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the arc tangent (inverse tangent) of a number, which is the angle in radians whose tangent is the specified number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

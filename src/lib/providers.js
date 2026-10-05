@@ -3,7 +3,7 @@
 // each provider's slug and route path, and exposes the views the site uses:
 //
 //   PROVIDER_CATEGORIES  the catalog with `slug` and `path` added to every
-//                        provider (the tiles and TOC on /docs/providers)
+//                        provider (the tiles and TOC on /providers)
 //   PROVIDERS            flat list in catalog order, with `category`
 //   FEATURED_PROVIDERS   entries flagged `featured` (navbar dropdown)
 //   providerRoutes()     /providers/<slug>: one per entry, no exceptions

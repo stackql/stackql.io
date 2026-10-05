@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 The `CHAR()` function returns the character corresponding to the specified ASCII code.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * *
 

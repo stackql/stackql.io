@@ -10,7 +10,7 @@ keywords: [stackql, mcp, model context protocol, 2026-07-28, opentelemetry, otlp
 tags: [stackql, mcp, model context protocol, opentelemetry, ai agents, ai]
 ---
 
-[__StackQL v0.11__](https://github.com/stackql/stackql/releases/tag/v0.11.669) is out. The [__StackQL MCP server__](/docs/command-line-usage/mcp): now includes the current Model Context Protocol revision, `2026-07-28`, alongside every earlier revision it already supported, and the audit log that records what an agent did can be written as OpenTelemetry log records instead of the bespoke JSONL format. Both are available today through every install channel.
+[__StackQL v0.11__](https://github.com/stackql/stackql/releases/tag/v0.11.669) is out. The [__StackQL MCP server__](/command-line-usage/mcp): now includes the current Model Context Protocol revision, `2026-07-28`, alongside every earlier revision it already supported, and the audit log that records what an agent did can be written as OpenTelemetry log records instead of the bespoke JSONL format. Both are available today through every install channel.
 
 <!-- truncate -->
 
@@ -47,7 +47,7 @@ stackql mcp --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9992", "stateless": true} }'
 ```
 
-A sessionless server issues no `Mcp-Session-Id`, keeps the list endpoints connection-invariant, and runs the approval round trip through `input_required`. It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at handshake time, so an older client cannot approve gated writes on a sessionless server. Pick `stateless` for current-revision hosts, and leave the default for a fleet that still includes older clients. The [__protocol revision support__](/docs/command-line-usage/mcp#protocol-revision-support) section of the docs has the full matrix, alongside the [__server modes__](/docs/command-line-usage/mcp#server-modes) it interacts with.
+A sessionless server issues no `Mcp-Session-Id`, keeps the list endpoints connection-invariant, and runs the approval round trip through `input_required`. It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at handshake time, so an older client cannot approve gated writes on a sessionless server. Pick `stateless` for current-revision hosts, and leave the default for a fleet that still includes older clients. The [__protocol revision support__](/command-line-usage/mcp#protocol-revision-support) section of the docs has the full matrix, alongside the [__server modes__](/command-line-usage/mcp#server-modes) it interacts with.
 
 ## OpenTelemetry output for the audit log
 
@@ -59,7 +59,7 @@ This release adds a second format. `--mcp.log.format=otel` writes the same recor
 stackql mcp --mcp.server.type=stdio --mcp.log.format=otel
 ```
 
-The default, `jsonl`, is unchanged byte for byte, and the format can also be set in `mcp.config` as `"audit": {"format": "otel"}`. The destination is the same rotating file either way. The [__log format__](/docs/command-line-usage/mcp#log-format) reference lists every option and attribute.
+The default, `jsonl`, is unchanged byte for byte, and the format can also be set in `mcp.config` as `"audit": {"format": "otel"}`. The destination is the same rotating file either way. The [__log format__](/command-line-usage/mcp#log-format) reference lists every option and attribute.
 
 ### What a record looks like
 
@@ -142,9 +142,9 @@ The OpenTelemetry encoding is not tied to the MCP server. It is implemented as a
 ## Get it
 
 - Release notes and binaries: [__v0.10.623__](https://github.com/stackql/stackql/releases/tag/v0.10.623)
-- Install channels (Claude Desktop bundle, npm, PyPI, Docker, GitHub Action): [__Installing the MCP server__](/docs/installing-stackql#installing-the-mcp-server)
-- Protocol revisions, `stateless`, modes and the audit log: [__stackql mcp__](/docs/command-line-usage/mcp)
-- The new flag in the global reference: [__`--mcp.log.format`__](/docs/command-line-usage/global-flags)
+- Install channels (Claude Desktop bundle, npm, PyPI, Docker, GitHub Action): [__Installing the MCP server__](/installing-stackql#installing-the-mcp-server)
+- Protocol revisions, `stateless`, modes and the audit log: [__stackql mcp__](/command-line-usage/mcp)
+- The new flag in the global reference: [__`--mcp.log.format`__](/command-line-usage/global-flags)
 - Source: [__github.com/stackql/stackql__](https://github.com/stackql/stackql)
 
 ⭐ Star us on [__GitHub__](https://github.com/stackql/stackql) and let us know what your agents build.

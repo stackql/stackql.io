@@ -22,9 +22,9 @@ Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span c
 
 ## Basic query
 
-The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/docs/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
+The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
 
-The [__`JSON_EXTRACT`__](/docs/language-spec/functions/json/json_extract) and [__`SPLIT_PART`__](/docs/language-spec/functions/string/split_part) functions are used to manipulate response data.  
+The [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) and [__`SPLIT_PART`__](/language-spec/functions/string/split_part) functions are used to manipulate response data.  
 
 ```sql
 <<<jsonnet
@@ -77,7 +77,7 @@ You should see a tabular output with columns for: `event_timestamp`, `caller`, `
 
 ## Generating a CSV report
 
-By saving the StackQL query to a file (`activity_report.iql`), you can produce a `csv` report from the activity query as follows (see [__`--output csv`__](/docs/getting-started/output-modes#csv-output) for more information on `stackql` outputs):
+By saving the StackQL query to a file (`activity_report.iql`), you can produce a `csv` report from the activity query as follows (see [__`--output csv`__](/getting-started/output-modes#csv-output) for more information on `stackql` outputs):
 
 ```bash
 # to run on mac or linux
@@ -261,7 +261,7 @@ AND caller = 'javen@stackql.io';
 
 ## Running summary/aggregate queries
 
-As StackQL is a complete SQL engine, `GROUP BY`/aggregate queries (including [__`AVG`__](/docs/language-spec/functions/aggregate/avg), [__`COUNT`__](/docs/language-spec/functions/aggregate/count), [__`SUM`__](/docs/language-spec/functions/aggregate/sum), [__`MIN`__](/docs/language-spec/functions/aggregate/min), [__`MAX`__](/docs/language-spec/functions/aggregate/max) and more are natively available for all providers, services and resources.
+As StackQL is a complete SQL engine, `GROUP BY`/aggregate queries (including [__`AVG`__](/language-spec/functions/aggregate/avg), [__`COUNT`__](/language-spec/functions/aggregate/count), [__`SUM`__](/language-spec/functions/aggregate/sum), [__`MIN`__](/language-spec/functions/aggregate/min), [__`MAX`__](/language-spec/functions/aggregate/max) and more are natively available for all providers, services and resources.
 
 ### Count events by severity level
 

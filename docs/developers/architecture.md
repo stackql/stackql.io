@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 
 See also:
-[[ Using StackQL ]](/docs/getting-started/using-stackql) [[ Using Variables ]](/docs/getting-started/variables) [[ Templating ]](/docs/getting-started/templating)
+[[ Using StackQL ]](/getting-started/using-stackql) [[ Using Variables ]](/getting-started/variables) [[ Templating ]](/getting-started/templating)
 
 ## Overview
 

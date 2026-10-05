@@ -66,7 +66,7 @@ Override the binary or bundle at runtime with the `STACKQL_MCP_BIN` or `STACKQL_
 
 ## Related concepts
 
-- [Embedded MCP: .NET / C# reference](/docs/mcp/embedded/dotnet) - install, API, and vendoring
+- [Embedded MCP: .NET / C# reference](/mcp/embedded/dotnet) - install, API, and vendoring
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals
 - [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure) - the pattern this enables

@@ -72,8 +72,8 @@ ORDER BY total_contributions DESC;
 ## Documentation
 
 Full documentation is available:
-- [Window Functions](/docs/language-spec/functions/window/row_number)
-- [WITH (CTEs)](/docs/language-spec/with)
-- [SELECT](/docs/language-spec/select)
+- [Window Functions](/language-spec/functions/window/row_number)
+- [WITH (CTEs)](/language-spec/with)
+- [SELECT](/language-spec/select)
 
 Let us know your thoughts! Visit us and give us a star on [__GitHub__](https://github.com/stackql/stackql).

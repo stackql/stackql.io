@@ -151,7 +151,7 @@ FROM github.repos.commits
 WHERE owner='${owner}' AND repo='${repo}';
 ```
 
-Other methods can be accessed using the `EXEC` command (for more information see [__`EXEC`__](/docs/language-spec/exec))
+Other methods can be accessed using the `EXEC` command (for more information see [__`EXEC`__](/language-spec/exec))
 
 
 :::

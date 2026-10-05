@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns an input string in lowercase.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` UPPER `]](/docs/language-spec/functions/string/upper) [[ Data Types ]](/docs/language-spec/data-types)
+[[` SELECT `]](/language-spec/select) [[` UPPER `]](/language-spec/functions/string/upper) [[ Data Types ]](/language-spec/data-types)
 
 * * * 
 

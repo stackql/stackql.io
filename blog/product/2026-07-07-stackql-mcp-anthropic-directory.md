@@ -36,4 +36,4 @@ That makes the loop in a Claude conversation look like this: ask a question abou
 
 ## More Information
 
-Documentation for the StackQL MCP server is available at [StackQL MCP Tools](/docs/mcp), [StackQL MCP Server Usage](/docs/command-line-usage/mcp) and [StackQL MCP Server Installation](/docs/installing-stackql#installing-the-mcp-server).  Credential setup per provider, is available via the [__StackQL registry__](https://stackql.io/registry).
+Documentation for the StackQL MCP server is available at [StackQL MCP Tools](/mcp), [StackQL MCP Server Usage](/command-line-usage/mcp) and [StackQL MCP Server Installation](/installing-stackql#installing-the-mcp-server).  Credential setup per provider, is available via the [__StackQL registry__](https://stackql.io/registry).

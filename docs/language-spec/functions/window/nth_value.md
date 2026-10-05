@@ -15,7 +15,7 @@ Returns the value of the expression evaluated against the Nth row in the window 
 This built-in window function calculates the window frame for each row in the same way as an aggregate window function. It returns the value of the expression evaluated against row N of the window frame. Rows are numbered within the window frame starting from 1 in the order defined by the `ORDER BY` clause if present, or in arbitrary order otherwise. If there is no Nth row in the partition, then `NULL` is returned.
 
 See also:
-[[` SELECT `]](/docs/language-spec/select) [[` FIRST_VALUE `]](/docs/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/docs/language-spec/functions/window/last_value)
+[[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)
 
 * * *
 

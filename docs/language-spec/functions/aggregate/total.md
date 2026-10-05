@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the sum of all non `NULL` values in a column or grouping of columns.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` SUM `]](/docs/language-spec/functions/aggregate/sum)
+[[` SELECT `]](/language-spec/select) [[` SUM `]](/language-spec/functions/aggregate/sum)
 
 * * * 
 

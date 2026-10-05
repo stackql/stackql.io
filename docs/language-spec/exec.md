@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Executes a provider resource method (built in procedure).  
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
 
 * * * 
 

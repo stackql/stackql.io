@@ -20,6 +20,12 @@ const sidebars = {
     {
       type: 'category',
       label: 'Getting Started',
+      link: {
+        type: 'generated-index',
+        title: 'Getting Started',
+        description: 'Core concepts and first steps: the resource hierarchy, running StackQL, using a provider, output modes, variables and templating',
+        slug: '/getting-started',
+      },
       items: [
         'getting-started/resource-hierarchy',
         'getting-started/using-stackql',
@@ -34,6 +40,12 @@ const sidebars = {
     {
       type: 'category',
       label: 'Command Line Usage',
+      link: {
+        type: 'generated-index',
+        title: 'Command Line Usage',
+        description: 'The stackql command line: exec, shell, srv, mcp, registry and the global flags',
+        slug: '/command-line-usage',
+      },
       items: [
         'command-line-usage/exec',
         'command-line-usage/shell',

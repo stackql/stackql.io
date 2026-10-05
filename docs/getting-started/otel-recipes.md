@@ -13,9 +13,9 @@ description: Cloud inventory, drift and entitlement history from StackQL otel ou
 image: "/img/stackql-featured-image.png"
 ---
 See also:  
-[[` Output Modes `]](/docs/getting-started/output-modes#otel-output) [[` exec `]](/docs/command-line-usage/exec)
+[[` Output Modes `]](/getting-started/output-modes#otel-output) [[` exec `]](/command-line-usage/exec)
 
-`stackql exec --output otel` turns a query into a timestamped snapshot: one OpenTelemetry log record per row, a completion record per statement, and the correlation keys `stackql.snapshot.id`, `stackql.query.hash` and `stackql.row.fingerprint` on every record (see [`otel` Output](/docs/getting-started/output-modes#otel-output)).  This page takes those records end to end in the two backends the format was designed for: a typed inventory table in ClickHouse (including ClickStack), and log queries and monitors in Datadog.  The last section is a scheduled CI job that stamps each run with a trace id and resource attributes.
+`stackql exec --output otel` turns a query into a timestamped snapshot: one OpenTelemetry log record per row, a completion record per statement, and the correlation keys `stackql.snapshot.id`, `stackql.query.hash` and `stackql.row.fingerprint` on every record (see [`otel` Output](/getting-started/output-modes#otel-output)).  This page takes those records end to end in the two backends the format was designed for: a typed inventory table in ClickHouse (including ClickStack), and log queries and monitors in Datadog.  The last section is a scheduled CI job that stamps each run with a trace id and resource attributes.
 
 The recipes use two recurring queries, an inventory of Compute Engine instances and the IAM bindings of a project unnested to one row per principal and role.  Both project an `identity` column, the key the backend tracks a resource by (`id`, `arn`, `selfLink`, or a concatenation for a composite key); the fingerprint is the value.
 

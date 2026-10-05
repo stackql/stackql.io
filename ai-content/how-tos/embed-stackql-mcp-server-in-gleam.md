@@ -74,7 +74,7 @@ On start the library downloads the platform's StackQL bundle, verifies it agains
 
 ## Related concepts
 
-- [Embedded MCP: Gleam reference](/docs/mcp/embedded/gleam) - install, API, and binary sourcing
+- [Embedded MCP: Gleam reference](/mcp/embedded/gleam) - install, API, and binary sourcing
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals
 - [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure) - the pattern this enables

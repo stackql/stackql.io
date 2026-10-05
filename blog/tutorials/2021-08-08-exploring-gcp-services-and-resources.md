@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
 <meta name="author" content="Jeffrey Aven" />
 </head>
 
-This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.  If you are new to StackQL it may be helpful to start [__here__](/docs/getting-started/resource-hierarchy).
+This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.  If you are new to StackQL it may be helpful to start [__here__](/getting-started/resource-hierarchy).
 
 ## List available services using `SHOW SERVICES`  
 
-To list all of the services available in the google provider, use the [`SHOW SERVICES`](/docs/language-spec/show) command as shown below:  
+To list all of the services available in the google provider, use the [`SHOW SERVICES`](/language-spec/show) command as shown below:  
 
 <Tabs
   defaultValue="shell"
@@ -62,7 +62,7 @@ stackql exec "show services in google"
 </TabItem>
 </Tabs>
 
-> For more information on running StackQL commands interactively or non-ineractively, see the [`shell`](/docs/command-line-usage/shell) and [`exec`](/docs/command-line-usage/exec) docs.
+> For more information on running StackQL commands interactively or non-ineractively, see the [`shell`](/command-line-usage/shell) and [`exec`](/command-line-usage/exec) docs.
 
 To search for a specific service or services using the `LIKE` or `WHERE` operator as shown here:  
 
@@ -116,7 +116,7 @@ StackQL**>>SHOW EXTENDED RESOURCES IN google.storage WHERE name = 'notifications
 
 ## List the fields in a service using `DESCRIBE`
 
-If you have identified the resource you want to work with, you can use the [`DESCRIBE`](/docs/language-spec/describe) command to see the available fields for a [`SELECT`](/docs/language-spec/select) operation as shown here:  
+If you have identified the resource you want to work with, you can use the [`DESCRIBE`](/language-spec/describe) command to see the available fields for a [`SELECT`](/language-spec/select) operation as shown here:  
 
 ```jsx
 StackQL**>>DESCRIBE google.storage.buckets;
@@ -160,7 +160,7 @@ StackQL**>>DESCRIBE EXTENDED google.storage.buckets;
 
 ## List the available methods for a service using `SHOW METHODS`  
 
-To see the available methods (operations) available for a given resource (beyond [`INSERT`](/docs/language-spec/insert), [`SELECT`](/docs/language-spec/select) and [`DELETE`](/docs/language-spec/delete)) use the `SHOW METHODS` command as shown here:  
+To see the available methods (operations) available for a given resource (beyond [`INSERT`](/language-spec/insert), [`SELECT`](/language-spec/select) and [`DELETE`](/language-spec/delete)) use the `SHOW METHODS` command as shown here:  
 
 ```jsx
 StackQL**>>SHOW METHODS IN google.compute.instances;
@@ -189,7 +189,7 @@ StackQL**>>SHOW METHODS IN google.compute.instances;
 |-----------------------|----------------------------|
 ```
 
-> The operations shown by `SHOW METHODS` (which are reffered to as provider stored procedures) can be invoked using the [`EXEC`](/docs/language-spec/exec) command.
+> The operations shown by `SHOW METHODS` (which are reffered to as provider stored procedures) can be invoked using the [`EXEC`](/language-spec/exec) command.
 
 `EXTENDED` can be used like the other meta commands to see a description for the method as shown here:  
 
@@ -212,4 +212,4 @@ StackQL**>>SHOW EXTENDED METHODS IN google.compute.instances;
 |--------------|--------------------------|--------------------------------|
 ```
 
-Next up we will start creating infrastructure templates using [`SHOW INSERT`](/docs/language-spec/show#generating-an-insert-template-using-the-show-insert-command), creating  resources using [`INSERT`](/docs/language-spec/insert) and querying resources using [`SELECT`](/docs/language-spec/select), stay tuned!  
+Next up we will start creating infrastructure templates using [`SHOW INSERT`](/language-spec/show#generating-an-insert-template-using-the-show-insert-command), creating  resources using [`INSERT`](/language-spec/insert) and querying resources using [`SELECT`](/language-spec/select), stay tuned!  

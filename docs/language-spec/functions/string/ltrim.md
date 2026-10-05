@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns a string formed by removing white space or any characters that appear from the left side of an input string.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` RTRIM `]](/docs/language-spec/functions/string/rtrim) [[` TRIM `]](/docs/language-spec/functions/string/trim) 
+[[` SELECT `]](/language-spec/select) [[` RTRIM `]](/language-spec/functions/string/rtrim) [[` TRIM `]](/language-spec/functions/string/trim) 
 
 * * * 
 

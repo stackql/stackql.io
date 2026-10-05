@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Return a formatted datetime value based on a specified format.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[ Date Modifiers ]](/docs/language-spec/functions/datetime/date_modifiers) 
+[[` SELECT `]](/language-spec/select) [[ Date Modifiers ]](/language-spec/functions/datetime/date_modifiers) 
 
 * * * 
 
@@ -32,7 +32,7 @@ __*datetime_expression*__
 The date or time value to be formatted.
 
 __*modifier*__  
-Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/docs/language-spec/functions/datetime/date_modifiers)
+Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
 ### Formats
 

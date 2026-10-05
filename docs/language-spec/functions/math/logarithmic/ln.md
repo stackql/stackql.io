@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the natural logarithm (logarithm to the base \(e\)) of a given number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) 
+[[`SELECT`]](/language-spec/select) 
 
 * * * 
 

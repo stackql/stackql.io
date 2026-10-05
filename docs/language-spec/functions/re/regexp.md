@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Checks if the source string matches the regular expression pattern provided.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

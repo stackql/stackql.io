@@ -41,7 +41,7 @@ REGISTRY PULL aws v0.1.3;
 
 ## Explore the AWS provider 
 
-Explore the AWS provider using StackQL metacommands (such as [__`SHOW`__](/docs/language-spec/show) and [__`DESCRIBE`__](/docs/language-spec/describe)), for example...  
+Explore the AWS provider using StackQL metacommands (such as [__`SHOW`__](/language-spec/show) and [__`DESCRIBE`__](/language-spec/describe)), for example...  
 
 ### Show available services
 

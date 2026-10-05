@@ -20,7 +20,7 @@ Big Query provides a wealth of metrics and statistics for jobs run against it wh
 
 ## Loading Data into Big Query from GCS using StackQL
 
-In a previous blog, we demonstrated how to [__create a Big Query dataset__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-1--create-a-big-query-dataset) and how to [__create a Big Query table__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-2--create-usage-table) using StackQL [__`INSERT`__](/docs/language-spec/insert) statements.  Having created a target dataset and table in Big Query, we can invoke a load job using StackQL by performing an `INSERT` into the `google.bigquery.jobs` resource.  
+In a previous blog, we demonstrated how to [__create a Big Query dataset__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-1--create-a-big-query-dataset) and how to [__create a Big Query table__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-2--create-usage-table) using StackQL [__`INSERT`__](/language-spec/insert) statements.  Having created a target dataset and table in Big Query, we can invoke a load job using StackQL by performing an `INSERT` into the `google.bigquery.jobs` resource.  
 
 The data for this operation is shown in the __Data__ tab which is supplied in Jsonnet format.  
 
@@ -77,9 +77,9 @@ SELECT
 
 ## Query for Big Query Errors
 
-The [Big Query Job Object](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job) can be queried using an StackQL  [__`SELECT`__](/docs/language-spec/select) statement.  
+The [Big Query Job Object](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job) can be queried using an StackQL  [__`SELECT`__](/language-spec/select) statement.  
 
-To see the available fields with their data types and descriptions, you can run the following StackQL [__`DESCRIBE`__](/docs/language-spec/describe) statement:
+To see the available fields with their data types and descriptions, you can run the following StackQL [__`DESCRIBE`__](/language-spec/describe) statement:
 
 ```jsx
 DESCRIBE EXTENDED google.bigquery.jobs;
@@ -120,7 +120,7 @@ AND errorResult IS NOT null;
 </TabItem>
 </Tabs>
 
-To get a little more information about Big Query errors we can run a detailed query, extracting fields from the `errorResult` object using the [__`JSON_EXTRACT`__](/docs/language-spec/functions/json/json_extract) built in function.  This function is exceptionally useful as many of the fields returned from Google APIs are complex objects.  
+To get a little more information about Big Query errors we can run a detailed query, extracting fields from the `errorResult` object using the [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) built in function.  This function is exceptionally useful as many of the fields returned from Google APIs are complex objects.  
 
 <Tabs
   defaultValue="iql"
@@ -165,7 +165,7 @@ To refine results to only `load` operations add the following expression to the 
 AND JSON_EXTRACT(statistics, '$.load') IS NOT null;
 ```
 
-Date values returned in job responses are in Unix timestamp format, to format them in a human readable format we can use the [__`DATETIME`__](/docs/language-spec/functions/datetime/datetime-fn) built in function.  Here is a more advanced example:  
+Date values returned in job responses are in Unix timestamp format, to format them in a human readable format we can use the [__`DATETIME`__](/language-spec/functions/datetime/datetime-fn) built in function.  Here is a more advanced example:  
 
 <Tabs
   defaultValue="iql"

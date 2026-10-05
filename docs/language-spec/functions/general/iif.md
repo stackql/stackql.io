@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns a value based upon the evaluation of an input expression.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

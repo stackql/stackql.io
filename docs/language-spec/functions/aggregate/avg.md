@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the average value of all non `NULL` values within a column or grouping of columns.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

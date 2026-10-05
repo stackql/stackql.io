@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the absolute value of the numeric argument.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

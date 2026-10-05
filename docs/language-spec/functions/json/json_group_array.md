@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Aggregates values as a JSON array. `JSON_GROUP_ARRAY()` collects all values for each group in a specified column and combines them into a JSON array.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select) [[` JSON_EXTRACT `]](/docs/language-spec/functions/json/json_extract)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)
 
 * * * 
 

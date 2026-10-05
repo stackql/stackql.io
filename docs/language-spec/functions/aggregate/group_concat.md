@@ -15,7 +15,7 @@ Returns a string which is the concatenation of all non `NULL` values of an input
 > The order of the concatenated elements is arbitrary.
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

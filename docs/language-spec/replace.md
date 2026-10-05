@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Updates all fields in a resource (synonymous with a `put` operation).
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[ `UPDATE` ]](/docs/language-spec/update)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy) [[ `UPDATE` ]](/language-spec/update)
 
 * * * 
 

@@ -11,12 +11,12 @@ description: MCP tool listing cloud and SaaS providers available to the StackQL 
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the providers already pulled into the local StackQL cache -- the top of the StackQL [resource hierarchy](/docs/getting-started/resource-hierarchy).  Use this as the entry point when an agent needs to discover what it can query.
+Returns the providers already pulled into the local StackQL cache -- the top of the StackQL [resource hierarchy](/getting-started/resource-hierarchy).  Use this as the entry point when an agent needs to discover what it can query.
 
-For providers available in the *registry* (including ones not yet pulled), see [`list_registry`](/docs/mcp/list_registry).
+For providers available in the *registry* (including ones not yet pulled), see [`list_registry`](/mcp/list_registry).
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_services` ]](/docs/mcp/list_services) [[ `list_registry` ]](/docs/mcp/list_registry) [[ `pull_provider` ]](/docs/mcp/pull_provider)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_services` ]](/mcp/list_services) [[ `list_registry` ]](/mcp/list_registry) [[ `pull_provider` ]](/mcp/pull_provider)
 
 * * *
 

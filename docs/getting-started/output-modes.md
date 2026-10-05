@@ -11,7 +11,7 @@ description: Query and Deploy Cloud Infrastructure and Resources using SQL
 image: "/img/stackql-featured-image.png"
 ---
 See also:  
-[[` exec `]](/docs/command-line-usage/exec) [[` shell `]](/docs/command-line-usage/shell)
+[[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell)
 
 Results returned from StackQL queries can be formatted in tabular (table) format, as well as json, jsonl (newline delimited JSON), csv, text or otel (OpenTelemetry log records) format.  JSON, JSONL and CSV formats can be used to interchange data with other programs; the `otel` format ships a result set to an OpenTelemetry backend as a timestamped snapshot.  The desired output format is configured using the `--output` StackQL flag.
 
@@ -219,4 +219,4 @@ Each statement is one batch: its row records and completion record are sent as a
 
 No `OTEL_EXPORTER_OTLP_*` environment variables are read; every exporter setting comes from `--otel.config`.  A malformed `--otel.config` value, or an `exporter` object without an `endpoint`, fails startup.
 
-This targets ClickStack's OTLP intake (`http://<host>:4318/v1/logs`, header `authorization: <ingestion API key>`), the OTLP receiver of a Datadog Agent or the Datadog OTLP intake (`dd-api-key: <key>`), and any OpenTelemetry Collector `otlp` receiver.  See [OTel Backend Recipes](/docs/getting-started/otel-recipes) for the inventory, drift and entitlement queries on the receiving side.
+This targets ClickStack's OTLP intake (`http://<host>:4318/v1/logs`, header `authorization: <ingestion API key>`), the OTLP receiver of a Datadog Agent or the Datadog OTLP intake (`dd-api-key: <key>`), and any OpenTelemetry Collector `otlp` receiver.  See [OTel Backend Recipes](/getting-started/otel-recipes) for the inventory, drift and entitlement queries on the receiving side.

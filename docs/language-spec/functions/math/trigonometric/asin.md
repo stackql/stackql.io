@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the arc sine (inverse sine) of a number, which is the angle in radians whose sine is the specified number.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

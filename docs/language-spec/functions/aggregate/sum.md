@@ -13,13 +13,13 @@ image: "/img/stackql-featured-image.png"
 Returns the sum of all non `NULL` values in a column or grouping of columns.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) [[` TOTAL `]](/docs/language-spec/functions/aggregate/total)
+[[` SELECT `]](/language-spec/select) [[` TOTAL `]](/language-spec/functions/aggregate/total)
 
 * * * 
 
 :::tip
 
-Use the [**TOTAL**](/docs/language-spec/functions/aggregate/total) function to sum floating point numbers or long values.
+Use the [**TOTAL**](/language-spec/functions/aggregate/total) function to sum floating point numbers or long values.
 
 :::
 
@@ -37,7 +37,7 @@ A column or expression.
 
 > If all the values in the *columnExpression* are `NULL` then `SUM` returns `NULL`.  
 
-> `SUM` will throw an "integer overflow" exception if an integer overflow occurs at any point during the computation.  The [`TOTAL`]](/docs/language-spec/functions/aggregate/total) function never throws an integer overflow.  
+> `SUM` will throw an "integer overflow" exception if an integer overflow occurs at any point during the computation.  The [`TOTAL`]](/language-spec/functions/aggregate/total) function never throws an integer overflow.  
 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.

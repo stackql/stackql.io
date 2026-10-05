@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Splits source string based upon a seperator and returns the given part (counting from one).  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

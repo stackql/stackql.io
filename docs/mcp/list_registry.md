@@ -11,12 +11,12 @@ description: MCP tool listing providers and versions available in the StackQL pr
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the providers (and their versions) available in the configured StackQL provider registry.  Distinct from [`list_providers`](/docs/mcp/list_providers), which only reports providers already pulled into the local cache.
+Returns the providers (and their versions) available in the configured StackQL provider registry.  Distinct from [`list_providers`](/mcp/list_providers), which only reports providers already pulled into the local cache.
 
-Pass the optional `provider` argument to list the published versions for a single provider.  Pair with [`pull_provider`](/docs/mcp/pull_provider) when the agent needs to install something that is not yet local.
+Pass the optional `provider` argument to list the published versions for a single provider.  Pair with [`pull_provider`](/mcp/pull_provider) when the agent needs to install something that is not yet local.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_providers` ]](/docs/mcp/list_providers) [[ `pull_provider` ]](/docs/mcp/pull_provider) [[ Registry command ]](/docs/command-line-usage/registry)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `pull_provider` ]](/mcp/pull_provider) [[ Registry command ]](/command-line-usage/registry)
 
 * * *
 

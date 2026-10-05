@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Calculates the hyperbolic sine of a specified value.
 
 See also:  
-[[`SELECT`]](/docs/language-spec/select)
+[[`SELECT`]](/language-spec/select)
 
 * * * 
 

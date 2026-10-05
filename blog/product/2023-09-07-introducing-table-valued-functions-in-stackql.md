@@ -33,9 +33,9 @@ produces..
 
 What you want to do is unnest each member in members for each role binding (and condition if applicable)
 
-Enter the table valued function [__`json_each`__](/docs/language-spec/functions/json/json_each).
+Enter the table valued function [__`json_each`__](/language-spec/functions/json/json_each).
 
-The [__`json_each`__](/docs/language-spec/functions/json/json_each) function accepts a field (optionally with a json path expression) and returns a table object with fields that can be projected in your result set, for example (querying the same underlying resource as above), this...
+The [__`json_each`__](/language-spec/functions/json/json_each) function accepts a field (optionally with a json path expression) and returns a table object with fields that can be projected in your result set, for example (querying the same underlying resource as above), this...
 
 ```sql
 select 

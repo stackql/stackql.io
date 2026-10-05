@@ -69,7 +69,7 @@ Put the notarised binary in app resources and the bundled path wins - the app is
 
 ## Related concepts
 
-- [Embedded MCP: Swift reference](/docs/mcp/embedded/swift) - install, API, and binary resolution
+- [Embedded MCP: Swift reference](/mcp/embedded/swift) - install, API, and binary resolution
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals
 - [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure) - the pattern this enables

@@ -15,7 +15,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Updates specified fields in a resource (synonymous with a `patch` operation).
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/docs/getting-started/resource-hierarchy) [[ `REPLACE` ]](/docs/language-spec/replace)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy) [[ `REPLACE` ]](/language-spec/replace)
 
 * * * 
 

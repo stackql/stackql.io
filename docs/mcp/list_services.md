@@ -11,10 +11,10 @@ description: MCP tool listing services under a StackQL provider
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the services exposed by a single provider -- the second level of the StackQL [resource hierarchy](/docs/getting-started/resource-hierarchy).  Call this after [`list_providers`](/docs/mcp/list_providers) to narrow the surface area before drilling into resources.
+Returns the services exposed by a single provider -- the second level of the StackQL [resource hierarchy](/getting-started/resource-hierarchy).  Call this after [`list_providers`](/mcp/list_providers) to narrow the surface area before drilling into resources.
 
 See also:
-[[ MCP overview ]](/docs/command-line-usage/mcp) [[ `list_providers` ]](/docs/mcp/list_providers) [[ `list_resources` ]](/docs/mcp/list_resources)
+[[ MCP overview ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_resources` ]](/mcp/list_resources)
 
 * * *
 

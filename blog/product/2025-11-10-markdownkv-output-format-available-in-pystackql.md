@@ -122,7 +122,7 @@ result = stackql.execute(query, output='markdownkv')
 - [ImprovingAgents.com research on LLM data formats](https://www.improvingagents.com/blog/best-input-data-format-for-llms)
 - [pystackql v3.8.2 changelog](https://github.com/stackql/pystackql/releases/tag/v3.8.2)
 - [pystackql documentation](https://github.com/stackql/pystackql)
-- [StackQL documentation](https://stackql.io/docs)
+- [StackQL documentation](/)
 
 The Markdown-KV output format is available in `pystackql` v3.8.2 and later.  
 

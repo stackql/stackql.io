@@ -71,7 +71,7 @@ At runtime `StackqlMCPBinary()` returns the embedded binary, so there is no firs
 
 ## Related concepts
 
-- [Embedded MCP: Go reference](/docs/mcp/embedded/go) - install, API, and modes
+- [Embedded MCP: Go reference](/mcp/embedded/go) - install, API, and modes
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals
 - [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure) - the pattern this enables

@@ -16,7 +16,7 @@ import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 Drops a `view` or `materialized view` within a session.  
 
 See also:  
- [[ `CREATE` ]](/docs/language-spec/createview) [[ `REFRESH` ]](/docs/language-spec/refreshview)
+ [[ `CREATE` ]](/language-spec/createview) [[ `REFRESH` ]](/language-spec/refreshview)
 
 * * * 
 

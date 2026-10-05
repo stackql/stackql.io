@@ -13,13 +13,13 @@ image: "/img/stackql-featured-image.png"
 Returns the number of characters in a string input expression prior to the first `NULL` character, or the number of bytes in a BLOB expression.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 
 :::info
 
-To get the length of a JSON array use the [**JSON_ARRAY_LENGTH**](/docs/language-spec/functions/json/json_array_length) function.
+To get the length of a JSON array use the [**JSON_ARRAY_LENGTH**](/language-spec/functions/json/json_array_length) function.
 
 :::
 

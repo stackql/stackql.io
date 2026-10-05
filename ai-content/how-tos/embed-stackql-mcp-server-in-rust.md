@@ -64,7 +64,7 @@ The vendored binary adds roughly 80 MB to the build.
 
 ## Related concepts
 
-- [Embedded MCP: Rust reference](/docs/mcp/embedded/rust) - install, API, and feature flags
+- [Embedded MCP: Rust reference](/mcp/embedded/rust) - install, API, and feature flags
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals
 - [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure) - the pattern this enables

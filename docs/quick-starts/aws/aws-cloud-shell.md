@@ -127,4 +127,4 @@ sh stackql-aws-cloud-shell.sh \
 --output csv --outfile output.csv
 ```
 
-More information on the `exec` command can be found [__here__](/docs/command-line-usage/exec)
+More information on the `exec` command can be found [__here__](/command-line-usage/exec)

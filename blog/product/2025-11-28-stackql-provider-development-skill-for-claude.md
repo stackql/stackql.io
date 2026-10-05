@@ -79,6 +79,6 @@ The objectKey uses JSONPath to extract the users array from the nested response.
 
 - [StackQL Provider Registry](https://github.com/stackql/stackql-provider-registry)
 - [any-sdk documentation](https://github.com/stackql/any-sdk)
-- [StackQL documentation](https://stackql.io/docs)
+- [StackQL documentation](/)
 
 ⭐ Star us on [__GitHub__](https://github.com/stackql/stackql)

@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the resultant string from the concatenation, or joining, of two or more string values.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select) 
+[[` SELECT `]](/language-spec/select) 
 
 * * * 
 

@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Returns the total number of records in a resource or a count of the non `NULL` instances of a column in a grouping.  
 
 See also:  
-[[` SELECT `]](/docs/language-spec/select)
+[[` SELECT `]](/language-spec/select)
 
 * * * 
 

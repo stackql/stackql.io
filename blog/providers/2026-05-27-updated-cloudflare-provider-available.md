@@ -10,7 +10,7 @@ keywords: [stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, a
 tags: [stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, ai, stream, magic transit]
 ---
 
-We've released the latest version of the [__StackQL Cloudflare provider__](https://stackql.io/docs/providers), including the full Cloudflare V4 API surface under SQL with __108 services__, __1259 resources__, and __2840 operations__.
+We've released the latest version of the [__StackQL Cloudflare provider__](/providers), including the full Cloudflare V4 API surface under SQL with __108 services__, __1259 resources__, and __2840 operations__.
 
 ## Service highlights
 

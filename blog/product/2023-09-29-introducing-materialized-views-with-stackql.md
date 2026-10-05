@@ -69,4 +69,4 @@ WHERE i.region = 'us-east-1';
 ```sql
 DROP MATERIALIZED VIEW vw_ec2_instance_types;
 ```
-More information on Materialized Views in StackQL can be found [here](/docs/language-spec/createview).
+More information on Materialized Views in StackQL can be found [here](/language-spec/createview).

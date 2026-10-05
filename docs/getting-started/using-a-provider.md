@@ -12,9 +12,9 @@ image: "/img/stackql-featured-image.png"
 ---
 
 See also:  
-[[` exec `]](/docs/command-line-usage/exec) [[` shell `]](/docs/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
+[[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-StackQL queries can be run against a number of different cloud providers, including Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean, and more. StackQL provider specifications are pulled from the [__StackQL Provider Registry__](/providers), this can be done using the [__`REGISTRY PULL`__](/docs/language-spec/registry) StackQL command, or by using the [__`stackql registry`__](/docs/command-line-usage/registry) command line utility.
+StackQL queries can be run against a number of different cloud providers, including Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean, and more. StackQL provider specifications are pulled from the [__StackQL Provider Registry__](/providers), this can be done using the [__`REGISTRY PULL`__](/language-spec/registry) StackQL command, or by using the [__`stackql registry`__](/command-line-usage/registry) command line utility.
 
 
 ## Installing a Provider
@@ -39,9 +39,9 @@ SHOW PROVIDERS;
 
 ## Authenticating to a Provider
 
-Authenticating to a cloud provider is often the first step in an StackQL routine. Meta commands such as [`SHOW`](/docs/language-spec/show) and [`DESCRIBE`](/docs/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/docs/language-spec/select), [`INSERT`](/docs/language-spec/insert) and [`EXEC`](/docs/language-spec/exec) commands generally require an authenticated session.  
+Authenticating to a cloud provider is often the first step in an StackQL routine. Meta commands such as [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/language-spec/select), [`INSERT`](/language-spec/insert) and [`EXEC`](/language-spec/exec) commands generally require an authenticated session.  
 
-Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have it's own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  The variables can also be sourced from a dotenv-style file at startup using the [`--env.file`](/docs/command-line-usage/global-flags) global flag.  
+Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have it's own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  The variables can also be sourced from a dotenv-style file at startup using the [`--env.file`](/command-line-usage/global-flags) global flag.  
 
 :::tip
 
