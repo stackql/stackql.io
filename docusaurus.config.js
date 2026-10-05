@@ -63,11 +63,13 @@ const blogSections = [
   {
     id: 'product',
     label: 'Product Announcements',
+    navLabel: '📣 Product Announcements',
     description: 'New StackQL releases, features and capabilities',
   },
   {
     id: 'providers',
     label: 'Provider Announcements',
+    navLabel: '📣 Provider Announcements',
     description: 'New and updated StackQL providers',
   },
   {
@@ -77,10 +79,19 @@ const blogSections = [
   },
 ];
 
-const blogSectionLinks = blogSections.map(({id, label}) => ({
-  label,
+// Header dropdown entries (navLabel carries the bullhorn on the two
+// announcement sections) and plain footer entries. The /blog landing page
+// itself is reachable by URL and from the sitemap but is deliberately not
+// linked from the header or footer.
+const blogSectionNavItems = blogSections.map(({id, label, navLabel}) => ({
+  label: navLabel || label,
   to: `/blog/${id}`,
   activeBasePath: `/blog/${id}`,
+}));
+
+const blogSectionFooterItems = blogSections.map(({id, label}) => ({
+  label,
+  to: `/blog/${id}`,
 }));
 
 const blogPlugins = blogSections.map(({id, label, description}) => [
@@ -116,11 +127,7 @@ const footerMoreItems = [
     label: 'stackql-deploy',
     to: '/stackql-deploy',
   },
-  {
-    label: 'Blog',
-    to: '/blog',
-  },
-  ...blogSectionLinks.map(({label, to}) => ({label, to})),
+  ...blogSectionFooterItems,
   {
     label: 'Quick Starts',
     to: '/quick-starts',
@@ -534,12 +541,7 @@ const config = {
           label: 'More',
           position: 'left',
           items: [
-            {
-              to: '/blog',
-              label: 'Blog',
-              activeBaseRegex: '^/blog/?$',
-            },
-            ...blogSectionLinks,
+            ...blogSectionNavItems,
             {
               to: '/quick-starts',
               label: 'Quick Starts',
