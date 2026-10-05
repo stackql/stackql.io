@@ -22,6 +22,11 @@
   object-fit: contain;    /* preserve aspect ratio for non-square icons */
 }
 
+/* Image icons from customProps.icon: keep their size when the title truncates */
+.cardIcon {
+  flex-shrink: 0;
+}
+
 /* Invert monochrome icons in dark mode so they remain visible */
 [data-theme='dark'] .cardIconInvert {
   filter: invert(1);

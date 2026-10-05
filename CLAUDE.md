@@ -171,6 +171,8 @@ The provider microsites' own nav comes from `../docusaurus-config`, which keeps 
 
 [src/theme/DocItem/Footer/index.js](src/theme/DocItem/Footer/index.js) - copy of the theme-classic doc footer with one addition: a doc with `hide_last_update: true` in its front matter drops the "Last updated" row while keeping tags and the edit link. Only the homepage uses it, so search results do not show a modification date on a landing page. `showLastUpdateTime` stays on globally. Keep this file in step with theme-classic when Docusaurus is upgraded.
 
+[src/theme/DocCard/index.js](src/theme/DocCard/index.js) - copy of the theme-classic doc card with one addition: a sidebar item's `customProps` can replace the default emoji with `iconComponent` (a React node), `icon` (an image path under `static/`, with `invertOnDark` to invert it in dark mode) or `emoji`. Link items and category items both honour it. The tiles on [docs/providers.md](docs/providers.md) and the four Quick Starts provider categories in [sidebars.js](sidebars.js) use `icon`; the Quick Starts entries look the icon up in the provider catalog by slug, so the cards follow [src/configs/providers.json](src/configs/providers.json).
+
 ### Meta descriptions
 
 Every doc has its own `description:`; the old boilerplate ("Query and Deploy Cloud Infrastructure and Resources using SQL") was shared by 89 pages and is gone. Google uses the description as the snippet under a sitelink and treats repetition as a reason to withhold sitelinks, so a new doc needs a one-sentence description written from its content, not a copied one. The homepage title is deliberately descriptive ("SQL for cloud infrastructure, SaaS APIs and AI agents") with `sidebar_label: Welcome to StackQL` keeping the sidebar entry short.

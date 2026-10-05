@@ -11,6 +11,23 @@
 
 // @ts-check
 
+// The Quick Starts category cards on /quick-starts carry the provider's icon.
+// The icon (and its dark-mode treatment) comes from the provider catalog,
+// src/configs/providers.json, keyed by the microsite slug, so the cards stay
+// in step with the /providers tiles and the navbar dropdown.
+const { PROVIDERS } = require('./src/lib/providers');
+
+function providerIcon(slug) {
+  const provider = PROVIDERS.find((p) => p.slug === slug);
+  if (!provider) {
+    throw new Error(`[sidebars] no provider with slug "${slug}" in src/configs/providers.json`);
+  }
+  return {
+    icon: provider.icon,
+    ...(provider.invertOnDark ? { invertOnDark: true } : {}),
+  };
+}
+
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docsSidebar: [
@@ -146,6 +163,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'AWS',
+          customProps: providerIcon('aws'),
           description: 'Practical examples and use cases specific to AWS',
           link: {
             type: 'generated-index',
@@ -158,6 +176,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Microsoft Azure',
+          customProps: providerIcon('azure'),
           description: 'Practical examples and use cases specific to Azure',
           link: {
             type: 'generated-index',
@@ -170,6 +189,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Google Cloud Platform',
+          customProps: providerIcon('google'),
           description: 'Practical examples and use cases specific to Google Cloud',
           link: {
             type: 'generated-index',
@@ -182,6 +202,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'GitHub',
+          customProps: providerIcon('github'),
           description: 'Practical examples and use cases specific to GitHub',
           link: {
             type: 'generated-index',
