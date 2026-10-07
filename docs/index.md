@@ -12,6 +12,10 @@ keywords:
 description: StackQL is an open-source engine that lets humans and AI agents query, provision and operate cloud and SaaS services with SQL, with no state file and no per-cloud SDK.
 image: "/img/stackql-featured-image.png"
 slug: /
+# SoftwareApplication node on the homepage, from the site-wide defaults in
+# themeConfig.structuredData.softwareApplication (name, category, OS,
+# license, download URL, free offer)
+softwareApplication: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -124,6 +128,14 @@ Using StackQL you can develop your way: declarative or procedural. With an easy 
 - Cloud compliance and control attestation (using SQL)
 - Configuration drift detection (using SQL)
 - and more, only limited by your imagination!
+
+## Who StackQL is for
+
+StackQL is for platform engineering and SRE teams that operate cloud estates, security and FinOps teams that need live inventory, compliance and cost answers, data engineers who want cloud and SaaS APIs as queryable sources, and developers building AI agents that must query and change cloud and SaaS resources safely. It runs wherever the work is: as a single binary on macOS, Linux and Windows, in Docker, in CI with GitHub Actions, in the AWS, Azure and Google Cloud shells, embedded in applications, as a PostgreSQL-compatible server for BI tools and notebooks, and as an MCP server for AI agents.
+
+## License and support
+
+StackQL is open source under the [MIT License](https://github.com/stackql/stackql/blob/main/LICENSE) and free to use, for any purpose. Community support is through [GitHub Discussions](https://github.com/orgs/stackql/discussions) and [Discord](https://discord.com/invite/xVXZ9d5NxN); bugs and feature requests go to [GitHub Issues](https://github.com/stackql/stackql/issues). For commercial support enquiries, [contact StackQL Studios](/contact-us).
 
 ## Get started
 

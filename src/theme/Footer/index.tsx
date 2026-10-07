@@ -127,6 +127,10 @@ function Footer(): React.ReactElement | null {
                 A new approach to querying and <br />
                 provisioning cloud services.
               </p>
+              {/* a contact route in page text on every page, not only in the JSON-LD */}
+              <p className="footer__subtitle" style={{ marginTop: '0', marginBottom: '0.5rem' }}>
+                Contact: <a href="mailto:info@stackql.io">info@stackql.io</a> or <Link to="/contact-us">contact us</Link>
+              </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', alignItems: 'center' }}>
                 <Link href="https://aaif.io/members/" className={styles.footerLogoLink} target="_blank" rel="noopener">
                   <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '90px' }} />

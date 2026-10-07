@@ -35,7 +35,7 @@ export const contactusPageData = {
             line1: 'Level 24, 570 Bourke Street',
             line2: 'Melbourne, Victoria 3000, Australia',
             phone: '+61 (0)3 8658 5880',
-            phoneLink: 'tel:+61 (0)3 8658 5880',
+            phoneLink: 'tel:+61386585880',
             email: 'info@stackql.io',
             emailLink: 'mailto:info@stackql.io',
             twitter: '@stackql',

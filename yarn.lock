@@ -2808,17 +2808,23 @@
     micromark-util-character "^1.1.0"
     micromark-util-symbol "^1.0.1"
 
-"@stackql/docusaurus-plugin-aeo@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-aeo/-/docusaurus-plugin-aeo-0.4.2.tgz#984cf20d210fdfeeba62cc9dc26c4cfce19b7973"
-  integrity sha512-P8jCUJNlzBH3WXbzpMroH484iaCOhmn3CU2ebmq/GIgx5oxCLLVaBWvGmgGSIxIlBozjypE3/5XkL+vDmywkrA==
+"@stackql/docusaurus-plugin-aeo@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-aeo/-/docusaurus-plugin-aeo-0.5.0.tgz#57eaa9473f6fec5b2eff1a90f48d6bd90e76e72f"
+  integrity sha512-diVZ8GAU8pXAFo3U4208iLBcCpni9GE/5tfrt9KD3H147Xo4kZPvmpH39lGGMdz0+/0mz2zW5h6uh2C/CQK+kA==
   dependencies:
-    gray-matter "^4.0.3"
+    "@slorber/remark-comment" "^1.0.0"
+    gray-matter "npm:@11ty/gray-matter@1.0.0"
+    remark-directive "^3.0.0"
+    remark-gfm "^4.0.0"
+    remark-mdx "^3.0.0"
+    remark-parse "^11.0.0"
+    unified "^11.0.3"
 
-"@stackql/docusaurus-plugin-structured-data@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.6.0.tgz#caffcf6bfede64679b4ee05132494605d9449c73"
-  integrity sha512-vRGJHITOP54bPNLas5iIBpMXDQidB2ILDBVOhdj/Et4O175ux+taj7ZEcvS5pGmLpaHhZUKGCYG8jIxkb/uu0A==
+"@stackql/docusaurus-plugin-structured-data@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@stackql/docusaurus-plugin-structured-data/-/docusaurus-plugin-structured-data-1.7.0.tgz#4d28724518fdc3ad0be35ec8e042589f3716b939"
+  integrity sha512-dpEJG1yd7ovCbMepMIWNx8AulCgl+oRXP5arla8XI9qRHeY5fUvZLH4uukRq5qdCYS5+uiNH63b/q5XKmc1VrA==
   dependencies:
     jsdom "^21.0.0"
 
@@ -6593,13 +6599,13 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.11,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-gray-matter@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.3.tgz#e893c064825de73ea1f5f7d88c7a9f7274288798"
-  integrity sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==
+"gray-matter@npm:@11ty/gray-matter@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@11ty/gray-matter/-/gray-matter-1.0.0.tgz#35ee04d76b870893c053f64f659c923a7a9db2d7"
+  integrity sha512-7mJJl+wf1AByoT0PknQiQfOPnVNT4fevGrUBVWO4HXsnYn1aQPyRyrELYrNUFleUBM++KzMKN6QaxHPk0t/6/g==
   dependencies:
-    js-yaml "^3.13.1"
-    kind-of "^6.0.2"
+    js-yaml "^4.1.0"
+    kind-of "^6.0.3"
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 

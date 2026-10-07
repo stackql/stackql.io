@@ -139,6 +139,18 @@
   to = "/"
   status = 301
 
+# stackql-deploy has its own site; the navbar and footer link there directly.
+[[redirects]]
+  from = "/stackql-deploy"
+  to = "https://stackql-deploy.io/"
+  status = 301
+
+# The old marketing /features page: its content lives on the homepage now.
+[[redirects]]
+  from = "/features"
+  to = "/"
+  status = 301
+
 # Provider microsite redirects: /providers/<slug> (one per catalog entry),
 # the bare /registry (to the catalog page) and /registry/<name> (entries plus
 # registryAliases) all 301 to https://<slug>-provider.stackql.io/. The block

@@ -21,7 +21,8 @@ export default function DocsHero({ lightSrc, darkSrc, alt = "", title, byline }:
       </div>
 
       <div>
-        <h2 className={styles.headline}>{title}</h2>
+        {/* the page's one H1: docs/index.md sets hide_title, so nothing else renders one */}
+        <h1 className={styles.headline}>{title}</h1>
         <br/>
         <div className={styles.byline}>{byline}</div>
       </div>

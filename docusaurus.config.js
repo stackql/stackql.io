@@ -106,8 +106,9 @@ const footerMoreItems = [
     to: '/providers',
   },
   {
-    label: 'stackql-deploy',
-    to: '/stackql-deploy',
+    // stackql-deploy has its own site. A straight link, in this tab; the
+    // former /stackql-deploy meta-refresh stub is a Netlify 301 now.
+    html: '<a class="footer__link-item" href="https://stackql-deploy.io/">stackql-deploy</a>',
   },
   ...blogSectionFooterItems,
   {
@@ -206,7 +207,21 @@ const config = {
     [
       '@stackql/docusaurus-plugin-aeo',
       {
+        // 0.5.0 defaults apply: plain-markdown companions, the
+        // <link rel="alternate" type="text/markdown"> on every page that
+        // has one, the "## Optional" section in llms.txt pointing at
+        // llms-full.txt, and the Ask AI button only where a companion
+        // exists.
         llmsTxt: {
+          // llms-full.txt is read as a bounded prefix by most agents, so
+          // keep it to the two reference corpora rather than every blog
+          // post (1.2 MB otherwise). The blog sections stay in llms.txt.
+          fullTxt: {
+            include: [
+              'docusaurus-plugin-content-docs@ai',
+              'docusaurus-plugin-content-docs@default',
+            ],
+          },
           instanceSections: {
             'docusaurus-plugin-content-docs@ai': { title: 'AI Reference', order: 1 },
             'docusaurus-plugin-content-docs@default': { title: 'Documentation', order: 2 },
@@ -261,10 +276,22 @@ const config = {
           },
         } : {}),
         sitemap: {
-          changefreq: 'weekly',
-          priority: 0.5,
-          // tag and pagination routes of every blog instance
-          ignorePatterns: ['/blog/*/tags/**', '/blog/*/page/**', '/search'],
+          // lastmod per URL from the source file's last git commit (or the
+          // page's lastUpdatedAt); changefreq and priority are ignored by
+          // crawlers and only add noise
+          lastmod: 'date',
+          changefreq: null,
+          priority: null,
+          // tag, pagination, archive and author routes of every blog
+          // instance: list pages, not content
+          ignorePatterns: [
+            '/blog/*/tags/**',
+            '/blog/*/page/**',
+            '/blog/*/archive',
+            '/blog/*/authors',
+            '/blog/*/authors/**',
+            '/search',
+          ],
           filename: 'sitemap.xml',
         },
         pages: {},
@@ -311,6 +338,26 @@ const config = {
         // category index pages (/getting-started, /command-line-usage,
         // /quick-starts/*) become linked crumbs rather than leaf-name prefixes
         breadcrumbLinkAncestors: true,
+        // The product the site documents (structured-data 1.7.0): one
+        // SoftwareSourceCode node in every page's graph, and the defaults
+        // for the SoftwareApplication node a page opts into with
+        // `softwareApplication: true` in its front matter (the homepage).
+        softwareSourceCode: {
+          name: 'StackQL',
+          codeRepository: 'https://github.com/stackql/stackql',
+          programmingLanguage: 'Go',
+          license: 'https://opensource.org/licenses/MIT',
+          runtimePlatform: 'macOS, Linux, Windows',
+        },
+        softwareApplication: {
+          name: 'StackQL',
+          applicationCategory: 'DeveloperApplication',
+          operatingSystem: 'macOS, Linux, Windows',
+          license: 'https://opensource.org/licenses/MIT',
+          downloadUrl: 'https://stackql.io/installing-stackql',
+          isAccessibleForFree: true,
+          priceCurrency: 'USD',
+        },
         featuredImageDimensions: {
           width: 1200,
           height: 627,
@@ -340,7 +387,11 @@ const config = {
           ],
           contactPoint: {
             '@type': 'ContactPoint',
+            contactType: 'customer support',
             email: 'info@stackql.io',
+            telephone: '+61 3 8658 5880',
+            availableLanguage: 'en',
+            url: 'https://stackql.io/contact-us',
           },
           // Google's Organization logo guidance wants an actual logo mark
           // (square, >= 112px, legible on white), not a cover image.
@@ -357,7 +408,7 @@ const config = {
           address: {
             '@type': 'PostalAddress',
             addressCountry: 'AU',
-            postalCode: '3001',
+            postalCode: '3000',
             streetAddress: 'Level 24, 570 Bourke Street, Melbourne, Victoria',
           },
           taxID: 'ABN 65 656 147 054',
@@ -518,8 +569,14 @@ const config = {
           ],
         },
         {
-          to: '/stackql-deploy',
-          label: 'stackql-deploy',
+          // stackql-deploy has its own site: a plain anchor there, in this
+          // tab (html instead of label suppresses the external-link icon,
+          // as for the Query Library). The former /stackql-deploy
+          // meta-refresh stub is a Netlify 301 now.
+          href: 'https://stackql-deploy.io/',
+          html: 'stackql-deploy',
+          target: '_self',
+          rel: 'noopener',
           position: 'left',
         },
         {
