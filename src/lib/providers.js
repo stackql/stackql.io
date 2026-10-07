@@ -8,6 +8,11 @@
 //   providerRoutes()     /providers/<slug>: one per entry, no exceptions
 //   registryRoutes()     /registry/<name>: entries plus registryAliases
 //
+// providerRoutes() and registryRoutes() describe the two families of short
+// URLs that 301 to the microsites. They are Netlify rules in netlify.toml,
+// written by scripts/generate-provider-redirects.js, not Docusaurus routes:
+// the tiles and the navbar link straight to `href`.
+//
 // Catalog entry fields (src/configs/providers.json):
 //   name             display name: tile label, default menu label
 //   href             microsite URL, must be https://<slug>-provider.stackql.io/
@@ -18,14 +23,15 @@
 //                    under /registry only (never under /providers), so a
 //                    provider family can expose one canonical inbound link
 //
-// To add a provider, add one entry to the JSON. Nothing else changes: the
-// tile, both redirect routes, the navbar menu entry
-// (src/theme/NavbarItem/ProvidersDropdownNavbarItem) and the catalog
-// published at /providers.json (plugins/provider-catalog), which the
-// provider microsites' shared chrome reads at build time, all follow.
+// To add a provider, add one entry to the JSON and run
+// scripts/generate-provider-redirects.js. Nothing else changes: the tile,
+// the navbar menu entry (src/theme/NavbarItem/ProvidersDropdownNavbarItem)
+// and the catalog published at /providers.json (plugins/provider-catalog),
+// which the provider microsites' shared chrome reads at build time, all
+// follow.
 //
-// CommonJS on purpose: docusaurus.config.js and plugins/provider-redirects
-// require() this at config time; docs/providers.md imports it via webpack.
+// CommonJS on purpose: docusaurus.config.js and the redirect generator
+// require() this; docs/providers.md imports it via webpack.
 
 const catalog = require('../configs/providers.json');
 

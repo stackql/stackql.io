@@ -34,8 +34,13 @@ const LEGACY_SLUGS = {
 };
 
 // Posts published after the split, keyed by current slug. They never had a
-// /blog/<slug> URL, so no redirect is generated for them.
-const POST_SPLIT_SLUGS = new Set([]);
+// /blog/<slug> URL, so no redirect is generated for them. Add every new
+// post here (the typesafe post was written on the split branch and was
+// never live at the old URL either).
+const POST_SPLIT_SLUGS = new Set([
+  'new-typesafe-provider-available',
+  'new-oci-provider-available',
+]);
 
 function postsIn(section) {
   const dir = path.join(BLOG_DIR, section);

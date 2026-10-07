@@ -35,18 +35,23 @@ function useCategoryItemsPlural() {
       ),
     );
 }
-function CardContainer({className, href, children}) {
+// `target` is only set for external links the card should keep in the same
+// tab (the provider tiles on docs/providers.md); Link opens external hrefs
+// in a new tab by default. `rel` drops `noreferrer` in that case so the
+// microsite still sees this site as the referrer.
+function CardContainer({className, href, target, children}) {
   return (
     <Link
       href={href}
+      {...(target && {target, rel: 'noopener'})}
       className={clsx('card padding--lg', styles.cardContainer, className)}>
       {children}
     </Link>
   );
 }
-function CardLayout({className, href, icon, title, description}) {
+function CardLayout({className, href, target, icon, title, description}) {
   return (
-    <CardContainer href={href} className={className}>
+    <CardContainer href={href} target={target} className={className}>
       <Heading
         as="h2"
         className={clsx('text--truncate', styles.cardTitle)}
@@ -72,6 +77,10 @@ function CardLayout({className, href, icon, title, description}) {
  *   icon           an image path under static/, e.g. '/img/providers/aws/favicon.ico'
  *   invertOnDark   with `icon`, invert the image in dark mode
  *   emoji          a string rendered in place of the default emoji
+ * Link items additionally support:
+ *   target         anchor target for an external href, e.g. '_self' to stay
+ *                  in the same tab (the provider tiles); unset means the
+ *                  Link default (new tab for external URLs)
  */
 function useItemIcon(item, defaultIcon) {
   const cp = item?.customProps || {};
@@ -114,6 +123,7 @@ function CardLink({item}) {
     <CardLayout
       className={item.className}
       href={item.href}
+      target={item.customProps?.target}
       icon={icon}
       title={item.label}
       description={item.description ?? doc?.description}

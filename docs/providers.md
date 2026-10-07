@@ -16,7 +16,9 @@ import React from 'react';
 
 {/* Provider catalog: src/configs/providers.json is the single source of truth for the
     tiles below, the navbar Providers dropdown and the /providers/<slug> and
-    /registry/<slug> redirects. Add providers there, not here. */}
+    /registry/<name> 301s in netlify.toml. Add providers there, not here.
+    Tiles and TOC entries link straight to each microsite (provider.href), in
+    the same tab, rather than through a redirect. */}
 import { PROVIDER_CATEGORIES } from '@site/src/lib/providers';
 
 {/* Custom TOC Component - Now generated from data */}
@@ -30,7 +32,7 @@ export const CustomTOC = () => {
             <ul>
               {category.providers.map(provider => (
                 <li key={provider.name}>
-                  <a href={provider.path}>{provider.name}</a>
+                  <a href={provider.href}>{provider.name}</a>
                 </li>
               ))}
             </ul>
@@ -63,8 +65,10 @@ export const ProviderContent = () => {
             items={category.providers.map(provider => ({
               type: 'link',
               label: provider.name,
-              href: provider.path,
-              customProps: { icon: provider.icon, invertOnDark: provider.invertOnDark }
+              href: provider.href,
+              // target: the microsites are part of the same product, so open
+              // them in this tab (DocCard defaults external links to _blank)
+              customProps: { icon: provider.icon, invertOnDark: provider.invertOnDark, target: '_self' }
             }))}
           />
         </div>

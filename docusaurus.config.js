@@ -17,10 +17,10 @@ const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 const nightOwlCodeTheme = themes.nightOwl;
 
-// Nav and footer link straight to the canonical pages. The top-level
-// meta-refresh stubs (/install, /stackqldocs, /downloads) stay as inbound
-// aliases but are not linked from the chrome, so crawlers see the real
-// site structure rather than a ring of redirects.
+// Nav and footer link straight to the canonical pages. The former top-level
+// aliases (/install, /stackqldocs, /downloads) are Netlify 301s in
+// netlify.toml, not pages, so crawlers see the real site structure rather
+// than a ring of redirects.
 const footerStackQLItems = [
   {
     label: 'Documentation',
@@ -113,6 +113,14 @@ const footerMoreItems = [
   {
     label: 'Quick Starts',
     to: '/quick-starts',
+  },
+  {
+    // The /ai/* surface is kept out of the header on purpose, but with no
+    // internal link at all Google treated its 44 sitemap URLs as orphans
+    // ("Discovered - currently not indexed"). One footer link to the
+    // landing page gives the whole tree a crawl path.
+    label: 'AI Reference',
+    to: '/ai',
   },
 ];
 
@@ -231,9 +239,9 @@ const config = {
         postsPerSection: 5,
       },
     ],
-    // /providers/<slug> and /registry/<slug> head redirects to the provider
-    // microsites, one pair per catalog entry
-    require.resolve('./plugins/provider-redirects'),
+    // /providers/<slug> and /registry/<name> are Netlify 301s to the provider
+    // microsites, generated from the catalog by
+    // scripts/generate-provider-redirects.js (netlify.toml), not routes.
     // /providers.json: the catalog published for the shared chrome in
     // ../docusaurus-config (provider microsites, query library).
     require.resolve('./plugins/provider-catalog'),
@@ -519,7 +527,7 @@ const config = {
           // provider catalog (src/configs/providers.json) by the custom
           // navbar item type in src/theme/NavbarItem. The catalog also
           // drives the tiles on /providers and the /providers/<slug> and
-          // /registry/<name> redirect routes (plugins/provider-redirects).
+          // /registry/<name> 301s (scripts/generate-provider-redirects.js).
           type: 'custom-providersDropdown',
           label: 'Providers',
           to: '/providers',

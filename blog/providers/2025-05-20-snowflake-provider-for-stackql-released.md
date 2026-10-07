@@ -23,7 +23,7 @@ The Snowflake provider for StackQL gives you the ability to:
 - Integrate Snowflake management with your existing cloud infrastructure
 - Build cross-provider workflows and automation
 
-Full documentation for the Snowflake provider is available [__here__](/providers/snowflake).
+Full documentation for the Snowflake provider is available [__here__](https://snowflake-provider.stackql.io/).
 
 ## Getting Started
 

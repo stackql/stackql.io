@@ -110,8 +110,10 @@
   to = "/:splat"
   status = 301
 
-# Former top-level meta-refresh stubs (src/pages/tutorials.js and
-# cookbooks.js), now real 301s.
+# Former top-level meta-refresh stubs (src/pages/tutorials.js, cookbooks.js,
+# install.js, downloads.js and stackqldocs.js), now real 301s. A meta-refresh
+# page is a 200 that Google reports as "Page with redirect" and lists in the
+# sitemap; an edge 301 is neither built nor listed.
 [[redirects]]
   from = "/tutorials"
   to = "/blog/tutorials"
@@ -122,12 +124,457 @@
   to = "/quick-starts"
   status = 301
 
-# /providers/<slug> is strictly one route per catalog entry
-# (src/configs/providers.json); family-level names live under /registry.
-# The retired /providers/databricks stub is steered to its registry alias.
+[[redirects]]
+  from = "/install"
+  to = "/installing-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/downloads"
+  to = "/installing-stackql"
+  status = 301
+
+[[redirects]]
+  from = "/stackqldocs"
+  to = "/"
+  status = 301
+
+# Provider microsite redirects: /providers/<slug> (one per catalog entry),
+# the bare /registry (to the catalog page) and /registry/<name> (entries plus
+# registryAliases) all 301 to https://<slug>-provider.stackql.io/. The block
+# is owned by scripts/generate-provider-redirects.js, which derives the rules
+# from src/configs/providers.json; rerun it after changing the catalog.
+# BEGIN generated provider redirects - do not edit by hand, run scripts/generate-provider-redirects.js
+
+[[redirects]]
+  from = "/providers/aws"
+  to = "https://aws-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/azure"
+  to = "https://azure-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/google"
+  to = "https://google-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/oci"
+  to = "https://oci-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/digitalocean"
+  to = "https://digitalocean-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/cloudflare"
+  to = "https://cloudflare-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/linode"
+  to = "https://linode-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/awscc"
+  to = "https://awscc-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/azure-stack"
+  to = "https://azure-stack-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/azure-isv"
+  to = "https://azure-isv-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/databricks-account"
+  to = "https://databricks-account-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/databricks-workspace"
+  to = "https://databricks-workspace-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/snowflake"
+  to = "https://snowflake-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/clickhouse"
+  to = "https://clickhouse-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/fivetran"
+  to = "https://fivetran-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/confluent"
+  to = "https://confluent-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/kafka"
+  to = "https://kafka-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/okta"
+  to = "https://okta-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/googleadmin"
+  to = "https://googleadmin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/entra-id"
+  to = "https://entra-id-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/openai"
+  to = "https://openai-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/openai-admin"
+  to = "https://openai-admin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/anthropic"
+  to = "https://anthropic-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/anthropic-admin"
+  to = "https://anthropic-admin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/gemeni"
+  to = "https://gemeni-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/typesafe"
+  to = "https://typesafe-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/github"
+  to = "https://github-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/k8s"
+  to = "https://k8s-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/gitlab"
+  to = "https://gitlab-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/firebase"
+  to = "https://firebase-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/railway"
+  to = "https://railway-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/vercel"
+  to = "https://vercel-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/netlify"
+  to = "https://netlify-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/deno"
+  to = "https://deno-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/datadog"
+  to = "https://datadog-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/sumologic"
+  to = "https://sumologic-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/pagerduty"
+  to = "https://pagerduty-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/googleworkspace"
+  to = "https://googleworkspace-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/godaddy"
+  to = "https://godaddy-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/azure-extras"
+  to = "https://azure-extras-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/homebrew"
+  to = "https://homebrew-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry"
+  to = "/providers"
+  status = 301
+
+[[redirects]]
+  from = "/registry/aws"
+  to = "https://aws-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/azure"
+  to = "https://azure-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/google"
+  to = "https://google-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/oci"
+  to = "https://oci-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/digitalocean"
+  to = "https://digitalocean-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/cloudflare"
+  to = "https://cloudflare-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/linode"
+  to = "https://linode-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/awscc"
+  to = "https://awscc-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/azure-stack"
+  to = "https://azure-stack-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/azure-isv"
+  to = "https://azure-isv-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/databricks-account"
+  to = "https://databricks-account-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/databricks"
+  to = "https://databricks-account-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/databricks-workspace"
+  to = "https://databricks-workspace-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/snowflake"
+  to = "https://snowflake-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/clickhouse"
+  to = "https://clickhouse-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/fivetran"
+  to = "https://fivetran-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/confluent"
+  to = "https://confluent-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/kafka"
+  to = "https://kafka-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/okta"
+  to = "https://okta-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/googleadmin"
+  to = "https://googleadmin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/entra-id"
+  to = "https://entra-id-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/openai"
+  to = "https://openai-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/openai-admin"
+  to = "https://openai-admin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/anthropic"
+  to = "https://anthropic-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/anthropic-admin"
+  to = "https://anthropic-admin-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/gemeni"
+  to = "https://gemeni-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/typesafe"
+  to = "https://typesafe-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/github"
+  to = "https://github-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/k8s"
+  to = "https://k8s-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/gitlab"
+  to = "https://gitlab-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/firebase"
+  to = "https://firebase-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/railway"
+  to = "https://railway-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/vercel"
+  to = "https://vercel-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/netlify"
+  to = "https://netlify-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/deno"
+  to = "https://deno-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/datadog"
+  to = "https://datadog-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/sumologic"
+  to = "https://sumologic-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/pagerduty"
+  to = "https://pagerduty-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/googleworkspace"
+  to = "https://googleworkspace-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/godaddy"
+  to = "https://godaddy-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/azure-extras"
+  to = "https://azure-extras-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/homebrew"
+  to = "https://homebrew-provider.stackql.io/"
+  status = 301
+
+# END generated provider redirects
+
+# /providers/<slug> is strictly one rule per catalog entry; family-level
+# names live under /registry. The retired /providers/databricks URL goes
+# straight to the microsite its registry alias points at, so it is a single
+# hop rather than a 301 chain.
 [[redirects]]
   from = "/providers/databricks"
-  to = "/registry/databricks"
+  to = "https://databricks-account-provider.stackql.io/"
   status = 301
 
 # Blog split (#288): the single blog at /blog/<slug> became three plugin
@@ -151,6 +598,11 @@
 
 [[redirects]]
   from = "/blog/archive"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/authors"
   to = "/blog"
   status = 301
 
@@ -855,16 +1307,6 @@
   status = 301
 
 [[redirects]]
-  from = "/blog/new-typesafe-provider-available"
-  to = "/blog/providers/new-typesafe-provider-available"
-  status = 301
-
-[[redirects]]
-  from = "/blog/new-typesafe-provider-available.md"
-  to = "/blog/providers/new-typesafe-provider-available.md"
-  status = 301
-
-[[redirects]]
   from = "/blog/exploring-gcp-services-and-resources-using-stackql"
   to = "/blog/tutorials/exploring-gcp-services-and-resources-using-stackql"
   status = 301
@@ -1222,6 +1664,16 @@
 [[redirects]]
   from = "/blog/declarative-cloud-stacks-stackql-deploy.md"
   to = "/blog/tutorials/declarative-cloud-stacks-stackql-deploy.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/multi-cloud-stackql-deploy"
+  to = "/blog/tutorials/multi-cloud-stackql-deploy"
+  status = 301
+
+[[redirects]]
+  from = "/blog/multi-cloud-stackql-deploy.md"
+  to = "/blog/tutorials/multi-cloud-stackql-deploy.md"
   status = 301
 
 # END generated blog redirects
