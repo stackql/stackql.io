@@ -2,9 +2,10 @@
 // menu, built from the provider catalog (src/configs/providers.json, read
 // by src/lib/providers.js). Level one is the catalog's categories, in
 // catalog order, each linking to its section on /providers. Level two is
-// the category's providers, each linking to its /providers/<slug> route.
-// Adding a provider or a category to the JSON is all it takes to extend
-// the menu.
+// the category's providers, each linking straight to its microsite
+// (https://<slug>-provider.stackql.io/) in the same tab, with no redirect
+// hop. Adding a provider or a category to the JSON is all it takes to
+// extend the menu.
 //
 // Registered in ../ComponentTypes.js; used once, by the "Providers" entry
 // in docusaurus.config.js, which passes `label`, `to` and `position`.
@@ -25,6 +26,21 @@ import styles from './styles.module.css';
 
 const categoryHref = (category) => `/providers#${category.id}`;
 
+const escapeHtml = (text) =>
+  text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// A provider row is an external link to the microsite. `html` rather than
+// `label` keeps NavbarNavLink from adding the external-link icon (the
+// microsites are part of the same product); `target` keeps it in this tab
+// (Link opens external hrefs in a new one by default) and `rel` drops
+// `noreferrer` so the microsite still sees this site as the referrer.
+const providerLinkProps = (provider) => ({
+  href: provider.href,
+  html: escapeHtml(provider.name),
+  target: '_self',
+  rel: 'noopener',
+});
+
 // ---------------------------------------------------------------- desktop
 
 function DesktopCategory({category}) {
@@ -42,10 +58,8 @@ function DesktopCategory({category}) {
           <li key={provider.slug}>
             <NavbarNavLink
               className="dropdown__link"
-              activeClassName="dropdown__link--active"
               isDropdownLink
-              to={provider.path}
-              label={provider.name}
+              {...providerLinkProps(provider)}
             />
           </li>
         ))}
@@ -176,29 +190,18 @@ function MobileSublist({label, to, active, children}) {
 
 function ProvidersDropdownMobile({position, className, onClick, ...props}) {
   const localPathname = useLocalPathname();
+  // Only the catalog page itself can be the current page: the provider
+  // rows leave the site, so no category is ever "active".
   const isActive = isSamePath(props.to, localPathname);
-  const categoryActive = (category) =>
-    category.providers.some((provider) =>
-      isSamePath(provider.path, localPathname),
-    );
-  const containsActive = PROVIDER_CATEGORIES.some(categoryActive);
   return (
-    <MobileSublist
-      label={props.label}
-      to={props.to}
-      active={isActive || containsActive}>
+    <MobileSublist label={props.label} to={props.to} active={isActive}>
       {PROVIDER_CATEGORIES.map((category) => (
-        <MobileSublist
-          key={category.id}
-          label={category.name}
-          active={categoryActive(category)}>
+        <MobileSublist key={category.id} label={category.name} active={false}>
           {category.providers.map((provider) => (
             <li key={provider.slug} className="menu__list-item">
               <NavbarNavLink
                 className="menu__link"
-                activeClassName="menu__link--active"
-                to={provider.path}
-                label={provider.name}
+                {...providerLinkProps(provider)}
                 onClick={onClick}
               />
             </li>

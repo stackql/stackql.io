@@ -28,12 +28,12 @@ const Hero = props => {
                   </div>
                   <div className={clsx('row')}>
                     <div className={clsx(styles.allPlatformsDiv)}>
-                      <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Download for other platforms{' >'}</Link>
+                      <Link className={clsx(styles.allPlatformsLink)} to="/installing-stackql">Download for other platforms{' >'}</Link>
                     </div>
                   </div>
                   <div className={clsx('row')}>
                     <div className={clsx(styles.allPlatformsDiv2)}>
-                      <Link className={clsx(styles.allPlatformsLink)} to="/downloads">Install using brew or chocolatey{' >'}</Link>
+                      <Link className={clsx(styles.allPlatformsLink)} to="/installing-stackql">Install using brew or chocolatey{' >'}</Link>
                     </div>
                   </div>                  
                 </MediaQuery>

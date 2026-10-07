@@ -25,7 +25,9 @@ faq:
   - question: Does StackQL work with PostgreSQL clients and BI tools?
     answer: Yes. stackql srv runs a PostgreSQL wire protocol server, so psql, DBeaver, Tableau, Power BI, Superset, pandas, and any Postgres driver can connect and run StackQL queries.
   - question: How is StackQL licensed and distributed?
-    answer: StackQL is open source (the engine is on GitHub at github.com/stackql/stackql) and ships as a single binary for macOS, Linux, and Windows, with packages, a Homebrew formula, Docker images, GitHub Actions, and a Python wrapper (pystackql).
+    answer: StackQL is open source under the MIT License (the engine is on GitHub at github.com/stackql/stackql) and free to use for any purpose. It ships as a single binary for macOS, Linux, and Windows, with packages, a Homebrew formula, Docker images, GitHub Actions, and a Python wrapper (pystackql). Community support is through GitHub Discussions and Discord, with bugs and feature requests on GitHub Issues; commercial support enquiries go to StackQL Studios at info@stackql.io.
+  - question: How do I get support for StackQL?
+    answer: Community support is free through GitHub Discussions (github.com/orgs/stackql/discussions) and the StackQL Discord. Bugs and feature requests are tracked on GitHub Issues for the stackql/stackql repository. For commercial support enquiries, contact StackQL Studios at info@stackql.io or via stackql.io/contact-us.
   - question: Does StackQL cache results?
     answer: Not between invocations by default. Results are computed per query. Multi-region and multi-resource queries fan out as parallel API calls within the query. If you need history, you materialize results to your own store on your own schedule.
 ---
@@ -53,6 +55,10 @@ WHERE org = 'stackql';
 ## Deployment
 
 StackQL runs as an interactive shell (`stackql shell`), a batch executor (`stackql exec`), a PostgreSQL wire protocol server (`stackql srv`), and an MCP server for AI agents (`stackql mcp`). Authentication is per provider via environment variables; metadata operations work unauthenticated. See the how-to series starting at [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws).
+
+## License and support
+
+StackQL is open source under the [MIT License](https://github.com/stackql/stackql/blob/main/LICENSE) and free to use for any purpose. Community support is through [GitHub Discussions](https://github.com/orgs/stackql/discussions) and [Discord](https://discord.com/invite/xVXZ9d5NxN); bugs and feature requests go to [GitHub Issues](https://github.com/stackql/stackql/issues). For commercial support enquiries, [contact StackQL Studios](/contact-us).
 
 ## Related concepts
 

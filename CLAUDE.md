@@ -6,11 +6,22 @@ Project guide for Claude Code working in this repository. Tells you what this si
 
 stackql.io is the marketing and documentation site for StackQL, built on Docusaurus 3.10. Three audiences:
 
-- **Humans** - default site nav. This is a docs-only site: the docs tree is the site root (`/installing-stackql`, `/providers`, `/getting-started/*`, `/command-line-usage/*`, `/mcp/*`, `/language-spec/*`, `/developers/*`, `/quick-starts/*`) and [docs/index.md](docs/index.md) is the homepage. Blog at `/blog/<section>/*` (three sections, see "The blog" below). A few top-level React pages remain (`/features`, `/privacy`, redirect stubs).
-- **AI agents and answer engines** - a parallel content surface at `/ai/*` (canonical definitions, comparisons, how-tos, FAQs, troubleshooting, etc.) reachable by deep link or via `llms.txt`, but **not** linked from the human nav.
-- **LLM crawlers** - `llms.txt` and `llms-full.txt` at site root; raw markdown twin (`/foo.md`) for every doc and blog page.
+- **Humans** - default site nav. This is a docs-only site: the docs tree is the site root (`/installing-stackql`, `/providers`, `/getting-started/*`, `/command-line-usage/*`, `/mcp/*`, `/language-spec/*`, `/developers/*`, `/quick-starts/*`) and [docs/index.md](docs/index.md) is the homepage. Blog at `/blog/<section>/*` (three sections, see "The blog" below). Two top-level React pages remain: `/privacy` and `/contact-us` (a real page: community channels, email, phone and address). There are no meta-refresh stub pages: every alias URL is a Netlify 301 (see "Redirects are Netlify 301s, never pages" below).
+- **AI agents and answer engines** - a parallel content surface at `/ai/*` (canonical definitions, comparisons, how-tos, FAQs, troubleshooting, etc.) reachable by deep link, via `llms.txt` and from one "AI Reference" link in the footer, but **not** from the header nav. The footer link exists so the tree has a crawl path: with no internal link at all Google left its 44 sitemap URLs as "Discovered - currently not indexed".
+- **LLM crawlers** - `llms.txt` and `llms-full.txt` at site root; a plain-markdown twin (`/foo.md`) for every doc and blog page, advertised from each page by `<link rel="alternate" type="text/markdown">`.
 
-The two surfaces serve the same URLs to all visitors (no UA-based cloaking). The `/ai/*` pages just don't appear in the human-facing nav.
+The two surfaces serve the same URLs to all visitors (no UA-based cloaking). The `/ai/*` pages just don't appear in the header nav.
+
+## Redirects are Netlify 301s, never pages
+
+Every alias or retired URL on this site is a `[[redirects]]` rule in [netlify.toml](netlify.toml), not a built page. Do not add a `src/pages` stub or a plugin route that renders `<meta http-equiv="refresh">`: a meta-refresh page is a 200 that the sitemap plugin lists and that Google reports as "Page with redirect" (Search Console flagged every one of them in October 2026), and it carries conflicting signals (`robots: index,follow`, a canonical, and a refresh). An edge 301 is neither built nor listed. The former stubs (`/install`, `/downloads`, `/stackqldocs`, `/tutorials`, `/cookbooks`, `/stackql-deploy` -> stackql-deploy.io, `/features` -> `/`, `/providers/<slug>`, `/registry/<name>`) are all rules now; the navbar and footer link to stackql-deploy.io directly. `/contact-us` was a stub to GitHub Discussions and is a real page now ([src/pages/contact-us.js](src/pages/contact-us.js), data in [src/data/contact-us/index.js](src/data/contact-us/index.js)): agents landing on it read contact details as text rather than an empty page.
+
+Two blocks of rules are generated and must not be edited by hand:
+
+- `BEGIN/END generated provider redirects` - [scripts/generate-provider-redirects.js](scripts/generate-provider-redirects.js), from the provider catalog. Rerun after changing [src/configs/providers.json](src/configs/providers.json).
+- `BEGIN/END generated blog redirects` - [scripts/generate-blog-redirects.js](scripts/generate-blog-redirects.js), from blog front matter slugs. See "The blog".
+
+Netlify serves a matching static file in preference to a rule unless the rule has `force = true`, so a rule only works for a path that is not also built. If something must link to an alias path from inside the site (it should not need to), use `pathname://` so `onBrokenLinks: 'throw'` does not reject it.
 
 ## Tech stack snapshot
 
@@ -28,7 +39,7 @@ The classic preset's docs instance has `routeBasePath: '/'` (Docusaurus docs-onl
 - Inbound `/docs/*` links are Netlify 301s to the same path without the prefix (`/docs` -> `/`, `/docs.md` -> `/index.md`, `/docs/*` -> `/:splat`). Those rules sit below the `/docs/query-library/*` proxy and the specific legacy `/docs/...` rules in [netlify.toml](netlify.toml). Netlify applies the first matching rule, so keep that order.
 - The query library stays proxied at `/docs/query-library/*`: it is a separate site whose `baseUrl` is a cross-repo contract (see "The query library" below). It is the only thing left under `/docs`.
 - Internal links use root paths (`/installing-stackql`, never `/docs/installing-stackql`). `onBrokenLinks: 'throw'` catches relative mistakes; absolute `stackql.io/docs/...` links need a grep.
-- Root-level routes that are not docs: `/blog/*`, `/ai/*`, `/features`, `/privacy`, `/search`, the provider routes (`/providers/<slug>`, `/registry/*`) and the stubs `/install`, `/stackqldocs`, `/downloads`, `/stackql-deploy`, `/contact-us`. A new doc whose slug collides with one of these would clash with it, so check before adding root-level docs.
+- Root-level routes that are not docs: `/blog/*`, `/ai/*`, `/privacy`, `/contact-us`, `/search`, and the Netlify 301 aliases (`/install`, `/downloads`, `/stackqldocs`, `/stackql-deploy`, `/features`, `/tutorials`, `/cookbooks`, `/providers/<slug>`, `/registry/*`). A new doc whose slug collides with one of these would clash with it (a built file shadows a Netlify rule), so check before adding root-level docs.
 - Getting Started and Command Line Usage are sidebar categories with generated index pages (`/getting-started`, `/command-line-usage`), so every major section has a landing page Google can surface as a sitelink: installation, providers, getting started, command line usage, MCP.
 
 ## AEO architecture
@@ -46,16 +57,19 @@ Emits JSON-LD `<script type="application/ld+json">` blocks into the `<head>` of 
 - `WebPage` + `BreadcrumbList` + `WebSite` + `Organization` on every page
 - `Article` + `ImageObject` + `Person` on blog posts (`/blog/<section>/<slug>`). Breadcrumbs follow the blog instance base path (Home > Blog > Section > Post) and `Article.articleSection` is `['Blog', '<Section>']` - needs plugin >= 1.6.0
 - `TechArticle` on every doc page of the default and `ai` docs instances (`techArticleDocsInstances: ['default', 'ai']`, plugin >= 1.6.0), except the instance roots `/` and `/ai`, which stay `WebPage`. `techArticleRoutePrefixes: ['/ai/']` is kept so older plugin versions still mark `/ai/*`.
-- `FAQPage`, `HowTo`, `SoftwareApplication` opt-in via frontmatter (`faq:`, `howTo:`, `softwareApplication:`)
+- `FAQPage`, `HowTo`, `SoftwareApplication` opt-in via frontmatter (`faq:`, `howTo:`, `softwareApplication:`). The homepage sets `softwareApplication: true`, which emits a `SoftwareApplication` from the site defaults in `themeConfig.structuredData.softwareApplication` (name, `DeveloperApplication`, OS, MIT license URL, download URL, free `Offer`).
+- `SoftwareSourceCode` (plugin >= 1.7.0) in every page's graph from `themeConfig.structuredData.softwareSourceCode` (repository, Go, MIT, platforms), referenced from `WebSite.about`.
+- Dates (plugin >= 1.7.0): `dateModified` is the doc's git last-update time (`showLastUpdateTime: true` on the docs plugin) or the blog post's date; the build time only for pages with no date of their own (generated category indexes, React pages). `datePublished` is the post date for blog posts and `webpage.datePublished` (2021-07-01) for the rest.
 - `SpeakableSpecification` on every WebPage with default selectors
 - Connected `@graph` via `mainEntity` linking (TechArticle.mainEntity -> FAQPage when both present)
 
 Config lives at `themeConfig.structuredData` in [docusaurus.config.js](docusaurus.config.js). Key settings:
 
 - `techArticleDocsInstances` and `techArticleRoutePrefixes` - which pages get TechArticle (see above)
-- `excludedRoutes: []` - nothing is excluded; `/providers` used to be a custom React grid and is a doc page today
+- `excludedRoutes: []` - nothing is excluded (exact routes or globs are accepted); `/providers` used to be a custom React grid and is a doc page today
 - `authors:` - blog author identity graph
-- `organization:` - StackQL Studios identity, contact, address, and a square 512px logo (Google wants a logo mark, not a cover image)
+- `organization:` - StackQL Studios identity, contact point (`contactType: 'customer support'`, email, telephone, `url: /contact-us`; the plugin warns at build time if `contactType` is missing), address (postcode 3000, the same as [src/data/contact-us/index.js](src/data/contact-us/index.js)), and a square 512px logo (Google wants a logo mark, not a cover image)
+- `softwareSourceCode:` and `softwareApplication:` - the product blocks described above. The plugin takes no plugin options; everything is under `themeConfig.structuredData`, and an option in the `plugins` array fails the build.
 - `breadcrumbLabelMap:` - friendly names for breadcrumb segments. Keys are single segments (`'quick-starts'`) or full paths (`'/blog/providers'`), and a full path wins. Ancestor segments only become linked crumbs when a page exists at that path; otherwise they fold into the leaf name.
 
 If a page has no `<meta name="description">`, the plugin falls back to `siteConfig.tagline`. The homepage explicitly sets a `description` meta in [docusaurus.config.js](docusaurus.config.js) `themeConfig.metadata` to avoid the fallback on the most-cited page.
@@ -68,16 +82,17 @@ Lifecycle: `postBuild` + `allContentLoaded` + theme component injection
 
 Four features:
 
-1. **`.md` companion files** - for every doc and blog page, emits a sibling `.md` at the same path (e.g. `/docs/foo` -> `/docs/foo.md`). Mirrors the raw MDX source. Only emits when there is a source markdown file (React pages and auto-generated index routes are correctly skipped - they have no source to mirror).
-2. **`llms.txt` + `llms-full.txt`** - at site root. `llms.txt` is the corpus index (Markdown bullet list with title and description per page). `llms-full.txt` is the concatenated body of every `.md` companion, separated by `\n\n---\n\n`.
-3. **"Ask AI" dropdown** - swizzled into the breadcrumb row of every doc page and the header of every blog post. MUI outlined Button + Menu. Three providers: Claude, ChatGPT, Perplexity (Gemini was removed - it does not accept URL-encoded prompts). Brand icons are hand-rolled inline SVGs in `src/theme/AskAiButton/brand-icons/` to avoid React-version conflicts with icon libraries.
+1. **`.md` companion files** - for every doc and blog page, emits a sibling `.md` at the same path (e.g. `/foo` -> `/foo.md`, `/` -> `/index.md`). Since plugin 0.5.0 the file is plain markdown rendered from the MDX source (imports, exports, expressions and presentational JSX removed; `<Tabs>` become bold labels; download-link components become links; everything else unwrapped and dedented), with `# title`, `> description` and `Source: <page URL>` at the top. Only emits when there is a source markdown file (React pages and auto-generated index routes are correctly skipped - they have no source to mirror). Every page that has a companion carries `<link rel="alternate" type="text/markdown" href="...">` in its head, inserted in `postBuild`. Note that [docs/providers.md](docs/providers.md) is entirely JSX rendered from the catalog, so its companion is title, description and Source only.
+2. **`llms.txt` + `llms-full.txt`** - at site root. `llms.txt` is the corpus index (Markdown bullet list with title and description per page, absolute links) and ends with an `## Optional` section linking `llms-full.txt`. `llms-full.txt` is the concatenated companions of the AI Reference and Documentation instances only (`llmsTxt.fullTxt.include`), separated by `\n\n---\n\n`; agents read a bounded prefix of it, so the blog posts stay in `llms.txt` but out of the full text.
+3. **"Ask AI" dropdown** - swizzled into the breadcrumb row of every doc page and the header of every blog post, and rendered only on pages that have a companion (generated category index pages have none). The prompt links the companion by the same rule the file is written (`{companionUrl}`). MUI outlined Button + Menu. Three providers: Claude, ChatGPT, Perplexity (Gemini was removed - it does not accept URL-encoded prompts). Brand icons are hand-rolled inline SVGs in `src/theme/AskAiButton/brand-icons/` to avoid React-version conflicts with icon libraries.
 4. **`/ai/*` helpers** - exported from `@stackql/docusaurus-plugin-aeo/helpers`. Used to integrate the `/ai/*` content surface with the structured-data plugin.
 
 Config lives at the plugin options object in the plugins array in [docusaurus.config.js](docusaurus.config.js):
 
 - `llmsTxt.instanceSections` - section titles + ordering for the `llms.txt` index (AI Reference -> Documentation -> one "Blog - <Section>" section per blog instance, generated from `blogSections`)
 - `askAi.providerOrder` - dropdown ordering (defaults to claude, chatgpt, perplexity)
-- `askAi.promptTemplate` - the prefilled prompt sent to the AI surface. Default is self-contained ("Read {pageUrl}.md and help me understand it. Summarize the key points, then ask me one clarifying question to dig deeper."). The user can edit it before submitting.
+- `askAi.promptTemplate` - the prefilled prompt sent to the AI surface. Default is self-contained ("Read {companionUrl} and help me understand it. Summarize the key points, then ask me one clarifying question to dig deeper."). The user can edit it before submitting.
+- `llmsTxt.fullTxt.include` - the content instances concatenated into `llms-full.txt` (AI Reference and Documentation).
 
 ### The `/ai/*` content surface
 
@@ -117,10 +132,11 @@ The preset blog is disabled (`blog: false`). Three `@docusaurus/plugin-content-b
 - Each instance has its own list page, sidebar (`blogSidebarCount: 'ALL'`), tags, pagination and feeds (`/blog/<id>/rss.xml`, `atom.xml`, `feed.json`). [blog/authors.yml](blog/authors.yml) is shared by all three via `authorsMapPath: '../authors.yml'`.
 - New posts go straight into the section directory. The directory is the type - there is no marker tag. Slugs are set in front matter as before and must be unique across all three sections (the redirect generator checks this).
 - `/blog` is a landing page built by the local plugin [plugins/blog-landing/index.js](plugins/blog-landing/index.js). It reads the three instances in `allContentLoaded` (the only hook that sees other plugins' content) and adds a route rendering [src/components/BlogLanding/index.jsx](src/components/BlogLanding/index.jsx) with the newest five posts per section.
-- Every pre-split post URL (`/blog/<slug>` and its `.md` companion) has a 301 to its new home in [netlify.toml](netlify.toml). The per-post block between the `BEGIN/END generated blog redirects` markers is owned by [scripts/generate-blog-redirects.js](scripts/generate-blog-redirects.js), which derives rules from front matter slugs. Rerun it only if a pre-split post's slug or section changes; posts written after the split never had an old URL and need no rule. Old `/blog/tags/*`, `/blog/page/*` and `/blog/archive` go to `/blog`; the old feed URLs go to the product announcements feeds.
+- Every pre-split post URL (`/blog/<slug>` and its `.md` companion) has a 301 to its new home in [netlify.toml](netlify.toml). The per-post block between the `BEGIN/END generated blog redirects` markers is owned by [scripts/generate-blog-redirects.js](scripts/generate-blog-redirects.js), which derives rules from front matter slugs. Rerun it only if a pre-split post's slug or section changes; posts written after the split never had an old URL and need no rule, so add each new post's slug to `POST_SPLIT_SLUGS` in the script. Old `/blog/tags/*`, `/blog/page/*`, `/blog/archive` and `/blog/authors` go to `/blog`; the old feed URLs go to the product announcements feeds.
+- A post file must live inside a section directory. A file at `blog/` root belongs to no instance, is silently not built, and gets no redirect (one tutorial sat there for two weeks after the split and its old URL 404'd).
 - The navbar "More" dropdown and the footer list the three sections plus Quick Starts; both are derived from `blogSections`. The two announcement entries carry a bullhorn (`navLabel`) in the header only. The `/blog` landing page is deliberately not linked from the header or footer; it is reachable by URL and from the sitemap.
 - "Tutorials" in the nav means the blog section. The docs walkthroughs formerly at `/docs/tutorials/*` are "Quick Starts" at `/quick-starts/*` (directory `docs/quick-starts/`, sidebar category in [sidebars.js](sidebars.js)). Old URLs are 301'd in netlify.toml, including `/tutorials` -> `/blog/tutorials` and `/cookbooks` -> `/quick-starts` (both were meta-refresh React stubs, now deleted).
-- Sitemap `ignorePatterns` cover `/blog/*/tags/**` and `/blog/*/page/**`.
+- Sitemap: `lastmod: 'date'` per URL from the source file's last git commit (`changefreq` and `priority` are off; crawlers ignore them). `ignorePatterns` cover `/blog/*/tags/**`, `/blog/*/page/**`, `/blog/*/archive` and `/blog/*/authors` (list pages, not content). Those same pages (about 300 tag pages and 20 paginated list pages across the three instances) are also marked `noindex, follow` by the wrappers in [src/theme/BlogTagsPostsPage](src/theme/BlogTagsPostsPage/index.js), [src/theme/BlogTagsListPage](src/theme/BlogTagsListPage/index.js) and [src/theme/BlogListPage](src/theme/BlogListPage/index.js) (page 2 onwards only; page 1 is the section landing), via [src/theme/NoIndex](src/theme/NoIndex/index.js). They are linked from every post, so Google crawls them regardless of the sitemap; the noindex stops them piling up under "Crawled - currently not indexed".
 - The `breadcrumbLabelMap` entries for the section ids are generated from `blogSections`, so JSON-LD breadcrumbs read "Product Announcements" rather than "product".
 - The shared nav used by the provider microsites lives in `../docusaurus-config` (vendored by those sites at build time). Its Blog/Tutorials links must be kept in step with the main site nav.
 
@@ -135,7 +151,7 @@ The preset blog is disabled (`blog: false`). Three `@docusaurus/plugin-content-b
 
 Without these rules Netlify serves `.md` as `application/octet-stream` (browsers download instead of display) and crawlers may skip it.
 
-Redirect rules live in the same file and their order matters (first match wins): the query library proxy, then specific legacy `/docs/...` rules, then the `/docs/*` -> `/:splat` catch-all, then the remaining hand-written rules, then the generated per-post blog block.
+Redirect rules live in the same file and their order matters (first match wins): the query library proxy, then specific legacy `/docs/...` rules, then the `/docs/*` -> `/:splat` catch-all, then the hand-written top-level aliases (`/tutorials`, `/cookbooks`, `/install`, `/downloads`, `/stackqldocs`), then the generated provider block, then the remaining hand-written rules, then the generated per-post blog block. See "Redirects are Netlify 301s, never pages" above.
 
 ### The query library (proxied, not in this repo)
 
@@ -155,15 +171,15 @@ file there would shadow the proxied site.
 
 [src/configs/providers.json](src/configs/providers.json) is the single source of truth for everything provider-related on this site: config, not code. It is an array of categories, each with `providers` of `{ name, href, icon, invertOnDark?, registryAliases? }`. The code that reads it is [src/lib/providers.js](src/lib/providers.js), which validates it, derives each provider's `slug` and `path` and exposes `PROVIDER_CATEGORIES`, `PROVIDERS`, `providerRoutes()` and `registryRoutes()`. Nothing else in the repo holds provider lists; the former `src/configs/providers-data.json`, `providers.ts` and the unused `ProviderCards` component were removed. The catalog drives:
 
-- the tiles and table of contents on [docs/providers.md](docs/providers.md), which imports from `src/lib/providers`. Tiles link to `/providers/<slug>`, not straight to the microsite.
-- the navbar "Providers" menu: a two-level dropdown (category -> provider, every entry, catalog order) rendered by the custom navbar item type `custom-providersDropdown` in [src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js](src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js) and configured as the "Providers" entry in [docusaurus.config.js](docusaurus.config.js). Category rows link to `/providers#<category id>`, provider rows to `/providers/<slug>`. Desktop is a hover/focus flyout per category; the mobile sidebar gets nested collapsibles.
+- the tiles and table of contents on [docs/providers.md](docs/providers.md), which imports from `src/lib/providers`. Tiles and TOC entries link straight to the microsite (`href`), in the same tab (`customProps.target: '_self'`, honoured by the swizzled [src/theme/DocCard](src/theme/DocCard/index.js)), with no redirect hop.
+- the navbar "Providers" menu: a two-level dropdown (category -> provider, every entry, catalog order) rendered by the custom navbar item type `custom-providersDropdown` in [src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js](src/theme/NavbarItem/ProvidersDropdownNavbarItem/index.js) and configured as the "Providers" entry in [docusaurus.config.js](docusaurus.config.js). Category rows link to `/providers#<category id>`, provider rows straight to the microsite (`href` with `html` instead of `label` so there is no external-link icon, `target="_self"`, `rel="noopener"` so the microsite keeps the referrer). Desktop is a hover/focus flyout per category; the mobile sidebar gets nested collapsibles.
 - the published catalog at `/providers.json`, written into the build by [plugins/provider-catalog/index.js](plugins/provider-catalog/index.js) (postBuild only, so not under `npm run start`). It is a cross-repo contract: the shared chrome in `../docusaurus-config`, vendored at build time by every provider microsite and by the query library, fetches it when those sites build and generates their own two-level Providers menu from it. The shape (version 1) is documented in the plugin. Adding a field is fine; renaming or removing one, or moving the file, breaks those builds, so bump the version and change the consumer first. Netlify serves it with CORS and a 5-minute cache.
-- two families of redirect routes registered by the local plugin [plugins/provider-redirects/index.js](plugins/provider-redirects/index.js), each rendering [src/components/ProviderRedirect/index.jsx](src/components/ProviderRedirect/index.jsx), a Docusaurus head redirect (meta refresh plus canonical) to `https://<slug>-provider.stackql.io/`:
-  - `/providers/<slug>` is explicit: exactly one route per catalog entry, no exceptions. Internal use (tiles, navbar).
-  - `/registry/<name>` is the inbound surface for external links: one route per catalog entry plus each entry's `registryAliases`, so a provider family exposes one canonical inbound link (`/registry/databricks` -> the Databricks Account microsite).
-  - `/providers` itself is the catalog doc page ([docs/providers.md](docs/providers.md)) now that docs live at the root, so the plugin does not register it; the bare `/registry` redirects to it.
+- two families of Netlify 301 rules to `https://<slug>-provider.stackql.io/`, the `BEGIN/END generated provider redirects` block in [netlify.toml](netlify.toml) written by [scripts/generate-provider-redirects.js](scripts/generate-provider-redirects.js). They used to be Docusaurus routes rendering a meta-refresh page (`plugins/provider-redirects`, `src/components/ProviderRedirect`), which Search Console reported as "Page with redirect" for every entry; both were removed in October 2026.
+  - `/providers/<slug>` is explicit: exactly one rule per catalog entry, no exceptions. Nothing inside the site links here any more (tiles and navbar go straight to the microsite); it is kept for inbound links and the old sitemap.
+  - `/registry/<name>` is the inbound surface for external links: one rule per catalog entry plus each entry's `registryAliases`, so a provider family exposes one canonical inbound link (`/registry/databricks` -> the Databricks Account microsite).
+  - `/providers` itself is the catalog doc page ([docs/providers.md](docs/providers.md)) now that docs live at the root; the bare `/registry` 301s to it.
 
-The slug is derived from `href`, which must be exactly `https://<slug>-provider.stackql.io/`; the module throws at config load on a missing field, a malformed href or a duplicate slug or alias. To add a provider, add one entry to the JSON and nothing else. Do not create pages under `src/pages/providers` or `src/pages/registry` - those directories were removed and a file there would clash with the generated routes. The retired `/providers/databricks` URL is a Netlify 301 to `/registry/databricks`.
+The slug is derived from `href`, which must be exactly `https://<slug>-provider.stackql.io/`; the module throws at config load on a missing field, a malformed href or a duplicate slug or alias. To add a provider, add one entry to the JSON and run `node scripts/generate-provider-redirects.js`. Do not create pages under `src/pages/providers` or `src/pages/registry`: a built file there would shadow the Netlify rule for that path. The retired `/providers/databricks` URL is a hand-written 301 straight to the Databricks Account microsite (a single hop, not via `/registry/databricks`).
 
 The provider microsites and the query library get their nav from `../docusaurus-config`, which builds its own Providers menu from this site's `/providers.json` at build time (see the bullet above), so there is no featured list to keep in step any more. A new catalog entry shows up on those sites on their next build after this site deploys.
 
@@ -258,9 +274,9 @@ After plugin changes, dev cache must be cleared: `rm -rf .docusaurus && npm run 
 
 When the live site changes, AI fetch tools (Claude.ai's web_fetch, ChatGPT's browse, Perplexity) may serve cached responses for some hours. If a recently-deployed `.md` URL appears as 404 in an LLM response, check the URL directly with `curl` first - if curl returns 200, the bot is using a stale cache. Wait a few hours and retest.
 
-### `/install`, `/blog`, `/blog/<section>`, `/stackql-deploy`, `/stackqldocs`, `/downloads`, generated category indexes
+### `/blog`, `/blog/<section>`, `/contact-us`, `/privacy`, generated category indexes
 
-These routes are React pages, the blog landing plugin route, blog list pages, or generated category index pages (`/getting-started`, `/command-line-usage`, `/quick-starts/*`) with **no source markdown**. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission. `/install`, `/stackqldocs` and `/downloads` are meta-refresh stubs kept for inbound links; the navbar and footer link to the canonical pages (`/`, `/installing-stackql`, `/providers`) instead, so crawlers see real site structure. Keep it that way when adding chrome links. `/tutorials` and `/cookbooks` are Netlify 301s, so they 404 under `yarn serve`.
+These routes are React pages, the blog landing plugin route, blog list pages, or generated category index pages (`/getting-started`, `/command-line-usage`, `/quick-starts/*`) with **no source markdown**. The AEO plugin correctly does not emit `.md` companions for them. They appear in the human nav but not in `llms.txt` or anywhere requiring a `.md` twin. This is by design - do not "fix" by trying to force `.md` emission. The navbar and footer link to the canonical pages (`/`, `/installing-stackql`, `/providers`), so crawlers see real site structure; keep it that way when adding chrome links. `/install`, `/downloads`, `/stackqldocs`, `/stackql-deploy`, `/features`, `/tutorials`, `/cookbooks`, `/providers/<slug>` and `/registry/<name>` are Netlify 301s, so they 404 under `yarn serve`. `/privacy` is an MDX page and does get a companion; `/contact-us` is a React page and does not.
 
 ### Mobile breakpoint for Ask AI
 
@@ -293,6 +309,14 @@ grep -E '^## ' build/llms.txt
 
 # Regenerate the per-post blog redirect block in netlify.toml
 node scripts/generate-blog-redirects.js
+
+# Regenerate the provider redirect block in netlify.toml (after editing providers.json)
+node scripts/generate-provider-redirects.js
+
+# Search Console hygiene: no redirect stubs or noindex pages in the sitemap
+grep -c '<loc>' build/sitemap.xml
+grep -E 'stackql.io/(providers/|registry|install$|downloads$|stackqldocs$)' build/sitemap.xml   # expect nothing
+grep -l 'content="noindex, follow"' build/blog/*/tags/*.html | wc -l                              # expect every tag page
 ```
 
 ## Related repositories

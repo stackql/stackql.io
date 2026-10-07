@@ -130,7 +130,7 @@ Response: [{"name": "instance-1", "status": "RUNNING"}, ...]
 
 ## Getting Started
 
-1. **Download StackQL** version 0.9.250 or later from [stackql.io/install](/install)
+1. **Download StackQL** version 0.9.250 or later from [stackql.io/install](/installing-stackql)
 
 2. **Set up provider authentication**:
 ```bash
