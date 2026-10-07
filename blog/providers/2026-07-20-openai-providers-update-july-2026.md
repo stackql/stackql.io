@@ -15,6 +15,8 @@ We've released an update to the StackQL providers for the OpenAI platform:
 - [__`openai`__](https://openai-provider.stackql.io) - the platform API surface available to standard API keys: models, files, fine-tuning, batches, vector stores, assistants, evals, conversations, uploads, containers, and skills (11 services, 26 resources, 97 operations)
 - [__`openai_admin`__](https://openai-admin-provider.stackql.io) __[new]__ - the organization and administration API surface: usage and cost reporting, projects, organization users and invites, groups and roles, admin API keys, audit logs, and certificates (10 services, 29 resources, 81 operations)
 
+<!-- truncate -->
+
 Both providers expose a SQL-first surface: authentication is handled automatically, push down support using the `LIMIT` clause and built in pagination handling.
 
 The `openai` provider is a ground-up rebuild of the previous provider, generated from the vendor's published OpenAPI specification. Some resources have been renamed and the organization/admin surface has moved to `openai_admin` - the previous provider version remains available in the registry for pinning, and the full disposition is documented at [openai-provider.stackql.io](https://openai-provider.stackql.io).

@@ -18,6 +18,8 @@ tags: [stackql, google, google workspace, google admin, analytics, reporting, da
 
 The `googleadmin` StackQL provider is now available, which allows you to query, provision, or manage Google Workspace __users__, __groups__, __devices__, and more using StackQL.  The `googleadmin` provider can be used with the `google` provider or other cloud providers to generate entitlements reports (or user access reviews) where Google Workspace identites are used in identity federation or IAM bindings.  
 
+<!-- truncate -->
+
 The full documentation on how to use a Google service account for authentication to the googleadmin provider is available [here](https://googleadmin.stackql.io/providers/googleadmin/).  Information about the directory resources available and their fields and methods, is available in the [StackQL Provider Registry Docs](https://googleadmin.stackql.io/providers/googleadmin/directory/).  
 
 ### Simple Query

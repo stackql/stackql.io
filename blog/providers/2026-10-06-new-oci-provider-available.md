@@ -16,6 +16,8 @@ We've released a new StackQL provider for Oracle Cloud Infrastructure:
 
 This completes StackQL's hyperscaler coverage alongside [__`aws`__](https://aws-provider.stackql.io), [__`azure`__](https://azure-provider.stackql.io) and [__`google`__](https://google-provider.stackql.io): the same SQL surface now spans all four clouds for inventory, audit and FinOps queries.
 
+<!-- truncate -->
+
 The provider covers the full lifecycle on the tier-1 services: `SELECT` across the estate, `INSERT`, `UPDATE` and `DELETE` on VCNs, subnets, instances, volumes, buckets, databases and policies, and `EXEC` for actions such as instance power actions and Autonomous Database start and stop. Columns and `WHERE`/`INSERT` keys are snake_case over OCI's camelCase wire format, nested detail objects are JSON columns addressed with `json_extract`, and SQL `LIMIT` pushes down to the OCI `limit` query parameter.
 
 | Service | Description |

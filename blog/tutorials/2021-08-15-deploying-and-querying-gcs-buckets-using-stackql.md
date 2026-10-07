@@ -19,6 +19,8 @@ import TabItem from '@theme/TabItem';
 
 StackQL is a simple way to automate the deployment, configuration, management, and removal of Google Cloud Storage buckets, as well as an easy way to query buckets in your environment for asset management reasons or to look for misconfigurations, such as public access, non-conformant encryption configuration and more.  It may be useful to review [__Exploring GCP services and resources using StackQL__](/blog/tutorials/exploring-gcp-services-and-resources-using-stackql), which walks working through the StackQL resource hierarchy including the [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) commands.  
 
+<!-- truncate -->
+
 ## Generate an `INSERT` template for a new bucket  
 
 The [`SHOW INSERT`](/language-spec/show) command in StackQL can be used to generate an [`INSERT`](/language-spec/show) template which can be used to create any resources in GCP.  The easiest way to use this command is via the command line using the text output type and supressing column headers using the `-H` flag, the StackQL interactive shell can be used as well.

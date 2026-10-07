@@ -19,6 +19,8 @@ __[Action Required] AWS Lambda end of support for Node.js 18 [AWS Account: 82412
 
 If you are like me and manage AWS accounts with numerous Lambda functions potentially deployed across multiple regions, you need to identify affected resources, in this case, Lambda node runtimes, which will be discontinued later this year.  
 
+<!-- truncate -->
+
 With [__`stackql`__](https://github.com/stackql/stackql) this task is easy...
 
 1. Open AWS cloud shell in your AWS account (any region - it doesn't matter)

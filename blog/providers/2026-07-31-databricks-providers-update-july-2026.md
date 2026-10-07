@@ -15,6 +15,8 @@ We've released an update to the StackQL Databricks providers, regenerated from t
 - [__`databricks_account`__](https://databricks-account-provider.stackql.io/) - account-level operations: __9 services, 79 resources__
 - [__`databricks_workspace`__](https://databricks-workspace-provider.stackql.io/) - workspace-level operations: __29 services, 313 resources__
 
+<!-- truncate -->
+
 Includes __392 resources and over 1,200 operations__ across both providers, including four new services and more than 70 new or restructured resources.
 
 ## New Services

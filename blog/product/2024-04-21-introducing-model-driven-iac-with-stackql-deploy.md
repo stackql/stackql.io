@@ -14,6 +14,8 @@ tags: [stackql, iac, infrastructure-as-code, dbt]
 
 This ELT/model-based framework for IaC allows you to provision, test, update, and tear down multi-cloud stacks, similar to how dbt manages data transformation projects, with the benefits of version control, peer review, and automation. This approach enables you to deploy complex, dependent infrastructure components in a reliable and repeatable manner.  
 
+<!-- truncate -->
+
 ## Features
 
 StackQL simplifies the interaction with cloud resources by using SQL-like syntax, making it easier to define and execute complex cloud management operations. Resources are provisioned with [__`INSERT`__](/language-spec/insert) statements, and tests are structured around [__`SELECT`__](/language-spec/select) statements.

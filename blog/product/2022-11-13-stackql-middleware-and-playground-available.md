@@ -14,6 +14,8 @@ Proud to announce the release of the first version of our middleware server and 
 
 > StackQL allows you to query and interact with cloud services and APIs using SQL grammar and an ORM which is a direct reflection of a provider API, no database is required or implemented  
 
+<!-- truncate -->
+
 ## StackQL Middleware Server
 
 Our [__middleware solution__](https://github.com/stackql/stackql-middleware) allows you to use StackQL as a query language to interact with APIs, much like GraphQL - however, the query DSL is SQL, providing a friendlier, more data-centric experience for developers.  As shown in the example below, developers can `POST` queries to a `/stackql` endpoint; the queries are parsed and executed by a StackQL runner via the middleware server.  

@@ -17,6 +17,8 @@ tags: [stackql, inventory, cpsm, analytics]
 
 An exciting new feature to cap off 2023! Parallel query execution in StackQL.  With the latest release of StackQL, parameters in `WHERE IN` clauses are fetched asyncronously.  
 
+<!-- truncate -->
+
 This query for example, queries lambda functions across <span style={{ color: 'red', fontWeight: 'bold' }}>17 AWS regions in under 1.5 sec</span>, technically these are 17 parallel queries to 17 different endpoints.    
 
 ```sql

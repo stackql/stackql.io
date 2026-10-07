@@ -11,6 +11,8 @@ tags: [stackql, analytics]
 
 Materialized Views are now available in StackQL.  Materialized Views can be used to improve performance for dependent or repetetive queries within StackQL provisioning or analytics routines.
 
+<!-- truncate -->
+
 ## Refresher on Materialized Views 
 
 Unlike standard views that provide a virtual representation of data, a Materialized View physically stores the result set of a query. This implies that the data is pre-computed and stored, which can lead to performance gains as the data doesn't need to be fetched from the underlying resource(s) every time it is queried.

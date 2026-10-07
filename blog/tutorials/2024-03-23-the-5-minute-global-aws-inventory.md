@@ -14,6 +14,8 @@ tags: [aws, stackql, cloud inventory, finops, asset management, cloud security]
 
 Using stackql and the [__`aws`__](https://aws.stackql.io/providers/aws/) provider (AWS Cloud Control provider for `stackql`), here's how you can query your __entire AWS estate__ in __real time *(globally)*__ and generate a simple report like this...  
 
+<!-- truncate -->
+
 ![aws-inventory-example](/img/blog/aws-inventory.png)
 
 Check out the code at [__AWS Global Inventory__](/quick-starts/aws/aws-global-inventory)!  

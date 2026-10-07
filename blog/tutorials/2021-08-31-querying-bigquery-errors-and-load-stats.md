@@ -18,6 +18,8 @@ import TabItem from '@theme/TabItem';
 
 Big Query provides a wealth of metrics and statistics for jobs run against it which could be queries, load jobs or export jobs.  This article demonstrates some queries you can run using StackQL to bring back live statistics from load operations into Big Query as well as detail regarding errors encountered during the loading of data into Big Query.  
 
+<!-- truncate -->
+
 ## Loading Data into Big Query from GCS using StackQL
 
 In a previous blog, we demonstrated how to [__create a Big Query dataset__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-1--create-a-big-query-dataset) and how to [__create a Big Query table__](/blog/tutorials/analyze-gcs-usage-logs-in-bigquery#step-2--create-usage-table) using StackQL [__`INSERT`__](/language-spec/insert) statements.  Having created a target dataset and table in Big Query, we can invoke a load job using StackQL by performing an `INSERT` into the `google.bigquery.jobs` resource.  

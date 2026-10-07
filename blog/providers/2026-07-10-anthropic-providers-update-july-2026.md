@@ -15,6 +15,8 @@ We've released an update to the StackQL providers for the Anthropic platform:
 - [__`anthropic`__](https://anthropic-provider.stackql.io) - the Claude API surface: messages, models, batches, files, agents, deployments, environments, sessions, skills, memory stores, user profiles, and vaults (11 services, 26 resources, 103 operations)
 - [__`anthropic_admin`__](https://anthropic-admin-provider.stackql.io) __[new]__ - the Admin API surface: organization, users, invites, workspaces, API keys, usage and cost reports, rate limits, and Claude Code analytics (6 services, 11 resources)
 
+<!-- truncate -->
+
 Both providers expose a SQL-first surface: authentication is handled automatically, Push down support using the `LIMIT` clause and built in pagination handling.
 
 ## Inference as a query

@@ -12,6 +12,8 @@ tags: [stackql, google cloud, gcp, provider, vertex-ai, compute-engine]
 
 We've released an update to the [__StackQL Google provider__](https://google-provider.stackql.io/), regenerated from the latest Google API discovery documents. The `google` provider now covers __187 services, 2,183 resources and over 9,100 operations__ - up from 179 services, 1,966 resources and 8,423 operations in the previous release. The companion providers in the google family (`googleworkspace`, `googleadmin` and `firebase`) were regenerated in the same pass.
 
+<!-- truncate -->
+
 ## New Services
 
 Eleven services are new in this release:

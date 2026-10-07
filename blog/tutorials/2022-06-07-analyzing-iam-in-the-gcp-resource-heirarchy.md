@@ -15,6 +15,8 @@ import Gist from '@site/src/components/Gist';
 
 Understanding entitlements across a GCP org with a complex hierarchy is a challenge.  I have taken and data-centric approach to this in this article.  
 
+<!-- truncate -->
+
 Prerequisites include setting up a Jupyter environment with StackQL (done here using Docker): [stackql-jupyter-demo](https://github.com/stackql/stackql-jupyter-demo).  You will also need a service account and associated key with the `roles/iam.securityReviewer` role.  
 
 I've broken the notebook bits down to explain...  

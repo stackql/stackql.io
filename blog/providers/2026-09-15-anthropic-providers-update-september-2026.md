@@ -16,6 +16,8 @@ We've released an update to the [__StackQL `anthropic` provider__](https://anthr
 - Files and skills moved to their generally available endpoints
 - Workspace-scoped queries on most operations through the `anthropic-workspace-id` parameter
 
+<!-- truncate -->
+
 The [__`anthropic_admin`__](https://anthropic-admin-provider.stackql.io) provider (6 services, 11 resources, 27 operations) is unchanged in this release.
 
 ## Dreams

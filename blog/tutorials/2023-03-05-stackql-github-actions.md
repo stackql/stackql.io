@@ -18,6 +18,8 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 
 We provide a set of useful actions that allow you use `StackQL` with GitHub Actions Workflow. These actions are available in the GitHub Marketplace.
 
+<!-- truncate -->
+
 ### [`setup-stackql`](https://github.com/stackql/setup-stackql)
 
 This action installs the `stackql` CLI on Actions runners. It is used if you want to perform custom operations using StackQL queries.

@@ -12,6 +12,8 @@ tags: [stackql, confluent, provider, kafka, tableflow, stream-designer]
 
 We've released an update to the [__StackQL Confluent provider__](https://confluent-provider.stackql.io/) adding eight new services and 40 additional resources across existing services.
 
+<!-- truncate -->
+
 ## New Services
 
 The eight new services added in this update are:

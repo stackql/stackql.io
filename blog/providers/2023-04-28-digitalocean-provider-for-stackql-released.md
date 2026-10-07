@@ -21,6 +21,8 @@ import TabItem from '@theme/TabItem';
 
 The Digital Ocean provider is now available for StackQL.  You can use StackQL to provision, manage or report on __Droplets__, __Apps__, __Functions__, __Databases__, __Volumes__, __Spaces__, and more.  
 
+<!-- truncate -->
+
 To use the Digital Ocean provider, generate a Personal Access Token from the Digital Ocean Control Panel under the API section.  Export the value of the token created to a variable named DIGITALOCEAN_TOKEN (on your local system or as a CI secret).  You can then run queries against the Digital Ocean provider using StackQL.  
 
 The following example demonstrates the creation of a Droplet in Digital Ocean.  

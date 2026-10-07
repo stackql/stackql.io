@@ -12,6 +12,8 @@ tags: [stackql, databricks, sql, databricks workspace]
 
 If you have access to a Databricks workspace, you can run StackQL queries directly from the Databricks Web Terminal using your Databricks identity.
 
+<!-- truncate -->
+
 ## How It Works
 
 Download the latest release of `stackql`, then run the convenience script included (similar scripts are included for other cloud provider terminals - e.g. AWS Cloud Shell).

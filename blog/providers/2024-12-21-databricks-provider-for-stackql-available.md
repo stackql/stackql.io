@@ -12,6 +12,8 @@ tags: [stackql, databricks, spark, iac, analytics]
 
 We are pleased to announce the release of the Databricks provider for StackQL today.  The Databricks provider is two different providers, __`databricks_account`__ and __`databricks_workspace`__.  
 
+<!-- truncate -->
+
 :::info
 
 Check out the registry docs at [__`databricks_account`__](https://databricks-account.stackql.io/providers/databricks_account/) or [__`databricks_workspace`__](https://databricks-workspace.stackql.io/providers/databricks_workspace/).

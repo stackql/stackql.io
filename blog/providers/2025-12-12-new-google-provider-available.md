@@ -12,6 +12,8 @@ tags: [stackql, google cloud, gcp, provider, vertex ai, speech-to-text, bigquery
 
 We've released a major update to the [__StackQL Google provider__](/providers) with a new service, enhanced AI/ML capabilities, and improvements across 177 service files.
 
+<!-- truncate -->
+
 ## New Service: Speech-to-Text v2
 
 The `speechv2` service brings Cloud Speech-to-Text API v2 to StackQL with 6 resources:

@@ -15,6 +15,8 @@ tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, goo
 
 Its easy enough for anyone to deploy a Cloud Storage bucket in google, this can be done through the console, `gcloud`, `terraform` or `stackql` as shown here: [__Deploying and Querying GCS Buckets using StackQL__](/blog/tutorials/deploying-and-querying-gcs-buckets-using-stackql).  It is also easy to inadvertently allow users to set public ACLs on a bucket, therefore making its contents publicly visible by default.  There is an easy way to prevent this from happening by [Using public access prevention](https://cloud.google.com/storage/docs/using-public-access-prevention).
 
+<!-- truncate -->
+
 Let's work through a real life scenario using StackQL.
 
 ## Step 1 : Run a query to find buckets which do not have public access prevention enforced

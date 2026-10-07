@@ -16,6 +16,8 @@ import { Box } from '@mui/material';
 
 `stackql-deploy` 2.0 is a full rewrite in Rust. The Python package (`stackql-deploy` on PyPi) is archived at `1.9.4`. CLI interface and stack file format are unchanged - no migration required.
 
+<!-- truncate -->
+
 ## Why Rust
 
 The move to Rust was primarily about distribution and operational simplicity. Rust also brings stronger guarantees around performance and memory safety. Running everything in-process without Foreign Function Interface (FFI) boundaries simplifies the architecture while maintaining predictable resource usage.

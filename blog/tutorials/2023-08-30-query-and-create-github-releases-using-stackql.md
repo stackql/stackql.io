@@ -11,6 +11,8 @@ tags: [stackql, github, github releases]
 
 [StackQL](https://github.com/stackql/stackql) and the [StackQL GitHub provider](https://github-provider.stackql.io/) can be used to query objects in GitHub, including releases, tags, forks, commits, and much more.  This article shows how you can automate releases using StackQL.  
 
+<!-- truncate -->
+
 ## Push tags
 
 In my case, I merged a PR to the `main` branch for an updated GitHub action in a repo called `stackql-exec`, then I pushed a tag with an updated semver:

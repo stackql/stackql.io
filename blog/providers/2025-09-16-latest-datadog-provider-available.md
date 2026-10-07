@@ -16,6 +16,8 @@ Latest release or the `datadog` provider for StackQL is now available, enabling 
 - simplified service organization
 - enhanced user documentation
 
+<!-- truncate -->
+
 For more see the [__Datadog Provider User Docs__](https://datadog-provider.stackql.io/).  
 
 ⭐ us on [__GitHub__](https://github.com/stackql/stackql) and join our community!

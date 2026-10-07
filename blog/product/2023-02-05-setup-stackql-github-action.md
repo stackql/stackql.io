@@ -23,6 +23,8 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 
 The `setup-stackql` action is now available in the [GitHub Marketplace](https://github.com/marketplace/actions/stackql-studio-setup-stackql).  `setup-stackql` downloads and installs the latest `stackql` binary in your Actions runner.  Different runner operating systems are fully tested and supported, including `ubuntu-latest`, `windows-latest` and `darwin-latest`.  
 
+<!-- truncate -->
+
 Embedding `stackql` in an actions workflow can be done for assurance, compliance, and provisioning.  An example workflow is shown here:  
 
 ```

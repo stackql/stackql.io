@@ -12,6 +12,8 @@ tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-a
 
 The [__StackQL MCP server__](/command-line-usage/mcp) is now available through every runtime an agent is likely to live in: prebuilt Claude Desktop bundles, [__npm__](https://www.npmjs.com/package/@stackql/mcp-server), [__PyPI__](https://pypi.org/project/stackql-mcp-server/), [__Docker__](https://hub.docker.com/r/stackql/stackql-mcp), a [__GitHub Action__](https://github.com/marketplace/actions/setup-stackql-mcp-server), and the [__Official MCP Registry__](https://registry.modelcontextprotocol.io/v0/servers?search=stackql). It is the same server in each case - one binary, pulled and launched the way your environment prefers.
 
+<!-- truncate -->
+
 ## What the StackQL MCP server is
 
 StackQL exposes cloud and SaaS providers - AWS, Google Cloud, Azure, GitHub, Kubernetes, Snowflake, Databricks and more - as a single SQL surface. The MCP server puts that surface in front of an AI agent: the agent discovers providers, services, resources and methods, then runs `SELECT` queries to read state and (when you allow it) `INSERT` / `UPDATE` / `DELETE` to change it. Reads and writes are gated by a [server mode](/command-line-usage/mcp#server-modes) and recorded to an [audit log](/command-line-usage/mcp#audit-log), so "what the agent did" is always answerable.

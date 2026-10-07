@@ -16,6 +16,8 @@ The StackQL Sumologic provider is now available in the public [StackQL Provider 
 
 The StackQL Sumo provider can query, create, update and delete Sumologic collectors and sources, view and manage ingest budgets, health events, dashboards, user and account access and activity, and more.  
 
+<!-- truncate -->
+
 Some example queries include:   
 
 ```sql

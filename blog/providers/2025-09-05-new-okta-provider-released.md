@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 The latest `okta` provider for StackQL is available now (`v25.09.00341`), featuring a comprehensive reorganization of services and resources that better aligns with Okta's API structure. This update improves discoverability, logical grouping, and overall usability when working with Okta resources through StackQL.
 
+<!-- truncate -->
+
 ## What's Changed
 
 The updated Okta provider features a more granular and logical organization of services that mirrors Okta's API architecture more closely.  Here is a summary of the services included in the latest `okta` provider:

@@ -12,6 +12,8 @@ tags: [stackql, analytics, window functions, cte, sql]
 
 Window functions and Common Table Expressions (CTEs) are now generally available in StackQL. These features work with both the embedded SQLite backend and PostgreSQL backend.
 
+<!-- truncate -->
+
 ## Window Functions
 
 Window functions allow you to perform calculations across sets of rows related to the current row. Supported functions include:

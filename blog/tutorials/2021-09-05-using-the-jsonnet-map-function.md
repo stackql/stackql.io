@@ -18,6 +18,8 @@ import TabItem from '@theme/TabItem';
 
 [Jsonnet](https://jsonnet.org/) is a fantastic configuration language as discussed in [Using Jsonnet to Configure Multiple Environments](https://cloudywithachanceofbigdata.com/using-jsonnet-to-configure-multiple-environments/).  Going slightly beyond the basics, this article is an introduction to anonymous functions and the `map` and `format` methods in the Jsonnet standard library.  
 
+<!-- truncate -->
+
 Similar to `map` methods in various other functional programming languages or data processing frameworks, `map` in Jsonnet evaluates a named or anonymous function for each element within an array.  `map` is a higher order function, meaning it is a function that calls another function.  Its signature is here:  
 
 ```

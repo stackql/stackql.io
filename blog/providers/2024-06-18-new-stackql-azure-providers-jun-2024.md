@@ -12,6 +12,8 @@ tags: [azure, microsoft, microsoft azure, stackql, stackql provider registry, mu
 
 New versions of the __`azure`__ providers for stackql are available now in the [__`stackql-provider-registry`__](https://github.com/stackql/stackql-provider-registry).  
 
+<!-- truncate -->
+
 Summary stats for the main [__`azure`__](https://azure.stackql.io/providers/azure/) provider:
 
 <table>

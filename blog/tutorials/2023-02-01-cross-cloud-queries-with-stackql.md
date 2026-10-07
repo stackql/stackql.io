@@ -12,6 +12,8 @@ tags: [stackql, aws, google, multicloud, observability, cloud security, analysis
 
 This exercise will show you how to run a real-time query across your AWS and Google cloud environments.  You may do this for inventory analysis, security analysis, or any other reason you can think of.  We will use `stackql` to query the state of your cloud resources across your AWS and Google environments.  You can also use `stackql` to provision, de-provision or manage resources across different cloud and SaaS providers.   
 
+<!-- truncate -->
+
 The steps we will take are:  
 
 1. Prepare your environment for `stackql` usage.

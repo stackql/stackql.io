@@ -12,6 +12,8 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, i
 
 The [__`stackql-deploy`__](https://stackql-deploy.io/) docs site is now available, offering a comprehensive guide to using `stackql-deploy` for your cloud resource deployments and tests. The site includes detailed documentation, examples, and best practices to help you get started quickly and effectively.   
 
+<!-- truncate -->
+
 :::tip
 
 __`stackql-deploy`__ is a declarative, stateless (and __*state file-less*__) infrastructure-as-code and test framework, driven by [__`stackql`__](https://github.com/stackql/stackql) queries.  `stackql-deploy` is capable of provisioning, updating, de-provisioning and testing cloud and SaaS stacks across all cloud and SaaS providers.

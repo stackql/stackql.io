@@ -14,6 +14,8 @@ We've released a new StackQL provider for Railway:
 
 - [__`railway`__](https://railway-provider.stackql.io) - the Railway public API: __`projects`__, __`environments`__, __`services`__, __`deployments`__, __`variables`__, __`networking`__, __`storage`__, __`billing`__, __`observability`__, __`workspaces`__, __`account`__, __`templates`__, __`integrations`__, __`platform`__ and __`agents`__ (15 services, 151 resources, 396 operations)
 
+<!-- truncate -->
+
 The provider reads and writes. Projects, environments, services, variables, domains and volumes can be queried, created, changed and removed, and deployment operations such as redeploy, restart and rollback are available on the resources they act on. The rest of this post is the questions it answers and the tasks it handles.
 
 ## Connect

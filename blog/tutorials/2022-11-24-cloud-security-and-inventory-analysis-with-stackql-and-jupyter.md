@@ -18,6 +18,8 @@ StackQL can provide valuable insights into your cloud and SaaS estates, whether 
 
 As an interactive analysis tool, Jupyter notebooks can leverage StackQL to provide sources for cloud and SaaS provider data.  
 
+<!-- truncate -->
+
 [![GCP Nodes](/img/blog/stackql-jupyter.png)](/img/blog/stackql-jupyter.png)
 
 We've recently added magic function support for running StackQL queries in Jupyter notebooks, making the integration between StackQL and Jupyter more seamless. StackQL magic and be used on a line in a cell or the entire cell itself, as shown here:  

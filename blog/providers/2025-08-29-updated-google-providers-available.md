@@ -12,6 +12,8 @@ tags: [stackql, google, firebase, iac, analytics]
 
 The latest versions of the Google-related providers for StackQL: `google`, `googleadmin`, `googleworkspace`, and `firebase` are available now. These updates include the latest services, resources and methods available from Google.
 
+<!-- truncate -->
+
 ## What's New
 
 The latest release introduces several new services to the `google` provider, expanding your ability to manage and query Google Cloud resources:

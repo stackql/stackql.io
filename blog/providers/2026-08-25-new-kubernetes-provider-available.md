@@ -14,6 +14,8 @@ We've rebuilt the StackQL Kubernetes provider from the ground up:
 
 - [__`k8s`__](https://k8s-provider.stackql.io) - every built-in control plane API group in a pinned Kubernetes minor release (currently 1.36): __`core`__, __`apps`__, __`batch`__, __`autoscaling`__, __`networking`__, __`storage`__, __`rbac`__, __`policy`__, __`apiextensions`__, __`admissionregistration`__, __`certificates`__, __`coordination`__, __`discovery`__, __`events`__, __`flowcontrol`__, __`node`__, __`scheduling`__, __`authentication`__, __`authorization`__ and __`apiregistration`__ (20 services, 152 resources, 573 operations)
 
+<!-- truncate -->
+
 The provider is generated from the per-group specs published in the Kubernetes repository, so the same provider works against kind, EKS, GKE, AKS, OpenShift or bare metal. Subresources (`status`, `scale`, `log`, `eviction`, `binding`, `approval`) are first-class resources, list pagination is traversed transparently, and `LIMIT` and label/field selectors are pushed down to the API server.
 
 ## Connect with kubectl proxy

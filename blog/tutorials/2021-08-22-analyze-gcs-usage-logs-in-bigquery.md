@@ -19,6 +19,8 @@ import TabItem from '@theme/TabItem';
 
 In the previous [__post__](/blog/tutorials/enable-google-cloud-storage-logging), we showed you how to enable usage and storage logging for GCS buckets.  Now that we have enabled logging, let's load and analyze the logs using Big Query.  We will build up a data file __`vars.jsonnet`__ as we go and show the queries step by step, at the end we will show how to run this as one batch using StackQL.  
 
+<!-- truncate -->
+
 ## Step 1 : Create a Big Query dataset
 
 We will need a dataset (akin to a schema or a database in other RDMBS parlance), basically a container for objects such as tables or views, the data and code to do this are shown here:  

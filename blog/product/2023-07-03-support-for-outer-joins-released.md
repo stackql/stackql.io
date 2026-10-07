@@ -18,6 +18,8 @@ tags: [stackql, analytics, reporting, dashboards, cloud security, cspm]
 
 We are pleased to announce the addition of support for `OUTER JOIN` operations in StackQL queries.  This is a significant addition to the language, and we are excited to see what our users will do with it!
 
+<!-- truncate -->
+
 :::info
 
 An `OUTER JOIN` is a type of `JOIN` operation that returns all records from one table (or StackQL resource) and only those records from a second table or resource where the joined fields are equal (i.e. the `JOIN` condition is met).  If there is no match, the missing side of the `JOIN` is filled with `NULL` values.

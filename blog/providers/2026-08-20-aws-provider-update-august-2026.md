@@ -17,6 +17,8 @@ We've released an update to the [__StackQL AWS provider__](https://aws-provider.
 - Over 500 new operations
 - Full support for S3 object level CRUD operations
 
+<!-- truncate -->
+
 ## New Services
 
 Nine services are new in this release:

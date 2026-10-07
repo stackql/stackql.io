@@ -17,6 +17,8 @@ tags: [stackql, aws, inventory, cpsm, analytics]
 
 Most AWS services and resources are regionally scoped, meaning the UI, CLI, SDKs, and all other methods of querying the aws provider give you a regional view (`us-east-1` or `ap-southeast-2`, for instance).  Many customer AWS estates span multiple regions - for multinational organizations, for example, or organizations with numerous dispersed locations within the US.
 
+<!-- truncate -->
+
 Sure, you could write custom scripts wrapping the CLI or SDKs - which would require development effort (not reusable for other providers); or get an abstract view with tools like AWS Config or Systems Manager, which requires these services to be enabled and configured (not flexible and not extendible to other providers).  In either case:
 
 1.  You can't write and run customized queries and generate custom reports - as you can do in SQL
