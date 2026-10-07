@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 We're excited to announce the release of the Snowflake provider for StackQL! This new provider enables you to query and interact with your Snowflake resources using familiar SQL syntax, bridging the gap between data analytics and infrastructure management.
 
+<!-- truncate -->
+
 The Snowflake provider for StackQL gives you the ability to:
 
 - Query Snowflake metadata and statistics using SQL

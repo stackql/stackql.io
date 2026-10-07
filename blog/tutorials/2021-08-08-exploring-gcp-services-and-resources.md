@@ -19,6 +19,8 @@ import TabItem from '@theme/TabItem';
 
 This article will walk through examples of exploring services and resources in GCP using StackQL - a SQL based language for working with cloud and SaaS assets.  If you are new to StackQL it may be helpful to start [__here__](/getting-started/resource-hierarchy).
 
+<!-- truncate -->
+
 ## List available services using `SHOW SERVICES`  
 
 To list all of the services available in the google provider, use the [`SHOW SERVICES`](/language-spec/show) command as shown below:  

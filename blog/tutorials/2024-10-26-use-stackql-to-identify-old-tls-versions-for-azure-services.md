@@ -16,6 +16,8 @@ Have you received one of these?
 
 Microsoft Azure is retiring TLS 1.0 and 1.1 for its services, requiring customers to transition to TLS 1.2 or later to ensure uninterrupted connectivity. If you have workloads still using older TLS versions, you’ll need to update them. 
 
+<!-- truncate -->
+
 ## Using StackQL to Identify Non-Compliant Resources
 
 With StackQL, you can quickly identify resources in your Azure environment that are still using older TLS versions. This article shows how to leverage StackQL queries to check various Azure services for compliance.

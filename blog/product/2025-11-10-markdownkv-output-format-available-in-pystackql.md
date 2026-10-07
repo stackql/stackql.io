@@ -12,6 +12,8 @@ tags: [stackql, pystackql, llm, ai, infrastructure-as-code]
 
 [__pystackql__](https://github.com/stackql/pystackql) now includes a `markdownkv` output format optimized for LLM processing of control plane and data plane data from cloud providers.
 
+<!-- truncate -->
+
 ## Background
 
 Recent research from [__ImprovingAgents.com__](https://www.improvingagents.com/blog/best-input-data-format-for-llms) tested 11 data formats to determine which ones LLMs parse most accurately. Using 1,000 synthetic employee records and 1,000 randomized queries, they measured how well different formats preserved data integrity through LLM processing.

@@ -15,6 +15,8 @@ tags: [stackql, infracoding, IaC, infrastructure as code, gcp, gke, gke autopilo
 
 I grappled with Terraform for the better part of a day trying to provision a GKE Autopilot cluster in a Shared VPC service project, I was able to do this with StackQL in 2 minutes, this is how...  
 
+<!-- truncate -->
+
 Before starting you will need the following to use GKE Autopilot in your Shared VPC:
 - control plane IP address range
 - control plane authorized networks (if desired)

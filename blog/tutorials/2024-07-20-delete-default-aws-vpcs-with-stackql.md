@@ -14,6 +14,8 @@ AWS creates default VPCs in each region for convenience. However, these default 
 
 This guide demonstrates how to use StackQL to enumerate and delete all default VPCs and their associated resources in all AWS regions.  
 
+<!-- truncate -->
+
 ## What you need
 
 All you need to do is to install the [`pystackql`](https://pypi.org/project/pystackql/) package using:

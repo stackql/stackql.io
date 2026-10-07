@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 The new `deno` provider for StackQL is now available, enabling developers to query and manage Deno Deploy resources using familiar SQL syntax. This provider allows you to interact with Deno Deploy's control plane API, giving you complete control over your organizations, projects, deployments, domains, and KV databases through a consistent SQL interface.  
 
+<!-- truncate -->
+
 The Deno Deploy provider offers comprehensive coverage of the Deno Deploy API, organized into logical services that mirror Deno's resource structure:
 
 | Service | Description |

@@ -17,6 +17,8 @@ tags: [stackql, powerbi, inventory, cpsm, analytics, reporting, dashboards]
 
 You can leverage the powerful combination of StackQL and PowerBI to create comprehensive dashboard interfaces. These dashboards are perfect for reporting on various aspects such as cloud security, inventory, and configuration.
 
+<!-- truncate -->
+
 ![stackql-powerbi-dashboard](/img/blog/stackql-powerbi-dashboard.png)
 
 ## Quick Start Guide

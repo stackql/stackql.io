@@ -16,6 +16,8 @@ Give us a ⭐ on [__GitHub__](https://github.com/stackql/stackql)
 
 With the GoDaddy provider, users can leverage StackQL to interact with their GoDaddy resources directly through SQL queries. The addition of `godaddy` to the StackQL provider catalog further enabled a unified SQL-based experience for cloud services management.
 
+<!-- truncate -->
+
 ## Key Features
 - **Domain Management**: List, update, and monitor domains registered with GoDaddy domains, including registration, renewal, and transfer.
 - **DNS Configuration**: Manage DNS settings for your domains using SQL commands, including querying and updating DNS records.

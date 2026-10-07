@@ -12,6 +12,8 @@ tags: [stackql, confluent, kafka, flink, iac, analytics]
 
 We're excited to announce the release of the new Confluent provider for StackQL! With this new provider, users can now seamlessly query, manage, and integrate Confluent Cloud resources using familiar SQL syntax. The Confluent provider opens up possibilities for managing Kafka clusters, environments, organizations, and more, providing unparalleled flexibility for building data and event-driven architectures as infrastructure-as-code.
 
+<!-- truncate -->
+
 ### Quick Start Example
 
 To start, set the `CONFLUENT_CLOUD_API_KEY` and `CONFLUENT_CLOUD_API_SECRET` environment variables and then pull the Confluent provider from the StackQL registry:

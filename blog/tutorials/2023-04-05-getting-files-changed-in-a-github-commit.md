@@ -18,6 +18,8 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD]
 
 > For more background on using StackQL with GitHub Actions see [StackQL GitHub Actions Tutorial](/blog/tutorials/stackql-github-actions)
 
+<!-- truncate -->
+
 ```yaml
 - name: setup StackQL
   uses: stackql/setup-stackql@v1.1.0

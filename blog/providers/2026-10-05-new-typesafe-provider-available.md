@@ -14,6 +14,8 @@ We've released a new StackQL provider for TypeSafe AI:
 
 - [__`typesafe`__](https://typesafe-provider.stackql.io) - the TypeSafe API: __`systemone`__ (the evaluation endpoint behind Jev, TypeSafe's flagship model) and __`models`__ (the models and aliases an API key can use) - 2 services, 2 resources, 2 operations, both `SELECT`
 
+<!-- truncate -->
+
 Jev is a System One model. Instead of generating text it answers typed questions about a `state` you supply and returns a calibrated probability or distribution for each one: a Noul question is a yes/no with the probability of yes, a Choice picks one option from a set you define with a probability per option and a confidence, and a Score rates the state against an ordered rubric. Any mix of the three runs against the same state in one request, in about a hundred milliseconds, for a fraction of a cent. There is nothing to parse and nothing to coax into JSON.
 
 That matters most for agents that already run on the [StackQL MCP server](/command-line-usage/mcp). Those agents have every provider's control plane as SQL, and the audit log and approval gates that come with it. What a `WHERE` clause cannot do is make the judgment call: is this instance production or scratch, does this rule's description justify public ingress, does this account still need an admin role, is a restart the right response to this event. In this provider that call is a `SELECT` too, so a decision sits between a context query and a mutation as one more governed tool call. The rest of this post is that routine, in the shapes platform, FinOps, SRE and security teams actually run.

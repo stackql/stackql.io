@@ -19,6 +19,8 @@ Excited to announce the general availability of the latest StackQL providers for
 - [__`azure_isv`__](https://azure-isv.stackql.io/providers/azure_isv/) - Azure Native ISV software and services (like Databricks, Datadog, Confluent, Astro and more)
 - [__`azure_stack`__](https://azure-stack.stackql.io/providers/azure_stack/) - Azure Hybrid app framework
 
+<!-- truncate -->
+
 by the numbers...  
 
 | Provider            | Total Services | Total Methods | Total Resources |

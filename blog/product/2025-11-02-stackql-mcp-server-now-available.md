@@ -12,6 +12,8 @@ tags: [stackql, mcp, model context protocol, ai agents, claude, infrastructure-a
 
 [__StackQL__](https://github.com/stackql/stackql) now supports the [__Model Context Protocol (MCP)__](https://modelcontextprotocol.io/). This integration enables AI agents and assistants to query and manage cloud infrastructure across multiple providers using natural language.
 
+<!-- truncate -->
+
 ## What is the Model Context Protocol?
 
 The Model Context Protocol is an open standard that enables AI applications to securely connect to external data sources and tools. By running StackQL as an MCP server, AI agents like Claude, ChatGPT, and other LLM-based assistants can interact with your cloud infrastructure using StackQL's powerful SQL-based query capabilities.

@@ -18,6 +18,8 @@ tags: [stackql, superset, analytics, reporting, dashboards, cloud security, cspm
 
 This quick start guide outlines how to create a `superset` + `stackql` dashboard on your laptop using `docker desktop`, `helm`, and `kubernetes`.  We certainly do not want to go into depth on `superset`, a third-party application, so this guide is terse.
 
+<!-- truncate -->
+
 ## Supplying secrets
 
 In this example, we use:

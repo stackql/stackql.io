@@ -28,6 +28,8 @@ Happy New Year 🎉.  The latest AWS provider for [__StackQL__](https://github.c
 - __3174 resources__
 - __3917 methods__
 
+<!-- truncate -->
+
 with additional new support for the following services:
 
 - `amazonmq` - Managed message broker service for Apache ActiveMQ and RabbitMQ that simplifies setup and operation of open-source message brokers on AWS.

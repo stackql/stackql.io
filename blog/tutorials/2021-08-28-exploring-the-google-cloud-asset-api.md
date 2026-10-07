@@ -18,6 +18,8 @@ import TabItem from '@theme/TabItem';
 
 The [Cloud Asset API](https://cloud.google.com/asset-inventory/docs) has recently gone GA, this is an exceptionally useful service which stores the history and inventory of cloud resources in your GCP org.  Using the Cloud Asset API via StackQL you can enumerate all of the services and resources in your GCP org, including billable resources such as Cloud Storage buckets or Compute Engine instances, as well as other objects such as billing accounts, folders, projects, firewalls, service accounts and much more.  All of this can be done using SQL!
 
+<!-- truncate -->
+
 Let’s start by exploring the available fields in this service:
 
 ## Explore the API

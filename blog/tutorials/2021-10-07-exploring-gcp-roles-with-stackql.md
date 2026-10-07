@@ -16,6 +16,8 @@ hide_table_of_contents: false
 
 Understanding roles is integral to applying the principal of least privilege to GCP environments.
 
+<!-- truncate -->
+
 ## A quick primer on roles in GCP 
 A __Role__ in GCP is a collection of permissions to services and APIs on the platform.  Roles are "bound" to principals or members (users, groups and service accounts).  
 

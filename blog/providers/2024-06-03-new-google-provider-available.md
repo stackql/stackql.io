@@ -16,6 +16,8 @@ We have released the latest StackQL provider for Google, which includes:
 - __231 new resources__
 - __1,185 new methods__
 
+<!-- truncate -->
+
 More information is available [here](https://google.stackql.io/providers/google/).  Run the following to install or update the Google provider:
 
 ```sql

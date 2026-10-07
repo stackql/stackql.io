@@ -20,6 +20,8 @@ Queries (particularly) repetitive queries that don't take advantage of results c
 
 StackQL, with it's backend SQL engine, allows you to query Big Query statistics in real time, including identifying queries which are not served from cache and understanding billable charges per query or time slice.  
 
+<!-- truncate -->
+
 Here is a simple query to break down a time period into hours and show the total queries, queries served from cache and the total query charges per hour. 
 
 <Tabs

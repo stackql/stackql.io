@@ -15,6 +15,8 @@ The question is usually simple. "Which buckets are public across all our clouds?
 
 This tutorial doesn't make that faster. It replaces it. One query, one view, all three clouds.
 
+<!-- truncate -->
+
 ## What StackQL is, in three sentences
 
 StackQL is SQL for cloud APIs. You write a normal SQL query, and it makes the API calls to AWS, GCP, Azure, or dozens of other providers to get the answer back as rows and columns.

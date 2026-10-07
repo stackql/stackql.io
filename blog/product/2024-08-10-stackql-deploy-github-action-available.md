@@ -12,6 +12,8 @@ tags: [stackql, devops, infrastructure, github actions, cloud security, CI/CD, i
 
 [__`stackql-deploy`__](https://pypi.org/project/stackql-deploy/) is now available in the [__GitHub Actions Marketplace__](https://github.com/marketplace/actions/stackql-deploy).  
 
+<!-- truncate -->
+
 :::tip
 
 __`stackql-deploy`__ is a declarative, stateless (and __*state file-less*__) infrastructure-as-code and test framework, driven by [__`stackql`__](https://github.com/stackql/stackql) queries.  `stackql-deploy` is capable of provisioning, updating, de-provisioning and testing cloud and SaaS stacks across all cloud and SaaS providers.

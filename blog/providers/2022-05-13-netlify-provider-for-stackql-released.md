@@ -15,6 +15,8 @@ Excited to announce the release of the __Netlify provider for StackQL__.
 
 The netlify provider can be used to query, provision, de-provision or update __sites__, __builds__, __deploys__, __functions__, __identities__, __domain_names__ and more.  
 
+<!-- truncate -->
+
 Here are the steps to get started with the Netlify provider:  
 
 ### Setup

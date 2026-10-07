@@ -14,6 +14,8 @@ We've released a new StackQL provider for GitLab:
 
 - [__`gitlab`__](https://gitlab-provider.stackql.io) - the GitLab GraphQL API as a read-only SQL surface: __`projects`__, __`groups`__, __`users`__, __`issues`__, __`merge_requests`__, __`ci`__, __`work_items`__, __`security`__, __`packages`__, __`snippets`__, __`boards`__, __`analytics`__, __`audit`__, __`metadata`__, __`admin`__, __`workspaces`__, __`ml`__ and __`duo`__ (18 services, 244 resources, every one of them `SELECT`)
 
+<!-- truncate -->
+
 The provider is generated from the introspection schema gitlab.com publishes, pinned by content hash and refreshed as a reviewed diff. It works against gitlab.com out of the box and routes to a self-managed instance from an environment variable. It is read-only by architecture: StackQL's GraphQL path is a query path, so there are no `INSERT`, `UPDATE`, `DELETE` or `EXEC` methods. What it is for is inventory, reporting and cross-provider joins over the GitLab control plane - the questions that otherwise need a script and three API clients.
 
 ## Connect

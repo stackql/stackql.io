@@ -16,6 +16,8 @@ tags: [stackql, google cloud, GCP, infracoding, IaC, infrastructure as code, goo
 
 In a previous article, [__Deploying and Querying GCS Buckets using StackQL__](/blog/tutorials/deploying-and-querying-gcs-buckets-using-stackql), we walked through some basic creation and query operations on Google Cloud Storage buckets.  In this post we will extend on this by enabling logging on a GCS bucket using StackQL.  This post is based upon this article: [Usage logs & storage logs](https://cloud.google.com/storage/docs/access-logs).  
 
+<!-- truncate -->
+
 Assuming we have deployed a bucket which we want to log activities on, follow the steps below:  
 
 ## Step 1 : Create a bucket to store the usage logs

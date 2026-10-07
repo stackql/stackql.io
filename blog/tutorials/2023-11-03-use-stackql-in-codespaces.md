@@ -19,6 +19,8 @@ GitHub Codespaces is a development environment completely hosted online, enablin
 
 Codespaces and the power of IPython and notebooks provide a quick and easy way to use StackQL to analyze and report on your cloud estate and resource configuration.  No software necessary!
 
+<!-- truncate -->
+
 ![stackql-codespaces-notebook](/img/blog/codespaces/codespaces-3.png)
 
 ## Setting Up StackQL in Codespaces

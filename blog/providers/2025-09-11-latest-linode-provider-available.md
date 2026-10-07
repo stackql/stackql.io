@@ -12,6 +12,8 @@ tags: [stackql, linode, iac, analytics]
 
 Latest release or the Linode provider for StackQL is available, enabling SQL-based querying and management of Linode cloud resources.
 
+<!-- truncate -->
+
 ## Provider Overview
 
 The Linode provider offers comprehensive access to 20 services covering the entire Linode platform, with 136 resources and 425 methods, allowing you to extract data and insights from your Linode environment using familiar SQL syntax.

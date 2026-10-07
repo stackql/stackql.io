@@ -16,6 +16,8 @@ Version 0.3.0 of the Azure provider for StackQL is available now.  This update i
 
 In addition, we have announced the release of several new built-in functions, including `SPLIT_PART()` - to split a string by a delimiter and extract a single element, additional unicode functions, and expanded regular expression support, including `REGEXP_REPLACE()` and more.  
 
+<!-- truncate -->
+
 An example StackQL query using the `split_part()` function with the `azure v0.3.0` provider is shown here:  
 
 ```sql

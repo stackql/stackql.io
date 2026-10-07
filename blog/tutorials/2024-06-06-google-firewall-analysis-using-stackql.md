@@ -12,6 +12,8 @@ tags: [stackql, google, gcp, google cloud platform, iac, analytics]
 
 Analyzing firewall rules is crucial for maintaining security in your cloud infrastructure. Using StackQL, you can efficiently query and analyze Google Cloud firewall configurations to ensure that your security policies are correctly implemented and that there are no unexpected open ports or protocols that might pose a security risk. Below is a simple query that retrieves important details about the ingress firewall rules for a specific network in a Google Cloud project.
 
+<!-- truncate -->
+
 ```sql
 SELECT 
 	name, 

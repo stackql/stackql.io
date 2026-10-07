@@ -18,6 +18,8 @@ tags: [stackql, linode, devops, infrastructure, github actions, cloud security, 
 
 The StackQL Linode provider is now available. Using the StackQL Linode provider you can create, query, and manage __Linodes__ (instances), __Volumes__, __NodeBalancers__, __Firewalls__, __StackScripts__, __Databases__, __Kubernetes Clusters__, __Object Storage Buckets__, and much more.  
 
+<!-- truncate -->
+
 You can use the StackQL Linode provider with other StackQL providers (such as `aws`, `google`, `azure`, `digitalocean`, and more) to perform multi-cloud CSPM, inventory queries, or multi-provider stack deployments. Documentation for the Linode provider is available at [__StackQL Linode provider docs__](https://linode-provider.stackql.io/).  
 
 Here is an example of creating a Linode (a VM instance), passing variables from a jsonnet config file as well as CI secrets (GitHub Actions Secrets, GitLab CI Secrets, etc.):  

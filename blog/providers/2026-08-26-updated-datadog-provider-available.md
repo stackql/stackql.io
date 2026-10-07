@@ -12,6 +12,8 @@ tags: [stackql, datadog, provider, observability, monitors, security, finops]
 
 We've released an updated [__StackQL Datadog provider__](https://datadog-provider.stackql.io) covering the Datadog v1 and v2 REST APIs together: __18 services__, __597 resources__ and __1658 operations__, up from 16 services and 575 operations in the previous release.
 
+<!-- truncate -->
+
 ## What's new
 
 The previous provider was built from the v2 API alone. Datadog's most-used resources - monitors, dashboards, synthetics, SLOs, hosts, log indexes and pipelines - only exist in the v1 API, so this release merges the two specs into one provider. The v2 surface has also grown considerably since the last build. In summary:

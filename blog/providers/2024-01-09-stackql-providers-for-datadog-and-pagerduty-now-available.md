@@ -17,6 +17,8 @@ tags: [stackql, inventory, cpsm, analytics, pagerduty, datadog]
 
 We're excited to announce the release of two new StackQL providers: **`datadog`** and **`pagerduty`**. The `daatdog` provider includes **41 services** and **405 methods** at your disposal, you can query and manage everything from APM retention filters, audit logs, to cloud workload security and more.  More information on the `dataog` provider can be found [here](https://datadog.stackql.io/providers/datadog/).  
 
+<!-- truncate -->
+
 The `pagerduty` provider includes an array of services like `events`, `metrics`, `monitors`, and `users` to fully leverage the operational prowess of these platforms. Whether it's maintaining the security posture with `cloud_workload_security` and `security_monitoring` or managing resources with `containers` and `incidents`, StackQL gives you the visibility and control over `pagerduty`, `datadog` or numerous other XaaS platforms.  More information on the `pagerduty` provider can be found [here](https://pagerduty.stackql.io/providers/pagerduty/).  
 
 Let us know your thoughts! Visit us and give us a ⭐ on [__GitHub__](https://github.com/stackql/stackql)

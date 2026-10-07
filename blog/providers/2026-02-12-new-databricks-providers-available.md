@@ -12,6 +12,8 @@ tags: [stackql, databricks, provider, infrastructure-as-code]
 
 Updated StackQL providers for Databricks are now available: [__`databricks_account`__](https://databricks-account-provider.stackql.io/) and [__`databricks_workspace`__](https://databricks-workspace-provider.stackql.io/), giving you SQL access to the full Databricks control plane across account-level and workspace-level operations.
 
+<!-- truncate -->
+
 
 ## Provider Structure
 

@@ -17,6 +17,8 @@ export DEV_REG="{ \"url\": \"https://registry-dev.stackql.app/providers\" }"
 ./stackql --registry="${DEV_REG}" shell
 ```
 
+<!-- truncate -->
+
 Then pull the `openai` provider using:
 
 ```sql

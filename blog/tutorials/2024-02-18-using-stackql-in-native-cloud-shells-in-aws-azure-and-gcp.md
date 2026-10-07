@@ -16,6 +16,8 @@ The three major cloud providers all offer a built-in Linux shell for executing c
 
 Now you can easily use `stackql` - a unified analytics and IaC dev tool - in all major cloud providers' built-in shells, using cloud shell scripts packaged with the `stackql` Linux binary (available from v0.5.587 onwards).  
 
+<!-- truncate -->
+
 StackQL is particularly useful for asynchronously querying across regions in AWS, projects in Google, or resource groups in Azure, which is challenging to do via the CLIs.  For example:  
 
 ```sql

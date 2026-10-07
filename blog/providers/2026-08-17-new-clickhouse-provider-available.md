@@ -14,6 +14,8 @@ We've released a new StackQL provider for ClickHouse Cloud:
 
 - [__`clickhouse`__](https://clickhouse-provider.stackql.io) - the ClickHouse Cloud control plane (`api.clickhouse.cloud`): organizations, services (lifecycle, scaling, settings, passwords, private endpoints), API keys, members and invitations, organization roles, backups and backup configuration, usage cost and quotas, activities, ClickPipes, the ClickStack surface (dashboards, alerts, sources, webhooks, saved searches), user-defined functions and Managed Postgres (10 services, 44 resources, 139 operations)
 
+<!-- truncate -->
+
 The provider covers the Cloud management API only. The ClickHouse server HTTP interface - SQL against a service endpoint and the `system.*` tables - is a separate surface with separate authentication and is reserved as a future sibling provider, `clickhouse_server`. What takes two Terraform providers today (the Cloud infrastructure provider and the DBops provider) will be two namespaces in one StackQL session.
 
 ## Organization scope from the environment

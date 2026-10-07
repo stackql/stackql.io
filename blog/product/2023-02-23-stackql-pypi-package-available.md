@@ -23,6 +23,8 @@ tags: [stackql, python]
 
 [`pystackql`](https://github.com/stackql/pystackql) is now available in [PyPI](https://pypi.org/project/pystackql/), and documentation for the package is available at [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/).  `pystackql` can be used with `pandas`, `matplotlib`, `plotly`, `jupyter` and more to run queries and visualize results.  
 
+<!-- truncate -->
+
 The latest version of stackql for any platform can be installed using:  
 
 ```

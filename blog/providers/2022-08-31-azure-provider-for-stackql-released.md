@@ -16,6 +16,8 @@ Proud to announce the release of the [__Microsoft Azure provider for StackQL__](
 
 The StackQL provider for Azure provides key visibility across the Azure estate for CSPM, asset inventory and analysis, finops and more, as well as our IaC and ops (lifecycle management) functionality.
 
+<!-- truncate -->
+
 Created using the [Autorest](https://github.com/Azure/autorest) project using Azure specification docs from the [azure-rest-api-specs](https://github.com/Azure/azure-rest-api-specs) repository, the StackQL azure provider exposes __230__ services, __2,450__ resources (of which 1,985 or 81% are available using `SELECT` statements) and __10,140__ methods in total.  
 
 Core services are available in the `azure` provider, all other services are available using the `azure_extras` provider.  

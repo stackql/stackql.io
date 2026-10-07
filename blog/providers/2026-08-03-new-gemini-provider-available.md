@@ -14,6 +14,8 @@ We've released a new StackQL provider for the Google Gemini API:
 
 - [__`gemini`__](https://gemini-provider.stackql.io) - the Generative Language API surface (`generativelanguage.googleapis.com`): inference (content generation, embeddings, token counting, batches) plus the API's own management surface - models, tuned models and permissions, files, cached contents, corpora, file search stores and long-running operations (10 services, 32 resources, 75 operations)
 
+<!-- truncate -->
+
 Everything reachable with a `GEMINI_API_KEY` ships in one provider. Authentication is handled automatically, `LIMIT` is pushed down to the wire, and paginated lists are walked for you.
 
 ## Inference as a result set

@@ -12,6 +12,8 @@ tags: [stackql, cloudflare, provider, zero trust, workers, r2, dns, radar, ai, s
 
 We've released the latest version of the [__StackQL Cloudflare provider__](/providers), including the full Cloudflare V4 API surface under SQL with __108 services__, __1259 resources__, and __2840 operations__.
 
+<!-- truncate -->
+
 ## Service highlights
 
 Key services in this release include:

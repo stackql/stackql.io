@@ -20,6 +20,8 @@ import TabItem from '@theme/TabItem';
 
 The StackQL provider for Vercel is now available!  Developers can directly query, analyze, and report on [__`builds`__](https://vercel.stackql.io/providers/vercel/deployments/builds/), [__`deployments`__](https://vercel.stackql.io/providers/vercel/deployments/deployments/), [__`projects`__](https://vercel.stackql.io/providers/vercel/projects/projects/), [__`domains`__](https://vercel.stackql.io/providers/vercel/dns/domains_records/), [__`log_drains`__](https://vercel.stackql.io/providers/vercel/log_drains/log_drains/), and more.  The StackQL Vercel provider can also be used to retrieve logs, manage certificates, replicate your deployment environment locally, manage Domain Name System (DNS) records, and more ... using SQL.  
 
+<!-- truncate -->
+
 More information about the Vercel provider for StackQL is available [__here__](https://vercel.stackql.io/providers/vercel/).  Here are some sample queries to get you started:  
 
 <Tabs

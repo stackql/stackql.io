@@ -12,6 +12,8 @@ tags: [stackql, github, provider, github actions, github classroom, hosted compu
 
 We've released an update to the [__StackQL GitHub provider__](https://github-provider.stackql.io/) adding new services and expanding coverage across several existing ones.
 
+<!-- truncate -->
+
 ## New Services
 
 Some of the newly added services of note include:

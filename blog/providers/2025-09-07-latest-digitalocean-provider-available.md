@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 The latest `digitalocean` provider for StackQL is available now (`v25.09.00345`), featuring a comprehensive reorganization of services and resources that better aligns with DigitalOcean's API structure. This update improves discoverability, logical grouping, and overall usability when working with DigitalOcean resources through StackQL, while adding exciting new capabilities like support for __Gradient AI Platform__ through the `genai` service.
 
+<!-- truncate -->
+
 ## What's Changed
 
 The updated DigitalOcean provider features a more granular and logical organization of services that mirrors DigitalOcean's API architecture more closely. Here is a summary of the services included in the latest `digitalocean` provider:

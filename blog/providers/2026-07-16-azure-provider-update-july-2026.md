@@ -17,6 +17,8 @@ We've released a major update to the StackQL Azure provider family:
 - [__`azure_isv`__](https://azure-isv-provider.stackql.io) - Azure Native ISV and partner services: Databricks, Datadog, Confluent, Elastic, MongoDB Atlas, Oracle Database@Azure and more (27 services)
 - [__`azure_stack`__](https://azure-stack-provider.stackql.io) - the Azure Stack / Azure Local family (4 services)
 
+<!-- truncate -->
+
 Service, resource and method names are consistently snake_cased, service titles carry the official Azure product names, and related services have been consolidated - `SHOW SERVICES IN azure` now reads like the Azure portal, not like an SDK package index.
 
 ## Control plane and data plane in one provider
