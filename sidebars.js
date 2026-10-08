@@ -33,6 +33,7 @@ const sidebars = {
   docsSidebar: [
     'index',
     'installing-stackql',
+    'ai-agents',
     'providers',
     {
       type: 'category',
@@ -153,7 +154,7 @@ const sidebars = {
       label: 'Quick Starts',
       link: {
         type: 'generated-index',
-        title: 'StackQL Quick Starts',
+        title: 'Quick Starts',
         description: 'StackQL quick starts, how-tos, practical examples and use cases',
         slug: '/quick-starts',
         keywords: ['quick starts', 'quickstarts', 'guides', 'how-tos', 'examples', 'use cases'],

@@ -140,8 +140,10 @@ StackQL is open source under the [MIT License](https://github.com/stackql/stackq
 ## Get started
 
 - [Installation](/installing-stackql) - install the StackQL binary on macOS, Linux or Windows, or run it from Docker, a package manager or a cloud shell
+- [AI Agents](/ai-agents) - connect AI agents through MCP, embed the server, and explore queries and reference content
 - [Getting started](/getting-started) - the resource hierarchy, your first queries, using a provider, output modes, variables and templating
 - [Available providers](/providers) - the cloud and SaaS providers you can query and manage, each with its own reference site
+- [Blog](/blog) - product announcements, provider announcements and tutorials
 - [Command line usage](/command-line-usage) - `exec`, `shell`, `srv`, `mcp`, `registry` and the global flags
 - [MCP tools](/mcp) - the Model Context Protocol server and tools that give AI agents the same SQL interface
 - [Language specification](/language-spec/select) - `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `SHOW`, `DESCRIBE`, functions and data types

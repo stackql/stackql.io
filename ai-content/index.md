@@ -1,6 +1,6 @@
 ---
 slug: /
-title: StackQL AI Reference
+title: AI Reference
 description: Machine-readable reference content covering StackQL concepts, comparisons, how-tos, FAQs, architecture, and troubleshooting - structured for AI agents and answer engines.
 ---
 
