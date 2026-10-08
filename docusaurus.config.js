@@ -589,7 +589,6 @@ const config = {
           to: '/blog',
           position: 'left',
           items: [
-            { to: '/blog', label: 'All posts' },
             ...blogSectionNavItems,
             {
               to: '/quick-starts',
