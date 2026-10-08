@@ -45,13 +45,11 @@ const blogSections = [
   {
     id: 'product',
     label: 'Product Announcements',
-    navLabel: '📣 Product Announcements',
     description: 'New StackQL releases, features and capabilities',
   },
   {
     id: 'providers',
     label: 'Provider Announcements',
-    navLabel: '📣 Provider Announcements',
     description: 'New and updated StackQL providers',
   },
   {
@@ -61,19 +59,10 @@ const blogSections = [
   },
 ];
 
-// Header dropdown entries (navLabel carries the bullhorn on the two
-// announcement sections) and plain footer entries. The /blog landing page
-// itself is reachable by URL and from the sitemap but is deliberately not
-// linked from the header or footer.
-const blogSectionNavItems = blogSections.map(({id, label, navLabel}) => ({
-  label: navLabel || label,
-  to: `/blog/${id}`,
-  activeBasePath: `/blog/${id}`,
-}));
-
-const blogSectionFooterItems = blogSections.map(({id, label}) => ({
+const blogSectionNavItems = blogSections.map(({id, label}) => ({
   label,
   to: `/blog/${id}`,
+  activeBasePath: `/blog/${id}`,
 }));
 
 const blogPlugins = blogSections.map(({id, label, description}) => [
@@ -110,7 +99,10 @@ const footerMoreItems = [
     // former /stackql-deploy meta-refresh stub is a Netlify 301 now.
     html: '<a class="footer__link-item" href="https://stackql-deploy.io/">stackql-deploy</a>',
   },
-  ...blogSectionFooterItems,
+  {
+    label: 'Blog',
+    to: '/blog',
+  },
   {
     label: 'Quick Starts',
     to: '/quick-starts',
@@ -538,6 +530,7 @@ const config = {
         {
           type: 'dropdown',
           label: 'AI Agents',
+          to: '/ai-agents',
           position: 'left',
           items: [
             {
@@ -592,9 +585,11 @@ const config = {
         },
         {
           type: 'dropdown',
-          label: 'More',
+          label: 'Blog',
+          to: '/blog',
           position: 'left',
           items: [
+            { to: '/blog', label: 'All posts' },
             ...blogSectionNavItems,
             {
               to: '/quick-starts',
