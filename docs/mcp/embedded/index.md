@@ -24,6 +24,8 @@ StackQL's MCP server can be embedded directly in compiled applications - no `npx
 
 All four libraries share one contract: `read_only` mode by default, a cwd-independent launch, a shared binary cache at `~/.stackql/mcp-server-bin/`, and the same four platform targets (`linux-x64`, `linux-arm64`, `windows-x64`, `darwin-universal`).
 
+Native Windows ARM64 [CLI and MCPB downloads](/installing-stackql) are also available. The Go, Rust and .NET platform resolvers shipped in v0.12.778 still select only `windows-x64` on Windows; the new bundle does not add automatic ARM64 selection to those libraries.
+
 {/* Embedded language libraries - single source of truth */}
 export const EMBEDDED_LIBRARIES = [
   {

@@ -26,7 +26,7 @@ The easiest way to use the StackQL MCP server with Claude Desktop is to install 
 
 You can also view the listing directly at [claude.ai/directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql).
 
-This installs the StackQL MCP server in-process for your platform: the listing serves a combined multiplatform bundle containing the signed binaries for every supported platform (macOS universal, Windows x64, Linux x64 and arm64), and Claude Desktop selects the right one for your machine automatically. The Windows binary is Authenticode-signed and the macOS binary is Apple-notarised - the same binaries as the standalone StackQL release.
+This installs the StackQL MCP server in-process for your platform: the listing serves a combined multiplatform bundle containing signed binaries for macOS universal, Windows x64, and Linux x64 and arm64, and Claude Desktop selects the right one for your machine automatically. For native Windows ARM64, install the separate `windows-arm64` bundle from the [downloads below](#install-from-a-downloaded-bundle). The Windows binaries are Authenticode-signed and the macOS binary is Apple-notarised - the same binaries as the standalone StackQL release.
 
 ![Installing the StackQL connector](/img/stackql-anthropic-directory-install.png)
 
@@ -45,7 +45,8 @@ Download the bundle for your platform from the latest release:
 | Platform | Bundle |
 |---|---|
 | macOS (universal) | [stackql-mcp-darwin-universal.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-darwin-universal.mcpb) |
-| Windows x64 | [stackql-mcp-windows-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-windows-x64.mcpb) |
+| Windows AMD64 (x64) | [stackql-mcp-windows-x64.mcpb](https://releases.stackql.io/stackql/latest/stackql-mcp-windows-x64.mcpb) |
+| Windows ARM64 (native) | [stackql-mcp-windows-arm64.mcpb](https://releases.stackql.io/stackql/latest/stackql-mcp-windows-arm64.mcpb) |
 | Linux x64 | [stackql-mcp-linux-x64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-x64.mcpb) |
 | Linux arm64 | [stackql-mcp-linux-arm64.mcpb](https://github.com/stackql/stackql/releases/latest/download/stackql-mcp-linux-arm64.mcpb) |
 

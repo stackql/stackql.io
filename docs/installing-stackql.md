@@ -188,7 +188,7 @@ Instructions for installing StackQL on various different platforms are provided 
 
   ## Windows
 
-  StackQL is available on Windows via Chocolatey, PowerShell install script, and the MSI installer. The x64 (AMD64) build is supported and also runs on ARM64 via emulation. All executables are signed with an Authenticode code-signing certificate.
+  StackQL is available on Windows via Chocolatey, PowerShell install script, and the MSI installer. Native AMD64 (x64) and ARM64 builds are available as MSI installers and ZIP archives containing `stackql.exe`. The AMD64 build also runs on ARM64 via emulation. All executables are signed with an Authenticode code-signing certificate.
 
   <Tabs
     defaultValue="chocolatey"
@@ -220,19 +220,27 @@ Instructions for installing StackQL on various different platforms are provided 
   </TabItem>
   <TabItem value="package">
 
-  Alternatively, the signed Windows `stackql` installer package or executable can be downloaded here.
+  Download the signed Windows `stackql` installer or executable below. Clicking a download button selects AMD64 by default; use its dropdown to choose AMD64 or native ARM64.
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
     <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
-      <BinaryDownloadLink 
+      <DropDownBinaryDownloadLink
         iconSize={20} 
         text="Download Windows MSI"
         to="https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi"
+        options={[
+          { text: 'Download Windows MSI (amd64)', to: 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.msi' },
+          { text: 'Download Windows MSI (arm64)', to: 'https://releases.stackql.io/stackql/latest/stackql_windows_arm64.msi' },
+        ]}
       />
-      <BinaryDownloadLink 
+      <DropDownBinaryDownloadLink
         iconSize={20} 
         text="Download Windows ZIP"
         to="https://releases.stackql.io/stackql/latest/stackql_windows_amd64.zip"
+        options={[
+          { text: 'Download Windows ZIP (amd64)', to: 'https://releases.stackql.io/stackql/latest/stackql_windows_amd64.zip' },
+          { text: 'Download Windows ZIP (arm64)', to: 'https://releases.stackql.io/stackql/latest/stackql_windows_arm64.zip' },
+        ]}
       />      
     </div>
   </Box>
@@ -441,6 +449,8 @@ The StackQL MCP server runs locally over stdio, so provider credentials stay on 
   ### Claude Desktop
 
   The recommended way to install the StackQL MCP server into Claude Desktop is from the [Anthropic Connector Directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) (**Settings -> Connectors -> Add -> Browse Connectors**, search for **StackQL**) - Claude Desktop selects the correct signed binary for your platform automatically.  Alternatively, prebuilt MCP Bundles (`.mcpb`) are attached to every StackQL release for installation from a downloaded file - no separate StackQL installation is required either way.  Bundles are available for macOS, Windows and Linux.
+
+  Linux and Windows MCPB downloads default to **amd64** (x64). Use the dropdowns to select **amd64** or **arm64**.
   
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
     <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
@@ -451,16 +461,21 @@ The StackQL MCP server runs locally over stdio, so provider credentials stay on 
       />
       <DropDownBinaryDownloadLink 
         iconSize={20} 
-        text="Download Linux MCPB (x64)"
+        text="Download Linux MCPB"
         to="https://releases.stackql.io/stackql/latest/stackql-mcp-linux-x64.mcpb"
         options={[
+          { text: 'Download Linux MCPB (amd64)', to: 'https://releases.stackql.io/stackql/latest/stackql-mcp-linux-x64.mcpb' },
           { text: 'Download Linux MCPB (arm64)', to: 'https://releases.stackql.io/stackql/latest/stackql-mcp-linux-arm64.mcpb' },
         ]}
       />
-      <BinaryDownloadLink 
+      <DropDownBinaryDownloadLink
         iconSize={20} 
         text="Download Windows MCPB"
         to="https://releases.stackql.io/stackql/latest/stackql-mcp-windows-x64.mcpb"
+        options={[
+          { text: 'Download Windows MCPB (amd64)', to: 'https://releases.stackql.io/stackql/latest/stackql-mcp-windows-x64.mcpb' },
+          { text: 'Download Windows MCPB (arm64)', to: 'https://releases.stackql.io/stackql/latest/stackql-mcp-windows-arm64.mcpb' },
+        ]}
       />      
     </div>
   </Box>
@@ -581,7 +596,7 @@ The server is published to the Official MCP Registry as `io.github.stackql/stack
 
 | Registry | Type | Published via | Listing | Notes |
 |---|---|---|---|---|
-| Official MCP Registry | Canonical metadata registry | `mcp-publisher` CLI + `server.json` | [`modelcontextprotocol.io/search`](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)<br/>[`modelcontextprotocol.io/direct`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.stackql/stackql-mcp) | advertises all 7 package types (`mcpb x4`, `oci`, `npm`, `pypi`) |
+| Official MCP Registry | Canonical metadata registry | `mcp-publisher` CLI + `server.json` | [`modelcontextprotocol.io/search`](https://registry.modelcontextprotocol.io/v0/servers?search=stackql)<br/>[`modelcontextprotocol.io/direct`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.stackql/stackql-mcp) | advertises all 8 packages (`mcpb x5`, `oci`, `npm`, `pypi`) |
 | npm | Package registry | `npm publish` | [`@stackql/mcp-server`](https://www.npmjs.com/package/@stackql/mcp-server) | `npx` launcher |
 | PyPI | Package registry | `twine upload` | [`stackql-mcp-server`](https://pypi.org/project/stackql-mcp-server/) | `uvx` / `pip` launcher |
 | Docker Hub | Container registry | `docker buildx --push` | [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mcp) | multi-arch `amd64` + `arm64` |
@@ -615,7 +630,7 @@ A prebuilt MCP Bundle is attached to every StackQL release for each platform:
 https://releases.stackql.io/stackql/latest/stackql-mcp-<platform>.mcpb
 ```
 
-where `<platform>` is one of `darwin-universal`, `windows-x64`, `linux-x64`, or `linux-arm64`. Download buttons for each platform are in the **Claude Desktop** tab under [Using with MCP clients](#using-with-mcp-clients). Each bundle has a matching `.sha256` checksum on the [release page](https://github.com/stackql/stackql/releases/latest). Verify it, then install via **Settings -> Extensions** in Claude Desktop:
+where `<platform>` is one of `darwin-universal`, `windows-x64` (AMD64), `windows-arm64`, `linux-x64`, or `linux-arm64`. Download buttons for each platform are in the **Claude Desktop** tab under [Using with MCP clients](#using-with-mcp-clients). Each bundle has a matching `.sha256` checksum on the [release page](https://github.com/stackql/stackql/releases/latest). Verify it, then install via **Settings -> Extensions** in Claude Desktop:
 
 ```bash
 shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
@@ -935,11 +950,17 @@ The same security properties hold across every channel:
 Deploy or test infrastructure stacks using StackQL directly from your GitHub workflows. This action enables Infrastructure as Code (IaC) workflows using SQL-like syntax, allowing you to define, deploy, and manage cloud resources across multiple providers in a single workflow.  
 
 <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
-    <div className={clsx(buttonStyles.buttons)}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
       <BinaryDownloadLink 
         iconSize={20} 
         text="View on the GitHub Marketplace"
         to="https://github.com/marketplace/actions/stackql-deploy"
+        isOpenInNewTab={true}
+        />
+      <BinaryDownloadLink
+        iconSize={20}
+        text="View on GitHub"
+        to="https://github.com/stackql/stackql-deploy-action"
         isOpenInNewTab={true}
         />
     </div>
@@ -980,11 +1001,17 @@ jobs:
 Setup StackQL in your GitHub Actions workflow.  
 
 <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
-    <div className={clsx(buttonStyles.buttons)}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
       <BinaryDownloadLink 
         iconSize={20} 
         text="View on the GitHub Marketplace"
         to="https://github.com/marketplace/actions/setup-stackql"
+        isOpenInNewTab={true}
+        />
+      <BinaryDownloadLink
+        iconSize={20}
+        text="View on GitHub"
+        to="https://github.com/stackql/setup-stackql"
         isOpenInNewTab={true}
         />
     </div>
@@ -1059,11 +1086,17 @@ __Example usage__
 Execute StackQL commands in your GitHub Actions workflow.  Queries can be supplied in line or from a file in the repo.  
 
 <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
-    <div className={clsx(buttonStyles.buttons)}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
       <BinaryDownloadLink 
         iconSize={20} 
         text="View on the GitHub Marketplace"
         to="https://github.com/marketplace/actions/stackql-exec"
+        isOpenInNewTab={true}
+        />
+      <BinaryDownloadLink
+        iconSize={20}
+        text="View on GitHub"
+        to="https://github.com/stackql/stackql-exec"
         isOpenInNewTab={true}
         />
     </div>
@@ -1093,11 +1126,17 @@ __Example usage__
 Perform unit tests in your GitHub Actions workflow (for assurance, governance or cloud security checks).  
 
 <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
-    <div className={clsx(buttonStyles.buttons)}>
+    <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>
       <BinaryDownloadLink 
         iconSize={20} 
         text="View on the GitHub Marketplace"
         to="https://github.com/marketplace/actions/stackql-assert"
+        isOpenInNewTab={true}
+        />
+      <BinaryDownloadLink
+        iconSize={20}
+        text="View on GitHub"
+        to="https://github.com/stackql/stackql-assert"
         isOpenInNewTab={true}
         />
     </div>
