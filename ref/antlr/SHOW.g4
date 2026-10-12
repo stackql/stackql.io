@@ -9,5 +9,7 @@ showStatement
             | (SERVICES | RESOURCES | METHODS) ((FROM | IN) multipartIdentifier (LIKE pattern | WHERE expression)?)?
             | INSERT INTO? multipartIdentifier
             | VERSION
+            | CONTRIBUTORS
+            | DEPENDENCIES (LIKE pattern)?
         ) ';'
     ;
