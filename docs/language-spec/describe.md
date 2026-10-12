@@ -75,7 +75,7 @@ DESC [ EXTENDED ] <multipartIdentifier> ;
 ## Examples
 
 ### Basic `DESCRIBE` Statement
-Run a basic DESCRIBE statement to list the fields in a resource from an authenticated session.
+Run a basic `DESCRIBE` statement to list the fields in a resource from an authenticated session.
 
 ```sql
 -- Show the available fields in a Compute Engine resource
@@ -83,7 +83,7 @@ DESCRIBE google.compute.instances;
 ```
 
 ### Extended `DESCRIBE` Statement
-Run an extended DESCRIBE statement to list the fields in a resource and their descriptions from an authenticated session.
+Run an extended `DESCRIBE` statement to list the fields in a resource and their descriptions from an authenticated session.
 
 ```sql
 -- Show the available fields in a Compute Engine resource
@@ -107,7 +107,7 @@ DESCRIBE METHOD google.storage.buckets.get;
 ```
 
 ### Extended `DESCRIBE METHOD` Statement
-Run an extended DESCRIBE METHOD statement to include per-field descriptions alongside the shape.
+Run an extended `DESCRIBE METHOD` statement to include per-field descriptions alongside the shape.
 
 ```sql
 -- Show inputs, outputs, and descriptions for the buckets.insert method
