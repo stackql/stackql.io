@@ -5,7 +5,7 @@ hide_table_of_contents: false
 authors:	
   - jeffreyaven
 image: "/img/blog/stackql-deploy-featured-image.png"
-description: Inventory all resources across all regions in an AWS account.
+description: Provision, test, update and tear down multi-cloud infrastructure using SQL models with stackql-deploy, a framework inspired by dbt.
 keywords: [stackql, iac, infrastructure-as-code, dbt]
 tags: [stackql, iac, infrastructure-as-code, dbt]
 ---

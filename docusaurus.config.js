@@ -34,6 +34,10 @@ const footerStackQLItems = [
     label: 'Contact us',
     to: '/contact-us',
   },
+  {
+    label: 'Privacy Policy',
+    to: '/privacy',
+  },
 ];
 
 // Blog sections. Each is its own @docusaurus/plugin-content-blog instance
