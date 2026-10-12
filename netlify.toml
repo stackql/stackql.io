@@ -329,6 +329,11 @@
   status = 301
 
 [[redirects]]
+  from = "/providers/supabase"
+  to = "https://supabase-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
   from = "/providers/datadog"
   to = "https://datadog-provider.stackql.io/"
   status = 301
@@ -541,6 +546,11 @@
 [[redirects]]
   from = "/registry/deno"
   to = "https://deno-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/supabase"
+  to = "https://supabase-provider.stackql.io/"
   status = 301
 
 [[redirects]]

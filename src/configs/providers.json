@@ -205,6 +205,11 @@
         "name": "Deno Deploy",
         "href": "https://deno-provider.stackql.io/",
         "icon": "/img/providers/deno/favicon.ico"
+      },
+      {
+        "name": "Supabase",
+        "href": "https://supabase-provider.stackql.io/",
+        "icon": "/img/providers/supabase/favicon.ico"
       }
     ]
   },
