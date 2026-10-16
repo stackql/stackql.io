@@ -21,6 +21,7 @@
 //         name, slug,
 //         href: 'https://<slug>-provider.stackql.io/',
 //         icon: 'https://stackql.io/img/...',      // absolute
+//         deployedBy: 'netlify' | 'github',          // hosting platform (github = GitHub Pages)
 //         invertOnDark: true                        // only when set
 //       }]
 //     }]
@@ -63,6 +64,7 @@ module.exports = function providerCatalogPlugin(context, options) {
             slug: provider.slug,
             href: provider.href,
             icon: absolute(provider.icon),
+            deployedBy: provider.deployedBy,
             ...(provider.invertOnDark ? { invertOnDark: true } : {}),
           })),
         })),

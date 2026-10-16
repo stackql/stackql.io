@@ -18,6 +18,10 @@
 //   href             microsite URL, must be https://<slug>-provider.stackql.io/
 //                    (the slug is derived from it)
 //   icon             tile icon, a path under static/
+//   deployedBy       hosting platform of the microsite: "netlify" or
+//                    "github" (GitHub Pages). Nothing on this site renders
+//                    it; it is published in /providers.json so cross-repo
+//                    automation can tell how to redeploy each microsite
 //   invertOnDark     optional, invert the icon in dark mode
 //   registryAliases  optional, extra names that redirect to this microsite
 //                    under /registry only (never under /providers), so a
@@ -38,6 +42,9 @@ const catalog = require('../configs/providers.json');
 // Every microsite is https://<slug>-provider.stackql.io/. The slug is the
 // path segment used by the redirect routes.
 const MICROSITE_RE = /^https:\/\/([a-z0-9-]+)-provider\.stackql\.io\/$/;
+
+// Hosting platforms a microsite can be deployed by (the `deployedBy` field).
+const DEPLOYED_BY = ['netlify', 'github'];
 
 function slugFromHref(href) {
   const match = MICROSITE_RE.exec(href);
@@ -74,6 +81,11 @@ const PROVIDER_CATEGORIES = catalog.map((category, ci) => {
       requireString(provider.name, 'name', where);
       requireString(provider.href, 'href', `"${provider.name}"`);
       requireString(provider.icon, 'icon', `"${provider.name}"`);
+      if (!DEPLOYED_BY.includes(provider.deployedBy)) {
+        throw new Error(
+          `[providers] "${provider.name}": "deployedBy" must be one of ${DEPLOYED_BY.join(', ')}`,
+        );
+      }
       if (provider.registryAliases !== undefined && !Array.isArray(provider.registryAliases)) {
         throw new Error(`[providers] "${provider.name}": "registryAliases" must be an array`);
       }
@@ -132,4 +144,5 @@ module.exports = {
   registryRoutes,
   slugFromHref,
   MICROSITE_RE,
+  DEPLOYED_BY,
 };

@@ -71,6 +71,21 @@ The served site at `http://localhost:3000` now includes `/llms.txt` and the `.md
 
 The StackQL query library lives in its own repo (query-library.stackql.io) and is served under the canonical path `https://stackql.io/docs/query-library/*` via a Netlify 200 proxy rewrite (see `netlify.toml`). The path 404s when serving this site locally - that is expected, the rewrite only exists on Netlify.
 
+### Provider catalog
+
+`src/configs/providers.json` is the list of providers behind the Providers menu, the tiles on `/providers`, the `/providers/<slug>` and `/registry/<name>` redirects, and the catalog published at `https://stackql.io/providers.json`, which the provider microsites and the query library read when they build their own Providers menu. It is an array of categories (`id`, `name`, `providers`), and each provider entry has:
+
+| Field | Required | Meaning |
+|---|---|---|
+| `name` | yes | display name |
+| `href` | yes | microsite URL, exactly `https://<slug>-provider.stackql.io/` (the slug is derived from it) |
+| `icon` | yes | icon path under `static/` |
+| `deployedBy` | yes | hosting platform of the microsite: `netlify` or `github` (GitHub Pages). Nothing on this site renders it; it is published in `/providers.json` so cross-repo automation knows how to redeploy each microsite |
+| `invertOnDark` | no | invert the icon in dark mode |
+| `registryAliases` | no | extra names that redirect to this microsite under `/registry` only |
+
+To add a provider, add one entry and run `node scripts/generate-provider-redirects.js` to regenerate the redirect block in `netlify.toml`. The config fails to load on a missing field, a malformed `href`, an unknown `deployedBy` value, or a duplicate slug or alias. See CLAUDE.md, "Provider catalog", for the full picture.
+
 ### Deployment
 
 ```
