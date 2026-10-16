@@ -80,11 +80,15 @@ The StackQL query library lives in its own repo (query-library.stackql.io) and i
 | `name` | yes | display name |
 | `href` | yes | microsite URL, exactly `https://<slug>-provider.stackql.io/` (the slug is derived from it) |
 | `icon` | yes | icon path under `static/` |
-| `deployedBy` | yes | hosting platform of the microsite: `netlify` or `github` (GitHub Pages). Nothing on this site renders it; it is published in `/providers.json` so cross-repo automation knows how to redeploy each microsite |
+| `deployedBy` | yes | hosting platform of the microsite: `netlify` or `github` (GitHub Pages) |
+| `repo` | yes | GitHub repository of the provider and its microsite, as `owner/name` |
+| `branch` | yes | the branch the microsite is deployed from (today always the repository's default branch) |
 | `invertOnDark` | no | invert the icon in dark mode |
 | `registryAliases` | no | extra names that redirect to this microsite under `/registry` only |
 
-To add a provider, add one entry and run `node scripts/generate-provider-redirects.js` to regenerate the redirect block in `netlify.toml`. The config fails to load on a missing field, a malformed `href`, an unknown `deployedBy` value, or a duplicate slug or alias. See CLAUDE.md, "Provider catalog", for the full picture.
+`deployedBy`, `repo` and `branch` are not rendered anywhere on this site; they are published in `/providers.json` so cross-repo automation can tell where each microsite lives and how to redeploy it.
+
+To add a provider, add one entry and run `node scripts/generate-provider-redirects.js` to regenerate the redirect block in `netlify.toml`. The config fails to load on a missing field, a malformed `href` or `repo`, an unknown `deployedBy` value, or a duplicate slug or alias. See CLAUDE.md, "Provider catalog", for the full picture.
 
 ### Deployment
 
