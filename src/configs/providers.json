@@ -6,52 +6,62 @@
       {
         "name": "Amazon Web Services",
         "href": "https://aws-provider.stackql.io/",
-        "icon": "/img/providers/aws/favicon.ico"
+        "icon": "/img/providers/aws/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Microsoft Azure",
         "href": "https://azure-provider.stackql.io/",
-        "icon": "/img/providers/azure/favicon.ico"
+        "icon": "/img/providers/azure/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Google Cloud Platform",
         "href": "https://google-provider.stackql.io/",
-        "icon": "/img/providers/google/favicon.ico"
+        "icon": "/img/providers/google/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Oracle Cloud Infrastructure",
         "href": "https://oci-provider.stackql.io/",
-        "icon": "/img/providers/oci/favicon.ico"
+        "icon": "/img/providers/oci/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Digital Ocean",
         "href": "https://digitalocean-provider.stackql.io/",
-        "icon": "/img/providers/digitalocean/favicon.png"
+        "icon": "/img/providers/digitalocean/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "Cloudflare",
         "href": "https://cloudflare-provider.stackql.io/",
-        "icon": "/img/providers/cloudflare/favicon.ico"
+        "icon": "/img/providers/cloudflare/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Linode",
         "href": "https://linode-provider.stackql.io/",
-        "icon": "/img/providers/linode/favicon.ico"
+        "icon": "/img/providers/linode/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "AWS Cloud Control",
         "href": "https://awscc-provider.stackql.io/",
-        "icon": "/img/providers/aws/favicon.ico"
+        "icon": "/img/providers/aws/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Azure Stack",
         "href": "https://azure-stack-provider.stackql.io/",
-        "icon": "/img/providers/azure/favicon.ico"
+        "icon": "/img/providers/azure/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Azure ISV",
         "href": "https://azure-isv-provider.stackql.io/",
-        "icon": "/img/providers/azure/favicon.ico"
+        "icon": "/img/providers/azure/favicon.ico",
+        "deployedBy": "netlify"
       }
     ]
   },
@@ -65,37 +75,44 @@
           "databricks"
         ],
         "href": "https://databricks-account-provider.stackql.io/",
-        "icon": "/img/providers/databricks/favicon.ico"
+        "icon": "/img/providers/databricks/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Databricks Workspace",
         "href": "https://databricks-workspace-provider.stackql.io/",
-        "icon": "/img/providers/databricks/favicon.ico"
+        "icon": "/img/providers/databricks/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Snowflake",
         "href": "https://snowflake-provider.stackql.io/",
-        "icon": "/img/providers/snowflake/favicon.ico"
+        "icon": "/img/providers/snowflake/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "ClickHouse",
         "href": "https://clickhouse-provider.stackql.io/",
-        "icon": "/img/providers/clickhouse/favicon.ico"
+        "icon": "/img/providers/clickhouse/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Fivetran",
         "href": "https://fivetran-provider.stackql.io/",
-        "icon": "/img/providers/fivetran/favicon.png"
+        "icon": "/img/providers/fivetran/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "Confluent",
         "href": "https://confluent-provider.stackql.io/",
-        "icon": "/img/providers/confluent/favicon.ico"
+        "icon": "/img/providers/confluent/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Kafka",
         "href": "https://kafka-provider.stackql.io/",
         "icon": "/img/providers/kafka/kafka.png",
+        "deployedBy": "netlify",
         "invertOnDark": true
       }
     ]
@@ -108,17 +125,20 @@
         "name": "Okta",
         "href": "https://okta-provider.stackql.io/",
         "icon": "/img/providers/okta/favicon.png",
+        "deployedBy": "github",
         "invertOnDark": true
       },
       {
         "name": "Google Admin",
         "href": "https://googleadmin-provider.stackql.io/",
-        "icon": "/img/providers/googleadmin/favicon.ico"
+        "icon": "/img/providers/googleadmin/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Microsoft Entra ID",
         "href": "https://entra-id-provider.stackql.io/",
-        "icon": "/img/providers/entra_id/entra_id_icon.svg"
+        "icon": "/img/providers/entra_id/entra_id_icon.svg",
+        "deployedBy": "github"
       }
     ]
   },
@@ -130,33 +150,39 @@
         "name": "OpenAI",
         "href": "https://openai-provider.stackql.io/",
         "icon": "/img/providers/openai/favicon.ico",
+        "deployedBy": "github",
         "invertOnDark": true
       },
       {
         "name": "OpenAI Admin",
         "href": "https://openai-admin-provider.stackql.io/",
         "icon": "/img/providers/openai/favicon.ico",
+        "deployedBy": "github",
         "invertOnDark": true
       },
       {
         "name": "Anthropic",
         "href": "https://anthropic-provider.stackql.io/",
-        "icon": "/img/providers/anthropic/favicon.png"
+        "icon": "/img/providers/anthropic/favicon.png",
+        "deployedBy": "netlify"
       },
       {
         "name": "Anthropic Admin",
         "href": "https://anthropic-admin-provider.stackql.io/",
-        "icon": "/img/providers/anthropic/favicon.png"
+        "icon": "/img/providers/anthropic/favicon.png",
+        "deployedBy": "netlify"
       },
       {
         "name": "Google Gemini",
         "href": "https://gemeni-provider.stackql.io/",
-        "icon": "/img/providers/gemeni/favicon.png"
+        "icon": "/img/providers/gemeni/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "TypeSafe AI",
         "href": "https://typesafe-provider.stackql.io/",
-        "icon": "/img/providers/typesafe/favicon.png"
+        "icon": "/img/providers/typesafe/favicon.png",
+        "deployedBy": "github"
       }
     ]
   },
@@ -168,48 +194,57 @@
         "name": "GitHub",
         "href": "https://github-provider.stackql.io/",
         "icon": "/img/providers/github/favicon.ico",
+        "deployedBy": "github",
         "invertOnDark": true
       },
       {
         "name": "Kubernetes",
         "href": "https://k8s-provider.stackql.io/",
-        "icon": "/img/providers/k8s/favicon.png"
+        "icon": "/img/providers/k8s/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "GitLab",
         "href": "https://gitlab-provider.stackql.io/",
-        "icon": "/img/providers/gitlab/favicon.ico"
+        "icon": "/img/providers/gitlab/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Firebase",
         "href": "https://firebase-provider.stackql.io/",
-        "icon": "/img/providers/firebase/favicon.png"
+        "icon": "/img/providers/firebase/favicon.png",
+        "deployedBy": "netlify"
       },
       {
         "name": "Railway",
         "href": "https://railway-provider.stackql.io/",
         "icon": "/img/providers/railway/favicon.ico",
+        "deployedBy": "github",
         "invertOnDark": true
       },
       {
         "name": "Vercel",
         "href": "https://vercel-provider.stackql.io/",
-        "icon": "/img/providers/vercel/favicon.ico"
+        "icon": "/img/providers/vercel/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Netlify",
         "href": "https://netlify-provider.stackql.io/",
-        "icon": "/img/providers/netlify/favicon.ico"
+        "icon": "/img/providers/netlify/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Deno Deploy",
         "href": "https://deno-provider.stackql.io/",
-        "icon": "/img/providers/deno/favicon.ico"
+        "icon": "/img/providers/deno/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "Supabase",
         "href": "https://supabase-provider.stackql.io/",
-        "icon": "/img/providers/supabase/favicon.ico"
+        "icon": "/img/providers/supabase/favicon.ico",
+        "deployedBy": "github"
       }
     ]
   },
@@ -220,17 +255,20 @@
       {
         "name": "DataDog",
         "href": "https://datadog-provider.stackql.io/",
-        "icon": "/img/providers/datadog/favicon.ico"
+        "icon": "/img/providers/datadog/favicon.ico",
+        "deployedBy": "github"
       },
       {
         "name": "SumoLogic",
         "href": "https://sumologic-provider.stackql.io/",
-        "icon": "/img/providers/sumologic/favicon.png"
+        "icon": "/img/providers/sumologic/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "PagerDuty",
         "href": "https://pagerduty-provider.stackql.io/",
-        "icon": "/img/providers/pagerduty/icon.svg"
+        "icon": "/img/providers/pagerduty/icon.svg",
+        "deployedBy": "github"
       }
     ]
   },
@@ -241,22 +279,26 @@
       {
         "name": "Google Workspace",
         "href": "https://googleworkspace-provider.stackql.io/",
-        "icon": "/img/providers/googleworkspace/favicon.ico"
+        "icon": "/img/providers/googleworkspace/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "GoDaddy",
         "href": "https://godaddy-provider.stackql.io/",
-        "icon": "/img/providers/godaddy/favicon.png"
+        "icon": "/img/providers/godaddy/favicon.png",
+        "deployedBy": "github"
       },
       {
         "name": "Azure Extras",
         "href": "https://azure-extras-provider.stackql.io/",
-        "icon": "/img/providers/azure/favicon.ico"
+        "icon": "/img/providers/azure/favicon.ico",
+        "deployedBy": "netlify"
       },
       {
         "name": "Homebrew",
         "href": "https://homebrew-provider.stackql.io/",
-        "icon": "/img/providers/homebrew/favicon.ico"
+        "icon": "/img/providers/homebrew/favicon.ico",
+        "deployedBy": "github"
       }
     ]
   }
