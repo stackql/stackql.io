@@ -22,6 +22,8 @@
 //         href: 'https://<slug>-provider.stackql.io/',
 //         icon: 'https://stackql.io/img/...',      // absolute
 //         deployedBy: 'netlify' | 'github',          // hosting platform (github = GitHub Pages)
+//         repo: 'stackql-registry/stackql-provider-<x>', // GitHub owner/name
+//         branch: 'main',                            // the branch the microsite deploys from
 //         invertOnDark: true                        // only when set
 //       }]
 //     }]
@@ -65,6 +67,8 @@ module.exports = function providerCatalogPlugin(context, options) {
             href: provider.href,
             icon: absolute(provider.icon),
             deployedBy: provider.deployedBy,
+            repo: provider.repo,
+            branch: provider.branch,
             ...(provider.invertOnDark ? { invertOnDark: true } : {}),
           })),
         })),

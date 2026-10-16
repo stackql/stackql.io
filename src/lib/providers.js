@@ -19,9 +19,15 @@
 //                    (the slug is derived from it)
 //   icon             tile icon, a path under static/
 //   deployedBy       hosting platform of the microsite: "netlify" or
-//                    "github" (GitHub Pages). Nothing on this site renders
-//                    it; it is published in /providers.json so cross-repo
-//                    automation can tell how to redeploy each microsite
+//                    "github" (GitHub Pages)
+//   repo             GitHub repository of the provider and its microsite,
+//                    as owner/name (stackql-registry/stackql-provider-<x>)
+//   branch           the branch the microsite is deployed from (today
+//                    always the repository's default branch)
+//                    deployedBy, repo and branch are not rendered on this
+//                    site; they are published in /providers.json so
+//                    cross-repo automation can tell where each microsite
+//                    lives and how to redeploy it
 //   invertOnDark     optional, invert the icon in dark mode
 //   registryAliases  optional, extra names that redirect to this microsite
 //                    under /registry only (never under /providers), so a
@@ -45,6 +51,9 @@ const MICROSITE_RE = /^https:\/\/([a-z0-9-]+)-provider\.stackql\.io\/$/;
 
 // Hosting platforms a microsite can be deployed by (the `deployedBy` field).
 const DEPLOYED_BY = ['netlify', 'github'];
+
+// `repo` is a GitHub owner/name, nothing more (no URL, no .git).
+const REPO_RE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 
 function slugFromHref(href) {
   const match = MICROSITE_RE.exec(href);
@@ -86,6 +95,11 @@ const PROVIDER_CATEGORIES = catalog.map((category, ci) => {
           `[providers] "${provider.name}": "deployedBy" must be one of ${DEPLOYED_BY.join(', ')}`,
         );
       }
+      requireString(provider.repo, 'repo', `"${provider.name}"`);
+      if (!REPO_RE.test(provider.repo)) {
+        throw new Error(`[providers] "${provider.name}": "repo" must be a GitHub owner/name`);
+      }
+      requireString(provider.branch, 'branch', `"${provider.name}"`);
       if (provider.registryAliases !== undefined && !Array.isArray(provider.registryAliases)) {
         throw new Error(`[providers] "${provider.name}": "registryAliases" must be an array`);
       }
