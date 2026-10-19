@@ -40,6 +40,7 @@ const LEGACY_SLUGS = {
 const POST_SPLIT_SLUGS = new Set([
   'new-typesafe-provider-available',
   'new-oci-provider-available',
+  'new-nvidia-provider-available',
 ]);
 
 function postsIn(section) {

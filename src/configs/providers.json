@@ -235,6 +235,14 @@
         "deployedBy": "github",
         "repo": "stackql-registry/stackql-provider-typesafe",
         "branch": "main"
+      },
+      {
+        "name": "NVIDIA NGC",
+        "href": "https://nvidia-provider.stackql.io/",
+        "icon": "/img/providers/nvidia/favicon.ico",
+        "deployedBy": "github",
+        "repo": "stackql-registry/stackql-provider-nvidia",
+        "branch": "main"
       }
     ]
   },
