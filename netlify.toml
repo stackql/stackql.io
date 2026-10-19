@@ -289,6 +289,11 @@
   status = 301
 
 [[redirects]]
+  from = "/providers/nvidia"
+  to = "https://nvidia-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
   from = "/providers/github"
   to = "https://github-provider.stackql.io/"
   status = 301
@@ -506,6 +511,11 @@
 [[redirects]]
   from = "/registry/typesafe"
   to = "https://typesafe-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/nvidia"
+  to = "https://nvidia-provider.stackql.io/"
   status = 301
 
 [[redirects]]
@@ -856,6 +866,16 @@
 [[redirects]]
   from = "/blog/stackql-mcp-2026-07-28-and-opentelemetry.md"
   to = "/blog/product/stackql-mcp-2026-07-28-and-opentelemetry.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/windows-arm64-build-available"
+  to = "/blog/product/windows-arm64-build-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/windows-arm64-build-available.md"
+  to = "/blog/product/windows-arm64-build-available.md"
   status = 301
 
 [[redirects]]
@@ -1326,6 +1346,16 @@
 [[redirects]]
   from = "/blog/new-railway-provider-available.md"
   to = "/blog/providers/new-railway-provider-available.md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-supabase-provider-available"
+  to = "/blog/providers/new-supabase-provider-available"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-supabase-provider-available.md"
+  to = "/blog/providers/new-supabase-provider-available.md"
   status = 301
 
 [[redirects]]
