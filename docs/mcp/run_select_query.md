@@ -26,6 +26,8 @@ See also:
 |--|--|--|
 |`sql`|Yes|A `SELECT` statement.  Metadata statements (`SHOW`, `DESCRIBE`, `DESC`, `EXPLAIN`) are classed as read-only by the policy gate and accepted too; `DESC` is recognised in StackQL releases from `v0.12.732`.|
 |`row_limit`|No|Cap on the number of rows returned to the client.  `0` (default) means no client-side cap.|
+|`source`|No|Query library entry ID when the SQL came from [`query_library_get`](/mcp/query_library_get). Attribution only; does not change execution or approvals.|
+|`format`|No|Text rendering: `markdown` or `json`. When omitted, uses the server's render setting.|
 
 * * *
 

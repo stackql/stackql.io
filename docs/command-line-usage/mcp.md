@@ -489,7 +489,7 @@ stackql mcp \
 
 ### Available MCP tools
 
-When running as an MCP server, StackQL exposes the following tools.  Each returns both a rendered text view (for the LLM) and a typed structured payload (for programmatic clients).  Rendering is fixed per tool: a markdown table for uniform multi-row results, a markdown KV block for sparse / single-record results.
+When running as an MCP server, StackQL exposes the following tools, subject to the configured `enabled_tools` allowlist. Each returns both a rendered text view (for the LLM) and a typed structured payload (for programmatic clients). The default text rendering is a markdown table for uniform multi-row results or a markdown KV block for sparse / single-record results. Tools with arguments accept an optional `format` (`markdown` or `json`) override; otherwise the server's render setting is used. The inputs below list task-specific arguments; `?` marks optional inputs.
 
 Click any tool name for a full reference page, including inputs, gating behaviour, and an example prompt.
 
@@ -501,6 +501,8 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`list_resources`](/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
 |[`list_methods`](/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
 |[`describe_method`](/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
+|[`query_library_search`](/mcp/query_library_search)|Table|Find curated query templates by natural-language intent. Read-only; mutation entries require opt-in and are excluded in `read_only` mode.|`intent`, `provider?`, `service?`, `tags?`, `include_mutations?`, `limit?`|
+|[`query_library_get`](/mcp/query_library_get)|KV|Retrieve a template and its parameter declarations. With non-empty `params`, validate values and return rendered SQL plus `next_tool`, without executing.|`id`, `params?`|
 |[`validate_select_query`](/mcp/validate_select_query)|KV|Parse and plan a single `SELECT` without executing.  Returns `{valid, errors}`.  `SELECT` only; exactly one statement.|`sql`|
 |[`run_select_query`](/mcp/run_select_query)|Table|Execute a `SELECT`.  Returns `{rows}`.  Reads only.|`sql`, `row_limit?`|
 |[`run_mutation_query`](/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
@@ -508,6 +510,8 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`list_registry`](/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
 |[`pull_provider`](/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
 |[`reload_credentials`](/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
+
+Consult `query_library_search` before authoring SQL from scratch, then use `query_library_get` to inspect and render a matching template. Query tools also accept an optional `source` containing the library entry ID for attribution only; execution remains subject to the normal server mode and approval policy.
 
 :::note
 

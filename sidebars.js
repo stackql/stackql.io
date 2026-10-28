@@ -90,6 +90,8 @@ const sidebars = {
         'mcp/describe_method',
         'mcp/list_registry',
         'mcp/pull_provider',
+        'mcp/query_library_search',
+        'mcp/query_library_get',
         'mcp/validate_select_query',
         'mcp/run_select_query',
         'mcp/run_mutation_query',

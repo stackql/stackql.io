@@ -15,7 +15,8 @@ image: "/img/stackql-featured-image.png"
 import DocCardList from '@theme/DocCardList';
 import ThemedImage from '@theme/ThemedImage';
 import React from 'react';
-import { FaRobot } from 'react-icons/fa';
+import { FaGithub, FaRobot } from 'react-icons/fa';
+import badgeStyles from './badges.module.css';
 
 {/* MCP Tool Map - single source of truth */}
 export const MCP_TOOL_CATEGORIES = [
@@ -79,6 +80,22 @@ export const MCP_TOOL_CATEGORIES = [
         name: 'pull_provider',
         href: '/mcp/pull_provider',
         description: 'Install a provider from the registry into the local cache'
+      }
+    ]
+  },
+  {
+    id: 'query-library',
+    name: 'Query Library',
+    tools: [
+      {
+        name: 'query_library_search',
+        href: '/mcp/query_library_search',
+        description: 'Find curated query templates by intent, provider, service or tags'
+      },
+      {
+        name: 'query_library_get',
+        href: '/mcp/query_library_get',
+        description: 'Retrieve a template and validate parameters to render SQL without executing it'
       }
     ]
   },
@@ -166,8 +183,8 @@ export const ToolContent = () => {
 
 <div className="row">
   <div className="col col--9">
-    <p>
-      <a href="https://www.claudeai.directory/launches/stackql-mcp-server" target="_blank" rel="noopener noreferrer">
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
+      <a href="https://claude.ai/directory/ant.dir.gh.stackql.stackql" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex' }}>
         <ThemedImage
           alt="StackQL MCP Server - Listed on Claude AI Directory"
           width="220"
@@ -178,7 +195,19 @@ export const ToolContent = () => {
           }}
         />
       </a>
-    </p>
+      <a
+        href="https://github.com/mcp?search=stackql"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={badgeStyles.badge}
+      >
+        <FaGithub size={28} aria-hidden="true" />
+        <span className={badgeStyles.label}>
+          <span className={badgeStyles.eyebrow}>LISTED ON</span>
+          <strong className={badgeStyles.title}>GitHub MCP Registry</strong>
+        </span>
+      </a>
+    </div>
     <ToolContent />
   </div>
   <div className="col col--3">

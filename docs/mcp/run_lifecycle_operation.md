@@ -42,6 +42,8 @@ See also:
 | Argument | Required | Description |
 |--|--|--|
 |`sql`|Yes|A StackQL `EXEC` statement targeting a lifecycle method.|
+|`source`|No|Query library entry ID when the SQL came from [`query_library_get`](/mcp/query_library_get). Attribution only; does not change execution or approvals.|
+|`format`|No|Text rendering: `markdown` or `json`. When omitted, uses the server's render setting.|
 
 * * *
 
