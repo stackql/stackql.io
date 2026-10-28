@@ -1,0 +1,46 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  width: 220px;
+  height: 54px;
+  padding: 0 12px;
+  border: 1px solid #e7e1d8;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #1f1b17;
+  transition: none;
+}
+
+.badge:hover {
+  color: #1f1b17;
+  text-decoration: none;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.eyebrow {
+  color: #8a7f72;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+}
+
+.title {
+  font-size: 14px;
+}
+
+[data-theme='dark'] .badge {
+  border-color: #3a352f;
+  background-color: #1c1a17;
+  color: #f7f3ee;
+}
+
+[data-theme='dark'] .eyebrow {
+  color: #a89c8e;
+}
