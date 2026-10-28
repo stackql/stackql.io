@@ -184,7 +184,7 @@ export const ToolContent = () => {
 <div className="row">
   <div className="col col--9">
     <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
-      <a href="https://www.claudeai.directory/launches/stackql-mcp-server" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex' }}>
+      <a href="https://claude.ai/directory/ant.dir.gh.stackql.stackql" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex' }}>
         <ThemedImage
           alt="StackQL MCP Server - Listed on Claude AI Directory"
           width="220"
