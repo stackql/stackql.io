@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "How StackQL works internally: entry points, the query pipeline, the any-sdk provider SDK, the SQL backend, and how a statement reaches cloud providers."
+description: "How StackQL works internally: entry points, the query pipeline, the omnisdk provider SDK, the SQL backend, and how a statement reaches cloud providers."
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -34,7 +34,7 @@ flowchart TB
         subgraph Processing["Query Processing"]
             Parser["SQL Parser<br/><i>Go, Yacc</i>"]
             QueryEngine["Query Engine<br/><i>Go</i>"]
-            SDK["Provider SDK<br/><i>Go, any-sdk</i>"]
+            SDK["Provider SDK<br/><i>Go, omnisdk</i>"]
         end
 
         subgraph Backend["SQL Backend"]
@@ -90,21 +90,25 @@ StackQL supports multiple entry points for executing SQL queries:
    - Coordination between API calls and local SQL execution
    - Result aggregation and transformation
 
-### Provider SDK (any-sdk)
+### Provider SDK (omnisdk)
 
-The Provider SDK is a critical component that manages all interactions with cloud providers. Key responsibilities include:
+The Provider SDK, [omnisdk](https://github.com/stackql-labs/omnisdk), manages all interactions with cloud providers. It replaced `any-sdk` in StackQL `v1.0`. Key responsibilities include:
 
-- **Provider Discovery**: Fetches provider specifications from the StackQL Registry, which contains OpenAPI-based definitions for each supported cloud provider.
+- **Provider Discovery**: Fetches provider specifications from the StackQL Registry, which contains OpenAPI-based definitions for each supported cloud provider, and optionally verifies the ML-DSA-65 signature on each document before it is used.
 
-- **Authentication**: Handles authentication for each provider, supporting various auth methods including API keys, OAuth tokens, service account credentials, and more. Each provider definition specifies its authentication requirements.
+- **Authentication**: Handles authentication for each provider, supporting various auth methods including API keys, OAuth tokens, service account credentials, and more. Each provider definition specifies its authentication requirements; a session can bind the same provider under several aliases with separate credentials (see [Provider Sessions](/getting-started/provider-sessions)).
+
+- **Graph Planning**: Plans each statement as a graph of provider exchanges joined by data and control edges. Joins, subqueries, CTEs and views run through the same planner, and requests that fan out from a plan run concurrently within per-provider and per-host limits.
 
 - **API Request Building**: Transforms SQL queries into appropriate REST API calls for each provider, handling endpoint construction, parameter mapping, and request formatting.
 
 - **Pagination**: Automatically handles paginated API responses, abstracting away the complexity of different pagination schemes used by various providers (cursor-based, offset-based, token-based, etc.).
 
-- **Predicate Pushdown**: Where supported, pushes query predicates (WHERE clause conditions) to the provider API to minimize data transfer and improve query performance.
+- **Predicate Pushdown**: Pushes conditions that map to request parameters, and `LIMIT` where no ordering is required, into the provider requests to reduce the number of requests made and the data transferred.
 
-- **Response Transformation**: Converts API responses into relational data that can be processed by the SQL backend.
+- **Response Transformation**: Converts API responses into rows as they arrive, for staging in the SQL backend or streaming to the client.
+
+SQL connections, staging and backend execution stay in StackQL. omnisdk contains no SQL staging and never receives a database connection; StackQL passes it relation handles and receives row cursors.
 
 ### SQL Backend
 

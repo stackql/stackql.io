@@ -7,7 +7,7 @@ keywords:
   - stackql provider
   - provider registry
   - openapi
-  - any-sdk
+  - omnisdk
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
@@ -20,17 +20,17 @@ See also:
 
 ## Overview
 
-A StackQL provider is a versioned set of OpenAPI documents plus `x-stackQL-*` extensions that the [any-sdk](https://github.com/stackql/any-sdk) engine turns into SQL tables: `SELECT` for reads, `INSERT`, `UPDATE`, `REPLACE` and `DELETE` for lifecycle operations, and `EXEC` for actions. Provider documents tell StackQL what a provider's API can do and how to invoke it with SQL semantics. They are plain YAML, so a provider can be built, tested and versioned like any other code.
+A StackQL provider is a versioned set of OpenAPI documents plus `x-stackQL-*` extensions that the [omnisdk](https://github.com/stackql-labs/omnisdk) engine turns into SQL tables: `SELECT` for reads, `INSERT`, `UPDATE`, `REPLACE` and `DELETE` for lifecycle operations, and `EXEC` for actions. Provider documents tell StackQL what a provider's API can do and how to invoke it with SQL semantics. They are plain YAML, so a provider can be built, tested and versioned like any other code.
 
 Three repositories and one distribution layer make up the provider ecosystem:
 
 | Component | Role |
 | --- | --- |
 | [__`stackql-provider-TEMPLATE`__](https://github.com/stackql-registry/stackql-provider-TEMPLATE) | The starting point for a new provider project: a deterministic `make` pipeline from a pinned upstream spec to a generated provider, credential-free test layers, a live smoke suite, a documentation microsite and CI. Bundles the Claude Code provider development skill. |
-| [__`any-sdk`__](https://github.com/stackql/any-sdk) | The engine that reads provider documents and executes requests. Defines the provider document contract, the `x-stackQL-*` extensions, authentication, pagination, transforms and pushdown. |
+| [__`omnisdk`__](https://github.com/stackql-labs/omnisdk) | The engine that reads provider documents and executes requests, from StackQL `v1.0`. Its predecessor, [`any-sdk`](https://github.com/stackql/any-sdk), still hosts the reference for the provider document contract, the `x-stackQL-*` extensions, authentication, pagination, transforms and pushdown, and the JSON Schemas linked below. |
 | [__`stackql-provider-registry`__](https://github.com/stackql/stackql-provider-registry) | The source of truth for published providers. Documents are versioned under `providers/src/<provider>/<version>/`, then signed, packaged and published by GitHub Actions. |
 | __Cloudflare distribution layer__ | Packaged provider artifacts are served at the edge from Cloudflare R2 by a Cloudflare Worker at `registry.stackql.app` (production) and `registry-dev.stackql.app` (development). This is what `REGISTRY LIST` and `REGISTRY PULL` talk to. |
-
+<br/>
 The following diagram shows the path from a provider project to a StackQL installation:
 
 ```mermaid
@@ -145,7 +145,7 @@ Each provider ships a default `auth` block that names the environment variables 
 | `oci_signing_v1` | `tenancy_ocid_envvar`, `user_ocid_envvar`, `oci_fingerprint_envvar`, `oci_private_key_envvar`, `oci_region_envvar` |
 | `interactive` | none |
 | `null_auth` | none (explicitly unauthenticated) |
-
+<br/>
 For example:
 
 ```yaml
@@ -232,7 +232,7 @@ The skill covers:
 - Choosing the archetype: a vendor-published OpenAPI, Swagger or discovery document (direct), or a spec derived from a vendor SDK where the SDK is the source of truth (derived)
 - Fetching, fixing, validating and pinning the upstream spec so every refresh is a reviewable diff
 - The endpoint inventory, the service split and the mapping rules that produce `all_services.csv`
-- Every any-sdk primitive and when to use it: `x-stackQL-envVar` scoping, `objectKey`, request and response transforms, pagination, query-parameter pushdown, lifecycle `EXEC` methods, the GraphQL merge and provider views
+- Every provider document primitive and when to use it: `x-stackQL-envVar` scoping, `objectKey`, request and response transforms, pagination, query-parameter pushdown, lifecycle `EXEC` methods, the GraphQL merge and provider views
 - The three credential-free test layers and the live smoke suite
 - The documentation site, CI workflows and hand-over notes
 

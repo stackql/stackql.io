@@ -13,10 +13,12 @@ image: "/img/stackql-featured-image.png"
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 //import Gist from 'react-gist';
 
-Changes the context to a specified provider or service.  
+Lists the providers available in the configured provider registry, or pulls a provider into the local installation.  
 
 See also:  
-[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy)
+[[ StackQL Resource Hierarchy ]](/getting-started/resource-hierarchy) [[` --registry `]](/command-line-usage/global-flags#--registry)
+
+> From `v1.0`, provider documents can be required to carry a valid ML-DSA-65 signature when they are read.  Verification is off by default and is enabled with the `verifyConfig` key of the [`--registry`](/command-line-usage/global-flags#--registry) flag.
 
 * * * 
 

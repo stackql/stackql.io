@@ -295,6 +295,8 @@ Serving without a token is an explicit opt-in: set `"allow_unauthenticated": tru
 
 TLS (`tls_cert_file` / `tls_key_file`) encrypts the transport but does not authenticate the client; combine it with a token for any listener beyond loopback.  Cross-origin browser requests (a mismatched `Origin`, or a cross-site `Sec-Fetch-Site`) are refused with `403` regardless of authentication.  The bundled `stackql_mcp_client` sends no `Authorization` header, so a server it drives must opt into unauthenticated service.
 
+From `v1.0`, starting the server with [`--access.config`](/command-line-usage/access-management) replaces the shared token gate with per-caller authentication: each HTTPS request is verified with the configured JWT, static bearer or mutual TLS scheme and authorised against policy rules.  Server TLS is mandatory in that case, `local_os` authentication is refused over HTTP, and a request without credentials never falls back to the server's environment token.  Access management is not available with the `reverse_proxy` server type.
+
 * * *
 
 ### Server modes
@@ -320,6 +322,8 @@ TLS (`tls_cert_file` / `tls_key_file`) encrypts the transport but does not authe
 Approval is answered by the client, so it guards against an agent acting without its user, not against an untrusted caller.  Pair the HTTP transport with [client authentication](#http-client-authentication) where callers are not trusted.
 
 The mode is global per server.  There is no per-tool override.
+
+From `v1.0`, [`run_select_query`](/mcp/run_select_query) refuses `INSERT`, `UPDATE`, `REPLACE`, `DELETE` and `EXEC` in every mode, including `full_access`; the error names `run_mutation_query` or `run_lifecycle_operation`.  Every tool also carries a `title` and the four MCP behavioural hints as explicit booleans (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`), derived from the same classification the policy gate enforces.  `openWorldHint` is `true` for `list_registry`, `pull_provider`, `run_select_query`, `run_mutation_query` and `run_lifecycle_operation`, which reach registry or provider endpoints, and `false` for tools that read local state only.  The hints are advisory for client UX; enforcement stays with the policy gate.
 
 :::info[Payload Gating]
 
