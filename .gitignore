@@ -40,3 +40,6 @@ vars.ps1
 # Claude Code local settings
 .claude/settings.local.json
 __pycache__/
+
+# StackQL MCP server logs (any directory)
+stackql_mcp_server_*.log

@@ -272,6 +272,12 @@ Instructions for installing StackQL on various different platforms are provided 
   ```bash
   docker pull stackql/stackql
   ```
+
+  From `v1.0` the image is based on Ubuntu 26.04 LTS, and a variant with Python 3.13 preinstalled is published with the `-python3.13` tag suffix (alias `-python3`), for example:
+
+  ```bash
+  docker pull stackql/stackql:latest-python3.13
+  ```
 </Box>
 
 </TabItem>
@@ -507,9 +513,15 @@ The bundle is one of several ways to run the StackQL MCP server.  See [__Using S
 
   ### ChatGPT and Codex
 
-  StackQL ships as a local plugin for the ChatGPT desktop app and the Codex CLI. The plugin runs the StackQL MCP server over stdio on your machine, so provider credentials never leave it. Node.js 18 or later is required; the plugin downloads the signed `stackql` binary on first use and verifies its SHA-256.
+  StackQL ships as a local plugin for the ChatGPT desktop app and the Codex CLI. The plugin runs the StackQL MCP server over stdio on your machine, so provider credentials never leave it. Node.js 24.22.1 or later is required (22.23.4 or 26.12.1 on those release lines); the plugin needs only Node.js built-ins, downloads the signed `stackql` binary on first use and verifies its SHA-256.
 
-  **ChatGPT desktop app:** open **Settings -> Plugins -> Add -> Add from GitHub**, enter `stackql/stackql`, then install **StackQL** from the **Personal** section of the plugin directory and restart the app.
+  **ChatGPT desktop app (plugin directory):**  
+  
+  open the plugin directory in the ChatGPT desktop app, search for **StackQL** and click **Install**, then run the plugin's setup; the bundled `stackql-setup` skill walks through credentials and a first query. The listing carries a **Desktop only** badge: the plugin installs only from the desktop app, not from ChatGPT web or mobile, and its tools are available in Work mode, in threads that run on your computer. If the listing is not visible in your directory yet, install from the repository marketplace instead.
+
+  **ChatGPT desktop app (repository marketplace):**  
+  
+  open **Settings -> Plugins -> Add -> Add from GitHub**, enter `stackql/stackql`, then install **StackQL** from the **Personal** section of the plugin directory and restart the app.
 
   **Codex CLI:**
 
@@ -520,12 +532,14 @@ The bundle is one of several ways to run the StackQL MCP server.  See [__Using S
 
   Restart ChatGPT desktop or Codex, then try: *Use StackQL to install the GitHub provider if needed, then list the first five GitHub services.* Provider credentials go in `~/.stackql/.env` using each provider's standard environment variable names (for example `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`); after editing the file, ask the agent to call `reload_credentials`.
 
-  **Without the plugin:** under **Settings -> Plugins -> MCPs -> Connect to a custom MCP**, choose **STDIO**, set the command to `npx` and add the arguments `-y` and `@stackql/mcp-server`. Supply provider credentials as environment variables on that form.
+  **Without the plugin:**   
+  
+  under **Settings -> Plugins -> MCPs -> Connect to a custom MCP**, choose **STDIO**, set the command to `npx` and add the arguments `-y` and `@stackql/mcp-server`. Supply provider credentials as environment variables on that form.
 
 <br />
 :::note
 
-ChatGPT web cannot run a local stdio server, so the plugin is desktop and Codex only. StackQL is not yet in OpenAI's public plugin directory, which requires a hosted MCP endpoint; the marketplace install above is the supported route. An open ChatGPT desktop bug ([openai/codex#38162](https://github.com/openai/codex/issues/38162)) can hide local MCP tools from **Chat** sessions; Codex threads and the Codex CLI are unaffected.
+ChatGPT web and mobile cannot run a local stdio server, so the plugin is desktop and Codex only. An open ChatGPT desktop bug ([openai/codex#38162](https://github.com/openai/codex/issues/38162)) can hide local MCP tools from **Chat** sessions; Work mode threads, Codex threads and the Codex CLI are unaffected.
 
 :::
 
@@ -610,6 +624,7 @@ Directory and aggregator listings, in rough order of significance for discovery:
 | Directory | Type | Listing |
 |---|---|---|
 | __Anthropic Connector Directory__ | Claude Desktop in-app directory | [claude.ai/directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) |
+| __OpenAI Plugin Directory__ | ChatGPT desktop in-app directory (Desktop only) | search for **StackQL** in the ChatGPT desktop app; see [ChatGPT and Codex](#using-with-mcp-clients) |
 | __Cursor Directory__ | IDE client directory | [cursor.directory](https://cursor.directory/plugins/stackql-mcp-server) |
 | __mcp.so__ | Largest aggregator | [mcp.so](https://mcp.so/server/stackql/stackql) |
 | __PulseMCP__ | Discovery, registry backer | [pulsemcp](https://www.pulsemcp.com/servers/stackql) |

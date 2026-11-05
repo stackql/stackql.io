@@ -41,7 +41,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'Getting Started',
-        description: 'Core concepts and first steps: the resource hierarchy, running StackQL, using a provider, output modes, variables and templating',
+        description: 'Core concepts and first steps: the resource hierarchy, running StackQL, using a provider, output modes, variables, session variables, provider sessions and templating',
         slug: '/getting-started',
       },
       items: [
@@ -52,6 +52,8 @@ const sidebars = {
         'getting-started/output-modes',
         'getting-started/otel-recipes',
         'getting-started/variables',
+        'getting-started/session-variables',
+        'getting-started/provider-sessions',
         'getting-started/templating',
       ]
     },
@@ -61,7 +63,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'Command Line Usage',
-        description: 'The stackql command line: exec, shell, srv, mcp, registry and the global flags',
+        description: 'The stackql command line: exec, shell, srv, mcp, registry, the global flags and access management',
         slug: '/command-line-usage',
       },
       items: [
@@ -71,6 +73,7 @@ const sidebars = {
         'command-line-usage/mcp',
         'command-line-usage/registry',
         'command-line-usage/global-flags',
+        'command-line-usage/access-management',
       ]
     },
     {
@@ -131,6 +134,8 @@ const sidebars = {
         'language-spec/dropview',
         'language-spec/with',
         'language-spec/registry',
+        'language-spec/set',
+        'language-spec/unset',
         'language-spec/windowing_functions',
         {
           type: 'category',

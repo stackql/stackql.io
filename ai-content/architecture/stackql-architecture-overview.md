@@ -7,7 +7,7 @@ faq:
   - question: Where does the actual SQL processing happen?
     answer: In two stages. The query engine pushes whatever it can to the provider API (routing parameters, supported predicates), then materializes API responses into the SQL backend - embedded SQLite by default, optionally an external PostgreSQL - where joins, aggregates, sorting, and expressions are executed.
   - question: How does StackQL know how to call each provider's API?
-    answer: From provider definitions in the StackQL Registry - versioned, extended-OpenAPI specifications describing each provider's services, resources, methods, parameters, authentication, and pagination. Definitions are pulled on demand with REGISTRY PULL and interpreted by the provider SDK (any-sdk); no provider-specific code is compiled into the engine.
+    answer: From provider definitions in the StackQL Registry - versioned, extended-OpenAPI specifications describing each provider's services, resources, methods, parameters, authentication, and pagination. Definitions are pulled on demand with REGISTRY PULL and interpreted by the provider SDK (omnisdk); no provider-specific code is compiled into the engine.
   - question: Is StackQL a single binary?
     answer: Yes. The engine, parser, provider SDK, embedded SQL backend, PostgreSQL wire server, and MCP server ship in one Go binary for macOS, Linux, and Windows.
 ---
@@ -28,7 +28,7 @@ StackQL is a single Go binary implementing a SQL engine over cloud and SaaS prov
 
 **Query engine.** Plans the AST: decides what is pushed down to the provider API (routing parameters, supported predicates) versus what is processed locally, coordinates API execution - including parallel fan-out when a query spans regions or multiple calls - and aggregates results.
 
-**Provider SDK (any-sdk).** The generic API client. It loads provider specifications from the registry, handles per-provider authentication, builds HTTP requests from query parameters, walks paginated responses regardless of pagination scheme (cursor, offset, token), and relationalizes JSON responses into rows.
+**Provider SDK (omnisdk).** The generic API client, which replaced any-sdk in StackQL v1.0. It loads provider specifications from the registry, handles per-provider authentication, plans each statement as a graph of provider exchanges, builds HTTP requests from query parameters, pushes supported predicates and limits into those requests, walks paginated responses regardless of pagination scheme (cursor, offset, token), and relationalizes JSON responses into rows as they arrive.
 
 **SQL backend.** Materialized API results land in an embedded SQLite database by default (an external PostgreSQL can be configured instead), where joins - including cross-provider joins - aggregates, sorting, subqueries, and expressions execute with full SQL semantics.
 

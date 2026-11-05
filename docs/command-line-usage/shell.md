@@ -27,8 +27,8 @@ Command used to launch the interactive StackQL Command Shell.  For more informat
 |--|--|
 |<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Print help information|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected this additional logging information will be written to the output file along with the query results|
-&nbsp;  
-&nbsp;  
+<br/>
+<br/>
 > see [Global Flags](/command-line-usage/global-flags) for additional options
 
 * * *

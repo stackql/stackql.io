@@ -32,6 +32,12 @@ A literal string or string column.
 
 Returns a string.
 
+:::note
+
+From StackQL `v1.0` the parser treats `||` as the concatenation operator, binding more tightly than comparison operators, so `WHERE id = prefix || suffix` compares `id` with the joined string.  Earlier releases tokenised `||` as boolean `OR`.  Use `OR` for boolean disjunction.  [Session variables](/getting-started/session-variables) can be concatenated too: `$prefix || '-' || $suffix`.
+
+:::
+
 * * *
 
 ## Examples

@@ -11,7 +11,7 @@ description: "The stackql registry command lists, pulls and manages providers fr
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to interact with the StackQL Provider Registry.  
+Command used to interact with the StackQL Provider Registry.  The registry location, and whether provider document signatures are verified, are configured with the [`--registry`](/command-line-usage/global-flags#--registry) global flag.  The `registry` command is not available while [access management](/command-line-usage/access-management) is enabled; use `REGISTRY PULL` in a protected `exec` or `shell` session instead.
 
 * * * 
 
@@ -35,8 +35,8 @@ Command used to interact with the StackQL Provider Registry.
 | Flag | Description |
 |--|--|
 |<span class="nowrap">`-H, --help`</span>|Print help information|
-&nbsp;  
-&nbsp;  
+<br/>
+<br/>
 > see [Global Flags](/command-line-usage/global-flags) for additional options
 
 * * *

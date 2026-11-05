@@ -26,6 +26,10 @@ replaceStatement: 'replaceStatement';
 awaitQueryHint: 'awaitQueryHint';
 viewName: 'viewName';
 fieldValue: 'fieldValue';
+variableName: 'variableName';
+configurationPath: 'configurationPath';
+literal: 'literal';
+variableReference: 'variableReference';
 //============================
 // End Identifier list
 //============================
@@ -147,6 +151,7 @@ RIGHT: 'RIGHT';
 ROW_NUMBER: 'ROW_NUMBER';
 SCHEMA: 'SCHEMA';
 SEPARATOR: 'SEPARATOR';
+SESSION: 'SESSION';
 SET: 'SET';
 STRAIGHT_JOIN: 'STRAIGHT_JOIN';
 SYSTEM: 'SYSTEM';
@@ -159,6 +164,7 @@ TRUE: 'TRUE';
 UNION: 'UNION';
 UNIQUE: 'UNIQUE';
 UNLOCK: 'UNLOCK';
+UNSET: 'UNSET';
 UPDATE: 'UPDATE';
 USING: 'USING';
 UTC_DATE: 'UTC_DATE';

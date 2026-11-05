@@ -15,7 +15,10 @@ Global flags specify runtime program behavior for the StackQL application, these
 
 | Flag | Data Type | Description | Default |
 | -- | -- | -- | -- |
+| <span class="nowrap">`--access.config`</span> | string | Caller access configuration, a JSON envelope `{"path": "/path/to/access.json"}` (a bare file path is also accepted).  Enables [access management](/command-line-usage/access-management): callers are authenticated by JWT, static bearer token, mutual TLS or local OS identity and statements are authorised against policy rules.  Local token credentials are read from `STACKQL_CALLER_TOKEN`.  Available in StackQL releases from `v1.0`. | |
 | <span class="nowrap">`--acid`</span> | string | JSON / YAML string representing ACID config | `{}` |
+| <span class="nowrap">`--allow-persistent-secrets`</span> | flag | Allow a session to select a persistent OS secret store (macOS Keychain, Linux Secret Service or Windows Credential Manager) with `SET "$.secret_store"`.  Flat-file stores are refused even with the flag.  See [Provider Sessions and Secrets](/getting-started/provider-sessions#persistent-os-secret-stores).  Available in StackQL releases from `v1.0`. | `false` |
+| <span class="nowrap">`--allow-secret-dereference`</span> | flag | Allow secret and credential values to be dereferenced in SQL expressions (`"$secrets.name"`, `"$auth.provider.field"`), with the consequence that they can enter results, logs and persisted query artefacts.  Not needed for normal provider authentication.  See [Secret values in SQL](/getting-started/provider-sessions#secret-values-in-sql).  Available in StackQL releases from `v1.0`. | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | API request timeout in seconds, 0 for no timeout | `45` |
 | <span class="nowrap">`--approot`</span> | string | Application config and cache root path | `{cwd}/.stackql` |
 | <span class="nowrap">`--approotfilemode`</span> | uint32 | Application config and cache file mode | `493` |
@@ -55,9 +58,9 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-f`, `--outfile`</span> | string | Output file into which results are written | `{stdout}` |
 | <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` is accepted as an alias for `jsonl`).  `otel` emits OpenTelemetry log records, see [Output Modes](/getting-started/output-modes#otel-output); available in StackQL releases from `v0.11.660`.  With an exporter configured in `--otel.config`, `otel` records are also pushed to that endpoint | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | JSON / YAML string configuring the `otel` output format; `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms` and `exporter.batch_size` push the records to an OTLP/HTTP logs endpoint, see [Pushing to an OTLP endpoint](/getting-started/output-modes#pushing-to-an-otlp-endpoint).  Available in StackQL releases from `v0.12.732` | `{}` |
-| <span class="nowrap">`--preview`</span> | string | JSON string enabling preview functionality.  `{"unstable": true}` exposes the document-driven `stackql_unstable_<provider>.<service>.<resource>` relations, which are resolved and run by `omnisdk` straight from the provider documents with rows streamed as they are produced; the remaining keys (`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`) tune that backend.  Preview functionality is not stable: behaviour, syntax and output may change or break between releases without notice, so do not rely on it in production.  See [Preview functionality](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
+| <span class="nowrap">`--preview`</span> | string | JSON string enabling preview functionality.  `{"unstable": true}` exposes the document-driven `stackql_unstable_<provider>.<service>.<resource>` relations, which are resolved and run by `omnisdk` straight from the provider documents with rows streamed as they are produced; the remaining keys (`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`) tune that backend.  Preview functionality is not stable: behaviour, syntax and output may change or break between releases without notice, so do not rely on it in production.  From `v1.0` the same opt-in exposes the `stackql_preview.iac.run` and `stackql_preview.iac.destroy` relations, which apply and tear down a declared resource set through `omnisdk` with state kept under the application root.  See [Preview functionality](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
-| <span class="nowrap">`--registry`</span> | string | openapi registry context keyvals in json form |  |
+| <span class="nowrap">`--registry`</span> | string | JSON / YAML string configuring the provider registry location and provider document signature verification | see [`--registry`](#--registry) |
 | <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |
 | <span class="nowrap">`--sqlBackend`</span> | string | JSON / YAML string representing SQL Backend System Config | see [`--sqlBackend`](#--sqlbackend) |
 | <span class="nowrap">`--store.txn`</span> | string | JSON / YAML string representing Txn store config | `{}` |
@@ -67,6 +70,40 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | Verbose output | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | Context specific help for stackql | |
 | <span class="nowrap">`--version`</span> | | Displays the version of the StackQL program | |
+
+## `--registry`
+
+The `--registry` flag configures where provider documents are read from and whether their signatures are verified.  The value is a JSON string with the following keys:
+
+| Key | Description | Default |
+| -- | -- | -- |
+| `url` | Registry URL.  The public StackQL provider registry is used when omitted. | public registry |
+| `localDocRoot` | A local directory holding provider documents, read in place of downloading from the registry.  Used when [developing a provider](/developers/developing-stackql-providers#testing-a-provider-locally). | |
+| `srcPrefix` | Path prefix under the registry root where provider source documents live. | `src` |
+| `verifyConfig.nopVerify` | `true` skips signature verification.  Set to `false` to require an embedded ML-DSA-65 (FIPS 204) signature on every provider and service document read, including the document-backed preview relations. | `true` |
+| `verifyConfig.publicKeys` | A JSON object mapping key IDs to hex-encoded ML-DSA-65 public keys, for private registries.  It replaces the embedded production keys; an explicit empty object is an error. | embedded keys |
+
+### Example: Require signed provider documents
+
+Turns verification on for every provider and service document read from the public registry, checked against the embedded production keys:
+
+```bash
+stackql --registry '{"verifyConfig": {"nopVerify": false}}' shell
+```
+
+### Example: Read unsigned documents from a local directory
+
+Points the registry at a directory of provider documents under development.  Those documents are unsigned, so verification stays off:
+
+```bash
+stackql --registry '{"localDocRoot": "/path/to/provider-dev/openapi", "verifyConfig": {"nopVerify": true}}' shell
+```
+
+:::note
+
+Signature verification is available in StackQL releases from `v1.0` and is off by default.  Signatures cover the exact YAML bytes of a document, so any edit, including a formatting or newline change, invalidates them; re-sign with the registry's `pqsig sign-doc` tool.  Unsigned local development documents must keep `nopVerify: true`.  The former certificate options and `.sig` sidecar files are no longer used, and archives published with sidecars only must be republished before verified use.  Verification authenticates documents when they are read; archive download and extraction are not covered.
+
+:::
 
 ## `--sqlBackend`
 

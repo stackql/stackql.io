@@ -41,6 +41,8 @@ const POST_SPLIT_SLUGS = new Set([
   'new-typesafe-provider-available',
   'new-oci-provider-available',
   'new-nvidia-provider-available',
+  'databricks-providers-update-november-2026',
+  'stackql-1-0-released',
 ]);
 
 function postsIn(section) {

@@ -40,6 +40,12 @@ Identifiers are symbols that represent objects in a cloud provider resource hier
 ## Parameters and Values
 Parameters are specified by the resource; these can be found by using a `DESCRIBE` statement for a given cloud provider resource.  Values are typed scalar or complex objects which map to parameters.  For more information on parameters and values, see the `DESCRIBE` and Data Types topics.
 
+## Variables
+A dollar-prefixed identifier such as `$region` dereferences a session variable assigned with [`SET`](/language-spec/set); it is replaced with the variable's typed value before the statement is planned.  A single-quoted `'$region'` is a string literal.  In a `FROM` clause a `$variable` resolves to a relation name, and `IDENTIFIER($variable)` resolves to a column name in expression positions.  A double-quoted, dollar-prefixed path such as `"$.auth.aws.password"` is a runtime configuration target accepted by `SET` and `UNSET`.  Session variables are available in StackQL `v1.0` and later, see [Session Variables](/getting-started/session-variables).
+
+## Operators
+`||` is the string concatenation operator and binds more tightly than comparison operators.  `OR` is boolean disjunction.  StackQL releases before `v1.0` tokenised `||` as `OR`.
+
 ## Comments
 StackQL supports multi-line and in line comments within StackQL statements, examples of comments are shown below:
 

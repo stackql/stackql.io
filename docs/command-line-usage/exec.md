@@ -40,8 +40,8 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|File to output results to if required (default behavior is to output results to the console only), example `--outfile myoutput.csv`|
 |<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Print help information|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected this additional logging information will be written to the output file along with the query results|
-&nbsp;  
-&nbsp;  
+<br/>
+<br/>
 > see [Global Flags](/command-line-usage/global-flags) for additional options
 
 
@@ -68,3 +68,9 @@ Execute query from an input file (IQL File) outputting the results to a file in 
 ```shell
 stackql exec -i getservices.iql -o json -f services.json
 ```
+
+* * *
+
+### Exit status
+
+`exec` exits with status `0` once the input has been processed; errors from individual statements are written to the console, so scripts should inspect the output.  From `v1.0` it exits with status `1` when a [`SET`](/language-spec/set) or [`UNSET`](/language-spec/unset) configuration statement fails, when [access management](/command-line-usage/access-management) is enabled and a statement is refused, or when a preview IaC run reports a failed resource.

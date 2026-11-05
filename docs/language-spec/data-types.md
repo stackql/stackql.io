@@ -21,6 +21,19 @@ StackQL data types are used to represent values for input or output fields (prop
 | `boolean` | `true` or `false`, boolean values are not surrounded within quotes and will be treated as string values | `true` |
 | `integer` | a whole number that can be positive, negative, or zero | `2` |
 | `double` | double-precision floating-point number, can be positive or negative | `0.95` |
-&nbsp;  
-&nbsp;  
+<br/>
+<br/>
 > StackQL data types map to the data types exposed in the APIs for all major cloud providers.
+
+## Type Conversion
+
+`CAST(expression AS type)` and `CONVERT(expression, type)` convert a value to another type.  In addition to the conversion types inherited from the MySQL grammar (`CHAR`, `DATE`, `DATETIME`, `DECIMAL`, `SIGNED`, `UNSIGNED`, `TIME`, `JSON`), StackQL `v1.0` and later accept `TEXT`, `INTEGER`, `INT`, `BIGINT`, `BOOLEAN` and `BOOL`.  The conversion is performed by the SQL backend, so its semantics are those of SQLite or PostgreSQL.  Conversions are commonly used to compare a typed [session variable](/getting-started/session-variables) with a string column:
+
+```sql
+SET some_id = 42;
+
+SELECT CAST($some_id AS TEXT) AS id_text,
+       CONVERT($some_id, TEXT) || '-east' AS label;
+```
+
+Boolean fields served by XML providers such as AWS are reported as `true` and `false`; StackQL releases before `v1.0` reported them as `0` and `1`.
