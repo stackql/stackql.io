@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *updateStatement::=*
 
@@ -38,9 +38,9 @@ SET field_name = value [, field_name = value ...]
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `UPDATE` statement
+### Basic `UPDATE` statement {#basic-update-statement}
 Run an `UPDATE` statement to modify a Compute Engine Disk resource's size.
 
 ```sql
@@ -52,7 +52,7 @@ AND zone = 'australia-southeast1-a'
 AND name = 'test10gbdisk';
 ```
 
-### `UPDATE` statement (blocking)
+### `UPDATE` statement (blocking) {#update-statement-blocking}
 Run an `UPDATE` statement to modify a Compute Engine Disk resource's size. This is a blocking (synchronous) invocation.
 
 ```sql
@@ -67,7 +67,7 @@ WHERE firewall = 'test-fw'
 AND project = 'stackql-demo' 
 ```
 
-### `UPDATE` statement with JSON modification
+### `UPDATE` statement with JSON modification {#update-statement-with-json-modification}
 Run an `UPDATE` statement to modify a resource using JSON manipulation.
 
 ```sql

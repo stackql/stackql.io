@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT POW(x, y) FROM <multipartIdentifier>;
@@ -25,7 +25,7 @@ SELECT POW(x, y) FROM <multipartIdentifier>;
 SELECT POWER(x, y) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*x*__  
 The base number, which is a numeric expression.
@@ -33,14 +33,14 @@ The base number, which is a numeric expression.
 __*y*__  
 The exponent to which the base number *x* is raised, also a numeric expression.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the result of *x* raised to the power *y*.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate x raised to the power y
+### Calculate x raised to the power y {#calculate-x-raised-to-the-power-y}
 
 
 ```sql

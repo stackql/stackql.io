@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(column_name) FROM <multipartIdentifier>
@@ -25,19 +25,19 @@ WHERE condition
 GROUP BY column_name;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*column_name*__  
 The column from which values are aggregated into a JSON array.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a JSON array containing all the aggregated values from the specified column.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Aggregate Resource Group Names into a JSON Array
+### Aggregate Resource Group Names into a JSON Array {#aggregate-resource-group-names-into-a-json-array}
 
 ```sql
 -- Collects all resource group names into a JSON array
@@ -48,7 +48,7 @@ WHERE subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 
 This query returns a JSON array of resource group names such as `["stackqlenv1","stackqlenv2","stackqlenv3"]`.
 
-### Aggregate Resource Groups by Location
+### Aggregate Resource Groups by Location {#aggregate-resource-groups-by-location}
 
 ```sql
 -- Collects resource group names into a JSON array grouped by location

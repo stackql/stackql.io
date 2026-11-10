@@ -16,7 +16,7 @@ faq:
 
 Most StackQL failures fall into five categories: missing providers, missing required parameters, authentication problems, provider-side limits, and gated operations. Each has a fast diagnostic.
 
-## Provider or table not found
+## Provider or table not found {#provider-or-table-not-found}
 
 **Symptom**: a query references `aws.ec2.instances` (or any resource) and fails to resolve the provider or table.
 
@@ -32,7 +32,7 @@ REGISTRY PULL aws;       -- install (repeat per provider)
 
 Provider versions are also listed by `REGISTRY LIST` - re-pulling upgrades to the latest published spec.
 
-## Missing required parameters
+## Missing required parameters {#missing-required-parameters}
 
 **Symptom**: a syntactically valid `SELECT` fails or returns nothing because a required parameter (commonly `region`, `subscriptionId`, `project`, `org`, or a parent resource identifier) was not supplied.
 
@@ -46,7 +46,7 @@ SHOW METHODS IN aws.ec2.instances;
 
 The `RequiredParams` column tells you, per access method, exactly what the `WHERE` clause must contain - for `aws.ec2.instances` the `describe` method requires `region`. This discovery step is the documented practice for both humans and agents (the MCP server publishes the same data through `list_methods`).
 
-## Authentication failures
+## Authentication failures {#authentication-failures}
 
 **Symptom**: metadata commands (`SHOW`, `DESCRIBE`) work, but `SELECT` or mutations fail with provider 401/403 errors.
 
@@ -54,7 +54,7 @@ The `RequiredParams` column tells you, per access method, exactly what the `WHER
 
 **Fix**: verify the variables are exported in the environment that launched StackQL (a server or MCP process inherits its launch environment - restarting it after setting variables is a common miss), the names match the provider convention (`AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`, `AZURE_TENANT_ID`/`AZURE_CLIENT_ID`/`AZURE_CLIENT_SECRET`, `GOOGLE_CREDENTIALS`, `STACKQL_GITHUB_USERNAME`/`STACKQL_GITHUB_PASSWORD`), and the principal has the permissions the operation needs. The per-provider how-tos under [/ai/how-tos](/ai/how-tos) cover each convention.
 
-## GitHub rate limiting
+## GitHub rate limiting {#github-rate-limiting}
 
 **Symptom**: unauthenticated GitHub queries work briefly, then fail.
 
@@ -62,13 +62,13 @@ The `RequiredParams` column tells you, per access method, exactly what the `WHER
 
 **Fix**: authenticate with a personal access token (even a no-scope token raises the limit substantially) - see [How to authenticate StackQL to GitHub](/ai/how-tos/authenticate-stackql-to-github).
 
-## Empty results that should not be empty
+## Empty results that should not be empty {#empty-results-that-should-not-be-empty}
 
 **Symptom**: the query succeeds but returns zero rows for resources you know exist.
 
 **Checklist**: the routing predicates point at the right scope (correct region, project, subscription, or org); the access method selected by your predicates is the one you intended (`SHOW METHODS` shows which predicate combinations select which method - for example `org =` versus `username =` on `github.repos.repos`); and the credential can see the resources (cloud IAM can filter list results silently).
 
-## MCP mutation refused
+## MCP mutation refused {#mcp-mutation-refused}
 
 **Symptom**: an agent's `INSERT`/`UPDATE`/`DELETE` through the MCP server is refused, mentioning elicitation or the server mode.
 
@@ -76,7 +76,7 @@ The `RequiredParams` column tells you, per access method, exactly what the `WHER
 
 **Fix**: use an elicitation-capable client (Claude Desktop, Cursor, Continue) and approve the prompt, or - for trusted, non-interactive automation only - run the server with `"mode": "full_access"`. Details in [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture).
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - and the Azure, Google Cloud, and GitHub equivalents
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - modes and elicitation explained

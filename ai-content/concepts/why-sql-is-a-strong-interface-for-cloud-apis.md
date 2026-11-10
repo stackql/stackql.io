@@ -16,7 +16,7 @@ faq:
 
 SQL fits cloud APIs for four reasons: it is declarative (callers state what, not how), set-oriented (cloud estates are sets of resources), universally tooled (every driver, BI platform, and notebook speaks it), and - the decisive reason in the agent era - it is the query language every AI model already writes fluently. Choosing SQL as the control plane interface means the integration cost of the entire toolchain and model ecosystem has already been paid.
 
-## The structural fit
+## The structural fit {#the-structural-fit}
 
 Cloud resources are naturally relational. Every provider organizes its estate as typed collections (instances, buckets, repositories) of attributed objects, with identity and cross-references between them. That is a schema, and providers already publish it - as OpenAPI specifications. Operations on those collections come in exactly the shapes SQL names: enumerate and filter (`SELECT ... WHERE`), create (`INSERT`), modify (`UPDATE`), remove (`DELETE`). The mapping StackQL applies is mechanical, not metaphorical - which is what makes it generatable from specs across hundreds of services. See [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis).
 
@@ -31,7 +31,7 @@ GROUP BY region;
 
 StackQL executes this as parallel regional API calls; the caller never wrote the fan-out.
 
-## The agent-era argument
+## The agent-era argument {#the-agent-era-argument}
 
 For AI agents, interface choice is a token-economics and reliability decision:
 
@@ -39,11 +39,11 @@ For AI agents, interface choice is a token-economics and reliability decision:
 - **A small, closed grammar over a huge surface.** Cloud providers expose tens of thousands of operations. Published as individual tools or functions, they overwhelm tool selection. Expressed as SQL over discoverable schemas, the grammar stays constant while `SHOW PROVIDERS`, `SHOW METHODS`, and `DESCRIBE` let the agent learn the surface at runtime - paying for what it needs, when it needs it.
 - **Verifiability.** SQL's declarative form is auditable before execution. A human (or a gating policy, like StackQL's MCP safe mode) can read the statement and know exactly what it will touch - far harder with a script of imperative SDK calls.
 
-## What SQL buys beyond agents
+## What SQL buys beyond agents {#what-sql-buys-beyond-agents}
 
 The same choice connects infrastructure to the analytical stack: in server mode StackQL speaks the PostgreSQL wire protocol, so psql, DBeaver, Tableau, Power BI, Superset, pandas, and Jupyter address live cloud state as if it were a database. Inventory dashboards, security reporting, and FinOps analysis reuse existing skills and tools with no exporter or ETL pipeline in between.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the mapping itself
 - [StackQL vs Custom MCP Servers](/ai/comparisons/stackql-vs-custom-mcp-servers) - the token-economics argument applied

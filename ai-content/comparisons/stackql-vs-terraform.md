@@ -16,7 +16,7 @@ faq:
 
 Terraform is a declarative provisioning tool: you write HCL describing desired state, and Terraform plans and applies changes to converge reality toward it, tracking what it manages in a state file. StackQL is a SQL query and mutation engine for cloud APIs: it reads and writes live provider state directly and keeps no state file. The two tools answer different primary questions - Terraform answers "how do I declare and converge this environment?", StackQL answers "what exists right now, and how do I change it?"
 
-## When to use which
+## When to use which {#when-to-use-which}
 
 Use **Terraform** when:
 
@@ -33,7 +33,7 @@ Use **StackQL** when:
 
 Use **both** when a platform team provisions with Terraform and audits, reconciles, and reports with StackQL. This is the most common pattern in practice.
 
-## Architectural comparison
+## Architectural comparison {#architectural-comparison}
 
 | Dimension | Terraform | StackQL |
 |---|---|---|
@@ -50,7 +50,7 @@ Use **both** when a platform team provisions with Terraform and audits, reconcil
 
 Two of these differences do the most work. First, the provider model: Terraform providers are compiled programs, so coverage depends on plugin development; StackQL providers are data (extended OpenAPI specs), so any documented API operation - control plane or data plane - can be mapped. Second, the source of truth: Terraform's state file only describes resources Terraform manages, while StackQL sees everything the credential can see, managed or not. Unmanaged resources are exactly the ones that audits and incident response need to find.
 
-## Example
+## Example {#example}
 
 The kind of question Terraform cannot ask and StackQL is built for - a live regional inventory:
 
@@ -63,7 +63,7 @@ GROUP BY region;
 
 StackQL executes this as parallel regional API calls and aggregates the results - no state to refresh, and it counts every function in the account, not just those under IaC management.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - full definition
 - [What is Infrastructure Drift?](/ai/canonical-definitions/what-is-infrastructure-drift) - the failure mode of recorded state

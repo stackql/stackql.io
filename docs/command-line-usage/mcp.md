@@ -23,7 +23,7 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open 
 
 * * *
 
-### Syntax
+### Syntax {#syntax}
 
 `stackql mcp [flags]` for a standalone MCP server.
 
@@ -31,11 +31,11 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open 
 
 * * *
 
-### Deployment modes
+### Deployment modes {#deployment-modes}
 
 StackQL's MCP server can be deployed in three different configurations to suit various architectural requirements.  The examples below opt into unauthenticated service with `"allow_unauthenticated": true`, which suits local development; for anything another process or host can reach, configure a bearer token instead (see [HTTP client authentication](#http-client-authentication)).
 
-#### 1. Standalone MCP server
+#### 1. Standalone MCP server {#1-standalone-mcp-server}
 
 Run StackQL as a dedicated MCP server on a specified port.
 
@@ -47,7 +47,7 @@ stackql mcp \
 
 **Use case:** when you only need MCP protocol access and don't require PostgreSQL wire protocol compatibility.
 
-#### 2. MCP + PostgreSQL server (in-memory)
+#### 2. MCP + PostgreSQL server (in-memory) {#2-mcp--postgresql-server-in-memory}
 
 Run both MCP and PostgreSQL servers simultaneously with in-memory communication between them.
 
@@ -60,7 +60,7 @@ stackql srv \
 
 **Use case:** when you need both MCP protocol access for AI agents and PostgreSQL wire protocol for traditional database clients, with maximum performance through in-memory communication.
 
-#### 3. MCP + PostgreSQL server (reverse proxy)
+#### 3. MCP + PostgreSQL server (reverse proxy) {#3-mcp--postgresql-server-reverse-proxy}
 
 Run both servers with TCP-based communication, supporting distributed deployments and TLS encryption.
 
@@ -86,9 +86,9 @@ TLS encrypts the transport but does not authenticate the client, so this example
 
 * * *
 
-### Configuration options
+### Configuration options {#configuration-options}
 
-#### MCP server type
+#### MCP server type {#mcp-server-type}
 
 | Type | Description |
 |--|--|
@@ -96,19 +96,19 @@ TLS encrypts the transport but does not authenticate the client, so this example
 |`reverse_proxy`|Reverse-proxy mode -- MCP requests are dispatched to a backing PostgreSQL server via the configured DSN.  Used with `stackql srv`.|
 |`stdio`|Standard input/output transport -- the server reads requests from `stdin` and writes responses to `stdout`.  Used by editor-embedded MCP clients (Claude Desktop, Cursor, etc).|
 
-#### MCP log format
+#### MCP log format {#mcp-log-format}
 
 The `--mcp.log.format` flag selects the audit log encoding: `jsonl` (default) or `otel` (OpenTelemetry OTLP/JSON log records).  It overrides `server.audit.format` in the configuration object.  See [Log format](#log-format).
 
-#### MCP protocol version
+#### MCP protocol version {#mcp-protocol-version}
 
 The `--mcp.protocol.version` flag sets the newest protocol revision the server advertises: `auto` (default, every supported revision), `2026-07-28` (sessionless only) or an older revision such as `2025-11-25` (that revision and earlier).  It overrides `server.protocol_version` in the configuration object.  See [Pinning the revision](#pinning-the-revision).
 
-#### MCP configuration object
+#### MCP configuration object {#mcp-configuration-object}
 
 The `--mcp.config` flag accepts a JSON object with the following structure.
 
-##### Server configuration
+##### Server configuration {#server-configuration}
 
 | Field | Description | Required |
 |--|--|--|
@@ -124,7 +124,7 @@ The `--mcp.config` flag accepts a JSON object with the following structure.
 |`server.protocol_version`|Newest protocol revision advertised: `auto` (default), `2026-07-28` or an older revision such as `2025-11-25`.  `2026-07-28` implies `stateless` for Streamable HTTP.  See [Pinning the revision](#pinning-the-revision).|No|
 |`server.audit`|Audit subsystem configuration, including `audit.format` (`jsonl` or `otel`).  See [Audit log](#audit-log).|No|
 
-##### Backend configuration (reverse-proxy mode only)
+##### Backend configuration (reverse-proxy mode only) {#backend-configuration-reverse-proxy-mode-only}
 
 | Field | Description | Required |
 |--|--|--|
@@ -138,7 +138,7 @@ The backend DSN should include the `default_query_exec_mode=simple_protocol` par
 
 :::
 
-##### Allowlists
+##### Allowlists {#allowlists}
 
 | Field | Description |
 |--|--|
@@ -158,7 +158,7 @@ Example -- a server that publishes only `server_info` and `list_providers`:
 
 * * *
 
-### Protocol revision support
+### Protocol revision support {#protocol-revision-support}
 
 Protocol revision `2026-07-28`, `server.stateless` and the `otel` audit log format are available in StackQL releases from `v0.11.660`.  `server.protocol_version` and the `--mcp.protocol.version` flag are available in StackQL releases from `v0.12.732`.
 
@@ -186,7 +186,7 @@ A sessionless server issues no `Mcp-Session-Id`, answers `GET` and `DELETE` with
 
 The server holds no cross-call state: mode, audit and provider credentials are process-level configuration, so nothing needs to move behind explicit handles.
 
-#### Pinning the revision
+#### Pinning the revision {#pinning-the-revision}
 
 By default the server advertises every supported revision and negotiates per client.  The `--mcp.protocol.version` flag, or `server.protocol_version` in the configuration object (the flag wins), sets the newest revision advertised:
 
@@ -211,13 +211,13 @@ stackql mcp --mcp.server.type=stdio --mcp.protocol.version=2025-11-25
 
 Any other value fails configuration validation at startup, and the error names the legal values.
 
-#### Transport limits
+#### Transport limits {#transport-limits}
 
 Streamable HTTP request bodies are capped at 4 MiB (HTTP 413 beyond it), JSON nested deeper than 1000 levels is rejected before parsing, and a single `stdio` frame is capped at 8 MiB.  None of these limits is configurable; all sit far above any SQL statement the server accepts.
 
 * * *
 
-### Credential (re)sourcing (`--env.file` + `reload_credentials`)
+### Credential (re)sourcing (`--env.file` + `reload_credentials`) {#credential-resourcing---envfile--reload_credentials}
 
 :::note
 
@@ -236,7 +236,7 @@ The `--env.file` flag bridges both gaps by nominating a dotenv-style file that a
 stackql mcp --mcp.server.type=stdio --env.file /path/to/stackql-credentials.env
 ```
 
-#### Sourcing semantics
+#### Sourcing semantics {#sourcing-semantics}
 
 The file is sourced into the process environment at startup for every entrypoint (`exec`, `shell`, `srv`, `registry`, `mcp`):
 
@@ -255,7 +255,7 @@ STACKQL_GITHUB_USERNAME=myuser
 STACKQL_GITHUB_PASSWORD='ghp_mytoken'
 ```
 
-#### `reload_credentials`
+#### `reload_credentials` {#reload_credentials}
 
 The [`reload_credentials`](/mcp/reload_credentials) tool re-sources the `--env.file` file into the process environment mid-session, then reports per-provider credential resolution status.  Secret values are never returned, logged, or audited - names and statuses only.  Without `--env.file` configured the tool degrades to a pure status probe.
 
@@ -263,13 +263,13 @@ When a query fails on credential resolution, the MCP error carries a hint direct
 
 `reload_credentials` is not supported in `reverse_proxy` backend mode - queries execute in the remote stackql server process, so the tool returns an error directing the user to reload on the backing server.
 
-#### Windows and Claude Desktop
+#### Windows and Claude Desktop {#windows-and-claude-desktop}
 
 `setx` writes the registry, not running processes, and Claude Desktop passes its own (stale) environment to MCP subprocesses - so credential changes normally require a full Claude Desktop restart.  With `--env.file` the credentials file can be created or rotated at any time and `reload_credentials` picks it up without any restart.  See [Using StackQL with Claude Desktop](/getting-started/claude-desktop) for a worked configuration.
 
 * * *
 
-### HTTP client authentication
+### HTTP client authentication {#http-client-authentication}
 
 :::note
 
@@ -299,7 +299,7 @@ From `v1.0`, starting the server with [`--access.config`](/command-line-usage/ac
 
 * * *
 
-### Server modes
+### Server modes {#server-modes}
 
 `server.mode` chooses one of four safety contracts.  All four allow `SELECT` and metadata reads; they differ in how they handle mutations and lifecycle operations.
 
@@ -331,13 +331,13 @@ From release `v0.12.742`, a payload holding several statements is gated by its m
 
 :::
 
-#### Default-mode behaviour change
+#### Default-mode behaviour change {#default-mode-behaviour-change}
 
 Prior releases enforced safety only through a single `read_only: true/false` flag whose default was "no enforcement".  The current default (`mode: safe`) makes mutations require user approval out of the box.  Operators running an elicitation-capable client (Claude Desktop, Cursor, Continue, etc) will see one approval prompt per mutation.  Operators running automation, or the bundled `stackql_mcp_client` (which does not advertise elicitation), must explicitly opt into `mode: full_access` to run mutations and lifecycle operations.
 
 The legacy `read_only: true` JSON / YAML key is still accepted for back-compat and is treated as equivalent to `mode: read_only`.
 
-#### Examples
+#### Examples {#examples}
 
 ```bash
 # Read-only: SELECTs proceed; mutations and lifecycle refused immediately.
@@ -359,11 +359,11 @@ stackql mcp \
 
 * * *
 
-### Audit log
+### Audit log {#audit-log}
 
 Every tool call writes one record to the configured audit sink, as JSONL by default or as OpenTelemetry log records (see [Log format](#log-format)).  Audit is **on by default**.  The audit answers "what did the agent do," not "what did the agent see" -- result rows from `SELECT` statements are intentionally not recorded, in either format.
 
-#### What gets recorded
+#### What gets recorded {#what-gets-recorded}
 
 | Field | Description |
 |--|--|
@@ -381,7 +381,7 @@ Every tool call writes one record to the configured audit sink, as JSONL by defa
 
 Result rows from `SELECT` statements are deliberately excluded -- they can be very large and may carry sensitive data.
 
-#### File sink
+#### File sink {#file-sink}
 
 The only sink shipped today is `file`.  One JSON object per line, fsynced after each record, lumberjack-style rotation by size / age / backup count.
 
@@ -414,7 +414,7 @@ When neither is set in `mcp.config`, the MCP server defaults `dir` to cwd so exi
 
 The resolved absolute path is logged to stderr at startup as `sink file: /path/to/file.log`.
 
-#### Log format
+#### Log format {#log-format}
 
 The audit stream has two encodings, written to the same file sink:
 
@@ -465,7 +465,7 @@ The emitted attribute set is a versioned interface: the instrumentation scope is
 
 Body is `execute_tool <tool>` / `elicitation <tool>`; severity is `INFO`, or `ERROR` when the call failed or was refused.  The redaction contract is identical in both formats: result values are never serialised, only the statement that produced them.
 
-#### Failure modes
+#### Failure modes {#failure-modes}
 
 When the sink returns an error, the response behaviour depends on `audit.failure_mode`.
 
@@ -475,11 +475,11 @@ When the sink returns an error, the response behaviour depends on `audit.failure
 |`strict_mutations`|`SELECT` / metadata reads proceed with a stderr note; mutations and lifecycle ops surface the audit error.|
 |`best_effort`|Always log to stderr and proceed.|
 
-#### Sequencing
+#### Sequencing {#sequencing}
 
 The audit write happens **after** the tool executes (or is gated out) but **before** the response returns to the client.  In strict mode, an audit-write failure on a successful DELETE means the row is gone but the client receives an error -- by design, so no mutation slips through unaudited.
 
-#### Disabling audit
+#### Disabling audit {#disabling-audit}
 
 To turn audit off entirely (the pre-PR2 behaviour):
 
@@ -491,7 +491,7 @@ stackql mcp \
 
 * * *
 
-### Available MCP tools
+### Available MCP tools {#available-mcp-tools}
 
 When running as an MCP server, StackQL exposes the following tools, subject to the configured `enabled_tools` allowlist. Each returns both a rendered text view (for the LLM) and a typed structured payload (for programmatic clients). The default text rendering is a markdown table for uniform multi-row results or a markdown KV block for sparse / single-record results. Tools with arguments accept an optional `format` (`markdown` or `json`) override; otherwise the server's render setting is used. The inputs below list task-specific arguments; `?` marks optional inputs.
 
@@ -523,7 +523,7 @@ Consult `query_library_search` before authoring SQL from scratch, then use `quer
 
 :::
 
-### Available MCP prompts
+### Available MCP prompts {#available-mcp-prompts}
 
 One static prompt is published.
 
@@ -533,7 +533,7 @@ One static prompt is published.
 
 * * *
 
-### Flags
+### Flags {#flags}
 
 | Flag | Description |
 |--|--|
@@ -557,9 +557,9 @@ You need to set environment variables required for provider authentication befor
 
 * * *
 
-### Examples
+### Examples {#examples-1}
 
-#### Basic standalone MCP server
+#### Basic standalone MCP server {#basic-standalone-mcp-server}
 
 Launch a standalone MCP server with provider authentication and a bearer token for its clients:
 
@@ -574,7 +574,7 @@ stackql mcp \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
-#### MCP server with PostgreSQL server (in-memory)
+#### MCP server with PostgreSQL server (in-memory) {#mcp-server-with-postgresql-server-in-memory}
 
 Run both MCP and PostgreSQL servers for dual-protocol access:
 
@@ -589,7 +589,7 @@ stackql srv \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
-#### Read-only inventory server with audit to a known path
+#### Read-only inventory server with audit to a known path {#read-only-inventory-server-with-audit-to-a-known-path}
 
 Useful for an inventory-scanning agent that should never mutate:
 
@@ -609,7 +609,7 @@ stackql mcp \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
-#### Full-access automation server
+#### Full-access automation server {#full-access-automation-server}
 
 For trusted automation pipelines that need mutations and can't respond to elicitation prompts.  The pipeline presents the bearer token held in `STACKQL_MCP_TOKEN`:
 
@@ -628,7 +628,7 @@ stackql mcp \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
-#### Secure MCP server with TLS
+#### Secure MCP server with TLS {#secure-mcp-server-with-tls}
 
 Launch an MCP server with TLS encryption in reverse-proxy mode:
 
@@ -662,7 +662,7 @@ stackql srv \
 
 * * *
 
-### Testing your MCP server
+### Testing your MCP server {#testing-your-mcp-server}
 
 The repository ships a development MCP client (`stackql_mcp_client`) for scripting and regression tests.  Build it with:
 
@@ -750,7 +750,7 @@ Note that `stackql_mcp_client` sends no `Authorization` header, so the server it
   --exec.args '{"sql": "delete from google.compute.firewalls where project = '"'"'my-project'"'"' and firewall = '"'"'old-rule'"'"';"}'
 ```
 
-#### Example responses
+#### Example responses {#example-responses}
 
 `server_info` (against a default-mode server):
 
@@ -797,7 +797,7 @@ Sample audit log line for the same mutation:
 
 * * *
 
-### Integration with AI assistants
+### Integration with AI assistants {#integration-with-ai-assistants}
 
 To integrate StackQL's MCP server with an AI assistant, register `stackql` as an MCP server in the assistant's configuration.  Most editor-embedded MCP clients run the server over `stdio`; for those, use `--mcp.server.type=stdio` and the assistant launches the process directly.  Standalone agents that speak HTTP can connect to a long-running `stackql mcp --mcp.server.type=http` process.
 
@@ -811,7 +811,7 @@ Configuration file locations vary by operating system and AI assistant.  Consult
 
 * * *
 
-### Architecture considerations
+### Architecture considerations {#architecture-considerations}
 
 When choosing a deployment mode, consider:
 
@@ -839,7 +839,7 @@ When using TLS with enterprise Certificate Authorities (CAs), additional configu
 
 * * *
 
-### Further reading
+### Further reading {#further-reading}
 
 - The package-developer reference is the [`pkg/mcp_server` README](https://github.com/stackql/stackql/blob/main/pkg/mcp_server/README.md) in the stackql repo.
 - The contributor-facing technical doc lives at [`docs/mcp.md`](https://github.com/stackql/stackql/blob/main/docs/mcp.md) in the stackql repo and includes worked example responses for every tool.

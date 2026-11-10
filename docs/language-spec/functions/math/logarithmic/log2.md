@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LOG2(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 A positive numeric expression for which the base-2 logarithm is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the base-2 logarithm of the specified numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the base-2 logarithm of 16
+### Calculate the base-2 logarithm of 16 {#calculate-the-base-2-logarithm-of-16}
 
 ```sql
 SELECT LOG2(16) AS log_result;
@@ -43,7 +43,7 @@ SELECT LOG2(16) AS log_result;
 
 This query returns `4`, as \(2^4 = 16\).
 
-### Calculate the base-2 logarithm of 32
+### Calculate the base-2 logarithm of 32 {#calculate-the-base-2-logarithm-of-32}
 
 ```sql
 SELECT LOG2(32) AS log_result;

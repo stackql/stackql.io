@@ -22,7 +22,7 @@ The embedded binary is downloaded and sha256-verified on first run, or vendored 
 
 * * *
 
-## Install
+## Install {#install}
 
 Add the `stackql-mcp` crate:
 
@@ -32,7 +32,7 @@ stackql-mcp = "0.1"
 
 * * *
 
-## Quick start
+## Quick start {#quick-start}
 
 ```rust
 use stackql_mcp::{Mode, StackqlMcp};
@@ -55,13 +55,13 @@ The API is `StackqlMcp::builder()` with `.mode()`, `.auth()`, `.binary()`, `.bun
 
 * * *
 
-## Modes
+## Modes {#modes}
 
 The builder defaults to `Mode::ReadOnly`. Call `.mode()` with `Mode::Safe`, `Mode::DeleteSafe`, or `Mode::FullAccess` to escalate. Escalation is explicit - the server will not enable mutation or lifecycle tools unless you opt in.
 
 * * *
 
-## Vendoring / embedding
+## Vendoring / embedding {#vendoring--embedding}
 
 Two feature flags control how the binary is sourced:
 
@@ -72,12 +72,12 @@ The vendored binary adds roughly 80 MB to the build.
 
 * * *
 
-## Demo app
+## Demo app {#demo-app}
 
 **auditron** is a terminal compliance copilot: a TUI that streams pass/fail results with the SQL shown and Claude explanations, shipped as an ~80 MB vendored single binary.
 
 * * *
 
-## Repo link
+## Repo link {#repo-link}
 
 [github.com/stackql/stackql-mcp-rs](https://github.com/stackql/stackql-mcp-rs)

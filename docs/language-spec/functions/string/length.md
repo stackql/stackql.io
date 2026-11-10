@@ -23,13 +23,13 @@ To get the length of a JSON array use the [**JSON_ARRAY_LENGTH**](/language-spec
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 An ASCII string or a BLOB.
@@ -38,14 +38,14 @@ An ASCII string or a BLOB.
 
 > If *expression* is numeric then the length of a string representation of *expression* is returned.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns an integer.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the length of a string column
+### Return the length of a string column {#return-the-length-of-a-string-column}
 
 ```sql
 SELECT name, length(name) AS len

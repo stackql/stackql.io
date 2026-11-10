@@ -23,7 +23,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -35,7 +35,7 @@ Unknown parameters are rejected. Required parameters without supplied values or 
 
 * * *
 
-## Output
+## Output {#output}
 
 The default text view is a KV block with identity, mutation status, the next tool, validity, source links and any template, rendered SQL or errors. Use the structured payload or `format: "json"` for the full metadata:
 
@@ -58,13 +58,13 @@ An unknown or malformed ID returns an error. Use `query_library_search` to find 
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode, subject to the configured tool allowlist. Retrieving or rendering a mutation or lifecycle template has no cloud-side effect and needs no approval. Executing the returned SQL is a separate call governed by the server [mode](/command-line-usage/mcp#server-modes).
 
 * * *
 
-## Example
+## Example {#example}
 
 First inspect an entry:
 

@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a Kotlin or JVM application with no `npx`, no separate install, and no runtime dependency. The `io.stackql:stackql-mcp` library spawns the signed StackQL binary over stdio behind the official Kotlin MCP SDK client, and a companion Gradle plugin wires the same launch into a build. This is the pattern behind **costgate**, a cost gate for CI/CD shipped as a CLI and a Gradle plugin.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the library** to your Gradle dependencies:
 
@@ -52,7 +52,7 @@ suspend fun main() {
 
 3. **Choose a mode.** `.mode()` defaults to `Mode.ReadOnly`. Set `Mode.Safe`, `Mode.DeleteSafe`, or `Mode.FullAccess` only when the app needs to provision. Escalation is explicit.
 
-## Run StackQL queries from a Gradle build
+## Run StackQL queries from a Gradle build {#run-stackql-queries-from-a-gradle-build}
 
 The Gradle plugin wires the embedded server into your build so CI tasks run StackQL queries without a separate install step. The **costgate** demo gates infrastructure deploys on cost budgets, as a CLI:
 
@@ -73,7 +73,7 @@ costgate {
 }
 ```
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: Kotlin / JVM reference](/mcp/embedded/kotlin) - install, API, and the Gradle plugin
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

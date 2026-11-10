@@ -18,7 +18,7 @@ StackQL integrates with Claude Desktop via the Model Context Protocol (MCP), ena
 
 There are three installation options, presented here in recommended order: install from the Anthropic Connector Directory, install from a downloaded bundle, or register a locally installed StackQL binary manually.
 
-## Install from the Connector Directory (recommended)
+## Install from the Connector Directory (recommended) {#install-from-the-connector-directory-recommended}
 
 The easiest way to use the StackQL MCP server with Claude Desktop is to install it from the Anthropic Connector Directory. In Claude Desktop: **Settings -> Connectors -> Add -> Browse Connectors**, search for **StackQL**, and click **Install**. There is nothing to download and no separate StackQL installation is required.
 
@@ -34,7 +34,7 @@ A directory-installed connector inherits Claude Desktop's environment, so set th
 
 Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation - see [Server modes](/command-line-usage/mcp#server-modes).
 
-## Install from a downloaded bundle
+## Install from a downloaded bundle {#install-from-a-downloaded-bundle}
 
 Use this installation option to pin a specific version, install without Connector Directory access, or verify checksums yourself before installing.
 
@@ -61,11 +61,11 @@ shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 
 The server is also listed on the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) as `io.github.stackql/stackql-mcp`, which pins these checksums.
 
-## Manual Configuration
+## Manual Configuration {#manual-configuration}
 
 If you already have StackQL installed, you can register the StackQL MCP server in Claude Desktop's configuration file directly.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 Before setting up StackQL with Claude Desktop, ensure you have:
 
@@ -79,32 +79,32 @@ Verify StackQL is in your system PATH by running:
 stackql --version
 ```
 
-### Setting Up the MCP Server
+### Setting Up the MCP Server {#setting-up-the-mcp-server}
 
 To enable Claude Desktop to communicate with StackQL, you need to configure the MCP server in your Claude Desktop configuration file.
 
-#### Windows
+#### Windows {#windows}
 
 Edit the configuration file located at:
 ```
 %APPDATA%\Claude\claude_desktop_config.json
 ```
 
-#### macOS
+#### macOS {#macos}
 
 Edit the configuration file located at:
 ```
 ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-#### Linux
+#### Linux {#linux}
 
 Edit the configuration file located at:
 ```
 ~/.config/Claude/claude_desktop_config.json
 ```
 
-### Configuration Example
+### Configuration Example {#configuration-example}
 
 Add the following configuration to your `claude_desktop_config.json` file:
 
@@ -144,7 +144,7 @@ Never commit your `claude_desktop_config.json` file with actual credentials to v
 
 Claude Desktop advertises the MCP elicitation capability, so the default server mode (`safe`) will prompt you for approval on each mutation. Switch to `mode: read_only` for inventory-only access or `mode: full_access` to skip prompts - see [Server modes](/command-line-usage/mcp#server-modes).
 
-### Using a Credentials File (`--env.file`)
+### Using a Credentials File (`--env.file`) {#using-a-credentials-file---envfile}
 
 An alternative to the `env` block - and on Windows the recommended one - is to keep credentials in a dotenv-style file and pass it with the [`--env.file`](/command-line-usage/mcp#credential-resourcing---envfile--reload_credentials) flag:
 
@@ -184,20 +184,20 @@ Why this beats the `env` block:
 
 :::
 
-### Provider-Specific Credentials
+### Provider-Specific Credentials {#provider-specific-credentials}
 
 Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/providers](/providers))for the environment variables required for your desired provider(s).
 
 
-### Restarting Claude Desktop
+### Restarting Claude Desktop {#restarting-claude-desktop}
 
 After updating the configuration file, restart Claude Desktop to load the new MCP server configuration. The StackQL MCP server will be automatically started when you begin a new conversation.
 
-## What You Can Do
+## What You Can Do {#what-you-can-do}
 
 Once configured, you can use natural language in Claude Desktop to:
 
-### Query Cloud Resources
+### Query Cloud Resources {#query-cloud-resources}
 
 Ask Claude to retrieve information about your cloud infrastructure:
 
@@ -206,7 +206,7 @@ Ask Claude to retrieve information about your cloud infrastructure:
 - "What Azure virtual machines are running in my subscription?"
 - "Show me all Kubernetes pods in the default namespace"
 
-### Provision Resources
+### Provision Resources {#provision-resources}
 
 Create and deploy cloud resources using conversational commands:
 
@@ -215,7 +215,7 @@ Create and deploy cloud resources using conversational commands:
 - "Launch a small EC2 instance in us-east-1"
 - "Create an Azure resource group in westus2"
 
-### Analyze and Audit
+### Analyze and Audit {#analyze-and-audit}
 
 Perform security audits and compliance checks:
 
@@ -224,7 +224,7 @@ Perform security audits and compliance checks:
 - "Find all GCP instances without proper labels"
 - "Identify Azure VMs without backup enabled"
 
-### Cross-Cloud Operations
+### Cross-Cloud Operations {#cross-cloud-operations}
 
 Query and compare resources across multiple cloud providers:
 
@@ -232,7 +232,7 @@ Query and compare resources across multiple cloud providers:
 - "Compare storage costs between AWS S3 and GCP Cloud Storage"
 - "List all databases across all cloud providers"
 
-### Infrastructure as Code
+### Infrastructure as Code {#infrastructure-as-code}
 
 Generate and execute infrastructure deployment queries:
 
@@ -240,7 +240,7 @@ Generate and execute infrastructure deployment queries:
 - "Deploy a complete GKE cluster with node pools"
 - "Set up a multi-region deployment in AWS"
 
-### Modify Resources
+### Modify Resources {#modify-resources}
 
 Update existing cloud resources:
 
@@ -249,7 +249,7 @@ Update existing cloud resources:
 - "Update the machine type of GCP instance 'web-server-1'"
 - "Change the ACL on my Cloud Storage bucket to private"
 
-### Delete Resources
+### Delete Resources {#delete-resources}
 
 Remove cloud resources when no longer needed:
 
@@ -257,7 +257,7 @@ Remove cloud resources when no longer needed:
 - "Remove all stopped EC2 instances"
 - "Clean up unused GCP disks"
 
-## Example Conversation
+## Example Conversation {#example-conversation}
 
 Here's an example of how you might interact with Claude Desktop using StackQL:
 
@@ -273,7 +273,7 @@ Here's an example of how you might interact with Claude Desktop using StackQL:
 
 **Claude:** *Executes a SELECT query and shows all buckets including the newly created one*
 
-## Tips and Best Practices
+## Tips and Best Practices {#tips-and-best-practices}
 
 1. **Be Specific**: The more specific your request, the better results you'll get. Include resource names, regions, and specific attributes when possible.
 
@@ -287,9 +287,9 @@ Here's an example of how you might interact with Claude Desktop using StackQL:
 
 6. **Explore Capabilities**: Ask Claude "What can I do with StackQL?" to get suggestions specific to your configured providers.
 
-## Troubleshooting
+## Troubleshooting {#troubleshooting}
 
-### MCP Server Not Starting
+### MCP Server Not Starting {#mcp-server-not-starting}
 
 If Claude Desktop cannot connect to the StackQL MCP server:
 
@@ -298,7 +298,7 @@ If Claude Desktop cannot connect to the StackQL MCP server:
 3. Ensure the file path in the configuration is correct for your operating system
 4. Review the Claude Desktop logs for error messages
 
-### Authentication Errors
+### Authentication Errors {#authentication-errors}
 
 If you receive authentication errors:
 
@@ -307,7 +307,7 @@ If you receive authentication errors:
 3. Check that environment variables are properly formatted in the configuration - asking the agent to run [`reload_credentials`](/mcp/reload_credentials) reports per-provider credential status and is the fastest way to see which variable is missing
 4. Confirm your credentials have the necessary permissions
 
-### Permission Errors
+### Permission Errors {#permission-errors}
 
 If operations fail due to insufficient permissions:
 
@@ -315,14 +315,14 @@ If operations fail due to insufficient permissions:
 2. Check provider-specific IAM policies
 3. Ensure API services are enabled in your cloud projects
 
-## Learn More
+## Learn More {#learn-more}
 
 - [StackQL MCP Command Reference](/command-line-usage/mcp)
 - [StackQL Provider Registry](/providers)
 - [Language Specification](/language-spec/select)
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io)
 
-## Security Considerations
+## Security Considerations {#security-considerations}
 
 :::caution
 - Store credentials securely and never commit them to version control

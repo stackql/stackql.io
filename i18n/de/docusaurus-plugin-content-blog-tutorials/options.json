@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Tutorials",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Praktische Anleitungen für Cloud-Betrieb, Sicherheit und Automatisierung mit SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Alle Tutorials",
+    "description": "The label for the left sidebar"
+  }
+}

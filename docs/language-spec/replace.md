@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *replaceStatement::=*
 
@@ -38,9 +38,9 @@ SET field_name = value [, field_name = value ...]
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `REPLACE` statement
+### Basic `REPLACE` statement {#basic-replace-statement}
 Run an `REPLACE` statement to modify a Compute Engine Disk resource's size.
 
 ```sql
@@ -52,7 +52,7 @@ AND zone = 'australia-southeast1-a'
 AND name = 'test10gbdisk';
 ```
 
-### `REPLACE` statement (blocking)
+### `REPLACE` statement (blocking) {#replace-statement-blocking}
 Run an `REPLACE` statement to modify a Compute Engine Disk resource's size. This is a blocking (synchronous) invocation.
 
 ```sql
@@ -67,7 +67,7 @@ WHERE firewall = 'test-fw'
 AND project = 'stackql-demo' 
 ```
 
-### `REPLACE` statement with JSON modification
+### `REPLACE` statement with JSON modification {#replace-statement-with-json-modification}
 Run an `REPLACE` statement to modify a resource using JSON manipulation.
 
 ```sql

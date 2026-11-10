@@ -19,14 +19,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT DENSE_RANK() OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*PARTITION BY column*__
 Optional. Divides the result set into partitions. The `DENSE_RANK` function is applied to each partition separately.
@@ -34,15 +34,15 @@ Optional. Divides the result set into partitions. The `DENSE_RANK` function is a
 __*ORDER BY column*__
 Specifies the order in which ranks are assigned. If there is no `ORDER BY` clause, all rows are considered peers and receive rank 1.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer representing the dense rank of the current row within the partition, without gaps for tied values.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Rank contributors by contributions (without gaps)
+### Rank contributors by contributions (without gaps) {#rank-contributors-by-contributions-without-gaps}
 
 ```sql
 -- Rank contributors without gaps for ties
@@ -57,7 +57,7 @@ WHERE owner = 'stackql'
 ORDER BY contributions DESC;
 ```
 
-### Compare `DENSE_RANK` with `RANK` and `ROW_NUMBER`
+### Compare `DENSE_RANK` with `RANK` and `ROW_NUMBER` {#compare-dense_rank-with-rank-and-row_number}
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors
@@ -72,7 +72,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Rank aggregated contributions across multiple repositories
+### Rank aggregated contributions across multiple repositories {#rank-aggregated-contributions-across-multiple-repositories}
 
 ```sql
 -- Rank total contributions across multiple repos

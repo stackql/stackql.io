@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT COS(radian_value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*radian_value*__  
 A numeric expression that specifies the angle in radians for which the cosine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the cosine of the specified angle.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the cosine of π/3 radians
+### Calculate the cosine of π/3 radians {#calculate-the-cosine-of-π3-radians}
 
 ```sql
 SELECT COS(PI() / 3) AS cosine_value;
@@ -43,7 +43,7 @@ SELECT COS(PI() / 3) AS cosine_value;
 
 This query returns `0.5`, as the cosine of π/3 radians is 0.5.
 
-### Calculate the cosine of π radians
+### Calculate the cosine of π radians {#calculate-the-cosine-of-π-radians}
 
 ```sql
 SELECT COS(PI()) AS cosine_value;

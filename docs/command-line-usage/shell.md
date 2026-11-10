@@ -15,13 +15,13 @@ Command used to launch the interactive StackQL Command Shell.  For more informat
 
 * * * 
 
-### Syntax
+### Syntax {#syntax}
 
 `stackql shell [flags]`
 
 * * *
 
-### Flags
+### Flags {#flags}
 
 | Flag | Description |
 |--|--|
@@ -33,7 +33,7 @@ Command used to launch the interactive StackQL Command Shell.  For more informat
 
 * * *
 
-### Examples
+### Examples {#examples}
 
 Launch the StackQL shell, using a service account key file for authentication.
 ```shell

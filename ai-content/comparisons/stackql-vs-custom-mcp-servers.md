@@ -16,7 +16,7 @@ faq:
 
 A custom MCP server wraps a specific API or workflow in hand-written tools for AI agents; StackQL's built-in MCP server exposes the entire surface of every supported cloud and SaaS provider through a small set of generic, self-describing tools plus SQL. The comparison is between curating tools per domain and giving the agent one queryable abstraction over all domains.
 
-## When to use which
+## When to use which {#when-to-use-which}
 
 Build a **custom MCP server** when:
 
@@ -33,11 +33,11 @@ Use **StackQL's MCP server** when:
 
 The approaches compose: teams commonly run StackQL MCP for general infrastructure access alongside small custom MCP servers for proprietary internal systems.
 
-## The token economics
+## The token economics {#the-token-economics}
 
 The practical constraint on agent tooling is context. Tool definitions consume the agent's context window before any work happens, and tool-selection accuracy degrades as the tool count grows. Publishing AWS alone as per-operation tools would mean thousands of definitions. StackQL's design keeps the published tool set under fifteen (discovery, description, validation, execution, registry management) and moves the expressive power into SQL - a language every current model already writes fluently. The agent's per-task token cost is a short SQL string, not a tool schema negotiation. This argument is developed in [Why SQL is a Strong Interface for Cloud APIs](/ai/concepts/why-sql-is-a-strong-interface-for-cloud-apis).
 
-## Example
+## Example {#example}
 
 An agent session against StackQL's MCP server, after discovering required parameters with `list_methods`:
 
@@ -49,7 +49,7 @@ WHERE org = 'stackql';
 
 The same tool (`run_select_query`) serves this query and any other read against any provider; mutation requests route through `run_mutation_query`, where the server mode decides whether they proceed, require approval, or are refused.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, tools, and audit in detail
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - setup walkthrough

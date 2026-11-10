@@ -20,7 +20,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *setStatement::=*
 
@@ -58,7 +58,7 @@ Optional, and the only scope StackQL has.  `SET SESSION name = ...` and `SET nam
 
 Assignments in one `SET` list apply in order and are not a transaction: if the second assignment in a list fails, the first stays in effect.
 
-## Targets
+## Targets {#targets}
 
 | Target | Effect |
 |--|--|
@@ -72,9 +72,9 @@ Every form affects the current session only.  Independent connections to a [`srv
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Set session variables
+### Set session variables {#set-session-variables}
 
 Each statement stores one scalar under the given name, and the value keeps its type: `region` is a string, `minimum_count` an integer and `enabled` a boolean.  `null` is stored as a value, so `$optional_value` later resolves to SQL `NULL` instead of failing as undefined.  The last statement assigns two variables in one list.
 
@@ -86,7 +86,7 @@ SET optional_value = null;
 SET suffix = 'East', some_id = 42;
 ```
 
-### Make the session scope explicit
+### Make the session scope explicit {#make-the-session-scope-explicit}
 
 The first two statements are identical: `SESSION` names the only scope there is, and both assignments last until the variable is unset or the session ends.  Use the keyword when a script should read the same way as it does on a database that distinguishes session from global settings.  The commented-out statement is shown for contrast: it assigns nothing and fails with `configuration scope "global" is not supported; use SESSION`, because no state is shared between sessions.
 
@@ -100,7 +100,7 @@ SET GLOBAL region = 'ap-southeast-2';
 */
 ```
 
-### Use a variable in a query
+### Use a variable in a query {#use-a-variable-in-a-query}
 
 Dereference a variable with `$name`, without quotes, in any expression position.  Values keep their type: strings are escaped as SQL literals, and numbers, booleans and `null` are passed through.  Variables in a `WHERE` clause are resolved before the request is planned, so they are pushed to the provider like literals.
 
@@ -112,7 +112,7 @@ SELECT name, status FROM google.compute.instances
 WHERE project = $project AND zone = $zone;
 ```
 
-### Reset a variable
+### Reset a variable {#reset-a-variable}
 
 `DEFAULT` removes the variable, exactly as [`UNSET`](/language-spec/unset) does, so a later `$region` fails with `variable "$region" is not defined` until it is set again; the commented-out query shows that failure.  This is different from assigning `null`, which leaves the variable in place with a `NULL` value.
 
@@ -126,7 +126,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 */
 ```
 
-### Copy a value from another variable
+### Copy a value from another variable {#copy-a-value-from-another-variable}
 
 The right-hand side can be a double-quoted reference to an existing variable, which copies the value it holds at that moment.  Here a provider binding is first stored as an ordinary variable named `providers.saved` (the dots do not make it configuration), then activated by copying it to the `$.providers.production` path.  Removing the saved copy afterwards does not affect the active binding.
 
@@ -136,7 +136,7 @@ SET "$.providers.production" = "$providers.saved";
 UNSET "providers.saved";
 ```
 
-### Override a credential field for this session
+### Override a credential field for this session {#override-a-credential-field-for-this-session}
 
 A provider's authentication context is the object supplied for it through [`--auth`](/command-line-usage/global-flags) at startup.  A path under `$.auth` replaces one field of that object for the rest of the session and leaves the other fields as they were.  Here the GitHub provider is pointed at a different environment variable, holding a read-only token; the variable is read from the StackQL process environment, and later queries against `github.*` use it until the field is unset or the session ends.
 
@@ -144,7 +144,7 @@ A provider's authentication context is the object supplied for it through [`--au
 SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
 ```
 
-### Bind a provider alias
+### Bind a provider alias {#bind-a-provider-alias}
 
 A provider alias is a second, independently configured instance of a provider, used in place of the provider name in queries.  The value is a JSON document in a string: `provider` names the underlying provider, `tenancy` labels the account, `auth` is a credential block in the same shape as `--auth`, and `params` supplies default values for request parameters such as `region`.  Queries against `production.s3.buckets` then run with those credentials, while `aws.s3.buckets` keeps the startup configuration.  The full list of keys is in [Provider Sessions](/getting-started/provider-sessions#provider-aliases).
 

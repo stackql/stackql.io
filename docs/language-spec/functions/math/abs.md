@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ABS(numeric_expression) FROM <multipartIdentifier>;
@@ -25,20 +25,20 @@ SELECT ABS(numeric_expression) FROM <multipartIdentifier>;
 
 > `abs(X)` returns `NULL` if `X` is `NULL`. `abs(X)` returns `0.0` if `X` is a string or blob that cannot be converted to a numeric value. If `X` is the integer -9223372036854775808 then `abs(X)` throws an integer overflow error since there is no equivalent positive 64-bit two complement value.
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a positive numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the absolute value of a number
+### Return the absolute value of a number {#return-the-absolute-value-of-a-number}
 
 ```sql
 SELECT name, abs(strftime('%s', creationTimestamp)-strftime('%s','now')) as abs_value

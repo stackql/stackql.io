@@ -17,14 +17,14 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT TOTAL(columnExpression) FROM <multipartIdentifier>
 [ GROUP BY groupByColumn ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*columnExpression*__  
 A column or expression.
@@ -34,15 +34,15 @@ A column or expression.
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a floating point value representing the sum of the *columnExpression*.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the sum of a column expression over an entire resource
+### Return the sum of a column expression over an entire resource {#return-the-sum-of-a-column-expression-over-an-entire-resource}
 
 ```sql
 SELECT total(json_array_length(disks)) as total_disks
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the sum of a column expression grouped by another column expression
+### Return the sum of a column expression grouped by another column expression {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
 SELECT tags, total(json_array_length(disks)) as total_disks

@@ -16,7 +16,7 @@ faq:
 
 Steampipe and StackQL implement the same core idea - cloud and SaaS APIs exposed as SQL tables - with one decisive difference: Steampipe is read-only, while StackQL also writes. Steampipe embeds PostgreSQL and maps APIs through foreign data wrappers fed by Go plugins; StackQL implements its own SQL engine over declarative, OpenAPI-derived provider specs, and maps the full verb set: `SELECT`, `INSERT`, `UPDATE`, `DELETE`, and `EXEC` for lifecycle actions.
 
-## When to use which
+## When to use which {#when-to-use-which}
 
 Use **Steampipe** when:
 
@@ -33,7 +33,7 @@ Use **StackQL** when:
 
 Both are open source, both run locally or in pipelines, and for read-only inventory queries they are genuinely interchangeable in capability; the choice there comes down to schema preference and ecosystem.
 
-## Architectural comparison
+## Architectural comparison {#architectural-comparison}
 
 | Dimension | Steampipe | StackQL |
 |---|---|---|
@@ -47,7 +47,7 @@ Both are open source, both run locally or in pipelines, and for read-only invent
 
 The provider-definition difference compounds over time: a Steampipe table exists when someone writes plugin code for it, while a StackQL table exists when the API operation is described in the provider spec. The write capability difference is categorical: closed-loop workflows - detect, decide, remediate - fit in one StackQL session, whereas Steampipe hands off remediation to another tool.
 
-## Example
+## Example {#example}
 
 Identical intent in both tools - but in StackQL, the follow-up remediation stays in the same language. Query EC2 instances:
 
@@ -59,7 +59,7 @@ WHERE region = 'us-east-1';
 
 A remediation in StackQL is then a `DELETE` or `EXEC` (for example, terminating or stopping an instance) against the same table, subject to the credential's permissions and - when running as an MCP server - the configured safety mode.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - the category both tools implement
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - full definition

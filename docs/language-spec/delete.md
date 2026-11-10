@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *deleteStatement::=*
 
@@ -37,9 +37,9 @@ WHERE <expression> ;
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `DELETE` Statement
+### Basic `DELETE` Statement {#basic-delete-statement}
 Run a basic DELETE statement to remove a deployed resource in an authenticated session.
 
 ```sql

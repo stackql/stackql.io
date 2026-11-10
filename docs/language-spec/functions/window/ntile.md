@@ -17,14 +17,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT NTILE(N) OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*N*__
 A positive integer specifying the number of groups (tiles) to divide the partition into.
@@ -35,15 +35,15 @@ Optional. Divides the result set into partitions. The `NTILE` function is applie
 __*ORDER BY column*__
 Specifies the order in which rows are assigned to tiles.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer between 1 and N indicating which tile (group) the current row belongs to.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Group contributors into quartiles by contribution level
+### Group contributors into quartiles by contribution level {#group-contributors-into-quartiles-by-contribution-level}
 
 ```sql
 -- Group contributors into quartiles by contribution level

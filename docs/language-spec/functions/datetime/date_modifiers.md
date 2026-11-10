@@ -11,7 +11,7 @@ description: "Date and time modifiers in StackQL: shift DATE, TIME, DATETIME, JU
 image: "/img/stackql-featured-image.png"
 ---
 
-## Overview
+## Overview {#overview}
 
 The date or time values datetime functions in StackQL can be followed by zero or more modifiers that alter the date and/or time. Each modifier is a transformation that is applied to the time value to its left. Modifiers are applied in order from left to right. The available modifiers are as follows:
 
@@ -31,16 +31,16 @@ The date or time values datetime functions in StackQL can be followed by zero or
 | utc                  | Return UTC time                                                       |
 | unixepoch            | Unix time                                                             |
 
-## Examples
+## Examples {#examples}
 
-### Return the current date and time using the `now` modifier
+### Return the current date and time using the `now` modifier {#return-the-current-date-and-time-using-the-now-modifier}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convert UTC to localtime using the `localtime` modifier
+### Convert UTC to localtime using the `localtime` modifier {#convert-utc-to-localtime-using-the-localtime-modifier}
 
 ```sql
 SELECT name, timeCreated,
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert datetime to UTC
+### Covert datetime to UTC {#covert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -56,7 +56,7 @@ datetime('now', 'utc') as now_utc
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Calculate a date relative to another date
+### Calculate a date relative to another date {#calculate-a-date-relative-to-another-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -64,7 +64,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Get the next specified weekday after a given date
+### Get the next specified weekday after a given date {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -72,7 +72,7 @@ datetime(timeCreated, 'weekday 0') as following_sunday
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Get the start of the month for a given date
+### Get the start of the month for a given date {#get-the-start-of-the-month-for-a-given-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert a Unix timestamp to a datetime
+### Covert a Unix timestamp to a datetime {#covert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

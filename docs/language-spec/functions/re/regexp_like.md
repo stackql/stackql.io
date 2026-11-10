@@ -21,13 +21,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT REGEXP_LIKE(source, pattern) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*source*__  
 A literal string or string column that you want to test for the existence of a pattern defined by a regular expression (`pattern`).  
@@ -35,14 +35,14 @@ A literal string or string column that you want to test for the existence of a p
 __*pattern*__  
 The regular expression pattern to search for.  
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a `0` if `false` and `1` if `true`.  
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Determine if a string contains a pattern
+### Determine if a string contains a pattern {#determine-if-a-string-contains-a-pattern}
 
 <Tabs
   defaultValue="iql"

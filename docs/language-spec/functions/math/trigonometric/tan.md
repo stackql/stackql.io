@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT TAN(radian_value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*radian_value*__  
 A numeric expression that specifies the angle in radians for which the tangent is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the tangent of the specified angle.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the tangent of π/4 radians
+### Calculate the tangent of π/4 radians {#calculate-the-tangent-of-π4-radians}
 
 ```sql
 SELECT TAN(PI() / 4) AS tangent_value;
@@ -43,7 +43,7 @@ SELECT TAN(PI() / 4) AS tangent_value;
 
 This query returns `1`, as the tangent of π/4 radians is 1.
 
-### Calculate the tangent of π radians
+### Calculate the tangent of π radians {#calculate-the-tangent-of-π-radians}
 
 ```sql
 SELECT TAN(PI()) AS tangent_value;

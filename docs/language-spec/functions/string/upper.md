@@ -17,26 +17,26 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT UPPER(character_expression) FROM <multipartIdentifier>;
 ```
 > The `upper()` function works for ASCII characters only.
 
-## Arguments
+## Arguments {#arguments}
 
 __*character_expression*__  
 An ASCII string.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return a string in uppercase
+### Return a string in uppercase {#return-a-string-in-uppercase}
 
 ```sql
 SELECT UPPER(name), location FROM google.storage.buckets WHERE project = 'stackql-demo';

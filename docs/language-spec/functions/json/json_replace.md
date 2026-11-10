@@ -21,13 +21,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_REPLACE(json_column, path, new_value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_column*__  
 The JSON column or expression from which to replace values.
@@ -38,7 +38,7 @@ The JSON path expression pointing to the location within the JSON document where
 __*new_value*__  
 The new value to replace at the specified path in the JSON document.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a modified JSON document with the specified value replaced. If the specified path does not exist, the original JSON document is returned unchanged.
 
 :::note Behavior If a Key Exists
@@ -53,9 +53,9 @@ Returns a modified JSON document with the specified value replaced. If the speci
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Replace a Single Value in a JSON Object
+### Replace a Single Value in a JSON Object {#replace-a-single-value-in-a-json-object}
 
 ```sql
 SELECT sku as original,
@@ -73,7 +73,7 @@ AND resource_group_name = 'exampleResourceGroupProd';
 */
 ```
 
-### Replace Multiple Values in a JSON Object
+### Replace Multiple Values in a JSON Object {#replace-multiple-values-in-a-json-object}
 
 <Tabs
   defaultValue="query"

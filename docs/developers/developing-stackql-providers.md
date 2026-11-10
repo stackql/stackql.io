@@ -18,7 +18,7 @@ image: "/img/stackql-featured-image.png"
 See also:
 [[ StackQL Provider Registry ]](/providers) [[ Using a Provider ]](/getting-started/using-a-provider) [[ REGISTRY ]](/language-spec/registry) [[ Architecture ]](/developers/architecture)
 
-## Overview
+## Overview {#overview}
 
 A StackQL provider is a versioned set of OpenAPI documents plus `x-stackQL-*` extensions that the [omnisdk](https://github.com/stackql-labs/omnisdk) engine turns into SQL tables: `SELECT` for reads, `INSERT`, `UPDATE`, `REPLACE` and `DELETE` for lifecycle operations, and `EXEC` for actions. Provider documents tell StackQL what a provider's API can do and how to invoke it with SQL semantics. They are plain YAML, so a provider can be built, tested and versioned like any other code.
 
@@ -54,7 +54,7 @@ flowchart TB
     Worker -->|"REGISTRY LIST / REGISTRY PULL"| App["StackQL"]
 ```
 
-## Provider Document Structure
+## Provider Document Structure {#provider-document-structure}
 
 StackQL objects follow the hierarchy `provider.service.resource.method`, for example `google.compute.instances.list`. The documents mirror that hierarchy:
 
@@ -107,7 +107,7 @@ components:
 
 The full contract, including every key and its meaning, is in the any-sdk [Provider Specification](https://github.com/stackql/any-sdk/blob/main/docs/provider_spec.md). JSON Schemas for `provider.yaml`, service documents and the config block live in [`any-sdk/cicd/schema-definitions`](https://github.com/stackql/any-sdk/tree/main/cicd/schema-definitions); the config schema rejects unknown keys, so a mistyped key fails validation rather than being silently ignored.
 
-### OpenAPI extensions
+### OpenAPI extensions {#openapi-extensions}
 
 | Extension | Where | Purpose |
 | --- | --- | --- |
@@ -120,15 +120,15 @@ The full contract, including every key and its meaning, is in the any-sdk [Provi
 | `x-alwaysRequired` | parameter | Marks a parameter as always required |
 | `x-protocol` | `info` | Wire-protocol hint (`query`, `ec2`, `rest-xml`) for schema-driven XML response handling |
 
-### The config block
+### The config block {#the-config-block}
 
 `config` in `provider.yaml` and `x-stackQL-config` in service documents share one schema. The allowed keys are `auth`, `pagination`, `queryParamPushdown`, `queryParamTranspose`, `requestTranslate`, `requestBodyTranslate`, `variations`, `views`, `sqlExternalTables`, `retry`, `minStackQLVersion` and `snake_case_aliases`. Config resolves from the most specific level outward, method -> resource -> service -> provider service -> provider, so a provider-wide default can be overridden for one resource or method.
 
-## What Providers Handle
+## What Providers Handle {#what-providers-handle}
 
 Providers are responsible for the functions that abstract away API complexity, so users get a consistent SQL interface without managing the underlying HTTP conversation.
 
-### Authentication
+### Authentication {#authentication}
 
 Each provider ships a default `auth` block that names the environment variables holding its credentials, so a populated environment needs no runtime auth configuration. Only indirections (env var names, file paths) are accepted in a provider document; literal credential values belong exclusively in the runtime `--auth` context. Env var names should follow the vendor's Terraform provider where one exists.
 
@@ -158,7 +158,7 @@ config:
 
 Users can override a provider's auth at runtime with `--auth='{"<provider>": {...}}'`.
 
-### Pagination
+### Pagination {#pagination}
 
 Providers declare the vendor's pagination scheme and the engine walks every page, so users receive complete result sets. Supported schemes:
 
@@ -169,13 +169,13 @@ Providers declare the vendor's pagination scheme and the engine walks every page
 
 Offset and limit APIs with no next marker are not a pagination scheme; expose `offset` and `limit` as `WHERE` parameters instead. The `--http.response.pageLimit` global flag bounds traversal.
 
-### Predicate Pushdown
+### Predicate Pushdown {#predicate-pushdown}
 
 `WHERE` keys are matched against the operation's declared parameters by name (path, then query, header and cookie) and sent to the API, so filtering happens at the source. Any leftover `WHERE` key with no matching parameter is appended as a query parameter.
 
 Beyond plain parameters, `queryParamPushdown` rewrites `SELECT` columns, `WHERE`, `ORDER BY`, `LIMIT`, `OFFSET` and `COUNT` into API parameters. `dialect: odata` fills the `$select`, `$filter`, `$orderby`, `$top`, `$skip` and `$count` defaults used by Microsoft Graph and Azure style APIs; `dialect: custom` uses `paramName` verbatim, most commonly `top: {paramName: limit, maxValue: 1000}` so `LIMIT n` becomes `?limit=n`. Predicates that cannot be pushed are still evaluated client-side.
 
-### Response and Request Transformation
+### Response and Request Transformation {#response-and-request-transformation}
 
 - `response.objectKey` is a JSONPath (or XPath for XML APIs) that selects the row-bearing items from an envelope, for example `$.data[*]` or `$.value`.
 - `response.transform` applies a Go text template to a body before it is staged as rows; transform types cover JSON, XML and plain text, which is how AWS XML APIs and CLI output become tables.
@@ -185,11 +185,11 @@ Beyond plain parameters, `queryParamPushdown` rewrites `SELECT` columns, `WHERE`
 
 Column types follow the OpenAPI schema: `string` -> text, `integer` -> integer, `number` -> numeric, `boolean` -> boolean. `object` and `array` properties are stored as JSON text, which is why nested fields are read with `json_extract` in queries and why providers often ship views (`config.views`, with per-dialect `ddl` and a `fallback`) for common nested projections.
 
-### Non-HTTP Providers
+### Non-HTTP Providers {#non-http-providers}
 
 `protocolType: local_templated` in `provider.yaml` backs a provider with local commands instead of HTTP: methods carry an `inline` array of Go-template argv fragments, parameters use `in: inline`, and a `response.transform` turns command output into rows. The [`local_openssl`](https://github.com/stackql/any-sdk/tree/main/test/registry/src/local_openssl/v0.1.0) reference provider in any-sdk shows the shape. This is out of scope for the template pipeline, which targets HTTP APIs.
 
-## Starting a Provider Project
+## Starting a Provider Project {#starting-a-provider-project}
 
 Start every new provider from [__`stackql-provider-TEMPLATE`__](https://github.com/stackql-registry/stackql-provider-TEMPLATE). It is a GitHub template repository that encodes the current standard for a provider: a pinned upstream spec, a deterministic build pipeline where every manual decision is a rule in a script rather than a hand edit to generated YAML, three credential-free test layers, a budgeted live smoke suite, a Docusaurus documentation site and CI. Published providers built this way live in the [stackql-registry](https://github.com/orgs/stackql-registry/repositories) GitHub organization, and are useful reference material alongside the template.
 
@@ -223,7 +223,7 @@ Under the hood the pipeline uses [__`@stackql/provider-utils`__](https://github.
 
 For an existing provider repository that predates the template, copy the `.claude/skills` directory into it and start from the skill's `references/uplift-checklist.md`.
 
-### Using Claude Code for Provider Development
+### Using Claude Code for Provider Development {#using-claude-code-for-provider-development}
 
 The template bundles the [__StackQL Provider Development skill__](https://github.com/stackql-registry/stackql-provider-TEMPLATE/blob/main/.claude/skills/stackql-provider-development/SKILL.md) for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Open a Claude Code session in a repository created from the template and ask it to build the provider; it picks up `CLAUDE.md` and the skill and works the steps in order. The skill is also the written procedure for doing the work by hand.
 
@@ -238,7 +238,7 @@ The skill covers:
 
 The skill's `references/` directory holds the detail for each step, and `scripts/find_extension_examples.sh` prints shipped YAML for any extension key from a clone of the provider registry, so a primitive can be seen in use before it is authored.
 
-## Testing a Provider Locally
+## Testing a Provider Locally {#testing-a-provider-locally}
 
 StackQL reads providers from a registry described by the `--registry` global flag. During development point it at the generated provider directory on the local file system with signature verification disabled (documents are only signed when they are published):
 
@@ -253,7 +253,7 @@ Providers pulled from a remote registry are cached under `<cwd>/.stackql` by def
 
 The [any-sdk CLI](https://github.com/stackql/any-sdk/blob/main/docs/cli.md) is useful for checking a document without StackQL in the loop: `anysdk aot <registry> <provider.yaml>` runs static analysis over a provider (unroutable `objectKey`, missing response schemas, incomplete pagination, adjacent path parameters and so on), and `anysdk query` executes a single method directly from the provider and service documents. [Automock testing](https://github.com/stackql/any-sdk/blob/main/docs/automock_testing.md) generates a mock API and expected results from the schemas in a provider for a full round trip without touching the live API.
 
-### Testing Your Provider using the `dev` Registry
+### Testing Your Provider using the `dev` Registry {#testing-your-provider-using-the-dev-registry}
 
 Once a provider has been merged into the `dev` branch of the registry, it is available from the development registry. Point StackQL at it to verify the published artifact:
 
@@ -268,7 +268,7 @@ REGISTRY PULL myprovider;
 
 The template's `make smoke-live` target runs the smoke suite against the published provider for post-publish verification.
 
-## Publishing a Provider
+## Publishing a Provider {#publishing-a-provider}
 
 Publishing is a separate, human-in-the-loop step and is not part of the template pipeline.
 

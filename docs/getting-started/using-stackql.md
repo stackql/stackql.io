@@ -19,7 +19,7 @@ StackQL has several usage modes, these include: the StackQL interactive shell, t
 - Using the StackQL Command Line Utility ([`stackql exec`](/command-line-usage/exec))
 - Using an Input File (IQL File) ([`stackql exec -i`](/command-line-usage/exec))
 
-### Using the StackQL Interactive Shell
+### Using the StackQL Interactive Shell {#using-the-stackql-interactive-shell}
 The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
 
 The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](/providers)) for information about provider authentication:
@@ -38,7 +38,7 @@ You can change the color scheme for the StackQL shell using the `--colorscheme` 
 # Changing the Shell Color Scheme
 ./stackql shell --colorscheme light
 ```
-### The `.stackqlrc` Initialization File
+### The `.stackqlrc` Initialization File {#the-stackqlrc-initialization-file}
 
 Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the `stackqlrc` initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
 
@@ -48,7 +48,7 @@ Defaults for StackQL command options, such as the output format and color scheme
 ```
 More information about command options is available in the Global Flags topic.
 
-### Using the StackQL Command Line Utility
+### Using the StackQL Command Line Utility {#using-the-stackql-command-line-utility}
 StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.stackqlrc` initialization file discussed previously.  
 
 The output from the StackQL executable is sent to stdout on the system being used, this output can be parsed within a BASH or PowerShell script.  
@@ -75,7 +75,7 @@ $select = $cmd, $query, $flags -join " "
 ```
 The above PowerShell command demonstrates selecting Compute Engine instances displaying the output using `Out-GridView`.  
 
-### Using an Input File (IQL File)
+### Using an Input File (IQL File) {#using-an-input-file-iql-file}
 StackQL input files can be used to execute several commands terminated by semicolons.  This is another option for non-interactive or batch infrastructure programming.  An input file is specified with the  `-i` or `--infile` option as shown below:
 
 ```shell

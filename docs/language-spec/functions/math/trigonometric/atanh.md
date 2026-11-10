@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ATANH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression within the range of -1 to 1 (exclusive), for which the hyperbolic arc tangent is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic arc tangent of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic arc tangent of 0.5
+### Calculate the hyperbolic arc tangent of 0.5 {#calculate-the-hyperbolic-arc-tangent-of-05}
 
 ```sql
 SELECT ATANH(0.5) AS hyperbolic_arc_tangent_value;
@@ -43,7 +43,7 @@ SELECT ATANH(0.5) AS hyperbolic_arc_tangent_value;
 
 This query returns approximately `0.5493`, as the hyperbolic arc tangent of 0.5 is about 0.5493 radians.
 
-### Calculate the hyperbolic arc tangent of -0.5
+### Calculate the hyperbolic arc tangent of -0.5 {#calculate-the-hyperbolic-arc-tangent-of--05}
 
 ```sql
 SELECT ATANH(-0.5) AS hyperbolic_arc_tangent_value;

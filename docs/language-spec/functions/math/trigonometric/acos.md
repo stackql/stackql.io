@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ACOS(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression within the range of -1 to 1, inclusive, for which the arc cosine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the arc cosine of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the arc cosine of 0.5
+### Calculate the arc cosine of 0.5 {#calculate-the-arc-cosine-of-05}
 
 ```sql
 SELECT ACOS(0.5) AS arc_cosine_value;
@@ -43,7 +43,7 @@ SELECT ACOS(0.5) AS arc_cosine_value;
 
 This query returns approximately `1.047`, as the arc cosine of 0.5 radians is π/3, which is about 1.047 radians.
 
-### Calculate the arc cosine of 1
+### Calculate the arc cosine of 1 {#calculate-the-arc-cosine-of-1}
 
 ```sql
 SELECT ACOS(1) AS arc_cosine_value;

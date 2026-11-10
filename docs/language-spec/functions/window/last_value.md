@@ -19,7 +19,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LAST_VALUE(expr) OVER (
@@ -29,7 +29,7 @@ SELECT LAST_VALUE(expr) OVER (
 ) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expr*__
 The expression to evaluate against the last row in the window frame.
@@ -45,15 +45,15 @@ Optional. Defines the window frame. Common options include:
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (default)
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the value of the expression evaluated against the last row in the window frame.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Find the latest release for context
+### Find the latest release for context {#find-the-latest-release-for-context}
 
 ```sql
 -- Find first and latest release for context

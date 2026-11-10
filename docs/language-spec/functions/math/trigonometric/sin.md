@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SIN(radian_value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*radian_value*__  
 A numeric expression that specifies the angle in radians for which the sine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the sine of the specified angle.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the sine of π/2 radians
+### Calculate the sine of π/2 radians {#calculate-the-sine-of-π2-radians}
 
 ```sql
 SELECT SIN(PI() / 2) AS sine_value;
@@ -43,7 +43,7 @@ SELECT SIN(PI() / 2) AS sine_value;
 
 This query returns `1`, as the sine of π/2 radians is 1.
 
-### Calculate the sine of π radians
+### Calculate the sine of π radians {#calculate-the-sine-of-π-radians}
 
 ```sql
 SELECT SIN(PI()) AS sine_value;

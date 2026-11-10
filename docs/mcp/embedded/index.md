@@ -70,7 +70,7 @@ export const EMBEDDED_LIBRARIES = [
   }))}
 />
 
-## Common contract
+## Common contract {#common-contract}
 
 - Default `read_only` mode, with explicit opt-in to `safe`, `delete_safe`, or `full_access`.
 - The binary is Apple-notarised on macOS and Authenticode-signed on Windows.

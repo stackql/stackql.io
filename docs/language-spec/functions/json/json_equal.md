@@ -23,13 +23,13 @@ The `json_equal` function is a custom StackQL extension function. It supports co
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_EQUAL(json1, json2);
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json1*__  
 A JSON string representing an object or array.
@@ -39,14 +39,14 @@ Another JSON string to compare against the first.
 
 > Both arguments must be valid JSON strings.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 An integer value: 1 if the JSON strings are equivalent, 0 if they are not.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Compare JSON Objects
+### Compare JSON Objects {#compare-json-objects}
 
 ```sql
 SELECT 
@@ -68,7 +68,7 @@ AND Identifier = 'my-bucket';
 */
 ```
 
-### Compare JSON Arrays
+### Compare JSON Arrays {#compare-json-arrays}
 
 ```sql
 SELECT 

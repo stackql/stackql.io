@@ -14,14 +14,14 @@ image: "/img/stackql-featured-image.png"
 
 StackQL gives AI agents the same SQL interface people use to query, provision and operate cloud and SaaS services. An agent discovers what a provider exposes, validates a query before it runs, reads live state with `SELECT` and changes it with `INSERT`, `UPDATE` and `DELETE`, with no state file and no per-cloud SDK.
 
-## How agents connect
+## How agents connect {#how-agents-connect}
 
 - **MCP over stdio** for editor and desktop clients such as Claude Desktop, Cursor and Continue. The client launches `stackql mcp --mcp.server.type=stdio` itself. See [MCP Server](/command-line-usage/mcp).
 - **MCP over HTTP** for standalone agents and automation that connect to a long-running `stackql mcp` or `stackql srv` process, with bearer-token authentication and optional TLS.
 - **Embedded MCP** for compiled applications: the server runs in-process in Go, Rust, Swift, Kotlin, .NET and Gleam. See [Embedded MCP](/mcp/embedded).
 - **PostgreSQL wire protocol** via [`stackql srv`](/command-line-usage/srv) for agent frameworks, notebooks and BI tools that already speak Postgres.
 
-## Quick start with Claude Desktop
+## Quick start with Claude Desktop {#quick-start-with-claude-desktop}
 
 Install from the Anthropic Connector Directory (recommended) or the downloadable MCP Bundle, or register the server by hand in `claude_desktop_config.json`:
 
@@ -42,7 +42,7 @@ Install from the Anthropic Connector Directory (recommended) or the downloadable
 
 Include only the credentials for the providers you plan to use. Full instructions, including the bundle downloads and using a credentials file, are in [Using StackQL with Claude Desktop](/getting-started/claude-desktop).
 
-## What an agent can do
+## What an agent can do {#what-an-agent-can-do}
 
 The MCP server exposes a small, typed tool set. Each tool returns a rendered view for the model and a structured payload for programmatic clients.
 
@@ -53,7 +53,7 @@ The MCP server exposes a small, typed tool set. Each tool returns a rendered vie
 
 The full reference, with inputs, gating behaviour and an example prompt per tool, is at [MCP Tools](/mcp).
 
-## Guardrails
+## Guardrails {#guardrails}
 
 The server mode sets the safety contract for the whole session:
 
@@ -66,7 +66,7 @@ The server mode sets the safety contract for the whole session:
 
 "Needs approval" uses MCP elicitation: clients that support it (Claude Desktop, Cursor, Continue) show the user the tool name, query class and SQL and wait for a decision before anything runs; clients that don't advertise it are refused. Every tool call is written to an audit log, HTTP listeners require a bearer token, and credentials are sourced from the environment or a dotenv file without secret values ever being returned to the client. Details are in [Server modes](/command-line-usage/mcp#server-modes), [HTTP client authentication](/command-line-usage/mcp#http-client-authentication) and [Audit log](/command-line-usage/mcp#audit-log).
 
-## Next steps
+## Next steps {#next-steps}
 
 - [MCP Server](/command-line-usage/mcp) - deployment modes, configuration, server modes, audit log and flags.
 - [MCP Tools](/mcp) - the full tool reference with inputs, gating and example prompts.

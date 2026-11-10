@@ -37,7 +37,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -47,7 +47,7 @@ See also:
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -55,7 +55,7 @@ See also:
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

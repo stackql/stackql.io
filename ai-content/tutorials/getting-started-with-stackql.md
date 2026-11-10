@@ -16,7 +16,7 @@ faq:
 
 This tutorial goes from installation to live queries in three stages: an unauthenticated query against public GitHub data (no credentials needed), schema discovery with the meta-commands, and an authenticated cloud query against AWS.
 
-## 1. Install
+## 1. Install {#1-install}
 
 macOS (Homebrew):
 
@@ -36,7 +36,7 @@ Windows, packages, and Docker images are covered on the [downloads page](https:/
 stackql shell
 ```
 
-## 2. First query - no credentials required
+## 2. First query - no credentials required {#2-first-query---no-credentials-required}
 
 Pull the GitHub provider and query a public organization:
 
@@ -50,7 +50,7 @@ WHERE org = 'stackql';
 
 The rows that come back - including the `stackql` engine repository itself - are live GitHub API responses relationalized at query time. Nothing was synced, cached, or imported. (Unauthenticated GitHub access is limited to 60 requests per hour; [a personal access token](/ai/how-tos/authenticate-stackql-to-github) raises this.)
 
-## 3. Discover the schema
+## 3. Discover the schema {#3-discover-the-schema}
 
 The provider surface is self-describing - this is how you (or an AI agent) learn what is queryable without reading provider documentation:
 
@@ -64,7 +64,7 @@ DESCRIBE github.repos.repos;           -- columns
 
 `SHOW METHODS` is the one to remember: its `RequiredParams` column tells you exactly what each operation needs in the `WHERE` clause, and which SQL verb (`SELECT`, `INSERT`, `UPDATE`, `DELETE`, `EXEC`) invokes it.
 
-## 4. Query a cloud provider
+## 4. Query a cloud provider {#4-query-a-cloud-provider}
 
 Export credentials (AWS shown; [Azure](/ai/how-tos/authenticate-stackql-to-azure) and [Google Cloud](/ai/how-tos/authenticate-stackql-to-google-cloud) are equivalent), pull the provider, and query:
 
@@ -90,14 +90,14 @@ WHERE region IN ('us-east-1','us-west-2','eu-west-1')
 GROUP BY region;
 ```
 
-## 5. Where to go next
+## 5. Where to go next {#5-where-to-go-next}
 
 - **Mutations**: `SHOW INSERT INTO <resource>` generates creation templates; `INSERT`/`UPDATE`/`DELETE` operate on the same tables you query.
 - **Server mode**: `stackql srv` exposes the PostgreSQL wire protocol for psql, DBeaver, BI tools, and pandas.
 - **AI agents**: `stackql mcp` runs the built-in MCP server - see [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents).
 - **Python**: `pip install pystackql` for notebook and pipeline use.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - the canonical definition
 - [How to query GitHub repositories with StackQL](/ai/how-tos/query-github-repositories-with-stackql) - the first query, expanded

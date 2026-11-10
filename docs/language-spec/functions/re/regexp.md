@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT source_string REGEXP pattern_expression AS match_result FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*source_string*__  
 The string in which to search for the pattern.
@@ -31,14 +31,14 @@ The string in which to search for the pattern.
 __*pattern_expression*__  
 The regular expression pattern to match against the source string.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a boolean value: `TRUE` if the source string matches the regular expression pattern, otherwise `FALSE`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Check if a string contains numbers
+### Check if a string contains numbers {#check-if-a-string-contains-numbers}
 
 This example demonstrates checking whether the string 'the year is 2021' contains one or more numeric characters:
 
@@ -48,7 +48,7 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 
 This query will return `TRUE` because the string contains the substring '2021', which matches the pattern `[0-9]+`, indicating one or more digits.
 
-### Validate email format
+### Validate email format {#validate-email-format}
 
 To check if a string is in a valid email format:
 

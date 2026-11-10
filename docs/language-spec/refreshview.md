@@ -20,7 +20,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *refreshViewStatement::=*
 
@@ -37,9 +37,9 @@ REFRESH MATERIALIZED VIEW <viewName>;
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Refresh a Materialized View
+### Refresh a Materialized View {#refresh-a-materialized-view}
 ```sql
 REFRESH MATERIALIZED VIEW vw_ec2_instance_types;
 ```

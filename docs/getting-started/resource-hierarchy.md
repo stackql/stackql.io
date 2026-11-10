@@ -24,7 +24,7 @@ lightImageSrc="/img/resource-heirarchy.png"
 darkImageSrc="/img/resource-heirarchy-darkbg.png"
 alttext="StackQL Resource Heirarchy"/>
 
-### Using the StackQL Object Notation
+### Using the StackQL Object Notation {#using-the-stackql-object-notation}
 
 This hierarchy is expressed in the object notation `<provider>.<service>.<resource>` within the context of a given provider, an example of this object notation used in a [`SELECT`](/language-spec/select) statement is shown here:  
 
@@ -52,7 +52,7 @@ SELECT * FROM google.container.`projects.zones.clusters.nodePools`;
 
 :::
 
-### Showing Services in a Provider
+### Showing Services in a Provider {#showing-services-in-a-provider}
 
 Services within a provider can be listed using the [`SHOW SERVICES`](/language-spec/show) command as shown here:  
 
@@ -61,7 +61,7 @@ Services within a provider can be listed using the [`SHOW SERVICES`](/language-s
 SHOW SERVICES IN google;
 ```  
 
-### Showing Resources within a Service
+### Showing Resources within a Service {#showing-resources-within-a-service}
 
 Similarly resources within a service can be listed using the [`SHOW RESOURCES`](/language-spec/show) as shown here:
 
@@ -70,7 +70,7 @@ Similarly resources within a service can be listed using the [`SHOW RESOURCES`](
 SHOW RESOURCES IN google.compute;
 ```  
 
-### Showing Fields within a Resource
+### Showing Fields within a Resource {#showing-fields-within-a-resource}
 
 Fields within a resource can be displayed using a [`DESCRIBE`](/language-spec/describe) statement as shown here:
 
@@ -79,7 +79,7 @@ Fields within a resource can be displayed using a [`DESCRIBE`](/language-spec/de
 DESCRIBE google.compute.instances;
 ```
 
-### Showing Executable Methods for a Resource
+### Showing Executable Methods for a Resource {#showing-executable-methods-for-a-resource}
 
 Methods available for a resource can be displayed using a [`SHOW METHODS`](/language-spec/show) command as shown here:
 

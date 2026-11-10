@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a .NET application with no separate install and no runtime dependency. The `StackQL.Mcp` package spawns the signed StackQL binary over stdio behind the official C# MCP SDK client, so a worker service or agent gets a governed, self-describing SQL interface to every cloud and SaaS provider in the StackQL registry. This is the pattern behind **driftwatch**, a scheduled drift-check worker service.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the package:**
 
@@ -47,7 +47,7 @@ The builder also exposes `.WithBinary()`, `.WithBundlePath()`, `.WithApproot()`,
 
 3. **Choose a mode.** `.WithMode()` defaults to `StackqlMode.ReadOnly`. Set `StackqlMode.Safe`, `StackqlMode.DeleteSafe`, or `StackqlMode.FullAccess` only when the app needs to provision. Escalation is explicit.
 
-## Ship a self-contained executable
+## Ship a self-contained executable {#ship-a-self-contained-executable}
 
 Two ways to source the binary:
 
@@ -60,11 +60,11 @@ dotnet build -p:StackqlVendorBundle=/path/to/stackql-mcp-windows-x64.mcpb
 
 Override the binary or bundle at runtime with the `STACKQL_MCP_BIN` or `STACKQL_MCP_BUNDLE` environment variables.
 
-## Demo app
+## Demo app {#demo-app}
 
 **driftwatch** is a .NET Worker Service that embeds the read-only StackQL server and, on a schedule, runs a suite of SQL drift checks (public exposure, missing tags or licenses, baseline drift) and posts the findings to a Teams Adaptive Card.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: .NET / C# reference](/mcp/embedded/dotnet) - install, API, and vendoring
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

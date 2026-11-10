@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 See also:
 [[ Using StackQL ]](/getting-started/using-stackql) [[ Using Variables ]](/getting-started/variables) [[ Templating ]](/getting-started/templating)
 
-## Overview
+## Overview {#overview}
 
 StackQL is a unified SQL interface for querying and managing cloud infrastructure across multiple providers. The following container diagram illustrates the major components of the StackQL system and their interactions.
 
@@ -69,9 +69,9 @@ flowchart TB
     SQLBackend --> Postgres
 ```
 
-## Core Components
+## Core Components {#core-components}
 
-### Entry Points
+### Entry Points {#entry-points}
 
 StackQL supports multiple entry points for executing SQL queries:
 
@@ -81,7 +81,7 @@ StackQL supports multiple entry points for executing SQL queries:
 
 - **MCP Server**: A Model Context Protocol server that enables AI assistant integration, allowing large language models to query and manage infrastructure through natural language.
 
-### Query Processing Pipeline
+### Query Processing Pipeline {#query-processing-pipeline}
 
 1. **SQL Parser**: Parses SQL input into an Abstract Syntax Tree (AST) using a custom grammar based on Yacc. The parser (implemented as `stackql-parser`) validates SQL syntax and prepares it for query planning.
 
@@ -90,7 +90,7 @@ StackQL supports multiple entry points for executing SQL queries:
    - Coordination between API calls and local SQL execution
    - Result aggregation and transformation
 
-### Provider SDK (omnisdk)
+### Provider SDK (omnisdk) {#provider-sdk-omnisdk}
 
 The Provider SDK, [omnisdk](https://github.com/stackql-labs/omnisdk), manages all interactions with cloud providers. It replaced `any-sdk` in StackQL `v1.0`. Key responsibilities include:
 
@@ -110,7 +110,7 @@ The Provider SDK, [omnisdk](https://github.com/stackql-labs/omnisdk), manages al
 
 SQL connections, staging and backend execution stay in StackQL. omnisdk contains no SQL staging and never receives a database connection; StackQL passes it relation handles and receives row cursors.
 
-### SQL Backend
+### SQL Backend {#sql-backend}
 
 The SQL Backend executes relational operations on materialized API data:
 
@@ -124,17 +124,17 @@ The SQL backend handles operations such as:
 - Sorting and filtering on materialized data
 - Complex SQL expressions and subqueries
 
-## External Systems
+## External Systems {#external-systems}
 
-### Cloud Providers
+### Cloud Providers {#cloud-providers}
 
 StackQL connects to cloud providers (AWS, GCP, Azure, Kubernetes, GitHub, and many more) via their REST APIs. All communication is over HTTPS, and the Provider SDK handles the specifics of each provider's API conventions.
 
-### StackQL Registry
+### StackQL Registry {#stackql-registry}
 
 The StackQL Registry hosts provider definitions - OpenAPI-based specifications that describe available resources, methods, and their mappings. Providers are versioned and can be pulled on-demand using the `REGISTRY PULL` command.
 
-## Query Execution Flow
+## Query Execution Flow {#query-execution-flow}
 
 1. User submits a SQL query through one of the entry points (CLI, PostgreSQL protocol, or MCP)
 2. The SQL Parser validates and converts the query into an AST

@@ -17,14 +17,14 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 [ GROUP BY groupByColumn ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*columnExpression*__  or __*__  
 A column or expression.  If __*__ is specified then all records in the resource or grouping are counted.  
@@ -34,15 +34,15 @@ A column or expression.  If __*__ is specified then all records in the resource 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer representing the count.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the average of a column expression over an entire resource
+### Return the average of a column expression over an entire resource {#return-the-average-of-a-column-expression-over-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the average of a column expression grouped by another column expression
+### Return the average of a column expression grouped by another column expression {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances
@@ -61,7 +61,7 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
-### Use `COUNT` as a window function to calculate cumulative counts
+### Use `COUNT` as a window function to calculate cumulative counts {#use-count-as-a-window-function-to-calculate-cumulative-counts}
 
 ```sql
 -- Track cumulative issue counts over time

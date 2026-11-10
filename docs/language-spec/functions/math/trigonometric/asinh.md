@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ASINH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression for which the hyperbolic arc sine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic arc sine of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic arc sine of 0.5
+### Calculate the hyperbolic arc sine of 0.5 {#calculate-the-hyperbolic-arc-sine-of-05}
 
 ```sql
 SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
@@ -43,7 +43,7 @@ SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
 
 This query returns approximately `0.4812`, as the hyperbolic arc sine of 0.5 is about 0.4812 radians.
 
-### Calculate the hyperbolic arc sine of -1
+### Calculate the hyperbolic arc sine of -1 {#calculate-the-hyperbolic-arc-sine-of--1}
 
 ```sql
 SELECT ASINH(-1) AS hyperbolic_arc_sine_value;

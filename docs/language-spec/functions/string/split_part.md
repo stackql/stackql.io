@@ -21,13 +21,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SPLIT_PART(source, sep, part) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*source*__  
 A literal string or string column that you want to perform the split on.
@@ -42,14 +42,14 @@ A character or characters you want to use as the separator.
 __*part*__  
 The element (one based) of the split string to return.  Negative values are used to count backwards from the last element.  
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Extract elements from a string seperated by a forward slash
+### Extract elements from a string seperated by a forward slash {#extract-elements-from-a-string-seperated-by-a-forward-slash}
 
 
 <Tabs
@@ -85,7 +85,7 @@ FROM azure.compute.virtual_machines
 </TabItem>
 </Tabs>
 
-### Extract the last element from a url
+### Extract the last element from a url {#extract-the-last-element-from-a-url}
 
 
 <Tabs

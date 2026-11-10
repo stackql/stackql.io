@@ -34,7 +34,7 @@ where projectsId = 'stackql-demo';
 
 Each query has a stable `stackql.query.hash`, and the recipes filter on it so a series is one recurring query and nothing else.  Use `{query_hash:String}` as a query parameter in ClickHouse, or paste the hash from a completion record.
 
-## ClickHouse
+## ClickHouse {#clickhouse}
 
 The OpenTelemetry Collector's ClickHouse exporter, which ClickStack ships, lands log records in `otel_logs` with the attributes as string maps (`ResourceAttributes`, `LogAttributes`) alongside `Timestamp`, `Body`, `TraceId` and `ScopeName`.  Point the exporter at ClickStack's OTLP intake or at a Collector:
 
@@ -46,7 +46,7 @@ stackql exec --output otel -f instances.otlp.jsonl \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'"
 ```
 
-### Typed inventory table
+### Typed inventory table {#typed-inventory-table}
 
 Querying `otel_logs` directly works, but every question then pays for the map lookups.  A materialized view lifts the row records into a typed table keyed by `(query_hash, identity, snapshot_time)`:
 
@@ -120,7 +120,7 @@ WHERE ScopeName = 'github.com/stackql/stackql/internal/stackql/output'
 
 A materialized view only sees rows inserted after it is created.  Backfill records that landed earlier with an `INSERT INTO ... SELECT` using the same select as the view.
 
-### Latest state per resource
+### Latest state per resource {#latest-state-per-resource}
 
 The current estate is the row set of the latest complete snapshot:
 
@@ -147,7 +147,7 @@ GROUP BY identity
 ORDER BY last_seen DESC;
 ```
 
-### Drift between two snapshots
+### Drift between two snapshots {#drift-between-two-snapshots}
 
 Join the two snapshots on identity.  A fingerprint inequality is a change; a missing side is a resource that appeared or disappeared:
 
@@ -188,7 +188,7 @@ ON p.identity = n.identity;
 
 The `change` column is the drift scope of the projection: columns left out of the `SELECT` cannot cause a change, so a query that projects only `name` and `status` reports state changes and nothing else.
 
-### Entitlement history
+### Entitlement history {#entitlement-history}
 
 For the entitlement query the identity is the principal and role pair, so a pair's timeline in the inventory table is the lifetime of that entitlement:
 
@@ -208,7 +208,7 @@ ORDER BY last_seen DESC, principal, role;
 
 `first_seen` and `last_seen` collapse a grant that was revoked and later re-granted into one span; `groupArray(snapshot_time)` on the same grouping lists every snapshot the pair was present in when the gaps matter.  Everything else on this page applies unchanged: the drift recipe on the entitlement query lists grants and revocations between two runs.
 
-## Datadog
+## Datadog {#datadog}
 
 Send the records to the OTLP receiver of a Datadog Agent (enable the HTTP receiver in the Agent's `otlp_config`, port `4318`) or of an OpenTelemetry Collector running the Datadog exporter.  Datadog's own OTLP intake takes the records directly with the API key as a header; take the regional URL from Datadog's OTLP ingestion documentation.
 
@@ -225,7 +225,7 @@ stackql exec --output otel ... \
 --otel.config '{ "exporter": { "endpoint": "<regional OTLP logs intake URL>", "headers": { "dd-api-key": "'"$DD_API_KEY"'" } } }'
 ```
 
-### Attribute mapping
+### Attribute mapping {#attribute-mapping}
 
 | OpenTelemetry | Datadog |
 |--|--|
@@ -239,7 +239,7 @@ stackql exec --output otel ... \
 
 <br />
 
-### Log queries
+### Log queries {#log-queries}
 
 Datadog answers presence and history questions; joins between snapshots are done in ClickHouse, or by fanning the same stream out to both through a Collector.
 
@@ -260,7 +260,7 @@ service:stackql @stackql.query.hash:<entitlements hash> @role:roles/owner
 
 Monitors on the completion records watch the pipeline itself: a log monitor on `service:stackql @stackql.snapshot.complete:true @stackql.rows_returned:0` catches an inventory that came back empty, and a monitor with a "no data" condition on `service:stackql @stackql.snapshot.complete:true @stackql.job:gce-inventory` catches a scheduled run that did not happen.
 
-## Scheduled CI
+## Scheduled CI {#scheduled-ci}
 
 A scheduled job makes the series.  The example runs both queries hourly from GitHub Actions: the exporter is configured once in `OTEL_CONFIG` and passed to `--otel.config`, `TRACEPARENT` gives every statement of a run the same trace id, `OTEL_RESOURCE_ATTRIBUTES` stamps the environment, the job name and the run id on every record, and the `.otlp.jsonl` files are kept as artifacts so a failed push still leaves a copy.
 

@@ -21,7 +21,7 @@ In this guide, we will demonstrate using StackQL - a powerful dev tool that enab
 
 Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span class="tutorial_tested_on">postgres sql backend</span> <span class="tutorial_tested_on">macos</span> <span class="tutorial_tested_on">linux</span> <span class="tutorial_tested_on">powershell</span>
 
-## How it works
+## How it works {#how-it-works}
 
 StackQL implements a SQL engine which can process multiple queries asynchronously, for instance:  
 
@@ -41,13 +41,13 @@ The above query is actually 17 queries run in parallel (one query for each regio
 
 ![aws-inventory-example](/img/blog/aws-inventory.png)
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html) which can be installed using `pip install pystackql`
 - An AWS user or a role (can be assumed using `sts assume-role`) with the `ReadOnlyAccess` policy or greater attached
 - `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables set (this can be done automatically using [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
-## The Code
+## The Code {#the-code}
 
 The following code performs the following actions:
 

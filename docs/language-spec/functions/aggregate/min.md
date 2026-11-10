@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 /* aggregate function */
@@ -29,9 +29,9 @@ SELECT MIN(columnExpression) FROM <multipartIdentifier>
 SELECT MIN(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
-### Aggregate function
+### Aggregate function {#aggregate-function}
 
 __*columnExpression*__  
 A column or expression including operands (`+`, `-`, ...).
@@ -45,7 +45,7 @@ A column or columns used to perform summary or aggregate operations against.  Th
 
 > The `MIN` function returns `NULL` if all the values in the group are `NULL`.
 
-### Scalar function
+### Scalar function {#scalar-function}
 
 __*scalarExpression*__  
 A list columns or expressions (2 or more) from which the smallest value is determined and returned. 
@@ -58,22 +58,22 @@ A list columns or expressions (2 or more) from which the smallest value is deter
 
 > If only one argument is provided, then the `MIN` aggregate function is invoked.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the minimum value based upon the input data type (or grouping).
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the minimum value for a column
+### Return the minimum value for a column {#return-the-minimum-value-for-a-column}
 
 ```sql
 SELECT name, location, min(timeCreated) 
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Return the minimum value for each value in a column
+### Return the minimum value for each value in a column {#return-the-minimum-value-for-each-value-in-a-column}
 
 ```sql
 SELECT name, location,
@@ -82,7 +82,7 @@ FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location;
 ```
 
-### Return the minimum value from a list of values using the scalar `min` function
+### Return the minimum value from a list of values using the scalar `min` function {#return-the-minimum-value-from-a-list-of-values-using-the-scalar-min-function}
 
 ```sql
 SELECT min(json_extract(disks, '$[0].diskSizeGb'),json_extract(disks, '$[1].diskSizeGb')) as smallest_disk
@@ -91,7 +91,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Use `MIN` as a window function to find minimum values within partitions
+### Use `MIN` as a window function to find minimum values within partitions {#use-min-as-a-window-function-to-find-minimum-values-within-partitions}
 
 ```sql
 -- Find the earliest issue in each state

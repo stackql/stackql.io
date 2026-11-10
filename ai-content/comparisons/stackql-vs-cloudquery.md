@@ -16,7 +16,7 @@ faq:
 
 CloudQuery is an open-source ELT framework for cloud assets: source plugins extract resource data from providers and load it into a destination database on a schedule, where you query the snapshots with that database's SQL. StackQL inverts the architecture: SQL is executed directly against the provider APIs at query time, with no sync step and no stored copy - and the same engine can mutate resources, not just read them.
 
-## When to use which
+## When to use which {#when-to-use-which}
 
 Use **CloudQuery** when:
 
@@ -33,7 +33,7 @@ Use **StackQL** when:
 
 The two are complementary at scale: StackQL for live interrogation and action, CloudQuery (or StackQL results materialized on a schedule) for longitudinal storage.
 
-## Architectural comparison
+## Architectural comparison {#architectural-comparison}
 
 | Dimension | CloudQuery | StackQL |
 |---|---|---|
@@ -46,7 +46,7 @@ The two are complementary at scale: StackQL for live interrogation and action, C
 | Query dialect | Destination database's SQL | StackQL SQL (Postgres-compatible wire in server mode) |
 | Agent interface | None (query the destination DB) | Built-in MCP server with safety modes |
 
-## Example
+## Example {#example}
 
 The freshness difference in one query - this StackQL statement reflects instances launched seconds ago, which a sync-based copy will not contain until the next sync completes:
 
@@ -58,7 +58,7 @@ WHERE region = 'us-east-1';
 
 For longitudinal needs, the equivalent StackQL pattern is scheduling this query (via cron, CI, or pystackql) and appending results to your own store - the same outcome as ELT, but the live query path remains available for time-sensitive questions.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - live query as an operating model
 - [StackQL vs Steampipe](/ai/comparisons/stackql-vs-steampipe) - the other live-query peer

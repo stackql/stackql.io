@@ -20,7 +20,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *dropViewStatement::=*
 
@@ -37,9 +37,9 @@ DROP [ MATERIALIZED ] VIEW <viewName>;
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Drop a Materialized View
+### Drop a Materialized View {#drop-a-materialized-view}
 ```sql
 DROP MATERIALIZED VIEW vw_ec2_instance_types;
 ```

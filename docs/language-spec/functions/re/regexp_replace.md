@@ -21,12 +21,12 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ```
-## Arguments
+## Arguments {#arguments}
 
 __*source*__  
 A literal string or string column from which you want to extract a substring based upon a pattern defined by a regular expression (`pattern`).  
@@ -39,14 +39,14 @@ The replacement string.
 
 > Supports backreferences to captured groups `\1` through `\9` in replacement string.  
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Replace a regular expression pattern in a column
+### Replace a regular expression pattern in a column {#replace-a-regular-expression-pattern-in-a-column}
 
 <Tabs
   defaultValue="iql"

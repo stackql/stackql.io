@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT TANH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression for which the hyperbolic tangent is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic tangent of the specified value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic tangent of 1
+### Calculate the hyperbolic tangent of 1 {#calculate-the-hyperbolic-tangent-of-1}
 
 ```sql
 SELECT TANH(1) AS hyperbolic_tangent_value;
@@ -43,7 +43,7 @@ SELECT TANH(1) AS hyperbolic_tangent_value;
 
 This query returns approximately `0.7616`, as the hyperbolic tangent of 1 is about 0.7616.
 
-### Calculate the hyperbolic tangent of 0
+### Calculate the hyperbolic tangent of 0 {#calculate-the-hyperbolic-tangent-of-0}
 
 ```sql
 SELECT TANH(0) AS hyperbolic_tangent_value;

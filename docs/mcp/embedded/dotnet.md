@@ -23,7 +23,7 @@ The embedded binary is downloaded and sha256-verified on first run, or vendored 
 
 * * *
 
-## Install
+## Install {#install}
 
 ```
 dotnet add package StackQL.Mcp
@@ -33,7 +33,7 @@ An optional `StackQL.Mcp.AgentFramework` package adds Agent Framework integratio
 
 * * *
 
-## Quick start
+## Quick start {#quick-start}
 
 ```csharp
 using StackQL.Mcp;
@@ -52,13 +52,13 @@ The API is `StackqlMcp.CreateBuilder()` with `.WithMode()`, `.WithAuth()`, `.Wit
 
 * * *
 
-## Modes
+## Modes {#modes}
 
 The builder defaults to `StackqlMode.ReadOnly`. Call `.WithMode()` with `StackqlMode.Safe`, `StackqlMode.DeleteSafe`, or `StackqlMode.FullAccess` to escalate. Escalation is explicit - the server will not enable mutation or lifecycle tools unless you opt in.
 
 * * *
 
-## Vendoring / embedding
+## Vendoring / embedding {#vendoring--embedding}
 
 Two ways to source the binary:
 
@@ -73,12 +73,12 @@ You can also override the binary or bundle at runtime with the `STACKQL_MCP_BIN`
 
 * * *
 
-## Demo app
+## Demo app {#demo-app}
 
 **driftwatch** is a .NET Worker Service that embeds the read-only StackQL server and, on a schedule, runs a suite of SQL drift checks (public exposure, missing tags or licenses, baseline drift) and posts the findings to a Teams Adaptive Card.
 
 * * *
 
-## Repo link
+## Repo link {#repo-link}
 
 [github.com/stackql/stackql-mcp-dotnet](https://github.com/stackql/stackql-mcp-dotnet)

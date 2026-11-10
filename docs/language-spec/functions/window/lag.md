@@ -23,7 +23,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LAG(expr) OVER ([PARTITION BY column] ORDER BY column) FROM <multipartIdentifier>;
@@ -33,7 +33,7 @@ SELECT LAG(expr, offset) OVER ([PARTITION BY column] ORDER BY column) FROM <mult
 SELECT LAG(expr, offset, default) OVER ([PARTITION BY column] ORDER BY column) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expr*__
 The expression to evaluate against the previous row.
@@ -50,15 +50,15 @@ Optional. Divides the result set into partitions. The `LAG` function is applied 
 __*ORDER BY column*__
 Specifies the order in which rows are processed.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the value of the expression evaluated against the specified previous row, or `NULL` (or the default value) if no such row exists.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Compare each release to the previous release
+### Compare each release to the previous release {#compare-each-release-to-the-previous-release}
 
 ```sql
 -- Compare each release to previous and next release dates
@@ -75,7 +75,7 @@ WHERE owner = 'stackql'
 ORDER BY published_at;
 ```
 
-### Analyze gaps between issue creation
+### Analyze gaps between issue creation {#analyze-gaps-between-issue-creation}
 
 ```sql
 -- Analyze gaps between issue creation

@@ -16,7 +16,7 @@ faq:
 
 StackQL authenticates to GitHub with basic authentication: your GitHub username and a personal access token (PAT), supplied as `STACKQL_GITHUB_USERNAME` and `STACKQL_GITHUB_PASSWORD`. Public data is queryable without any credentials at GitHub's unauthenticated rate limits.
 
-## Steps
+## Steps {#steps}
 
 1. Create a personal access token in GitHub (Settings -> Developer settings). Grant only the scopes your queries need - none for public data at higher rate limits, `repo` for private repositories.
 
@@ -43,11 +43,11 @@ WHERE org = 'stackql';
 
 The `org` predicate selects the `list_for_org` access method; `WHERE username = '...'` selects `list_for_user` instead. `SHOW METHODS IN github.repos.repos` lists every method and its required parameters, including the mutation methods (`create_in_org`, `update`, `delete`).
 
-## Unauthenticated access
+## Unauthenticated access {#unauthenticated-access}
 
 The query above works without credentials because the `stackql` organization is public - useful for evaluation and for agents exploring the query model before credentials are provisioned. GitHub's unauthenticated rate limit is low (60 requests per hour per IP), so any sustained use should authenticate.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to query GitHub repositories with StackQL](/ai/how-tos/query-github-repositories-with-stackql) - the full query patterns
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - the AWS equivalent

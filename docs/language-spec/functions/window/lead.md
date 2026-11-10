@@ -23,7 +23,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LEAD(expr) OVER ([PARTITION BY column] ORDER BY column) FROM <multipartIdentifier>;
@@ -33,7 +33,7 @@ SELECT LEAD(expr, offset) OVER ([PARTITION BY column] ORDER BY column) FROM <mul
 SELECT LEAD(expr, offset, default) OVER ([PARTITION BY column] ORDER BY column) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expr*__
 The expression to evaluate against the subsequent row.
@@ -50,15 +50,15 @@ Optional. Divides the result set into partitions. The `LEAD` function is applied
 __*ORDER BY column*__
 Specifies the order in which rows are processed.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the value of the expression evaluated against the specified subsequent row, or `NULL` (or the default value) if no such row exists.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Look ahead to the next release
+### Look ahead to the next release {#look-ahead-to-the-next-release}
 
 ```sql
 -- Compare each release to previous and next release dates

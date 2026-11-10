@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 /* aggregate function */
@@ -29,9 +29,9 @@ SELECT MAX(columnExpression) FROM <multipartIdentifier>
 SELECT MAX(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
-### Aggregate function
+### Aggregate function {#aggregate-function}
 
 __*columnExpression*__  
 A column or expression including operands (`+`, `-`, ...).
@@ -45,7 +45,7 @@ A column or columns used to perform summary or aggregate operations against.  Th
 
 > The `MAX` function returns `NULL` if all the values in the group are `NULL`.
 
-### Scalar function
+### Scalar function {#scalar-function}
 
 __*scalarExpression*__  
 A list columns or expressions (2 or more) from which the largest value is determined and returned. 
@@ -58,22 +58,22 @@ A list columns or expressions (2 or more) from which the largest value is determ
 
 > If only one argument is provided, then the `MAX` aggregate function is invoked.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the maximum value based upon the input data type (or grouping).
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the maximum value for a column
+### Return the maximum value for a column {#return-the-maximum-value-for-a-column}
 
 ```sql
 SELECT name, location, max(timeCreated) 
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Return the maximum value for each value in a column
+### Return the maximum value for each value in a column {#return-the-maximum-value-for-each-value-in-a-column}
 
 ```sql
 SELECT name, location,
@@ -82,7 +82,7 @@ FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location;
 ```
 
-### Return the maximum value from a list of values using the scalar `max` function
+### Return the maximum value from a list of values using the scalar `max` function {#return-the-maximum-value-from-a-list-of-values-using-the-scalar-max-function}
 
 ```sql
 SELECT max(json_extract(disks, '$[0].diskSizeGb'),json_extract(disks, '$[1].diskSizeGb')) as largest_disk
@@ -91,7 +91,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Use `MAX` as a window function to find maximum values within partitions
+### Use `MAX` as a window function to find maximum values within partitions {#use-max-as-a-window-function-to-find-maximum-values-within-partitions}
 
 ```sql
 -- Find the most recent issue in each state

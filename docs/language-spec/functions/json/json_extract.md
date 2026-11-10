@@ -30,14 +30,14 @@ The `json_extract` function is implemented as the `json_extract_path_text` funct
 :::
 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_EXTRACT(json_array_or_object, json_path[, json_path1, .. json_pathN]) 
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_array_or_object*__  
 A JSON array or object.
@@ -52,14 +52,14 @@ The JSON path to an array or object contained within an *json_array_or_object*. 
 > Specifying `'$'` for the *json_path* argument will return the entire JSON object corresponding to the column represented by the *json_array_or_object* argument.
 
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 A string, integer, object, array, boolean or null depending upon the *json_array_or_object* and *json_path* provided as input.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the disk objects associated with each Google Compute Engine instance
+### Return the disk objects associated with each Google Compute Engine instance {#return-the-disk-objects-associated-with-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(disks, '$') as disks
@@ -68,7 +68,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the device name and size of the first disk attached to each Google Compute Engine instance
+### Return the device name and size of the first disk attached to each Google Compute Engine instance {#return-the-device-name-and-size-of-the-first-disk-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(disks, '$[0].deviceName') as device_name,
@@ -78,7 +78,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the network tier of first NIC attached to each Google Compute Engine instances
+### Return the network tier of first NIC attached to each Google Compute Engine instances {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier
@@ -87,7 +87,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return a list of scopes associated with the first service account associated with each Google Compute Engine instance
+### Return a list of scopes associated with the first service account associated with each Google Compute Engine instance {#return-a-list-of-scopes-associated-with-the-first-service-account-associated-with-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(serviceAccounts, '$[0].scopes') as scopes 

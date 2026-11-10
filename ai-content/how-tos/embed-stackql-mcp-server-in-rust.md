@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a Rust binary with no `npx`, no separate install, and no runtime dependency. The `stackql-mcp` crate spawns the signed StackQL binary over stdio behind an `rmcp` client, so your Rust app gets a governed, self-describing SQL interface to every cloud and SaaS provider in the StackQL registry. This is the pattern behind **auditron**, a terminal compliance copilot shipped as one binary.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the crate** to `Cargo.toml`:
 
@@ -49,7 +49,7 @@ The builder also exposes `.binary()`, `.bundle_path()`, `.approot()`, and `.comm
 
 3. **Choose a mode.** `.mode()` defaults to `Mode::ReadOnly`. Set `Mode::Safe`, `Mode::DeleteSafe`, or `Mode::FullAccess` only when the app needs to provision. Escalation is explicit.
 
-## Ship a single binary with include_bytes!
+## Ship a single binary with include_bytes! {#ship-a-single-binary-with-include_bytes}
 
 Two feature flags control how the binary is sourced:
 
@@ -58,11 +58,11 @@ Two feature flags control how the binary is sourced:
 
 The vendored binary adds roughly 80 MB to the build.
 
-## Demo app
+## Demo app {#demo-app}
 
 **auditron** is a terminal compliance copilot: a TUI that streams pass/fail results with the SQL shown and Claude explanations, shipped as an ~80 MB vendored single binary.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: Rust reference](/mcp/embedded/rust) - install, API, and feature flags
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

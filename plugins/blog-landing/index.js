@@ -9,7 +9,8 @@
 // Options:
 //   sections        [{ id, label, description }] - blog plugin instance ids,
 //                   in display order (required)
-//   routePath       route to add (default '/blog')
+//   routePath       route to add, under the site (or locale) base URL
+//                   (default '/blog', so /blog and /de/blog)
 //   postsPerSection newest posts listed per section (default 5)
 //   component       React component for the route (default
 //                   @site/src/components/BlogLanding/index.jsx). It
@@ -31,6 +32,12 @@ module.exports = function blogLandingPlugin(context, options) {
     throw new Error('[blog-landing] options.sections must list the blog plugin instances');
   }
 
+  // Routes added by a plugin are not prefixed for us: in a localized build
+  // the context base URL is /<locale>/ and the route must carry it, as the
+  // blog instances' own permalinks do.
+  const baseUrl = (context.baseUrl || '/').replace(/\/+$/, '');
+  const localizedRoutePath = `${baseUrl}${routePath}`;
+
   return {
     name: 'blog-landing',
 
@@ -45,7 +52,7 @@ module.exports = function blogLandingPlugin(context, options) {
           );
         }
         const listPage = Array.isArray(content.blogListPaginated) && content.blogListPaginated[0];
-        const permalink = (listPage && listPage.metadata && listPage.metadata.permalink) || `/blog/${id}`;
+        const permalink = (listPage && listPage.metadata && listPage.metadata.permalink) || `${baseUrl}/blog/${id}`;
 
         const posts = [...content.blogPosts]
           .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
@@ -58,10 +65,13 @@ module.exports = function blogLandingPlugin(context, options) {
             authors: (metadata.authors || []).map((a) => a.name).filter(Boolean),
           }));
 
+        // The instance's own title and description win: in a localized
+        // build they come from i18n/<locale>/.../options.json, while the
+        // option values are the English ones from docusaurus.config.js.
         return {
           id,
-          label: label || content.blogTitle || id,
-          description: description || content.blogDescription || '',
+          label: content.blogTitle || label || id,
+          description: content.blogDescription || description || '',
           permalink,
           count: content.blogPosts.length,
           posts,
@@ -70,7 +80,7 @@ module.exports = function blogLandingPlugin(context, options) {
 
       const dataPath = await actions.createData('blog-landing.json', JSON.stringify(data));
       actions.addRoute({
-        path: routePath,
+        path: localizedRoutePath,
         component,
         exact: true,
         modules: { sections: dataPath },

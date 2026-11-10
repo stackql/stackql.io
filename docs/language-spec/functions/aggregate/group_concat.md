@@ -19,14 +19,14 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 [ GROUP BY groupByColumn ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*columnExpression*__  
 A column or expression.  If __*__ is specified then all records in the resource or grouping are counted.  
@@ -39,15 +39,15 @@ Seperator used for the concatenated result, the default of `,` is used if *separ
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a string as a list of values seperated by the *separator* or `,`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return a list of values for a column over an entire resource
+### Return a list of values for a column over an entire resource {#return-a-list-of-values-for-a-column-over-an-entire-resource}
 
 ```sql
 SELECT group_concat(name) as instance_list
@@ -56,7 +56,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return a list of values for a column expression grouped by another column expression
+### Return a list of values for a column expression grouped by another column expression {#return-a-list-of-values-for-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
 SELECT tags, group_concat(name) as instance_list

@@ -23,13 +23,13 @@ Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `o
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_ARRAY_LENGTH(json_array_or_object [, json_path]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_array_or_object*__  
 A JSON array or object.
@@ -43,14 +43,14 @@ The optional JSON path to an array contained within an object.  See [jsonpath.co
 
 > If *json_array_or_object* or *json_path* are not JSON objects or are not well-formed, then an error is thrown.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns an integer.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the number of disks attached to Google Compute Engine instances
+### Return the number of disks attached to Google Compute Engine instances {#return-the-number-of-disks-attached-to-google-compute-engine-instances}
 
 ```sql
 SELECT name, json_array_length(disks) as num_disks
@@ -59,7 +59,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the number of network interfaces attached to Google Compute Engine instances
+### Return the number of network interfaces attached to Google Compute Engine instances {#return-the-number-of-network-interfaces-attached-to-google-compute-engine-instances}
 
 ```sql
 SELECT name, json_array_length(networkInterfaces) as num_nics
@@ -68,7 +68,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the number of ACLs associated with Google Storage Buckets
+### Return the number of ACLs associated with Google Storage Buckets {#return-the-number-of-acls-associated-with-google-storage-buckets}
 
 ```sql
 SELECT name, json_array_length(acl) as num_acls
@@ -76,7 +76,7 @@ FROM google.storage.buckets
 WHERE project = 'stackql';
 ```
 
-### Return the number of scopes associated with a service account
+### Return the number of scopes associated with a service account {#return-the-number-of-scopes-associated-with-a-service-account}
 
 ```sql
 SELECT name, json_array_length(serviceAccounts, '$[0].scopes') as num_scopes 

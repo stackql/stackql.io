@@ -15,20 +15,20 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 * * * 
 
-### Syntax
+### Syntax {#syntax}
 
 `stackql exec [query] [flags]`
 
 * * *
 
-### Arguments
+### Arguments {#arguments}
 
 | Argument | Description | Example |
 |--|--|--|
 |`query`|StackQL query to be performed<br/>or command to be executed | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Note that the query must be enclosed in single or double quotes_ |    
 
 
-### Flags
+### Flags {#flags}
 
 | Flag | Description |
 |--|--|
@@ -47,7 +47,7 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 * * *
 
-### Examples
+### Examples {#examples}
 
 Output query results to the console in table format:
 ```shell
@@ -71,6 +71,6 @@ stackql exec -i getservices.iql -o json -f services.json
 
 * * *
 
-### Exit status
+### Exit status {#exit-status}
 
 `exec` exits with status `0` once the input has been processed; errors from individual statements are written to the console, so scripts should inspect the output.  From `v1.0` it exits with status `1` when a [`SET`](/language-spec/set) or [`UNSET`](/language-spec/unset) configuration statement fails, when [access management](/command-line-usage/access-management) is enabled and a statement is refused, or when a preview IaC run reports a failed resource.

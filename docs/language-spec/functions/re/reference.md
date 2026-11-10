@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Supported syntax
+## Supported syntax {#supported-syntax}
 
 The following regular expression syntax is supported in StackQL:    
 

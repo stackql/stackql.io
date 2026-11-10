@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT INSTR(string, searchstring) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*string*__  
 The source string being searched.
@@ -33,16 +33,16 @@ The substring being searched for.
 
 > If *string* and *searchstring* are both BLOBs, then `instr(<string>, <searchstring>)` returns one more than the number bytes prior to the first occurrence of *searchstring*, or 0 if *searchstring* does not occur anywhere within *string*. If both arguments are not `NULL` and are not BLOBs then both are interpreted as strings. 
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns an integer.
 
 > If either the *string* or the *searchstring* values are `NULL`, then the result is `NULL`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Search a field for a string
+### Search a field for a string {#search-a-field-for-a-string}
 
 ```sql
 SELECT INSTR(name, 'worker') as charpos

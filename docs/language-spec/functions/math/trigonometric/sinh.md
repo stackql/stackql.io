@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SINH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression for which the hyperbolic sine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic sine of the specified value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic sine of 1
+### Calculate the hyperbolic sine of 1 {#calculate-the-hyperbolic-sine-of-1}
 
 ```sql
 SELECT SINH(1) AS hyperbolic_sine_value;
@@ -43,7 +43,7 @@ SELECT SINH(1) AS hyperbolic_sine_value;
 
 This query returns approximately `1.1752`, as the hyperbolic sine of 1 is about 1.1752.
 
-### Calculate the hyperbolic sine of 0
+### Calculate the hyperbolic sine of 0 {#calculate-the-hyperbolic-sine-of-0}
 
 ```sql
 SELECT SINH(0) AS hyperbolic_sine_value;

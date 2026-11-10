@@ -29,13 +29,13 @@ The `json_each` function is implemented as the `json_array_elements_text` functi
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
 FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
 ```
-## Arguments
+## Arguments {#arguments}
 
 __*json_array_or_object*__  
 A JSON array or object.
@@ -47,14 +47,14 @@ The JSON path to an array or object contained within an *json_array_or_object*. 
 
 > The `json_type()` function throws an error if any of its arguments are not well-formed.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 A table consisting of one row for each array element or object member.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Unnest an array of strings into a table joined with associated fields
+### Unnest an array of strings into a table joined with associated fields {#unnest-an-array-of-strings-into-a-table-joined-with-associated-fields}
 
 for context:  
 

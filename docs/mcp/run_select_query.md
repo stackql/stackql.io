@@ -20,7 +20,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -31,7 +31,7 @@ See also:
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -39,13 +39,13 @@ See also:
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode (`read_only`, `safe`, `delete_safe`, `full_access`) when every statement in the payload is read-only.  From `v1.0`, `INSERT`, `UPDATE`, `REPLACE`, `DELETE` and `EXEC` are refused by this tool in every mode, including `full_access`, with an error naming [`run_mutation_query`](/mcp/run_mutation_query) or [`run_lifecycle_operation`](/mcp/run_lifecycle_operation).  A payload holding several statements is classed by its most privileged statement, so a mutation behind a leading `SELECT` is refused in the same way.  The tool declares `destructiveHint: false` and `openWorldHint: true`.
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

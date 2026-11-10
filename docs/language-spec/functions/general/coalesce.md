@@ -19,28 +19,28 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT COALESCE(expression1, expression2 [, ..]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 Two or more expressions of any data type which resolve to a `NULL` or non `NULL` value.
 
 > If all of the *expression* arguments are `NULL`, the `COALESCE` function returns `NULL`.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the first non `NULL` value from the series of *expression* arguments.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Replace a `NULL` value with a default value
+### Replace a `NULL` value with a default value {#replace-a-null-value-with-a-default-value}
 
 ```sql
 SELECT name, coalesce(website, cors, 'not hosting shared resources') AS website_or_cors_config

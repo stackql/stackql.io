@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_SET(json_column, path, value_to_set) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_column*__  
 The JSON column or expression to be modified.
@@ -34,7 +34,7 @@ The JSON path expression indicating where to set the value. If the path exists, 
 __*value_to_set*__  
 The value to be set at the specified path in the JSON document.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a JSON document with the value set at the specified path. If the path exists, the existing value is updated; otherwise, a new key-value pair is added.
 
 :::note Behavior If a Key Exists
@@ -45,12 +45,13 @@ Returns a JSON document with the value set at the specified path. If the path ex
 | [`json_replace()`](/language-spec/functions/json/json_replace) | Yes                          | No                        |
 | [`json_set()`](/language-spec/functions/json/json_set)       | Yes                          | Yes                       |
 
+:::
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Update an existing value in a JSON object
+### Update an existing value in a JSON object {#update-an-existing-value-in-a-json-object}
 
 ```sql
 -- Example: Update the 'status' key's value to 'active' in a JSON object
@@ -68,7 +69,7 @@ WHERE service_id = 'service123';
 
 This query updates the 'status' key to 'active' in the JSON document if the 'status' key exists. If 'status' does not exist in the document, it is added with the value 'active'.
 
-### Add a new key-value pair to a JSON object
+### Add a new key-value pair to a JSON object {#add-a-new-key-value-pair-to-a-json-object}
 
 ```sql
 -- Example: Add a new key 'lastChecked' with the current date to a JSON object

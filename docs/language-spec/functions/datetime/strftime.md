@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT STRFTIME(format, datetime_expression [, modifier, ...]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*format*__  
 The desired format for the datetime value specified by the *datetime_expression* value.  See the table of formats below.
@@ -34,7 +34,7 @@ The date or time value to be formatted.
 __*modifier*__  
 Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
-### Formats
+### Formats {#formats}
 
 | Format | Description                    |
 |--------|--------------------------------|
@@ -52,15 +52,15 @@ Zero or more modifiers to be applied to the *datetime_expression*.  For more inf
 | %Y     | year: 0000-9999                |
 | %%     | escape a percent symbol: %     |
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a formatted string representing the desired datetime format.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return a date in US format
+### Return a date in US format {#return-a-date-in-us-format}
 
 ```sql
 SELECT name, strftime('%m/%d/%Y', creationTimestamp) as created_at
@@ -69,7 +69,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Convert a datetime to an epoch timestamp
+### Convert a datetime to an epoch timestamp {#convert-a-datetime-to-an-epoch-timestamp}
 
 ```sql
 SELECT name, strftime('%s', creationTimestamp) as created_at
@@ -78,7 +78,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Calculate the days between two dates
+### Calculate the days between two dates {#calculate-the-days-between-two-dates}
 
 ```sql
 SELECT name, (strftime('%s','now')-strftime('%s', creationTimestamp))/86400 as days_since_creation

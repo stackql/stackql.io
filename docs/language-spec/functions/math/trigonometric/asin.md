@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ASIN(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression within the range of -1 to 1, inclusive, for which the arc sine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the arc sine of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the arc sine of 0.5
+### Calculate the arc sine of 0.5 {#calculate-the-arc-sine-of-05}
 
 ```sql
 SELECT ASIN(0.5) AS arc_sine_value;
@@ -43,7 +43,7 @@ SELECT ASIN(0.5) AS arc_sine_value;
 
 This query returns π/6 or approximately `0.5236`, as the arc sine of 0.5 corresponds to an angle of π/6 radians.
 
-### Calculate the arc sine of -1
+### Calculate the arc sine of -1 {#calculate-the-arc-sine-of--1}
 
 ```sql
 SELECT ASIN(-1) AS arc_sine_value;

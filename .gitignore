@@ -43,3 +43,9 @@ __pycache__/
 
 # StackQL MCP server logs (any directory)
 stackql_mcp_server_*.log
+
+# scripts/i18n/strings.js parks src/modules/react-animated-term/node_modules
+# here while `docusaurus write-translations` runs; only present if a run
+# could not move it back (see the message it prints)
+/.i18n-excluded-*
+

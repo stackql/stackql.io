@@ -1,0 +1,154 @@
+{
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "Erste Schritte",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "Erste Schritte",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "Grundkonzepte und erste Schritte: die Ressourcenhierarchie, StackQL ausführen, einen Provider verwenden, Ausgabemodi, Variablen, Sitzungsvariablen, Provider-Sitzungen und Templating",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage": {
+    "message": "Kommandozeile",
+    "description": "The label for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.title": {
+    "message": "Kommandozeile",
+    "description": "The generated-index page title for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.description": {
+    "message": "Die stackql-Kommandozeile: exec, shell, srv, mcp, registry, die globalen Flags und die Zugriffsverwaltung",
+    "description": "The generated-index page description for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.MCP": {
+    "message": "MCP",
+    "description": "The label for category 'MCP' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedded": {
+    "message": "Eingebettet",
+    "description": "The label for category 'Embedded' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Language Specification": {
+    "message": "Sprachspezifikation",
+    "description": "The label for category 'Language Specification' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Built-in Functions": {
+    "message": "Eingebaute Funktionen",
+    "description": "The label for category 'Built-in Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Aggregate": {
+    "message": "Aggregat",
+    "description": "The label for category 'Aggregate' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Datetime": {
+    "message": "Datum und Zeit",
+    "description": "The label for category 'Datetime' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.General": {
+    "message": "Allgemein",
+    "description": "The label for category 'General' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Hash": {
+    "message": "Hash",
+    "description": "The label for category 'Hash' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Json": {
+    "message": "JSON",
+    "description": "The label for category 'Json' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Math": {
+    "message": "Mathematik",
+    "description": "The label for category 'Math' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Logarithmic Functions": {
+    "message": "Logarithmische Funktionen",
+    "description": "The label for category 'Logarithmic Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Trigonometric Functions": {
+    "message": "Trigonometrische Funktionen",
+    "description": "The label for category 'Trigonometric Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Regular Expressions": {
+    "message": "Reguläre Ausdrücke",
+    "description": "The label for category 'Regular Expressions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Session": {
+    "message": "Sitzung",
+    "description": "The label for category 'Session' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.String": {
+    "message": "Zeichenketten",
+    "description": "The label for category 'String' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Window": {
+    "message": "Fensterfunktionen",
+    "description": "The label for category 'Window' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Developers": {
+    "message": "Entwickler",
+    "description": "The label for category 'Developers' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts": {
+    "message": "Schnellstarts",
+    "description": "The label for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.title": {
+    "message": "Schnellstarts",
+    "description": "The generated-index page title for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.description": {
+    "message": "StackQL-Schnellstarts, Anleitungen, praktische Beispiele und Anwendungsfälle",
+    "description": "The generated-index page description for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.title": {
+    "message": "AWS-Schnellstarts",
+    "description": "The generated-index page title for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.description": {
+    "message": "Praktische Beispiele und Anwendungsfälle für AWS",
+    "description": "The generated-index page description for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure": {
+    "message": "Microsoft Azure",
+    "description": "The label for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.title": {
+    "message": "Azure-Schnellstarts",
+    "description": "The generated-index page title for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.description": {
+    "message": "Praktische Beispiele und Anwendungsfälle für Azure",
+    "description": "The generated-index page description for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform": {
+    "message": "Google Cloud Platform",
+    "description": "The label for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.title": {
+    "message": "Google-Schnellstarts",
+    "description": "The generated-index page title for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.description": {
+    "message": "Praktische Beispiele und Anwendungsfälle für Google Cloud",
+    "description": "The generated-index page description for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.title": {
+    "message": "GitHub-Schnellstarts",
+    "description": "The generated-index page title for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.description": {
+    "message": "Praktische Beispiele und Anwendungsfälle für GitHub",
+    "description": "The generated-index page description for category 'GitHub' in sidebar 'docsSidebar'"
+  }
+}

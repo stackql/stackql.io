@@ -7,7 +7,7 @@ description: How StackQL relates to other tools across IaC, cloud-query, data/AP
 
 Each page in this section compares StackQL with one other tool or one architectural approach. Comparisons lead with honest "when to use which" framing before making the affirmative case for StackQL.
 
-## Pages
+## Pages {#pages}
 
 - [StackQL vs Terraform](/ai/comparisons/stackql-vs-terraform) - live query/mutation engine vs state-file IaC
 - [StackQL vs Steampipe](/ai/comparisons/stackql-vs-steampipe) - read-and-write vs read-only cloud SQL

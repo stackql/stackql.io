@@ -15,7 +15,7 @@ Command used to launch StackQL as a service, which can then be accessed by clien
 
 * * * 
 
-### Syntax
+### Syntax {#syntax}
 
 `stackql srv [server_options] [flags]`
 
@@ -29,7 +29,7 @@ Although the StackQL server uses the Postgres wire protocol, it is not a Postgre
 
 Parameters sent over the extended query protocol (`Parse` / `Bind` / `Execute`, as used by `psycopg` 3, `pgx` and JDBC) are bound server side as string literals.  From `v0.12.742` a `$n` placeholder inside a string literal, quoted identifier or comment is left alone, backslashes in parameter values are escaped, and a text value of `NULL` stays the string `NULL` (SQL `NULL` is carried separately).
 
-### Server Options
+### Server Options {#server-options}
 
 | Option | Description |
 |--|--|
@@ -42,7 +42,7 @@ Parameters sent over the extended query protocol (`Parse` / `Bind` / `Execute`, 
 
 > see [Global Flags](/command-line-usage/global-flags) for additional options
 
-### MCP Server Options
+### MCP Server Options {#mcp-server-options}
 
 When running the `srv` command with MCP support, the following additional options are available:
 
@@ -81,7 +81,7 @@ stackql srv --pgsrv.port 5444 --env.file /etc/stackql/credentials.env
 
 For `stackql srv` the file is read once at startup; the mid-session re-source path is the MCP [`reload_credentials`](/mcp/reload_credentials) tool.
 
-### Flags
+### Flags {#flags}
 
 | Flag | Description |
 |--|--|
@@ -94,7 +94,7 @@ For `stackql srv` the file is read once at startup; the mid-session re-source pa
 
 * * *
 
-### Examples
+### Examples {#examples}
 
 Launch a StackQL server process and connect using a `psql` command line client.  
 

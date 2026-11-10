@@ -20,7 +20,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *createViewStatement::=*
 
@@ -38,9 +38,9 @@ CREATE [ OR REPLACE ] [ MATERIALIZED ] VIEW <viewName> AS
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Cross cloud `UNION` between `aws` and `google`
+### Cross cloud `UNION` between `aws` and `google` {#cross-cloud-union-between-aws-and-google}
 ```sql
 CREATE VIEW dual_cloud_block_storage AS
 SELECT 
@@ -63,7 +63,7 @@ FROM aws.ec2.volumes
  WHERE region = 'ap-southeast-2';
 ```
 
-### Create and use a Materialized View
+### Create and use a Materialized View {#create-and-use-a-materialized-view}
 ```sql
 /* -------------------------- */
 /* create a materialized view */

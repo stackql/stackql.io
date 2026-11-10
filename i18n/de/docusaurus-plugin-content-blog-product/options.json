@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Produktankündigungen",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Neue StackQL-Releases, Funktionen und Fähigkeiten",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Alle Produktankündigungen",
+    "description": "The label for the left sidebar"
+  }
+}

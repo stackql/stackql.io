@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT CEIL(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the smallest integer greater than or equal to the specified numeric expression.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Round up a floating point number to the closest (larger) integer
+### Round up a floating point number to the closest (larger) integer {#round-up-a-floating-point-number-to-the-closest-larger-integer}
 
 ```sql
 SELECT name, timeCreated,

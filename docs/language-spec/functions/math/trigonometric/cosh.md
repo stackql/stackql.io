@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT COSH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression for which the hyperbolic cosine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic cosine of the specified value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic cosine of 1
+### Calculate the hyperbolic cosine of 1 {#calculate-the-hyperbolic-cosine-of-1}
 
 ```sql
 SELECT COSH(1) AS hyperbolic_cosine_value;
@@ -43,7 +43,7 @@ SELECT COSH(1) AS hyperbolic_cosine_value;
 
 This query returns approximately `1.5431`, as the hyperbolic cosine of 1 is about 1.5431.
 
-### Calculate the hyperbolic cosine of 0
+### Calculate the hyperbolic cosine of 0 {#calculate-the-hyperbolic-cosine-of-0}
 
 ```sql
 SELECT COSH(0) AS hyperbolic_cosine_value;

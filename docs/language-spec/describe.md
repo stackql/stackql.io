@@ -21,7 +21,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 *describeStatement::=*
 
@@ -39,7 +39,7 @@ DESC [ EXTENDED ] <multipartIdentifier> ;
 
 `DESC` is accepted as an alias for `DESCRIBE` when describing a resource; `DESCRIBE METHOD` requires the full keyword.
 
-## Response
+## Response {#response}
 
 <Tabs
   defaultValue="describe-resource"
@@ -72,9 +72,9 @@ DESC [ EXTENDED ] <multipartIdentifier> ;
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `DESCRIBE` Statement
+### Basic `DESCRIBE` Statement {#basic-describe-statement}
 Run a basic `DESCRIBE` statement to list the fields in a resource from an authenticated session.
 
 ```sql
@@ -82,7 +82,7 @@ Run a basic `DESCRIBE` statement to list the fields in a resource from an authen
 DESCRIBE google.compute.instances;
 ```
 
-### Extended `DESCRIBE` Statement
+### Extended `DESCRIBE` Statement {#extended-describe-statement}
 Run an extended `DESCRIBE` statement to list the fields in a resource and their descriptions from an authenticated session.
 
 ```sql
@@ -90,7 +90,7 @@ Run an extended `DESCRIBE` statement to list the fields in a resource and their 
 DESCRIBE EXTENDED google.compute.instances;
 ```
 
-### `DESC` Alias
+### `DESC` Alias {#desc-alias}
 `DESC` is shorthand for `DESCRIBE` on a resource, with or without `EXTENDED`.  It is treated as a read-only statement everywhere `DESCRIBE` is, including the MCP server's `run_select_query` tool in `read_only` and `safe` modes.
 
 ```sql
@@ -98,7 +98,7 @@ DESCRIBE EXTENDED google.compute.instances;
 DESC EXTENDED google.compute.instances;
 ```
 
-### Basic `DESCRIBE METHOD` Statement
+### Basic `DESCRIBE METHOD` Statement {#basic-describe-method-statement}
 Introspect a single method on a resource. The result includes input parameters and response fields, with nested structure rendered in the `shape` column.
 
 ```sql
@@ -106,7 +106,7 @@ Introspect a single method on a resource. The result includes input parameters a
 DESCRIBE METHOD google.storage.buckets.get;
 ```
 
-### Extended `DESCRIBE METHOD` Statement
+### Extended `DESCRIBE METHOD` Statement {#extended-describe-method-statement}
 Run an extended `DESCRIBE METHOD` statement to include per-field descriptions alongside the shape.
 
 ```sql
@@ -114,7 +114,7 @@ Run an extended `DESCRIBE METHOD` statement to include per-field descriptions al
 DESCRIBE METHOD EXTENDED google.storage.buckets.insert;
 ```
 
-### Discovering an `INSERT` Payload
+### Discovering an `INSERT` Payload {#discovering-an-insert-payload}
 `DESCRIBE METHOD` is the canonical way to discover what fields an `INSERT` (or any mutating method) accepts. The `shape` column carries nested structure agents and humans can use to construct a payload in one query.
 
 ```sql

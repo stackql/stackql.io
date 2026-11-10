@@ -17,18 +17,18 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*character_expression*__  
 A literal string or string column.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a string.
 
@@ -40,9 +40,9 @@ From StackQL `v1.0` the parser treats `||` as the concatenation operator, bindin
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Concatenate two fields together
+### Concatenate two fields together {#concatenate-two-fields-together}
 
 ```sql
 SELECT name || ' (' || location || ')' as bucket_location

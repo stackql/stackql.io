@@ -16,12 +16,12 @@ faq:
 
 S3 buckets are exposed as two related tables: `aws.s3.buckets` lists the buckets in the account, and `aws.s3.bucket` (singular) returns the full configuration of one bucket identified by `data__Identifier`. This list/detail split mirrors the AWS Cloud Control API the tables are built on.
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 - AWS credentials exported - see [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws)
 - The AWS provider installed: `REGISTRY PULL aws;`
 
-## List buckets
+## List buckets {#list-buckets}
 
 ```sql
 SELECT bucket_name
@@ -31,7 +31,7 @@ WHERE region = 'us-east-1';
 
 The `region` predicate is a required routing parameter of the underlying API call; `us-east-1` returns the account's buckets.
 
-## Inspect one bucket
+## Inspect one bucket {#inspect-one-bucket}
 
 The detail table returns configuration attributes for a named bucket:
 
@@ -49,11 +49,11 @@ AND data__Identifier = 'my-bucket-name';
 
 Configuration columns return structured JSON; `DESCRIBE aws.s3.bucket` lists everything available, including `logging_configuration`, `lifecycle_configuration`, `object_lock_configuration`, `tags`, and `arn`.
 
-## Audit pattern: enumerate, then inspect
+## Audit pattern: enumerate, then inspect {#audit-pattern-enumerate-then-inspect}
 
 Account-wide configuration audits combine the two tables: list the bucket names, then query the detail table per bucket. In scripted use (shell loops, or Python via pystackql), iterate over the list result and collect the detail rows - per-bucket checks such as "is versioning enabled?" or "is the public access block complete?" become row predicates over the collected results. This is the documented pattern for S3 inventory in the StackQL AWS tutorials.
 
-## Creating buckets
+## Creating buckets {#creating-buckets}
 
 Writable properties are discoverable the same way readable ones are:
 
@@ -63,7 +63,7 @@ SHOW INSERT INTO aws.s3.buckets;
 
 This generates an `INSERT` template covering the resource's writable fields (the desired-state document and `region`). Restricting to mandatory fields only is done with the `/*+ REQUIRED */` query hint.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to query AWS EC2 instances with StackQL](/ai/how-tos/query-aws-ec2-instances-with-stackql) - the regional-service pattern
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - credential setup

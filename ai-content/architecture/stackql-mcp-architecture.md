@@ -16,7 +16,7 @@ faq:
 
 StackQL's MCP server is built into the engine binary and publishes the StackQL capability surface - discovery, description, validation, execution - as Model Context Protocol tools. Its design centers on three things: a small generic tool set instead of per-operation tools, a graduated safety contract for mutations, and an audit trail that records everything an agent does.
 
-## Transports and deployment modes
+## Transports and deployment modes {#transports-and-deployment-modes}
 
 | Mode | Command | Use |
 |---|---|---|
@@ -27,7 +27,7 @@ StackQL's MCP server is built into the engine binary and publishes the StackQL c
 
 Configuration is a JSON (or YAML) object passed via `--mcp.config`, covering transport, address, TLS certificate paths, client authentication, mode, audit settings, and optional `enabled_tools` / `enabled_prompts` allowlists for publishing a narrowed surface (for example, a read-only inventory server exposing only `server_info` and `list_providers`).  From `v0.12.742` the HTTP transport requires either a pre-shared bearer token (`server.auth_token_env_var`) or the explicit `server.allow_unauthenticated` opt-in; cross-origin browser requests are refused.
 
-## The tool surface
+## The tool surface {#the-tool-surface}
 
 Fourteen tools, each returning a rendered text view for the LLM plus a typed structured payload:
 
@@ -40,7 +40,7 @@ Fourteen tools, each returning a rendered text view for the LLM plus a typed str
 
 One static prompt, `write_safe_select`, teaches the method-discovery workflow.
 
-## The safety contract
+## The safety contract {#the-safety-contract}
 
 `server.mode` selects one of four contracts; all allow `SELECT` and metadata, differing on writes:
 
@@ -53,11 +53,11 @@ One static prompt, `write_safe_select`, teaches the method-discovery workflow.
 
 "Needs approval" is implemented with MCP elicitation: the server sends the pending action - tool, query class, SQL - to the client, and a human accepts or declines. Clients that do not advertise elicitation get a refusal pointing the operator at `full_access`, which makes unattended mutation an explicit opt-in rather than a default. The mode is global per server; there are no per-tool overrides.  A payload holding several statements is gated by its most privileged statement (from `v0.12.742`), and `validate_select_query` accepts exactly one statement.
 
-## The audit subsystem
+## The audit subsystem {#the-audit-subsystem}
 
 Every tool call writes one JSONL record - timestamp, tool, mode, decision (`allow`, `refuse_immediate`, `needs_approval_accepted`, and so on), query class, SQL, arguments, duration, error - to a file sink with size/age/backup rotation. The log answers "what did the agent do", deliberately not "what did the agent see": `SELECT` result rows are excluded as potentially large and sensitive. The write happens after execution but before the response returns; under the default `strict` failure mode, an audit failure on a successful mutation returns an error to the client - an intentional choice that no `DELETE` completes unaudited.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - operational setup
 - [How to use StackQL with Claude](/ai/how-tos/use-stackql-with-claude) - Claude Desktop specifics

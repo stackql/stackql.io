@@ -19,14 +19,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT PERCENT_RANK() OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*PARTITION BY column*__
 Optional. Divides the result set into partitions. The `PERCENT_RANK` function is applied to each partition separately.
@@ -34,15 +34,15 @@ Optional. Divides the result set into partitions. The `PERCENT_RANK` function is
 __*ORDER BY column*__
 Specifies the order in which the percentile ranks are calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a floating-point number between 0.0 and 1.0 representing the percentile rank.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate percentile ranking of contributors
+### Calculate percentile ranking of contributors {#calculate-percentile-ranking-of-contributors}
 
 ```sql
 -- Calculate percentile ranking of contributors

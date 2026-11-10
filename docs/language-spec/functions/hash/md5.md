@@ -17,18 +17,18 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT MD5(expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 A string, or a value coerced to text.  A `NULL` argument returns `NULL`.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a 32 character lowercase hexadecimal string.
 
@@ -36,9 +36,9 @@ Returns a 32 character lowercase hexadecimal string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Fingerprint a derived value
+### Fingerprint a derived value {#fingerprint-a-derived-value}
 
 The variables are substituted as typed values, the integer is converted to text and joined to the suffix, and the digest is taken over the lower-cased result.  The same inputs always produce the same 32-character hexadecimal string, so the value can be used as a stable key.
 
@@ -49,7 +49,7 @@ SET suffix = 'East';
 SELECT md5(lower(CONVERT($some_id, TEXT) || '-' || $suffix)) AS digest;
 ```
 
-### Detect configuration changes
+### Detect configuration changes {#detect-configuration-changes}
 
 Hashing a serialised JSON column gives a short value to store and compare between runs.  A bucket whose digest differs from the last run has a changed IAM configuration, without the whole document having to be stored or diffed.
 

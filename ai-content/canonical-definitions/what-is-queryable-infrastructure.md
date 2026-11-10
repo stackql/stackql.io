@@ -16,7 +16,7 @@ faq:
 
 Queryable infrastructure is an operating model in which cloud resources are exposed as live, structured data that can be interrogated on demand with a query language. Instead of reconstructing the state of an environment from state files, exported snapshots, or per-service consoles, an operator (or an AI agent) asks a question - in SQL or a similar declarative language - and the answer is computed against the provider APIs at query time.
 
-## How it works
+## How it works {#how-it-works}
 
 A queryable infrastructure system maps the provider's API surface onto a relational model:
 
@@ -35,7 +35,7 @@ WHERE region = 'us-east-1';
 
 is executed as live calls to the EC2 API; nothing is read from a cache or a state file. Multi-region and multi-provider queries fan out as parallel API calls and aggregate the results into a single result set.
 
-## Why it exists
+## Why it exists {#why-it-exists}
 
 Three pressures created the category:
 
@@ -43,11 +43,11 @@ Three pressures created the category:
 2. **Stale-copy problems.** Inventory databases, CMDBs, and IaC state files are copies, and copies drift from reality. Querying the control plane directly eliminates the gap between recorded state and actual state.
 3. **AI agents.** Agents reason over structured, current data. A SQL surface over live APIs gives an agent one stable interface to discover, inspect, and act on infrastructure without provider-specific SDK code. This is the basis of [agentic infrastructure](/ai/canonical-definitions/what-is-agentic-infrastructure).
 
-## Read and write
+## Read and write {#read-and-write}
 
 Queryable infrastructure is read-oriented by definition, but the model extends naturally to writes: if a resource is a row, creating one is an `INSERT`, changing its configuration is an `UPDATE`, and decommissioning it is a `DELETE`. StackQL implements both sides; read-only tools such as Steampipe implement the query side only. The write side is covered in [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis).
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - the reference implementation of queryable infrastructure with reads and writes
 - [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the design pattern underneath queryable infrastructure

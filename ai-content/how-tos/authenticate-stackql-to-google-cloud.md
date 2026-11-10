@@ -16,7 +16,7 @@ faq:
 
 StackQL authenticates to Google Cloud with a service account key, supplied as JSON content in the `GOOGLE_CREDENTIALS` environment variable.
 
-## Steps
+## Steps {#steps}
 
 1. Create a service account and grant it a role on the target project (`roles/viewer` suffices for read-only querying), then create and download a JSON key:
 
@@ -54,11 +54,11 @@ WHERE project = 'my-project';
 
 This uses the `aggregated_list` access method, which requires only `project` and returns instances across all zones. The zonal `list` method requires both `project` and `zone`; `SHOW METHODS IN google.compute.instances` shows each method's required parameters.
 
-## Where the credentials apply
+## Where the credentials apply {#where-the-credentials-apply}
 
 The same variable (or `--auth` object) works across `stackql shell`, `stackql exec`, `stackql srv`, and `stackql mcp`. For Claude Desktop and similar MCP clients, set `GOOGLE_CREDENTIALS` in the `env` block of the server configuration. In CI, source the key from the platform's secret store - never commit it.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - the AWS equivalent
 - [How to authenticate StackQL to Azure](/ai/how-tos/authenticate-stackql-to-azure) - the Azure equivalent

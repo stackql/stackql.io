@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *showStatement::=*
 
@@ -46,9 +46,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### List all providers
+### List all providers {#list-all-providers}
 List all of the available cloud providers in the installed version of StackQL.
 ```sql
 -- Returns all of the available cloud providers
@@ -75,7 +75,7 @@ SHOW PROVIDERS;
 
 </details>
 
-### List all services in a cloud provider
+### List all services in a cloud provider {#list-all-services-in-a-cloud-provider}
 List all of the services available within a given cloud provider, use the optional EXTENDED keyword to return additional information.
 ```sql
 -- Returns all services available in a cloud provider
@@ -105,7 +105,7 @@ SHOW EXTENDED SERVICES IN google;
 </details>
 
 
-### List all resources within a cloud provider service
+### List all resources within a cloud provider service {#list-all-resources-within-a-cloud-provider-service}
 List all of the resources available within a given service of a cloud provider.  The optional `EXTENDED` keyword returns the resource description in addition to the resource name.
 ```sql
 -- Returns all resources available in a cloud provider service
@@ -134,7 +134,7 @@ SHOW EXTENDED RESOURCES IN google.compute;
 
 </details>
 
-### Show available methods for a resource within a cloud provider service
+### Show available methods for a resource within a cloud provider service {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 List all of the methods available for a given resource.
 ```sql
 -- Returns all methods available for a cloud provider resource
@@ -163,7 +163,7 @@ SHOW EXTENDED METHODS IN google.compute.instances;
 
 </details>
 
-### Generating an `INSERT` template using the `SHOW INSERT` command
+### Generating an `INSERT` template using the `SHOW INSERT` command {#generating-an-insert-template-using-the-show-insert-command}
 
 The `SHOW` command can be used to generate templates for `INSERT` statements as shown here:
 
@@ -209,7 +209,7 @@ SELECT
 
 > This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [__Using Variables__](/getting-started/variables).
 
-### Show the StackQL version
+### Show the StackQL version {#show-the-stackql-version}
 
 Return the version of the running StackQL process. Useful in shell, exec, and Postgres-wire server modes when you need to confirm which build is answering queries. The same information is also surfaced through the MCP `server_info` tool.
 
@@ -251,7 +251,7 @@ SHOW EXTENDED VERSION;
 
 > `SHOW VERSION` requires no provider, registry, or authentication configuration and is safe to issue in any session.
 
-### List StackQL contributors
+### List StackQL contributors {#list-stackql-contributors}
 
 Return the contributor leaderboard embedded in the running StackQL binary. The snapshot credits human GitHub contributors who have starred the StackQL repository, ordered by contribution count, highest first. It is fixed for each build and does not query GitHub at runtime.
 
@@ -265,7 +265,7 @@ SHOW EXTENDED CONTRIBUTORS;
 | `contributor` | GitHub username |
 | `contributions` | Contribution count recorded in the snapshot; included with `EXTENDED` |
 
-### List the binary's software dependencies
+### List the binary's software dependencies {#list-the-binarys-software-dependencies}
 
 Return an offline inventory of the Go modules included in the running StackQL executable. This provides a lightweight software bill of materials (SBOM) for the binary, queryable by users and agents at runtime. It includes direct and transitive Go dependencies; installed provider definitions, separate wrappers, CI tools, test-only modules, container images and operating-system packages are outside its scope.
 

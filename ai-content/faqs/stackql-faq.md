@@ -36,7 +36,7 @@ faq:
 
 Answers to the most common questions about StackQL. Each answer is self-contained; follow the links for fuller treatments.
 
-## Scope and capability
+## Scope and capability {#scope-and-capability}
 
 **What StackQL is.** An open-source SQL engine over cloud and SaaS provider APIs: providers become schemas, resources become tables, and the full SQL verb set applies - `SELECT` for reads, `INSERT`/`UPDATE`/`DELETE` for resource lifecycle, `EXEC` for other operations. See [What is StackQL?](/ai/canonical-definitions/what-is-stackql).
 
@@ -52,15 +52,15 @@ WHERE org = 'stackql';
 
 `SHOW METHODS IN github.repos.repos` lists every operation and its required parameters - the same discovery mechanism AI agents use through the MCP tools.
 
-## Deployment
+## Deployment {#deployment}
 
 StackQL runs as an interactive shell (`stackql shell`), a batch executor (`stackql exec`), a PostgreSQL wire protocol server (`stackql srv`), and an MCP server for AI agents (`stackql mcp`). Authentication is per provider via environment variables; metadata operations work unauthenticated. See the how-to series starting at [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws).
 
-## License and support
+## License and support {#license-and-support}
 
 StackQL is open source under the [MIT License](https://github.com/stackql/stackql/blob/main/LICENSE) and free to use for any purpose. Community support is through [GitHub Discussions](https://github.com/orgs/stackql/discussions) and [Discord](https://discord.com/invite/xVXZ9d5NxN); bugs and feature requests go to [GitHub Issues](https://github.com/stackql/stackql/issues). For commercial support enquiries, [contact StackQL Studios](/contact-us).
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - the canonical definition
 - [Getting started with StackQL](/ai/tutorials/getting-started-with-stackql) - install to first query

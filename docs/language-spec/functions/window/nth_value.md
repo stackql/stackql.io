@@ -19,7 +19,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT NTH_VALUE(expr, N) OVER (
@@ -29,7 +29,7 @@ SELECT NTH_VALUE(expr, N) OVER (
 ) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expr*__
 The expression to evaluate against the Nth row in the window frame.
@@ -46,15 +46,15 @@ Specifies the order in which rows are processed.
 __*ROWS BETWEEN frame_start AND frame_end*__
 Optional. Defines the window frame.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the value of the expression evaluated against the Nth row in the window frame, or `NULL` if the Nth row does not exist.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Get the second-highest contributor
+### Get the second-highest contributor {#get-the-second-highest-contributor}
 
 ```sql
 -- Get the top 3 contributors by name for comparison

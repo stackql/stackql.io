@@ -16,7 +16,7 @@ faq:
 
 Claude connects to StackQL through the Model Context Protocol: register `stackql` as an MCP server in Claude Desktop (or Claude Code), and Claude can inventory, audit, and - with your approval - modify cloud resources across every provider StackQL supports, driven by natural language.
 
-## Steps
+## Steps {#steps}
 
 1. **Install StackQL** and verify it is on your PATH:
 
@@ -66,11 +66,11 @@ Include only the providers you need (`AZURE_TENANT_ID`/`AZURE_CLIENT_ID`/`AZURE_
 
 For reads, Claude discovers the schema and runs `SELECT` statements immediately. For the bucket creation, `safe` mode triggers an approval prompt showing the exact `INSERT` before anything executes.
 
-## Controlling what Claude can do
+## Controlling what Claude can do {#controlling-what-claude-can-do}
 
 The `mode` field in the config is the contract: `read_only` for inventory-only assistants, `safe` (default) for approval-gated changes, `delete_safe` to allow create/update but gate deletes, `full_access` only for trusted automation. Every call Claude makes is recorded in the server's JSONL audit log regardless of mode.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the general MCP setup, including HTTP transport
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - modes, elicitation, and audit in detail

@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_PATCH(target_json, patch_json) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*target_json*__  
 The JSON document to be patched.
@@ -31,14 +31,14 @@ The JSON document to be patched.
 __*patch_json*__  
 A JSON document describing the changes to be applied according to the MergePatch algorithm.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the modified JSON document after the patch has been applied.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Simple MergePatch
+### Simple MergePatch {#simple-mergepatch}
 
 ```sql
 -- Example: Simple merge of new elements into the target JSON object
@@ -47,7 +47,7 @@ SELECT JSON_PATCH('{"a":1,"b":2}', '{"c":3,"d":4}') AS patched_json;
 
 Output: `{"a":1,"b":2,"c":3,"d":4}`
 
-### Replace Element in Array
+### Replace Element in Array {#replace-element-in-array}
 
 ```sql
 -- Example: Replacing an array with a single value in the JSON object
@@ -56,7 +56,7 @@ SELECT JSON_PATCH('{"a":[1,2],"b":2}', '{"a":9}') AS patched_json;
 
 Output: `{"a":9,"b":2}`
 
-### Remove Element Using Null
+### Remove Element Using Null {#remove-element-using-null}
 
 ```sql
 -- Example: Removing an element by setting it to null
@@ -65,7 +65,7 @@ SELECT JSON_PATCH('{"a":1,"b":2}', '{"a":9,"b":null,"c":8}') AS patched_json;
 
 Output: `{"a":9,"c":8}`
 
-### Nested MergePatch
+### Nested MergePatch {#nested-mergepatch}
 
 ```sql
 -- Example: Nested merge patch updating sub-keys within a nested JSON object

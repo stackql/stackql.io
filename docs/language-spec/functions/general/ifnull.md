@@ -19,13 +19,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT IFNULL(expression1, expression2) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 Two expressions of any data type which resolve to a `NULL` or non `NULL` value.
@@ -33,15 +33,15 @@ Two expressions of any data type which resolve to a `NULL` or non `NULL` value.
 > If both *expression* arguments are `NULL`, the `IFNULL` function returns `NULL`.
 
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the first non `NULL` value from the two *expression* arguments. 
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Replace a `NULL` value with a default value
+### Replace a `NULL` value with a default value {#replace-a-null-value-with-a-default-value}
 
 ```sql
 SELECT name, ifnull(website, 'Not hosting a website') AS website 

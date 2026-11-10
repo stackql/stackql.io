@@ -21,28 +21,28 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT NULLIF(expression1, expression2) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 Two expressions of any data type which resolve to a `NULL` or non `NULL` value.
 
 > The `NULLIF` function searches its arguments from left to right for an argument that defines a collating function and uses that collating function for all string comparisons.  If neither argument defines a collating function then `BINARY` collation is used.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns `NULL` if the two *expression* arguments resolve to the same value, otherwise the first value is returned. 
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Count records where a field is not equal to a given value
+### Count records where a field is not equal to a given value {#count-records-where-a-field-is-not-equal-to-a-given-value}
 
 ```sql
 SELECT COUNT(NULLIF(name, 'controller-0'))

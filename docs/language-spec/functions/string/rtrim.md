@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT RTRIM(character_expression[, character ]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*character_expression*__  
 A literal string or string column.
@@ -31,14 +31,14 @@ A literal string or string column.
 __*character*__  
 An optional character to remove if found at the end of the *character_expression*.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Remove trailing whitespace from a string column
+### Remove trailing whitespace from a string column {#remove-trailing-whitespace-from-a-string-column}
 
 ```sql
 SELECT rtrim(description) AS trailing_whitespace_removed

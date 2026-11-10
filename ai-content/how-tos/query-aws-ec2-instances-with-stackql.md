@@ -16,12 +16,12 @@ faq:
 
 EC2 instances are exposed as the table `aws.ec2.instances`. Any field returned by the EC2 `DescribeInstances` API is a queryable column, and `region` is a required `WHERE` predicate because the API is regional.
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 - AWS credentials exported as environment variables - see [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws)
 - The AWS provider installed: `REGISTRY PULL aws;`
 
-## Basic query
+## Basic query {#basic-query}
 
 List instances in one region with their type and addressing:
 
@@ -36,7 +36,7 @@ FROM aws.ec2.instances
 WHERE region = 'us-east-1';
 ```
 
-## Discover the schema first
+## Discover the schema first {#discover-the-schema-first}
 
 Two metadata commands make the resource self-describing - no AWS documentation required:
 
@@ -47,7 +47,7 @@ SHOW METHODS IN aws.ec2.instances;
 
 `DESCRIBE` lists the available columns. `SHOW METHODS` lists the operations (the `describe` SELECT method, the `terminate` DELETE method, and EXEC lifecycle methods such as `start`, `stop`, and `reboot`) with the required parameters for each. These commands work without credentials.
 
-## Multi-region aggregation
+## Multi-region aggregation {#multi-region-aggregation}
 
 A `region IN (...)` predicate runs one API call per region in parallel and aggregates the results - a regional service queried like a global table:
 
@@ -60,7 +60,7 @@ GROUP BY region, instance_type;
 
 This pattern is the basis of account-wide inventory and drift baselines: the result is the live answer, not a snapshot.
 
-## Filtering on attributes
+## Filtering on attributes {#filtering-on-attributes}
 
 Standard SQL predicates apply to any column. For example, instances exposed to the internet:
 
@@ -73,7 +73,7 @@ AND public_ip_address IS NOT NULL;
 
 Structured columns such as `state` and `tag_set` return JSON, which can be unpacked with the JSON functions of the configured SQL backend.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - credential setup
 - [How to query S3 buckets with StackQL](/ai/how-tos/query-s3-buckets-with-stackql) - the S3 pattern, which differs slightly

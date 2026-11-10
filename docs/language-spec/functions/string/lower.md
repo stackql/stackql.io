@@ -17,26 +17,26 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LOWER(character_expression) FROM <multipartIdentifier>;
 ```
 > The `lower()` function works for ASCII characters only.
 
-## Arguments
+## Arguments {#arguments}
 
 __*character_expression*__  
 An ASCII string.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return a string in lowercase
+### Return a string in lowercase {#return-a-string-in-lowercase}
 
 ```sql
 SELECT name, LOWER(location) FROM google.storage.buckets WHERE project = 'stackql-demo';

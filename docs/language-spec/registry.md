@@ -22,7 +22,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *registryStatement::=*
 
@@ -39,25 +39,25 @@ REGISTRY { LIST [<provider>] | PULL <provider> [<version>]};
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### List available providers
+### List available providers {#list-available-providers}
 Retrieves the list of the latest versions of each available provider.  
 ```sql
 REGISTRY LIST;
 ```
-### List all versions for a specific provider
+### List all versions for a specific provider {#list-all-versions-for-a-specific-provider}
 Retrieves the list of all available versions of a specific provider.    
 ```sql
 REGISTRY LIST google;
 ```
 
-### Install the latest version of a provider
+### Install the latest version of a provider {#install-the-latest-version-of-a-provider}
 ```
 REGISTRY PULL okta;
 ```
 
-### Install a specific version of a provider
+### Install a specific version of a provider {#install-a-specific-version-of-a-provider}
 ```
 REGISTRY PULL azure v23.01.00104;
 ```
