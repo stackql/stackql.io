@@ -22,21 +22,21 @@ In this guide, we will demonstrate a powerful capability within StackQL: the abi
 
 Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span class="tutorial_tested_on">postgres sql backend</span> <span class="tutorial_tested_on">macos</span> <span class="tutorial_tested_on">linux</span> <span class="tutorial_tested_on">powershell</span>
 
-## Understanding AWS Regions and Resources
+## Understanding AWS Regions and Resources {#understanding-aws-regions-and-resources}
 
 AWS resources are hosted in multiple locations worldwide.  These locations are composed of Regions and Availability Zones, designed to allow users to place instances and store data in various locations.
 
-## The problem with AWS Regions...
+## The problem with AWS Regions... {#the-problem-with-aws-regions}
 
 When working with AWS, it's crucial to understand that the AWS Management Console provides a regionally scoped view of resources, allowing users to interact with and manage resources within a specific region at a time.  Similarly, AWS Command Line Interface (CLI) commands and Software Development Kits (SDKs) use the region as an entry point for operations, necessitating the specification of a region to execute commands or run programs.  
 
 > The regional framework of cloud services introduces complexities when resources span multiple regions.  Additionally, security breaches, including cryptocurrency mining exploits, frequently utilize resources in various areas, extending beyond the primary region typically used by organizations.
 
-## Specifying Regions in StackQL Queries
+## Specifying Regions in StackQL Queries {#specifying-regions-in-stackql-queries}
 
 Using StackQL, you can specify regions to target resources across different geographic locations.  This is particularly useful for managing resources that are distributed across the globe.
 
-### Example: Listing EC2 Instances Across Multiple Regions
+### Example: Listing EC2 Instances Across Multiple Regions {#example-listing-ec2-instances-across-multiple-regions}
 
 ```sql
 SELECT instance_id, region
@@ -58,10 +58,10 @@ WHERE region IN (
 GROUP BY region;
 ```
 
-## The Power of Asynchronous Queries
+## The Power of Asynchronous Queries {#the-power-of-asynchronous-queries}
 
 StackQL executes these cross-region queries asynchronously, making multiple parallel API requests to AWS.  This ensures efficient data retrieval without waiting for one region's request to complete before moving on to the next.
 
-## Conclusion
+## Conclusion {#conclusion}
 
 Asynchronous cross-region queries in StackQL provide a robust and efficient method for managing AWS resources across different geographical locations.  By leveraging SQL-like syntax for these queries, StackQL simplifies complex cloud management tasks, making it an invaluable tool for developers and cloud administrators aiming to optimize their AWS infrastructure.

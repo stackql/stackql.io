@@ -28,7 +28,7 @@ Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span c
 
 </details>
 
-## How it works
+## How it works {#how-it-works}
 
 The StackQL linux package includes scripts to use `stackql` directly within major cloud providers built-in cloud shell environments.  For AWS the script is __`stackql-aws-cloud-shell.sh`__.  Usage for the __`stackql-aws-cloud-shell.sh`__ script is shown here:  
 
@@ -52,7 +52,7 @@ Usage:
 
 The `stackql-aws-cloud-shell.sh` script automatically downloads the latest AWS provider for StackQL.  Source code for the included cloud shell scripts can be found at [__github.com/stackql/cloud-shell-scripts__](https://github.com/stackql/cloud-shell-scripts).  
 
-## Download the `stackql` Linux package from AWS Cloud Shell
+## Download the `stackql` Linux package from AWS Cloud Shell {#download-the-stackql-linux-package-from-aws-cloud-shell}
 
 To get started, from AWS Cloud Shell, download the latest Linux binary for StackQL, using the following commands:  
 
@@ -63,7 +63,7 @@ curl -L https://bit.ly/stackql-zip -O \
 
 This will download and extract the `stackql` binary along with the `stackql-aws-cloud-shell.sh` script to the home directory of your AWS Cloud Shell environment.  Now you're ready to go!  
 
-## Using the `stackql shell` from AWS Cloud Shell
+## Using the `stackql shell` from AWS Cloud Shell {#using-the-stackql-shell-from-aws-cloud-shell}
 
 Launching an authenticated StackQL command shell from within AWS Cloud Shell is as easy as:  
 
@@ -78,7 +78,7 @@ You can now start running interactive SQL-based AWS queries using the StackQL pr
   Your browser does not support the video tag.
 </video>
 
-## Assuming an IAM Role using StackQL
+## Assuming an IAM Role using StackQL {#assuming-an-iam-role-using-stackql}
 
 Assuming an IAM Role in AWS allows you to perform actions and access resources that you might not be able to with your default user permissions.  This is particularly useful when you need temporary access to resources or perform actions with permissions different from your primary account.  With StackQL, you can seamlessly assume an IAM Role to query and manage AWS resources under the permissions granted by that role.
 
@@ -101,7 +101,7 @@ By assuming a role, you can leverage StackQL to interact with AWS resources that
 
 When executing StackQL commands or scripts with an assumed IAM Role, ensure the role has the necessary permissions to perform the desired actions and access the specified resources.  This approach facilitates granular access control and aligns with AWS best practices for security and governance.  
 
-## Running `stackql exec` (batch operations) from AWS Cloud Shell
+## Running `stackql exec` (batch operations) from AWS Cloud Shell {#running-stackql-exec-batch-operations-from-aws-cloud-shell}
 
 StackQL queries can be executed using the `exec` command as well; this is a valuable option for:
 

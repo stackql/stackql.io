@@ -20,7 +20,7 @@ In this guide, you'll learn how to query and report Azure activity logs using St
 
 Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span class="tutorial_tested_on">macos</span> <span class="tutorial_tested_on">linux</span> <span class="tutorial_tested_on">powershell</span>  
 
-## Basic query
+## Basic query {#basic-query}
 
 The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
 
@@ -56,7 +56,7 @@ WHERE $filter =  '{{ .stackqlQuery.filter }}'
 AND subscription_id = '{{ .stackqlQuery.subscriptionId }}';
 ```
 
-## Running the query interactively
+## Running the query interactively {#running-the-query-interactively}
 
 From a machine that is authenticated to Azure (including the Azure Portal Cloud Shell):
 
@@ -75,7 +75,7 @@ stackql.exe shell --var startdate=$startDate
 
 You should see a tabular output with columns for: `event_timestamp`, `caller`, `ip_address`, `subscriptionId`, `tenantId`, `resource_group`, `resource_name`, `level`, `action`, `category`, `operation` and `status`.   
 
-## Generating a CSV report
+## Generating a CSV report {#generating-a-csv-report}
 
 By saving the StackQL query to a file (`activity_report.iql`), you can produce a `csv` report from the activity query as follows (see [__`--output csv`__](/getting-started/output-modes#csv-output) for more information on `stackql` outputs):
 
@@ -100,12 +100,12 @@ stackql.exe exec `
 --var startdate=$startDate
 ```
 
-## Server-side filtering with KQL
+## Server-side filtering with KQL {#server-side-filtering-with-kql}
 
 Server-side filtering in Azure is achieved through the use of KQL (Kusto Query Language). By extending the `$filter` clause in your query, you can filter data directly on the server. This method is highly efficient as it reduces the amount of data transferred over the network.  Below are some examples of server-side filtering (for brevity these queries are using parameters directly instead of using the jsonnet preprocessor):
 
 
-### Specifying a date range for activities
+### Specifying a date range for activities {#specifying-a-date-range-for-activities}
 
 ```sql
 --
@@ -129,7 +129,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Getting activities for a resource group
+### Getting activities for a resource group {#getting-activities-for-a-resource-group}
 
 ```sql
 --
@@ -152,7 +152,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Getting activities for a resource type
+### Getting activities for a resource type {#getting-activities-for-a-resource-type}
 
 ```sql
 --
@@ -176,7 +176,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Getting activities for a specific resource
+### Getting activities for a specific resource {#getting-activities-for-a-specific-resource}
 
 Note we added an additional field (`correlationId`) which we will use in the next server-side filter...  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Getting activities for a specific resource
+### Getting activities for a specific resource {#getting-activities-for-a-specific-resource-1}
 
 The correlation ID is a unique identifier used to track and group events related to a particular operation or transaction in Azure. This query helps in pinpointing specific events within a given time frame that are related to a particular operation, making it easier to troubleshoot or understand the sequence of activities.  Here is an example using a `correlationId` captured in the previous query:  
 
@@ -228,11 +228,11 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-## Client-side filtering with the `WHERE` Clause
+## Client-side filtering with the `WHERE` Clause {#client-side-filtering-with-the-where-clause}
 
 Client-side filtering can be done using the traditional SQL `WHERE` clause. This method filters the data after it has been retrieved from the server, offering flexibility in data manipulation and analysis within the StackQL environment.  
 
-### Getting activities for a specific user
+### Getting activities for a specific user {#getting-activities-for-a-specific-user}
 
 In the example query, the `WHERE` clause filters records based on the `caller` (the user), providing an additional layer of data refinement.  
 
@@ -259,11 +259,11 @@ AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468'
 AND caller = 'javen@stackql.io';
 ```
 
-## Running summary/aggregate queries
+## Running summary/aggregate queries {#running-summaryaggregate-queries}
 
 As StackQL is a complete SQL engine, `GROUP BY`/aggregate queries (including [__`AVG`__](/language-spec/functions/aggregate/avg), [__`COUNT`__](/language-spec/functions/aggregate/count), [__`SUM`__](/language-spec/functions/aggregate/sum), [__`MIN`__](/language-spec/functions/aggregate/min), [__`MAX`__](/language-spec/functions/aggregate/max) and more are natively available for all providers, services and resources.
 
-### Count events by severity level
+### Count events by severity level {#count-events-by-severity-level}
 
 In this example we will group events from a start datetime by their severity and calculate the counts for each level.
 
@@ -291,7 +291,7 @@ GROUP BY level;
 */
 ```
 
-## Using `JOIN` to enrich activities
+## Using `JOIN` to enrich activities {#using-join-to-enrich-activities}
 
 ```sql
 SELECT

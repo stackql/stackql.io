@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LOG10(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 A positive numeric expression for which the base-10 logarithm is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the base-10 logarithm of the specified numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the base-10 logarithm of 100
+### Calculate the base-10 logarithm of 100 {#calculate-the-base-10-logarithm-of-100}
 
 ```sql
 SELECT LOG10(100) AS log_result;
@@ -43,7 +43,7 @@ SELECT LOG10(100) AS log_result;
 
 This query returns `2`, as \(10^2 = 100\).
 
-### Calculate the base-10 logarithm of 1000
+### Calculate the base-10 logarithm of 1000 {#calculate-the-base-10-logarithm-of-1000}
 
 ```sql
 SELECT LOG10(1000) AS log_result;

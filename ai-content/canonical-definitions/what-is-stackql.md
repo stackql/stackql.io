@@ -18,13 +18,13 @@ faq:
 
 StackQL is an open-source query language and runtime that exposes cloud and SaaS provider APIs as relational tables, queryable with standard SQL. It treats every cloud resource - virtual machines, storage buckets, IAM policies, GitHub repositories, Snowflake warehouses - as a row in a table, and every API operation as a SELECT, INSERT, UPDATE, or DELETE.
 
-## How it works
+## How it works {#how-it-works}
 
 A typical infrastructure tool reads cloud state into a local file (Terraform's state file), generates a plan, and applies it. StackQL skips the state file entirely. When you run a query, StackQL issues live API calls to the relevant provider, normalizes the response shape, and returns the result as rows. Nothing is cached between invocations unless the user asks for it.
 
 The interface is SQL because SQL is a stable, well-understood query language with mature tooling - clients, drivers, BI integrations, AI agent toolkits - that all "just work" against StackQL. StackQL implements the PostgreSQL wire protocol in server mode, which means anything that can talk to Postgres (psql, DBeaver, Tableau, Power BI, pandas, LangChain SQL agents, an MCP server) can talk to StackQL.
 
-## Example
+## Example {#example}
 
 List all EC2 instances in a region with their type and public IP address:
 
@@ -39,7 +39,7 @@ WHERE region = 'us-east-1';
 
 That query runs against the live AWS EC2 API. There is no state file to refresh, no cached snapshot to invalidate, and no provider-specific SDK to learn. The same shape works for any provider - swap `aws.ec2.instances` for `github.repos.repos` or `azure.compute.virtual_machines` and the query model is identical.
 
-## Why it exists
+## Why it exists {#why-it-exists}
 
 StackQL was built on the premise that cloud infrastructure should be a queryable surface, not a static artifact. The state-file model that dominated infrastructure-as-code for the last decade was designed for human-driven, change-controlled workflows: write code, plan, review, apply. That model strains under two pressures:
 
@@ -48,7 +48,7 @@ StackQL was built on the premise that cloud infrastructure should be a queryable
 
 StackQL exists to make cloud infrastructure as queryable as a database, across providers, for both human operators and AI agents.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - the broader category StackQL belongs to
 - [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the design pattern StackQL implements

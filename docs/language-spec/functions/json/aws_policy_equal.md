@@ -20,21 +20,21 @@ See also:
 :::tip
 The `aws_policy_equal` function is a custom StackQL extension function. It handles AWS IAM policy comparison according to AWS policy evaluation rules, where certain elements (like `Action`, `Resource`, `Principal`, and `Tags`) are treated as unordered sets. When both arguments are top-level JSON arrays (e.g. a raw AWS tags array), they are also compared as unordered sets. The `aws_policy_equal` function is available in StackQL versions `0.8.175` and above and is only supported with the default embedded, in-memory SQL backend for StackQL.
 :::
-## Syntax
+## Syntax {#syntax}
 ```sql
 SELECT AWS_POLICY_EQUAL(policy1, policy2);
 ```
-## Arguments
+## Arguments {#arguments}
 __*policy1*__  
 A JSON string representing an AWS IAM policy document, or a JSON array of AWS tags.  
 __*policy2*__  
 Another JSON string representing an AWS IAM policy document or tags array to compare against the first.  
 > Both arguments must be valid JSON. When comparing policy documents, both must be valid AWS IAM policy JSON.
-## Return Value(s)
+## Return Value(s) {#return-values}
 An integer value: __1__ if the documents are semantically equivalent, __0__ if they are not.
 * * *
-## Examples
-### Compare AWS IAM Policies
+## Examples {#examples}
+### Compare AWS IAM Policies {#compare-aws-iam-policies}
 ```sql
 SELECT
 AssumeRolePolicyDocument as current_policy,
@@ -52,7 +52,7 @@ WHERE RoleName = 'my-lambda-role';
 |------------------------------------------------------------------|------------------------------------------------------------------|-----------|
 */
 ```
-### Compare Policies with Different Element Ordering
+### Compare Policies with Different Element Ordering {#compare-policies-with-different-element-ordering}
 ```sql
 SELECT
   aws_policy_equal(
@@ -72,7 +72,7 @@ SELECT
 |------------------------|--------------------------|
 */
 ```
-### Compare Different Policy Formats (Array vs String)
+### Compare Different Policy Formats (Array vs String) {#compare-different-policy-formats-array-vs-string}
 ```sql
 SELECT
   aws_policy_equal(
@@ -88,7 +88,7 @@ SELECT
 |--------------------|
 */
 ```
-### Compare AWS Tags Arrays
+### Compare AWS Tags Arrays {#compare-aws-tags-arrays}
 AWS does not guarantee the order of tags returned by its APIs. Use `aws_policy_equal` to compare tags arrays without regard to element order.
 ```sql
 SELECT
@@ -108,7 +108,7 @@ AND name = 'my-workspace-bucket';
 -- Returns 1 regardless of the order AWS returns the tags array
 */
 ```
-### Compare Resource Tags Nested in a Resource Object
+### Compare Resource Tags Nested in a Resource Object {#compare-resource-tags-nested-in-a-resource-object}
 When tags are embedded inside a resource object as a `Tags` field, `aws_policy_equal` still treats the tags array as an unordered set.
 ```sql
 SELECT

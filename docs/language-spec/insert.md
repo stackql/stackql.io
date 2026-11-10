@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *insertStatement::=*
 
@@ -39,7 +39,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 
 * * *
 
-## `RETURNING` Clause
+## `RETURNING` Clause {#returning-clause}
 
 The `RETURNING` clause allows you to retrieve data from the `INSERT` operation response. This is particularly useful when:
 - The API returns important information like generated IDs, status codes, or other metadata
@@ -50,9 +50,9 @@ The fields specified in the `RETURNING` clause will be deserialized from the API
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `INSERT` statement
+### Basic `INSERT` statement {#basic-insert-statement}
 Run an INSERT statement to create a Compute Engine Disk resource.  This is a non blocking (asynchronous) invocation.
 
 ```sql
@@ -63,7 +63,7 @@ SELECT 'stackql-demo',
 'test10gbdisk', 10;
 ```
 
-### `INSERT` statement (blocking)
+### `INSERT` statement (blocking) {#insert-statement-blocking}
 Run an INSERT statement to create a Compute Engine Disk resource.  This is a blocking (synchronous) invocation.
 
 ```sql
@@ -74,7 +74,7 @@ SELECT 'stackql-demo',
 'test10gbdisk', 10;
 ```
 
-### `INSERT` statement with `SELECT`
+### `INSERT` statement with `SELECT` {#insert-statement-with-select}
 Run an INSERT statement with SELECT.
 
 ```sql
@@ -126,7 +126,7 @@ INSERT INTO azure.network.network_interfaces
   AND network_interface_name = 'vmss-nic-01';
 ```
 
-### `INSERT` statement with `RETURNING` clause
+### `INSERT` statement with `RETURNING` clause {#insert-statement-with-returning-clause}
 Run an `INSERT` statement and retrieve specific fields from the API response.
 
 ```sql

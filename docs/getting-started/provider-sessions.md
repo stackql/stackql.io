@@ -20,7 +20,7 @@ A session can bind a provider under an alias with its own credentials, tenancy l
 
 Everything described here is scoped to the current session.  Independent connections to a `stackql srv` server do not share bindings or secrets, and each MCP request is its own session, so configure and query in one statement batch when using the MCP server.
 
-## Provider aliases
+## Provider aliases {#provider-aliases}
 
 `SET "$.providers.<alias>"` binds an alias to a provider.  The value is a JSON document held in a string:
 
@@ -71,7 +71,7 @@ An alias behaves like its provider for metadata and data statements: `SHOW`, `DE
 
 Each query takes a detached snapshot of the alias's credentials.  Changing a binding affects later queries, not one that is already running.  `UNSET "$.providers.<alias>"` removes the binding.
 
-## Overriding credential fields
+## Overriding credential fields {#overriding-credential-fields}
 
 `SET "$.auth.<provider>.<field>"` changes one field of a provider's authentication context for the session, where the field names are the keys of the provider's `--auth` entry:
 
@@ -83,7 +83,7 @@ UNSET "$.auth.github.credentialsenvvar";
 
 As with aliases, the change applies to queries started after the `SET`.  Queries against a provider whose authentication has been unset, or whose alias has no usable `auth`, fail before any request is sent.
 
-## Session secrets
+## Session secrets {#session-secrets}
 
 By default every session has a memory-only secret store, with no configuration needed.  `SET "$.secrets.<name>"` stores a literal string, typically a JSON authentication document, and a provider alias references it with `auth_secret`:
 
@@ -100,7 +100,7 @@ Rotating a secret affects later queries; deleting it makes later uses fail.  A n
 
 Normal credential use, and `SET` statements that store variables or configuration, do not write secrets into the SQL backend.  Putting sensitive data into an ordinary variable or table is the caller's responsibility.
 
-## Persistent OS secret stores
+## Persistent OS secret stores {#persistent-os-secret-stores}
 
 Persistent storage is disabled by default and can only be enabled by the operator starting StackQL with `--allow-persistent-secrets`; SQL cannot grant it.  With the flag set, a session selects an OS store with:
 
@@ -112,7 +112,7 @@ The store is the macOS Keychain, the Linux Secret Service (`secret-tool` with a 
 
 Values written to an OS store outlive the SQL session and are deleted explicitly with `UNSET "$.secrets.<name>"`.  Resetting the store binding does not delete values already persisted.  Access to the store is governed by the operating system identity of the StackQL process; a namespace is not a per-user access control, so do not treat this opt-in as a multi-user vault.
 
-## Secret values in SQL
+## Secret values in SQL {#secret-values-in-sql}
 
 Secret values are never dereferenced into SQL unless the operator starts StackQL with `--allow-secret-dereference`.  With that flag, references such as `"$secrets.production"`, `"$secrets.production.credentials"`, `"$auth.github.password"` and `"$providers.production.auth.credentials"` resolve in expressions:
 
@@ -128,6 +128,6 @@ SELECT upper("$secrets.production.credentials") AS credential;
 
 Started without the flag, the same statement is refused before anything is evaluated, as the commented-out copy shows.  The flag is an acknowledgement that explicitly dereferenced values can enter SQL staging, results, logs and persisted query artefacts.  Normal provider authentication does not require it.
 
-## Permissions
+## Permissions {#permissions}
 
 With [access management](/command-line-usage/access-management) enabled, reading variables and secrets requires `session/variables:read`, and `SET` or `UNSET` requires `session/config:write`.  A resolved alias is authorised as its canonical provider before execution.  Per-variable and per-secret ownership and grants are not implemented.

@@ -21,7 +21,7 @@ See also:
 
 * * * 
 
-## Enabling access management
+## Enabling access management {#enabling-access-management}
 
 Access management is switched on by starting StackQL with the `--access.config` global flag pointing at a JSON configuration file.  The example starts an interactive shell in protected mode; `exec` and `mcp` are enabled the same way.
 
@@ -33,11 +33,11 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 
 While access management is enabled only `exec`, `shell`, `mcp` and `version` run; other commands, including `registry`, refuse rather than bypass the protected path.  `srv` and the MCP `reverse_proxy` server type also refuse, because the PostgreSQL wire dependency does not yet expose per-connection authentication evidence.  The SQL `AUTH` and `AUTH REVOKE` statements refuse in protected mode; provision provider credentials through host configuration instead.  A protected `exec` that fails returns exit status `1` after presenting the error.
 
-## Authentication modes
+## Authentication modes {#authentication-modes}
 
 The configuration file selects one `type`: `jwt` (the default when omitted), `bearer`, `mtls` or `local_os`.  Configuration is strict JSON: unknown fields, and fields belonging to another mode, are rejected.  All modes share the same `rules` and the same [principal directory](#principal-directory).
 
-### JWT
+### JWT {#jwt}
 
 The caller presents a signed token, which is verified offline against the keys pinned in the configuration.  A minimal configuration names the issuer and audience the token must carry, lists one public key, and grants the `readers` group read access:
 
@@ -57,7 +57,7 @@ The caller presents a signed token, which is verified offline against the keys p
 
 The issuer, audience and public keys are pinned in the configuration; there is no OIDC discovery.  Accepted algorithms are `EdDSA`, `RS256`, `RS384`, `RS512`, `PS256`, `PS384`, `PS512`, `ES256`, `ES384` and `ES512`, and RSA keys must be at least 2048 bits.  Each key is bound to its configured algorithm.  Tokens with an unknown key ID, an invalid signature, a missing or past expiry, a future `nbf` or `iat`, or a wrong issuer or audience are rejected.  Group claims and URLs carried in the token are not used for trust or directory membership.
 
-### Static bearer token
+### Static bearer token {#static-bearer-token}
 
 The caller presents an opaque token, and the configuration lists the SHA-256 digest of each accepted token with the subject it identifies.  This suits a small, fixed set of service identities where running a token issuer is not warranted:
 
@@ -72,7 +72,7 @@ The caller presents an opaque token, and the configuration lists the SHA-256 dig
 
 Only the SHA-256 digest of each token is configured, and digests must be unique.  Changing the configured digests requires a restart.
 
-### Mutual TLS
+### Mutual TLS {#mutual-tls}
 
 The caller is identified by the client certificate it presents on the HTTPS MCP transport.  The configuration carries the CA that must have issued the certificate and says which subject alternative name holds the identity:
 
@@ -88,7 +88,7 @@ The caller is identified by the client certificate it presents on the HTTPS MCP 
 
 The client certificate chain is verified against `client_ca_pem` and the identity subject is taken from exactly one SAN of the configured kind, `uri_san` or `dns_san`.  There is no Common Name fallback.  Mutual TLS is available over the HTTPS MCP transport only.
 
-### Local OS identity
+### Local OS identity {#local-os-identity}
 
 No credential is exchanged: the subject is the operating system identity that the StackQL process runs as.  The configuration needs only an `issuer` label and the rules:
 
@@ -102,11 +102,11 @@ No credential is exchanged: the subject is the operating system identity that th
 
 The identity subject is the effective Unix UID or Windows SID of the StackQL process, including numeric container UIDs with no passwd entry.  No credential is presented and `STACKQL_CALLER_TOKEN` is ignored.  This mode is local only: it is refused for HTTP callers.  Operating system group membership does not grant access; only directory membership does.
 
-### Session deadline
+### Session deadline {#session-deadline}
 
 Queries have no authentication-derived deadline by default.  Credentials are verified and directory membership is refreshed for each new statement, so an expired credential cannot start new work, but expiry does not interrupt a statement that is already authorised.  Set `"enforce_session_deadline": true` to cancel at `max_session_seconds` (default `300`, maximum `86400`), shortened by JWT or certificate expiry.  This does not renew tokens.
 
-## Principal directory
+## Principal directory {#principal-directory}
 
 Identities are mapped to principals, and principals to groups, in four tables in the configured SQLite or PostgreSQL backend:
 
@@ -137,7 +137,7 @@ stackql --access.config '{"path":"/etc/stackql/access.json"}' \
 
 The directory produces an immutable snapshot for each statement.  Revocation is a `DELETE FROM stackql_access_memberships` on the administration connection; the next statement sees the new snapshot.  Unknown identities, an absent schema, malformed data and directory outages all deny access.  Ordinary protected SQL cannot address the directory tables.  Keep membership writes on the administration connection, protect the database file, and use separate administrative and runtime database privileges where the backend supports them.
 
-## Policy rules
+## Policy rules {#policy-rules}
 
 Each rule grants one `action` on one `resource` to a `subject` of the form `group:<group id>`.  Use the compiled method and operation identifiers from trusted provider documents; an operation wildcard grants mutation methods as well as reads.
 
@@ -156,7 +156,7 @@ The `readers` group implicitly holds the host's safe-read SQL capability.  Reads
 
 Stored query expansion is checked before execution, and plan and row cache reuse is disabled on protected paths.
 
-## Entry points
+## Entry points {#entry-points}
 
 | Authentication | `exec`, `shell`, MCP stdio | HTTPS MCP |
 |--|--|--|
@@ -167,7 +167,7 @@ Stored query expansion is checked before execution, and plan and row cache reuse
 
 Supply local token credentials through the process environment, never as a SQL literal or a command-line argument.  Over HTTPS the caller verifier replaces the shared `auth_token_env_var` bearer gate described in [HTTP client authentication](/command-line-usage/mcp#http-client-authentication); server TLS certificate and key configuration is mandatory, and a request without credentials never falls back to the server's environment token.
 
-## Inspecting the caller
+## Inspecting the caller {#inspecting-the-caller}
 
 In an authenticated session, `whoami()` returns the principal ID and `groups()` returns the directory groups as a JSON array:
 
@@ -185,6 +185,6 @@ SELECT whoami() AS principal, groups() AS memberships;
 
 Both functions require a session started with `--access.config`.
 
-## Walkthroughs
+## Walkthroughs {#walkthroughs}
 
 The StackQL repository ships [four executable walkthroughs](https://github.com/stackql/stackql/blob/main/docs/examples/access-management/README.md), one per authentication mode, driven by a Python script that provisions a demonstration directory and verifies a query.  They need no cloud account and are run by the project's test suite.

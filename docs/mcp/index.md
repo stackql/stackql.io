@@ -16,7 +16,7 @@ import DocCardList from '@theme/DocCardList';
 import ThemedImage from '@theme/ThemedImage';
 import React from 'react';
 import { FaGithub, FaRobot } from 'react-icons/fa';
-import badgeStyles from './badges.module.css';
+import badgeStyles from '@site/docs/mcp/badges.module.css';
 
 {/* MCP Tool Map - single source of truth */}
 export const MCP_TOOL_CATEGORIES = [

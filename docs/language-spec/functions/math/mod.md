@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT MOD(x, y) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*x*__  
 The dividend, which is a numeric expression.
@@ -31,14 +31,14 @@ The dividend, which is a numeric expression.
 __*y*__  
 The divisor, also a numeric expression.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the remainder of *x* divided by *y*.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the modulus of 10 divided by 3
+### Calculate the modulus of 10 divided by 3 {#calculate-the-modulus-of-10-divided-by-3}
 
 ```sql
 SELECT MOD(10, 3) AS remainder;

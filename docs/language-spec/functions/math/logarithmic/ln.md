@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LN(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 A positive numeric expression for which the natural logarithm is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the natural logarithm of the specified positive numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the natural logarithm of 2.71828 (approximately \(e\))
+### Calculate the natural logarithm of 2.71828 (approximately \(e\)) {#calculate-the-natural-logarithm-of-271828-approximately-e}
 
 ```sql
 SELECT LN(2.71828) AS natural_log;
@@ -43,7 +43,7 @@ SELECT LN(2.71828) AS natural_log;
 
 This query returns a value close to `1`, since the natural logarithm of \(e\) (approximately 2.71828) is 1.
 
-### Calculate the natural logarithm of a larger number
+### Calculate the natural logarithm of a larger number {#calculate-the-natural-logarithm-of-a-larger-number}
 
 ```sql
 SELECT LN(10) AS natural_log;

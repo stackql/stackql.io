@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT LOG(base, numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*base*__  
 The base of the logarithm, a positive numeric expression other than 1.
@@ -31,14 +31,14 @@ The base of the logarithm, a positive numeric expression other than 1.
 __*numeric_expression*__  
 A positive numeric expression for which the logarithm is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the logarithm of the specified numeric value to the specified base.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the logarithm of 1000 with base 10
+### Calculate the logarithm of 1000 with base 10 {#calculate-the-logarithm-of-1000-with-base-10}
 
 ```sql
 SELECT LOG(10, 1000) AS log_result;
@@ -46,7 +46,7 @@ SELECT LOG(10, 1000) AS log_result;
 
 This query returns `3`, as \(10^3 = 1000\).
 
-### Calculate the logarithm of 16 with base 2
+### Calculate the logarithm of 16 with base 2 {#calculate-the-logarithm-of-16-with-base-2}
 
 ```sql
 SELECT LOG(2, 16) AS log_result;

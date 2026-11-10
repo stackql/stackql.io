@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT REPLACE(character_expression, pattern, replacement) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*character_expression*__  
 A literal string or string column that you want to perform the replacement on.
@@ -40,14 +40,14 @@ The replacement string.
 
 > The `BINARY` collating sequence is used for comparisons.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Replace a string pattern in a column
+### Replace a string pattern in a column {#replace-a-string-pattern-in-a-column}
 
 ```sql
 SELECT replace(name, 'prd', 'production') AS replacement_string

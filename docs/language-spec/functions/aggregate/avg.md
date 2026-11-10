@@ -17,14 +17,14 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT AVG(columnExpression) FROM <multipartIdentifier>
 [ GROUP BY groupByColumn ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*columnExpression*__  
 A column or expression.
@@ -36,15 +36,15 @@ A column or expression.
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a floating point value representing the average of the *columnExpression*.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the average of a column expression over an entire resource
+### Return the average of a column expression over an entire resource {#return-the-average-of-a-column-expression-over-an-entire-resource}
 
 ```sql
 SELECT avg(json_array_length(disks)) as avg_disks
@@ -53,7 +53,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the average of a column expression grouped by another column expression
+### Return the average of a column expression grouped by another column expression {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
 SELECT tags, avg(json_array_length(disks)) as avg_disks
@@ -63,7 +63,7 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
-### Use `AVG` as a window function to calculate moving averages
+### Use `AVG` as a window function to calculate moving averages {#use-avg-as-a-window-function-to-calculate-moving-averages}
 
 ```sql
 -- Calculate moving average of commit activity

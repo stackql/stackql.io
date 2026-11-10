@@ -16,7 +16,7 @@ faq:
 
 StackQL authenticates to AWS using the standard AWS credential environment variables. Set them before starting a StackQL shell, `exec` command, server, or MCP server; no configuration file is required.
 
-## Steps
+## Steps {#steps}
 
 1. Create or identify an IAM principal (user or role) with the permissions your queries need. For read-only querying, the `ReadOnlyAccess` managed policy or a narrower equivalent is sufficient.
 
@@ -49,7 +49,7 @@ WHERE region = 'us-east-1';
 
 A successful result set confirms authentication. Note that AWS queries require a `region` predicate in the `WHERE` clause - this is a routing parameter, not a credential setting.
 
-## Where the variables apply
+## Where the variables apply {#where-the-variables-apply}
 
 The same environment variables work in every StackQL execution mode:
 
@@ -60,7 +60,7 @@ The same environment variables work in every StackQL execution mode:
 
 In CI systems, source the variables from the platform's secret store rather than hardcoding them. Metadata operations (`SHOW`, `DESCRIBE`, `REGISTRY`) work without credentials; only data operations (`SELECT`, `INSERT`, `UPDATE`, `DELETE`, `EXEC`) require an authenticated session.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to query AWS EC2 instances with StackQL](/ai/how-tos/query-aws-ec2-instances-with-stackql) - first queries after authenticating
 - [How to query S3 buckets with StackQL](/ai/how-tos/query-s3-buckets-with-stackql) - the S3 query pattern

@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT WHOAMI() [ AS <alias> ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 None.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the principal ID string established for the current statement.  The function fails in a session started without `--access.config`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Inspect the established identity
+### Inspect the established identity {#inspect-the-established-identity}
 
 Both functions take no arguments and describe the caller that the server authenticated for this statement.  `whoami()` returns the principal ID and `groups()` the caller's directory groups, so running them together is a quick check that a token or certificate maps to the expected principal before anything else is run.
 

@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *selectStatement::=*
 
@@ -47,9 +47,9 @@ A `JOIN` with no `ON` clause is treated as a `CROSS JOIN`, so the join condition
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic `SELECT` Statement
+### Basic `SELECT` Statement {#basic-select-statement}
 Run a basic `SELECT` statement in an authenticated session.
 
 ```sql
@@ -59,7 +59,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Returning specified fields using a `SELECT` Statement
+### Returning specified fields using a `SELECT` Statement {#returning-specified-fields-using-a-select-statement}
 Run a `SELECT` statement with a column list to return specified fields from a Compute Engine instance.
 
 ```sql
@@ -70,7 +70,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return a result set ordered by a column in ascending order using the `ORDER BY` clause
+### Return a result set ordered by a column in ascending order using the `ORDER BY` clause {#return-a-result-set-ordered-by-a-column-in-ascending-order-using-the-order-by-clause}
 Run a `SELECT` statement to return fields from the Cloud Storage buckets resource, ordering the results in ascending order (oldest first). 
 
 ```sql
@@ -80,7 +80,7 @@ FROM google.storage.buckets WHERE project = 'stackql'
 ORDER BY timeCreated;
 ```
 
-### Return a result set ordered by a column in descending order using the `ORDER BY` clause
+### Return a result set ordered by a column in descending order using the `ORDER BY` clause {#return-a-result-set-ordered-by-a-column-in-descending-order-using-the-order-by-clause}
 Run a `SELECT` statement to return fields from the Cloud Storage buckets resource, ordering the results in descending order (newest first).
 
 ```sql
@@ -90,7 +90,7 @@ FROM google.storage.buckets WHERE project = 'stackql'
 ORDER BY timeCreated DESC;
 ```
 
-### Get the top result from a column using the `ORDER BY` and `LIMIT` clauses
+### Get the top result from a column using the `ORDER BY` and `LIMIT` clauses {#get-the-top-result-from-a-column-using-the-order-by-and-limit-clauses}
 Run a `SELECT` statement to return the most recently created Cloud Storage bucket.
 
 ```sql
@@ -100,7 +100,7 @@ FROM google.storage.buckets WHERE project = 'stackql'
 ORDER BY timeCreated DESC LIMIT 1;
 ```
 
-### Use the `COUNT` function with the `GROUP BY` and `HAVING` clauses to count resources based upon a grouping and filter
+### Use the `COUNT` function with the `GROUP BY` and `HAVING` clauses to count resources based upon a grouping and filter {#use-the-count-function-with-the-group-by-and-having-clauses-to-count-resources-based-upon-a-grouping-and-filter}
 Run a `SELECT` statement with a `COUNT` function, using the `GROUP BY` and `HAVING` clauses to return the number of buckets in every location other than Asia.
 
 ```sql
@@ -113,7 +113,7 @@ HAVING location != 'ASIA';
 
 For more information on the `COUNT` function and other aggregate functions supported by StackQL see [Aggregate Functions](/language-spec/functions/aggregate/count).
 
-### Get list of On Demand VMs and corresponding network interface from Azure VM Scaleset
+### Get list of On Demand VMs and corresponding network interface from Azure VM Scaleset {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
 Run a `SELECT` statement using the [`SPLIT_PART`](/language-spec/functions/string/split_part) and [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) functions to get list of OD VMs and their NICs. Note that without a qualifier the subscription_id and resource_group_name is applied to all the three Resources.
 
 ```sql
@@ -132,7 +132,7 @@ AND JSON_EXTRACT(c.properties,'$.priority') is null;
 
 For more information on window functions, see [Window Functions](/language-spec/windowing_functions).
 
-### Using Common Table Expressions (CTEs) with `WITH`
+### Using Common Table Expressions (CTEs) with `WITH` {#using-common-table-expressions-ctes-with-with}
 
 CTEs allow you to define temporary named result sets that can be referenced in the main query.
 

@@ -23,14 +23,14 @@ Use the [**TOTAL**](/language-spec/functions/aggregate/total) function to sum fl
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SUM(columnExpression) FROM <multipartIdentifier>
 [ GROUP BY groupByColumn ];
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*columnExpression*__  
 A column or expression.
@@ -42,15 +42,15 @@ A column or expression.
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer representing the sum of the *columnExpression* if all non `NULL` inputs are integers. If any inputs are not integers or are `NULL` then a floating point value which might be an approximation to the true sum is returned.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the sum of a column expression over an entire resource
+### Return the sum of a column expression over an entire resource {#return-the-sum-of-a-column-expression-over-an-entire-resource}
 
 ```sql
 SELECT sum(json_array_length(disks)) as sum_disks
@@ -59,7 +59,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the sum of a column expression grouped by another column expression
+### Return the sum of a column expression grouped by another column expression {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
 SELECT tags, sum(json_array_length(disks)) as sum_disks
@@ -69,7 +69,7 @@ AND zone = 'australia-southeast1-a'
 GROUP BY json_extract(tags, '$.instanceType');
 ```
 
-### Use `SUM` as a window function to calculate running totals
+### Use `SUM` as a window function to calculate running totals {#use-sum-as-a-window-function-to-calculate-running-totals}
 
 ```sql
 -- Calculate running total and percentage of contributions

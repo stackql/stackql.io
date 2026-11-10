@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a compiled Go program with no `npx`, no separate install, and no runtime dependency. The `stackql-mcp-go` library spawns the signed StackQL binary over stdio behind the official Go MCP SDK client, so your Go app gets a governed, self-describing SQL interface to every cloud and SaaS provider in the StackQL registry. This is the pattern behind **sandboxctl**, an on-demand infrastructure concierge shipped as one binary.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the library:**
 
@@ -55,7 +55,7 @@ func main() {
 
 3. **Choose a mode.** `Options.Mode` defaults to `read_only`. Set it to `safe`, `delete_safe`, or `full_access` only when the app needs to provision. Escalation is explicit.
 
-## Ship a single binary with go:embed
+## Ship a single binary with go:embed {#ship-a-single-binary-with-goembed}
 
 For a self-contained executable, add a `go:generate` fetch step that downloads and sha256-verifies the platform binary, then `go:embed` it into the build:
 
@@ -65,11 +65,11 @@ For a self-contained executable, add a `go:generate` fetch step that downloads a
 
 At runtime `StackqlMCPBinary()` returns the embedded binary, so there is no first-run download. Without vendoring, the binary is downloaded and verified into the shared cache at `~/.stackql/mcp-server-bin/` on first run.
 
-## Demo app
+## Demo app {#demo-app}
 
 **sandboxctl** is an infrastructure concierge: an embedded StackQL MCP server plus a Claude agent loop in one Go binary that plans, cost-checks, and provisions ephemeral cloud sandboxes behind an approval gate.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: Go reference](/mcp/embedded/go) - install, API, and modes
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

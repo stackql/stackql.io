@@ -122,6 +122,16 @@
   to = "/:splat"
   status = 301
 
+# Localized 404 pages. Docusaurus builds one 404.html per locale
+# (build/de/404.html) but Netlify would serve the root English one for a
+# missing /de/... path. Not forced, so every built file under /de/ still
+# wins. One rule per locale in docusaurus.config.js i18n.locales other than
+# the default.
+[[redirects]]
+  from = "/de/*"
+  to = "/de/404.html"
+  status = 404
+
 # Former top-level meta-refresh stubs (src/pages/tutorials.js, cookbooks.js,
 # install.js, downloads.js and stackqldocs.js), now real 301s. A meta-refresh
 # page is a 200 that Google reports as "Page with redirect" and lists in the

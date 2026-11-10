@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT FLOOR(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the largest integer less than or equal to the specified numeric expression.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Round down a floating point number to the closest (smaller) integer
+### Round down a floating point number to the closest (smaller) integer {#round-down-a-floating-point-number-to-the-closest-smaller-integer}
 
 ```sql
 SELECT name, timeCreated,

@@ -19,7 +19,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 *withClause::=*
 
@@ -46,7 +46,7 @@ WITH [RECURSIVE] cte_name [(column_name, ...)] AS (
 SELECT ... FROM cte_name ...;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*RECURSIVE*__
 Optional keyword that enables the CTE to reference itself, allowing for recursive queries such as traversing hierarchical data.
@@ -60,15 +60,15 @@ Optional. Column names for the CTE result set. If not specified, column names ar
 __*select_statement*__
 The query that defines the CTE's result set.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 CTEs do not return values directly. They define temporary result sets that can be referenced in the main query.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Basic CTE for organizing complex queries
+### Basic CTE for organizing complex queries {#basic-cte-for-organizing-complex-queries}
 
 A CTE can simplify complex queries by breaking them into logical, named components.
 
@@ -92,7 +92,7 @@ FROM weekly_totals
 ORDER BY week;
 ```
 
-### Combining data from multiple sources with `UNION ALL`
+### Combining data from multiple sources with `UNION ALL` {#combining-data-from-multiple-sources-with-union-all}
 
 CTEs are useful for combining data from multiple sources before performing analysis.
 
@@ -121,7 +121,7 @@ GROUP BY login
 ORDER BY total_contributions DESC;
 ```
 
-### Using CTEs with window functions for ranking
+### Using CTEs with window functions for ranking {#using-ctes-with-window-functions-for-ranking}
 
 ```sql
 -- Rank contributors within each repo using CTE and window functions
@@ -151,7 +151,7 @@ FROM repo_contributors
 ORDER BY repo, rank_in_repo;
 ```
 
-### Multiple CTEs in a single query
+### Multiple CTEs in a single query {#multiple-ctes-in-a-single-query}
 
 You can define multiple CTEs separated by commas.
 
@@ -183,7 +183,7 @@ SELECT
 FROM recent_releases;
 ```
 
-## Recursive CTEs
+## Recursive CTEs {#recursive-ctes}
 
 Recursive CTEs allow a CTE to reference itself, enabling queries that traverse hierarchical or graph-like data structures.
 
@@ -204,7 +204,7 @@ Recursive CTEs are powerful for hierarchical data like organizational charts, fi
 
 :::
 
-## Best Practices
+## Best Practices {#best-practices}
 
 1. **Use CTEs for readability**: Break complex queries into logical, named components.
 2. **Combine with window functions**: CTEs work well with window functions for advanced analytics.

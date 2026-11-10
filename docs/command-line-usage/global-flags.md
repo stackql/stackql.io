@@ -71,7 +71,7 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-h`, `--help`</span> | | Context specific help for stackql | |
 | <span class="nowrap">`--version`</span> | | Displays the version of the StackQL program | |
 
-## `--registry`
+## `--registry` {#--registry}
 
 The `--registry` flag configures where provider documents are read from and whether their signatures are verified.  The value is a JSON string with the following keys:
 
@@ -83,7 +83,7 @@ The `--registry` flag configures where provider documents are read from and whet
 | `verifyConfig.nopVerify` | `true` skips signature verification.  Set to `false` to require an embedded ML-DSA-65 (FIPS 204) signature on every provider and service document read, including the document-backed preview relations. | `true` |
 | `verifyConfig.publicKeys` | A JSON object mapping key IDs to hex-encoded ML-DSA-65 public keys, for private registries.  It replaces the embedded production keys; an explicit empty object is an error. | embedded keys |
 
-### Example: Require signed provider documents
+### Example: Require signed provider documents {#example-require-signed-provider-documents}
 
 Turns verification on for every provider and service document read from the public registry, checked against the embedded production keys:
 
@@ -91,7 +91,7 @@ Turns verification on for every provider and service document read from the publ
 stackql --registry '{"verifyConfig": {"nopVerify": false}}' shell
 ```
 
-### Example: Read unsigned documents from a local directory
+### Example: Read unsigned documents from a local directory {#example-read-unsigned-documents-from-a-local-directory}
 
 Points the registry at a directory of provider documents under development.  Those documents are unsigned, so verification stays off:
 
@@ -105,7 +105,7 @@ Signature verification is available in StackQL releases from `v1.0` and is off b
 
 :::
 
-## `--sqlBackend`
+## `--sqlBackend` {#--sqlbackend}
 
 The `--sqlBackend` flag configures an external SQL backend for StackQL, allowing you to use an external database engine (such as PostgreSQL) instead of the default embedded SQL engine. This is useful for leveraging an external database for query processing, persistent storage, or integration with existing database infrastructure.
 
@@ -117,7 +117,7 @@ The value is a JSON string with the following keys:
 | `sqlDialect` | The SQL dialect to use | `postgres` |
 | `dsn` | The data source name (connection string) for the database | See examples below |
 
-### Example: Using a PostgreSQL Backend
+### Example: Using a PostgreSQL Backend {#example-using-a-postgresql-backend}
 
 ```bash
 ./stackql \
@@ -125,7 +125,7 @@ The value is a JSON string with the following keys:
   shell
 ```
 
-### Example: Using Databricks PostgreSQL Interface
+### Example: Using Databricks PostgreSQL Interface {#example-using-databricks-postgresql-interface}
 
 Databricks exposes a PostgreSQL-compatible interface that can be used as a StackQL SQL backend. The DSN uses the standard PostgreSQL connection string format with your Databricks credentials:
 

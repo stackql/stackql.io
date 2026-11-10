@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import NoIndex from '@theme/NoIndex';
+import { useIsLocalizedBuild } from '@site/src/lib/i18n';
 import { contactusPageData } from '../data/contact-us';
 
 // /contact-us was a meta-refresh stub to GitHub Discussions, which agents and
@@ -36,10 +38,14 @@ const community = [
 
 export default function ContactUs() {
   const { address } = contactusPageData.body;
+  // The page is English only; in a localized build (/de/contact-us) it is
+  // served as is and kept out of the index like the other untranslated pages.
+  const localizedBuild = useIsLocalizedBuild();
   return (
     <Layout
       title="Contact Us"
       description="How to reach StackQL Studios and the StackQL community: GitHub Discussions, Discord and Slack for support, and email, phone and postal address for everything else.">
+      {localizedBuild && <NoIndex />}
       <main className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 col--offset-2">

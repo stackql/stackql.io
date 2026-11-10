@@ -19,14 +19,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT RANK() OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*PARTITION BY column*__
 Optional. Divides the result set into partitions. The `RANK` function is applied to each partition separately.
@@ -34,15 +34,15 @@ Optional. Divides the result set into partitions. The `RANK` function is applied
 __*ORDER BY column*__
 Specifies the order in which ranks are assigned. If there is no `ORDER BY` clause, all rows are considered peers and receive rank 1.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer representing the rank of the current row within the partition, with gaps for tied values.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Rank contributors by contributions (with gaps)
+### Rank contributors by contributions (with gaps) {#rank-contributors-by-contributions-with-gaps}
 
 ```sql
 -- Rank contributors with gaps for ties
@@ -55,7 +55,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Compare `RANK` with `DENSE_RANK` and `ROW_NUMBER`
+### Compare `RANK` with `DENSE_RANK` and `ROW_NUMBER` {#compare-rank-with-dense_rank-and-row_number}
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors
@@ -70,7 +70,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Rank contributors within each repository using `PARTITION BY`
+### Rank contributors within each repository using `PARTITION BY` {#rank-contributors-within-each-repository-using-partition-by}
 
 ```sql
 -- Rank contributors within each repo

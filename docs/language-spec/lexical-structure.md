@@ -21,7 +21,7 @@ StackQL’s SQL domain-specific language allows for declarative as well as proce
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 StackQL operations are comprised of one or more semicolon (`;`) terminated statements.  Statements include keywords, identifiers, parameters and values, an example StackQL statement used to create a 10GB disk in GCP would be:
 
 ```sql
@@ -31,22 +31,22 @@ SELECT 'myProject', 'australia-southeast1-a', 'my10GbDisk', 10;
 
 In the above example, _`INSERT`_, _`INTO`_ and _`SELECT`_ are keywords, _google.compute.disks_ is an identifier, _project_, _zone_, _name_, _sizeGb_  are parameters, and _'myProject'_, _'australia-southeast1-a'_, _'my10GbDisk'_, _10_ are values.
 
-## Keywords
+## Keywords {#keywords}
 Keywords are not case sensitive, meaning `INSERT` and `insert` are treated equivalently, however they are often capitalized by convention. A complete list of keywords can be found in the Keywords section.
 
-## Identifiers
+## Identifiers {#identifiers}
 Identifiers are symbols that represent objects in a cloud provider resource hierarchy.  Identifiers are made up of multiple parts, more information on identifiers can be found in the StackQL Resource Hierarchy topic.
 
-## Parameters and Values
+## Parameters and Values {#parameters-and-values}
 Parameters are specified by the resource; these can be found by using a `DESCRIBE` statement for a given cloud provider resource.  Values are typed scalar or complex objects which map to parameters.  For more information on parameters and values, see the `DESCRIBE` and Data Types topics.
 
-## Variables
+## Variables {#variables}
 A dollar-prefixed identifier such as `$region` dereferences a session variable assigned with [`SET`](/language-spec/set); it is replaced with the variable's typed value before the statement is planned.  A single-quoted `'$region'` is a string literal.  In a `FROM` clause a `$variable` resolves to a relation name, and `IDENTIFIER($variable)` resolves to a column name in expression positions.  A double-quoted, dollar-prefixed path such as `"$.auth.aws.password"` is a runtime configuration target accepted by `SET` and `UNSET`.  Session variables are available in StackQL `v1.0` and later, see [Session Variables](/getting-started/session-variables).
 
-## Operators
+## Operators {#operators}
 `||` is the string concatenation operator and binds more tightly than comparison operators.  `OR` is boolean disjunction.  StackQL releases before `v1.0` tokenised `||` as `OR`.
 
-## Comments
+## Comments {#comments}
 StackQL supports multi-line and in line comments within StackQL statements, examples of comments are shown below:
 
 ```shell

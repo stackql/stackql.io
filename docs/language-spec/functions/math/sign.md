@@ -17,28 +17,28 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SIGN(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
 
 > If *numeric_expression* is `NULL` or is a `string` or BLOB that cannot be losslessly converted into a number, then the function will return `NULL`.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns `-1`, `0` or `1`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Determine the sign of a number
+### Determine the sign of a number {#determine-the-sign-of-a-number}
 
 ```sql
 SELECT name, sign(strftime('%s', creationTimestamp)-strftime('%s','now')) as sign

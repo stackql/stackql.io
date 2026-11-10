@@ -7,7 +7,7 @@ description: Authoritative definitions for StackQL and adjacent infrastructure c
 
 Each page in this section defines one term. Pages are written as direct answers to "What is X?" questions, with consistent structure: a one-sentence definition, a longer explanation, an example where useful, and links to related concepts.
 
-## Pages
+## Pages {#pages}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - the canonical definition of StackQL
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - cloud resources as live, queryable data

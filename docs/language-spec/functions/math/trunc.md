@@ -18,25 +18,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT TRUNC(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a numeric value truncated to its integer component.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Truncate the number of days since creation of Google Cloud Storage buckets to two decimal places
+### Truncate the number of days since creation of Google Cloud Storage buckets to two decimal places {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
 
 ```sql
 SELECT name, timeCreated,

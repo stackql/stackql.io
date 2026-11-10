@@ -18,7 +18,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -34,7 +34,7 @@ Identifiers may not contain whitespace, semicolons or backslashes; such input is
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -42,13 +42,13 @@ Identifiers may not contain whitespace, semicolons or backslashes; such input is
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode.  Read only.
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

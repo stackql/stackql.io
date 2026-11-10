@@ -22,7 +22,7 @@ See also:
 When using StackQL with a PostgreSQL backend, the equivalent function is `CHR()`.
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
@@ -30,18 +30,18 @@ SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
 
 > The `CHAR()` function returns the character associated with the given ASCII code.
 
-## Arguments
+## Arguments {#arguments}
 
 **_ascii_code_**  
 An integer representing the ASCII code of the desired character.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a single-character string corresponding to the specified ASCII code.
 
 * * *
 
-## Common ASCII Codes
+## Common ASCII Codes {#common-ascii-codes}
 
 | Character     | Description           | ASCII Code | Usage Example                   |
 |---------------|-----------------------|------------|---------------------------------|
@@ -58,9 +58,9 @@ Returns a single-character string corresponding to the specified ASCII code.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Concatenate Strings with Special Characters
+### Concatenate Strings with Special Characters {#concatenate-strings-with-special-characters}
 
 To concatenate strings with a newline character between them:
 

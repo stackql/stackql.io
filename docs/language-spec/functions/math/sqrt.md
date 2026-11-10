@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SQRT(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 A non-negative numeric expression for which the square root is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the square root of the specified non-negative numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the square root of a number
+### Calculate the square root of a number {#calculate-the-square-root-of-a-number}
 
 ```sql
 SELECT SQRT(9) AS square_root;

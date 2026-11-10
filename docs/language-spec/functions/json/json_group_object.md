@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_GROUP_OBJECT(key_column, value_column) FROM <multipartIdentifier>
@@ -25,7 +25,7 @@ WHERE condition
 GROUP BY grouping_column;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*key_column*__  
 The column that provides the keys for the JSON objects.
@@ -36,14 +36,14 @@ The column that provides the values for the JSON objects.
 __*grouping_column*__  
 The column by which the results are grouped.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a JSON object containing all the aggregated key-value pairs from the specified columns, grouped according to the `grouping_column`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Aggregate Repository Sizes by Programming Language
+### Aggregate Repository Sizes by Programming Language {#aggregate-repository-sizes-by-programming-language}
 
 ```sql
 -- Example: Group repository names with their corresponding sizes by programming language

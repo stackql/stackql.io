@@ -8,7 +8,7 @@ description: Machine-readable reference content covering StackQL concepts, compa
 
 This section is a parallel content surface for AI agents, answer engines, and LLM crawlers. Pages here are written to answer specific questions cleanly, with deterministic examples and explicit schema. Humans can read them too, but the human-facing site is at the top-level navigation.
 
-## Sections
+## Sections {#sections}
 
 - [Canonical definitions](/ai/canonical-definitions) - what StackQL and adjacent concepts are
 - [Comparisons](/ai/comparisons) - StackQL versus other tools in the IaC, cloud-query, and AI-tooling space

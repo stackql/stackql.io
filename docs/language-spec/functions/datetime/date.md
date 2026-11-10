@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT DATE(datetime_expression [, modifier, ...]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*datetime_expression*__  
 The datetime value.
@@ -31,15 +31,15 @@ The datetime value.
 __*modifier*__  
 Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a string representing the date component of the input *datetime_expression* with the *modifier* applied.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the date component of a datetime value
+### Return the date component of a datetime value {#return-the-date-component-of-a-datetime-value}
 
 ```sql
 SELECT name, timeCreated,
@@ -47,7 +47,7 @@ date(timeCreated) as date_only
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Return the local date component of a datetime value
+### Return the local date component of a datetime value {#return-the-local-date-component-of-a-datetime-value}
 
 ```sql
 SELECT name, timeCreated,

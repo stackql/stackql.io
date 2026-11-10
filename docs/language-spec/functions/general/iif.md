@@ -17,7 +17,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT IIF(expression, result_if_true, result_if_false) 
@@ -25,7 +25,7 @@ FROM <multipartIdentifier>;
 ```
 > The `iif()` function is logically equivalent to the `CASE` expression `CASE WHEN expression THEN result_if_true ELSE result_if_false END`
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 A boolean expression to be evaluated.
@@ -42,14 +42,14 @@ The result to be returned if *expression* evaluates to `true`.
 __*result_if_false*__  
 The result to be returned if *expression* evaluates to `false`.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 The datatype of the *result_if_true* or *result_if_false* arguments.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Catgorize disk sizes of compute engine instances
+### Catgorize disk sizes of compute engine instances {#catgorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
 SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size

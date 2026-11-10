@@ -16,7 +16,7 @@ faq:
 
 StackQL authenticates to Azure with a Microsoft Entra ID (formerly Azure AD) service principal, supplied through three environment variables: `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET`.
 
-## Steps
+## Steps {#steps}
 
 1. Create a service principal and grant it a role on the target subscription (the `Reader` role suffices for read-only querying):
 
@@ -49,11 +49,11 @@ WHERE subscriptionId = '00000000-1111-2222-3333-444444444444';
 
 The `subscriptionId` predicate is a required routing parameter of the Azure API, not part of authentication. Methods scoped to a resource group additionally require `resourceGroupName`; run `SHOW METHODS IN azure.compute.virtual_machines` to see the required parameters for each access method (`list_all` needs only `subscriptionId`; `list` needs `resourceGroupName` as well; `get` needs `vmName`).
 
-## Where the variables apply
+## Where the variables apply {#where-the-variables-apply}
 
 The variables work identically across `stackql shell`, `stackql exec`, `stackql srv` (PostgreSQL wire server), and `stackql mcp`. For MCP clients such as Claude Desktop, place them in the `env` block of the server entry in `claude_desktop_config.json`. In CI, source them from the pipeline's secret store.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to authenticate StackQL to AWS](/ai/how-tos/authenticate-stackql-to-aws) - the AWS equivalent
 - [How to authenticate StackQL to Google Cloud](/ai/how-tos/authenticate-stackql-to-google-cloud) - the GCP equivalent

@@ -23,14 +23,14 @@ To extract a field from a JSON object use the [**JSON_EXTRACT**](/language-spec/
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT SUBSTRING(expression, start[, length]) FROM <multipartIdentifier>;
 SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*expression*__  
 An ASCII string or a BLOB.
@@ -47,15 +47,15 @@ An optional integer value representing the length of the sub sequence to be retu
 
 > If *length* is negative then the absolute value of *length* is used.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a string or BLOB value depending upon the *expression* type.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the first *n* characters from a column
+### Return the first *n* characters from a column {#return-the-first-n-characters-from-a-column}
 
 ```sql
 SELECT SUBSTRING(name, 1, 5) as "first five chars" 
@@ -64,7 +64,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Truncate the first *n* characters from a column
+### Truncate the first *n* characters from a column {#truncate-the-first-n-characters-from-a-column}
 
 ```sql
 SELECT SUBSTR(name, 5) as "from char 5" 
@@ -72,7 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
-### Return the last *n* characters from a column
+### Return the last *n* characters from a column {#return-the-last-n-characters-from-a-column}
 
 ```sql
 SELECT SUBSTRING(name, -5) as "last five chars" 

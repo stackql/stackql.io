@@ -28,8 +28,8 @@ import { SiOpenai } from 'react-icons/si';
 import {
   BinaryDownloadLink,
   DropDownBinaryDownloadLink,
-} from '../src/components';
-import buttonStyles from '../src/components/BinaryDownloadLink/binarydownloadlink.module.css';
+} from '@site/src/components';
+import buttonStyles from '@site/src/components/BinaryDownloadLink/binarydownloadlink.module.css';
 import clsx from 'clsx';
 
 export const ClaudeIcon = ({ size = '1em' }) => (
@@ -290,7 +290,7 @@ Instructions for installing StackQL on various different platforms are provided 
   mb: 2
 }}>
 
-## `stackql-deploy`
+## `stackql-deploy` {#stackql-deploy}
 
 `stackql-deploy` is a stateless IaC framework built on StackQL. For full documentation see [__StackQL Deploy Docs__](https://stackql-deploy.io/).
 
@@ -431,7 +431,7 @@ cargo install stackql-deploy
 </TabItem>
 </Tabs>
 
-## Using with MCP clients
+## Using with MCP clients {#using-with-mcp-clients}
 
 The StackQL MCP server runs locally over stdio, so provider credentials stay on your machine whichever client you use. Pick your client below: each tab gives the directory or one-click route first and the manual configuration as a fallback. For every distribution channel, including `npx`, Python, Docker and CI, see [Installing the MCP server](#installing-the-mcp-server).
 
@@ -591,11 +591,11 @@ Goose has retired its in-app extensions directory in favour of the [Official MCP
 </TabItem>
 </Tabs>
 
-## Installing the MCP server
+## Installing the MCP server {#installing-the-mcp-server}
 
 The StackQL MCP server lets AI agents query and provision cloud resources using StackQL. It ships through several channels - they all run the same server, so pick the channel that matches your client and your trust requirements. The options below are listed roughly in order of trust and ease.
 
-### Marketplaces and directories
+### Marketplaces and directories {#marketplaces-and-directories}
 
 The server is published to the Official MCP Registry as `io.github.stackql/stackql-mcp`; the package registries below carry the distributable artifacts, and downstream directories pick the listing up from there.  
 
@@ -635,7 +635,7 @@ Directory and aggregator listings, in rough order of significance for discovery:
 </TabItem>
 </Tabs>
 
-### Prebuilt `.mcpb` bundle
+### Prebuilt `.mcpb` bundle {#prebuilt-mcpb-bundle}
 
 **When to use:** Claude Desktop without Connector Directory access, or when you want to pin a specific version or verify checksums yourself before installing.  For most Claude Desktop users the [Anthropic Connector Directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql) is the recommended installation method.
 
@@ -653,7 +653,7 @@ shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 
 See [Using StackQL with Claude Desktop](/getting-started/claude-desktop#install-from-a-downloaded-bundle) for the full walkthrough.
 
-### Manual `claude_desktop_config.json`
+### Manual `claude_desktop_config.json` {#manual-claude_desktop_configjson}
 
 **When to use:** you already have the `stackql` binary on your PATH and use Claude Desktop or any other stdio MCP client.
 
@@ -681,7 +681,7 @@ All three arguments are load-bearing:
 
 Add provider credentials with an `"env"` block and tune the safety contract with `"mode"` - see [Server modes](/command-line-usage/mcp#server-modes).
 
-### `npx` (no install)
+### `npx` (no install) {#npx-no-install}
 
 **When to use:** any Node environment, when you do not want a global StackQL install.
 
@@ -691,7 +691,7 @@ Add provider credentials with an `"env"` block and tune the safety contract with
 
 The [`@stackql/mcp-server`](https://www.npmjs.com/package/@stackql/mcp-server) launcher downloads the signed `stackql` binary on first run, verifies its SHA-256, and caches it for subsequent runs.
 
-### `uvx` / `pip` (Python)
+### `uvx` / `pip` (Python) {#uvx--pip-python}
 
 **When to use:** a Python environment - the same launcher packaged for Python, sharing the binary cache the npx launcher populates.
 
@@ -701,7 +701,7 @@ The [`@stackql/mcp-server`](https://www.npmjs.com/package/@stackql/mcp-server) l
 
 Or install it into the current environment with `pip install stackql-mcp-server` (Python 3.9+). The package is [`stackql-mcp-server`](https://pypi.org/project/stackql-mcp-server/) on PyPI.
 
-### Docker
+### Docker {#docker}
 
 **When to use:** a containerised or otherwise isolated runtime. The image is multi-arch (amd64 and arm64).
 
@@ -717,7 +717,7 @@ As a client configuration:
 
 The image is [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mcp) on Docker Hub.
 
-### CI and agentic workflows (GitHub Actions)
+### CI and agentic workflows (GitHub Actions) {#ci-and-agentic-workflows-github-actions}
 
 **When to use:** run the server inside a GitHub Actions job so an agent can query - and, if you allow it, act on - your cloud as part of CI.
 
@@ -742,7 +742,7 @@ The image is [`stackql/stackql-mcp`](https://hub.docker.com/r/stackql/stackql-mc
 
 See the [action README](https://github.com/stackql/setup-stackql-mcp) for more agentic recipes (cloud audits, cost estimates, and so on).
 
-### Embedded MCP
+### Embedded MCP {#embedded-mcp}
 
 **When to use:** you are building an agentic app and want to vendor the MCP server into your own binary - no `npx`, no separate install, no runtime dependency.
 
@@ -935,7 +935,7 @@ Full reference: [Embedded MCP: Swift](/mcp/embedded/swift).
 </TabItem>
 </Tabs>
 
-### Trust model
+### Trust model {#trust-model}
 
 The same security properties hold across every channel:
 
@@ -944,7 +944,7 @@ The same security properties hold across every channel:
 - The `npx` and `uvx` launchers verify the downloaded binary's SHA-256 before first use.
 - The [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) entry attests the per-platform hashes.
 
-## Using GitHub Actions
+## Using GitHub Actions {#using-github-actions}
 
 [StackQL GitHub Actions](https://github.com/stackql/stackql-actions-demo) are available for use in your GitHub Actions workflows. The following actions are available:
 
@@ -960,7 +960,7 @@ The same security properties hold across every channel:
 >
 <TabItem value="deploy">
 
-### `stackql-deploy`
+### `stackql-deploy` {#stackql-deploy-1}
 
 Deploy or test infrastructure stacks using StackQL directly from your GitHub workflows. This action enables Infrastructure as Code (IaC) workflows using SQL-like syntax, allowing you to define, deploy, and manage cloud resources across multiple providers in a single workflow.  
 
@@ -1011,7 +1011,7 @@ jobs:
 </TabItem>
 <TabItem value="setup">
 
-### `setup-stackql`
+### `setup-stackql` {#setup-stackql}
 
 Setup StackQL in your GitHub Actions workflow.  
 
@@ -1052,7 +1052,7 @@ __Example usage__
 </TabItem>
 <TabItem value="setup-mcp">
 
-### `setup-stackql-mcp`
+### `setup-stackql-mcp` {#setup-stackql-mcp}
 
 Install the StackQL MCP server in your GitHub Actions workflow.  The action installs the signed binary and writes an `mcpServers` config (defaulting to `read_only` mode) that an agentic step such as `anthropics/claude-code-action` consumes via `claude_args`.
 
@@ -1096,7 +1096,7 @@ __Example usage__
 </TabItem>
 <TabItem value="exec">
 
-### `stackql-exec`
+### `stackql-exec` {#stackql-exec}
 
 Execute StackQL commands in your GitHub Actions workflow.  Queries can be supplied in line or from a file in the repo.  
 
@@ -1136,7 +1136,7 @@ __Example usage__
 </TabItem>
 <TabItem value="assert">
 
-### `stackql-assert`
+### `stackql-assert` {#stackql-assert}
 
 Perform unit tests in your GitHub Actions workflow (for assurance, governance or cloud security checks).  
 
@@ -1177,7 +1177,7 @@ __Example usage__
 </Tabs>
 
 
-## Other Libraries
+## Other Libraries {#other-libraries}
 
 StackQL provides several integration methods that allow you for use in different programming languages and environments. These libraries extend StackQL's functionality, making it easy to incorporate cloud resource querying and management into your existing applications and workflows.  
 
@@ -1189,7 +1189,7 @@ StackQL provides several integration methods that allow you for use in different
 >
 <TabItem value="pystackql">
 
-### `pystackql` Python Package
+### `pystackql` Python Package {#pystackql-python-package}
 
 Python wrapper to use StackQL in your Python programs. The `pystackql` package is available on [__PyPi__](https://pypi.org/project/pystackql/), documentation for the `pystackql` package is available via [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). To install the `pystackql` package, run the following command:
 

@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ROUND(numeric_expression [, precision]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*numeric_expression*__  
 An expression of the exact numeric or approximate numeric data type category.
@@ -33,14 +33,14 @@ The number of digits to the right of the decimal point to round the *numeric_exp
 
 > If the *precision* argument is omitted, it is assumed to be 0.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a numeric value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Round a floating point number to two decimal places
+### Round a floating point number to two decimal places {#round-a-floating-point-number-to-two-decimal-places}
 
 ```sql
 SELECT name, timeCreated,

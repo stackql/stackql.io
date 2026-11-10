@@ -71,6 +71,32 @@ const blogSections = [
   },
 ];
 
+// Locales. Every locale is a full copy of the site under /<locale>/ (one SPA
+// per locale, built into build/<locale>/). A page with no translated source
+// under i18n/<locale>/ is served in English at its localized URL (Docusaurus
+// falls back to the default locale) and marked noindex by the theme wrappers
+// (src/theme/DocItem/Content, src/theme/BlogPostPage, src/theme/BlogListPage)
+// until a translation exists. Translations are produced and tracked by the
+// scripts under scripts/i18n (see CLAUDE.md, "Internationalization"). Add a
+// locale here only once its full pass has been run and verified.
+const i18nConfig = {
+  defaultLocale: 'en',
+  locales: ['en', 'de'],
+  localeConfigs: {
+    en: { label: 'English', htmlLang: 'en' },
+    de: { label: 'Deutsch', htmlLang: 'de' },
+  },
+};
+
+// Route prefixes of every locale ('' for the default), for route patterns
+// that must cover each localized copy of the site.
+const localeRoutePrefixes = [
+  '',
+  ...i18nConfig.locales
+    .filter((locale) => locale !== i18nConfig.defaultLocale)
+    .map((locale) => `/${locale}`),
+];
+
 const blogSectionNavItems = blogSections.map(({id, label}) => ({
   label,
   to: `/blog/${id}`,
@@ -137,16 +163,17 @@ const config = {
   url: 'https://stackql.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  // Every heading in docs/ and ai-content/ carries an explicit {#id}
+  // (docusaurus write-heading-ids) so anchors survive translation; a link
+  // to an anchor that no longer exists fails the build.
+  onBrokenAnchors: 'throw',
   favicon: '/favicon.ico',
   organizationName: 'stackql', 
   projectName: 'stackql.io', 
   baseUrlIssueBanner: false,
   trailingSlash: false,
   clientModules: [require.resolve('./src/clientModules/revealTabAnchors.js')],
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: ['en', 'fr', 'pt-BR', 'ko', 'zh-CN'],
-  // },  
+  i18n: i18nConfig,
   headTags: [
     {
       tagName: 'link',
@@ -287,15 +314,15 @@ const config = {
           changefreq: null,
           priority: null,
           // tag, pagination, archive and author routes of every blog
-          // instance: list pages, not content
-          ignorePatterns: [
-            '/blog/*/tags/**',
-            '/blog/*/page/**',
-            '/blog/*/archive',
-            '/blog/*/authors',
-            '/blog/*/authors/**',
-            '/search',
-          ],
+          // instance, in every locale: list pages, not content
+          ignorePatterns: localeRoutePrefixes.flatMap((prefix) => [
+            `${prefix}/blog/*/tags/**`,
+            `${prefix}/blog/*/page/**`,
+            `${prefix}/blog/*/archive`,
+            `${prefix}/blog/*/authors`,
+            `${prefix}/blog/*/authors/**`,
+            `${prefix}/search`,
+          ]),
           filename: 'sitemap.xml',
         },
         pages: {},
@@ -470,7 +497,8 @@ const config = {
         {name: 'twitter:creator', content: '@stackql'},
         {name: 'twitter:title', content: 'StackQL - SQL for Cloud Infrastructure and AI Agents'},
         {name: 'twitter:description', content: 'StackQL is an open-source infrastructure-as-code tool and the substrate for AI agents to communicate with cloud control planes and data planes using SQL.'},
-        {name: 'og:locale', content: 'en_US'},
+        // og:locale (and og:locale:alternate per other locale) is emitted by
+        // the theme from each locale's htmlLang
         {name: 'og:site_name', content: 'StackQL'},
         {name: 'msapplication-TileColor', content: '#2d89ef'},
         {name: 'theme-color', content: '#0f4c81'},
@@ -495,7 +523,12 @@ const config = {
 
       indexName: process.env.ALGOLIA_INDEX_NAME,
 
-      // Optional: see doc section below
+      // Off: it adds facet filters (language, docusaurus_tag) to every query
+      // and returns nothing if the index was not crawled with the official
+      // Docusaurus v3 DocSearch config. With more than one locale it is the
+      // only way to keep German results off English pages and vice versa, so
+      // turn it on once the crawler config is confirmed to record the `lang`
+      // facet (Docusaurus docs: delete the index and recrawl if it does not).
       contextualSearch: false,
 
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
@@ -615,6 +648,10 @@ const config = {
         //   position: 'left',
         //   activeBasePath: 'blog',
         // },        
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/stackql/stackql',
           position: 'right',

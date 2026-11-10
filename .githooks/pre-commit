@@ -1,0 +1,6 @@
+#!/bin/sh
+# Pre-commit: translations for the staged source pages (scripts/i18n).
+# Installed by `yarn install` (scripts/i18n/install-hooks.js sets
+# core.hooksPath to this directory). Mode comes from scripts/i18n/config.js
+# `precommit` or I18N_PRECOMMIT=warn|translate|off; it never blocks a commit.
+node scripts/i18n/precommit.js

@@ -16,7 +16,7 @@ faq:
 
 The control plane is the API surface that manages the lifecycle and configuration of cloud resources; the data plane is the surface through which those resources do their actual work. Creating an S3 bucket, resizing a virtual machine, or attaching an IAM policy are control plane operations. Reading an object from that bucket, serving a request from that virtual machine, or executing a SQL statement in a warehouse are data plane operations.
 
-## The distinction in practice
+## The distinction in practice {#the-distinction-in-practice}
 
 | Aspect | Control plane | Data plane |
 |---|---|---|
@@ -29,13 +29,13 @@ The control plane is the API surface that manages the lifecycle and configuratio
 
 The boundary matters because tooling has historically split along it. Infrastructure-as-code tools (Terraform, CloudFormation, Pulumi) operate almost exclusively on the control plane. Application SDKs and drivers operate on the data plane. The result is two disjoint toolchains, two credential models, and no single place to ask questions that span both.
 
-## Why unification matters
+## Why unification matters {#why-unification-matters}
 
 Many real operational questions cross the boundary. "Which warehouses exist, and what did they execute last week?" is a control plane question joined to a data plane question. "Which buckets are public, and which of those contain objects?" is the same. A tool that stops at the control plane can enumerate the resources but cannot inspect what they are doing.
 
 StackQL treats both planes uniformly: any operation documented in a provider's API specification can be projected into the same SQL model - resources as tables, reads as `SELECT`, writes as `INSERT`/`UPDATE`/`DELETE`, and other actions as `EXEC` methods. A single query session, with a single authentication context per provider, can traverse from configuration to activity. For AI agents this matters more: an agent given one interface to both planes can diagnose ("the job failed"), inspect configuration ("the cluster is undersized"), and remediate ("resize it") without switching toolchains. See [What is Agentic Infrastructure?](/ai/canonical-definitions/what-is-agentic-infrastructure).
 
-## Example
+## Example {#example}
 
 A control plane query - enumerate virtual machines in an Azure subscription:
 
@@ -47,7 +47,7 @@ WHERE subscriptionId = '00000000-1111-2222-3333-444444444444';
 
 A lifecycle action against one of those resources is an `EXEC` of a documented method on the same table (for example `restart` or `power_off`), discoverable via `SHOW METHODS IN azure.compute.virtual_machines`.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - one SQL surface for both planes
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - the operating model

@@ -25,7 +25,7 @@ Get alerts like this in Slack and Discord in realtime:
 
 Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span class="tutorial_tested_on">docker</span> <span class="tutorial_tested_on">linux</span> 
 
-## Overview
+## Overview {#overview}
 
 When I looked for tools to monitor our open source project, I found most of them didn't work as advertised or didn't work at all (in the case of thrid part apps in GitHub), so I built our own which you could launch and use on your open source GitHub project...  
 
@@ -39,7 +39,7 @@ The [__oss-activity-monitor__](https://github.com/stackql/oss-activity-monitor) 
 - 📦 new GitHub release asset downloads
 - 🍺 new homebrew downloads
 
-## How it works
+## How it works {#how-it-works}
 
 The project is deployed in a container (using `docker` or other container deployment platform), it is built using `python` and the [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) package, using the [`github`](https://github.stackql.io/providers/github/) and [`homebrew`](https://homebrew.stackql.io/providers/homebrew) providers for `stackql`.  Materialized views and `SELECT` statements are used to capture and compare state between current and previous metrics for GitHub and Homebrew monitored endpoints, this is described in the diagram here:  
 
@@ -77,11 +77,11 @@ REFRESH MATERIALIZED VIEW mvw_github_repo_stargazers
 
 similar patterns are repeated for repo watchers, issues, org followers, release asset downloads and homebrew downloads.
 
-## Running the project
+## Running the project {#running-the-project}
 
 Follow the steps below to get the project up and running locally or on your preferred cloud platform.  
 
-### 1. Clone the repo
+### 1. Clone the repo {#1-clone-the-repo}
 
 ```bash
 git clone https://github.com/stackql/oss-activity-monitor.git
@@ -89,7 +89,7 @@ git clone https://github.com/stackql/oss-activity-monitor.git
 git clone git@github.com:stackql/oss-activity-monitor.git
 ```
 
-### 2. Configure environment variables
+### 2. Configure environment variables {#2-configure-environment-variables}
 
 The following environment variables are required to configure the project (provided using environment variables, a `.env` file in the example below):  
 
@@ -105,13 +105,13 @@ The following environment variables are required to configure the project (provi
 | `SLACK_WEBHOOK_URL`        | Slack webhook URL for sending notifications                                       | https://hooks.slack.com/services/...             |
 | `DISCORD_WEBHOOK_URL`      | Discord webhook URL for sending notifications                                     | https://discord.com/api/webhooks/...             |
 
-### 3. Build the container
+### 3. Build the container {#3-build-the-container}
 
 ```bash
 docker build --no-cache -t oss-activity-monitor .
 ```
 
-### 4. Run the container
+### 4. Run the container {#4-run-the-container}
 
 ```bash
 docker run --env-file .env oss-activity-monitor

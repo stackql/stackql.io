@@ -11,7 +11,15 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "i18n:strings": "node scripts/i18n/strings.js",
+    "i18n:status": "node scripts/i18n/status.js",
+    "i18n:diff": "node scripts/i18n/diff.js",
+    "i18n:verify": "node scripts/i18n/verify.js",
+    "i18n:mark": "node scripts/i18n/mark.js",
+    "i18n:prune": "node scripts/i18n/prune.js",
+    "i18n:translate": "node scripts/i18n/translate.js",
+    "postinstall": "node scripts/i18n/install-hooks.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",

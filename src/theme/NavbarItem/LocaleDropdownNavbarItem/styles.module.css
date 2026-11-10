@@ -1,0 +1,38 @@
+.iconLanguage {
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+
+.flag {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  vertical-align: -2px;
+  margin-right: 6px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.badge {
+  display: inline-block;
+  min-width: 20px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 2px;
+  vertical-align: -2px;
+  margin-right: 6px;
+  padding: 0 3px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ifm-navbar-link-color);
+  background: var(--ifm-color-emphasis-200);
+}
+
+.code {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.name {
+  margin-left: 6px;
+}

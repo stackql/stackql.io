@@ -49,10 +49,19 @@ module.exports = function providerCatalogPlugin(context, options) {
   const site = `${url.replace(/\/+$/, '')}${(baseUrl || '/').replace(/\/+$/, '')}`;
   const absolute = (sitePath) => `${site}${sitePath.startsWith('/') ? '' : '/'}${sitePath}`;
 
+  // The catalog is published once, at the site root. Docusaurus runs every
+  // plugin once per locale with outDir = build/<locale>; the localized runs
+  // would write a copy whose URLs carry the locale prefix.
+  const { currentLocale, defaultLocale } = context.i18n || {};
+  const localizedBuild = Boolean(currentLocale && defaultLocale && currentLocale !== defaultLocale);
+
   return {
     name: 'provider-catalog',
 
     async postBuild({ outDir }) {
+      if (localizedBuild) {
+        return;
+      }
       const catalog = {
         version: 1,
         source: `${site}/providers`,

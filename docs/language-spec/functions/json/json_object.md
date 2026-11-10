@@ -29,14 +29,14 @@ The `json_object` function as `jsonb_build_object` if you are using stackql with
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_OBJECT(key1, value1, key2, value2, ...) 
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*key1, key2, ...*__  
 The labels for the JSON object.
@@ -44,14 +44,14 @@ The labels for the JSON object.
 __*value1, value2, ...*__  
 The values corresponding to the labels in the JSON object.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 A string representing the well-formed JSON object.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the datatype of a field nested within a JSON object or array
+### Return the datatype of a field nested within a JSON object or array {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

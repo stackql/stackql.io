@@ -22,7 +22,7 @@ The embedded binary is downloaded and sha256-verified on first run, or vendored 
 
 * * *
 
-## Install
+## Install {#install}
 
 ```
 go get github.com/stackql/stackql-mcp-go
@@ -30,7 +30,7 @@ go get github.com/stackql/stackql-mcp-go
 
 * * *
 
-## Quick start
+## Quick start {#quick-start}
 
 ```go
 import (
@@ -61,13 +61,13 @@ The API is `StartServer(ctx, Options{Binary, Mode})`; the returned client comes 
 
 * * *
 
-## Modes
+## Modes {#modes}
 
 The server starts in `read_only` mode by default. Set `Options.Mode` to escalate to `safe`, `delete_safe`, or `full_access`. Escalation is explicit - the server will not enable mutation or lifecycle tools unless you opt in.
 
 * * *
 
-## Vendoring / embedding
+## Vendoring / embedding {#vendoring--embedding}
 
 Vendor the binary with `go:embed` via a `go:generate` fetch step, producing a single self-contained executable:
 
@@ -79,12 +79,12 @@ The fetch step downloads and sha256-verifies the signed binary for the target pl
 
 * * *
 
-## Demo app
+## Demo app {#demo-app}
 
 **sandboxctl** is an infrastructure concierge: an embedded server plus a Claude agent loop in one binary that plans, cost-checks, and provisions ephemeral cloud sandboxes behind an approval gate.
 
 * * *
 
-## Repo link
+## Repo link {#repo-link}
 
 [github.com/stackql/stackql-mcp-go](https://github.com/stackql/stackql-mcp-go)

@@ -20,7 +20,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *unsetStatement::=*
 
@@ -53,9 +53,9 @@ Optional, and the only scope there is: `UNSET SESSION name` and `UNSET name` are
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Remove a variable
+### Remove a variable {#remove-a-variable}
 
 The variable is removed from the session, so the commented-out query fails with `variable "$region" is not defined` rather than running with a stale or empty value.  Set the name again to reuse it.
 
@@ -69,7 +69,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 */
 ```
 
-### Remove several targets
+### Remove several targets {#remove-several-targets}
 
 One statement can remove variables and configuration paths together, and the targets are processed in order.  Here a plain variable, a variable with a dotted name and a credential override are removed in one list.
 
@@ -77,7 +77,7 @@ One statement can remove variables and configuration paths together, and the tar
 UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
 ```
 
-### Make the session scope explicit
+### Make the session scope explicit {#make-the-session-scope-explicit}
 
 These two statements do the same thing: `SESSION` names the only scope there is.  The explicit form suits scripts that also run on databases which distinguish session from global state.  The commented-out statement fails because no shared state exists.
 
@@ -91,7 +91,7 @@ UNSET GLOBAL region;
 */
 ```
 
-### Clear a credential override
+### Clear a credential override {#clear-a-credential-override}
 
 The field set earlier with `SET "$.auth.github.credentialsenvvar"` is deleted from the GitHub provider's session authentication context, and the other fields of that context are untouched.  The value in force before the override is not restored, so set the field again if the provider still needs it.
 
@@ -99,7 +99,7 @@ The field set earlier with `SET "$.auth.github.credentialsenvvar"` is deleted fr
 UNSET "$.auth.github.credentialsenvvar";
 ```
 
-### Remove a provider alias and its secret
+### Remove a provider alias and its secret {#remove-a-provider-alias-and-its-secret}
 
 The alias `production` was bound with `SET "$.providers.production"` and refers, through `auth_secret`, to a secret stored at `$.secrets.production`.  Removing both in one statement drops the binding, so `production.s3.buckets` is no longer a valid relation, and deletes the secret from the session store.  `SESSION` is optional here, as everywhere.
 

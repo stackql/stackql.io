@@ -18,13 +18,13 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 None.
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -46,13 +46,13 @@ None.
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Always allowed in every server mode.  Not audited as a mutation.
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

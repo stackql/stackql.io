@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ATAN2(y, x) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*y*__  
 The y-coordinate (numerator) of the point.
@@ -31,14 +31,14 @@ The y-coordinate (numerator) of the point.
 __*x*__  
 The x-coordinate (denominator) of the point.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the arc tangent of y/x in radians, accounting for the correct quadrant of the angle.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the arc tangent of the point (1,1)
+### Calculate the arc tangent of the point (1,1) {#calculate-the-arc-tangent-of-the-point-11}
 
 ```sql
 SELECT ATAN2(1, 1) AS arc_tangent_value;
@@ -46,7 +46,7 @@ SELECT ATAN2(1, 1) AS arc_tangent_value;
 
 This query returns π/4 or approximately `0.785`, as the arc tangent of the point (1,1) corresponds to an angle of π/4 radians in the first quadrant.
 
-### Calculate the arc tangent of the point (10, -10)
+### Calculate the arc tangent of the point (10, -10) {#calculate-the-arc-tangent-of-the-point-10--10}
 
 ```sql
 SELECT ATAN2(10, -10) AS arc_tangent_value;

@@ -16,12 +16,12 @@ faq:
 
 GitHub repositories are exposed as the table `github.repos.repos`. Listing by organization or user maps to the corresponding GitHub REST operations, selected by the `WHERE` clause: `org = '...'` uses the organization listing, `username = '...'` the user listing.
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 - The GitHub provider installed: `REGISTRY PULL github;`
 - Optional credentials for private data and higher rate limits - see [How to authenticate StackQL to GitHub](/ai/how-tos/authenticate-stackql-to-github)
 
-## List an organization's repositories
+## List an organization's repositories {#list-an-organizations-repositories}
 
 ```sql
 SELECT name, description, language, stargazers_count
@@ -31,7 +31,7 @@ WHERE org = 'stackql';
 
 Run against the public `stackql` organization, this returns rows such as the `stackql` engine repository (Go, 861 stars at the time of writing) and `stackql-provider-registry` - live API data, no snapshot involved.
 
-## Filter on repository attributes
+## Filter on repository attributes {#filter-on-repository-attributes}
 
 Standard SQL predicates apply to any column:
 
@@ -45,7 +45,7 @@ AND visibility = 'public';
 
 Useful governance columns include `private`, `visibility`, `archived`, `fork`, `default_branch`, `delete_branch_on_merge`, `has_wiki`, `topics`, `created_at`, `pushed_at`, and `security_and_analysis`. `DESCRIBE github.repos.repos` lists all of them.
 
-## Beyond the repository list
+## Beyond the repository list {#beyond-the-repository-list}
 
 The `github.repos` service exposes the rest of the repository surface as sibling tables - `github.repos.branches`, `github.repos.commits`, `github.repos.releases`, `github.repos.collaborators`, `github.repos.webhooks`, `github.repos.deployments`, and more. Discover them with:
 
@@ -53,7 +53,7 @@ The `github.repos` service exposes the rest of the repository surface as sibling
 SHOW RESOURCES IN github.repos;
 ```
 
-## Updating repositories
+## Updating repositories {#updating-repositories}
 
 Repository settings changes are `UPDATE` statements; the method requires `owner` and `repo`, and body fields use the `data__` prefix:
 
@@ -65,7 +65,7 @@ WHERE owner = 'my-org' AND repo = 'my-repo';
 
 Applied across a result set from the listing query, this is fleet-wide repository governance in two statements - a pattern that pairs naturally with cross-provider queries joining GitHub data to cloud resources.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to authenticate StackQL to GitHub](/ai/how-tos/authenticate-stackql-to-github) - tokens and rate limits
 - [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the REST-to-SQL mapping used here

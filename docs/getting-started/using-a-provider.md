@@ -17,7 +17,7 @@ See also:
 StackQL queries can be run against a number of different cloud providers, including Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean, and more. StackQL provider specifications are pulled from the [__StackQL Provider Registry__](/providers), this can be done using the [__`REGISTRY PULL`__](/language-spec/registry) StackQL command, or by using the [__`stackql registry`__](/command-line-usage/registry) command line utility.
 
 
-## Installing a Provider
+## Installing a Provider {#installing-a-provider}
 
 To see the list of available providers, run the following command:  
 
@@ -37,7 +37,7 @@ To see providers installed on the current system, run the following command:
 SHOW PROVIDERS;
 ```
 
-## Authenticating to a Provider
+## Authenticating to a Provider {#authenticating-to-a-provider}
 
 Authenticating to a cloud provider is often the first step in an StackQL routine. Meta commands such as [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/language-spec/select), [`INSERT`](/language-spec/insert) and [`EXEC`](/language-spec/exec) commands generally require an authenticated session.  
 
@@ -54,7 +54,7 @@ export DIGITALOCEAN_TOKEN=dop_v1_yourdigitaloceantoken
 export STACKQL_GITHUB_USERNAME=yourghuser
 export STACKQL_GITHUB_PASSWORD=ghp_yourgithubpersonalaccesstoken
 ```
-```
+
 This is especially useful when you are joining data between multiple providers in a single query.
 
 :::

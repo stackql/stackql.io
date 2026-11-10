@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ATAN(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression for which the arc tangent is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the arc tangent of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the arc tangent of 1
+### Calculate the arc tangent of 1 {#calculate-the-arc-tangent-of-1}
 
 ```sql
 SELECT ATAN(1) AS arc_tangent_value;
@@ -43,7 +43,7 @@ SELECT ATAN(1) AS arc_tangent_value;
 
 This query returns π/4 or approximately `0.785`, as the arc tangent of 1 is π/4 radians.
 
-### Calculate the arc tangent of 0
+### Calculate the arc tangent of 0 {#calculate-the-arc-tangent-of-0}
 
 ```sql
 SELECT ATAN(0) AS arc_tangent_value;

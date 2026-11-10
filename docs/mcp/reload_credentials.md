@@ -28,7 +28,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -36,7 +36,7 @@ See also:
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -71,7 +71,7 @@ Auth types that authenticate outside the credential-bytes path (interactive gclo
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode, including `read_only` - the tool mutates nothing beyond the server's own process environment.
 
@@ -79,7 +79,7 @@ Not supported in `reverse_proxy` backend mode: queries execute in the remote sta
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any MCP client with the StackQL MCP server registered (started with `--env.file`):
 

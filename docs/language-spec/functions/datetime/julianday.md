@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JULIANDAY(datetime_expression [, modifier, ...]) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*datetime_expression*__  
 The datetime value.
@@ -31,15 +31,15 @@ The datetime value.
 __*modifier*__  
 Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns the [Julian Day](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) representing the date component of the input *datetime_expression* with the *modifier* applied.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the days between two dates
+### Calculate the days between two dates {#calculate-the-days-between-two-dates}
 
 ```sql
 SELECT name, timeCreated,

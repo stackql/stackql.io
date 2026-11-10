@@ -17,14 +17,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT CUME_DIST() OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*PARTITION BY column*__
 Optional. Divides the result set into partitions. The `CUME_DIST` function is applied to each partition separately.
@@ -32,15 +32,15 @@ Optional. Divides the result set into partitions. The `CUME_DIST` function is ap
 __*ORDER BY column*__
 Specifies the order in which the cumulative distribution is calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a floating-point number between 0.0 and 1.0 representing the cumulative distribution value.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate cumulative distribution of contributors
+### Calculate cumulative distribution of contributors {#calculate-cumulative-distribution-of-contributors}
 
 ```sql
 -- Calculate percentile ranking of contributors

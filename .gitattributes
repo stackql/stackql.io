@@ -1,0 +1,9 @@
+# Markdown content and its translations are LF on every platform so the
+# i18n tooling (scripts/i18n) can hash, diff and verify them consistently.
+docs/**/*.md text eol=lf
+docs/**/*.mdx text eol=lf
+ai-content/**/*.md text eol=lf
+ai-content/**/*.mdx text eol=lf
+i18n/**/*.md text eol=lf
+i18n/**/*.mdx text eol=lf
+i18n/**/*.json text eol=lf

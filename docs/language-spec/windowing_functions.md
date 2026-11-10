@@ -19,7 +19,7 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 Window functions use the `OVER` clause to define the window specification:
 
@@ -33,7 +33,7 @@ SELECT <windowFunction> OVER ( <windowSpec> ) FROM <multipartIdentifier>;
 type="windowFunctionCall"
 />
 
-### Window Function
+### Window Function {#window-function}
 
 Window functions are specialized functions that perform calculations across a set of rows defined by the window specification. They can be either dedicated window functions (like `ROW_NUMBER` or `LAG`) or aggregate functions (like `SUM` or `COUNT`) used with an `OVER` clause.
 
@@ -50,7 +50,7 @@ Window functions are specialized functions that perform calculations across a se
 type="windowFunction"
 />
 
-### Window Specification
+### Window Specification {#window-specification}
 
 The window specification defines how rows are partitioned, ordered, and framed for the window function calculation. `PARTITION BY` divides rows into groups, `ORDER BY` determines the sequence within each partition, and the optional frame clause specifies which rows relative to the current row are included in the calculation.
 
@@ -72,7 +72,7 @@ The window specification defines how rows are partitioned, ordered, and framed f
 type="windowSpec"
 />
 
-## Available Window Functions
+## Available Window Functions {#available-window-functions}
 
 | Category | Functions |
 |----------|-----------|
@@ -83,9 +83,9 @@ type="windowSpec"
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Ranking with `ROW_NUMBER`, `RANK`, and `DENSE_RANK`
+### Ranking with `ROW_NUMBER`, `RANK`, and `DENSE_RANK` {#ranking-with-row_number-rank-and-dense_rank}
 
 Use ranking functions to assign rankings to rows based on column values.
 
@@ -102,7 +102,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Running totals and percentages
+### Running totals and percentages {#running-totals-and-percentages}
 
 Aggregate functions like `SUM` and `COUNT` can be used as window functions to calculate running totals and percentages.
 
@@ -119,7 +119,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Comparing rows with `LAG` and `LEAD`
+### Comparing rows with `LAG` and `LEAD` {#comparing-rows-with-lag-and-lead}
 
 Use `LAG` and `LEAD` to access values from previous or subsequent rows.
 
@@ -138,7 +138,7 @@ WHERE owner = 'stackql'
 ORDER BY published_at;
 ```
 
-### Creating groups with `NTILE`
+### Creating groups with `NTILE` {#creating-groups-with-ntile}
 
 Use `NTILE` to divide rows into a specified number of groups.
 
@@ -159,7 +159,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Using `PARTITION BY` for grouped analysis
+### Using `PARTITION BY` for grouped analysis {#using-partition-by-for-grouped-analysis}
 
 Use `PARTITION BY` to perform window calculations within groups.
 
@@ -179,7 +179,7 @@ WHERE owner = 'stackql'
 ORDER BY created_at;
 ```
 
-### Using window frames
+### Using window frames {#using-window-frames}
 
 Specify a frame clause to control which rows are included in the window calculation.
 

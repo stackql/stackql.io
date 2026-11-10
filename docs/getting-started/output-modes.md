@@ -15,7 +15,7 @@ See also:
 
 Results returned from StackQL queries can be formatted in tabular (table) format, as well as json, jsonl (newline delimited JSON), csv, text or otel (OpenTelemetry log records) format.  JSON, JSONL and CSV formats can be used to interchange data with other programs; the `otel` format ships a result set to an OpenTelemetry backend as a timestamped snapshot.  The desired output format is configured using the `--output` StackQL flag.
 
-### `table` Output Format
+### `table` Output Format {#table-output-format}
 Results can be formatted in a table format using the `table` value for the `--output` parameter as shown below (this is the default value for the StackQL interactive shell):
 
 ```shell
@@ -35,7 +35,7 @@ and zone = 'australia-southeast1-a'" \
 |---------------------|-----------------|
 ```
 
-### `json` Output
+### `json` Output {#json-output}
 Results can be returned in JSON format using the `json` value for the `--output` parameter as shown below, this output format is useful if the results of a query need to be passed to an external process or script:
 
 ```shell
@@ -50,7 +50,7 @@ and zone = 'australia-southeast1-a'" \
 ```
 
 
-### `jsonl` Output
+### `jsonl` Output {#jsonl-output}
 Results can be returned in newline delimited JSON (JSON Lines) format using the `jsonl` value for the `--output` parameter as shown below (`ndjson` is accepted as an alias).  Each row is written as a single JSON object on its own line and rows are flushed as they are written, making this output format useful for streaming results to line-oriented tools or piping large result sets to other programs:
 
 ```shell
@@ -65,7 +65,7 @@ and zone = 'australia-southeast1-a'" \
 ```
 
 
-### `csv` Output
+### `csv` Output {#csv-output}
 Results can be returned in JSON format using the `csv` value for the `--output` parameter as shown below, this output format is useful for parsing results in Excel or providing a data interface to another system:
 
 ```shell
@@ -80,7 +80,7 @@ id,name
 5584456226809282885,demo-instance-3
 ```
 
-#### Csv Output Example (with alternative delimiter)
+#### Csv Output Example (with alternative delimiter) {#csv-output-example-with-alternative-delimiter}
 An alternatate delimiter can be specified for the `csv` output format using the `-d` switch as shown below:
 
 ```shell
@@ -95,7 +95,7 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
-### `otel` Output
+### `otel` Output {#otel-output}
 Results can be emitted as OpenTelemetry log records using the `otel` value for the `--output` parameter.  Each row is written as one OTLP/JSON `LogsData` object on its own line, flushed as it is written like `jsonl`, followed by one completion record for the statement.  This output format turns a query into a cloud configuration snapshot as telemetry: run an inventory query on a schedule, ship the records to an OTLP-capable backend (ClickHouse, Datadog, or an OpenTelemetry Collector in front of anything else), and answer "what does the estate look like now", "what changed since the last run", and "who has had which entitlement, and since when" there.  Available in StackQL releases from `v0.11.660`.
 
 ```shell
@@ -135,13 +135,13 @@ One row record, pretty-printed (the file holds each record on one line):
 }],"schemaUrl":"https://opentelemetry.io/schemas/1.44.0"}],"schemaUrl":"https://opentelemetry.io/schemas/1.44.0"}]}
 ```
 
-#### Snapshots
+#### Snapshots {#snapshots}
 
 One statement is one snapshot.  Every record of the statement carries the same `timeUnixNano` (the statement start time), the same `stackql.snapshot.id` and the same `spanId`, so as-of queries, diffs and latest-state queries work even though rows arrive across pages over several seconds; `observedTimeUnixNano` records when each record was actually written.  All statements of one invocation share a `traceId`, taken from a `TRACEPARENT` environment variable when one is set (the convention for CI pipelines) and generated otherwise.
 
 The last record of a statement is the completion record: body `snapshot complete <provider.service.resource>`, with `stackql.snapshot.complete=true`, `stackql.rows_returned` and `stackql.duration_ms`.  It tells the backend the snapshot is whole, and a statement that returns no rows still emits it, so a resource that has disappeared shows up as drift rather than as silence.  A failed statement produces an `ERROR` record carrying `error.type` and `error.message` when the error presentation is `record`; by default errors go to stderr as for every other output format.
 
-#### Record shape
+#### Record shape {#record-shape}
 
 The body is the complete row as compact JSON, nested objects intact, and is the source of truth for the full document.  The attributes carry each column under its own name, typed where the value is a scalar (`stringValue`, `intValue`, `doubleValue`, `boolValue`); nested columns are carried as JSON strings, which is portable across backends whose default attribute schema is string-valued, and null columns are omitted.  The reserved `stackql.*` attributes are:
 
@@ -163,7 +163,7 @@ The emitted attribute set is a versioned interface: the instrumentation scope is
 
 No resource identity is inferred: the fingerprint is the value and the backend chooses the key (`id`, `arn`, `selfLink`, or a tuple of columns).  To track entitlements as entities, explode bindings to one row per principal and role in SQL; the telemetry follows the result grain.
 
-#### Resource attributes
+#### Resource attributes {#resource-attributes}
 
 The resource carries `service.name` (`stackql`, or the value of `OTEL_SERVICE_NAME`) and `service.version`, the OpenTelemetry cloud conventions where they can be derived from a single-table `SELECT` (`cloud.provider` from the provider; `cloud.account.id` from a `project` or `subscriptionId` equality in the `WHERE` clause; `cloud.region` from `region`; `cloud.availability_zone` from `zone`), and every pair in the standard `OTEL_RESOURCE_ATTRIBUTES` environment variable, so a pipeline step can stamp `deployment.environment`, a job name or account tags with no additional flags:
 
@@ -175,7 +175,7 @@ where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
 --keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
 ```
 
-#### Shipping the records
+#### Shipping the records {#shipping-the-records}
 
 The file is one `LogsData` per line, the shape the OpenTelemetry Collector's `otlp_json_file` receiver ingests with no transform processor:
 
@@ -195,7 +195,7 @@ service:
 
 Each line is also, byte for byte, the body of an OTLP/HTTP `POST /v1/logs` request, which is what the built-in push exporter sends.
 
-#### Pushing to an OTLP endpoint
+#### Pushing to an OTLP endpoint {#pushing-to-an-otlp-endpoint}
 
 The records can be pushed straight to an OTLP/HTTP logs endpoint, as well as being written to the file or stdout, by configuring an exporter in the `--otel.config` flag, a JSON or YAML string like the other configuration flags (available in StackQL releases from `v0.12.732`):
 

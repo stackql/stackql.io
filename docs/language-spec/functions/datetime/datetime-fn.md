@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT DATETIME(datetime_expression , modifier, ...) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*datetime_expression*__  
 The datetime value.
@@ -31,15 +31,15 @@ The datetime value.
 __*modifier*__  
 Zero or more modifiers to be applied to the *datetime_expression*.  For more information about modifiers, see [**Date Modifiers**](/language-spec/functions/datetime/date_modifiers)
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns a string representing the datetime of the input *datetime_expression* with the *modifier* applied.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Convert UTC to localtime using the `localtime` modifier
+### Convert UTC to localtime using the `localtime` modifier {#convert-utc-to-localtime-using-the-localtime-modifier}
 
 ```sql
 SELECT name, timeCreated,
@@ -47,7 +47,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert datetime to UTC
+### Covert datetime to UTC {#covert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -55,7 +55,7 @@ datetime('now', 'utc') as now_utc
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Calculate a date relative to another date
+### Calculate a date relative to another date {#calculate-a-date-relative-to-another-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -63,7 +63,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Get the next specified weekday after a given date
+### Get the next specified weekday after a given date {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -71,7 +71,7 @@ datetime(timeCreated, 'weekday 0') as following_sunday
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Get the start of the month for a given date
+### Get the start of the month for a given date {#get-the-start-of-the-month-for-a-given-date}
 
 ```sql
 SELECT name, timeCreated,
@@ -79,7 +79,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert a Unix timestamp to a datetime
+### Covert a Unix timestamp to a datetime {#covert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

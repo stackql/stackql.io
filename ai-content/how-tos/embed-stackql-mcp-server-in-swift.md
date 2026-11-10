@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a native macOS app with no separate install and no runtime dependency. The `stackql-mcp-swift` package spawns the signed StackQL binary over stdio behind the official Swift MCP SDK client. Because the `darwin-universal` binary is Developer ID signed and Apple-notarised, you can bundle it inside a signed `.app` and keep the app's notarisation valid - the pattern behind **CloudLens**, a menu-bar cloud sentinel.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the package** to `Package.swift`:
 
@@ -52,7 +52,7 @@ For external harnesses, `StackQLServer.resolveCommand(_:)` returns the resolved 
 
 3. **Choose a mode.** `Options.mode` defaults to `.readOnly`. Set `.safe`, `.deleteSafe`, or `.fullAccess` only when the app needs to provision. Escalation is explicit.
 
-## Bundle the notarised binary in a signed app
+## Bundle the notarised binary in a signed app {#bundle-the-notarised-binary-in-a-signed-app}
 
 The `darwin-universal` binary is Developer ID signed and Apple-notarised, so it can be bundled inside a signed macOS `.app` while keeping the app's own notarisation valid. Binary resolution order:
 
@@ -63,11 +63,11 @@ The `darwin-universal` binary is Developer ID signed and Apple-notarised, so it 
 
 Put the notarised binary in app resources and the bundled path wins - the app is fully self-contained with no first-run download.
 
-## Demo app
+## Demo app {#demo-app}
 
 **CloudLens** is a menu-bar cloud sentinel that embeds the notarised binary and runs a `read_only` check suite.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: Swift reference](/mcp/embedded/swift) - install, API, and binary resolution
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

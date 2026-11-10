@@ -16,7 +16,7 @@ faq:
 
 StackQL ships a built-in Model Context Protocol (MCP) server. Any MCP-capable agent - Claude, Cursor, Continue, or a custom agent framework - connects to it and gains a self-describing, governed SQL interface to every cloud and SaaS provider in the StackQL registry.
 
-## Steps
+## Steps {#steps}
 
 1. **Set provider credentials** as environment variables before starting the server (the server inherits them):
 
@@ -60,11 +60,11 @@ WHERE org = 'stackql';
 
 The agent never loads an SDK; the schema is discovered at runtime and the query is plain SQL.
 
-## Auditing
+## Auditing {#auditing}
 
 Every tool call writes one JSONL record - timestamp, tool, mode, decision, query class, SQL, duration - to a file sink with rotation. Audit is on by default and records what the agent did (not result rows). In the default `strict` failure mode, a failed audit write surfaces as an error rather than letting an unaudited mutation slip through.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [How to use StackQL with Claude](/ai/how-tos/use-stackql-with-claude) - Claude Desktop configuration
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - transports, modes, and audit internals

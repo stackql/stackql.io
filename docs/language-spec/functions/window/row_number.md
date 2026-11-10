@@ -17,14 +17,14 @@ See also:
 
 * * *
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ROW_NUMBER() OVER ([PARTITION BY column] ORDER BY column [ASC|DESC])
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*PARTITION BY column*__
 Optional. Divides the result set into partitions. The `ROW_NUMBER` function is applied to each partition separately and resets the row number for each partition.
@@ -32,15 +32,15 @@ Optional. Divides the result set into partitions. The `ROW_NUMBER` function is a
 __*ORDER BY column*__
 Specifies the order in which the row numbers are assigned. Required for meaningful results.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 
 Returns an integer representing the sequential row number within the partition, starting at 1.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Rank contributors within a repository
+### Rank contributors within a repository {#rank-contributors-within-a-repository}
 
 ```sql
 -- Rank contributors within a repository
@@ -53,7 +53,7 @@ WHERE owner = 'stackql'
   AND repo = 'stackql';
 ```
 
-### Track issue sequence over time
+### Track issue sequence over time {#track-issue-sequence-over-time}
 
 ```sql
 -- Track issue growth over time
@@ -69,7 +69,7 @@ WHERE owner = 'stackql'
 ORDER BY created_at;
 ```
 
-### Compare `ROW_NUMBER` with `RANK` and `DENSE_RANK`
+### Compare `ROW_NUMBER` with `RANK` and `DENSE_RANK` {#compare-row_number-with-rank-and-dense_rank}
 
 ```sql
 -- Compare RANK vs DENSE_RANK vs ROW_NUMBER for contributors

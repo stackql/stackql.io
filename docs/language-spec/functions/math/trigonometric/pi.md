@@ -17,24 +17,24 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT PI() AS pi_value;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 This function does not require any arguments.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the constant π, approximately equal to 3.14159.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Retrieve the value of π
+### Retrieve the value of π {#retrieve-the-value-of-π}
 
 ```sql
 SELECT PI() AS pi_value;

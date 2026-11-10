@@ -20,13 +20,13 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 None.
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -38,13 +38,13 @@ Each row carries the provider name and version metadata as published by the regi
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode (`read_only`, `safe`, `delete_safe`, `full_access`).  Read only.
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

@@ -16,7 +16,7 @@ faq:
 
 StackQL is a single Go binary implementing a SQL engine over cloud and SaaS provider APIs. Architecturally it is four layers: entry points that accept SQL, a parser and query engine that plan it, a provider SDK that executes live API calls described by declarative provider specs, and a SQL backend that performs relational operations on the materialized results.
 
-## Components
+## Components {#components}
 
 **Entry points.** Three ways in, all converging on the same parser:
 
@@ -32,13 +32,13 @@ StackQL is a single Go binary implementing a SQL engine over cloud and SaaS prov
 
 **SQL backend.** Materialized API results land in an embedded SQLite database by default (an external PostgreSQL can be configured instead), where joins - including cross-provider joins - aggregates, sorting, subqueries, and expressions execute with full SQL semantics.
 
-## The defining design decision: providers as data
+## The defining design decision: providers as data {#the-defining-design-decision-providers-as-data}
 
 StackQL has no compiled, provider-specific plugins. A provider is a versioned document set - an extended OpenAPI specification in the open [StackQL provider registry](https://github.com/stackql/stackql-provider-registry) - mapping API operations to resources, SQL verbs, and parameters. `REGISTRY PULL aws` downloads the spec; the SDK interprets it at runtime.
 
 Consequences: provider coverage tracks the documented API surface rather than plugin development effort; data plane and lifecycle operations are mappable the same way control plane CRUD is; and the entire surface is introspectable at runtime (`SHOW PROVIDERS`, `SHOW METHODS IN aws.ec2.instances`, `DESCRIBE github.repos.repos`) - the property that makes StackQL self-describing for AI agents.
 
-## Query execution flow
+## Query execution flow {#query-execution-flow}
 
 For `SELECT instance_id, instance_type FROM aws.ec2.instances WHERE region = 'us-east-1';`:
 
@@ -49,7 +49,7 @@ For `SELECT instance_id, instance_type FROM aws.ec2.instances WHERE region = 'us
 
 A `region IN (...)` predicate at step 2 becomes parallel per-region calls; a join at step 4 operates across whatever providers contributed tables.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [StackQL MCP Architecture](/ai/architecture/stackql-mcp-architecture) - the agent-facing entry point in depth
 - [What is SQL for APIs?](/ai/canonical-definitions/what-is-sql-for-apis) - the mapping the provider specs encode

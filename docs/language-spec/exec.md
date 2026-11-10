@@ -19,7 +19,7 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 *execStatement::=*
 
@@ -34,7 +34,7 @@ type="exec"
 EXEC [ queryHint ] <multipartIdentifier>.<methodName> [ <methodArguments> ];
 ```
 
-## Query Hints
+## Query Hints {#query-hints}
 
 Query hints supported for the `EXEC` command are summarised below:  
 
@@ -45,9 +45,9 @@ Query hints supported for the `EXEC` command are summarised below:
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Stopping a Google Compute Engine instance
+### Stopping a Google Compute Engine instance {#stopping-a-google-compute-engine-instance}
 Run an `EXEC` statement to stop a running Compute Engine instance in an authenticated session.
 
 ```sql
@@ -58,7 +58,7 @@ EXEC google.compute.instances.stop
 @zone = 'australia-southeast1-a';
 ```
 
-### Starting a Google Compute Engine instance (synchronous option)
+### Starting a Google Compute Engine instance (synchronous option) {#starting-a-google-compute-engine-instance-synchronous-option}
 Run an `EXEC` statement to start a stopped Compute Engine instance in an authenticated session, uses the `/*+ AWAIT  */` query hint to make the operation blocking (synchronous).
 
 ```sql
@@ -69,7 +69,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.stop
 @zone = 'australia-southeast1-a';
 ```
 
-### Starting and stopping an AWS EC2 instance
+### Starting and stopping an AWS EC2 instance {#starting-and-stopping-an-aws-ec2-instance}
 Run an `EXEC` statement to start an AWS EC2 instance in an authenticated session.
 
 ```sql
@@ -83,7 +83,7 @@ EXEC aws.ec2.instances.stop_instances
 @region = 'ap-southeast-2';
 ```
 
-### Attach a Disk to a Google Compute Engine instance
+### Attach a Disk to a Google Compute Engine instance {#attach-a-disk-to-a-google-compute-engine-instance}
 Run an `EXEC` statement to attach a Disk to a Compute Engine instance in an authenticated session.
 
 ```sql
@@ -99,7 +99,7 @@ EXEC google.compute.instances.attachDisk
 }';
 ```
 
-### Simulate Azure Spot VM eviction
+### Simulate Azure Spot VM eviction {#simulate-azure-spot-vm-eviction}
 Run an `EXEC` statement to simulate eviction of Azure Spot VM Instance. 
 
 ```sql

@@ -24,7 +24,7 @@ The embedded binary is downloaded and sha256-verified on first run, or vendored 
 
 * * *
 
-## Install
+## Install {#install}
 
 ```
 gleam add stackql_mcp
@@ -34,7 +34,7 @@ Targets Erlang/BEAM only (not the JavaScript target). The server is exposed as a
 
 * * *
 
-## Quick start
+## Quick start {#quick-start}
 
 ```gleam
 import gleam/io
@@ -70,7 +70,7 @@ The API is `stackql_mcp.start()`, `stop()`, and `child_spec()` for lifecycle; `l
 
 * * *
 
-## Modes
+## Modes {#modes}
 
 The mode is set on `Config.mode` and defaults to `read_only`. Set it to `safe`, `delete_safe`, or `full_access` to escalate:
 
@@ -82,7 +82,7 @@ Escalation is explicit - the server will not enable mutation or lifecycle tools 
 
 * * *
 
-## Vendoring / embedding
+## Vendoring / embedding {#vendoring--embedding}
 
 On start the library downloads the platform's StackQL bundle, verifies it against baked-in sha256 pins, and caches it in the shared family cache. Resolution precedence:
 
@@ -94,12 +94,12 @@ For offline or air-gapped deployments, set `STACKQL_MCP_BUNDLE` to point at a lo
 
 * * *
 
-## Demo app
+## Demo app {#demo-app}
 
 **pipewatch** is the planned demo for this library. It is on the roadmap and not yet implemented.
 
 * * *
 
-## Repo link
+## Repo link {#repo-link}
 
 [github.com/stackql/stackql-mcp-gleam](https://github.com/stackql/stackql-mcp-gleam)

@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT ACOSH(value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*value*__  
 A numeric expression greater than or equal to 1, for which the hyperbolic arc cosine is to be calculated.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the hyperbolic arc cosine of the specified value in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Calculate the hyperbolic arc cosine of 1
+### Calculate the hyperbolic arc cosine of 1 {#calculate-the-hyperbolic-arc-cosine-of-1}
 
 ```sql
 SELECT ACOSH(1) AS hyperbolic_arc_cosine_value;
@@ -43,7 +43,7 @@ SELECT ACOSH(1) AS hyperbolic_arc_cosine_value;
 
 This query returns `0`, as the hyperbolic arc cosine of 1 is 0 radians.
 
-### Calculate the hyperbolic arc cosine of 10
+### Calculate the hyperbolic arc cosine of 10 {#calculate-the-hyperbolic-arc-cosine-of-10}
 
 ```sql
 SELECT ACOSH(10) AS hyperbolic_arc_cosine_value;

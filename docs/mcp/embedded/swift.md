@@ -23,7 +23,7 @@ The embedded binary is downloaded and sha256-verified on first run, or vendored 
 
 * * *
 
-## Install
+## Install {#install}
 
 Add the package to your `Package.swift`:
 
@@ -35,7 +35,7 @@ Requires macOS 13+ and Swift 6.1 (Xcode 16.3+). The single dependency is the off
 
 * * *
 
-## Quick start
+## Quick start {#quick-start}
 
 ```swift
 import StackQLMCP
@@ -59,13 +59,13 @@ The API is `StackQLServer.start(Options)`, `.listToolNames()`, `.call(_:_:)`, an
 
 * * *
 
-## Modes
+## Modes {#modes}
 
 `Options.mode` defaults to `.readOnly`. Set it to `.safe`, `.deleteSafe`, or `.fullAccess` to escalate. Escalation is explicit - the server will not enable mutation or lifecycle tools unless you opt in.
 
 * * *
 
-## Vendoring / embedding
+## Vendoring / embedding {#vendoring--embedding}
 
 The `darwin-universal` binary is Developer ID signed and Apple-notarised, so it can be bundled inside a signed macOS `.app` while keeping the app's own notarisation valid. This is unique to the Swift library - you ship one self-contained, notarised application with no first-run download.
 
@@ -78,12 +78,12 @@ Binary resolution order:
 
 * * *
 
-## Demo app
+## Demo app {#demo-app}
 
 **CloudLens** is a menu-bar cloud sentinel that embeds the notarised binary and runs a `read_only` check suite.
 
 * * *
 
-## Repo link
+## Repo link {#repo-link}
 
 [github.com/stackql/stackql-mcp-swift](https://github.com/stackql/stackql-mcp-swift)

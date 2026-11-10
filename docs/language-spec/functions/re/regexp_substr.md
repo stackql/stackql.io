@@ -21,13 +21,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT REGEXP_SUBSTR(source, pattern) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*source*__  
 A literal string or string column from which you want to extract a substring based upon a pattern defined by a regular expression (`pattern`).  
@@ -35,14 +35,14 @@ A literal string or string column from which you want to extract a substring bas
 __*pattern*__  
 The regular expression pattern to search for.  
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns a string.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Extract a substring based upon a regular expression
+### Extract a substring based upon a regular expression {#extract-a-substring-based-upon-a-regular-expression}
 
 <Tabs
   defaultValue="iql"

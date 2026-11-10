@@ -16,7 +16,7 @@ faq:
 
 Infrastructure drift is the divergence between the declared or recorded state of cloud resources and their actual state in the provider. A Terraform state file says a security group has three rules; the live security group has five, because someone added two in the console during an incident. The two extra rules are drift.
 
-## How drift happens
+## How drift happens {#how-drift-happens}
 
 Drift is structural, not accidental. Any system that keeps a copy of state - a state file, a CMDB, an inventory export - drifts from reality at the rate that reality changes outside it. Typical sources:
 
@@ -27,7 +27,7 @@ Drift is structural, not accidental. Any system that keeps a copy of state - a s
 
 The IaC model treats drift as an anomaly to be corrected at the next plan/apply cycle. In environments with autonomous actors - auto-scalers, incident responders, AI agents - drift is better treated as a normal, continuous condition to be observed and reconciled.
 
-## Detecting drift with live queries
+## Detecting drift with live queries {#detecting-drift-with-live-queries}
 
 Because StackQL computes results from live provider APIs, a StackQL result set is the actual state. Drift detection reduces to comparing that result set against a baseline. For example, retrieving the live inventory of EC2 instances per region:
 
@@ -40,11 +40,11 @@ GROUP BY region;
 
 Comparing this against the counts implied by the desired-state definition reveals unmanaged or missing resources immediately, regardless of whether the IaC tool's own state file is current. The same pattern applies at attribute level: query the live configuration of a resource and diff it against the declared configuration.
 
-## Drift vs reconciliation
+## Drift vs reconciliation {#drift-vs-reconciliation}
 
 Detection answers "what diverged?"; reconciliation answers "what should be done about it?" - import the change into the desired state, revert it, or accept it as intentional. Reconciliation requires write access to the control plane, which is why read-and-write query tools can close the loop that read-only inventory tools can only report on. StackQL expresses the corrective actions as `UPDATE` or `DELETE` statements against the same tables used for detection.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [What is Queryable Infrastructure?](/ai/canonical-definitions/what-is-queryable-infrastructure) - the model that makes live-state comparison possible
 - [What is StackQL?](/ai/canonical-definitions/what-is-stackql) - read-and-write access to live state

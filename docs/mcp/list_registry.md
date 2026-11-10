@@ -20,7 +20,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -28,7 +28,7 @@ See also:
 
 * * *
 
-## Output
+## Output {#output}
 
 | Renderer | Shape |
 |--|--|
@@ -36,13 +36,13 @@ See also:
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode.  No cloud control or data plane effect -- only the registry is read.
 
 * * *
 
-## Example
+## Example {#example}
 
 Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
 

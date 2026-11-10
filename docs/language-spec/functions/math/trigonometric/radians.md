@@ -17,25 +17,25 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT RADIANS(angle_in_degrees) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*angle_in_degrees*__  
 A numeric expression representing an angle in degrees.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the equivalent of the angle in radians.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Convert 180 degrees to radians
+### Convert 180 degrees to radians {#convert-180-degrees-to-radians}
 
 ```sql
 SELECT RADIANS(180) AS radians_value;
@@ -43,7 +43,7 @@ SELECT RADIANS(180) AS radians_value;
 
 This query will return π (approximately `3.14159`), as converting 180 degrees to radians results in π radians.
 
-### Convert 90 degrees to radians
+### Convert 90 degrees to radians {#convert-90-degrees-to-radians}
 
 ```sql
 SELECT RADIANS(90) AS radians_value;

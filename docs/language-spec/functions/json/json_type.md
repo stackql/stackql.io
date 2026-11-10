@@ -29,14 +29,14 @@ The `json_type` function is implemented as the `json_typeof` function if you are
 
 :::
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_TYPE(json_array_or_object, json_path) 
 FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_array_or_object*__  
 A JSON array or object.
@@ -48,16 +48,16 @@ The JSON path to an array or object contained within an *json_array_or_object*. 
 
 > The `json_type()` function throws an error if any of its arguments are not well-formed.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 A string representing the resolved datatype.
 
 > Datatypes include `null`, `true`, `false`, `integer`, `real`, `text`, `array`, or `object`.
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Return the datatype of a field nested within a JSON object or array
+### Return the datatype of a field nested within a JSON object or array {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
 
 ```sql
 SELECT json_type(disks, '$[0].licenses[0]') as datatype

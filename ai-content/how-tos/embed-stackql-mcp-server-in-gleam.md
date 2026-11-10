@@ -18,7 +18,7 @@ faq:
 
 StackQL's MCP server can run inside a Gleam application on the Erlang/BEAM target with no separate install and no runtime dependency. The `stackql_mcp` library spawns the signed StackQL binary over stdio and integrates with OTP supervision, so a BEAM service gets a governed, self-describing SQL interface to every cloud and SaaS provider in the StackQL registry. The server is exposed as an OTP child via `child_spec()` so it can sit inside your own supervision tree.
 
-## Steps
+## Steps {#steps}
 
 1. **Add the library:**
 
@@ -64,15 +64,15 @@ Use `child_spec()` to place the server under a supervisor, with `supervised_list
 
 3. **Choose a mode.** `Config.mode` defaults to `read_only`. Build `stackql_mcp.Config(..stackql_mcp.default_config(), mode: stackql_mcp.safe)` to escalate to `safe`, `delete_safe`, or `full_access`. Escalation is explicit.
 
-## Binary sourcing
+## Binary sourcing {#binary-sourcing}
 
 On start the library downloads the platform's StackQL bundle, verifies it against baked-in sha256 pins, and caches it in the shared family cache. Resolution precedence: explicit `Config.binary`, then `STACKQL_MCP_BIN`, then the shared cache at `~/.stackql/mcp-server-bin/`. For offline or air-gapped deployments, set `STACKQL_MCP_BUNDLE` to point at a local bundle.
 
-## Demo app
+## Demo app {#demo-app}
 
 **pipewatch** is the planned demo for this library. It is on the roadmap and not yet implemented.
 
-## Related concepts
+## Related concepts {#related-concepts}
 
 - [Embedded MCP: Gleam reference](/mcp/embedded/gleam) - install, API, and binary sourcing
 - [How to use StackQL with AI agents](/ai/how-tos/use-stackql-with-ai-agents) - the MCP model and safety modes

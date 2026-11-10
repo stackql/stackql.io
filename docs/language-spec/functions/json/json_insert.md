@@ -17,13 +17,13 @@ See also:
 
 * * * 
 
-## Syntax
+## Syntax {#syntax}
 
 ```sql
 SELECT JSON_INSERT(json_column, path, new_value) FROM <multipartIdentifier>;
 ```
 
-## Arguments
+## Arguments {#arguments}
 
 __*json_column*__  
 The JSON column or expression to be modified.
@@ -34,7 +34,7 @@ The JSON path expression where the new value should be inserted. If the path alr
 __*new_value*__  
 The value to insert at the specified path in the JSON document.
 
-## Return Value(s)
+## Return Value(s) {#return-values}
 Returns the JSON document with the new value inserted if the specified path does not already exist; otherwise, the JSON document is returned unchanged.
 
 :::note Behavior If a Key Exists
@@ -49,9 +49,9 @@ Returns the JSON document with the new value inserted if the specified path does
 
 * * *
 
-## Examples
+## Examples {#examples}
 
-### Insert a new key-value pair into a JSON object
+### Insert a new key-value pair into a JSON object {#insert-a-new-key-value-pair-into-a-json-object}
 
 ```sql
 -- Example: Insert a new 'region' key with the value 'Europe' into a JSON object

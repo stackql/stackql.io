@@ -21,7 +21,7 @@ See also:
 
 * * *
 
-## Inputs
+## Inputs {#inputs}
 
 | Argument | Required | Description |
 |--|--|--|
@@ -35,7 +35,7 @@ See also:
 
 * * *
 
-## Output
+## Output {#output}
 
 The default text view is a ranked table of `id`, `title`, `mutation`, `required_params` and `score`, followed by the source citation and any miss guidance. The structured payload contains:
 
@@ -52,13 +52,13 @@ Deprecated entries are excluded. The server caches the catalogue and can fall ba
 
 * * *
 
-## Gating
+## Gating {#gating}
 
 Allowed in every server mode, subject to the configured tool allowlist. No approval or provider credentials are needed. Searching for mutation templates does not authorize their execution.
 
 * * *
 
-## Example
+## Example {#example}
 
 Tool arguments:
 

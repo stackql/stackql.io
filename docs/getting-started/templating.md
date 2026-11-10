@@ -15,7 +15,7 @@ See also:
 
 Cloud resources are deployed with StackQL using `INSERT` statements.  `INSERT` templates for different cloud resources using the `SHOW INSERT` command.
 
-### Generating an `INSERT` template using the `SHOW INSERT` command
+### Generating an `INSERT` template using the `SHOW INSERT` command {#generating-an-insert-template-using-the-show-insert-command}
 
 An example of generating a template is shown here:
 
@@ -62,7 +62,7 @@ SELECT
 
 > This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](/getting-started/variables).
 
-### Generating an `INSERT` template with only required parameters
+### Generating an `INSERT` template with only required parameters {#generating-an-insert-template-with-only-required-parameters}
 
 To generate an StackQL `INSERT` template with only mandatory attributes use the `/*+ REQUIRED */` query hint as shown here:
 

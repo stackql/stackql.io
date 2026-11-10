@@ -15,13 +15,13 @@ Command used to interact with the StackQL Provider Registry.  The registry locat
 
 * * * 
 
-### Syntax
+### Syntax {#syntax}
 
 `stackql registry {subcommand} [{provider} [{version}]]`
 
 * * *
 
-### Arguments
+### Arguments {#arguments}
 
 | Argument | Description | Example |
 |--|--|--|
@@ -30,7 +30,7 @@ Command used to interact with the StackQL Provider Registry.  The registry locat
 |<span class="nowrap">`version`</span>|Optional provider version to be installed using `pull` subcommand *(StackQL Provider Document Version)* | `v23.03.00121` |
 
 
-### Flags
+### Flags {#flags}
 
 | Flag | Description |
 |--|--|
@@ -41,7 +41,7 @@ Command used to interact with the StackQL Provider Registry.  The registry locat
 
 * * *
 
-### Examples
+### Examples {#examples}
 
 List available providers in the public registry:
 ```shell
