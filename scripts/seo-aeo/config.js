@@ -192,6 +192,12 @@ module.exports = {
     { languages: 'en-US,en', timeZone: 'America/New_York', flag: null },
     { languages: 'en-AU,en', timeZone: 'America/New_York', flag: 'au' },
     { languages: 'en-US,en', timeZone: 'Australia/Sydney', flag: 'au' },
+    // en-GB only counts when the time zone says nothing: a browser in
+    // Melbourne that is set to British English is in Australia
+    { languages: 'en-GB,en-US,en', timeZone: 'Australia/Melbourne', flag: 'au' },
+    // and the other way around: en-AU decides wherever the machine is
+    { languages: 'en-AU,en', timeZone: 'Europe/London', flag: 'au' },
+    { languages: 'en-US,en', timeZone: 'Europe/London', flag: 'gb' },
     { languages: 'en-US,en', timeZone: 'Pacific/Auckland', flag: 'nz' },
     { languages: 'en-ZA,en', timeZone: 'UTC', flag: 'za' },
     { languages: 'en-GB,en', timeZone: 'Europe/Paris', flag: 'gb' },

@@ -23,14 +23,26 @@
 //
 // CommonJS on purpose: docusaurus.config.js requires it.
 
+// The two signals are combined, in this order:
+//   1. regions       a browser language (navigator.languages, "en-AU") that
+//                    names one of these regions decides, wherever the
+//                    machine is. Nobody sets en-AU by accident, so an en-AU
+//                    browser in London still gets the Australian flag.
+//   2. timeZones     otherwise the time zone, which says where the machine
+//                    is. Browsers in these countries are very often left on
+//                    en-US or en-GB.
+//   3. looseRegions  otherwise a language that names one of these regions.
+//                    en-GB is the setting much of the English-speaking world
+//                    outside the US runs on, so it only counts when the time
+//                    zone says nothing: a browser in Melbourne set to en-GB
+//                    is in Australia (it showed the UK flag while en-GB
+//                    decided on its own), one in New York set to en-GB gets
+//                    the UK flag.
+// Time zones are matched by IANA name prefix, not by UTC offset: an offset
+// such as +11 is shared with other countries and moves with daylight saving.
 const REGIONAL_FLAGS = {
   en: {
-    // The region of a browser language (navigator.languages, "en-AU"), tried
-    // first, in the browser's order of preference.
-    regions: { AU: 'au', NZ: 'nz', ZA: 'za', GB: 'gb' },
-    // IANA time zone prefixes, tried when no language decides. Many browsers
-    // in these countries are left on en-US, and the time zone still says
-    // where the machine is.
+    regions: { AU: 'au', NZ: 'nz', ZA: 'za' },
     timeZones: [
       ['Australia/', 'au'],
       ['Pacific/Auckland', 'nz'],
@@ -38,6 +50,7 @@ const REGIONAL_FLAGS = {
       ['Africa/Johannesburg', 'za'],
       ['Europe/London', 'gb'],
     ],
+    looseRegions: { GB: 'gb' },
   },
 };
 
@@ -45,7 +58,7 @@ const REGIONAL_FLAGS = {
 // functions, no optional chaining) and wrapped so that any error leaves the
 // page exactly as it was served.
 function headScript(config = REGIONAL_FLAGS) {
-  return `!function(){try{var c=${JSON.stringify(config)},d=document.documentElement,n=navigator,l=n.languages&&n.languages.length?n.languages:[n.language||""],z="";try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}for(var k in c){var f="",i,p;for(i=0;i<l.length&&!f;i++){p=String(l[i]).split("-");if(p[0].toLowerCase()===k&&p[1])f=c[k].regions[p[1].toUpperCase()]||""}for(i=0;i<c[k].timeZones.length&&!f;i++)if(z.indexOf(c[k].timeZones[i][0])===0)f=c[k].timeZones[i][1];if(f)d.setAttribute("data-flag-"+k,f)}}catch(e){}}();`;
+  return `!function(){try{var c=${JSON.stringify(config)},d=document.documentElement,n=navigator,l=n.languages&&n.languages.length?n.languages:[n.language||""],z="";try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var g=function(k,m){for(var i=0,p;m&&i<l.length;i++){p=String(l[i]).split("-");if(p[0].toLowerCase()===k&&p[1]&&m[p[1].toUpperCase()])return m[p[1].toUpperCase()]}return""};for(var k in c){var f=g(k,c[k].regions),t=c[k].timeZones||[],i;for(i=0;i<t.length&&!f;i++)if(z.indexOf(t[i][0])===0)f=t[i][1];f=f||g(k,c[k].looseRegions);if(f)d.setAttribute("data-flag-"+k,f)}}catch(e){}}();`;
 }
 
 module.exports = { REGIONAL_FLAGS, headScript };
