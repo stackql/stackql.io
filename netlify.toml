@@ -52,14 +52,14 @@
     X-Robots-Tag = "index, follow"
 
 [[headers]]
-  for = "/zh-Hans/llms.txt"
+  for = "/zh-hans/llms.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
 
 [[headers]]
-  for = "/zh-Hans/llms-full.txt"
+  for = "/zh-hans/llms-full.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=300, must-revalidate"
@@ -163,8 +163,8 @@
   status = 404
 
 [[redirects]]
-  from = "/zh-Hans/*"
-  to = "/zh-Hans/404.html"
+  from = "/zh-hans/*"
+  to = "/zh-hans/404.html"
   status = 404
 
 # Former top-level meta-refresh stubs (src/pages/tutorials.js, cookbooks.js,

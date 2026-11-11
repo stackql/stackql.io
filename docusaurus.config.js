@@ -85,9 +85,24 @@ const i18nConfig = {
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
-    'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans' },
+    // The URL path is lower case on purpose. Netlify answers a page URL that
+    // has upper-case letters with a 301 to its lower-case form, so with the
+    // default /zh-Hans/ every canonical, hreflang and sitemap URL of the
+    // locale was a redirect, and the page then ran at /zh-hans/ with a
+    // baseUrl of /zh-Hans/: the language switcher strips the baseUrl from
+    // the path case-sensitively and linked to //zh-hans/, which a browser
+    // reads as a host name (November 2026). The locale code, the i18n/
+    // directory and the lang attribute stay zh-Hans.
+    'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
   },
 };
+
+// The URL path prefix of a locale ('' for the default): its baseUrl when the
+// locale sets one, otherwise /<locale>. Always lower case, see above.
+const localeUrlPrefix = (locale) =>
+  locale === i18nConfig.defaultLocale
+    ? ''
+    : (i18nConfig.localeConfigs[locale].baseUrl || `/${locale}/`).replace(/\/+$/, '');
 
 // What a locale offers crawlers follows from what is translated for it
 // (scripts/i18n/config.js, `locales.<l>.sources`): every locale has its own
@@ -106,12 +121,12 @@ function translatedSources(locale) {
 
 // Route prefixes of every locale ('' for the default), for route patterns
 // that must cover each localized copy of the site.
-const localeRoutePrefixes = [
-  '',
-  ...i18nConfig.locales
-    .filter((locale) => locale !== i18nConfig.defaultLocale)
-    .map((locale) => `/${locale}`),
-];
+const localeRoutePrefixes = i18nConfig.locales.map(localeUrlPrefix);
+for (const prefix of localeRoutePrefixes) {
+  if (prefix !== prefix.toLowerCase()) {
+    throw new Error(`locale URL prefix ${prefix} has upper-case letters: set a lower-case baseUrl for that locale in i18nConfig.localeConfigs`);
+  }
+}
 
 const blogSectionNavItems = blogSections.map(({id, label}) => ({
   label,

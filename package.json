@@ -19,6 +19,7 @@
     "i18n:mark": "node scripts/i18n/mark.js",
     "i18n:prune": "node scripts/i18n/prune.js",
     "i18n:translate": "node scripts/i18n/translate.js",
+    "seo:check": "node scripts/seo-aeo/check.js",
     "postinstall": "node scripts/i18n/install-hooks.js"
   },
   "dependencies": {
