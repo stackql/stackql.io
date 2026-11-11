@@ -35,6 +35,36 @@
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
 
+# The same two files per locale (i18n.locales in docusaurus.config.js other
+# than the default). Each lists only the pages translated into that language.
+[[headers]]
+  for = "/de/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/de/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/zh-Hans/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/zh-Hans/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
 # /providers.json: the provider catalog published for the shared chrome in
 # the docusaurus-config repo (written by plugins/provider-catalog). The
 # provider microsites and the query library fetch it at build time, so a
@@ -130,6 +160,11 @@
 [[redirects]]
   from = "/de/*"
   to = "/de/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/zh-Hans/*"
+  to = "/zh-Hans/404.html"
   status = 404
 
 # Former top-level meta-refresh stubs (src/pages/tutorials.js, cookbooks.js,

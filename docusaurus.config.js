@@ -81,12 +81,28 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de'],
+  locales: ['en', 'de', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
+    'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans' },
   },
 };
+
+// What a locale offers crawlers follows from what is translated for it
+// (scripts/i18n/config.js, `locales.<l>.sources`): every locale has its own
+// sitemap.xml, llms.txt, llms-full.txt and .md companions, and each of them
+// covers only the pages that exist in that language. The sitemap does this by
+// itself (the untranslated pages are noindex, and the sitemap plugin leaves
+// noindex pages out); for the answer engine files, configForLocale() at the
+// end of this file excludes the untranslated source sets, so no English copy
+// of the AI Reference or of a blog post is published under /<locale>/ to
+// compete with the English original. The default locale has everything.
+const i18nTooling = require('./scripts/i18n/config.js');
+function translatedSources(locale) {
+  if (locale === i18nConfig.defaultLocale) return Object.keys(i18nTooling.sources);
+  return (i18nTooling.locales[locale] || {}).sources || [];
+}
 
 // Route prefixes of every locale ('' for the default), for route patterns
 // that must cover each localized copy of the site.
@@ -149,7 +165,9 @@ const footerMoreItems = [
     // The /ai/* surface is kept out of the header on purpose, but with no
     // internal link at all Google treated its 44 sitemap URLs as orphans
     // ("Discovered - currently not indexed"). One footer link to the
-    // landing page gives the whole tree a crawl path.
+    // landing page gives the whole tree a crawl path. configForLocale()
+    // removes it (matched on `to`) for a locale the AI Reference is not
+    // translated for.
     label: 'AI Reference',
     to: '/ai',
   },
@@ -243,6 +261,9 @@ const config = {
         // has one, the "## Optional" section in llms.txt pointing at
         // llms-full.txt, and the Ask AI button only where a companion
         // exists.
+        // configForLocale() adds a `companions.exclude` per locale for the
+        // source sets that are not translated for it; llms.txt and
+        // llms-full.txt are built from the companions, so they follow.
         llmsTxt: {
           // llms-full.txt is read as a bounded prefix by most agents, so
           // keep it to the two reference corpora rather than every blog
@@ -709,7 +730,59 @@ const config = {
 	}),
 };
 
-module.exports = config;
+// The config for one locale: `config` as written above, with the source sets
+// that are not translated for that locale kept out of the answer engine
+// files (see translatedSources). Returns copies; the `config` object is
+// shared by every locale of a build and is not modified.
+function configForLocale(locale) {
+  const sources = translatedSources(locale);
+  const hasAiReference = sources.includes('ai-content');
+  // routes of the untranslated source sets, as companions.exclude patterns
+  // (a pattern matches with or without the locale's base URL in front)
+  const untranslated = [
+    ...(hasAiReference ? [] : ['/ai', '/ai/**']),
+    ...blogSections
+      .filter(({id}) => !sources.includes(`blog-${id}`))
+      .flatMap(({id}) => [`/blog/${id}`, `/blog/${id}/**`]),
+  ];
+  if (untranslated.length === 0) return config;
+  return {
+    ...config,
+    plugins: config.plugins.map((plugin) =>
+      Array.isArray(plugin) && plugin[0] === '@stackql/docusaurus-plugin-aeo'
+        ? [plugin[0], {
+            ...plugin[1],
+            companions: {
+              ...plugin[1].companions,
+              exclude: [...((plugin[1].companions || {}).exclude || []), ...untranslated],
+            },
+          }]
+        : plugin),
+    themeConfig: hasAiReference
+      ? config.themeConfig
+      : {
+          ...config.themeConfig,
+          footer: {
+            ...config.themeConfig.footer,
+            links: config.themeConfig.footer.links.map((column) => ({
+              ...column,
+              items: column.items.filter((item) => item.to !== '/ai'),
+            })),
+          },
+        },
+  };
+}
+
+// Exported as a function on purpose. `docusaurus build` builds the locales
+// one after another in one process and sets DOCUSAURUS_CURRENT_LOCALE before
+// it loads this file for each of them, but the module is evaluated only
+// once: a top-level read of that variable keeps the first locale's value for
+// all the others (tried, and the German build came out with the English
+// settings). Docusaurus calls an exported function on every load. Commands
+// that do not set the variable (write-translations) get the default locale.
+module.exports = function createConfig() {
+  return configForLocale(process.env.DOCUSAURUS_CURRENT_LOCALE || i18nConfig.defaultLocale);
+};
 function fetchHeadTagsFromAPI() {
   throw new Error('Function not implemented.');
 }

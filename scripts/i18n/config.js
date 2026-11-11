@@ -68,7 +68,17 @@ module.exports = {
         'sidebar.docsSidebar.category.GitHub',
       ],
     },
-    // 'zh-Hans': { sources: ['docs', 'ai-content'] },
+    'zh-Hans': {
+      sources: ['docs', 'ai-content'],
+      sameAsEnglish: [
+        'link.title.StackQL',
+        'sidebar.docsSidebar.category.MCP',
+        'sidebar.docsSidebar.category.AWS',
+        'sidebar.docsSidebar.category.Microsoft Azure',
+        'sidebar.docsSidebar.category.Google Cloud Platform',
+        'sidebar.docsSidebar.category.GitHub',
+      ],
+    },
   },
 
   // String files written by `docusaurus write-translations --locale <l>`

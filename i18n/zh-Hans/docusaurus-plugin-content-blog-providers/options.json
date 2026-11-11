@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Provider 公告",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "新增和更新的 StackQL Provider",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "全部 Provider 公告",
+    "description": "The label for the left sidebar"
+  }
+}
