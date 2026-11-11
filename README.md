@@ -94,7 +94,7 @@ Run it locally before a deploy that touches locales, URLs, `netlify.toml`, `stat
 | `llms` | per locale: `llms.txt` sections and entries, only translated pages listed, Chinese text for `zh-Hans`, sampled `.md` companions, `llms-full.txt` | yes | yes, and content types and `X-Robots-Tag` |
 | `pages` | representative pages per locale: `lang`, title, description, canonical, robots meta, `hreflang`, social tags, JSON-LD types and language, the markdown twin, and that the text is in the served HTML (no JavaScript needed) | yes | yes, and no redirects |
 | `assets` | third-party hosts on the rendering path; a warning for hosts that are slow or unreachable from mainland China | yes | yes |
-| `switcher` | in headless Chrome: after the page hydrates, the language switcher links to the same page in every locale, for every pair of locales | yes | yes |
+| `switcher` | in headless Chrome: after the page hydrates, the language switcher links to the same page in every locale, for every pair of locales; the English flag follows the browser's region (AU, NZ, ZA, GB) and is the US flag otherwise | yes | yes |
 | `crawlers` | each crawler user-agent (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, Baiduspider, Bytespider and the rest of the list) gets the same status and the same bytes as a plain client: not blocked, not cloaked | skipped | yes |
 | `edge` | redirect rules of `netlify.toml` answer as written in one hop, a missing page gets its locale's 404 page, `/providers.json` headers, the query library proxy | skipped | yes |
 

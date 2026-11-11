@@ -114,6 +114,7 @@ const localeUrlPrefix = (locale) =>
 // of the AI Reference or of a blog post is published under /<locale>/ to
 // compete with the English original. The default locale has everything.
 const i18nTooling = require('./scripts/i18n/config.js');
+const regionalFlags = require('./src/lib/regionalFlags.js');
 function translatedSources(locale) {
   if (locale === i18nConfig.defaultLocale) return Object.keys(i18nTooling.sources);
   return (i18nTooling.locales[locale] || {}).sources || [];
@@ -208,6 +209,15 @@ const config = {
   clientModules: [require.resolve('./src/clientModules/revealTabAnchors.js')],
   i18n: i18nConfig,
   headTags: [
+    {
+      // Picks the regional variant of the English flag in the language
+      // switcher (AU, NZ, ZA, GB) before the first paint, from the browser's
+      // language and time zone; see src/lib/regionalFlags.js. Inline, so it
+      // costs no request, and it leaves the page as served on any error.
+      tagName: 'script',
+      attributes: {},
+      innerHTML: regionalFlags.headScript(),
+    },
     {
       tagName: 'link',
       attributes: {

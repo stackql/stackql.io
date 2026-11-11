@@ -421,23 +421,38 @@ async function crawlers(ctx) {
   if (unusable.length) r.warn(`not compared across crawlers (not 200 for a plain client): ${unusable.join(', ')}`);
   const compared = paths.filter((p) => baseline.get(p).status === 200);
 
+  // A crawler that is blocked stays blocked, so a different answer is asked
+  // for once more before it counts: the edge now and then answers a single
+  // request with a 403 (seen minutes after a deploy), and that is a warning,
+  // not a failure.
   const byGroup = new Map();
   for (const crawler of cfg.crawlers.filter((c) => c.ua)) {
     const differences = [];
+    const once = [];
     await Promise.all(compared.map(async (p) => {
-      const res = await client.get(p, { ua: crawler.ua });
       const base = baseline.get(p);
+      const differs = (x) => x.status !== base.status || x.hash !== base.hash;
+      let res = await client.get(p, { ua: crawler.ua });
+      if (differs(res)) {
+        const first = res.status;
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        res = await client.get(p, { ua: crawler.ua, fresh: true });
+        if (!differs(res)) return once.push(`${p} (status ${first} once)`);
+      }
       if (res.status !== base.status) differences.push(`${p} -> status ${res.status}`);
       else if (res.hash !== base.hash) differences.push(`${p} -> different content (${res.bytes} bytes, ${base.bytes} for a plain client)`);
+      return null;
     }));
-    const group = byGroup.get(crawler.group) || { ok: [], bad: [] };
+    const group = byGroup.get(crawler.group) || { ok: [], bad: [], flaky: [] };
     byGroup.set(crawler.group, group);
     if (differences.length) group.bad.push(`${crawler.name}: ${h.list(differences, 3)}`);
     else group.ok.push(crawler.name);
+    if (once.length) group.flaky.push(`${crawler.name}: ${h.list(once, 3)}`);
   }
-  for (const [group, { ok, bad }] of byGroup) {
+  for (const [group, { ok, bad, flaky }] of byGroup) {
     if (ok.length) r.pass(`${group}: ${ok.join(', ')} get the same ${compared.length} responses as a plain client (not blocked, not cloaked)`);
-    for (const b of bad) r.fail(`${group}: ${b}`);
+    for (const b of bad) r.fail(`${group}: ${b} (same answer on a second try)`);
+    for (const f of flaky) r.warn(`${group}: ${f}, then the normal response on a second try: a passing edge error, not a block`);
   }
 }
 

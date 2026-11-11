@@ -12,6 +12,33 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
+/* Regional variants of a locale's flag (src/lib/regionalFlags.js). The page
+   is served with the default flag as inline SVG; when <html> carries
+   data-flag-<locale>, the variant's artwork is painted as the background of
+   that same element and the default shapes are hidden, so the box does not
+   change size. The artwork is an SVG data URI in this file, so nothing is
+   fetched. It is written as plain SVG on one line with single-quoted
+   attributes and "#" as %23 (the build optimizes and encodes it). A
+   variant with no rule here keeps the default flag. */
+:global(html[data-flag-en='au']) .flag[data-flag-locale='en'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23012169' d='M0 0h640v480H0z'/><svg width='320' height='240' viewBox='0 0 640 480'><clipPath id='a'><path d='M320 240h320v240zv240H0zH0V0zV0h320z'/></clipPath><path fill='%23012169' d='M0 0h640v480H0z'/><path stroke='%23fff' stroke-width='96' d='m0 0 640 480m0-480L0 480'/><path stroke='%23c8102e' stroke-width='64' d='m0 0 640 480m0-480L0 480' clip-path='url(%23a)'/><path stroke='%23fff' stroke-width='160' d='M320 0v480M0 240h640'/><path stroke='%23c8102e' stroke-width='96' d='M320 0v480M0 240h640'/></svg><path fill='%23fff' d='m160 288 13.9 43.2 42.4-16.1-25.1 37.8 39 23.1-45.2 4 6.2 44.9L160 392l-31.2 32.9L135 380l-45.2-4 39-23.1-25.1-37.8 42.4 16.1zm320 78 6.6 20.4 20-7.6-11.9 17.8 18.4 11-21.3 1.8 3 21.2-14.8-15.5-14.8 15.5 3-21.2-21.3-1.8 18.4-11-11.9-17.8 20 7.6zm-80-190 6.6 20.4 20-7.6-11.9 17.8 18.4 11-21.3 1.8 3 21.2-14.8-15.5-14.8 15.5 3-21.2-21.3-1.8 18.4-11-11.9-17.8 20 7.6zm80-130 6.6 20.4 20-7.6-11.9 17.8 18.4 11-21.3 1.8 3 21.2L480 95.1l-14.8 15.5 3-21.2-21.3-1.8 18.4-11-11.9-17.8 20 7.6zm71 98 6.6 20.4 20-7.6-11.9 17.8 18.4 11-21.3 1.8 3 21.2-14.8-15.5-14.8 15.5 3-21.2-21.3-1.8 18.4-11-11.9-17.8 20 7.6zm-39 96 4.5 13.8H531l-11.7 8.6 4.5 13.8-11.8-8.6-11.8 8.6 4.5-13.8-11.7-8.6h14.5z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-en='nz']) .flag[data-flag-locale='en'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23012169' d='M0 0h640v480H0z'/><svg width='320' height='240' viewBox='0 0 640 480'><clipPath id='a'><path d='M320 240h320v240zv240H0zH0V0zV0h320z'/></clipPath><path fill='%23012169' d='M0 0h640v480H0z'/><path stroke='%23fff' stroke-width='96' d='m0 0 640 480m0-480L0 480'/><path stroke='%23c8102e' stroke-width='64' d='m0 0 640 480m0-480L0 480' clip-path='url(%23a)'/><path stroke='%23fff' stroke-width='160' d='M320 0v480M0 240h640'/><path stroke='%23c8102e' stroke-width='96' d='M320 0v480M0 240h640'/></svg><path fill='%23fff' d='m480 66 6.7 20.7h21.8l-17.6 12.8 6.7 20.8-17.6-12.8-17.6 12.8 6.7-20.8-17.6-12.8h21.8zm63 87 5.8 18h18.9l-15.3 11.1 5.9 17.9-15.3-11.1-15.3 11.1 5.9-17.9-15.3-11.1h18.9zm-137 25 6.7 20.7h21.8l-17.6 12.8 6.7 20.8-17.6-12.8-17.6 12.8 6.7-20.8-17.6-12.8h21.8zm74 172 7.6 23.5h24.7L492.4 388l7.6 23.5-20-14.5-20 14.5 7.6-23.5-19.9-14.5h24.7z'/><path fill='%23c8102e' d='m480 75 4.7 14.5H500l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3zm63 86 4 12.4h13.1l-10.6 7.7 4.1 12.5-10.6-7.7-10.6 7.7 4.1-12.5-10.6-7.7H539zm-137 26 4.7 14.5H426l-12.4 9 4.7 14.5-12.3-9-12.3 9 4.7-14.5-12.4-9h15.3zm74 173 5.4 16.6h17.4l-14.1 10.2 5.4 16.6-14.1-10.2-14.1 10.2 5.4-16.6-14.1-10.2h17.4z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-en='za']) .flag[data-flag-locale='en'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23e03c31' d='M0 0h640v240H0z'/><path fill='%23001489' d='M0 240h640v240H0z'/><path fill='none' stroke='%23fff' stroke-width='160' d='m0 0 320 240L0 480m320-240h320'/><path fill='%23ffb81c' d='m0 0 320 240L0 480z'/><path fill='none' stroke='%23007749' stroke-width='96' d='m0 0 320 240L0 480m320-240h320'/><path d='m0 100 187 140L0 380z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-en='gb']) .flag[data-flag-locale='en'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><clipPath id='a'><path d='M320 240h320v240zv240H0zH0V0zV0h320z'/></clipPath><path fill='%23012169' d='M0 0h640v480H0z'/><path stroke='%23fff' stroke-width='96' d='m0 0 640 480m0-480L0 480'/><path stroke='%23c8102e' stroke-width='64' d='m0 0 640 480m0-480L0 480' clip-path='url(%23a)'/><path stroke='%23fff' stroke-width='160' d='M320 0v480M0 240h640'/><path stroke='%23c8102e' stroke-width='96' d='M320 0v480M0 240h640'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-en='au']) .flag[data-flag-locale='en'] > *,
+:global(html[data-flag-en='nz']) .flag[data-flag-locale='en'] > *,
+:global(html[data-flag-en='za']) .flag[data-flag-locale='en'] > *,
+:global(html[data-flag-en='gb']) .flag[data-flag-locale='en'] > * {
+  display: none;
+}
+
 .badge {
   display: inline-block;
   min-width: 20px;
