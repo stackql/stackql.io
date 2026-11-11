@@ -97,7 +97,12 @@ const FLAGS = {
   ),
 };
 
+// The flag of a locale. `data-flag-locale` is what the regional variants
+// hook onto: styles.module.css swaps the artwork when <html> carries
+// data-flag-<locale> (set before first paint, see src/lib/regionalFlags.js).
 export function Flag({locale, className}) {
   const render = FLAGS[locale];
-  return render ? render(className) : null;
+  return render
+    ? React.cloneElement(render(className), {'data-flag-locale': locale})
+    : null;
 }

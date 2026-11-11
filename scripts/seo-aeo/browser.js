@@ -112,7 +112,14 @@ async function launch(chromePath) {
     await sleep(300);
     try { fs.rmSync(profile, { recursive: true, force: true }); } catch (e) { /* Chrome still holds a file */ }
   }
-  return { open, evaluate, close };
+  // What the next pages loaded will see as the browser's languages
+  // ("en-AU,en") and time zone ("Australia/Sydney").
+  async function emulate({ languages, timeZone }) {
+    const userAgent = await evaluate('navigator.userAgent');
+    await send('Emulation.setUserAgentOverride', { userAgent, acceptLanguage: languages }, sessionId);
+    await send('Emulation.setTimezoneOverride', { timezoneId: timeZone }, sessionId);
+  }
+  return { open, evaluate, emulate, close, send: (method, params) => send(method, params, sessionId) };
 }
 
 // Every locale's page, loaded the way a visitor gets it (redirects
@@ -181,9 +188,45 @@ async function switcher(ctx) {
       }
     }
     r.check(broken.length === 0, `switching language works for all ${steps.length} ordered pairs of ${all.join(', ')}`, broken.join('; '));
+
+    // The English flag follows the visitor's region (src/lib/regionalFlags.js)
+    // and stays the default when the region is not covered. Checked on the
+    // English page, where it is the switcher's button, and on another
+    // locale's page, where it is an entry of the menu.
+    const wrong = [];
+    for (const c of cfg.flagCases || []) {
+      await browser.emulate(c);
+      for (const l of [cfg.defaultLocale, all.find((x) => x !== cfg.defaultLocale)].filter(Boolean)) {
+        const opened = await browser.open(address(l, '/installing-stackql'));
+        const label = `${c.languages} in ${c.timeZone} on the ${l} page`;
+        if (opened.error) {
+          wrong.push(`${label}: ${opened.error}`);
+          continue;
+        }
+        const seen = JSON.parse(await browser.evaluate(`JSON.stringify((() => {
+          const el = document.querySelector('.navbar__items--right svg[data-flag-locale="${cfg.defaultLocale}"]');
+          if (!el) return null;
+          return {
+            attr: document.documentElement.getAttribute('data-flag-${cfg.defaultLocale}'),
+            background: getComputedStyle(el).backgroundImage,
+            shapes: el.firstElementChild ? getComputedStyle(el.firstElementChild).display : null,
+          };
+        })())`));
+        if (!seen) wrong.push(`${label}: no English flag in the switcher`);
+        else if (c.flag) {
+          const painted = seen.background.startsWith('url("data:image/svg+xml') && seen.shapes === 'none';
+          if (seen.attr !== c.flag || !painted) wrong.push(`${label}: expected the ${c.flag} flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}, default shapes ${seen.shapes}`);
+        } else if (seen.attr || seen.background !== 'none' || seen.shapes === 'none') {
+          wrong.push(`${label}: expected the default flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}`);
+        }
+      }
+    }
+    if ((cfg.flagCases || []).length) {
+      r.check(wrong.length === 0, `the English flag follows the browser's region in ${cfg.flagCases.length} cases (${cfg.flagCases.filter((c) => c.flag).map((c) => c.flag).join(', ')}) and is the default elsewhere, with no request for the artwork`, wrong.join('; '));
+    }
   } finally {
     await browser.close();
   }
 }
 
-module.exports = { switcher };
+module.exports = { switcher, launch, findChrome };

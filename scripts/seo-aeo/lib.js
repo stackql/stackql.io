@@ -60,9 +60,11 @@ function createClient({ base, siteUrl, timeoutMs = 20000, concurrency = 8 }) {
   // GET with redirects followed by hand, so every hop is visible.
   //   status, headers, body, hash   of the final response
   //   hops                          [{ url, status, location }] before it
-  // With follow: false the first response is returned as it is.
-  function get(urlOrPath, { ua = DEFAULT_UA, follow = true } = {}) {
+  // With follow: false the first response is returned as it is. Responses
+  // are remembered for the run; fresh: true asks the server again.
+  function get(urlOrPath, { ua = DEFAULT_UA, follow = true, fresh = false } = {}) {
     const key = `${ua}\n${follow}\n${urlOrPath}`;
+    if (fresh) cache.delete(key);
     if (!cache.has(key)) {
       cache.set(key, slot(async () => {
         const hops = [];

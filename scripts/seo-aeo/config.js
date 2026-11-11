@@ -183,4 +183,25 @@ module.exports = {
   // How many literal rules to try from each generated block of netlify.toml
   // (every hand-written literal rule is tried).
   generatedRedirectSample: 8,
+
+  // The regional variants of the English flag in the language switcher
+  // (src/lib/regionalFlags.js), for the switcher section: the browser's
+  // languages and time zone, and the variant expected (null: the default
+  // flag). Add a case when a variant is added.
+  flagCases: [
+    { languages: 'en-US,en', timeZone: 'America/New_York', flag: null },
+    { languages: 'en-AU,en', timeZone: 'America/New_York', flag: 'au' },
+    { languages: 'en-US,en', timeZone: 'Australia/Sydney', flag: 'au' },
+    // en-GB only counts when the time zone says nothing: a browser in
+    // Melbourne that is set to British English is in Australia
+    { languages: 'en-GB,en-US,en', timeZone: 'Australia/Melbourne', flag: 'au' },
+    // and the other way around: en-AU decides wherever the machine is
+    { languages: 'en-AU,en', timeZone: 'Europe/London', flag: 'au' },
+    { languages: 'en-US,en', timeZone: 'Europe/London', flag: 'gb' },
+    { languages: 'en-US,en', timeZone: 'Pacific/Auckland', flag: 'nz' },
+    { languages: 'en-ZA,en', timeZone: 'UTC', flag: 'za' },
+    { languages: 'en-GB,en', timeZone: 'Europe/Paris', flag: 'gb' },
+    { languages: 'fr-FR,fr', timeZone: 'Europe/Paris', flag: null },
+    { languages: 'en-CA,en', timeZone: 'America/Toronto', flag: null },
+  ],
 };
