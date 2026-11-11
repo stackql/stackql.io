@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "产品公告",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "StackQL 的新版本、新功能与新能力",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "全部产品公告",
+    "description": "The label for the left sidebar"
+  }
+}

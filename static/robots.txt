@@ -8,4 +8,5 @@ Host: https://stackql.io/
 # Sitemaps
 Sitemap: https://stackql.io/sitemap.xml
 Sitemap: https://stackql.io/de/sitemap.xml
+Sitemap: https://stackql.io/zh-Hans/sitemap.xml
 Sitemap: https://stackql.io/docs/query-library/sitemap.xml
