@@ -51,6 +51,7 @@ The JSON path to an array or object contained within an *json_array_or_object*. 
 
 > Specifying `'$'` for the *json_path* argument will return the entire JSON object corresponding to the column represented by the *json_array_or_object* argument.
 
+> NOTE: You can use tools like [`json-viewer`](https://aarrange.com/json-viewer) to develop and test JSON Path expressions
 
 ## Return Value(s) {#return-values}
 A string, integer, object, array, boolean or null depending upon the *json_array_or_object* and *json_path* provided as input.
