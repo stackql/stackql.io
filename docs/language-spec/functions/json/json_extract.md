@@ -47,7 +47,7 @@ The JSON path to an array or object contained within an *json_array_or_object*. 
 
 > If a single *json_path* is provided then a scalar result is returned mapping to the datatype of the resolved path.
 
-> If multiple *json_path* arguments are provided, then the result will be an array composed of objects resolved by the repsective paths.
+> If multiple *json_path* arguments are provided, then the result will be an array composed of objects resolved by the respective paths.
 
 > Specifying `'$'` for the *json_path* argument will return the entire JSON object corresponding to the column represented by the *json_array_or_object* argument.
 

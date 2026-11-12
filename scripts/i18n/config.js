@@ -134,8 +134,22 @@ module.exports = {
   // /mnt/c/... equivalent of the repo directory, so the skill and the
   // scripts resolve as usual); from a WSL or POSIX shell the CLI is called
   // directly.
+  // `subscriptionOnly`: the runs must draw on the Claude subscription that
+  // CLI is logged in with (`claude auth login`), never on API credits. The
+  // driver starts the CLI without ANTHROPIC_API_KEY and the other variables
+  // that override the stored login, and translates nothing unless
+  // `claude auth status` reports a claude.ai login with no API key in play.
+  // false allows whatever credential the CLI resolves.
+  // `settings`: a Claude Code settings file passed to every run (path from
+  // the repo root). It turns off `includeGitInstructions`, the git status
+  // snapshot the CLI takes at startup for its system prompt. A translation
+  // does not need it, and from WSL it is the slow part: WSL git reads the
+  // 37,000 tracked files of this Windows checkout through /mnt/c and had
+  // not finished after five minutes, before the first model call.
   headless: {
     command: process.platform === 'win32' ? ['wsl', '-e', 'claude'] : ['claude'],
+    subscriptionOnly: true,
+    settings: 'scripts/i18n/headless-settings.json',
     skill: 'i18n-translate',
     concurrency: 2,
     timeoutMs: 15 * 60 * 1000,
