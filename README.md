@@ -73,7 +73,7 @@ The StackQL query library lives in its own repo (query-library.stackql.io) and i
 
 ### SEO and AEO checks
 
-`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `de`, `zh-Hans`). It is run by hand, against a local build or against production:
+`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `de`, `fr`, `zh-Hans`). It is run by hand, against a local build or against production:
 
 ```
 # a local build: build it, serve it in one terminal, check it in another

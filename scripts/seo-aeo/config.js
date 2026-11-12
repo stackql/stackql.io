@@ -35,6 +35,7 @@ module.exports = {
   locales: {
     en: { prefix: '', htmlLang: 'en', inLanguage: 'en-US', script: null },
     de: { prefix: '/de', htmlLang: 'de', inLanguage: 'de', script: null },
+    fr: { prefix: '/fr', htmlLang: 'fr', inLanguage: 'fr', script: null },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', inLanguage: 'zh-Hans', script: 'cjk' },
   },
 
@@ -46,8 +47,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, de: 150, fr: 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, de: 150, fr: 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,

@@ -11,6 +11,7 @@ import React from 'react';
 export const CODES = {
   en: 'EN',
   de: 'DE',
+  fr: 'FR',
   'zh-Hans': 'CN',
   ja: 'JP',
   ko: 'KR',
@@ -69,6 +70,13 @@ const FLAGS = {
       <path fill="#fc0" d="M0 320h640v160H0z" />
       <path fill="#000" d="M0 0h640v160H0z" />
       <path fill="#d00" d="M0 160h640v160H0z" />
+    </svg>
+  ),
+  fr: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#fff" d="M0 0h640v480H0z" />
+      <path fill="#000091" d="M0 0h213.3v480H0z" />
+      <path fill="#e1000f" d="M426.7 0H640v480H426.7z" />
     </svg>
   ),
   'zh-Hans': (className) => (

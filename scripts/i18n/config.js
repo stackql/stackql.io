@@ -68,6 +68,24 @@ module.exports = {
         'sidebar.docsSidebar.category.GitHub',
       ],
     },
+    fr: {
+      sources: ['docs'],
+      sameAsEnglish: [
+        'item.label.Providers',
+        'item.label.Blog',
+        'link.title.StackQL',
+        'link.item.label.Documentation',
+        'link.item.label.Providers',
+        'link.item.label.Blog',
+        'link.item.label.Support',
+        'sidebar.docsSidebar.category.MCP',
+        'sidebar.docsSidebar.category.Session',
+        'sidebar.docsSidebar.category.AWS',
+        'sidebar.docsSidebar.category.Microsoft Azure',
+        'sidebar.docsSidebar.category.Google Cloud Platform',
+        'sidebar.docsSidebar.category.GitHub',
+      ],
+    },
     'zh-Hans': {
       sources: ['docs', 'ai-content'],
       sameAsEnglish: [
