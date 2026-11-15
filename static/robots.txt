@@ -11,5 +11,6 @@ Sitemap: https://stackql.io/de/sitemap.xml
 Sitemap: https://stackql.io/es/sitemap.xml
 Sitemap: https://stackql.io/fr/sitemap.xml
 Sitemap: https://stackql.io/ja/sitemap.xml
+Sitemap: https://stackql.io/ko/sitemap.xml
 Sitemap: https://stackql.io/zh-hans/sitemap.xml
 Sitemap: https://stackql.io/docs/query-library/sitemap.xml

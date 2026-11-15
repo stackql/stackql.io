@@ -52,7 +52,7 @@ Die obige Abfrage besteht tatsächlich aus 17 parallel ausgeführten Abfragen (e
 Der folgende Code führt die folgenden Aktionen aus:
 
 1. Definiert eine Liste aller AWS-Regionen (`regions`) und eine Liste der von jedem Service unterstützten Regionen (`supported_regions`); weitere Informationen zur Ableitung von `supported_regions` finden Sie unter [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. Lädt die StackQL-Provider [`aws`](https://aws.stackql.io/providers/aws/) und [`aws`](https://aws.stackql.io/providers/aws/) herunter, falls sie noch nicht installiert sind.
+2. Lädt die StackQL-Provider [`aws`](https://aws-provider.stackql.io/) und [`awscc`](https://awscc-provider.stackql.io/) herunter, falls sie noch nicht installiert sind.
 3. Durchläuft jeden Service (mit [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)) und anschließend für jeden Service jede Ressource (mit [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
 4. Wählt mit [`SELECT`](/language-spec/select) alle Instanzen jeder Ressource über alle Regionen hinweg asynchron aus, gruppiert die Daten nach Region und zählt die Instanzen jeder Ressource für jede Region
 

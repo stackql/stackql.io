@@ -37,7 +37,7 @@ A column or expression.
 
 > If all the values in the *columnExpression* are `NULL` then `SUM` returns `NULL`.  
 
-> `SUM` will throw an "integer overflow" exception if an integer overflow occurs at any point during the computation.  The [`TOTAL`]](/language-spec/functions/aggregate/total) function never throws an integer overflow.  
+> `SUM` will throw an "integer overflow" exception if an integer overflow occurs at any point during the computation.  The [`TOTAL`](/language-spec/functions/aggregate/total) function never throws an integer overflow.  
 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.

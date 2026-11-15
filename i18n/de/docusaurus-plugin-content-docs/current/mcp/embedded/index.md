@@ -12,7 +12,9 @@ keywords:
   - rust
   - swift
   - kotlin
-description: Betten Sie den StackQL-MCP-Server direkt in kompilierte Anwendungen in Go, Rust, Swift und Kotlin ein
+  - dotnet
+  - gleam
+description: Betten Sie den StackQL-MCP-Server direkt in kompilierte Anwendungen in Go, Rust, Swift, Kotlin, .NET und Gleam ein
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -22,7 +24,7 @@ import { FaRobot } from 'react-icons/fa';
 
 Der MCP-Server von StackQL kann direkt in kompilierte Anwendungen eingebettet werden - kein `npx`, keine separate Installation, keine Laufzeitabhängigkeit. Die signierte Binärdatei wird beim ersten Start heruntergeladen und verifiziert (Sidecar-Modus) oder per Vendoring in die Binärdatei Ihrer App eingebunden, sodass eine einzelne eigenständige ausführbare Datei entsteht.
 
-Alle vier Bibliotheken teilen sich einen Vertrag: standardmäßig der `read_only`-Modus, ein vom Arbeitsverzeichnis unabhängiger Start, ein gemeinsamer Binärdatei-Cache unter `~/.stackql/mcp-server-bin/` und dieselben vier Plattformziele (`linux-x64`, `linux-arm64`, `windows-x64`, `darwin-universal`).
+Alle sechs Bibliotheken teilen sich einen Vertrag: standardmäßig der `read_only`-Modus, ein vom Arbeitsverzeichnis unabhängiger Start, ein gemeinsamer Binärdatei-Cache unter `~/.stackql/mcp-server-bin/` und dieselben vier Plattformziele (`linux-x64`, `linux-arm64`, `windows-x64`, `darwin-universal`).
 
 Für Windows ARM64 sind auch native [CLI- und MCPB-Downloads](/installing-stackql) verfügbar. Die mit v0.12.778 ausgelieferten Plattform-Resolver für Go, Rust und .NET wählen unter Windows weiterhin nur `windows-x64` aus; das neue Bundle fügt diesen Bibliotheken keine automatische ARM64-Auswahl hinzu.
 

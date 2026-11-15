@@ -37,7 +37,7 @@ Una columna o expresión.
 
 > Si todos los valores de *columnExpression* son `NULL`, `SUM` devuelve `NULL`.  
 
-> `SUM` genera una excepción "integer overflow" si se produce un desbordamiento de enteros en algún momento del cálculo.  La función [`TOTAL`]](/language-spec/functions/aggregate/total) nunca genera un desbordamiento de enteros.  
+> `SUM` genera una excepción "integer overflow" si se produce un desbordamiento de enteros en algún momento del cálculo.  La función [`TOTAL`](/language-spec/functions/aggregate/total) nunca genera un desbordamiento de enteros.  
 
 __*groupByColumn*__  
 Una o varias columnas sobre las que se realizan operaciones de resumen o de agregación.  La cláusula `GROUP BY` devuelve una fila por cada agrupación de columnas.

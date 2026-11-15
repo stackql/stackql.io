@@ -42,7 +42,7 @@ Gibt eine Ganzzahl zurück, die die Anzahl darstellt.
 
 ## Beispiele {#examples}
 
-### Den Durchschnitt eines Spaltenausdrucks über eine gesamte Ressource zurückgeben {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### Die Anzahl der Zeilen einer gesamten Ressource zurückgeben {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Den Durchschnitt eines Spaltenausdrucks gruppiert nach einem anderen Spaltenausdruck zurückgeben {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### Die Anzahl der Zeilen gruppiert nach einem Spaltenausdruck zurückgeben {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

@@ -12,7 +12,9 @@ keywords:
   - rust
   - swift
   - kotlin
-description: StackQL MCP サーバーを Go、Rust、Swift、Kotlin のコンパイル済みアプリケーションに直接組み込みます
+  - dotnet
+  - gleam
+description: StackQL MCP サーバーを Go、Rust、Swift、Kotlin、.NET、Gleam のコンパイル済みアプリケーションに直接組み込みます
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -22,7 +24,7 @@ import { FaRobot } from 'react-icons/fa';
 
 StackQL の MCP サーバーは、コンパイル済みアプリケーションに直接組み込むことができます。`npx` も、個別のインストールも、ランタイム依存関係も必要ありません。署名済みバイナリは、初回実行時にダウンロードされて検証される（サイドカーモード）か、アプリのバイナリにベンダリングされて単一の自己完結型実行可能ファイルになります。
 
-4 つのライブラリはすべて共通のコントラクトに従います。デフォルトで `read_only` モードであること、作業ディレクトリに依存しない起動、`~/.stackql/mcp-server-bin/` の共有バイナリキャッシュ、同じ 4 つのプラットフォームターゲット（`linux-x64`、`linux-arm64`、`windows-x64`、`darwin-universal`）です。
+6 つのライブラリはすべて共通のコントラクトに従います。デフォルトで `read_only` モードであること、作業ディレクトリに依存しない起動、`~/.stackql/mcp-server-bin/` の共有バイナリキャッシュ、同じ 4 つのプラットフォームターゲット（`linux-x64`、`linux-arm64`、`windows-x64`、`darwin-universal`）です。
 
 ネイティブの Windows ARM64 向けの [CLI と MCPB のダウンロード](/installing-stackql)も利用できます。v0.12.778 に含まれる Go、Rust、.NET のプラットフォームリゾルバーは、Windows では引き続き `windows-x64` のみを選択します。新しいバンドルによって、これらのライブラリに ARM64 の自動選択が追加されることはありません。
 

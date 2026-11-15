@@ -42,7 +42,7 @@ Renvoie un entier représentant le décompte.
 
 ## Exemples {#examples}
 
-### Renvoyer le nombre d'enregistrements sur l'ensemble d'une ressource {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### Renvoyer le nombre de lignes de l'ensemble d'une ressource {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Renvoyer le nombre d'enregistrements regroupés selon une expression de colonne {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### Renvoyer le nombre de lignes regroupées selon une expression de colonne {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

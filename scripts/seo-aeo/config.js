@@ -32,7 +32,7 @@ module.exports = {
   //   htmlLang    <html lang>, and the hreflang value
   //   inLanguage  JSON-LD inLanguage of the page-level nodes
   //   script      'cjk' when translated text must contain CJK characters
-  //               (Han ideographs or Japanese kana)
+  //               (Han ideographs, Japanese kana or Korean Hangul)
   //   language    the language name used in the 'cjk' check messages
   //   mainlandChina  true for a locale read in mainland China: warns about
   //               third-party hosts that are slow or blocked there
@@ -42,6 +42,7 @@ module.exports = {
     es: { prefix: '/es', htmlLang: 'es', inLanguage: 'es', script: null },
     fr: { prefix: '/fr', htmlLang: 'fr', inLanguage: 'fr', script: null },
     ja: { prefix: '/ja', htmlLang: 'ja', inLanguage: 'ja', script: 'cjk', language: 'Japanese' },
+    ko: { prefix: '/ko', htmlLang: 'ko', inLanguage: 'ko', script: 'cjk', language: 'Korean' },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', inLanguage: 'zh-Hans', script: 'cjk', language: 'Chinese', mainlandChina: true },
   },
 
@@ -53,8 +54,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, ja: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, ja: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, ja: 150, ko: 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, ja: 150, ko: 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,

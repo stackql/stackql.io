@@ -1160,3 +1160,317 @@ Style:
 - Example prompts addressed to an AI assistant use the casual request form (〜を表示して, 〜を一覧表示して, 〜を作成して); everything else stays です・ます.
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Japanese text is shorter than English, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.
+
+## ko
+
+Audience: Korean-speaking engineers reading technical documentation. Formal polite style (합니다체: 〜합니다, 〜입니다, 〜할 수 있습니다) in every prose sentence; an instruction the reader must follow uses 〜하세요 (참조하세요, 실행하세요), never 〜하십시오, 〜해 주세요 or 〜해요. Never the plain style (〜한다, 〜이다) in prose. No extra honorifics (드립니다, 주시기 바랍니다): the register is that of vendor reference documentation (Microsoft, AWS and Google Korean documentation), plain and declarative. Do not write 당신 or 여러분: leave the subject out where the source says "you", as Korean does, or use 사용자 where a subject is needed. Short sentences; split an English sentence that would need a long chain of relative clauses. Keep the English terms that Korean developers use as they are; do not invent Korean names for products or APIs.
+
+Names that stay in Latin script, in addition to the "All locales" list: SQL, CLI, API, SDK, JSON, YAML, CSV, HTTP, OAuth, IaC, CI/CD, LLM, MCP, SaaS, OTel, macOS, Linux, Windows, Docker, Kubernetes, GitHub Actions, Homebrew, Chocolatey, Webhook, and every provider, service, resource and method name. Acronyms are not expanded or glossed unless the source does so.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Korean | Not |
+|---|---|---|
+| provider (a StackQL provider) | 프로바이더 | 공급자, 제공자, 공급 기업, Provider |
+| cloud provider (the vendor) | 클라우드 제공업체 | 클라우드 프로바이더, 클라우드 공급자, 클라우드 벤더 |
+| vendor (the company behind an API or SDK) | 공급업체 ("vendor lock-in" = 공급업체 종속) | 벤더, 업체 |
+| service | 서비스 | |
+| resource | 리소스 | 자원 |
+| method | 메서드 | 메소드 |
+| operation | 작업 (연산 only for arithmetic) | 오퍼레이션 |
+| query (noun) / to query | 쿼리 / 쿼리하다, 쿼리를 실행하다 (조회하다 is right for "look up, retrieve") | 질의, 퀘리 |
+| statement | 문 (SQL 문, `SELECT` 문) | 명령문, 구문 (that is "syntax"), 스테이트먼트 |
+| result set | 결과 집합 | 결과셋, 결과 세트 |
+| row / column | 행 / 열 | 로우, 컬럼, 칼럼 |
+| table | 테이블 (an HTML or markdown table: 표) | |
+| view | 뷰 | |
+| materialized view | 구체화된 뷰 | 머티리얼라이즈드 뷰, 실체화된 뷰 |
+| window function | 윈도우 함수 | 창 함수, 윈도 함수 |
+| window frame | 윈도우 프레임 | |
+| aggregate function / scalar function | 집계 함수 / 스칼라 함수 | 집합 함수 |
+| function / expression / clause | 함수 / 식 / 절 | 표현식 |
+| keyword / operator / predicate | 키워드 / 연산자 / 조건자 | 술어, 오퍼레이터 (for an operator) |
+| subquery / alias / join | 하위 쿼리 / 별칭 / 조인 (`JOIN` where the source has code) | 서브쿼리, 에일리어스 |
+| data type / literal / identifier | 데이터 형식 / 리터럴 / 식별자 | 자료형, 데이터 타입 |
+| string / integer / boolean | 문자열 / 정수 / 부울 | 스트링, 불리언 |
+| whitespace | 공백 문자 | 화이트스페이스 |
+| parameter / argument | 매개 변수 / 인수 | 파라미터, 매개변수, 인자 |
+| flag (CLI) / option | 플래그 / 옵션 ("global flags" = 전역 플래그) | 글로벌 플래그 |
+| environment variable | 환경 변수 | 환경변수 |
+| field / key / value | 필드 / 키 / 값 | |
+| schema | 스키마 | |
+| control plane / data plane | 컨트롤 플레인 / 데이터 플레인 | 제어 평면, 데이터 평면 |
+| agent, AI agent | 에이전트, AI 에이전트 | 대리인 |
+| tool (an MCP tool) | 도구 | 툴 |
+| prompt (text sent to a model) | 프롬프트 | |
+| approval prompt, elicitation prompt (a dialog shown to the user) | 승인 요청, 엘리시테이션 요청 | 승인 프롬프트 |
+| elicitation (MCP) | 엘리시테이션(elicitation) at first mention on a page, then 엘리시테이션 | 유도, 이끌어내기 |
+| gating / gated (MCP) | 게이트 제어 / 게이트 제어 대상; "gated by X" = X에 의해 게이트 제어됨; "gated writes" = 승인이 필요한 쓰기 | 게이팅 |
+| approval / approve | 승인 / 승인하다 | |
+| server mode, safety mode | 서버 모드, 안전 모드 | 세이프티 모드 |
+| read-only | 읽기 전용 | |
+| mutation / mutating statement / mutation query | 변경 작업 / 변경 문 / 변경 쿼리 | 뮤테이션, 돌연변이 |
+| lifecycle operation | 수명 주기 작업 | 라이프사이클 작업 |
+| resource lifecycle | 리소스 수명 주기 | 리소스 라이프사이클 |
+| log / audit log | 로그 / 감사 로그 | |
+| credentials | 자격 증명 | 크리덴셜, 인증 정보 |
+| authentication / authorization | 인증 / 권한 부여 | 인가, 승인 (that is "approval") |
+| principal / service principal | 보안 주체 / 서비스 주체 | 프린시펄 |
+| service account | 서비스 계정 | 서비스 어카운트 |
+| account | 계정 | |
+| token / API key / access key | 토큰 / API 키 / 액세스 키 | 접근 키 |
+| secret / secret store | 시크릿 / 시크릿 저장소 | 비밀, 비밀 저장소 |
+| scope (OAuth, or of a variable or a setting) | 범위 | 스코프 |
+| role / permission | 역할 / 권한 | 롤, 퍼미션 |
+| session / session variable | 세션 / 세션 변수 | |
+| deployment / to deploy | 배포 / 배포하다 | 디플로이, 전개 |
+| infrastructure as code | 코드형 인프라(IaC) | 코드로서의 인프라 |
+| registry (generic) / provider registry | 레지스트리 / 프로바이더 레지스트리 | |
+| pull (a provider) | 가져오다; "pulled" = 가져온 | 풀하다, 당기다 |
+| repository | 리포지토리 | 레포지토리, 저장소 |
+| release | 릴리스 | 릴리즈 |
+| command line | 명령줄 | 커맨드 라인, 커맨드라인 |
+| shell / interactive shell | 셸 / 대화형 셸 | 쉘, 인터랙티브 셸 |
+| server / client | 서버 / 클라이언트 | |
+| transport (MCP) | 전송 방식 (stdio 전송 방식, HTTP 전송 방식) | 트랜스포트 |
+| stateless / stateful | 상태 비저장 / 상태 저장 | 스테이트리스, 스테이트풀 |
+| endpoint | 엔드포인트 | |
+| request / response | 요청 / 응답 | 리퀘스트, 리스폰스 |
+| request body | 요청 본문 | 요청 바디 |
+| payload | 페이로드 | |
+| header (HTTP) | 헤더 | |
+| pagination | 페이지네이션 | 페이징, 페이지 매기기 |
+| output / output format / output mode | 출력 / 출력 형식 / 출력 모드 | 아웃풋, 출력 포맷 |
+| template / templating | 템플릿 / 템플릿 기능 | 템플리팅 |
+| dry run | 드라이 런 | 시험 실행 |
+| fan-out | 팬아웃 | |
+| guardrail | 가드레일 | |
+| answer engine | 답변 엔진 | 응답 엔진, 앤서 엔진 |
+| region / project / subscription / tenant | 리전 / 프로젝트 / 구독 / 테넌트 | 지역 |
+| open source | 오픈 소스 | 오픈소스 |
+| binary / library | 바이너리 / 라이브러리 | |
+| embedded (Embedded MCP) / to embed | 임베디드 (임베디드 MCP) / 내장하다 | 내장형 MCP, 임베드하다 |
+| installation / to install | 설치 / 설치하다 | |
+| documentation | 문서 | 도큐먼트, 설명서 |
+| tutorial | 튜토리얼 | 자습서 |
+| quick start | 빠른 시작 | 퀵 스타트 |
+| getting started | 시작하기 | 입문 |
+| announcement | 공지 | 발표 |
+| feature | 기능 | 피처, 특징 |
+| example | 예제 (a worked example, the "Examples" heading); 예 in "for example" (예를 들어) | 샘플 (except "sample app", "sample data") |
+| syntax / usage | 구문 / 사용법 | |
+| note / tip / warning (admonition titles are translated by the theme) | 참고 / 팁 / 경고 | |
+| resource hierarchy | 리소스 계층 구조 | |
+| access management | 액세스 관리 | 접근 관리 |
+| provider session | 프로바이더 세션 | |
+| SQL backend | SQL 백엔드 | |
+| query engine / parser | 쿼리 엔진 / 파서 | |
+| wire protocol | 와이어 프로토콜 (PostgreSQL 와이어 프로토콜) | 유선 프로토콜 |
+| reverse proxy | 역방향 프록시 | 리버스 프록시 |
+| local cache | 로컬 캐시 | |
+| key-value pair | 키-값 쌍 | 키 값 페어 |
+| delimiter / separator | 구분 기호 | 구분자, 딜리미터 |
+| bucket (object storage) / bucket (NTILE) | 버킷 / 버킷 | |
+| error / throw an error / return an error | 오류 / 오류를 발생시키다 / 오류를 반환하다 | 에러 (except in quoted output), 던지다 |
+| return (a value) | 반환하다 | 리턴하다, 돌려주다 |
+| well-formed / valid (JSON) | 올바른 형식의 / 유효한 | |
+| file / state file | 파일 / 상태 파일 | 스테이트 파일 |
+| directory / folder | 디렉터리 / 폴더 | 디렉토리 |
+| computer, machine | 컴퓨터, 머신 | |
+| user | 사용자 | 유저 |
+| drift / infrastructure drift | 드리프트 / 인프라 드리프트 | 표류 |
+| infrastructure | 인프라 | 인프라스트럭처, 인프라스트럭쳐 |
+| cloud inventory, inventory | 클라우드 인벤토리, 인벤토리 | 재고 |
+| compliance | 규정 준수 | 컴플라이언스 |
+| provision (resources) | 프로비저닝하다 | |
+| operator (the person running StackQL) | 운영자 | 오퍼레이터 |
+| caller | 호출자 | |
+| filter (noun and verb) | 필터 / 필터링하다 | |
+| concatenation | 연결 | 연접 |
+| parse / plan (a statement) | 구문 분석하다 / 실행 계획을 수립하다 | 파싱하다 |
+| contract (I/O contract, safety contract) | 계약 | 컨트랙트 |
+| source of truth | 단일 정보 출처 | 진실의 원천 |
+| entitlement | 사용 권한 | |
+| snapshot / checksum / digest | 스냅샷 / 체크섬 / 다이제스트 | |
+| allowlist | 허용 목록 | 화이트리스트 |
+| opt in / explicit opt-in | 옵트인하다 / 명시적 옵트인 | |
+| enable / disable | 활성화하다 / 비활성화하다 | 사용하도록 설정하다 |
+| support (a feature, a format) / supported | 지원하다 / 지원되는 | |
+| hint (in an MCP error or tool annotation) | 힌트 | |
+| advertise (a capability) | 알리다 | 광고하다 |
+| artifact (build or release output) | 아티팩트 | 산출물 |
+| stack (of resources) | 스택 | |
+| pipeline | 파이프라인 | |
+| notarized / signed | 공증된 / 서명된 | |
+| assume a role (AWS) | 역할을 수임하다 | 역할을 가정하다, 역할을 맡다 |
+| common table expression (CTE) | 공통 테이블 식(CTE) | 공통 테이블 표현식 |
+| default / by default | 기본값 / 기본적으로 | 디폴트 |
+| array (JSON, data type) | 배열 | 어레이 |
+| policy (IAM, access policy) / IAM binding | 정책 / IAM 바인딩 | 폴리시 |
+| bind, binding (alias, secret store) | 바인딩하다, 바인딩 | |
+| assign, assignment (`SET`) | 할당하다, 할당 | |
+| lexical structure / token (lexical) | 어휘 구조 / 토큰 | 렉시컬 구조 |
+| pin (a version, a key, an issuer) | 고정하다 | 핀 고정하다 |
+| exporter / receiver (OTel) / sink (audit) | 익스포터 / 리시버 / 싱크 | |
+| preview (a feature in preview) | 미리 보기 | 프리뷰 |
+| legacy | 레거시 | |
+| batch / statement batch | 배치 / 문 배치 | |
+| wildcard | 와일드카드 | |
+| query hint | 쿼리 힌트 | |
+| substring / pattern (regex) / regular expression | 부분 문자열 / 패턴 / 정규식 | 정규 표현식, 정규표현식 |
+| collating function / collating sequence | 데이터 정렬 함수 / 데이터 정렬 순서 | 콜레이션 |
+| timestamp | 타임스탬프 | |
+| current row / rank / running total (window functions) | 현재 행 / 순위 / 누계 | 누적 합계 |
+| installer | 설치 관리자 | 인스톨러 |
+| workspace | 작업 영역 | 워크스페이스 |
+| monitoring / to monitor / monitor (noun) | 모니터링 / 모니터링하다 / 모니터 | 감시 |
+| run, execute / list / delete, remove / manage | 실행하다 / 나열하다 / 삭제하다 / 관리하다 | |
+| framework | 프레임워크 | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | StackQL 프로바이더 레지스트리 |
+| interface | 인터페이스 | |
+| identity (caller identity, IAM identity) | ID (호출자 ID) | 아이덴티티, 신원 |
+| dereference (a secret, a variable) | 역참조하다 | |
+| in-memory / sessionless | 인메모리 / 세션 없는 | 메모리 내 |
+| relation / fingerprint / tenancy | 관계 / 지문 / 테넌시 | |
+| public key / private key / issuer / audience (JWT) | 공개 키 / 개인 키 / 발급자 / 대상 | 비밀 키 (for a private key), 공개키, 개인키 |
+| mutual TLS / revocation | 상호 TLS(mTLS) / 해지 | |
+| source / re-source (an env file) | 로드하다 / 다시 로드하다 | 소싱하다 |
+| blocking / non-blocking (invocation) | 블로킹 / 논블로킹 | |
+| discovery | 탐색 (the MCP tool group, "discovery workflow"); 디스커버리 (OIDC discovery) | 발견 |
+| escalate / escalation (server mode) | 승격하다 / 승격 | |
+| sidecar / vendor (verb) | 사이드카 / 벤더링하다 | |
+| entry point | 진입점 | 엔트리 포인트 |
+| container / browser / preprocessor | 컨테이너 / 브라우저 / 전처리기 | |
+| serialize / deserialize | 직렬화하다 / 역직렬화하다 | 시리얼라이즈하다 |
+| agentic / observability | 에이전트형 / 관측성 | 옵저버빌리티, 관찰 가능성 |
+| render / deprecated / fall back | 렌더링하다 / 더 이상 사용되지 않는 / 대체하다 ("falls back to X" = X로 대체됩니다) | 폴백하다 |
+| SQL verb | SQL 동사 | |
+| attach (a disk, a policy) | 연결하다 | 어태치하다 |
+| refresh (a materialized view) / procedure / prepared statement | 새로 고치다 / 프로시저 / 준비된 문 | 리프레시하다 |
+| datetime / modifier (date functions) / table-valued function | 날짜/시간 / 한정자 / 테이블 반환 함수 | 수식어 |
+| partition / peer / tied rows (window functions) | 파티션 / 피어 / 동순위 행 | |
+| sine / cosine / tangent; hyperbolic and arc forms | 사인 / 코사인 / 탄젠트; 하이퍼볼릭 사인, 아크사인 | 정현, 여현, 정접 |
+| object (JSON object, configuration object, StackQL object notation) | 객체 | 개체, 오브젝트 |
+| built-in (function, procedure) | 기본 제공 (기본 제공 함수) | 빌트인, 내장 (that is "embedded") |
+| subcommand / placeholder | 하위 명령 / 자리 표시자 | 서브커맨드, 플레이스홀더 |
+| attribute, property (resource, OTel) | 속성 | 어트리뷰트, 프로퍼티 |
+| configuration / config file | 구성 / 구성 파일 | 컨피그 |
+| membership / envelope | 멤버십 / 엔벨로프 | 멤버 자격, 엔벌로프 |
+| rotate (credentials, keys) | 교체하다 (log rotation: 로테이션) | |
+| resolve (credentials, an alias, a variable) / resolve to a value | 확인하다 / 평가되다 | |
+| record / issue (GitHub) / pull request | 레코드 / 이슈 / 끌어오기 요청 ("PR" stays PR) | |
+| floating point / exact numeric / approximate numeric | 부동 소수점 / 정확한 수치 / 근사 수치 | 정확한 숫자, 근사 숫자 |
+| ascending / descending / column headers (CSV) | 오름차순 / 내림차순 / 열 머리글 | |
+| protocol revision / telemetry / trace ID | 프로토콜 리비전 / 텔레메트리 / 트레이스 ID | |
+| semantics / dialect (SQL) / specification | 의미 체계 / 방언 / 사양 | |
+| subject (JWT, certificate) / claim | 주체 / 클레임 | |
+| publish (a provider, a tool) / side effects | 게시하다 / 부작용 | |
+| AI assistant / skill (Claude Code) | AI 어시스턴트 / 스킬 | |
+| self-contained executable / release asset | 자체 포함된 실행 파일 / 릴리스 자산 | |
+| Availability Zone (AWS) / pod (Kubernetes) | 가용 영역 / 파드 | |
+| Agentic Era (homepage) | 에이전트 시대 (에이전트형 stays for the adjective) | |
+| Kept in Latin script | Webhook, dotenv, Bearer (Bearer 토큰), crate names, the format name MCP Bundle | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Korean |
+|---|---|
+| Install | 설치 |
+| Installing StackQL | StackQL 설치 |
+| Getting Started | 시작하기 |
+| Command Line Usage | 명령줄 사용법 |
+| Language Specification | 언어 사양 |
+| Functions / Built-in Functions | 함수 / 기본 제공 함수 |
+| Developers | 개발자 |
+| Providers | 프로바이더 |
+| Quick Starts | 빠른 시작 |
+| AI Agents | AI 에이전트 |
+| MCP Server / MCP Tools / Embedded MCP | MCP 서버 / MCP 도구 / 임베디드 MCP |
+| Blog | 블로그 |
+| Product Announcements | 제품 공지 |
+| Provider Announcements | 프로바이더 공지 |
+| Tutorials | 튜토리얼 |
+| Documentation | 문서 |
+| Contact us | 문의하기 |
+| Privacy Policy | 개인정보 처리방침 |
+| Terms of Service | 서비스 약관 |
+| Support | 지원 |
+| AI Reference | AI 참조 |
+| More | 더 보기 |
+| Welcome to StackQL | StackQL에 오신 것을 환영합니다 |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Korean |
+|---|---|
+| Syntax | 구문 |
+| Arguments | 인수 |
+| Return Value(s) | 반환 값 |
+| Example / Examples | 예제 |
+| Inputs / Output | 입력 / 출력 |
+| Flags | 플래그 |
+| Overview | 개요 |
+| How it works | 작동 방식 |
+| Modes | 모드 |
+| Gating | 게이트 제어 |
+| Install | 설치 |
+| Quick start | 빠른 시작 |
+| Demo app | 데모 앱 |
+| Repo link | 리포지토리 링크 |
+| Vendoring / embedding | 벤더링 / 내장 |
+| Prerequisites | 사전 요구 사항 |
+| Next steps | 다음 단계 |
+| Related | 관련 항목 |
+| See also: | 참고 항목: |
+| See X. | X를 참조하세요. (particle by pronunciation, see Style) |
+| For more information, see X. | 자세한 내용은 X를 참조하세요. |
+| For more information, see https://... (a bare URL as link text) | 자세한 내용은 [https://...](https://...) 문서를 참조하세요. (문서 carries the particle, never a URL) |
+| Optional. / Defaults to X. | 선택 사항입니다. / 기본값은 X입니다. |
+| Returns X. (the sentence that opens a function or tool page) | X를 반환합니다. |
+| Return the absolute value of a number (an example heading that names a task) | 숫자의 절댓값 반환 (noun phrase, no 합니다) |
+| X function in StackQL: ... (description pattern) | StackQL의 X 함수: ... |
+| X window function in StackQL: ... (description pattern) | StackQL의 X 윈도우 함수: ... |
+| X in StackQL: ... (description of a statement page) | StackQL의 X: ... |
+| ... using SQL in StackQL (description pattern) | StackQL에서 SQL로 ... |
+| Available in StackQL `vX` and later / releases from `vX` | StackQL `vX` 이상에서 사용할 수 있습니다 |
+| Available in StackQL releases after `vX` | StackQL `vX` 이후 릴리스에서 사용할 수 있습니다 |
+| None. (no arguments, no inputs) | 없음. |
+| Query / Results (tab labels), Output: | 쿼리 / 결과, 출력: |
+| Tested with (badge line on quick starts) | 테스트 환경 |
+| Best Practices / Troubleshooting / Further reading | 모범 사례 / 문제 해결 / 추가 자료 |
+| MCP tool listing X / MCP tool that does X (description pattern) | X를 나열하는 MCP 도구 / X를 수행하는 MCP 도구 |
+| MCP overview (link text) | MCP 개요 |
+| Argument / Required / Description (table headers) | 인수 / 필수 / 설명 |
+| Renderer / Shape (table headers) | 렌더러 / 형태 |
+| Table / One row per X (table cells) | 테이블 / X당 1행 |
+| Yes / No (table cells) | 예 / 아니요 |
+| For example | 예를 들어 |
+| Aggregate function / Scalar function | 집계 함수 / 스칼라 함수 |
+| When to use, Use case / Example usage | 사용 시기, 사용 사례 / 사용 예 |
+| Conclusion / Get started (homepage heading) | 결론 / 시작하기 |
+| keyword `cloud inventory` | 클라우드 인벤토리 |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Every prose sentence ends in 합니다체 (〜합니다, 〜입니다, 〜할 수 있습니다). Descriptions of steps use 〜합니다 ("다음 명령을 실행합니다."); 〜하세요 is for an instruction the reader must follow ("must", "make sure", "you need to") and for "see X" (참조하세요). Never 〜합시다.
+- Headings, page titles, sidebar labels, table headers and list fragments are noun phrases, never 합니다체: "StackQL 설치", "프로바이더 사용", "숫자의 절댓값 반환". Prefer a noun ending (설치, 사용, 생성, 반환) to the 〜하기 form; keep 시작하기, which is the established label. No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Particles (은/는, 이/가, 을/를, 와/과, 으로/로) follow the Korean pronunciation of the word they attach to, including Latin words, numbers and code: StackQL (스택큐엘) -> StackQL은, StackQL을, StackQL로; SQL -> SQL은, SQL을, SQL로; JSON -> JSON은, JSON을, JSON으로; Google -> Google은, Google로; AWS, API, CLI, MCP, GitHub, Azure, Docker, Kubernetes -> 는, 를, 로. After inline code, add the noun the code names (명령, 함수, 플래그, 매개 변수, 파일, 문, 열, 도구, 키, 변수) so the particle attaches to Korean: "`stackql exec` 명령을 실행합니다", "`--output` 플래그를 사용합니다", "`SELECT` 문은". Attach a particle straight to a code span only where no such noun fits, and then by pronunciation.
+- Particles attach to the preceding word, code span or link with no space ("StackQL은", "[StackQL 설치](/installing-stackql)를 참조하세요"); everything else follows standard Korean word spacing (띄어쓰기). A Latin word and the Korean word after it are separated by a space unless the Korean is a particle or a suffix such as 의, 에서, 에, 와: "MCP 서버", "API 키", "AWS에서".
+- Write the established compound nouns with spaces, as Microsoft Korean documentation does: 매개 변수, 환경 변수, 세션 변수, 서비스 계정, 액세스 키, 결과 집합, 데이터 형식, 수명 주기, 오픈 소스. 명령줄 and 진입점 are one word.
+- Punctuation in Korean prose is half width: . , ? ! : ; ( ). No full-width punctuation (。、，：（）「」『』) and no 〈〉《》. Quote a word or a UI label with straight double quotes ("..."), and use straight single quotes inside them; never curly quotes (“ ” ‘ ’). Everything inside code fences and inline code keeps its punctuation unchanged.
+- No dash punctuation in prose: no em dash, no en dash, no spaced hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, use a comma, a colon or parentheses, or split the sentence. A ` - ` separator in a title between two names stays.
+- Numbers are Arabic numerals, and a counter or unit attaches to them without a space (3개, 5분, 10행, 2단계, 1행); versions, dates and units as in the source. "One row per X" is X당 1행.
+- Loanwords follow the standard orthography used in Microsoft and Google Korean documentation: 셸 (not 쉘), 릴리스 (not 릴리즈), 메서드 (not 메소드), 메시지 (not 메세지), 디렉터리 (not 디렉토리), 리포지토리 (not 레포지토리), 애플리케이션 (not 어플리케이션), 컨텍스트 (not 콘텍스트), 아키텍처 (not 아키텍쳐), 템플릿 (not 탬플릿), 워크플로 (not 워크플로우), 윈도우 함수 (the established exception).
+- Example headings and `description` values do not start with a 합니다체 verb; a description is one sentence that may end in 합니다체 or in a noun phrase, as the source structure allows.
+- List items and table cells end the way the source does: no period added to fragments, a period where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English, in double quotes only if the source quotes it.
+- The `description` front matter stays one sentence and under about 120 characters (count Korean syllables and Latin characters alike; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> 클라우드 인벤토리, `infrastructure as code` -> 코드형 인프라); keep the number and order of entries.
+- Bold and italic markers stay where the source has them, with no space inside the markers (`**읽기 전용**`, not `** 읽기 전용 **`).
+- Emphasis followed by a particle: a closing `**` whose preceding character is punctuation (a closing quote or parenthesis, a period, a colon, or the backtick that ends an inline code span) and whose next character is a Hangul syllable does not close in CommonMark, and the asterisks show on the page (`` **`SELECT`**는 `` and `**"읽기 전용"**을` render literally). Put a space and a noun after the marker (`` **`SELECT`** 문은 ``), or move the punctuation outside the markers. A closing `**` or `*` after a Hangul or Latin letter is fine (`**StackQL**은`). Underscore emphasis is stricter: a closing `__` or `_` directly followed by a Hangul character never closes, whatever precedes it (`__모든 리전__의` shows the underscores). Where the source uses `__bold__` and a particle follows in Korean, write `**bold**` instead (it renders the same) or put a space after the marker.
+- Front matter must stay valid YAML: keep the quoting of the source value, and put a value in double quotes if the Korean text contains `: ` or ` #`, or starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`. The description pattern "StackQL의 X 함수: ..." always needs the double quotes the source already has.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` 윈도우 함수 `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the polite request form (〜를 보여 주세요, 〜를 나열해 주세요, 〜를 만들어 주세요), the one place 〜해 주세요 is used; everything else stays 합니다체 or 〜하세요.
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Korean text is shorter than English in characters, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.

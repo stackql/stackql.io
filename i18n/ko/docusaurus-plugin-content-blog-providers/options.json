@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "프로바이더 공지",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "신규 및 업데이트된 StackQL 프로바이더",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "모든 프로바이더 공지",
+    "description": "The label for the left sidebar"
+  }
+}

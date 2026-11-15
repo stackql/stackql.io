@@ -52,7 +52,7 @@ GROUP BY region;
 次のコードは、以下の処理を実行します。
 
 1. すべての AWS リージョンのリスト（`regions`）と、サービスごとにサポートされるリージョンのリスト（`supported_regions`）を定義する（`supported_regions` の導出方法の詳細は [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f) を参照）
-2. [`aws`](https://aws.stackql.io/providers/aws/) および [`aws`](https://aws.stackql.io/providers/aws/) StackQL プロバイダーがまだインストールされていない場合は、それらをプルする。
+2. [`aws`](https://aws-provider.stackql.io/) および [`awscc`](https://awscc-provider.stackql.io/) StackQL プロバイダーがまだインストールされていない場合は、それらをプルする。
 3. 各サービスを反復処理し（[`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider) を使用）、サービスごとに各リソースを反復処理する（[`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service) を使用）
 4. すべてのリージョンにわたる各リソースのすべてのインスタンスを非同期に [`SELECT`](/language-spec/select) し、データをリージョンごとにグループ化して、リージョンごとに各リソースのインスタンス数をカウントする
 

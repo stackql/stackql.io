@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // postinstall: point git at the tracked hooks in .githooks (pre-commit runs
-// scripts/i18n/precommit.js) and make them executable on POSIX, where the
+// scripts/precommit-provider-redirects.js and scripts/i18n/precommit.js) and make them executable on POSIX, where the
 // index may not carry the mode. Never fails an install: no git checkout
 // (Netlify, a tarball) means nothing to do.
 

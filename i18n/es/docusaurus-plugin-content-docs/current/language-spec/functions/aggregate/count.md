@@ -42,7 +42,7 @@ Devuelve un entero que representa el recuento.
 
 ## Ejemplos {#examples}
 
-### Devolver el promedio de una expresión de columna en todo un recurso {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### Devolver el número de filas de todo un recurso {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Devolver el promedio de una expresión de columna agrupada por otra expresión de columna {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### Devolver el número de filas agrupadas por una expresión de columna {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

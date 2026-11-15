@@ -22,12 +22,16 @@
 //
 // Usage: node scripts/generate-provider-redirects.js
 //
-// Rerun after adding, removing or renaming a catalog entry or alias.
+// Rerun after adding, removing or renaming a catalog entry or alias. The
+// pre-commit hook does this for you: scripts/precommit-provider-redirects.js
+// requires generate() and replaceBlock() from here and applies them to the
+// staged copies of providers.json and netlify.toml whenever either (or this
+// script, or src/lib/providers.js) is part of a commit.
 
 const fs = require('fs');
 const path = require('path');
 
-const { providerRoutes, registryRoutes } = require('../src/lib/providers');
+const providers = require('../src/lib/providers');
 
 const ROOT = path.resolve(__dirname, '..');
 const NETLIFY_TOML = path.join(ROOT, 'netlify.toml');
@@ -41,7 +45,9 @@ function rule(from, to) {
   return ['[[redirects]]', `  from = "${from}"`, `  to = "${to}"`, '  status = 301', ''].join('\n');
 }
 
-function generate() {
+// The generated block for a catalog: the site's own (src/lib/providers.js)
+// by default, or a buildCatalog() result.
+function generate({ providerRoutes, registryRoutes } = providers) {
   const lines = [BEGIN, ''];
   for (const { slug, href } of providerRoutes()) {
     lines.push(rule(`/providers/${slug}`, href));
@@ -56,15 +62,20 @@ function generate() {
   return { block: lines.join('\n'), count };
 }
 
-function main() {
-  const toml = fs.readFileSync(NETLIFY_TOML, 'utf8');
+// netlify.toml text with the generated block replaced by `block`.
+function replaceBlock(toml, block) {
   const start = toml.indexOf(BEGIN);
   const end = toml.indexOf(END);
   if (start === -1 || end === -1 || end < start) {
     throw new Error(`netlify.toml must contain the markers:\n${BEGIN}\n${END}`);
   }
+  return toml.slice(0, start) + block + toml.slice(end + END.length);
+}
+
+function main() {
+  const toml = fs.readFileSync(NETLIFY_TOML, 'utf8');
   const { block, count } = generate();
-  const next = toml.slice(0, start) + block + toml.slice(end + END.length);
+  const next = replaceBlock(toml, block);
   if (next !== toml) {
     fs.writeFileSync(NETLIFY_TOML, next);
     console.log(`netlify.toml updated: ${count} provider redirect rules`);
@@ -73,4 +84,6 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { generate, replaceBlock, BEGIN, END };

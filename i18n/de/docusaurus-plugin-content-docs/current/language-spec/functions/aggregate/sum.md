@@ -37,7 +37,7 @@ Eine Spalte oder ein Ausdruck.
 
 > Wenn alle Werte in der *columnExpression* `NULL` sind, gibt `SUM` `NULL` zurück.  
 
-> `SUM` löst eine "integer overflow"-Ausnahme aus, wenn zu irgendeinem Zeitpunkt der Berechnung ein Ganzzahlüberlauf auftritt.  Die Funktion [`TOTAL`]](/language-spec/functions/aggregate/total) löst nie einen Ganzzahlüberlauf aus.  
+> `SUM` löst eine "integer overflow"-Ausnahme aus, wenn zu irgendeinem Zeitpunkt der Berechnung ein Ganzzahlüberlauf auftritt.  Die Funktion [`TOTAL`](/language-spec/functions/aggregate/total) löst nie einen Ganzzahlüberlauf aus.  
 
 __*groupByColumn*__  
 Eine oder mehrere Spalten, über die Zusammenfassungs- oder Aggregatoperationen ausgeführt werden.  Die `GROUP BY`-Klausel gibt für jede Spaltengruppierung eine Zeile zurück.

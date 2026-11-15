@@ -37,7 +37,7 @@ __*columnExpression*__
 
 > 如果 *columnExpression* 中的所有值均为 `NULL`，则 `SUM` 返回 `NULL`。  
 
-> 如果计算过程中的任何时刻发生整数溢出，`SUM` 会抛出“integer overflow”异常。[`TOTAL`]](/language-spec/functions/aggregate/total) 函数永远不会抛出整数溢出。  
+> 如果计算过程中的任何时刻发生整数溢出，`SUM` 会抛出“integer overflow”异常。[`TOTAL`](/language-spec/functions/aggregate/total) 函数永远不会抛出整数溢出。  
 
 __*groupByColumn*__  
 用于执行汇总或聚合操作的一列或多列。`GROUP BY` 子句为每个列分组返回一行。

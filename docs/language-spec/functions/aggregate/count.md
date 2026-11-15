@@ -42,7 +42,7 @@ Returns an integer representing the count.
 
 ## Examples {#examples}
 
-### Return the average of a column expression over an entire resource {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### Return the number of rows in an entire resource {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the average of a column expression grouped by another column expression {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### Return the number of rows grouped by a column expression {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

@@ -12,7 +12,9 @@ keywords:
   - rust
   - swift
   - kotlin
-description: 将 StackQL MCP 服务器直接嵌入 Go、Rust、Swift 和 Kotlin 的已编译应用
+  - dotnet
+  - gleam
+description: 将 StackQL MCP 服务器直接嵌入 Go、Rust、Swift、Kotlin、.NET 和 Gleam 的已编译应用
 image: "/img/stackql-featured-image.png"
 ---
 
@@ -22,7 +24,7 @@ import { FaRobot } from 'react-icons/fa';
 
 StackQL 的 MCP 服务器可以直接嵌入已编译的应用：无需 `npx`，无需单独安装，也没有运行时依赖。已签名的二进制文件在首次运行时下载并校验（sidecar 模式），或以 vendoring 方式打包进你的应用二进制文件，生成单个自包含的可执行文件。
 
-全部四个库遵循同一契约：默认使用 `read_only` 模式，启动方式不依赖当前工作目录，共享位于 `~/.stackql/mcp-server-bin/` 的二进制文件缓存，并支持相同的四个平台目标（`linux-x64`、`linux-arm64`、`windows-x64`、`darwin-universal`）。
+全部六个库遵循同一契约：默认使用 `read_only` 模式，启动方式不依赖当前工作目录，共享位于 `~/.stackql/mcp-server-bin/` 的二进制文件缓存，并支持相同的四个平台目标（`linux-x64`、`linux-arm64`、`windows-x64`、`darwin-universal`）。
 
 另外还提供原生 Windows ARM64 的 [CLI 和 MCPB 下载](/installing-stackql)。随 v0.12.778 发布的 Go、Rust 和 .NET 平台解析器在 Windows 上仍然只选择 `windows-x64`；新的 bundle 不会为这些库添加自动的 ARM64 选择。
 
