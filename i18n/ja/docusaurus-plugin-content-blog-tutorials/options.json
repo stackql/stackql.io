@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "チュートリアル",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "SQL によるクラウド運用、セキュリティ、自動化の実践的なウォークスルー",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "すべてのチュートリアル",
+    "description": "The label for the left sidebar"
+  }
+}

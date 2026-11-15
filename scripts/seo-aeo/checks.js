@@ -173,7 +173,7 @@ async function llms(ctx) {
     r.check(untranslated.length === 0, `${tag} llms.txt lists no untranslated (English) page`, h.list(untranslated));
     if (h.loc(l).script === 'cjk') {
       const latin = entries.filter((e) => lib.cjkCount(e.title + e.description) === 0);
-      r.check(latin.length <= entries.length * 0.05, `${tag} llms.txt titles and descriptions are in Chinese (${entries.length - latin.length} of ${entries.length})`, h.list(latin.map((e) => e.title)));
+      r.check(latin.length <= entries.length * 0.05, `${tag} llms.txt titles and descriptions are in ${h.loc(l).language} (${entries.length - latin.length} of ${entries.length})`, h.list(latin.map((e) => e.title)));
     }
     const full = doc.entries.find((e) => e.section === 'Optional');
     r.check(full && full.url === `${cfg.siteUrl}${prefix}/llms-full.txt`, `${tag} llms.txt points at ${prefix}/llms-full.txt`, full ? full.url : 'no Optional entry');
@@ -199,7 +199,7 @@ async function llms(ctx) {
       if (target.edge) r.check(/text\/plain/.test(contentType(fullRes)) && /utf-8/.test(contentType(fullRes)), `${tag} llms-full.txt is text/plain; charset=utf-8`, contentType(fullRes));
       if (h.loc(l).script === 'cjk') {
         const ratio = lib.cjkRatio(fullRes.body);
-        r.check(ratio >= cfg.minimums.cjkRatio, `${tag} llms-full.txt is in Chinese (${(ratio * 100).toFixed(0)}% CJK characters, code included)`);
+        r.check(ratio >= cfg.minimums.cjkRatio, `${tag} llms-full.txt is in ${h.loc(l).language} (${(ratio * 100).toFixed(0)}% CJK characters, code included)`);
       }
     }
 
@@ -258,7 +258,7 @@ async function pages(ctx) {
       }
       // (a title can be a name that stays Latin, such as SELECT; the
       // description is always prose)
-      if (indexable && L.script === 'cjk' && description && lib.cjkCount(description) === 0) issues.push('meta description is not in Chinese');
+      if (indexable && L.script === 'cjk' && description && lib.cjkCount(description) === 0) issues.push(`meta description is not in ${L.language}`);
 
       // canonical, robots, hreflang
       const canonical = (lib.links(html, 'canonical')[0] || {}).href;
@@ -319,7 +319,7 @@ async function pages(ctx) {
           const questions = [].concat(faq.mainEntity || []);
           if (questions.length === 0) issues.push('FAQPage has no questions');
           if (questions.some((q) => !q.name || !q.acceptedAnswer || !q.acceptedAnswer.text)) issues.push('FAQPage has a question without text or answer');
-          if (L.script === 'cjk' && questions.some((q) => lib.cjkCount(`${q.name}${q.acceptedAnswer && q.acceptedAnswer.text}`) === 0)) issues.push('FAQPage questions are not in Chinese');
+          if (L.script === 'cjk' && questions.some((q) => lib.cjkCount(`${q.name}${q.acceptedAnswer && q.acceptedAnswer.text}`) === 0)) issues.push(`FAQPage questions are not in ${L.language}`);
         }
         for (const crumbs of lib.nodesOfType(nodes, 'BreadcrumbList')) {
           const bad = [].concat(crumbs.itemListElement || []).map((i) => (i.item && (i.item['@id'] || i.item)) || '').filter((u) => typeof u === 'string' && u && !h.inLocale(l, u));
@@ -346,7 +346,7 @@ async function pages(ctx) {
         if (page.h1 !== false && !lib.h1(html)) issues.push('no <h1> in the served HTML');
         const text = lib.mainText(html);
         if (text.length < cfg.minimums.mainTextChars) issues.push(`only ${text.length} characters of text in the served HTML (content needs JavaScript?)`);
-        else if (L.script === 'cjk' && lib.cjkRatio(text) < cfg.minimums.cjkRatio) issues.push(`body text is ${(lib.cjkRatio(text) * 100).toFixed(0)}% Chinese: not translated?`);
+        else if (L.script === 'cjk' && lib.cjkRatio(text) < cfg.minimums.cjkRatio) issues.push(`body text is ${(lib.cjkRatio(text) * 100).toFixed(0)}% ${L.language}: not translated?`);
       }
 
       const kind = indexable ? 'indexable' : page.noindex ? 'noindex list page' : 'noindex English fallback';
@@ -395,7 +395,7 @@ async function assets(ctx) {
     }
     const hosts = [...found.entries()].map(([host, how]) => `${host} (${[...how].join(', ')})`);
     r.info(`${tag} third-party hosts on a page: ${hosts.join('; ') || 'none'}`);
-    if (h.loc(l).script === 'cjk') {
+    if (h.loc(l).mainlandChina) {
       const risky = [...found.entries()].filter(([host, how]) => cfg.mainlandUnreliableHosts.includes(host) && [...how].some((x) => x !== 'preconnect hint'));
       r.check(risky.length === 0, `${tag} nothing on the rendering path is hosted where mainland China reaches it poorly`, `${risky.map(([host, how]) => `${host} (${[...how].filter((x) => x !== 'preconnect hint').join(', ')})`).join('; ')}: cannot be measured from outside China`, 'warn');
     }

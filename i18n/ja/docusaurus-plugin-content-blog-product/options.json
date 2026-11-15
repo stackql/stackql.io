@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "製品のお知らせ",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "StackQL の新しいリリース、機能、ケイパビリティ",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "すべての製品のお知らせ",
+    "description": "The label for the left sidebar"
+  }
+}

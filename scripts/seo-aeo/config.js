@@ -32,12 +32,17 @@ module.exports = {
   //   htmlLang    <html lang>, and the hreflang value
   //   inLanguage  JSON-LD inLanguage of the page-level nodes
   //   script      'cjk' when translated text must contain CJK characters
+  //               (Han ideographs or Japanese kana)
+  //   language    the language name used in the 'cjk' check messages
+  //   mainlandChina  true for a locale read in mainland China: warns about
+  //               third-party hosts that are slow or blocked there
   locales: {
     en: { prefix: '', htmlLang: 'en', inLanguage: 'en-US', script: null },
     de: { prefix: '/de', htmlLang: 'de', inLanguage: 'de', script: null },
     es: { prefix: '/es', htmlLang: 'es', inLanguage: 'es', script: null },
     fr: { prefix: '/fr', htmlLang: 'fr', inLanguage: 'fr', script: null },
-    'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', inLanguage: 'zh-Hans', script: 'cjk' },
+    ja: { prefix: '/ja', htmlLang: 'ja', inLanguage: 'ja', script: 'cjk', language: 'Japanese' },
+    'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', inLanguage: 'zh-Hans', script: 'cjk', language: 'Chinese', mainlandChina: true },
   },
 
   // Source sets translated per locale (the default locale has all of them).
@@ -48,8 +53,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, ja: 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, ja: 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,
@@ -164,7 +169,7 @@ module.exports = {
   crawlerPaths: ['/robots.txt', '/sitemap.xml', '{l}/', '{l}/llms.txt', '{l}/installing-stackql', '{l}/installing-stackql.md'],
 
   // Hosts a page may load that are slow or unreachable from mainland China.
-  // Listed as a warning for locales with script 'cjk': it cannot be measured
+  // Listed as a warning for locales with mainlandChina: it cannot be measured
   // from outside China, only pointed at.
   mainlandUnreliableHosts: [
     'fonts.googleapis.com', 'fonts.gstatic.com', 'ajax.googleapis.com',

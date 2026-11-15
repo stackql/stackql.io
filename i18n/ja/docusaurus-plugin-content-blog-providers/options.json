@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "プロバイダーのお知らせ",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "新規および更新された StackQL プロバイダー",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "すべてのプロバイダーのお知らせ",
+    "description": "The label for the left sidebar"
+  }
+}

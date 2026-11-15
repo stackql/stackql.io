@@ -863,3 +863,300 @@ Style:
 - Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Funciones de ventana `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
 - Example prompts addressed to an AI assistant use the informal imperative ("Muéstrame", "Crea", "Enumera"); the reader is still addressed as usted.
 - Spanish text is longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition.
+
+## ja
+
+Audience: Japanese-speaking engineers reading technical documentation. Polite style (です・ます調) in every prose sentence; never the plain style (だ・である調) in prose. No honorifics beyond that (no ご覧ください, いただけます, させていただきます): the register is that of vendor reference documentation, plain and declarative. Do not write あなた: leave the subject out where the source says "you", as Japanese does. Short sentences; split an English sentence that would need a long chain of の or a nested relative clause. Keep the English terms that Japanese developers use as they are; do not invent Japanese names for products or APIs.
+
+Names that stay in Latin script, in addition to the "All locales" list: SQL, CLI, API, SDK, JSON, YAML, CSV, HTTP, OAuth, IaC, CI/CD, LLM, MCP, SaaS, OTel, macOS, Linux, Windows, Docker, Kubernetes, GitHub Actions, Homebrew, Chocolatey, Webhook, and every provider, service, resource and method name. Acronyms are not expanded or glossed unless the source does so.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Japanese | Not |
+|---|---|---|
+| provider (a StackQL provider) | プロバイダー | プロバイダ, 提供者, Provider |
+| cloud provider (the vendor) | クラウドベンダー | クラウドプロバイダー, クラウド事業者 |
+| vendor (the company behind an API or SDK) | ベンダー | 業者 |
+| service | サービス | |
+| resource | リソース | 資源 |
+| method | メソッド | |
+| operation | 操作 | オペレーション |
+| query (noun) / to query | クエリ / クエリする, クエリを実行する | クエリー, 照会, 問い合わせ |
+| statement | 文 (SQL 文, `SELECT` 文) | ステートメント, 命令, 宣言 |
+| result set | 結果セット | |
+| row / column | 行 / 列 | レコード (for a row), カラム |
+| table | テーブル (an HTML or markdown table: 表) | |
+| view | ビュー | |
+| materialized view | マテリアライズドビュー | 実体化ビュー, マテリアライズド・ビュー |
+| window function | ウィンドウ関数 | 分析関数 |
+| window frame | ウィンドウフレーム | |
+| aggregate function / scalar function | 集約関数 / スカラー関数 | 集計関数, 集合関数 |
+| function / expression / clause | 関数 / 式 / 句 | |
+| keyword / operator / predicate | キーワード / 演算子 / 述語 | オペレーター (for an operator) |
+| subquery / alias / join | サブクエリ / エイリアス / 結合 (`JOIN` where the source has code) | 副問い合わせ, 別名 |
+| data type / literal / identifier | データ型 / リテラル / 識別子 | |
+| string / integer / boolean | 文字列 / 整数 / ブール値 | ストリング |
+| whitespace | 空白文字 | ホワイトスペース |
+| parameter / argument | パラメーター / 引数 | パラメータ |
+| flag (CLI) / option | フラグ / オプション ("global flags" = グローバルフラグ) | |
+| environment variable | 環境変数 | |
+| field / key / value | フィールド / キー / 値 | |
+| schema | スキーマ | |
+| control plane / data plane | コントロールプレーン / データプレーン | 制御プレーン |
+| agent, AI agent | エージェント, AI エージェント | 代理人 |
+| tool (an MCP tool) | ツール | |
+| prompt (text sent to a model) | プロンプト | |
+| approval prompt, elicitation prompt (a dialog shown to the user) | 承認リクエスト, エリシテーションリクエスト | 承認プロンプト |
+| elicitation (MCP) | エリシテーション（elicitation） at first mention on a page, then エリシテーション | 誘導, 引き出し |
+| gating / gated (MCP) | ゲート制御 / ゲート制御の対象; "gated by X" = X によってゲート制御される; "gated writes" = 承認が必要な書き込み | ゲーティング |
+| approval / approve | 承認 / 承認する | |
+| server mode, safety mode | サーバーモード, 安全モード | セーフティモード |
+| read-only | 読み取り専用 | リードオンリー |
+| mutation / mutating statement | ミューテーション / ミューテーション文 | 変異, 突然変異 |
+| lifecycle operation | ライフサイクル操作 | |
+| resource lifecycle | リソースライフサイクル | |
+| log / audit log | ログ / 監査ログ | |
+| credentials | 認証情報 | クレデンシャル, 資格情報 |
+| authentication / authorization | 認証 / 認可 | 承認 (that is "approval") |
+| principal / service principal | プリンシパル / サービスプリンシパル | |
+| service account | サービスアカウント | |
+| account | アカウント | |
+| token / API key / access key | トークン / API キー / アクセスキー | |
+| secret / secret store | シークレット / シークレットストア | 秘密 |
+| scope (OAuth, or of a variable or a setting) | スコープ | |
+| role / permission | ロール / 権限 (役割 is right for what a component does, not for an IAM role) | 役割 (for an IAM role), パーミッション, アクセス許可 |
+| session / session variable | セッション / セッション変数 | |
+| deployment / to deploy | デプロイ / デプロイする | 展開, 配備 |
+| infrastructure as code | Infrastructure as Code（IaC） | コードとしてのインフラ |
+| registry (generic) / provider registry | レジストリ / プロバイダーレジストリ | |
+| pull (a provider) | プルする; "pulled" = プル済み | 引く |
+| repository | リポジトリ | レポジトリ |
+| release | リリース | |
+| command line | コマンドライン | |
+| shell / interactive shell | シェル / 対話型シェル | インタラクティブシェル |
+| server / client | サーバー / クライアント | サーバ |
+| transport (MCP) | トランスポート | |
+| stateless / stateful | ステートレス / ステートフル | |
+| endpoint | エンドポイント | |
+| request / response | リクエスト / レスポンス | 要求, 応答 |
+| request body | リクエストボディ | |
+| payload | ペイロード | |
+| header (HTTP) | ヘッダー | ヘッダ |
+| pagination | ページネーション | ページング |
+| output / output format / output mode | 出力 / 出力形式 / 出力モード | |
+| template / templating | テンプレート / テンプレート機能 | |
+| dry run | ドライラン | |
+| fan-out | ファンアウト | |
+| guardrail | ガードレール | |
+| answer engine | アンサーエンジン | 回答エンジン |
+| region / project / subscription / tenant | リージョン / プロジェクト / サブスクリプション / テナント | 地域 |
+| open source | オープンソース | |
+| binary / library | バイナリ / ライブラリ | |
+| embedded (Embedded MCP) / to embed | 組み込み (組み込み MCP) / 組み込む | 埋め込み, エンベデッド |
+| installation / to install | インストール / インストールする | |
+| documentation | ドキュメント | ドキュメンテーション |
+| tutorial | チュートリアル | |
+| quick start | クイックスタート | |
+| getting started | はじめに | 入門, スタートガイド |
+| announcement | お知らせ | 発表 |
+| feature | 機能 | 特徴, フィーチャー |
+| example | 例 | サンプル (except "sample app", "sample data") |
+| syntax / usage | 構文 / 使用方法 | |
+| note / tip / warning (admonition titles are translated by the theme) | 注記 / ヒント / 警告 | |
+| resource hierarchy | リソース階層 | |
+| access management | アクセス管理 | |
+| provider session | プロバイダーセッション | |
+| SQL backend | SQL バックエンド | |
+| query engine / parser | クエリエンジン / パーサー | |
+| wire protocol | ワイヤプロトコル (PostgreSQL ワイヤプロトコル) | 有線プロトコル |
+| reverse proxy | リバースプロキシ | |
+| local cache | ローカルキャッシュ | |
+| key-value pair | キーと値のペア | |
+| delimiter / separator | 区切り文字 | デリミタ |
+| bucket (object storage) / bucket (NTILE) | バケット / バケット | |
+| throw an error / return an error | エラーを発生させる / エラーを返す | 投げる |
+| return (a value) | 返す | 戻す, リターンする |
+| well-formed / valid (JSON) | 整形式の / 有効な | |
+| file / state file | ファイル / ステートファイル | 状態ファイル |
+| directory / folder | ディレクトリ / フォルダー | フォルダ |
+| computer, machine | コンピューター, マシン | コンピュータ |
+| user | ユーザー | ユーザ |
+| drift / infrastructure drift | ドリフト / インフラストラクチャのドリフト | |
+| infrastructure | インフラストラクチャ | インフラ (except in a fixed name) |
+| cloud inventory, inventory | クラウドインベントリ, インベントリ | 棚卸し |
+| compliance | コンプライアンス | |
+| provision (resources) | プロビジョニングする | |
+| operator (the person running StackQL) | 運用者 | オペレーター |
+| caller | 呼び出し元 | |
+| filter (noun and verb) | フィルター / フィルタリングする | フィルタ |
+| concatenation | 連結 | |
+| parse / plan (a statement) | 解析する / 計画を作成する | パースする |
+| contract (I/O contract, safety contract) | コントラクト | 契約 |
+| source of truth | 信頼できる唯一の情報源 | |
+| entitlement | 権限付与 | |
+| snapshot / checksum / digest | スナップショット / チェックサム / ダイジェスト | |
+| allowlist | 許可リスト | ホワイトリスト |
+| opt in / explicit opt-in | オプトインする / 明示的なオプトイン | |
+| enable / disable | 有効にする / 無効にする | |
+| support (a feature, a format) / supported | サポートする / サポートされている | |
+| hint (in an MCP error or tool annotation) | ヒント | |
+| advertise (a capability) | 公開する | 広告する |
+| artifact (build or release output) | アーティファクト | 成果物 |
+| stack (of resources) | スタック | |
+| pipeline | パイプライン | |
+| notarized / signed | 公証済み / 署名済み | |
+| assume a role (AWS) | ロールを引き受ける | ロールを想定する |
+| common table expression (CTE) | 共通テーブル式（CTE） | |
+| default / by default | デフォルト / デフォルトで | 既定 |
+| array (JSON, data type) | 配列 | アレイ |
+| policy (IAM, access policy) / IAM binding | ポリシー / IAM バインディング | |
+| bind, binding (alias, secret store) | バインドする, バインディング | |
+| assign, assignment (`SET`) | 割り当てる, 割り当て | |
+| token (lexical) | 字句 | トークン (that is an auth token) |
+| pin (a version, a key, an issuer) | 固定する | ピン留めする |
+| exporter / receiver (OTel) / sink (audit) | エクスポーター / レシーバー / シンク | |
+| preview (a feature in preview) | プレビュー版 | |
+| legacy | レガシー | |
+| batch / statement batch | バッチ / 文のバッチ | |
+| wildcard | ワイルドカード | |
+| query hint | クエリヒント | |
+| substring / pattern (regex) / regular expression | 部分文字列 / パターン / 正規表現 | |
+| collating function / collating sequence | 照合関数 / 照合順序 | |
+| timestamp | タイムスタンプ | |
+| current row / rank / running total (window functions) | 現在の行 / 順位 / 累計 | |
+| installer | インストーラー | インストーラ |
+| workspace | ワークスペース | |
+| monitoring / to monitor / monitor (noun) | 監視 / 監視する / モニター | モニタリング |
+| run, execute / list / delete, remove / manage | 実行する / 一覧表示する / 削除する / 管理する | |
+| framework | フレームワーク | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | StackQL プロバイダーレジストリ |
+| interface | インターフェイス | インターフェース |
+| identity (caller identity, IAM identity) | ID | アイデンティティ |
+| dereference (a secret, a variable) | 参照解決する | 逆参照する |
+| in-memory / sessionless | インメモリ / セッションレス | メモリ内 |
+| relation / fingerprint / tenancy | リレーション / フィンガープリント / テナンシー | |
+| public key / private key / issuer / audience (JWT) | 公開鍵 / 秘密鍵 / 発行者 / オーディエンス | 公開キー, 秘密キー |
+| mutual TLS / revocation | 相互 TLS（mTLS） / 取り消し | |
+| source / re-source (an env file) | 読み込む / 再読み込みする | |
+| blocking / non-blocking (invocation) | ブロッキング / ノンブロッキング | |
+| discovery | 検出 (the MCP tool group); ディスカバリ (OIDC discovery, a directory listing) | ディスカバリー |
+| escalate / escalation (server mode) | 昇格する / 昇格 | |
+| sidecar / vendor (verb) | サイドカー / ベンダリングする | |
+| entry point | エントリポイント | エントリーポイント |
+| container / browser / preprocessor | コンテナー / ブラウザー / プリプロセッサー | コンテナ, ブラウザ, プリプロセッサ |
+| serialize / deserialize | シリアル化する / 逆シリアル化する | シリアライズする |
+| agentic / observability | エージェント型 / オブザーバビリティ | 可観測性 |
+| render / deprecated / fall back | レンダリングする / 非推奨 / フォールバックする | |
+| SQL verb | SQL 動詞 | |
+| attach (a disk, a policy) | アタッチする | |
+| refresh (a materialized view) / procedure / prepared statement | リフレッシュする / プロシージャ / プリペアド文 | |
+| datetime / modifier (date functions) / table-valued function | 日時 / 修飾子 / テーブル値関数 | |
+| partition / peer / tied rows (window functions) | パーティション / ピア / 同順位の行 | |
+| sine / cosine / tangent; hyperbolic and arc forms | サイン / コサイン / タンジェント; ハイパーボリックサイン, アークサイン（逆正弦） with the kanji gloss at first mention | 正弦, 正接, 双曲線正接 (except inside the gloss) |
+| Kept in Latin script | Webhook, dotenv, bearer (Bearer トークン), Issue (GitHub), crate names, the format name MCP Bundle | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Japanese |
+|---|---|
+| Install | インストール |
+| Installing StackQL | StackQL のインストール |
+| Getting Started | はじめに |
+| Command Line Usage | コマンドラインの使用方法 |
+| Language Specification | 言語仕様 |
+| Functions | 関数 |
+| Developers | 開発者向け |
+| Providers | プロバイダー |
+| Quick Starts | クイックスタート |
+| AI Agents | AI エージェント |
+| MCP Server / MCP Tools / Embedded MCP | MCP サーバー / MCP ツール / 組み込み MCP |
+| Blog | ブログ |
+| Product Announcements | 製品のお知らせ |
+| Provider Announcements | プロバイダーのお知らせ |
+| Tutorials | チュートリアル |
+| Documentation | ドキュメント |
+| Contact us | お問い合わせ |
+| Privacy Policy | プライバシーポリシー |
+| Terms of Service | 利用規約 |
+| Support | サポート |
+| AI Reference | AI リファレンス |
+| More | その他 |
+| Welcome to StackQL | StackQL へようこそ |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Japanese |
+|---|---|
+| Syntax | 構文 |
+| Arguments | 引数 |
+| Return Value(s) | 戻り値 |
+| Example / Examples | 例 |
+| Inputs / Output | 入力 / 出力 |
+| Flags | フラグ |
+| Overview | 概要 |
+| How it works | 仕組み |
+| Modes | モード |
+| Gating | ゲート制御 |
+| Install | インストール |
+| Quick start | クイックスタート |
+| Demo app | デモアプリ |
+| Repo link | リポジトリへのリンク |
+| Vendoring / embedding | ベンダリング / 組み込み |
+| Prerequisites | 前提条件 |
+| Next steps | 次のステップ |
+| Related | 関連項目 |
+| See also: | 関連項目： |
+| See X. | X を参照してください。 |
+| For more information, see X. | 詳細については、X を参照してください。 |
+| Optional. / Defaults to X. | 省略可能。 / デフォルトは X です。 |
+| Returns X. (the sentence that opens a function or tool page) | X を返します。 |
+| Return the absolute value of a number (an example heading that names a task) | 数値の絶対値を返す (dictionary form, no です・ます) |
+| X function in StackQL: ... (description pattern) | StackQL の X 関数：... |
+| X window function in StackQL: ... (description pattern) | StackQL の X ウィンドウ関数：... |
+| X in StackQL: ... (description of a statement page) | StackQL の X：... |
+| ... using SQL in StackQL (description pattern) | StackQL で SQL を使って... |
+| Available in StackQL `vX` and later / releases from `vX` | StackQL `vX` 以降で利用できます |
+| Available in StackQL releases after `vX` | StackQL `vX` より後のリリースで利用できます |
+| None. (no arguments, no inputs) | なし。 |
+| Query / Results (tab labels), Output: | クエリ / 結果, 出力： |
+| Tested with (badge line on quick starts) | 動作確認済み |
+| Best Practices / Troubleshooting / Further reading | ベストプラクティス / トラブルシューティング / 参考資料 |
+| MCP tool listing X / MCP tool that does X (description pattern) | X を一覧表示する MCP ツール / X を行う MCP ツール |
+| MCP overview (link text) | MCP の概要 |
+| Argument / Required / Description (table headers) | 引数 / 必須 / 説明 |
+| Renderer / Shape (table headers) | レンダラー / 形状 |
+| Table / One row per X (table cells) | テーブル / X ごとに 1 行 |
+| Yes / No (table cells) | はい / いいえ |
+| For example | たとえば |
+| Aggregate function / Scalar function | 集約関数 / スカラー関数 |
+| When to use, Use case / Example usage | 使用場面 / 使用例 |
+| Conclusion / Get started (homepage heading) | まとめ / 利用の開始 |
+| keyword `cloud inventory` | クラウドインベントリ |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Do not nest full-width parentheses. Where a first-mention gloss would land inside （） or in a table cell (承認が必要（エリシテーション）), leave it out there and put it on the first mention in prose.
+- Every prose sentence ends in です・ます form (〜します, 〜です, 〜できます). Descriptions of steps use 〜します ("次のコマンドを実行します。"); 〜してください is for an instruction the reader must follow ("must", "make sure", "you need to"). Never 〜しましょう.
+- Headings, page titles, sidebar labels, table headers and list fragments are noun phrases or the dictionary form, never です・ます: "StackQL のインストール", "プロバイダーの使用", "数値の絶対値を返す". No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Punctuation in Japanese prose is full width: 、。（）：「」, and ？ and ！ only where the source has them. Use 「」 to quote a word or a UI label in prose and 『』 inside 「」. Never use ，．or “” in Japanese prose. Everything inside code fences and inline code keeps its half-width punctuation, and a sentence that is entirely Latin text or code keeps half-width punctuation too. Use 、 between the items of a short inline list in a sentence.
+- Parentheses in a Japanese sentence are full width even when they hold English: Infrastructure as Code（IaC）.
+- One half-width space between Japanese text and an adjacent Latin word, number, inline code span or link whose text is Latin: `stackql exec` を実行します, 3 つのモード, StackQL の. No space next to full-width punctuation: `stackql shell` を実行します。 and （`--output` を参照）.
+- Katakana is full width and alphanumerics are half width, always: never half-width katakana (ｶﾀｶﾅ) or full-width letters and digits (ＳＱＬ, １).
+- Loanwords follow the long-vowel convention of current Japanese vendor documentation: words from English -er, -or, -ar take ー (サーバー, ユーザー, プロバイダー, パラメーター, フォルダー, コンピューター, ヘッダー, フィルター, パーサー, エクスポーター); words from -ry, -ty and -gy do not (クエリ, リポジトリ, レジストリ, ディレクトリ, ライブラリ, バイナリ, セキュリティ, プロパティ). ポリシー is spelled with ー.
+- Katakana compounds are written solid, with no ・ and no space: サービスアカウント, リソースライフサイクル, コントロールプレーン. A Latin name and a katakana word are separated by a space: MCP サーバー, API キー, Bearer トークン.
+- No dash punctuation in prose: no ー used as a dash, no ——, no spaced hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, use 、 or ： or （）, or split the sentence. A ` - ` separator in a title between two names stays.
+- Example headings and `description` values do not start with a verb in です・ます form; a description is one sentence that may end in です・ます or in a noun phrase, as the source structure allows.
+- List items and table cells end the way the source does: no 。 added to fragments, 。 where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English, in 「」 only if the source quotes it.
+- Numbers are half-width Arabic numerals with a space before a counter or unit word (3 つ, 5 分, 10 行); versions, dates and units as in the source. No kanji numerals except in fixed words (一覧, 一部, 唯一).
+- Prefer hiragana for the function words that Japanese style guides write in kana: たとえば, ただし, および, または, すべて, できる, ください, とき, こと, もの, ほか. Use kanji for 例, 場合, 際, 必要.
+- The `description` front matter stays one sentence and under about 100 characters (count Japanese characters and Latin words alike; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> クラウドインベントリ, `infrastructure as code` -> Infrastructure as Code); keep the number and order of entries.
+- Bold and italic markers stay where the source has them, with no space inside the markers (`**読み取り専用**`, not `** 読み取り専用 **`).
+- A closing `**` that follows full-width punctuation and is followed directly by a Japanese character does not close in CommonMark, and the asterisks show on the page (`**使用場面：**すべて` renders literally). Move the punctuation outside the markers (`**使用場面**：すべて`) or leave a space after the closing marker. The same holds for an opening marker between a Japanese character and full-width punctuation, and for `*` and `_` emphasis.
+- Front matter must stay valid YAML: keep the quoting of the source value, and put a value in double quotes if the Japanese text contains a half-width `: ` or ` #`, or starts with a quote, bracket, backtick, `*`, `&`, `!`, `%`, `@` or 「. A full-width ： needs no quoting.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` ウィンドウ関数 `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the casual request form (〜を表示して, 〜を一覧表示して, 〜を作成して); everything else stays です・ます.
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Japanese text is shorter than English, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.
