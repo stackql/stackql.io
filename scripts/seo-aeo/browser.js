@@ -189,40 +189,83 @@ async function switcher(ctx) {
     }
     r.check(broken.length === 0, `switching language works for all ${steps.length} ordered pairs of ${all.join(', ')}`, broken.join('; '));
 
-    // The English flag follows the visitor's region (src/lib/regionalFlags.js)
-    // and stays the default when the region is not covered. Checked on the
-    // English page, where it is the switcher's button, and on another
-    // locale's page, where it is an entry of the menu.
-    const wrong = [];
-    for (const c of cfg.flagCases || []) {
-      await browser.emulate(c);
-      for (const l of [cfg.defaultLocale, all.find((x) => x !== cfg.defaultLocale)].filter(Boolean)) {
-        const opened = await browser.open(address(l, '/installing-stackql'));
-        const label = `${c.languages} in ${c.timeZone} on the ${l} page`;
-        if (opened.error) {
-          wrong.push(`${label}: ${opened.error}`);
-          continue;
-        }
-        const seen = JSON.parse(await browser.evaluate(`JSON.stringify((() => {
-          const el = document.querySelector('.navbar__items--right svg[data-flag-locale="${cfg.defaultLocale}"]');
-          if (!el) return null;
-          return {
-            attr: document.documentElement.getAttribute('data-flag-${cfg.defaultLocale}'),
-            background: getComputedStyle(el).backgroundImage,
-            shapes: el.firstElementChild ? getComputedStyle(el.firstElementChild).display : null,
-          };
-        })())`));
-        if (!seen) wrong.push(`${label}: no English flag in the switcher`);
-        else if (c.flag) {
-          const painted = seen.background.startsWith('url("data:image/svg+xml') && seen.shapes === 'none';
-          if (seen.attr !== c.flag || !painted) wrong.push(`${label}: expected the ${c.flag} flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}, default shapes ${seen.shapes}`);
-        } else if (seen.attr || seen.background !== 'none' || seen.shapes === 'none') {
-          wrong.push(`${label}: expected the default flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}`);
+    // A locale's flag follows the visitor's region (src/lib/regionalFlags.js)
+    // and stays the default when the region is not covered. Each case names
+    // the locale whose flag it is about (the default locale when it names
+    // none). Checked on that locale's page, where the flag is the switcher's
+    // button, and on another locale's page, where it is an entry of the menu.
+    const flagCases = (cfg.flagCases || []).map((c) => ({ ...c, locale: c.locale || cfg.defaultLocale }));
+    for (const flagLocale of [...new Set(flagCases.map((c) => c.locale))]) {
+      const cases = flagCases.filter((c) => c.locale === flagLocale);
+      if (!cfg.locales[flagLocale]) {
+        r.fail(`flag cases name the locale ${flagLocale}, which is not in the check's locales`);
+        continue;
+      }
+      const wrong = [];
+      for (const c of cases) {
+        await browser.emulate(c);
+        for (const l of [flagLocale, all.find((x) => x !== flagLocale)].filter(Boolean)) {
+          const opened = await browser.open(address(l, '/installing-stackql'));
+          const label = `${c.languages} in ${c.timeZone} on the ${l} page`;
+          if (opened.error) {
+            wrong.push(`${label}: ${opened.error}`);
+            continue;
+          }
+          const seen = JSON.parse(await browser.evaluate(`JSON.stringify((() => {
+            const el = document.querySelector('.navbar__items--right svg[data-flag-locale="${flagLocale}"]');
+            if (!el) return null;
+            return {
+              attr: document.documentElement.getAttribute('data-flag-${flagLocale}'),
+              background: getComputedStyle(el).backgroundImage,
+              shapes: el.firstElementChild ? getComputedStyle(el.firstElementChild).display : null,
+            };
+          })())`));
+          if (!seen) wrong.push(`${label}: no ${flagLocale} flag in the switcher`);
+          else if (c.flag) {
+            const painted = seen.background.startsWith('url("data:image/svg+xml') && seen.shapes === 'none';
+            if (seen.attr !== c.flag || !painted) wrong.push(`${label}: expected the ${c.flag} flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}, default shapes ${seen.shapes}`);
+          } else if (seen.attr || seen.background !== 'none' || seen.shapes === 'none') {
+            wrong.push(`${label}: expected the default flag, got data-flag ${seen.attr}, background ${seen.background.slice(0, 40)}`);
+          }
         }
       }
+      const variants = [...new Set(cases.filter((c) => c.flag).map((c) => c.flag))];
+      r.check(wrong.length === 0, `the ${flagLocale} flag follows the browser's region in ${cases.length} cases (${variants.join(', ')}) and is the default elsewhere, with no request for the artwork`, wrong.join('; '));
     }
-    if ((cfg.flagCases || []).length) {
-      r.check(wrong.length === 0, `the English flag follows the browser's region in ${cfg.flagCases.length} cases (${cfg.flagCases.filter((c) => c.flag).map((c) => c.flag).join(', ')}) and is the default elsewhere, with no request for the artwork`, wrong.join('; '));
+
+    // Every variant the head script can select has artwork in the
+    // stylesheet: a variant with no rule would keep the default flag, which
+    // is safe but means the mapping and the stylesheet have drifted apart.
+    const regional = require('../../src/lib/regionalFlags.js').REGIONAL_FLAGS;
+    for (const [flagLocale, spec] of Object.entries(regional)) {
+      if (!cfg.locales[flagLocale]) continue;
+      const variants = [...new Set([
+        ...Object.values(spec.regions || {}),
+        ...(spec.timeZones || []).map((t) => t[1]),
+        ...Object.values(spec.looseRegions || {}),
+      ])];
+      const opened = await browser.open(address(flagLocale, '/installing-stackql'));
+      if (opened.error) {
+        r.fail(`[${flagLocale}] flag variants: the page does not load (${opened.error})`);
+        continue;
+      }
+      const unpainted = JSON.parse(await browser.evaluate(`JSON.stringify((() => {
+        const root = document.documentElement;
+        const el = document.querySelector('.navbar__items--right svg[data-flag-locale="${flagLocale}"]');
+        if (!el) return ['no flag in the switcher'];
+        const before = root.getAttribute('data-flag-${flagLocale}');
+        const missing = [];
+        for (const v of ${JSON.stringify(variants)}) {
+          root.setAttribute('data-flag-${flagLocale}', v);
+          const painted = getComputedStyle(el).backgroundImage.startsWith('url("data:image/svg+xml')
+            && el.firstElementChild && getComputedStyle(el.firstElementChild).display === 'none';
+          if (!painted) missing.push(v);
+        }
+        if (before === null) root.removeAttribute('data-flag-${flagLocale}');
+        else root.setAttribute('data-flag-${flagLocale}', before);
+        return missing;
+      })())`));
+      r.check(unpainted.length === 0, `[${flagLocale}] all ${variants.length} regional flag variants have artwork in the stylesheet`, unpainted.join(', '));
     }
   } finally {
     await browser.close();

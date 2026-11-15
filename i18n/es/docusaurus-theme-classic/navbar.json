@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "Instalación",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "Agentes de IA",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "Providers",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "Servidor MCP",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "Herramientas MCP",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "MCP integrado",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "Anuncios de producto",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "Anuncios de providers",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "Tutoriales",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "Inicios rápidos",
+    "description": "Navbar item with label Quick Starts"
+  }
+}
