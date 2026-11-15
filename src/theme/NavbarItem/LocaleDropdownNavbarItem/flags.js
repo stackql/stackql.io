@@ -11,6 +11,7 @@ import React from 'react';
 export const CODES = {
   en: 'EN',
   de: 'DE',
+  es: 'ES',
   fr: 'FR',
   'zh-Hans': 'CN',
   ja: 'JP',
@@ -70,6 +71,16 @@ const FLAGS = {
       <path fill="#fc0" d="M0 320h640v160H0z" />
       <path fill="#000" d="M0 0h640v160H0z" />
       <path fill="#d00" d="M0 160h640v160H0z" />
+    </svg>
+  ),
+  // Spain, with the coat of arms reduced to a shield: at 20 by 15 pixels it
+  // is two pixels wide. A visitor in a Spanish-speaking country of the
+  // Americas sees that country's flag instead (src/lib/regionalFlags.js).
+  es: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#aa151b" d="M0 0h640v480H0z" />
+      <path fill="#f1bf00" d="M0 120h640v240H0z" />
+      <path fill="#aa151b" d="M172 172h64v20h-64zm-8 32h80v52a40 40 0 0 1-80 0z" />
     </svg>
   ),
   fr: (className) => (

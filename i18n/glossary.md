@@ -595,3 +595,271 @@ Style:
 - Accented capitals and the œ ligature are ordinary French spelling and are kept (Étapes, nœud).
 - Example prompts addressed to an AI assistant use the informal imperative ("Montre-moi", "Crée"); the reader is still addressed as vous.
 - French text is longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition.
+
+## es
+
+Audience: Spanish-speaking engineers reading technical documentation, in Spain and in Latin America alike. Neutral international Spanish: where the two sides of the Atlantic use different words, take the one in the table below (archivo, equipo, encabezado), never a regional one (fichero, ordenador, computadora, cabecera). Formal address (usted), present tense, short sentences. Instructions use the imperative in the usted form ("Ejecute el siguiente comando", "Consulte", "Use") and task headings use the infinitive ("Instalar StackQL"). The reader is always one person: no vosotros and no ustedes forms. Keep the English terms that Spanish-speaking developers use as a matter of course (the "Kept in English" row); do not coin Spanish names for products or APIs. No inclusive-writing forms (`@`, `x`, `e` endings); no marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Spanish | Not |
+|---|---|---|
+| provider (a StackQL provider) | provider (el; plural providers; lower case in prose) | proveedor, proveedor de servicios |
+| cloud provider (the vendor) | proveedor de nube (el) | proveedor cloud, proveedor de la nube, provider de nube |
+| vendor (the company behind an API or SDK, not only cloud) | proveedor (el); "vendor-published" = publicado por el proveedor | fabricante, vendedor |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | en la nube (recursos en la nube, infraestructura en la nube); "de nube" in a fixed term from this table | cloud as a Spanish adjective (recursos cloud) |
+| service | servicio (el) | |
+| resource | recurso (el) | |
+| method | método (el) | |
+| operation | operación (la) | |
+| query (noun) / to query | consulta (la) / consultar | query, interrogar |
+| statement | instrucción (la) | sentencia, declaración, enunciado |
+| result set | conjunto de resultados | juego de resultados |
+| row / column | fila / columna | renglón, registro (for a row) |
+| table | tabla (la) | |
+| view | vista (la) | |
+| materialized view | vista materializada | |
+| window function | función de ventana | función ventana, función analítica |
+| window frame | marco de ventana | |
+| aggregate function / scalar function | función de agregación / función escalar | función agregada, función de agregado |
+| function / expression / clause | función / expresión / cláusula | |
+| keyword / operator / predicate | palabra clave / operador / predicado | |
+| subquery / alias / join | subconsulta / alias / join (el; `JOIN` where the source has code) | unión (that is `UNION`), combinación, juntura |
+| data type / literal / identifier | tipo de datos / literal / identificador | |
+| string / integer / boolean | cadena (cadena de caracteres where "cadena" alone would be unclear) / entero / booleano | string, hilera |
+| whitespace | espacios en blanco | |
+| parameter / argument | parámetro / argumento | |
+| flag (CLI) / option | opción / opción ("global flags" = opciones globales) | bandera, indicador, marca, flag |
+| environment variable | variable de entorno | variable de ambiente |
+| field / key / value | campo / clave / valor | llave |
+| schema | esquema (el) | |
+| control plane / data plane | plano de control / plano de datos | |
+| agent, AI agent | agente, agente de IA (plural agentes de IA) | agente IA, agente de inteligencia artificial |
+| tool (an MCP tool) | herramienta (la) | |
+| prompt (text sent to a model) | prompt (el) | indicación, instrucción, mensaje |
+| approval prompt, elicitation prompt (a dialog shown to the user) | solicitud de aprobación, solicitud de elicitación | prompt de aprobación |
+| elicitation (MCP) | elicitación (la) | obtención, solicitud |
+| gating / gated (MCP) | control (el) / sujeto a control; "gated by X" = controlado por X; "gated writes" = escrituras sujetas a aprobación | bloqueo, filtrado, compuerta |
+| approval / approve | aprobación / aprobar | |
+| server mode, safety mode | modo del servidor, modo de seguridad | |
+| read-only | de solo lectura | de sólo lectura (no accent on solo) |
+| mutation / mutating statement | mutación / instrucción de mutación | |
+| lifecycle operation | operación de ciclo de vida | |
+| resource lifecycle | ciclo de vida de los recursos | |
+| log / audit log | log (el; plural logs) / log de auditoría | registro (that is a registry or a record), bitácora |
+| log record / completion record / row record (OTel output) | registro de log / registro de finalización / registro de fila | |
+| credentials | credenciales (las) | |
+| authentication / authorization | autenticación / autorización | autentificación |
+| principal / service principal | principal (el) / principal de servicio | entidad de seguridad, entidad de servicio |
+| service account | cuenta de servicio | |
+| token / API key / access key | token (el; plural tokens) / clave de API / clave de acceso | ficha, testigo, llave |
+| secret / secret store | secreto / almacén de secretos | bóveda |
+| scope (OAuth) | scope (el) | ámbito (that is the scope of a variable), alcance |
+| role / permission | rol / permiso | papel |
+| session / session variable | sesión / variable de sesión | |
+| deployment / to deploy | despliegue / desplegar | implementación, implementar, deploy |
+| infrastructure as code | infraestructura como código (IaC) | infraestructura en forma de código |
+| registry (generic) / provider registry | registro / registro de providers | |
+| pull (a provider) | descargar; "pulled" = descargado | tirar, jalar, hacer pull |
+| repository | repositorio (el) | |
+| release | versión (la) as a noun, publicar as a verb | release, lanzamiento |
+| command line | línea de comandos | línea de órdenes |
+| shell / interactive shell | shell (el) / shell interactivo | la shell |
+| server / client | servidor / cliente | |
+| transport (MCP) | transporte (el) | |
+| stateless / stateful | sin estado / con estado | |
+| endpoint | endpoint (el; plural endpoints) | punto de conexión, punto final, extremo |
+| request / response | solicitud / respuesta | petición, requerimiento |
+| request body | cuerpo de la solicitud | |
+| payload | carga útil | |
+| header (HTTP) | encabezado (el) | cabecera |
+| pagination | paginación | |
+| output / output format / output mode | salida / formato de salida / modo de salida | |
+| template / templating | plantilla / uso de plantillas | template |
+| dry run | ejecución de prueba | simulacro, ejecución en seco |
+| guardrail | barrera de protección | barandilla |
+| answer engine | motor de respuestas | |
+| region / project / subscription / tenant | región / proyecto / suscripción / tenant (el) | inquilino, arrendatario |
+| account | cuenta | |
+| open source | de código abierto | open source, de fuente abierta |
+| binary / library | binario / biblioteca | librería |
+| embedded (Embedded MCP) / to embed | integrado (MCP integrado) / integrar | embebido, incrustado, empotrado |
+| installation / to install | instalación / instalar | |
+| documentation | documentación | |
+| tutorial | tutorial (el) | |
+| quick start | inicio rápido | |
+| getting started | primeros pasos | |
+| announcement | anuncio | |
+| feature | funcionalidad | característica, prestación, feature |
+| example | ejemplo | |
+| syntax / usage | sintaxis / uso | |
+| note / tip / warning (admonition titles are translated by the theme) | nota / consejo / advertencia | |
+| resource hierarchy | jerarquía de recursos | |
+| access management | gestión de accesos | administración de acceso |
+| provider session | sesión de provider | |
+| SQL backend | backend SQL | |
+| query engine / parser | motor de consultas / analizador sintáctico | parser, parseador |
+| wire protocol | protocolo de red (protocolo de red de PostgreSQL) | protocolo de cable |
+| reverse proxy | proxy inverso | |
+| local cache | caché local (la caché) | el caché |
+| key-value pair | par clave-valor | |
+| delimiter / separator | delimitador / separador | |
+| bucket (object storage) / bucket (NTILE) | bucket (el) / grupo | cubo, depósito |
+| throw an error / return an error | generar un error / devolver un error | lanzar, arrojar, tirar |
+| return (a value) | devolver | retornar, regresar |
+| well-formed / valid (JSON) | bien formado / válido | |
+| file / state file | archivo / archivo de estado | fichero |
+| directory (of principals, of plugins, filesystem) / folder | directorio / carpeta | |
+| computer, machine | equipo, máquina | ordenador, computadora |
+| drift / infrastructure drift | desviación / desviación de la infraestructura | deriva, drift |
+| cloud inventory, inventory | inventario de nube, inventario | |
+| compliance | cumplimiento | conformidad |
+| provision (resources) | aprovisionar | provisionar |
+| operator (the person running StackQL) | operador (el); the context separates it from a SQL operator | |
+| caller | llamador (el) | invocador, autor de la llamada |
+| filter (noun and verb) | filtro / filtrar | |
+| concatenation | concatenación | |
+| parse / plan (a statement) | analizar / planificar | parsear |
+| contract (I/O contract, safety contract) | contrato | |
+| source of truth | fuente de verdad | |
+| entitlement | derecho de acceso | |
+| snapshot / checksum / digest | instantánea / suma de comprobación / hash (el) | resumen (that is a summary) |
+| estate / fingerprint | parque (parque de recursos en la nube) / huella digital | patrimonio |
+| allowlist | lista de permitidos | lista blanca |
+| opt in / explicit opt-in | activar explícitamente / activación explícita | |
+| enable / disable | habilitar / deshabilitar | |
+| support (a feature, a format) / supported | admitir / admitido, compatible | soportar, soportado |
+| hint (in an MCP error or tool annotation) | indicación | pista |
+| advertise (a capability) | anunciar | |
+| artifact (build or release output) | artefacto | |
+| stack (of resources) | stack (el) | pila |
+| pipeline | pipeline (el) | canalización, tubería |
+| notarized / signed | notarizado / firmado | |
+| assume a role (AWS) | asumir un rol | |
+| common table expression (CTE) | expresión de tabla común (CTE) | |
+| default / by default | valor predeterminado / de forma predeterminada | por defecto, por omisión |
+| array (JSON, data type) | array (el; plural arrays) | matriz, arreglo, vector |
+| policy (IAM, access policy) / IAM binding | política / vinculación de IAM | directiva, binding |
+| bind, binding (alias, secret store) | vincular, vinculación | |
+| assign, assignment (`SET`) | asignar, asignación | |
+| scope (of a variable or a setting, not OAuth) | ámbito | alcance |
+| token (lexical) | componente léxico | token (that is an auth token) |
+| pin (a version, a key, an issuer) | fijar; the heading "Pinning the revision" is "Fijar la revisión" | anclar, pinear |
+| exporter / receiver (OTel) / sink (audit) | exportador / receptor / destino | sumidero |
+| tenancy (the alias label) | tenancy (la) | |
+| preview (a feature in preview) | en versión preliminar | en vista previa, preview |
+| legacy | heredado | legado, legacy |
+| batch / statement batch | lote / lote de instrucciones | |
+| wildcard | comodín (carácter comodín) | |
+| query hint | indicación de consulta | sugerencia de consulta |
+| substring / pattern (regex) / regular expression | subcadena / patrón / expresión regular | |
+| collating function / collating sequence | función de intercalación / secuencia de intercalación | colación, cotejamiento |
+| timestamp | marca de tiempo | sello de tiempo, timestamp |
+| current row / rank / running total (window functions) | fila actual / rango / total acumulado | |
+| installer | instalador | |
+| workspace | espacio de trabajo | área de trabajo |
+| monitoring / to monitor / monitor (noun) | supervisión / supervisar / monitor | monitorización, monitoreo, monitorear |
+| run, execute / list / delete, remove / manage | ejecutar / enumerar / eliminar / gestionar | correr / listar / borrar / administrar |
+| framework | framework (el) for a named framework (Framework de vinculaciones de IAM); marco in the generic sense | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | Registro de providers de StackQL |
+| Kept in English | backend, bundle (the `.mcpb`; the format name MCP Bundle too), sidecar, vendored, crate, worker, bearer (token bearer), dotenv, pull request, fork, issue, webhook, plugin, runtime, fan-out, proxy, SaaS, wrapper, skill, build, workflow, tag, handshake, log, hash | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Spanish |
+|---|---|
+| Install | Instalación |
+| Installing StackQL | Instalar StackQL |
+| Getting Started | Primeros pasos |
+| Command Line Usage | Línea de comandos |
+| Language Specification | Especificación del lenguaje |
+| Functions | Funciones |
+| Developers | Desarrolladores |
+| Providers | Providers |
+| Quick Starts | Inicios rápidos |
+| AI Agents | Agentes de IA |
+| MCP Server / MCP Tools / Embedded MCP | Servidor MCP / Herramientas MCP / MCP integrado |
+| Blog | Blog |
+| Product Announcements | Anuncios de producto |
+| Provider Announcements | Anuncios de providers |
+| Tutorials | Tutoriales |
+| Documentation | Documentación |
+| Contact us | Contacto |
+| Privacy Policy | Política de privacidad |
+| Terms of Service | Términos del servicio |
+| Support | Soporte |
+| AI Reference | Referencia de IA |
+| More | Más |
+| Welcome to StackQL | Le damos la bienvenida a StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Spanish |
+|---|---|
+| Syntax | Sintaxis |
+| Arguments | Argumentos |
+| Return Value(s) | Valor(es) devuelto(s) |
+| Example / Examples | Ejemplo / Ejemplos |
+| Inputs / Output | Entradas / Salida |
+| Flags | Opciones |
+| Overview | Descripción general |
+| How it works | Funcionamiento |
+| Modes | Modos |
+| Gating | Control |
+| Install | Instalación |
+| Quick start | Inicio rápido |
+| Demo app | Aplicación de demostración |
+| Repo link | Enlace al repositorio |
+| Vendoring / embedding | Vendoring / integración |
+| Prerequisites | Requisitos previos |
+| Next steps | Pasos siguientes |
+| Related | Consulte también |
+| See also: | Consulte también: |
+| See X. | Consulte X. |
+| For more information, see X. | Para obtener más información, consulte X. |
+| Optional. / Defaults to X. | Opcional. / Valor predeterminado: X. |
+| Returns X. (the sentence that opens a function or tool page) | Devuelve X. (never "Retorna" or "Regresa") |
+| Return the absolute value of a number (an example heading that names a task) | Devolver el valor absoluto de un número (infinitive) |
+| X function in StackQL: ... (description pattern) | Función X en StackQL: ... (a noun phrase or an infinitive after the colon, as in the source) |
+| X window function in StackQL: ... (description pattern) | Función de ventana X en StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X en StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... con SQL en StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Disponible a partir de StackQL `vX` |
+| Available in StackQL releases after `vX` | Disponible en las versiones de StackQL posteriores a `vX` |
+| None. (no arguments, no inputs) | Ninguno. / Ninguna. |
+| Query / Results (tab labels), Output: | Consulta / Resultados, Salida: |
+| Tested with (badge line on quick starts) | Probado con |
+| Best Practices / Troubleshooting / Further reading | Prácticas recomendadas / Solución de problemas / Lecturas adicionales |
+| MCP tool listing X / MCP tool that does X (description pattern) | Herramienta MCP que enumera X / Herramienta MCP que hace X |
+| MCP overview (link text) | Descripción general de MCP |
+| Argument / Required / Description (table headers) | Argumento / Obligatorio / Descripción |
+| Renderer / Shape (table headers) | Renderizador / Forma |
+| Table / One row per X (table cells) | Tabla / Una fila por X |
+| Yes / No (table cells) | Sí / No |
+| For example | Por ejemplo |
+| Aggregate function / Scalar function | Función de agregación / Función escalar |
+| keyword `cloud inventory` | inventario de nube |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Headings in sentence case: a capital on the first word and on proper nouns only, never title case ("Variables de sesión", not "Variables De Sesión"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Questions and exclamations open with `¿` and `¡` as Spanish spelling requires, including in headings, FAQ entries and front matter. Accented vowels, `ñ` and `ü` are ordinary Spanish spelling and are kept, on capitals too (Índice, Único).
+- No space before `:`, `;`, `?` or `!`. The word after a colon is lower case unless it is a name or starts a quoted sentence.
+- Quotation marks are straight double quotes ("..."). No angle quotes, no typographic quotes and no typographic apostrophe, so the text stays greppable.
+- No dash punctuation other than the keyboard hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, write ` - `, or use commas or parentheses where Spanish would use a raya. Never write an em dash (the raya), an en dash or a double hyphen in prose.
+- Gender and number follow Spanish usage even when the term is English: el provider, el stack, el shell, el backend, el bucket, el endpoint, el token, el prompt, el pipeline, el array, el join, el tenant, el log, el hash; la caché, la API, la CLI, la URL, la tenancy. An inline code span takes the gender of what it names (el comando `stackql exec`, la opción `--output`, el parámetro `region`). English nouns form the plural with -s (providers, tokens, endpoints).
+- Contractions `al` and `del` apply before an English or code term as before any other masculine noun (del provider, al endpoint); not before a name that starts with its own article.
+- No capital on common nouns after the first word of a sentence or label; names of languages, months and days are lower case. Product, provider and vendor names keep their own spelling.
+- Prefer the simple verb to the padded one (use, not "haga uso de"; para, not "con el fin de"). Prefer the active voice or the impersonal `se` ("se devuelve una fila") to the passive with `ser`.
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the decimal comma is not applied inside code or tables of command output.
+- The `description` front matter stays one sentence and under about 170 characters (Spanish runs 15 to 25 percent longer than English; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> inventario de nube); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. A value that starts with `¿` or `¡` needs no quoting.
+- Strings in JSX and in exported data arrays keep the quote style of the source; a translated string that gains a double quote goes in single quotes, and the other way around.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Punctuation that follows a bold term stays outside the markers when the source has it outside.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Funciones de ventana `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the informal imperative ("Muéstrame", "Crea", "Enumera"); the reader is still addressed as usted.
+- Spanish text is longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition.

@@ -39,6 +39,94 @@
   display: none;
 }
 
+/* Spanish: the default is the flag of Spain; a visitor in a Spanish-speaking
+   country of the Americas, or in Equatorial Guinea, sees that country's
+   flag. Emblems are reduced to a shape that survives at 20 by 15 pixels (a
+   disc, a ring, a shield): without one Mexico reads as Italy, Ecuador as
+   Colombia and Paraguay as the Netherlands. */
+:global(html[data-flag-es='mx']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v480H0z'/><path fill='%23006847' d='M0 0h213.3v480H0z'/><path fill='%23ce1126' d='M426.7 0h213.3v480H426.7z'/><circle cx='320' cy='232' r='40' fill='%238c5a2b'/><path fill='none' stroke='%23467a2e' stroke-width='14' d='M262 250a60 60 0 0 0 116 0'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='ar']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%2374acdf' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><circle cx='320' cy='240' r='44' fill='%23f6b40e'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='co']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ffcd00' d='M0 0h640v480H0z'/><path fill='%23003087' d='M0 240h640v120H0z'/><path fill='%23c8102e' d='M0 360h640v120H0z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='cl']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v480H0z'/><path fill='%23d52b1e' d='M0 240h640v240H0z'/><path fill='%230039a6' d='M0 0h240v240H0z'/><path fill='%23fff' d='M120 56L134.4 100.2L180.9 100.2L143.3 127.6L157.6 171.8L120 144.4L82.4 171.8L96.7 127.6L59.1 100.2L105.6 100.2z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='pe']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23d91023' d='M0 0h640v480H0z'/><path fill='%23fff' d='M213.3 0h213.4v480H213.3z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='ve']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ffcc00' d='M0 0h640v480H0z'/><path fill='%2300247d' d='M0 160h640v160H0z'/><path fill='%23cf142b' d='M0 320h640v160H0z'/><path fill='none' stroke='%23fff' stroke-width='16' stroke-dasharray='16 13.7' d='M230 276a100 100 0 0 1 180 0'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='ec']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ffdd00' d='M0 0h640v480H0z'/><path fill='%23034ea2' d='M0 240h640v120H0z'/><path fill='%23ed1c24' d='M0 360h640v120H0z'/><ellipse cx='320' cy='240' rx='42' ry='54' fill='%237fb2df' stroke='%236b4a1f' stroke-width='12'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='gt']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%234997d0' d='M0 0h640v480H0z'/><path fill='%23fff' d='M213.3 0h213.4v480H213.3z'/><circle cx='320' cy='240' r='42' fill='none' stroke='%23448127' stroke-width='14'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='cu']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23002a8f' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 96h640v96H0zm0 192h640v96H0z'/><path fill='%23cf142b' d='m0 0 415.7 240L0 480z'/><path fill='%23fff' d='M140 176L154.4 220.2L200.9 220.2L163.3 247.6L177.6 291.8L140 264.4L102.4 291.8L116.7 247.6L79.1 220.2L125.6 220.2z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='bo']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23d52b1e' d='M0 0h640v480H0z'/><path fill='%23f9e300' d='M0 160h640v160H0z'/><path fill='%23007934' d='M0 320h640v160H0z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='do']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v480H0z'/><path fill='%23002d62' d='M0 0h272v192H0zm368 288h272v192H368z'/><path fill='%23ce1126' d='M368 0h272v192H368zM0 288h272v192H0z'/><circle cx='320' cy='240' r='22' fill='none' stroke='%2300693e' stroke-width='10'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='hn']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%2300bce4' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%2300bce4' d='M320 218L324.9 233.2L340.9 233.2L328 242.6L332.9 257.8L320 248.4L307.1 257.8L312 242.6L299.1 233.2L315.1 233.2z'/><path fill='%2300bce4' d='M248 182L252.9 197.2L268.9 197.2L256 206.6L260.9 221.8L248 212.4L235.1 221.8L240 206.6L227.1 197.2L243.1 197.2z'/><path fill='%2300bce4' d='M392 182L396.9 197.2L412.9 197.2L400 206.6L404.9 221.8L392 212.4L379.1 221.8L384 206.6L371.1 197.2L387.1 197.2z'/><path fill='%2300bce4' d='M248 254L252.9 269.2L268.9 269.2L256 278.6L260.9 293.8L248 284.4L235.1 293.8L240 278.6L227.1 269.2L243.1 269.2z'/><path fill='%2300bce4' d='M392 254L396.9 269.2L412.9 269.2L400 278.6L404.9 293.8L392 284.4L379.1 293.8L384 278.6L371.1 269.2L387.1 269.2z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='py']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23d52b1e' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%230038a8' d='M0 320h640v160H0z'/><circle cx='320' cy='240' r='40' fill='none' stroke='%23009b3a' stroke-width='10'/><circle cx='320' cy='240' r='13' fill='%23fedf00'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='sv']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%230047ab' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><circle cx='320' cy='240' r='44' fill='none' stroke='%231f601a' stroke-width='10'/><path fill='%23ffcc00' d='m320 210 28 48h-56z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='ni']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%230067c6' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><circle cx='320' cy='240' r='46' fill='none' stroke='%23c8a400' stroke-width='6'/><path fill='%2351b5e0' stroke='%23c8a400' stroke-width='6' d='m320 212 26 44h-52z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='cr']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23002b7f' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 80h640v320H0z'/><path fill='%23ce1126' d='M0 160h640v160H0z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='pa']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v480H0z'/><path fill='%23d21034' d='M320 0h320v240H320z'/><path fill='%23005293' d='M0 240h320v240H0z'/><path fill='%23005293' d='M160 62L173 102.1L215.2 102.1L181.1 126.8L194.1 166.9L160 142.2L125.9 166.9L138.9 126.8L104.8 102.1L147 102.1z'/><path fill='%23d21034' d='M480 302L493 342.1L535.2 342.1L501.1 366.8L514.1 406.9L480 382.2L445.9 406.9L458.9 366.8L424.8 342.1L467 342.1z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='uy']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v480H0z'/><path fill='%230038a8' d='M266.7 53.3H640v53.4H266.7zm0 106.7H640v53.3H266.7zM0 266.7h640V320H0zm0 106.6h640v53.4H0z'/><circle cx='133' cy='133' r='52' fill='%23fcd116'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='pr']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ed0000' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 96h640v96H0zm0 192h640v96H0z'/><path fill='%230050f0' d='m0 0 415.7 240L0 480z'/><path fill='%23fff' d='M140 176L154.4 220.2L200.9 220.2L163.3 247.6L177.6 291.8L140 264.4L102.4 291.8L116.7 247.6L79.1 220.2L125.6 220.2z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='gq']) .flag[data-flag-locale='es'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%233e9a00' d='M0 0h640v480H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23e32118' d='M0 320h640v160H0z'/><path fill='%230073ce' d='m0 0 180 240L0 480z'/><path fill='%23b0b7bb' d='M316 206h56v40a28 28 0 0 1-56 0z'/><circle cx='344' cy='234' r='14' fill='%23009a00'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-es='mx']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='ar']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='co']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='cl']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='pe']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='ve']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='ec']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='gt']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='cu']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='bo']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='do']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='hn']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='py']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='sv']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='ni']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='cr']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='pa']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='uy']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='pr']) .flag[data-flag-locale='es'] > *,
+:global(html[data-flag-es='gq']) .flag[data-flag-locale='es'] > * {
+  display: none;
+}
+
 .badge {
   display: inline-block;
   min-width: 20px;

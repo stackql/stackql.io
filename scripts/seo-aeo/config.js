@@ -35,6 +35,7 @@ module.exports = {
   locales: {
     en: { prefix: '', htmlLang: 'en', inLanguage: 'en-US', script: null },
     de: { prefix: '/de', htmlLang: 'de', inLanguage: 'de', script: null },
+    es: { prefix: '/es', htmlLang: 'es', inLanguage: 'es', script: null },
     fr: { prefix: '/fr', htmlLang: 'fr', inLanguage: 'fr', script: null },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', inLanguage: 'zh-Hans', script: 'cjk' },
   },
@@ -47,8 +48,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, fr: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, fr: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,
@@ -185,11 +186,31 @@ module.exports = {
   // (every hand-written literal rule is tried).
   generatedRedirectSample: 8,
 
-  // The regional variants of the English flag in the language switcher
+  // The regional variants of a locale's flag in the language switcher
   // (src/lib/regionalFlags.js), for the switcher section: the browser's
-  // languages and time zone, and the variant expected (null: the default
-  // flag). Add a case when a variant is added.
+  // languages and time zone, the locale whose flag is looked at (`locale`,
+  // the default locale when absent) and the variant expected (null: the
+  // default flag). Add a case when a variant is added.
   flagCases: [
+    // Spanish: Spain by default, the visitor's country in the Americas
+    { locale: 'es', languages: 'es-ES,es', timeZone: 'Europe/Madrid', flag: null },
+    { locale: 'es', languages: 'es-MX,es', timeZone: 'Europe/Madrid', flag: 'mx' },
+    { locale: 'es', languages: 'en-US,en', timeZone: 'America/Mexico_City', flag: 'mx' },
+    // es-ES is what a browser is set to when "Spanish" is picked, so the
+    // time zone decides, as it does for en-US in Sydney
+    { locale: 'es', languages: 'es-ES,es', timeZone: 'America/Bogota', flag: 'co' },
+    // Chrome's name for the zone, and Firefox's
+    { locale: 'es', languages: 'es-419,es', timeZone: 'America/Buenos_Aires', flag: 'ar' },
+    { locale: 'es', languages: 'es-419,es', timeZone: 'America/Argentina/Cordoba', flag: 'ar' },
+    // the language outranks the time zone: a Chilean browser in Lima
+    { locale: 'es', languages: 'es-CL,es', timeZone: 'America/Lima', flag: 'cl' },
+    { locale: 'es', languages: 'en-US,en', timeZone: 'America/Lima', flag: 'pe' },
+    { locale: 'es', languages: 'en-GB,en', timeZone: 'America/Montevideo', flag: 'uy' },
+    // no country named and no Spanish-speaking time zone: the default
+    { locale: 'es', languages: 'es-US,es', timeZone: 'America/Los_Angeles', flag: null },
+    { locale: 'es', languages: 'es-419,es', timeZone: 'America/New_York', flag: null },
+    { locale: 'es', languages: 'pt-BR,pt', timeZone: 'America/Bahia', flag: null },
+    // English
     { languages: 'en-US,en', timeZone: 'America/New_York', flag: null },
     { languages: 'en-AU,en', timeZone: 'America/New_York', flag: 'au' },
     { languages: 'en-US,en', timeZone: 'Australia/Sydney', flag: 'au' },

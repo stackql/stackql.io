@@ -81,10 +81,11 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'fr', 'zh-Hans'],
+  locales: ['en', 'de', 'es', 'fr', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
+    es: { label: 'Español', htmlLang: 'es' },
     fr: { label: 'Français', htmlLang: 'fr' },
     // The URL path is lower case on purpose. Netlify answers a page URL that
     // has upper-case letters with a 301 to its lower-case form, so with the
@@ -211,10 +212,12 @@ const config = {
   i18n: i18nConfig,
   headTags: [
     {
-      // Picks the regional variant of the English flag in the language
-      // switcher (AU, NZ, ZA, GB) before the first paint, from the browser's
-      // language and time zone; see src/lib/regionalFlags.js. Inline, so it
-      // costs no request, and it leaves the page as served on any error.
+      // Picks the regional variant of the English flag (AU, NZ, ZA, GB) and
+      // of the Spanish flag (Mexico, Argentina, Colombia and the other
+      // Spanish-speaking countries) in the language switcher before the
+      // first paint, from the browser's language and time zone; see
+      // src/lib/regionalFlags.js. Inline, so it costs no request, and it
+      // leaves the page as served on any error.
       tagName: 'script',
       attributes: {},
       innerHTML: regionalFlags.headScript(),

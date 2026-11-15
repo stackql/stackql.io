@@ -1,6 +1,8 @@
 // Regional variants of a locale's flag in the language switcher: a visitor
 // in Australia, New Zealand, South Africa or the United Kingdom sees that
-// country's flag next to "EN" instead of the US one. Cosmetic only: the
+// country's flag next to "EN" instead of the US one, and a visitor in a
+// Spanish-speaking country of the Americas (or in Equatorial Guinea) sees
+// that country's flag next to "ES" instead of Spain's. Cosmetic only: the
 // locale, its URL and its content are the same for everyone.
 //
 // How it works. The site is static, so every page is served with the default
@@ -40,6 +42,16 @@
 //                    the UK flag.
 // Time zones are matched by IANA name prefix, not by UTC offset: an offset
 // such as +11 is shared with other countries and moves with daylight saving.
+//
+// Spanish (es) works the same way with Spain as the default: es-MX decides
+// wherever the machine is, otherwise a time zone of a Spanish-speaking
+// country does, whatever the browser language (an en-US or es-ES browser in
+// Bogota gets the Colombian flag, as an en-US browser in Sydney gets the
+// Australian one). es-ES, es-419 (Latin America), es-US and a bare "es" name
+// no country here, so outside those time zones they keep the flag of Spain.
+// Mexico and Argentina have no common prefix, so every zone is listed;
+// Chrome reports five Argentine zones under their pre-1993 names
+// (America/Buenos_Aires), Firefox under America/Argentina/.
 const REGIONAL_FLAGS = {
   en: {
     regions: { AU: 'au', NZ: 'nz', ZA: 'za' },
@@ -51,6 +63,55 @@ const REGIONAL_FLAGS = {
       ['Europe/London', 'gb'],
     ],
     looseRegions: { GB: 'gb' },
+  },
+  es: {
+    regions: {
+      MX: 'mx', AR: 'ar', CO: 'co', CL: 'cl', PE: 'pe', VE: 've', EC: 'ec',
+      GT: 'gt', CU: 'cu', BO: 'bo', DO: 'do', HN: 'hn', PY: 'py', SV: 'sv',
+      NI: 'ni', CR: 'cr', PA: 'pa', UY: 'uy', PR: 'pr', GQ: 'gq',
+    },
+    timeZones: [
+      ['America/Mexico_City', 'mx'],
+      ['America/Monterrey', 'mx'],
+      ['America/Merida', 'mx'],
+      ['America/Cancun', 'mx'],
+      ['America/Tijuana', 'mx'],
+      ['America/Hermosillo', 'mx'],
+      ['America/Mazatlan', 'mx'],
+      ['America/Chihuahua', 'mx'],
+      ['America/Ciudad_Juarez', 'mx'],
+      ['America/Ojinaga', 'mx'],
+      ['America/Matamoros', 'mx'],
+      ['America/Bahia_Banderas', 'mx'],
+      ['America/Argentina/', 'ar'],
+      ['America/Buenos_Aires', 'ar'],
+      ['America/Cordoba', 'ar'],
+      ['America/Mendoza', 'ar'],
+      ['America/Catamarca', 'ar'],
+      ['America/Jujuy', 'ar'],
+      ['America/Bogota', 'co'],
+      ['America/Santiago', 'cl'],
+      ['America/Punta_Arenas', 'cl'],
+      ['America/Coyhaique', 'cl'],
+      ['Pacific/Easter', 'cl'],
+      ['America/Lima', 'pe'],
+      ['America/Caracas', 've'],
+      ['America/Guayaquil', 'ec'],
+      ['Pacific/Galapagos', 'ec'],
+      ['America/Guatemala', 'gt'],
+      ['America/Havana', 'cu'],
+      ['America/La_Paz', 'bo'],
+      ['America/Santo_Domingo', 'do'],
+      ['America/Tegucigalpa', 'hn'],
+      ['America/Asuncion', 'py'],
+      ['America/El_Salvador', 'sv'],
+      ['America/Managua', 'ni'],
+      ['America/Costa_Rica', 'cr'],
+      ['America/Panama', 'pa'],
+      ['America/Montevideo', 'uy'],
+      ['America/Puerto_Rico', 'pr'],
+      ['Africa/Malabo', 'gq'],
+    ],
   },
 };
 

@@ -60,6 +60,14 @@
         "branch": "main"
       },
       {
+        "name": "OVHcloud",
+        "href": "https://ovh-provider.stackql.io/",
+        "icon": "/img/providers/ovh/favicon.ico",
+        "deployedBy": "github",
+        "repo": "stackql-registry/stackql-provider-ovh",
+        "branch": "main"
+      },
+      {
         "name": "AWS Cloud Control",
         "href": "https://awscc-provider.stackql.io/",
         "icon": "/img/providers/aws/favicon.ico",
