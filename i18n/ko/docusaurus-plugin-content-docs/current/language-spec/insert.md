@@ -78,7 +78,7 @@ SELECT 'stackql-demo',
 SELECT 문과 함께 INSERT 문을 실행합니다.
 
 ```sql
--- Create a Azure Network Interface
+-- Create an Azure Network Interface
 INSERT INTO azure.network.network_interfaces
   (
     resource_group_name,

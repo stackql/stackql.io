@@ -481,7 +481,7 @@ service:
 
 #### 감사 비활성화 {#disabling-audit}
 
-감사를 완전히 끄는 방법(PR2 이전 동작):
+감사 기능이 없던 `v0.10.474` 이전 릴리스처럼 감사를 완전히 끄는 방법:
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ SQL을 처음부터 작성하기 전에 `query_library_search` 도구를 먼저 
 |`--mcp.protocol.version`|알리는 최신 프로토콜 리비전: `auto`(기본값), `2026-07-28` 또는 `2025-11-25` 같은 이전 리비전. [리비전 고정](#pinning-the-revision)을 참조하세요.|
 |`--env.file`|시작 시 로드되고 `reload_credentials` 도구가 요청 시 다시 로드하는 dotenv 형식 자격 증명 파일입니다. [자격 증명 로드 및 다시 로드](#credential-resourcing---envfile--reload_credentials)를 참조하세요.|
 |`--pgsrv.port`|PostgreSQL 와이어 프로토콜 서버의 TCP 포트(`stackql srv` 명령과 함께 사용).|
-|`-H`, `--help`|도움말 정보를 출력합니다.|
+|`-h`, `--help`|도움말 정보를 출력합니다.|
 |`-v`, `--verbose`|추가 출력이 포함된 자세한 정보 표시 모드로 실행합니다.|
 
 &nbsp;

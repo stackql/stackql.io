@@ -43,7 +43,7 @@ stackql shell --auth="${AUTH}"
 앞에서 설명한 출력 형식, 색 구성표 같은 StackQL 명령 옵션의 기본값은 `stackqlrc` 초기화 파일을 사용하여 설정할 수 있습니다. 이 파일이 StackQL 실행 파일이 사용하는 현재 디렉터리에 있으면 자동으로 로드됩니다. 또는 아래와 같이 `--configfile` 플래그를 사용하여 이 파일을 참조할 수도 있습니다.
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 명령 옵션에 대한 자세한 내용은 전역 플래그 항목에서 확인할 수 있습니다.
@@ -58,15 +58,15 @@ StackQL 실행 파일의 출력은 사용 중인 시스템의 stdout으로 전�
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ StackQL 입력 파일을 사용하면 세미콜론으로 끝나는 여러 명령
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

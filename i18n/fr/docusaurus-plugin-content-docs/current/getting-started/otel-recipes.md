@@ -296,4 +296,4 @@ jobs:
           path: "*.otlp.jsonl"
 ```
 
-La même tâche sur tout autre ordonnanceur ne nécessite que l'option et les deux variables d'environnement ; `TRACEPARENT` est facultatif et est généré par processus lorsqu'il est absent, auquel cas les instructions d'une même exécution partagent tout de même un identifiant de trace.
+La même tâche sur tout autre ordonnanceur ne nécessite que l'option et les deux variables d'environnement ; `TRACEPARENT` est facultatif : sans lui, chaque processus `stackql exec` génère son propre identifiant de trace, que seules les instructions exécutées par ce processus partagent, de sorte que les deux instructions de l'exécution ci-dessus porteraient des identifiants de trace différents.

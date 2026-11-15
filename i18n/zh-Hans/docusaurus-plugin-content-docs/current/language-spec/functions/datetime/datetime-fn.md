@@ -47,7 +47,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 将日期时间转换为 UTC {#covert-datetime-to-utc}
+### 将日期时间转换为 UTC {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -79,7 +79,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 将 Unix 时间戳转换为日期时间 {#covert-a-unix-timestamp-to-a-datetime}
+### 将 Unix 时间戳转换为日期时间 {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

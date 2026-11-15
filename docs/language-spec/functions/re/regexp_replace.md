@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## Arguments {#arguments}
 
 __*source*__  
-A literal string or string column from which you want to extract a substring based upon a pattern defined by a regular expression (`pattern`).  
+A literal string or string column in which matches of the regular expression `pattern` are replaced with `replacement`.  
 
 __*pattern*__  
 The regular expression pattern to search for.  

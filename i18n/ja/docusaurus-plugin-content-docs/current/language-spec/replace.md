@@ -41,49 +41,39 @@ SET field_name = value [, field_name = value ...]
 ## 例 {#examples}
 
 ### 基本的な `REPLACE` 文 {#basic-replace-statement}
-Compute Engine のディスクリソースのサイズを変更する `REPLACE` 文を実行します。
+GitHub リポジトリのトピックをすべて置換する `REPLACE` 文を実行します。
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-REPLACE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Replace all of the topics on a GitHub repository
+REPLACE github.repos.topics
+SET data__names = '["sql", "cloud-infrastructure"]'
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```
 
 ### `REPLACE` 文（ブロッキング） {#replace-statement-blocking}
-Compute Engine のディスクリソースのサイズを変更する `REPLACE` 文を実行します。これはブロッキング（同期）呼び出しです。
+Compute Engine のファイアウォールルールを置換する `REPLACE` 文を実行します。これはブロッキング（同期）呼び出しです。
 
 ```sql
 -- Synchronous update of a google firewall 
 REPLACE /*+ AWAIT */ google.compute.firewalls
 SET
+ data__name = 'test-fw',
  data__network = 'https://www.googleapis.com/compute/v1/projects/stackql-demo/global/networks/my-vpc',
  data__direction = 'INGRESS',
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### JSON の変更を伴う `REPLACE` 文 {#replace-statement-with-json-modification}
-JSON 操作でリソースを変更する `REPLACE` 文を実行します。
+### JSON 関数を使用する `REPLACE` 文 {#replace-statement-with-json-functions}
+値を JSON 関数で組み立てる `REPLACE` 文を実行します。列を読み取らない関数は、リクエストの送信前に評価されます。`SET` の値は置換対象の行を読み取れません。そのため、既存の値の一部を変更するには、まず `SELECT` で値を読み取り、変更後の値を設定します。
 
 ```sql
--- Update an Azure Network Interface's properties
-REPLACE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
-)
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+-- Replace the topics on a GitHub repository with a list built by json_array
+REPLACE github.repos.topics
+SET data__names = json_array('sql', 'cloud-infrastructure', 'infrastructure-as-code')
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```

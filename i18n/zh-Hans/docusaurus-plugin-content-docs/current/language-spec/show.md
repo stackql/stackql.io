@@ -49,9 +49,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 ## 示例 {#examples}
 
 ### 列出所有 Provider {#list-all-providers}
-列出已安装的 StackQL 版本中所有可用的云服务商。
+列出本地 StackQL 环境中可用的 Provider：包括从 Provider 注册表拉取的 Provider，以及 StackQL 内置的 Provider。
 ```sql
--- Returns all of the available cloud providers
+-- Returns the providers available locally
 SHOW PROVIDERS;
 ```
 <details>
@@ -76,9 +76,9 @@ SHOW PROVIDERS;
 </details>
 
 ### 列出云服务商的所有服务 {#list-all-services-in-a-cloud-provider}
-列出给定云服务商中所有可用的服务，使用可选的 EXTENDED 关键字可返回更多信息。
+列出给定 Provider 中所有可用的服务，使用可选的 EXTENDED 关键字可返回更多信息。
 ```sql
--- Returns all services available in a cloud provider
+-- Returns all services available in a provider
 SHOW EXTENDED SERVICES IN google;
 ```
 <details>
@@ -207,7 +207,7 @@ SELECT
 
 > 返回的字段可以限制为仅包含 Provider 必需的字段，相关示例参阅[__创建基础设施模板__](/getting-started/templating)。
 
-> 之后可以将此模板与 `json` 或 `jsonnet` 数据文件配合使用，在运行时提供值，更多信息参阅[__使用变量__](/getting-started/variables)。
+> 之后可以将此模板与 `json` 或 `jsonnet` 数据文件配合使用，在运行时提供值；更多信息参阅[__使用变量__](/getting-started/variables)。
 
 ### 显示 StackQL 版本 {#show-the-stackql-version}
 

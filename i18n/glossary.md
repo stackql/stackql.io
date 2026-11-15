@@ -1474,3 +1474,305 @@ Style:
 - Example prompts addressed to an AI assistant use the polite request form (〜를 보여 주세요, 〜를 나열해 주세요, 〜를 만들어 주세요), the one place 〜해 주세요 is used; everything else stays 합니다체 or 〜하세요.
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Korean text is shorter than English in characters, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.
+
+## pt-BR
+
+Audience: Brazilian engineers reading technical documentation. Brazilian Portuguese only, in the spelling of the 1990 orthographic agreement as used in Brazil (ideia, frequente, controle, projeto, seção, ação, atual, econômico): never a European Portuguese form (ficheiro, utilizador, ecrã, registo, equipa, gerir, descarregar, controlo, secção, contacto, "está a executar"). Address the reader as você, with the verb in the third person; present tense, short sentences. Instructions use the imperative in the você form ("Execute o comando a seguir", "Consulte", "Use", "Instale") and task headings use the infinitive ("Instalar o StackQL"). Keep the English terms that Brazilian developers use as a matter of course (the "Kept in English" row); do not coin Portuguese names for products or APIs. No inclusive-writing forms (`@`, `x`, `e` endings); no marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Brazilian Portuguese | Not |
+|---|---|---|
+| provider (a StackQL provider) | provider (o; plural providers; lower case in prose) | provedor, provedor de serviços |
+| cloud provider (the vendor) | provedor de nuvem (o) | provedor cloud, provedor da nuvem, provider de nuvem |
+| vendor (the company behind an API or SDK, not only cloud) | fornecedor (o); "vendor-published" = publicado pelo fornecedor | fabricante, vendedor |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | na nuvem (recursos na nuvem, infraestrutura na nuvem); "de nuvem" in a fixed term from this table | cloud as a Portuguese adjective (recursos cloud) |
+| service | serviço (o) | |
+| resource | recurso (o) | |
+| method | método (o) | |
+| operation | operação (a) | |
+| query (noun) / to query | consulta (a) / consultar | query, interrogar |
+| statement | instrução (a) | declaração, sentença, comando (for a SQL statement) |
+| result set | conjunto de resultados | |
+| row / column | linha / coluna | registro, tupla (for a row) |
+| table | tabela (a) | |
+| view | view (a; plural views) | exibição, visão, visualização |
+| materialized view | view materializada | exibição materializada |
+| window function | função de janela | função janela, função analítica |
+| window frame | quadro da janela | frame |
+| aggregate function / scalar function | função de agregação / função escalar | função agregada, função de agregado |
+| function / expression / clause | função / expressão / cláusula | |
+| keyword / operator / predicate | palavra-chave / operador / predicado | |
+| subquery / alias / join | subconsulta / alias (o; plural aliases) / join (o; `JOIN` where the source has code) | junção, união (that is `UNION`) |
+| partition / peer, peer group / tie (window functions) | partição / linha equivalente, grupo de linhas equivalentes / empate ("linhas empatadas", "com lacunas") | linhas pares (par also means "even") |
+| offset (`LAG`, `LEAD`) | deslocamento (the argument name `offset` stays as code) | |
+| target (of `SET` and `UNSET`) | alvo ("Alvos" as the heading) | destino (that is an audit sink) |
+| override (a credential, a default) / dereference | substituir, substituição ("credential override" = substituição de credencial) / desreferenciar, desreferência | |
+| data type / literal / identifier | tipo de dados / literal / identificador | |
+| string / integer / boolean | string (a; plural strings) / inteiro / booleano | cadeia de caracteres, cadeia |
+| whitespace | espaço em branco | |
+| parameter / argument | parâmetro / argumento | |
+| flag (CLI) / option | opção / opção ("global flags" = opções globais) | sinalizador, bandeira, flag |
+| environment variable | variável de ambiente | |
+| field / key / value | campo / chave / valor | |
+| schema | esquema (o) | |
+| control plane / data plane | plano de controle / plano de dados | plano de controlo |
+| agent, AI agent | agente, agente de IA (plural agentes de IA) | agente IA, agente de inteligência artificial |
+| tool (an MCP tool) | ferramenta (a) | |
+| prompt (text sent to a model) | prompt (o) | instrução, solicitação, mensagem |
+| approval prompt, elicitation prompt (a dialog shown to the user) | solicitação de aprovação, solicitação de elicitação | prompt de aprovação |
+| elicitation (MCP) | elicitação (a) | obtenção |
+| gating / gated (MCP) | controle (o) / sujeito a controle; "gated by X" = controlado por X; "gated writes" = gravações sujeitas a aprovação | bloqueio, filtragem |
+| approval / approve | aprovação / aprovar | |
+| server mode, safety mode | modo do servidor, modo de segurança | |
+| read-only | somente leitura (de somente leitura where an adjective needs it) | apenas leitura, só leitura |
+| write (noun, a mutating call) | gravação | escrita |
+| mutation / mutating statement | mutação / instrução de mutação | |
+| lifecycle operation | operação de ciclo de vida | |
+| resource lifecycle | ciclo de vida dos recursos | |
+| log / audit log | log (o; plural logs) / log de auditoria | registro (that is a registry or a record) |
+| log record / completion record / row record (OTel output) | registro de log / registro de conclusão / registro de linha | |
+| credentials | credenciais (as) | |
+| authentication / authorization | autenticação / autorização | |
+| principal / service principal | principal (o; plural principals: "diretório de principals") / principal de serviço | entidade de segurança, entidade de serviço, principais (that reads as "main ones") |
+| subject / issuer / audience / claim (JWT, certificate identity) | subject (o) / emissor / público / claim (a; plural claims) | |
+| membership (group, directory) | associação ("associações a grupos") | assinatura (that is a subscription) |
+| service account | conta de serviço | |
+| token / API key / access key | token (o; plural tokens) / chave de API / chave de acesso | ficha |
+| secret / secret store | segredo / repositório de segredos | cofre |
+| scope (OAuth, and of a variable or a setting) | escopo (o) | âmbito, alcance |
+| role / permission | role (a; plural roles) / permissão | função (that is a function), papel, perfil |
+| assume a role (AWS) | assumir uma role | |
+| session / session variable | sessão / variável de sessão | |
+| deployment / to deploy | implantação / implantar | implementação, implementar, deploy, fazer deploy |
+| infrastructure as code | infraestrutura como código (IaC) | |
+| registry (generic) / provider registry | registro / registro de providers | registo |
+| pull (a provider) | baixar; "pulled" = baixado | puxar, fazer pull |
+| download / upload | baixar, download (o) / carregar, upload (o) | descarregar |
+| repository | repositório (o) | |
+| release | versão (a) as a noun, publicar as a verb | release, lançamento |
+| command line | linha de comando | linha de comandos |
+| shell / interactive shell | shell (o) / shell interativo | a shell |
+| server / client | servidor / cliente | |
+| transport (MCP) | transporte (o) | |
+| stateless / stateful | sem estado / com estado | |
+| endpoint | endpoint (o; plural endpoints) | ponto de extremidade, ponto final |
+| request / response | solicitação / resposta | requisição, pedido |
+| request body | corpo da solicitação | |
+| payload | payload (o) | carga útil |
+| header (HTTP) | cabeçalho (o) | header |
+| pagination | paginação | |
+| output / output format / output mode | saída / formato de saída / modo de saída | |
+| template / templating | template (o) / uso de templates | modelo (that is an AI model) |
+| model (AI) | modelo (o) | |
+| dry run | execução de teste | simulação a seco, dry run |
+| guardrail | barreira de proteção | guarda-corpo |
+| answer engine | mecanismo de respostas | motor de respostas |
+| region / project / subscription / tenant | região / projeto / assinatura / tenant (o) | inquilino, locatário, subscrição |
+| account | conta | |
+| open source | de código aberto | open source, de fonte aberta |
+| binary / library | binário / biblioteca | livraria |
+| embedded (Embedded MCP) / to embed | incorporado (MCP incorporado) / incorporar | embutido, embarcado, embedded |
+| installation / to install | instalação / instalar | |
+| documentation | documentação | |
+| tutorial | tutorial (o) | |
+| quick start | início rápido | quickstart |
+| getting started | primeiros passos | |
+| announcement | anúncio | |
+| feature | funcionalidade | recurso (that is a resource), característica, feature |
+| example | exemplo | |
+| syntax / usage | sintaxe / uso | |
+| note / tip / warning (admonition titles are translated by the theme) | nota / dica / aviso | |
+| resource hierarchy | hierarquia de recursos | |
+| access management | gerenciamento de acesso | gestão de acessos, administração de acesso |
+| provider session | sessão de provider | |
+| SQL backend | backend SQL | |
+| query engine / parser | mecanismo de consulta / analisador sintático | motor de consulta, parser |
+| wire protocol | protocolo de comunicação (protocolo de comunicação do PostgreSQL) | protocolo de fio |
+| reverse proxy | proxy reverso | |
+| local cache | cache local (o cache) | a cache |
+| key-value pair | par chave-valor | |
+| delimiter / separator | delimitador / separador | |
+| bucket (object storage) / bucket (NTILE) | bucket (o) / grupo | balde, depósito |
+| throw an error / return an error | gerar um erro / retornar um erro | lançar, disparar |
+| return (a value) | retornar | devolver |
+| well-formed / valid (JSON) | bem formado / válido | |
+| file / state file | arquivo / arquivo de estado | ficheiro |
+| directory (of principals, of plugins, filesystem) / folder | diretório / pasta | |
+| computer, machine | computador, máquina | |
+| screen / user / team | tela / usuário / equipe | ecrã / utilizador / equipa |
+| app, application | aplicativo (an end-user app: aplicativo de desktop), aplicação (a server or web application) | |
+| drift / infrastructure drift | desvio / desvio da infraestrutura | deriva, drift |
+| cloud inventory, inventory | inventário de nuvem, inventário | |
+| compliance | conformidade | compliance |
+| provision (resources) | provisionar | aprovisionar |
+| operator (the person running StackQL) | operador (o); the context separates it from a SQL operator | |
+| caller | chamador (o) | invocador |
+| filter (noun and verb) | filtro / filtrar | |
+| concatenation | concatenação | |
+| parse / plan (a statement) | analisar / planejar | parsear, planear |
+| contract (I/O contract, safety contract) | contrato | |
+| source of truth | fonte da verdade | |
+| entitlement | direito de acesso | |
+| snapshot / checksum / digest | snapshot (o) / soma de verificação / hash (o) | instantâneo, resumo (that is a summary) |
+| estate / fingerprint | parque (parque de recursos na nuvem) / impressão digital | patrimônio |
+| allowlist | lista de permissões | lista branca, whitelist |
+| opt in / explicit opt-in | ativar explicitamente / ativação explícita | |
+| enable / disable | habilitar / desabilitar | |
+| support (a feature, a format) / supported | oferecer suporte a, ser compatível com / compatível, com suporte | suportar, suportado |
+| hint (in an MCP error or tool annotation) | indicação | pista |
+| advertise (a capability) | anunciar | |
+| artifact (build or release output) | artefato | artefacto |
+| stack (of resources) | stack (o) | pilha |
+| pipeline | pipeline (o) | |
+| notarized / signed | notarizado / assinado | |
+| common table expression (CTE) | expressão de tabela comum (CTE) | |
+| default / by default | valor padrão / por padrão | por default, por omissão, predefinido |
+| array (JSON, data type) | array (o; plural arrays) | matriz, vetor, arranjo |
+| policy (IAM, access policy) / IAM binding | política / vinculação do IAM | diretiva, binding |
+| bind, binding (alias, secret store) | vincular, vinculação | |
+| assign, assignment (`SET`) | atribuir, atribuição | |
+| token (lexical) | token léxico | |
+| pin (a version, a key, an issuer) | fixar; the heading "Pinning the revision" is "Fixar a revisão" | |
+| exporter / receiver (OTel) / sink (audit) | exportador / receptor / destino | sumidouro |
+| tenancy (the alias label) | tenancy (a) | |
+| preview (a feature in preview) | em versão prévia | em pré-visualização, preview |
+| legacy | legado | |
+| batch / statement batch | lote / lote de instruções | |
+| wildcard | curinga (caractere curinga) | coringa, wildcard |
+| query hint | dica de consulta | |
+| substring / pattern (regex) / regular expression | substring (a) / padrão / expressão regular | subcadeia |
+| collating function / collating sequence | função de ordenação / sequência de ordenação | colação, agrupamento |
+| timestamp | carimbo de data/hora | marca temporal, timestamp |
+| current row / rank / running total (window functions) | linha atual / classificação / total acumulado | |
+| installer | instalador | |
+| workspace | espaço de trabalho | área de trabalho |
+| monitoring / to monitor / monitor (noun) | monitoramento / monitorar / monitor | monitorização, monitorizar |
+| run, execute / list / delete, remove / manage | executar / listar / excluir, remover / gerenciar | rodar / enumerar / deletar, apagar / gerir, administrar |
+| framework | framework (o) | estrutura |
+| capability (of an MCP client or server) | capacidade ("cliente MCP compatível com elicitação" for an elicitation-capable client) | recurso (that is a resource), funcionalidade |
+| Query Library entry | item (o): "ID do item da Query Library" | entrada (that is an input; "Entradas" is the Inputs header) |
+| job (CI, scheduled) | job (o; plural jobs): "job de CI agendado", "nome do job" | tarefa |
+| container | contêiner | container |
+| trace / span / trace id | trace (o) / span (o) / ID de trace | rastreamento |
+| SQL engine / backing (SQL engine, server) | mecanismo SQL / subjacente | motor SQL |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | autocontido / pré-compilado / inicializador | |
+| to vendor (a binary, a dependency) | fazer o vendoring de; "vendored into your app" = incluído na sua aplicação por vendoring | |
+| Cargo features (`sidecar`, `vendored`) | funcionalidades do Cargo | feature flags, opções |
+| predicate pushdown | pushdown de predicados | |
+| verbose mode | modo detalhado | modo verboso |
+| floating point / Unix timestamp / Julian day | ponto flutuante / carimbo de data/hora Unix / dia juliano | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | Registro de providers do StackQL |
+| Kept in English | backend, bundle (the `.mcpb`; the format name MCP Bundle too), sidecar, vendored, crate, worker, bearer (token bearer), dotenv, pull request, fork, issue, webhook, plugin, runtime, fan-out, proxy, SaaS, wrapper, skill, build, workflow, tag, handshake, log, hash, snapshot, cache, listener, loopback, harness, upstream, placeholder, fallback, staging, smoke test, toolchain, action (a GitHub action; plural actions), marketplace; third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Brazilian Portuguese |
+|---|---|
+| Install | Instalação |
+| Installing StackQL | Instalar o StackQL |
+| Getting Started | Primeiros passos |
+| Command Line Usage | Linha de comando |
+| Language Specification | Especificação da linguagem |
+| Functions | Funções |
+| Developers | Desenvolvedores |
+| Providers | Providers |
+| Quick Starts | Guias de início rápido |
+| AI Agents | Agentes de IA |
+| MCP Server / MCP Tools / Embedded MCP | Servidor MCP / Ferramentas MCP / MCP incorporado |
+| Blog | Blog |
+| Product Announcements | Anúncios de produto |
+| Provider Announcements | Anúncios de providers |
+| Tutorials | Tutoriais |
+| Documentation | Documentação |
+| Contact us | Contato |
+| Privacy Policy | Política de privacidade |
+| Terms of Service | Termos de serviço |
+| Support | Suporte |
+| AI Reference | Referência de IA |
+| More | Mais |
+| Welcome to StackQL | Boas-vindas ao StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Brazilian Portuguese |
+|---|---|
+| Syntax | Sintaxe |
+| Arguments | Argumentos |
+| Return Value(s) | Valor(es) retornado(s) |
+| Example / Examples | Exemplo / Exemplos |
+| Inputs / Output | Entradas / Saída |
+| Flags | Opções |
+| Overview | Visão geral |
+| How it works | Como funciona |
+| Modes | Modos |
+| Gating | Controle |
+| Install | Instalação |
+| Quick start | Início rápido |
+| Demo app | Aplicativo de demonstração |
+| Repo link | Link do repositório |
+| Vendoring / embedding | Vendoring / incorporação |
+| Prerequisites | Pré-requisitos |
+| Next steps | Próximos passos |
+| Related | Veja também |
+| See also: | Veja também: |
+| See X. | Consulte X. |
+| For more information, see X. | Para obter mais informações, consulte X. |
+| Optional. / Defaults to X. | Opcional. / Valor padrão: X. |
+| Returns X. (the sentence that opens a function or tool page) | Retorna X. (never "Devolve") |
+| Return the absolute value of a number (an example heading that names a task) | Retornar o valor absoluto de um número (infinitive) |
+| X function in StackQL: ... (description pattern) | Função X no StackQL: ... (a noun phrase or an infinitive after the colon, as in the source) |
+| X window function in StackQL: ... (description pattern) | Função de janela X no StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X no StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... com SQL no StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Disponível a partir do StackQL `vX` |
+| Available in StackQL releases after `vX` | Disponível nas versões do StackQL posteriores à `vX` |
+| None. (no arguments, no inputs) | Nenhum. / Nenhuma. |
+| Query / Results (tab labels), Output: | Consulta / Resultados, Saída: |
+| Tested with (badge line on quick starts) | Testado com |
+| Best Practices / Troubleshooting / Further reading | Práticas recomendadas / Solução de problemas / Leitura adicional |
+| MCP tool listing X / MCP tool that does X (description pattern) | Ferramenta MCP que lista X / Ferramenta MCP que faz X |
+| MCP overview (link text) | Visão geral do MCP |
+| Argument / Required / Description (table headers) | Argumento / Obrigatório / Descrição |
+| Renderer / Shape (table headers) | Renderizador / Formato |
+| Table / One row per X (table cells) | Tabela / Uma linha por X |
+| Yes / No (table cells) | Sim / Não |
+| For example | Por exemplo |
+| Aggregate function / Scalar function | Função de agregação / Função escalar |
+| When to use, Use case / Example usage | Quando usar, Caso de uso / Exemplo de uso |
+| Conclusion / Get started (homepage heading) | Conclusão / Comece agora |
+| Returns : (a `<summary>` or bold label) | Retorna: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | Experimente este prompt em qualquer cliente MCP compatível com elicitação que tenha o servidor MCP do StackQL registrado: |
+| Here's an example in Claude Desktop: | Veja um exemplo no Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | permite / recusa / requer aprovação; permitido / recusado / (padrão) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | Controlado pelo modo do servidor. / Permitida em todos os modos do servidor. Somente leitura. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | backend SQL incorporado / backend SQL postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | Hierarquia de recursos do StackQL / Sessões de provider / Uso de templates / Referência de funções de janela / X na especificação da linguagem |
+| keyword `cloud inventory` | inventário de nuvem |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Headings in sentence case: a capital on the first word and on proper nouns only, never title case ("Variáveis de sessão", not "Variáveis De Sessão"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Product and vendor names take the article Portuguese grammar asks for, contracted with the preposition as usual: o StackQL (do StackQL, no StackQL, ao StackQL, pelo StackQL), a AWS (da AWS, na AWS), o Azure, o Google Cloud, o GitHub, o Claude, o Docker, o PostgreSQL. A name that opens a title, a heading or a table cell can go without the article where English has none ("StackQL com o Claude Desktop" is fine; so is "Instalar o StackQL").
+- Gender and number follow Portuguese usage even when the term is English: o provider, o stack, o shell, o backend, o bucket, o endpoint, o token, o prompt, o pipeline, o array, o join, o alias, o tenant, o log, o hash, o payload, o cache, o template, o snapshot, o plugin, o runtime, o workflow, o webhook, o build, o fork, o pull request; a API, a CLI, a URL, a string, a substring, a view, a role, a tag, a issue, a tenancy, a skill. An inline code span takes the gender of what it names (o comando `stackql exec`, a opção `--output`, o parâmetro `region`, a função `json_extract`). English nouns form the plural with -s (providers, tokens, endpoints).
+- Contractions of `de`, `em`, `a` and `por` with the article apply before an English or code term as before any other noun (do provider, no endpoint, ao shell, pela API, da opção `--output`).
+- Mesoclisis and enclisis of the European kind are not used; pronoun placement follows ordinary Brazilian written usage ("Ele se conecta ao servidor", "Isso permite que você...").
+- Accented letters (á, â, ã, à, é, ê, í, ó, ô, õ, ú, ç) are ordinary Portuguese spelling and are kept, on capitals too (Índice, Área, É).
+- No space before `:`, `;`, `?` or `!`. The word after a colon is lower case unless it is a name or starts a quoted sentence.
+- Quotation marks are straight double quotes ("..."). No angle quotes, no typographic quotes and no typographic apostrophe, so the text stays greppable.
+- No dash punctuation other than the keyboard hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, write ` - `, or use commas or parentheses. Never write an em dash, an en dash or a double hyphen in prose. Hyphens that belong to Portuguese spelling (palavra-chave, pré-requisito, chave-valor, and enclitic forms such as "conecte-se") are kept.
+- No capital on common nouns after the first word of a sentence or label; names of languages, months and days are lower case. Product, provider and vendor names keep their own spelling.
+- Prefer the simple verb to the padded one (use, not "faça uso de"; para, not "a fim de"). Prefer the active voice ("a consulta retorna uma linha") to the passive with `ser` ("uma linha é retornada pela consulta"). The gerund is ordinary Brazilian usage ("está executando").
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the decimal comma is not applied inside code or tables of command output.
+- The `description` front matter stays one sentence and under about 170 characters (Portuguese runs 15 to 25 percent longer than English; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> inventário de nuvem); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "Função X no StackQL: ..." always needs the double quotes the source already has.
+- Strings in JSX and in exported data arrays keep the quote style of the source; a translated string that gains a double quote goes in single quotes, and the other way around. A single-quoted string cannot hold an apostrophe (rare in Portuguese, but "d'água" and the like): rephrase or switch the quotes.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Punctuation that follows a bold term stays outside the markers when the source has it outside.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Funções de janela `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the same você imperative as the rest of the page ("Mostre", "Crie", "Liste").
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Portuguese text is longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).

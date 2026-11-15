@@ -33,7 +33,7 @@ Zero or more modifiers to be applied to the *datetime_expression*.  For more inf
 
 ## Return Value(s) {#return-values}
 
-Returns the [Julian Day](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) representing the date component of the input *datetime_expression* with the *modifier* applied.
+Returns the [Julian day](https://en.wikipedia.org/wiki/Julian_day) of the input *datetime_expression* with the *modifier* applied: the number of days, including the fraction for the time of day, since noon in Greenwich on November 24, 4714 BC in the [proleptic Gregorian calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).
 
 * * *
 
@@ -49,7 +49,7 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-Use the [**ROUND**](/language-spec/functions/math/round) to convert floating point numbers to the nearest integer.
+Use the [**ROUND**](/language-spec/functions/math/round) function to convert floating point numbers to the nearest integer.
 
 :::
 

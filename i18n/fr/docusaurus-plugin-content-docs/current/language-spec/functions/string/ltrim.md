@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaire cloud
-description: "Fonction LTRIM dans StackQL : supprimer les espaces blancs, ou un ensemble de caractères donné, à gauche d'une chaîne de caractères."
+description: "Fonction LTRIM dans StackQL : supprimer les espaces, ou tout caractère d'un ensemble donné, à gauche d'une chaîne de caractères."
 image: "/img/stackql-featured-image.png"
 ---
-Renvoie une chaîne de caractères formée en supprimant les espaces blancs, ou tout caractère indiqué, à gauche d'une chaîne d'entrée.  
+Renvoie une chaîne de caractères formée en supprimant les espaces, ou tout caractère d'un ensemble donné, à gauche d'une chaîne d'entrée.  
 
 Voir aussi :  
 [[` SELECT `]](/language-spec/select) [[` RTRIM `]](/language-spec/functions/string/rtrim) [[` TRIM `]](/language-spec/functions/string/trim) 
@@ -29,7 +29,7 @@ __*character_expression*__
 Une chaîne littérale ou une colonne de type chaîne.
 
 __*character*__  
-Un caractère facultatif à supprimer s'il se trouve au début de *character_expression*.
+Une chaîne de caractères facultative : chacun de ses caractères est supprimé au début de *character_expression*. Si l'argument est omis, les espaces sont supprimés (pas les tabulations ni les sauts de ligne).
 
 ## Valeur(s) renvoyée(s) {#return-values}
 Renvoie une chaîne.
@@ -38,7 +38,7 @@ Renvoie une chaîne.
 
 ## Exemples {#examples}
 
-### Supprimer les espaces blancs de début d'une colonne de type chaîne {#remove-leading-whitespace-from-a-string-column}
+### Supprimer les espaces de début d'une colonne de type chaîne {#remove-leading-spaces-from-a-string-column}
 
 ```sql
 SELECT ltrim(description) AS leading_whitespace_removed

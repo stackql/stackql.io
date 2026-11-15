@@ -33,7 +33,7 @@ __*modifier*__
 
 ## 返回值 {#return-values}
 
-返回[儒略日](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)，表示应用 *modifier* 后输入 *datetime_expression* 的日期部分。
+返回应用 *modifier* 后输入 *datetime_expression* 的[儒略日](https://en.wikipedia.org/wiki/Julian_day)：自[外推格里历](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)公元前 4714 年 11 月 24 日格林尼治正午以来的天数，包括表示一天中时间的小数部分。
 
 * * *
 
@@ -49,7 +49,7 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-使用 [**ROUND**](/language-spec/functions/math/round) 将浮点数转换为最接近的整数。
+使用 [**ROUND**](/language-spec/functions/math/round) 函数将浮点数转换为最接近的整数。
 
 :::
 

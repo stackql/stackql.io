@@ -41,7 +41,7 @@ Gibt den Arkuskosinus des angegebenen Werts im Bogenmaß zurück.
 SELECT ACOS(0.5) AS arc_cosine_value;
 ```
 
-Diese Abfrage gibt ungefähr `1.047` zurück, da der Arkuskosinus von 0.5 Radiant π/3 ist, also etwa 1.047 Radiant.
+Diese Abfrage gibt ungefähr `1.047` zurück, da der Arkuskosinus von 0.5 π/3 Radiant (60 Grad) ist, also etwa 1.047 Radiant.
 
 ### Den Arkuskosinus von 1 berechnen {#calculate-the-arc-cosine-of-1}
 

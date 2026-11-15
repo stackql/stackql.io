@@ -58,11 +58,11 @@ Gibt das JSON-Dokument mit dem eingefügten neuen Wert zurück, wenn der angegeb
 SELECT JSON_INSERT(json_data, '$.region', 'Europe') as updated_object;
 
 /* expected output...
-|-------------------------------------------------------------|
-|                     updated_json                            |
-|-------------------------------------------------------------|
-| {"name":"ResourceOne", "type":"Storage", "region":"Europe"} |
-|-------------------------------------------------------------|
+|-----------------------------------------------------------|
+|                      updated_object                       |
+|-----------------------------------------------------------|
+| {"name":"ResourceOne","type":"Storage","region":"Europe"} |
+|-----------------------------------------------------------|
 */
 ```
 

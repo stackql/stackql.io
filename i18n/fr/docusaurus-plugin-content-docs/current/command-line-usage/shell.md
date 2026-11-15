@@ -25,7 +25,7 @@ Commande servant à lancer le shell de commandes interactif de StackQL.  Pour pl
 
 | Option | Description |
 |--|--|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Affiche les informations d'aide|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Affiche les informations d'aide|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option `-f` est sélectionnée, ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
 <br/>
 <br/>
@@ -37,5 +37,5 @@ Commande servant à lancer le shell de commandes interactif de StackQL.  Pour pl
 
 Lancer le shell StackQL en utilisant un fichier de clé de compte de service pour l'authentification.
 ```shell
-stackql shell --keyfilepath /tmp/stackql-demo.json
+stackql shell --auth '{ "google": { "type": "service_account", "credentialsfilepath": "/tmp/stackql-demo.json" } }'
 ```

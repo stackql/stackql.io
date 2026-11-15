@@ -34,9 +34,9 @@ SELECT MAX(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>
 ### Aggregatfunktion {#aggregate-function}
 
 __*columnExpression*__  
-Eine Spalte oder ein Ausdruck, einschließlich Operanden (`+`, `-`, ...).
+Eine Spalte oder ein Ausdruck, einschließlich Operatoren (`+`, `-`, ...).
 
-> Die Funktion `MAX` gibt den größten Wert für die angegebene Spalte auf Basis des Datentyps der Spalte zurück. Eine `MAX`-Operation auf einer Ganzzahlspalte gibt zum Beispiel die größte Ganzzahl für diese Spalte oder Spaltengruppierung zurück, während eine `MAX`-Operation auf einer Zeichenfolgenspalte oder -spaltengruppierung den größten ASCII-Wert zurückgibt (in der Regel der erste Wert bei lexikografischer Sortierung, mit einigen Abweichungen).
+> Die Funktion `MAX` gibt den größten Wert für die angegebene Spalte auf Basis des Datentyps der Spalte zurück. Eine `MAX`-Operation auf einer Ganzzahlspalte gibt zum Beispiel die größte Ganzzahl für diese Spalte oder Spaltengruppierung zurück, während eine `MAX`-Operation auf einer Zeichenfolgenspalte oder -spaltengruppierung den Wert zurückgibt, der bei der Sortierung zuletzt kommt, wobei Zeichenfolgen mit der Kollationsfunktion `BINARY` verglichen werden (Byte für Byte, sodass Großbuchstaben vor Kleinbuchstaben einsortiert werden).
 
 __*groupByColumn*__  
 Eine oder mehrere Spalten, über die Zusammenfassungs- oder Aggregatoperationen ausgeführt werden.  Die `GROUP BY`-Klausel gibt für jede Spaltengruppierung eine Zeile zurück.

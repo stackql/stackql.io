@@ -49,7 +49,7 @@ Renvoie une chaîne.
 
 ## Exemples {#examples}
 
-### Extraire des éléments d'une chaîne séparés par une barre oblique {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### Extraire des éléments d'une chaîne séparés par une barre oblique {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

@@ -78,7 +78,7 @@ SELECT 'stackql-demo',
 SELECT を使用して INSERT 文を実行します。
 
 ```sql
--- Create a Azure Network Interface
+-- Create an Azure Network Interface
 INSERT INTO azure.network.network_interfaces
   (
     resource_group_name,

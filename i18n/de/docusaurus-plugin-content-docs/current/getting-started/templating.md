@@ -72,7 +72,7 @@ SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
 Dies kann über die `shell` oder mit einem `exec`-Befehl ausgeführt werden, wie hier gezeigt:
 
 ```shell
-./stackql exec 'show insert /*+ REQUIRED */ into compute.instances' --output text -H
+./stackql exec 'show insert /*+ REQUIRED */ into google.compute.instances' --output text -H
 ```
 
 *__Rückgabe:__*  

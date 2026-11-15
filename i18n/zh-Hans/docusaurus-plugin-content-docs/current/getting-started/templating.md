@@ -72,7 +72,7 @@ SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
 这可以通过 `shell` 运行，也可以使用 `exec` 命令运行，如下所示：
 
 ```shell
-./stackql exec 'show insert /*+ REQUIRED */ into compute.instances' --output text -H
+./stackql exec 'show insert /*+ REQUIRED */ into google.compute.instances' --output text -H
 ```
 
 *__返回：__*  

@@ -45,7 +45,7 @@ La requête ci-dessus correspond en réalité à 17 requêtes exécutées en par
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html), qui s'installe avec `pip install pystackql`
 - Un utilisateur AWS ou un rôle (qui peut être assumé avec `sts assume-role`) auquel est attachée la politique `ReadOnlyAccess` ou une politique plus étendue
-- Les variables d'environnement `AWS_ACCESS_KEY_ID` et `AWS_SECRET_ACCESS_KEY` définies (ce qui peut se faire automatiquement avec [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
+- Les variables d'environnement `AWS_ACCESS_KEY_ID` et `AWS_SECRET_ACCESS_KEY` définies (ce qui peut se faire automatiquement avec [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
 ## Le code {#the-code}
 

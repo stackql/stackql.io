@@ -36,7 +36,7 @@ __*numeric_expression*__
 
 ## 例 {#examples}
 
-### Google Cloud Storage バケットの作成からの経過日数を小数点以下 2 桁に切り捨てる {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### Google Cloud Storage バケットの作成からの経過日数を整数の日数に切り捨てる {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

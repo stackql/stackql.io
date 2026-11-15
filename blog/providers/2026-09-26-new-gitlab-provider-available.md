@@ -140,7 +140,7 @@ SELECT json_extract(m.user, '$.username') AS gitlab_username,
        json_extract(m.user, '$.name') AS gitlab_name,
        o.status AS okta_status
 FROM gitlab.groups.group_group_members m
-LEFT JOIN okta.user.users o
+LEFT JOIN okta.users.users o
   ON lower(json_extract(o.profile, '$.login')) = lower(json_extract(m.user, '$.username') || '@example.com')
  AND o.subdomain = 'my-okta-org'
 WHERE m.full_path = 'my-group'
@@ -160,7 +160,7 @@ Premium-tier fields (issue weight, health status, epics) read back as null on th
 
 Pull the provider from the public registry:
 
-```bash
+```sql
 registry pull gitlab;
 ```
 

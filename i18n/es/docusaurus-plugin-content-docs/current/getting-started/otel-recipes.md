@@ -296,4 +296,4 @@ jobs:
           path: "*.otlp.jsonl"
 ```
 
-El mismo trabajo en cualquier otro planificador solo necesita la opción y las dos variables de entorno; `TRACEPARENT` es opcional y, cuando falta, se genera por proceso, en cuyo caso las instrucciones de una ejecución siguen compartiendo un identificador de traza.
+El mismo trabajo en cualquier otro planificador solo necesita la opción y las dos variables de entorno; `TRACEPARENT` es opcional: sin él, cada proceso `stackql exec` genera su propio identificador de traza, que solo comparten las instrucciones que ejecuta ese proceso, por lo que las dos instrucciones de la ejecución anterior llevarían identificadores de traza distintos.

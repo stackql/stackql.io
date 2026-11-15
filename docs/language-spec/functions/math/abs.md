@@ -23,7 +23,7 @@ See also:
 SELECT ABS(numeric_expression) FROM <multipartIdentifier>;
 ```
 
-> `abs(X)` returns `NULL` if `X` is `NULL`. `abs(X)` returns `0.0` if `X` is a string or blob that cannot be converted to a numeric value. If `X` is the integer -9223372036854775808 then `abs(X)` throws an integer overflow error since there is no equivalent positive 64-bit two complement value.
+> `abs(X)` returns `NULL` if `X` is `NULL`. `abs(X)` returns `0.0` if `X` is a string or blob that cannot be converted to a numeric value. If `X` is the integer -9223372036854775808 then `abs(X)` throws an integer overflow error since there is no equivalent positive 64-bit two's complement value.
 
 ## Arguments {#arguments}
 

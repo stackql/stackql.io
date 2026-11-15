@@ -41,19 +41,17 @@ SET field_name = value [, field_name = value ...]
 ## 示例 {#examples}
 
 ### 基本 `UPDATE` 语句 {#basic-update-statement}
-运行 `UPDATE` 语句，修改 Compute Engine Disk 资源的大小。
+运行 `UPDATE` 语句，设置 Google Cloud Storage 存储桶的标签。
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-UPDATE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Set the labels on a Google Cloud Storage bucket
+UPDATE google.storage.buckets
+SET data__labels = '{"env": "prod", "team": "platform"}'
+WHERE bucket = 'stackql-demo-bucket';
 ```
 
 ### `UPDATE` 语句（阻塞） {#update-statement-blocking}
-运行 `UPDATE` 语句，修改 Compute Engine Disk 资源的大小。这是一次阻塞（同步）调用。
+运行 `UPDATE` 语句，修改 Compute Engine 防火墙规则。这是一次阻塞（同步）调用。
 
 ```sql
 -- Synchronous update of a google firewall 
@@ -64,26 +62,19 @@ SET
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### 修改 JSON 的 `UPDATE` 语句 {#update-statement-with-json-modification}
-运行 `UPDATE` 语句，通过 JSON 操作修改资源。
+### 使用 JSON 函数的 `UPDATE` 语句 {#update-statement-with-json-functions}
+运行一个值由 JSON 函数构建的 `UPDATE` 语句。不读取任何列的函数会在发送请求之前求值。`SET` 的值不能读取正在更新的行，因此要修改现有值的一部分，请先用 `SELECT` 读取它，再设置修改后的值。
 
 ```sql
--- Update an Azure Network Interface's properties
-UPDATE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
+-- Set the protocols and ports a firewall rule allows
+UPDATE google.compute.firewalls
+SET data__allowed = json_array(
+  json_object('IPProtocol', 'tcp', 'ports', json_array('22', '443')),
+  json_object('IPProtocol', 'icmp')
 )
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+WHERE firewall = 'test-fw'
+AND project = 'stackql-demo';
 ```

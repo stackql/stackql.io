@@ -22,7 +22,7 @@ StackQL has several usage modes, these include: the StackQL interactive shell, t
 ### Using the StackQL Interactive Shell {#using-the-stackql-interactive-shell}
 The StackQL Shell provides an interactive programming environment for engineers to deploy and interact with cloud resources, as well as enabling interactive analysis (using [`SELECT`](/language-spec/select) statements) of their cloud environment.  The shell is functionally similar to the MySQL shell or other REPL (Read Evaluate Print Loop) shells.  The shell accepts valid StackQL statements, and returns results to the user.  Statements can span multiple lines and are executed once a semicolon terminator is entered.
 
-The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](/providers)) for information about provider authentication:
+The StackQL shell can be invoked using the `shell` command as shown below (see [StackQL Provider Registry](/providers) for information about provider authentication):
 
 ```shell
 # Launching the StackQL Interactive Shell
@@ -43,7 +43,7 @@ You can change the color scheme for the StackQL shell using the `--colorscheme` 
 Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the `stackqlrc` initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 More information about command options is available in the Global Flags topic.
@@ -53,20 +53,20 @@ StackQL commands can be executed non-interactively using the exec command of the
 
 The output from the StackQL executable is sent to stdout on the system being used, this output can be parsed within a BASH or PowerShell script.  
 
-An example of a Windows PowerShell script including an StackQL command is shown here:  
+An example of a Windows PowerShell script including a StackQL command is shown here:  
 
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ StackQL input files can be used to execute several commands terminated by semico
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

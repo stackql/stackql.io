@@ -39,6 +39,6 @@ Renvoie le plus grand entier inférieur ou égal à l'expression numérique spé
 
 ```sql
 SELECT name, timeCreated,
-floor(julianday('now')-julianday(timeCreated)) as days_since_ceiling
+floor(julianday('now')-julianday(timeCreated)) as days_since_floor
 FROM google.storage.buckets WHERE project = 'stackql';
 ```

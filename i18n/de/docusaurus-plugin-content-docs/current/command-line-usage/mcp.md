@@ -481,7 +481,7 @@ Der Audit-Schreibvorgang erfolgt **nach** der Ausführung des Tools (oder seiner
 
 #### Audit deaktivieren {#disabling-audit}
 
-Um Audit vollständig abzuschalten (das Verhalten vor PR2):
+Um Audit vollständig abzuschalten, wie in Releases vor `v0.10.474`, die noch kein Audit hatten:
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ Ein statischer Prompt wird veröffentlicht.
 |`--mcp.protocol.version`|Neueste bekannt gegebene Protokollrevision: `auto` (Standard), `2026-07-28` oder eine ältere Revision wie `2025-11-25`.  Siehe [Festlegen der Revision](#pinning-the-revision).|
 |`--env.file`|Datei mit Anmeldedaten im dotenv-Stil, die beim Start eingelesen und vom Tool `reload_credentials` bei Bedarf erneut eingelesen wird.  Siehe [(Erneutes) Einlesen von Anmeldedaten](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|TCP-Port für den PostgreSQL-Wire-Protokoll-Server (wird mit `stackql srv` verwendet).|
-|`-H`, `--help`|Hilfeinformationen ausgeben.|
+|`-h`, `--help`|Hilfeinformationen ausgeben.|
 |`-v`, `--verbose`|Im ausführlichen Modus mit zusätzlicher Ausgabe ausführen.|
 
 &nbsp;

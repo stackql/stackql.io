@@ -113,7 +113,7 @@ HAVING location != 'ASIA';
 
 有关 `COUNT` 函数以及 StackQL 支持的其他聚合函数的更多信息，请参阅[聚合函数](/language-spec/functions/aggregate/count)。
 
-### 从 Azure VM Scaleset 获取按需 VM 及其对应网络接口的列表 {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
+### 从 Azure VM Scale Set 获取按需 VM 及其对应网络接口的列表 {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
 运行 `SELECT` 语句，使用 [`SPLIT_PART`](/language-spec/functions/string/split_part) 和 [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 函数获取 OD VM 及其 NIC 的列表。注意，在不带限定符的情况下，subscription_id 和 resource_group_name 会应用于全部三个资源。
 
 ```sql
@@ -129,8 +129,6 @@ WHERE subscription_id = '0123456789'
 AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
-
-有关窗口函数的更多信息，请参阅[窗口函数](/language-spec/windowing_functions)。
 
 ### 通过 `WITH` 使用公用表表达式（CTE） {#using-common-table-expressions-ctes-with-with}
 
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 有关 CTE 的更多信息，请参阅 [WITH (CTEs)](/language-spec/with)。
+
+有关窗口函数的更多信息，请参阅[窗口函数](/language-spec/windowing_functions)。

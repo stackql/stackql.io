@@ -38,7 +38,7 @@ StackQL クエリを、単一の文として、または StackQL スクリプト
 |<span class="nowrap">`--dryrun`</span>|ドライランフラグ。プリプロセッサーだけが実行され、その出力が返されます |
 |<span class="nowrap">`--var`</span>|外部変数（環境変数またはシークレットを指定できます）。`--iqldata` フラグで指定した jsonnet ファイルによって読み込まれます。例：`--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|必要に応じて結果を出力するファイル（デフォルトでは、結果はコンソールにのみ出力されます）。例：`--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|ヘルプ情報を表示します|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|ヘルプ情報を表示します|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|詳細モードでクエリを実行し、追加の出力を stdout に送ります。`-f` オプションを選択した場合、この追加のログ情報はクエリ結果とともに出力ファイルに書き込まれます|
 <br/>
 <br/>

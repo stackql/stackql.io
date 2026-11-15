@@ -41,7 +41,7 @@ Devuelve el arcocoseno del valor especificado en radianes.
 SELECT ACOS(0.5) AS arc_cosine_value;
 ```
 
-Esta consulta devuelve aproximadamente `1.047`, ya que el arcocoseno de 0.5 radianes es π/3, que equivale a unos 1.047 radianes.
+Esta consulta devuelve aproximadamente `1.047`, ya que el arcocoseno de 0.5 es π/3 radianes (60 grados), que equivale a unos 1.047 radianes.
 
 ### Calcular el arcocoseno de 1 {#calculate-the-arc-cosine-of-1}
 

@@ -39,6 +39,6 @@ Devuelve el mayor entero menor o igual que la expresión numérica especificada.
 
 ```sql
 SELECT name, timeCreated,
-floor(julianday('now')-julianday(timeCreated)) as days_since_ceiling
+floor(julianday('now')-julianday(timeCreated)) as days_since_floor
 FROM google.storage.buckets WHERE project = 'stackql';
 ```

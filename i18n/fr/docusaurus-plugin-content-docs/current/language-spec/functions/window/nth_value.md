@@ -54,10 +54,10 @@ Renvoie la valeur de l'expression évaluée sur la N-ième ligne du cadre de fen
 
 ## Exemples {#examples}
 
-### Obtenir le deuxième contributeur le plus important {#get-the-second-highest-contributor}
+### Obtenir les trois principaux contributeurs {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

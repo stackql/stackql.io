@@ -343,7 +343,7 @@ cargo install stackql-deploy
   >
   <TabItem value="aws">
 
-  ### AWS Cloud Shell
+  ### AWS CloudShell
 
   AWS CloudShell fournit un shell dans le navigateur avec l'AWS CLI préinstallée et authentifiée. Exécuter StackQL dans AWS CloudShell vous permet d'interroger et de gérer des ressources AWS sans étape d'authentification supplémentaire. Pour des instructions détaillées, consultez notre [tutoriel AWS CloudShell](/quick-starts/aws/aws-cloud-shell).
 
@@ -1127,7 +1127,7 @@ __Exemple d'utilisation__
     query: |
       select total_private_repos
       from github.orgs.orgs
-      where org = 'stackql'"
+      where org = 'stackql'
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
@@ -1191,7 +1191,7 @@ StackQL propose plusieurs méthodes d'intégration qui permettent de l'utiliser 
 
 ### Paquet Python `pystackql` {#pystackql-python-package}
 
-Wrapper Python pour utiliser StackQL dans vos programmes Python. Le paquet `pystackql` est disponible sur [__PyPi__](https://pypi.org/project/pystackql/) ; la documentation du paquet `pystackql` est disponible sur [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). Pour installer le paquet `pystackql`, exécutez la commande suivante :
+Wrapper Python pour utiliser StackQL dans vos programmes Python. Le paquet `pystackql` est disponible sur [__PyPI__](https://pypi.org/project/pystackql/) ; la documentation du paquet `pystackql` est disponible sur [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). Pour installer le paquet `pystackql`, exécutez la commande suivante :
 
 ```bash
 pip install pystackql

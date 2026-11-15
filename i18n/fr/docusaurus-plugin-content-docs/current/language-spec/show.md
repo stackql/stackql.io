@@ -49,9 +49,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 ## Exemples {#examples}
 
 ### Lister tous les providers {#list-all-providers}
-Liste tous les fournisseurs cloud disponibles dans la version installée de StackQL.
+Liste les providers disponibles dans l'environnement StackQL local : ceux téléchargés depuis le registre de providers, ainsi que les providers intégrés à StackQL.
 ```sql
--- Returns all of the available cloud providers
+-- Returns the providers available locally
 SHOW PROVIDERS;
 ```
 <details>
@@ -76,9 +76,9 @@ SHOW PROVIDERS;
 </details>
 
 ### Lister tous les services d'un fournisseur cloud {#list-all-services-in-a-cloud-provider}
-Liste tous les services disponibles chez un fournisseur cloud donné ; utilisez le mot-clé facultatif EXTENDED pour renvoyer des informations supplémentaires.
+Liste tous les services disponibles dans un provider donné ; utilisez le mot-clé facultatif EXTENDED pour renvoyer des informations supplémentaires.
 ```sql
--- Returns all services available in a cloud provider
+-- Returns all services available in a provider
 SHOW EXTENDED SERVICES IN google;
 ```
 <details>

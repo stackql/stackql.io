@@ -35,13 +35,6 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
-
 :::note
 
 Wenn eine Ressource oder ein Service einen Punkt (`.`) im Namen enthält, schließen Sie den Ressourcennamen in Backticks (__`__) ein, zum Beispiel:

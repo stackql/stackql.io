@@ -33,7 +33,7 @@ __*modifier*__
 
 ## 戻り値 {#return-values}
 
-入力 *datetime_expression* に *modifier* を適用した日付部分を表す[ユリウス日](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)を返します。
+入力 *datetime_expression* に *modifier* を適用した値の[ユリウス日](https://en.wikipedia.org/wiki/Julian_day)を返します。ユリウス日は、[先発グレゴリオ暦](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)の紀元前 4714 年 11 月 24 日のグリニッジ正午からの日数で、時刻を表す小数部を含みます。
 
 * * *
 

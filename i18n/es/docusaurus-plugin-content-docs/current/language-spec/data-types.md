@@ -18,7 +18,7 @@ Los tipos de datos de StackQL se usan para representar los valores de los campos
 | `string` | secuencia de caracteres Unicode entre comillas simples | `'mybucket'` |
 | `array` | colección ordenada de valores, entre corchetes `[ ]`, separados por una coma | `[0,1,2]` |
 | `object` | conjunto no ordenado de cero o más pares nombre/valor insertados entre `{ }` y separados por una coma | `{"name": "mydb"}` |
-| `boolean` | `true` o `false`, los valores booleanos no van entre comillas; de lo contrario, se tratan como valores de cadena | `true` |
+| `boolean` | `true` o `false`, sin comillas (un valor entre comillas como `'true'` se trata como una cadena) | `true` |
 | `integer` | número entero que puede ser positivo, negativo o cero | `2` |
 | `double` | número de punto flotante de doble precisión, puede ser positivo o negativo | `0.95` |
 <br/>

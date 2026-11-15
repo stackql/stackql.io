@@ -35,13 +35,6 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
-
 :::note
 
 Si el nombre de un recurso o de un servicio contiene un punto (`.`), use el símbolo de acento grave (__`__) para encerrar el nombre del recurso, por ejemplo:

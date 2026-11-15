@@ -36,7 +36,7 @@ __*numeric_expression*__
 
 ## 示例 {#examples}
 
-### 将 Google Cloud Storage 存储桶自创建以来的天数截断到 2 位小数 {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### 将 Google Cloud Storage 存储桶自创建以来的天数截断为整天数 {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

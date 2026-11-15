@@ -33,7 +33,7 @@ Cero o más modificadores que se aplican a *datetime_expression*.  Para obtener 
 
 ## Valor(es) devuelto(s) {#return-values}
 
-Devuelve el [día juliano](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) que representa el componente de fecha de la expresión *datetime_expression* de entrada con el *modifier* aplicado.
+Devuelve el [día juliano](https://en.wikipedia.org/wiki/Julian_day) de la expresión *datetime_expression* de entrada con el *modifier* aplicado: el número de días, incluida la fracción correspondiente a la hora del día, transcurridos desde el mediodía en Greenwich del 24 de noviembre de 4714 a. C. en el [calendario gregoriano proléptico](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).
 
 * * *
 

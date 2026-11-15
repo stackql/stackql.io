@@ -15,7 +15,7 @@ Parses and plans a single `SELECT` statement without executing it.  Returns `{va
 
 :::info
 
-`SELECT` only, and exactly one statement, a payload holding more than one statement is refused with `validate_select_query accepts exactly one statement`.
+`SELECT` only, and exactly one statement: a payload holding more than one statement is refused with `validate_select_query accepts exactly one statement`.
 
 :::
 

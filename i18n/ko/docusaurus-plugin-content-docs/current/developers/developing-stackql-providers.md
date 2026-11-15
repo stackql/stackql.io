@@ -71,7 +71,7 @@ services/
 - __서비스 문서__: 표준 OpenAPI 3 문서입니다. 유일하게 필요한 추가 항목은 테이블로 노출되는 리소스를 선언하는 `components.x-stackQL-resources` 키입니다.
 - __리소스__: `id`, `name`, `methods`, `sqlVerbs`. 각 리소스는 하나의 테이블이며, 열은 기본 `select` 메서드의 응답 스키마에서 가져옵니다.
 - __메서드__: `paths` 섹션을 가리키는 JSON 포인터인 `operation`(예: `$ref: '#/paths/~1orgs~1{org}~1repos/get'`), 엔진에 행의 위치를 알려 주는 `response` 블록(`mediaType`, `openAPIDocKey`, `objectKey`), 그리고 선택적 `request` 블록과 `config`.
-- __SQL 동사 매핑__: `sqlVerbs.select`, `insert`, `update`, `replace`, `delete` 키는 메서드 참조의 순서 있는 목록입니다. 참조는 작성된 순서대로 시도되며, 필수 매개 변수가 `WHERE` 절로 충족되는 첫 번째 참조가 선택됩니다. 따라서 `list` 메서드를 `get` 메서드보다 먼저 나열하세요. 동사 목록에서 참조되지 않는 메서드는 `EXEC` 문으로 호출할 수 있습니다.
+- __SQL 동사 매핑__: `sqlVerbs.select`, `insert`, `update`, `replace`, `delete` 키는 메서드 참조의 순서 있는 목록입니다. StackQL은 참조된 메서드 중 필수 매개 변수가 모두 `WHERE` 절로 제공되는 메서드를 고려하여, 목록 순서와 관계없이 필수 매개 변수가 가장 많은 메서드를 선택합니다. `get` 메서드에 필요한 식별자를 제공하는 쿼리는 `get` 메서드로 라우팅되고, 제공하지 않는 쿼리는 `list` 메서드로 라우팅됩니다. 두 메서드가 동률이면 둘 중 하나를 선택하지 않고 오류로 보고합니다. 동사 목록에서 참조되지 않는 메서드는 `EXEC` 문으로 호출할 수 있습니다.
 
 최소한의 리소스는 다음과 같습니다:
 
@@ -275,7 +275,7 @@ REGISTRY PULL myprovider;
 1. [stackql-provider-registry](https://github.com/stackql/stackql-provider-registry)를 포크하고, 기능 브랜치에서 생성된 `provider-dev/openapi/src/<name>` 디렉터리를 `providers/src/<name>` 경로에 복사합니다.
 2. 프로바이더와 변경 사항에 대한 설명을 포함하여 `dev` 브랜치를 대상으로 끌어오기 요청을 만듭니다(레지스트리의 [기여 가이드](https://github.com/stackql/stackql-provider-registry/blob/main/.github/CONTRIBUTING.md) 참조).
 3. GitHub Actions는 [stackql-provider-tests](https://github.com/stackql/stackql-provider-tests)를 사용하여 프로바이더를 검증하고 테스트합니다. 평가되는 규칙은 다음과 같습니다. 문서는 유효한 OpenAPI 사양이어야 합니다. 모든 서비스에서 리소스를 열거할 수 있어야 하고, 모든 리소스에서 메서드를 열거할 수 있어야 합니다. `SELECT` 문으로 호출할 수 있는 메서드에는 유효한 응답 스키마가 있어야 하고, `INSERT` 문으로 호출할 수 있는 메서드에는 유효한 요청 스키마가 있어야 합니다.
-4. 병합되면 워크플로가 버전을 할당하고, 문서에 서명(Ed25519)하고, 패키징한 후 아티팩트를 AWS S3 아카이브에 게시합니다. 그런 다음 문서 트리가 Cloudflare R2로 미러링되고 `registry-dev.stackql.app`에서 서비스하는 Cloudflare Worker가 배포됩니다. 프로바이더는 `dev` 레지스트리를 사용하도록 구성된 설치에서 즉시 사용할 수 있습니다.
+4. 병합되면 워크플로가 버전을 할당하고, 문서에 서명(ML-DSA-65)하고, 패키징한 후 아티팩트를 AWS S3 아카이브에 게시합니다. 그런 다음 문서 트리가 Cloudflare R2로 미러링되고 `registry-dev.stackql.app`에서 서비스하는 Cloudflare Worker가 배포됩니다. 프로바이더는 `dev` 레지스트리를 사용하도록 구성된 설치에서 즉시 사용할 수 있습니다.
 5. 일정 기간 모니터링한 후 `dev` 브랜치가 `main` 브랜치로 승격되며, 이때 `registry.stackql.app`에 대해 게시가 반복됩니다. 이것이 기본 구성된 StackQL 인스턴스에 대한 게시입니다.
 
 PR을 만들기 전에 동일한 `stackql-provider-tests` 하네스를 레지스트리 디렉터리에 대해 로컬에서 실행할 수 있습니다:

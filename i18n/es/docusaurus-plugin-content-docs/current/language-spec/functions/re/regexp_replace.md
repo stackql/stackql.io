@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## Argumentos {#arguments}
 
 __*source*__  
-Una cadena literal o una columna de cadena de la que desea extraer una subcadena según un patrón definido por una expresión regular (`pattern`).  
+Una cadena literal o una columna de cadena en la que las coincidencias de la expresión regular `pattern` se reemplazan por `replacement`.  
 
 __*pattern*__  
 El patrón de expresión regular que se busca.  

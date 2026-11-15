@@ -39,6 +39,6 @@ Returns the largest integer less than or equal to the specified numeric expressi
 
 ```sql
 SELECT name, timeCreated,
-floor(julianday('now')-julianday(timeCreated)) as days_since_ceiling
+floor(julianday('now')-julianday(timeCreated)) as days_since_floor
 FROM google.storage.buckets WHERE project = 'stackql';
 ```

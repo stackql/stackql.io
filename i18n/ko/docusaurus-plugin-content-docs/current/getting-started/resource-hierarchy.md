@@ -35,13 +35,6 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
-
 :::note
 
 리소스나 서비스 이름에 마침표(`.`)가 포함되어 있으면 백틱 기호(__`__)로 리소스 이름을 묶으세요. 예를 들면 다음과 같습니다.

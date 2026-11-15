@@ -130,8 +130,6 @@ AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
 
-Pour plus d'informations sur les fonctions de fenêtrage, consultez [Fonctions de fenêtrage](/language-spec/windowing_functions).
-
 ### Utiliser des expressions de table communes (CTE) avec `WITH` {#using-common-table-expressions-ctes-with-with}
 
 Les CTE permettent de définir des jeux de résultats temporaires nommés qui peuvent être référencés dans la requête principale.
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 Pour plus d'informations sur les CTE, consultez [WITH (CTE)](/language-spec/with).
+
+Pour plus d'informations sur les fonctions de fenêtrage, consultez [Fonctions de fenêtrage](/language-spec/windowing_functions).

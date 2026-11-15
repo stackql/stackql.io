@@ -15,7 +15,7 @@ image: "/img/stackql-featured-image.png"
 Siehe auch:  
 [[` Output Modes `]](/getting-started/output-modes#otel-output) [[` exec `]](/command-line-usage/exec)
 
-`stackql exec --output otel` macht aus einer Abfrage einen Snapshot mit Zeitstempel: ein OpenTelemetry-Log-Record pro Zeile, ein Abschluss-Record pro Anweisung und die Korrelationsschlüssel `stackql.snapshot.id`, `stackql.query.hash` und `stackql.row.fingerprint` auf jedem Record (siehe [`otel`-Ausgabe](/getting-started/output-modes#otel-output)). Diese Seite führt diese Records durchgängig durch die beiden Backends, für die das Format entworfen wurde: eine typisierte Inventartabelle in ClickHouse (einschließlich ClickStack) sowie Log-Abfragen und Monitore in Datadog. Der letzte Abschnitt ist ein geplanter CI-Job, der jeden Lauf mit einer Trace-ID und Ressourcenattributen versieht.
+`stackql exec --output otel` macht aus einer Abfrage einen Snapshot mit Zeitstempel: ein OpenTelemetry-Log-Record pro Zeile, ein Abschluss-Record pro Anweisung und die Korrelationsschlüssel `stackql.snapshot.id`, `stackql.query.hash` und `stackql.row.fingerprint` auf jedem Record (siehe [Ausgabe `otel`](/getting-started/output-modes#otel-output)). Diese Seite führt diese Records durchgängig durch die beiden Backends, für die das Format entworfen wurde: eine typisierte Inventartabelle in ClickHouse (einschließlich ClickStack) sowie Log-Abfragen und Monitore in Datadog. Der letzte Abschnitt ist ein geplanter CI-Job, der jeden Lauf mit einer Trace-ID und Ressourcenattributen versieht.
 
 Die Rezepte verwenden zwei wiederkehrende Abfragen: ein Inventar der Compute Engine-Instanzen und die IAM-Bindings eines Projekts, aufgelöst in eine Zeile pro Principal und Rolle. Beide projizieren eine Spalte `identity`, den Schlüssel, anhand dessen das Backend eine Ressource verfolgt (`id`, `arn`, `selfLink` oder eine Verkettung für einen zusammengesetzten Schlüssel); der Fingerprint ist der Wert.
 
@@ -296,4 +296,4 @@ jobs:
           path: "*.otlp.jsonl"
 ```
 
-Derselbe Job auf einem beliebigen anderen Scheduler benötigt nur das Flag und die beiden Umgebungsvariablen; `TRACEPARENT` ist optional und wird pro Prozess generiert, wenn es fehlt, wobei die Anweisungen eines Laufs weiterhin eine gemeinsame Trace-ID haben.
+Derselbe Job auf einem beliebigen anderen Scheduler benötigt nur das Flag und die beiden Umgebungsvariablen; `TRACEPARENT` ist optional: Ohne diese Variable erzeugt jeder `stackql exec`-Prozess seine eigene Trace-ID, die nur die von diesem Prozess ausgeführten Anweisungen teilen, sodass die beiden Anweisungen des obigen Laufs unterschiedliche Trace-IDs tragen würden.

@@ -72,6 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
+
 ### Renvoyer les *n* derniers caractères d'une colonne {#return-the-last-n-characters-from-a-column}
 
 ```sql

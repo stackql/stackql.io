@@ -33,7 +33,7 @@ __*modifier*__
 
 ## 반환 값 {#return-values}
 
-*modifier*가 적용된 입력 *datetime_expression*의 날짜 부분을 나타내는 [율리우스일](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar)을 반환합니다.
+*modifier*가 적용된 입력 *datetime_expression*의 [율리우스일](https://en.wikipedia.org/wiki/Julian_day)을 반환합니다. 이 값은 [역산 그레고리력](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) 기준 기원전 4714년 11월 24일 그리니치 정오부터 경과한 일수이며, 하루 중 시각에 해당하는 소수 부분을 포함합니다.
 
 * * *
 

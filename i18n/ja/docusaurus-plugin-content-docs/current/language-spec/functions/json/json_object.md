@@ -19,13 +19,13 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 関数を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を確認できます。
+[**DESCRIBE**](/language-spec/describe) 文を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を確認できます。
 
 :::
 
 :::note 
 
-`postgres` SQL バックエンドで stackql を使用している場合、`json_object` 関数は `jsonb_build_object` として実装されます。
+`postgres` SQL バックエンドで stackql を使用している場合は、`json_object` の代わりに `jsonb_build_object` を使用してください。StackQL は `json_object` をそのまま PostgreSQL に渡し、PostgreSQL の同名の関数はキーと値をテキスト配列として受け取ります。
 
 :::
 
@@ -51,7 +51,7 @@ JSON オブジェクト内のラベルに対応する値。
 
 ## 例 {#examples}
 
-### JSON オブジェクトまたは配列内にネストしたフィールドのデータ型を返す {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
+### 列から JSON オブジェクトの配列を作成する {#build-an-array-of-json-objects-from-a-column}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

@@ -42,8 +42,10 @@ __*ORDER BY column*__
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 선택 사항입니다. 윈도우 프레임을 정의합니다. 일반적인 옵션은 다음과 같습니다.
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (기본값)
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+프레임 절이 없으면 프레임은 `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`입니다. 이 프레임은 현재 행이 아니라 `ORDER BY` 열 기준으로 현재 행과 동순위인 마지막 행에서 끝납니다.
 
 ## 반환 값 {#return-values}
 

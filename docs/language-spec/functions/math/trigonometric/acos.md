@@ -41,7 +41,7 @@ Returns the arc cosine of the specified value in radians.
 SELECT ACOS(0.5) AS arc_cosine_value;
 ```
 
-This query returns approximately `1.047`, as the arc cosine of 0.5 radians is π/3, which is about 1.047 radians.
+This query returns approximately `1.047`, as the arc cosine of 0.5 is π/3 radians (60 degrees), which is about 1.047 radians.
 
 ### Calculate the arc cosine of 1 {#calculate-the-arc-cosine-of-1}
 

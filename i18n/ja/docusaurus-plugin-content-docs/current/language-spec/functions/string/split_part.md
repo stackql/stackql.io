@@ -49,7 +49,7 @@ __*part*__
 
 ## 例 {#examples}
 
-### スラッシュで区切られた文字列から要素を抽出する {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### スラッシュで区切られた文字列から要素を抽出する {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

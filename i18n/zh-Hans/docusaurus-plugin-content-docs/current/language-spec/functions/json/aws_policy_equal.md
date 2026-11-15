@@ -12,7 +12,7 @@ keywords:
 description: 使用 SQL 比较两个 AWS IAM 策略文档或 AWS 标签数组是否语义等价。
 image: "/img/stackql-featured-image.png"
 ---
-比较两个 AWS IAM 策略 JSON 字符串（或 AWS 标签数组），如果按照 AWS 策略评估规则二者语义等价，则返回 `true`，否则返回 `false`。  
+比较两个 AWS IAM 策略 JSON 字符串（或 AWS 标签数组），如果按照 AWS 策略评估规则二者语义等价，则返回 `1`，否则返回 `0`。  
 
 另请参阅：  
 [__[` SELECT `]__](/language-spec/select) [__[` DESCRIBE `]__](/language-spec/describe) [__[` JSON_EQUAL `]__](/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/language-spec/functions/json/json_extract) [[ 数据类型 ]](/language-spec/data-types)

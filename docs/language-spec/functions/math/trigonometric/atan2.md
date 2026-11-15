@@ -46,10 +46,10 @@ SELECT ATAN2(1, 1) AS arc_tangent_value;
 
 This query returns π/4 or approximately `0.785`, as the arc tangent of the point (1,1) corresponds to an angle of π/4 radians in the first quadrant.
 
-### Calculate the arc tangent of the point (10, -10) {#calculate-the-arc-tangent-of-the-point-10--10}
+### Calculate the arc tangent of the point (-10, 10) {#calculate-the-arc-tangent-of-the-point--10-10}
 
 ```sql
 SELECT ATAN2(10, -10) AS arc_tangent_value;
 ```
 
-This query calculates the arc tangent of the point (10, -10), resulting in 3π/4 or approximately `2.356`, as the tangent of this angle is -1 in the second quadrant.
+This query calculates the angle of the point (-10, 10), with y = 10 and x = -10, resulting in 3π/4 or approximately `2.356`: the tangent of this angle is -1 and the point is in the second quadrant.

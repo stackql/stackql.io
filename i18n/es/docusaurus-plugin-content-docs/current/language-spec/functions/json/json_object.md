@@ -19,13 +19,13 @@ Consulte también:
 
 :::tip 
 
-Use la función [**DESCRIBE**](/language-spec/describe) para localizar los tipos de datos `array` u `object` que se pueden usar con las funciones JSON de StackQL.
+Use la instrucción [**DESCRIBE**](/language-spec/describe) para localizar los tipos de datos `array` u `object` que se pueden usar con las funciones JSON de StackQL.
 
 :::
 
 :::note 
 
-La función `json_object` se implementa como `jsonb_build_object` si usa stackql con un backend SQL `postgres`.
+Si usa stackql con un backend SQL `postgres`, use `jsonb_build_object` en lugar de `json_object`: StackQL pasa `json_object` a PostgreSQL sin cambios, y la función de PostgreSQL con ese nombre recibe sus claves y valores como arrays de texto.
 
 :::
 
@@ -51,7 +51,7 @@ Una cadena que representa el objeto JSON bien formado.
 
 ## Ejemplos {#examples}
 
-### Devolver el tipo de datos de un campo anidado en un objeto o array JSON {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
+### Construir un array de objetos JSON a partir de una columna {#build-an-array-of-json-objects-from-a-column}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

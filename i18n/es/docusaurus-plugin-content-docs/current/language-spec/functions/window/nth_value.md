@@ -54,10 +54,10 @@ Devuelve el valor de la expresión evaluada sobre la enésima fila del marco de 
 
 ## Ejemplos {#examples}
 
-### Obtener el segundo colaborador con más contribuciones {#get-the-second-highest-contributor}
+### Obtener los tres principales colaboradores {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

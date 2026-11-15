@@ -25,7 +25,7 @@ Befehl zum Starten der interaktiven StackQL-Shell.  Weitere Informationen finden
 
 | Flag | Beschreibung |
 |--|--|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Hilfeinformationen ausgeben|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Hilfeinformationen ausgeben|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Führt Abfragen im ausführlichen Modus mit zusätzlicher Ausgabe auf stdout aus; ist die Option `-f` gewählt, werden diese zusätzlichen Protokollinformationen zusammen mit den Abfrageergebnissen in die Ausgabedatei geschrieben|
 <br/>
 <br/>
@@ -37,5 +37,5 @@ Befehl zum Starten der interaktiven StackQL-Shell.  Weitere Informationen finden
 
 Die StackQL-Shell starten und eine Dienstkonto-Schlüsseldatei zur Authentifizierung verwenden.
 ```shell
-stackql shell --keyfilepath /tmp/stackql-demo.json
+stackql shell --auth '{ "google": { "type": "service_account", "credentialsfilepath": "/tmp/stackql-demo.json" } }'
 ```

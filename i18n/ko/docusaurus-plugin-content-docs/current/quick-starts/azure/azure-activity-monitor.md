@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: SQL을 사용한 Azure 클라우드 인프라 및 리소스의 쿼리와 배포
+description: "StackQL로 Azure Monitor 활동 로그 쿼리: 시간, 리소스 또는 상관 관계 ID로 서버 측에서 이벤트를 필터링하고, 심각도별로 집계하고, 가상 머신과 조인합니다."
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 
 ## 기본 쿼리 {#basic-query}
 
-아래 기본 쿼리는 [__`azure`__](https://azure.stackql.io/providers/azure/) 프로바이더의 [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) 리소스를 사용합니다. `subscriptionId` 값은 사용자의 구독 ID로 바꾸세요. 이 쿼리에서는 StackQL 쿼리 전처리에 외부 변수와 함께 `jsonnet`을 사용합니다. 자세한 내용은 [변수 사용](/getting-started/variables)을 참조하세요. 여기서는 인라인 `jsonnet` 코드 블록으로 작성했지만, `stackql exec` 또는 `stackql shell` 명령의 `--iqldata` 또는 `-q` 인수를 사용하여 외부 파일로 제공할 수도 있습니다.  
+아래 기본 쿼리는 [__`azure`__](https://azure-provider.stackql.io/) 프로바이더의 [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) 리소스를 사용합니다. `subscriptionId` 값은 사용자의 구독 ID로 바꾸세요. 이 쿼리에서는 StackQL 쿼리 전처리에 외부 변수와 함께 `jsonnet`을 사용합니다. 자세한 내용은 [변수 사용](/getting-started/variables)을 참조하세요. 여기서는 인라인 `jsonnet` 코드 블록으로 작성했지만, `stackql exec` 또는 `stackql shell` 명령의 `--iqldata` 또는 `-q` 인수를 사용하여 외부 파일로 제공할 수도 있습니다.  
 
 응답 데이터를 가공하는 데 [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) 및 [__`SPLIT_PART`__](/language-spec/functions/string/split_part) 함수를 사용합니다.  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### 특정 리소스의 활동 조회 {#getting-activities-for-a-specific-resource-1}
+### 상관 관계 ID의 활동 조회 {#getting-activities-for-a-correlation-id}
 
 상관 관계 ID는 Azure에서 특정 작업 또는 트랜잭션과 관련된 이벤트를 추적하고 그룹화하는 데 사용되는 고유 식별자입니다. 이 쿼리는 지정된 시간 범위 내에서 특정 작업과 관련된 이벤트를 정확히 찾아내는 데 도움이 되므로, 문제를 해결하거나 활동의 순서를 파악하기가 쉬워집니다. 다음은 이전 쿼리에서 얻은 `correlationId` 값을 사용하는 예제입니다:  
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`JOIN` 쿼리에서 위 예제의 `subscriptionId` 매개 변수처럼 어느 리소스의 것인지 구분되지 않은 `WHERE` 매개 변수는 두 리소스(이 경우 `azure.monitor.activity_logs` 및 `azure.compute.virtual_machines`)에서 공유됩니다.
+`JOIN` 쿼리에서 위 예제의 `subscription_id` 매개 변수처럼 어느 리소스의 것인지 구분되지 않은 `WHERE` 매개 변수는 두 리소스(이 경우 `azure.monitor.activity_logs` 및 `azure.compute.virtual_machines`)에서 공유됩니다.
 
 :::

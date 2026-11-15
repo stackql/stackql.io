@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 참고 항목:  
 [[` exec `]](/command-line-usage/exec) [[` INSERT `]](/language-spec/insert) [[` SHOW `]](/language-spec/show) [[ 변수 사용 ]](/getting-started/variables)
 
-StackQL에서는 `INSERT` 문을 사용하여 클라우드 리소스를 배포합니다. 다양한 클라우드 리소스의 `INSERT` 템플릿은 `SHOW INSERT` 명령을 사용하여 생성합니다.
+StackQL에서는 `INSERT` 문을 사용하여 클라우드 리소스를 배포합니다. 다양한 클라우드 리소스의 `INSERT` 템플릿은 `SHOW INSERT` 명령을 사용하여 생성할 수 있습니다.
 
 ### `SHOW INSERT` 명령을 사용한 `INSERT` 템플릿 생성 {#generating-an-insert-template-using-the-show-insert-command}
 
@@ -72,7 +72,7 @@ SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
 이 명령은 다음과 같이 `shell`에서 실행하거나 `exec` 명령을 사용하여 실행할 수 있습니다.
 
 ```shell
-./stackql exec 'show insert /*+ REQUIRED */ into compute.instances' --output text -H
+./stackql exec 'show insert /*+ REQUIRED */ into google.compute.instances' --output text -H
 ```
 
 *__반환 결과:__*  

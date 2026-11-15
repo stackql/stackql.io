@@ -69,7 +69,7 @@ shasum -a 256 -c stackql-mcp-darwin-universal.mcpb.sha256
 
 在为 Claude Desktop 设置 StackQL 之前，请确保具备：
 
-1. **已安装 StackQL**：从 [stackql.io](https://stackql.io/downloads) 下载并安装 StackQL，或使用包管理器
+1. **已安装 StackQL**：从 [stackql.io](/installing-stackql) 下载并安装 StackQL，或使用包管理器
 2. **Claude Desktop**：从 [Anthropic 网站](https://claude.ai/desktop)下载
 3. **云服务商凭据**：要使用的云服务商的 API 密钥或凭据
 

@@ -113,7 +113,7 @@ export ANTHROPIC_ADMIN_KEY=sk-ant-admin...
 
 Pull the latest provider from the public registry:
 
-```bash
+```sql
 registry pull anthropic;
 ```
 

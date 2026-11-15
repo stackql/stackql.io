@@ -29,7 +29,7 @@ SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 ## 引数 {#arguments}
 
 __*columnExpression*__  
-列または式。__*__ を指定すると、リソースまたはグループ内のすべての行がカウントされます。  
+列または式。  
 
 > *columnExpression* の値のうち少なくとも 1 つが `NULL` 以外である必要があります。そうでない場合は `NULL` が返されます。
 

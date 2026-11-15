@@ -41,7 +41,7 @@ image: "/img/tutorials/github/stackql-github-provider-featured-image.png"
 
 ## 工作原理 {#how-it-works}
 
-该项目部署在容器中（使用 `docker` 或其他容器部署平台），使用 `python` 和 [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) 包构建，并使用 `stackql` 的 [`github`](https://github.stackql.io/providers/github/) 和 [`homebrew`](https://homebrew.stackql.io/providers/homebrew) Provider。物化视图和 `SELECT` 语句用于捕获并比较 GitHub 和 Homebrew 受监控端点的当前指标与先前指标之间的状态，如下图所示：  
+该项目部署在容器中（使用 `docker` 或其他容器部署平台），使用 `python` 和 [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) 包构建，并使用 `stackql` 的 [`github`](https://github-provider.stackql.io/) 和 [`homebrew`](https://homebrew-provider.stackql.io/) Provider。物化视图和 `SELECT` 语句用于捕获并比较 GitHub 和 Homebrew 受监控端点的当前指标与先前指标之间的状态，如下图所示：  
 
 ```mermaid
 graph TB

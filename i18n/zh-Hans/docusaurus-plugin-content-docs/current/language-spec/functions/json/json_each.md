@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-使用 [**DESCRIBE**](/language-spec/describe) 函数查找可用于 `json_each` 函数的 `array` 数据类型。
+使用 [**DESCRIBE**](/language-spec/describe) 语句查找可用于 `json_each` 函数的 `array` 数据类型。
 
 :::
 
@@ -43,9 +43,9 @@ JSON 数组或对象。
 __*json_path*__  
 指向 *json_array_or_object* 内所含数组或对象的 JSON 路径。请参阅 [jsonpath.com](https://jsonpath.com/)。
 
-> 如果 *json_path* 在 *json_array_or_object* 中不存在，则函数返回 `NULL`。
+> 如果 *json_path* 在 *json_array_or_object* 中不存在，则函数不返回任何行。
 
-> 如果任一参数格式不正确，`json_type()` 函数会抛出错误。
+> 如果 *json_array_or_object* 不是格式正确的 JSON，`json_each()` 函数会抛出错误。
 
 ## 返回值 {#return-values}
 一个表，其中每个数组元素或对象成员对应一行。

@@ -31,7 +31,7 @@ The source string being searched.
 __*searchstring*__  
 The substring being searched for.
 
-> If *string* and *searchstring* are both BLOBs, then `instr(<string>, <searchstring>)` returns one more than the number bytes prior to the first occurrence of *searchstring*, or 0 if *searchstring* does not occur anywhere within *string*. If both arguments are not `NULL` and are not BLOBs then both are interpreted as strings. 
+> If *string* and *searchstring* are both BLOBs, then `instr(<string>, <searchstring>)` returns one more than the number of bytes prior to the first occurrence of *searchstring*, or 0 if *searchstring* does not occur anywhere within *string*. If both arguments are not `NULL` and are not BLOBs then both are interpreted as strings. 
 
 ## Return Value(s) {#return-values}
 Returns an integer.
@@ -50,7 +50,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 /*
-returns 0 if the term 'worker' is not present in the 'name' column, otherwise returns the character position (starting from 1) of the first occurence of the term 'worker' in the 'name' column
+returns 0 if the term 'worker' is not present in the 'name' column, otherwise returns the character position (starting from 1) of the first occurrence of the term 'worker' in the 'name' column
 */
 ```
 

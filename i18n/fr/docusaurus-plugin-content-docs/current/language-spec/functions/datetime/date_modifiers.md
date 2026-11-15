@@ -33,7 +33,7 @@ Dans les fonctions de date et d'heure de StackQL, les valeurs de date ou d'heure
 
 ## Exemples {#examples}
 
-### Renvoyer la date et l'heure actuelles avec le modificateur `now` {#return-the-current-date-and-time-using-the-now-modifier}
+### Renvoyer la date et l'heure actuelles avec la valeur temporelle `now` {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convertir une date et heure en UTC {#covert-datetime-to-utc}
+### Convertir une date et heure en UTC {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convertir un horodatage Unix en date et heure {#covert-a-unix-timestamp-to-a-datetime}
+### Convertir un horodatage Unix en date et heure {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

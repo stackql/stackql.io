@@ -113,7 +113,7 @@ HAVING location != 'ASIA';
 
 Weitere Informationen zur Funktion `COUNT` und zu anderen von StackQL unterstützten Aggregatfunktionen finden Sie unter [Aggregatfunktionen](/language-spec/functions/aggregate/count).
 
-### Liste der On-Demand-VMs und der zugehörigen Netzwerkschnittstelle aus einem Azure VM Scaleset abrufen {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
+### Liste der On-Demand-VMs und der zugehörigen Netzwerkschnittstelle aus einem Azure VM Scale Set abrufen {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
 Führen Sie eine `SELECT`-Anweisung mit den Funktionen [`SPLIT_PART`](/language-spec/functions/string/split_part) und [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) aus, um die Liste der OD-VMs und ihrer NICs abzurufen. Beachten Sie, dass subscription_id und resource_group_name ohne Qualifizierer auf alle drei Ressourcen angewendet werden.
 
 ```sql
@@ -129,8 +129,6 @@ WHERE subscription_id = '0123456789'
 AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
-
-Weitere Informationen zu Fensterfunktionen finden Sie unter [Fensterfunktionen](/language-spec/windowing_functions).
 
 ### Common Table Expressions (CTEs) mit `WITH` verwenden {#using-common-table-expressions-ctes-with-with}
 
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 Weitere Informationen zu CTEs finden Sie unter [WITH (CTEs)](/language-spec/with).
+
+Weitere Informationen zu Fensterfunktionen finden Sie unter [Fensterfunktionen](/language-spec/windowing_functions).

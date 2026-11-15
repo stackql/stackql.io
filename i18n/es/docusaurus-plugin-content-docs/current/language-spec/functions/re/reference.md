@@ -31,7 +31,7 @@ StackQL admite la siguiente sintaxis de expresiones regulares:
 | `^X` | `X` al principio de la cadena |
 | `X$` | `X` al final de la cadena |
 | `.` | Coincide con cualquier carácter individual |
-| `\c` | Carácter `c`, donde `c` es uno de `\{}()[]`&vert;`*+?.`
+| `\c` | Carácter `c`, donde `c` es uno de `\{}()[]`&vert;`*+?.` |
 | `\c` | Secuencias de escape del lenguaje C para `c` en `afnrtv`. Por ejemplo: `\t` o `\n` |
 | `[abc]` | Cualquier carácter individual del conjunto `abc` |
 | `[^abc]` | Cualquier carácter individual que no esté en el conjunto `abc` |

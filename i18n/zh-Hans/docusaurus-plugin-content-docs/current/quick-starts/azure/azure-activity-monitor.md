@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: 使用 SQL 查询和部署 Azure 云基础设施与资源
+description: "使用 StackQL 查询 Azure Monitor 活动日志：在服务器端按时间、资源或关联 ID 过滤事件，按严重级别统计，并与虚拟机连接。"
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 
 ## 基本查询 {#basic-query}
 
-下面的基本查询使用 [__`azure`__](https://azure.stackql.io/providers/azure/) Provider 中的 [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) 资源；请将 `subscriptionId` 替换为你自己的值。此查询使用带外部变量的 `jsonnet` 对 StackQL 查询进行预处理，有关更多信息，请参阅[使用变量](/getting-started/variables)。这里采用内联 `jsonnet` 代码块的方式，也可以通过 `stackql exec` 或 `stackql shell` 的 `--iqldata` 或 `-q` 参数以外部文件的形式提供。  
+下面的基本查询使用 [__`azure`__](https://azure-provider.stackql.io/) Provider 中的 [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) 资源；请将 `subscriptionId` 替换为你自己的值。此查询使用带外部变量的 `jsonnet` 对 StackQL 查询进行预处理，有关更多信息，请参阅[使用变量](/getting-started/variables)。这里采用内联 `jsonnet` 代码块的方式，也可以通过 `stackql exec` 或 `stackql shell` 的 `--iqldata` 或 `-q` 参数以外部文件的形式提供。  
 
 [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) 和 [__`SPLIT_PART`__](/language-spec/functions/string/split_part) 函数用于处理响应数据。  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### 获取特定资源的活动 {#getting-activities-for-a-specific-resource-1}
+### 获取某一关联 ID 的活动 {#getting-activities-for-a-correlation-id}
 
 关联 ID 是一个唯一标识符，用于跟踪和分组 Azure 中与某个特定操作或事务相关的事件。此查询有助于在给定时间范围内定位与某个特定操作相关的具体事件，便于排查问题或了解活动的先后顺序。下面的示例使用了上一个查询中获取的 `correlationId`：  
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`JOIN` 查询中未消除歧义的 `WHERE` 参数（例如上例中的 `subscriptionId`）由两个资源共享（此处为 `azure.monitor.activity_logs` 和 `azure.compute.virtual_machines`）。
+`JOIN` 查询中未消除歧义的 `WHERE` 参数（例如上例中的 `subscription_id`）由两个资源共享（此处为 `azure.monitor.activity_logs` 和 `azure.compute.virtual_machines`）。
 
 :::

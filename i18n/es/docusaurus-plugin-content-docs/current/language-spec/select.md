@@ -113,7 +113,7 @@ HAVING location != 'ASIA';
 
 Para obtener más información sobre la función `COUNT` y otras funciones de agregación admitidas por StackQL, consulte [Funciones de agregación](/language-spec/functions/aggregate/count).
 
-### Obtener la lista de VM bajo demanda y la interfaz de red correspondiente desde Azure VM Scaleset {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
+### Obtener la lista de VM bajo demanda y la interfaz de red correspondiente desde Azure VM Scale Set {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
 Ejecute una instrucción `SELECT` con las funciones [`SPLIT_PART`](/language-spec/functions/string/split_part) y [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) para obtener la lista de VM bajo demanda y sus NIC. Tenga en cuenta que, sin un calificador, subscription_id y resource_group_name se aplican a los tres recursos.
 
 ```sql
@@ -129,8 +129,6 @@ WHERE subscription_id = '0123456789'
 AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
-
-Para obtener más información sobre las funciones de ventana, consulte [Funciones de ventana](/language-spec/windowing_functions).
 
 ### Usar expresiones de tabla comunes (CTE) con `WITH` {#using-common-table-expressions-ctes-with-with}
 
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 Para obtener más información sobre las CTE, consulte [WITH (CTE)](/language-spec/with).
+
+Para obtener más información sobre las funciones de ventana, consulte [Funciones de ventana](/language-spec/windowing_functions).

@@ -481,7 +481,7 @@ service:
 
 #### 禁用审计 {#disabling-audit}
 
-完全关闭审计（PR2 之前的行为）：
+完全关闭审计，与 `v0.10.474` 之前的发布版本相同（这些版本没有审计）：
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ stackql mcp \
 |`--mcp.protocol.version`|通告的最新协议修订版：`auto`（默认）、`2026-07-28` 或较旧的修订版，例如 `2025-11-25`。参阅[固定修订版](#pinning-the-revision)。|
 |`--env.file`|dotenv 风格的凭据文件，在启动时加载，并由 `reload_credentials` 工具按需重新加载。参阅[凭据（重新）加载](#credential-resourcing---envfile--reload_credentials)。|
 |`--pgsrv.port`|PostgreSQL 线协议服务器的 TCP 端口（与 `stackql srv` 搭配使用）。|
-|`-H`、`--help`|打印帮助信息。|
+|`-h`、`--help`|打印帮助信息。|
 |`-v`、`--verbose`|以详细模式运行，输出更多信息。|
 
 &nbsp;

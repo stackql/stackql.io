@@ -11,7 +11,7 @@ keywords:
   - google
   - google cloud platform
   - gcp
-description: Consultar y desplegar infraestructura y recursos de Google Cloud con SQL
+description: "Framework de GitOps para IAM de Google Cloud con StackQL: declarar en Jsonnet roles personalizados y vinculaciones de roles para la organización, carpetas, proyectos y recursos, hacer una ejecución de prueba y aplicarlos."
 image: "/img/tutorials/google/stackql-google-provider-featured-image.png"
 ---
 
@@ -80,94 +80,68 @@ Este es el archivo principal que ejecutará `stackql`; con `data/iam.jsonnet`, r
 
 /*** create custom roles ***/ {{ range .custom_roles }}
 
-INSERT INTO google.iam.`organizations.roles`(
- parent,
+INSERT INTO google.iam.roles (
+ organizationsId,
  data__role,
- data__roleId )
-SELECT   
+ data__roleId
+)
+SELECT
  '{{ $root.organization_id }}',
- '{"title": "{{ .title }}", "description": "{{ .description }}", "stage": "{{ .stage }}", "includedPermissions": {{ .includedPermissions }}}', 
- '{{ .id }}' 
+ '{"title": "{{ .title }}", "description": "{{ .description }}", "stage": "{{ .stage }}", "includedPermissions": {{ .includedPermissions }}}',
+ '{{ .id }}'
 ;{{ end }}
 
-/*** create org role bindings */  
+/*** create org role bindings ***/
 
-EXEC google.cloudresourcemanager.organizations.setIamPolicy 
-@resource = '{{ $root.organization_id }}' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.org }}
-   }
-}';
+REPLACE google.cloudresourcemanager.organizations_iam_policies
+SET data__policy = '{"bindings": {{ $root.bindings.org }}}'
+WHERE organizationsId = '{{ $root.organization_id }}';
 
-/*** create billing role bindings */
+/*** create billing role bindings ***/
 
-EXEC google.cloudbilling.billingAccounts.setIamPolicy 
-@resource = '{{ $root.billing_account_id }}' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.billingacct }}
-   }
-}';
+REPLACE google.cloudbilling.billing_accounts_iam_policies
+SET data__policy = '{"bindings": {{ $root.bindings.billingacct }}}'
+WHERE billingAccountsId = '{{ $root.billing_account_id }}';
 
-/*** create nonprod folder role bindings */  
+/*** create nonprod folder role bindings ***/
 
-EXEC google.cloudresourcemanager.folders.setIamPolicy 
-@resource = '{{ $root.nonprod_folder_id }}' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.folders.nonprod }}
-   }
-}';
+REPLACE google.cloudresourcemanager.folders_iam_policies
+SET data__policy = '{"bindings": {{ $root.bindings.folders.nonprod }}}'
+WHERE foldersId = '{{ $root.nonprod_folder_id }}';
 
-/*** create prod folder role bindings */  
+/*** create prod folder role bindings ***/
 
-EXEC google.cloudresourcemanager.folders.setIamPolicy 
-@resource = '{{ $root.prod_folder_id }}' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.folders.prod }}
-   }
-}';
+REPLACE google.cloudresourcemanager.folders_iam_policies
+SET data__policy = '{"bindings": {{ $root.bindings.folders.prod }}}'
+WHERE foldersId = '{{ $root.prod_folder_id }}';
 
-/*** create datalabs folder role bindings */  
+/*** create datalabs folder role bindings ***/
 
-EXEC google.cloudresourcemanager.folders.setIamPolicy 
-@resource = '{{ $root.datalabs_folder_id }}' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.folders.datalabs }}
-   }
-}';
+REPLACE google.cloudresourcemanager.folders_iam_policies
+SET data__policy = '{"bindings": {{ $root.bindings.folders.datalabs }}}'
+WHERE foldersId = '{{ $root.datalabs_folder_id }}';
 
-/*** create stackql-audit project level role bindings */  
+/*** create stackql-audit project level role bindings (conditional bindings need policy version 3) ***/
 
-EXEC google.cloudresourcemanager.folders.setIamPolicy 
-@resource = 'projects/stackql-audit' 
-@@json = '{
-  "policy": {
-    "bindings": {{ $root.bindings.projects.stackql_audit }}
-   }
-}';
+REPLACE google.cloudresourcemanager.projects_iam_policies
+SET data__policy = '{"version": 3, "bindings": {{ $root.bindings.projects.stackql_audit }}}'
+WHERE projectsId = 'stackql-audit';
 
-/*** create role bindings for buckets in stackql-terraform */ {{ range $root.bindings.buckets }}
+/*** create role bindings for buckets in stackql-terraform ***/ {{ range $root.bindings.buckets }}
 
 -- creating policy bindings for {{ .name }}
-EXEC google.storage.buckets.setIamPolicy 
-@bucket = '{{ .name }}'
-@@json = '{
-	"bindings": {{ .data }}
-}';
+REPLACE google.storage.buckets_iam_policies
+SET data__bindings = '{{ .data }}'
+WHERE bucket = '{{ .name }}';
 {{ end }}
 
-/*** create role bindings for topics in stackql-audit */ {{ range $root.bindings.topics }}
+/*** create role bindings for topics in stackql-audit ***/ {{ range $root.bindings.topics }}
 
 -- creating policy bindings for {{ .name }}
-EXEC google.pubsub.`projects.topics`.setIamPolicy
-@resource = '{{ .resource }}'
-@@json = '{
-	"bindings": {{ .data }}
-}';
+REPLACE google.pubsub.topics_iam_policies
+SET data__policy = '{"bindings": {{ .data }}}'
+WHERE projectsId = '{{ .project }}'
+AND topicsId = '{{ .name }}';
 {{ end }}
 ```
 
@@ -192,11 +166,11 @@ EXEC google.pubsub.`projects.topics`.setIamPolicy
 // variables
 local custom_roles_data = import './data/iam/custom_roles.json';
 local bindings_data = import './data/iam/bindings.json';
-local organization_id = 'organizations/123466304837';
-local billing_account_id = 'billingAccounts/123456-9DFD97-EE2B33';
-local nonprod_folder_id = 'folders/1234016945998';
-local prod_folder_id = 'folders/123431606453';
-local datalabs_folder_id = 'folders/123464988355';
+local organization_id = '123466304837';
+local billing_account_id = '123456-9DFD97-EE2B33';
+local nonprod_folder_id = '1234016945998';
+local prod_folder_id = '123431606453';
+local datalabs_folder_id = '123464988355';
 local environments = [{name: 'prod'}, {name: 'nonprod'}, {name: 'datalabs'}];
 
 // DO NOT MODIFY BEYOND THIS POINT
@@ -258,12 +232,12 @@ local generate_conditional_binding(x) =
 	topics: [
 		{
 			name: "stackql-np-log-topic",
-			resource: "projects/stackql-audit/topics/stackql-np-log-topic",
+			project: "stackql-audit",
 			data: std.flattenArrays(std.map(generate_binding, bindings_data.topics.stackql_np_log_topic)),
 		},
 		{
 			name: "stackql-prod-log-topic",
-			resource: "projects/stackql-audit/topics/stackql-prod-log-topic",
+			project: "stackql-audit",
 			data: std.flattenArrays(std.map(generate_binding, bindings_data.topics.stackql_prod_log_topic)),
 		},		
 	],
@@ -325,7 +299,7 @@ por ejemplo:
 
 Intencionadamente, este proceso no se ejecuta en un pipeline de CI/CD, ya que los cambios son poco frecuentes y no queremos conceder a una cuenta de servicio el nivel de privilegios necesario para desplegarlo.  Debe ejecutarlo un administrador con privilegios que sea miembro del grupo de Google gcp-org-administrators.  
 
-El usuario debe estar autenticado en GCP, ya sea con una cuenta de servicio o con autenticación interactiva; para obtener más información sobre la autenticación de StackQL en Google, consulte [__Autenticación en GCP__](https://google.stackql.io/providers/google/#authentication).  
+El usuario debe estar autenticado en GCP, ya sea con una cuenta de servicio o con autenticación interactiva; para obtener más información sobre la autenticación de StackQL en Google, consulte [__Autenticación en GCP__](https://google-provider.stackql.io/#authentication).  
 
 Ejecute el siguiente comando para realizar una ejecución de prueba:
 ```shell
@@ -338,6 +312,6 @@ stackql exec -i ./iql/iam.iql \
 Los datos resultantes de este archivo se pueden ejecutar como instrucciones individuales en `stackql shell` o como un lote, con el siguiente comando:
 
 ```shell
-stackql exec -i iam-TEMPLATED.iql \
+stackql exec -i iam-TEMPLATED.iql
 ```
 Como alternativa, puede tomar las políticas (cargas útiles JSON) que genera este script y ejecutarlas con el comando `gcloud iam`.

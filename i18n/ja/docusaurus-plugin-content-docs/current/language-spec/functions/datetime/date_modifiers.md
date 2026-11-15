@@ -33,7 +33,7 @@ StackQL の日時関数に渡す日付または時刻の値の後には、日付
 
 ## 例 {#examples}
 
-### `now` 修飾子を使用して現在の日付と時刻を返す {#return-the-current-date-and-time-using-the-now-modifier}
+### 時刻値 `now` を使用して現在の日付と時刻を返す {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 日時を UTC に変換する {#covert-datetime-to-utc}
+### 日時を UTC に変換する {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Unix タイムスタンプを日時に変換する {#covert-a-unix-timestamp-to-a-datetime}
+### Unix タイムスタンプを日時に変換する {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

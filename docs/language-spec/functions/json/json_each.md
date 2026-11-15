@@ -19,7 +19,7 @@ See also:
 
 :::tip 
 
-Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` datatypes which can be used with the `json_each` function.
+Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` datatypes which can be used with the `json_each` function.
 
 :::
 
@@ -41,11 +41,11 @@ __*json_array_or_object*__
 A JSON array or object.
 
 __*json_path*__  
-The JSON path to an array or object contained within an *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
+The JSON path to an array or object contained within a *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
 
-> If *json_path* does not exist in *json_array_or_object*, then the function returns `NULL`.
+> If *json_path* does not exist in *json_array_or_object*, then the function returns no rows.
 
-> The `json_type()` function throws an error if any of its arguments are not well-formed.
+> The `json_each()` function throws an error if *json_array_or_object* is not well-formed JSON.
 
 ## Return Value(s) {#return-values}
 A table consisting of one row for each array element or object member.

@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## Argumente {#arguments}
 
 __*source*__  
-Ein String-Literal oder eine String-Spalte, aus der Sie anhand eines durch einen regulären Ausdruck (`pattern`) definierten Musters einen Teilstring extrahieren möchten.  
+Ein String-Literal oder eine String-Spalte, in der Übereinstimmungen mit dem regulären Ausdruck `pattern` durch `replacement` ersetzt werden.  
 
 __*pattern*__  
 Das Muster des regulären Ausdrucks, nach dem gesucht wird.  

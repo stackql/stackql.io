@@ -47,7 +47,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 날짜/시간을 UTC로 변환 {#covert-datetime-to-utc}
+### 날짜/시간을 UTC로 변환 {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -79,7 +79,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Unix 타임스탬프를 날짜/시간으로 변환 {#covert-a-unix-timestamp-to-a-datetime}
+### Unix 타임스탬프를 날짜/시간으로 변환 {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

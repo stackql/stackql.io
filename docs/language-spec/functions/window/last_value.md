@@ -42,8 +42,10 @@ Specifies the order in which rows are processed.
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 Optional. Defines the window frame. Common options include:
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (default)
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+Without a frame clause, the frame is `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`: it ends at the last row that ties with the current row on the `ORDER BY` columns, not at the current row.
 
 ## Return Value(s) {#return-values}
 

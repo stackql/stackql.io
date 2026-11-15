@@ -33,7 +33,7 @@ Null oder mehr Modifikatoren, die auf die *datetime_expression* angewendet werde
 
 ## Rückgabewert(e) {#return-values}
 
-Gibt das [Julianische Datum](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) zurück, das den Datumsanteil der eingegebenen *datetime_expression* nach Anwendung des *modifier* darstellt.
+Gibt das [Julianische Datum](https://en.wikipedia.org/wiki/Julian_day) der eingegebenen *datetime_expression* nach Anwendung des *modifier* zurück: die Anzahl der Tage, einschließlich des Bruchteils für die Uhrzeit, seit dem Mittag in Greenwich am 24. November 4714 v. Chr. im [proleptischen gregorianischen Kalender](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).
 
 * * *
 
@@ -49,7 +49,7 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-Verwenden Sie [**ROUND**](/language-spec/functions/math/round), um Gleitkommazahlen in die nächste Ganzzahl umzuwandeln.
+Verwenden Sie die Funktion [**ROUND**](/language-spec/functions/math/round), um Gleitkommazahlen in die nächste Ganzzahl umzuwandeln.
 
 :::
 

@@ -127,7 +127,7 @@ Secrets are created and removed one per statement:
 INSERT INTO supabase.secrets.secrets (name, value)
 SELECT 'STRIPE_WEBHOOK_SECRET', 'whsec_...';
 
-DELETE FROM supabase.secrets.secrets WHERE name = 'STRIPE_WEBHOOK_SECRET';
+DELETE FROM supabase.secrets.secrets WHERE data__name = 'STRIPE_WEBHOOK_SECRET';
 ```
 
 Configuration is updated in place; `UPDATE` sends only the columns you set, and values are written as quoted strings:
@@ -141,8 +141,7 @@ Network restrictions and the project lifecycle are `EXEC` methods:
 
 ```sql
 EXEC supabase.network.network_restrictions.apply
-  @db_allowed_cidrs = '["203.0.113.0/24"]',
-  @db_allowed_cidrs_v6 = '[]';
+  @@json = '{"dbAllowedCidrs": ["203.0.113.0/24"], "dbAllowedCidrsV6": []}';
 
 EXEC supabase.projects.projects.pause @ref = 'abcdefghijklmnopqrst';
 EXEC supabase.projects.projects.restore @ref = 'abcdefghijklmnopqrst';

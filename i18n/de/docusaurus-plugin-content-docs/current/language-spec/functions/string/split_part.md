@@ -49,7 +49,7 @@ Gibt einen String zurück.
 
 ## Beispiele {#examples}
 
-### Elemente aus einem durch Schrägstriche getrennten String extrahieren {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### Elemente aus einem durch Schrägstriche getrennten String extrahieren {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

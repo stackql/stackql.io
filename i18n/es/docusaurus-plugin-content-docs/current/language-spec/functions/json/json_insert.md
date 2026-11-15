@@ -58,11 +58,11 @@ Devuelve el documento JSON con el nuevo valor insertado si la ruta especificada 
 SELECT JSON_INSERT(json_data, '$.region', 'Europe') as updated_object;
 
 /* expected output...
-|-------------------------------------------------------------|
-|                     updated_json                            |
-|-------------------------------------------------------------|
-| {"name":"ResourceOne", "type":"Storage", "region":"Europe"} |
-|-------------------------------------------------------------|
+|-----------------------------------------------------------|
+|                      updated_object                       |
+|-----------------------------------------------------------|
+| {"name":"ResourceOne","type":"Storage","region":"Europe"} |
+|-----------------------------------------------------------|
 */
 ```
 

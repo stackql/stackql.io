@@ -25,7 +25,7 @@ Comando que se usa para iniciar el shell de comandos interactivo de StackQL.  Pa
 
 | Opción | Descripción |
 |--|--|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Muestra la información de ayuda|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Muestra la información de ayuda|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se selecciona la opción `-f`, esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
 <br/>
 <br/>
@@ -37,5 +37,5 @@ Comando que se usa para iniciar el shell de comandos interactivo de StackQL.  Pa
 
 Iniciar el shell de StackQL, usando un archivo de clave de cuenta de servicio para la autenticación.
 ```shell
-stackql shell --keyfilepath /tmp/stackql-demo.json
+stackql shell --auth '{ "google": { "type": "service_account", "credentialsfilepath": "/tmp/stackql-demo.json" } }'
 ```

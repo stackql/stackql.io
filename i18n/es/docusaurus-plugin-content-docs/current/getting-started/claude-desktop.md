@@ -69,7 +69,7 @@ Si ya tiene StackQL instalado, puede registrar el servidor MCP de StackQL direct
 
 Antes de configurar StackQL con Claude Desktop, asegúrese de tener:
 
-1. **StackQL instalado** - Descargue e instale StackQL desde [stackql.io](https://stackql.io/downloads) o use un gestor de paquetes
+1. **StackQL instalado** - Descargue e instale StackQL desde [stackql.io](/installing-stackql) o use un gestor de paquetes
 2. **Claude Desktop** - Descárguelo desde el [sitio web de Anthropic](https://claude.ai/desktop)
 3. **Credenciales de proveedores de nube** - Claves de API o credenciales de los proveedores de nube con los que quiere trabajar
 

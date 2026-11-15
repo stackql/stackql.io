@@ -343,7 +343,7 @@ cargo install stackql-deploy
   >
   <TabItem value="aws">
 
-  ### AWS Cloud Shell
+  ### AWS CloudShell
 
   AWS CloudShell stellt eine browserbasierte Shell mit vorinstallierter und authentifizierter AWS CLI bereit. Wenn Sie StackQL in AWS CloudShell ausführen, können Sie AWS-Ressourcen ohne zusätzliche Authentifizierungsschritte abfragen und verwalten. Eine ausführliche Anleitung finden Sie in unserem [AWS CloudShell-Tutorial](/quick-starts/aws/aws-cloud-shell).
 
@@ -679,7 +679,7 @@ Alle drei Argumente sind erforderlich:
 - `--approot` verweist den Provider-Cache auf ein beschreibbares Verzeichnis. MCP-Clients starten den Server unter Umständen mit `/` als Arbeitsverzeichnis, das nicht beschreibbar ist.
 - `--mcp.config '{"server": {"audit": {"disabled": true}}}'` deaktiviert das Audit-Log, das sein Verzeichnis sonst standardmäßig in das (möglicherweise nicht beschreibbare) Arbeitsverzeichnis legt.
 
-Fügen Sie Provider-Anmeldedaten mit einem `"env"`-Block hinzu und passen Sie den Sicherheitsvertrag mit `"mode"` an - siehe [Server-Modi](/command-line-usage/mcp#server-modes).
+Fügen Sie Provider-Anmeldedaten mit einem `"env"`-Block hinzu und passen Sie den Sicherheitsvertrag mit `"mode"` an - siehe [Servermodi](/command-line-usage/mcp#server-modes).
 
 ### `npx` (ohne Installation) {#npx-no-install}
 
@@ -1127,7 +1127,7 @@ __Anwendungsbeispiel__
     query: |
       select total_private_repos
       from github.orgs.orgs
-      where org = 'stackql'"
+      where org = 'stackql'
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
@@ -1191,7 +1191,7 @@ StackQL bietet mehrere Integrationsmöglichkeiten für die Verwendung in verschi
 
 ### `pystackql`-Python-Paket {#pystackql-python-package}
 
-Python-Wrapper zur Verwendung von StackQL in Ihren Python-Programmen. Das Paket `pystackql` ist auf [__PyPi__](https://pypi.org/project/pystackql/) verfügbar, die Dokumentation zum Paket `pystackql` finden Sie auf [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). Um das Paket `pystackql` zu installieren, führen Sie den folgenden Befehl aus:
+Python-Wrapper zur Verwendung von StackQL in Ihren Python-Programmen. Das Paket `pystackql` ist auf [__PyPI__](https://pypi.org/project/pystackql/) verfügbar, die Dokumentation zum Paket `pystackql` finden Sie auf [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). Um das Paket `pystackql` zu installieren, führen Sie den folgenden Befehl aus:
 
 ```bash
 pip install pystackql

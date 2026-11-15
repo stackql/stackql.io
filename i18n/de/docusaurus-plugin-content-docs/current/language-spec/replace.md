@@ -41,49 +41,39 @@ SET field_name = value [, field_name = value ...]
 ## Beispiele {#examples}
 
 ### Einfache `REPLACE`-Anweisung {#basic-replace-statement}
-Führen Sie eine `REPLACE`-Anweisung aus, um die Größe einer Compute Engine Disk-Ressource zu ändern.
+Führen Sie eine `REPLACE`-Anweisung aus, um alle Topics eines GitHub-Repositorys zu ersetzen.
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-REPLACE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Replace all of the topics on a GitHub repository
+REPLACE github.repos.topics
+SET data__names = '["sql", "cloud-infrastructure"]'
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```
 
 ### `REPLACE`-Anweisung (blockierend) {#replace-statement-blocking}
-Führen Sie eine `REPLACE`-Anweisung aus, um die Größe einer Compute Engine Disk-Ressource zu ändern. Dies ist ein blockierender (synchroner) Aufruf.
+Führen Sie eine `REPLACE`-Anweisung aus, um eine Firewallregel in Compute Engine zu ersetzen. Dies ist ein blockierender (synchroner) Aufruf.
 
 ```sql
 -- Synchronous update of a google firewall 
 REPLACE /*+ AWAIT */ google.compute.firewalls
 SET
+ data__name = 'test-fw',
  data__network = 'https://www.googleapis.com/compute/v1/projects/stackql-demo/global/networks/my-vpc',
  data__direction = 'INGRESS',
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### `REPLACE`-Anweisung mit JSON-Änderung {#replace-statement-with-json-modification}
-Führen Sie eine `REPLACE`-Anweisung aus, um eine Ressource mittels JSON-Manipulation zu ändern.
+### `REPLACE`-Anweisung mit JSON-Funktionen {#replace-statement-with-json-functions}
+Führen Sie eine `REPLACE`-Anweisung aus, deren Wert mit JSON-Funktionen gebildet wird. Eine Funktion, die keine Spalten liest, wird ausgewertet, bevor die Anfrage gesendet wird. Ein `SET`-Wert kann die zu ersetzende Zeile nicht lesen. Um einen Teil eines vorhandenen Werts zu ändern, lesen Sie ihn daher zuerst mit einem `SELECT` und setzen dann den geänderten Wert.
 
 ```sql
--- Update an Azure Network Interface's properties
-REPLACE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
-)
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+-- Replace the topics on a GitHub repository with a list built by json_array
+REPLACE github.repos.topics
+SET data__names = json_array('sql', 'cloud-infrastructure', 'infrastructure-as-code')
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```

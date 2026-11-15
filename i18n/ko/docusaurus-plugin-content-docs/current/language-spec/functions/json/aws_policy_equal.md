@@ -12,7 +12,7 @@ keywords:
 description: SQL로 두 AWS IAM 정책 문서 또는 AWS 태그 배열이 의미상 동등한지 비교합니다.
 image: "/img/stackql-featured-image.png"
 ---
-두 AWS IAM 정책 JSON 문자열(또는 AWS 태그 배열)을 비교하여 AWS 정책 평가 규칙에 따라 의미상 동등하면 `true`를, 그렇지 않으면 `false`를 반환합니다.  
+두 AWS IAM 정책 JSON 문자열(또는 AWS 태그 배열)을 비교하여 AWS 정책 평가 규칙에 따라 의미상 동등하면 `1`을, 그렇지 않으면 `0`을 반환합니다.  
 
 참고 항목:  
 [__[` SELECT `]__](/language-spec/select) [__[` DESCRIBE `]__](/language-spec/describe) [__[` JSON_EQUAL `]__](/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/language-spec/functions/json/json_extract) [[ 데이터 형식 ]](/language-spec/data-types)

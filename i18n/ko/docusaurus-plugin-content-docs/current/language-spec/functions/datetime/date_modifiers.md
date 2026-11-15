@@ -33,7 +33,7 @@ StackQL의 날짜/시간 함수에서 날짜 또는 시간 값 뒤에는 날짜,
 
 ## 예제 {#examples}
 
-### `now` 한정자를 사용한 현재 날짜 및 시간 반환 {#return-the-current-date-and-time-using-the-now-modifier}
+### `now` 시간 값을 사용한 현재 날짜 및 시간 반환 {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 날짜/시간을 UTC로 변환 {#covert-datetime-to-utc}
+### 날짜/시간을 UTC로 변환 {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Unix 타임스탬프를 날짜/시간으로 변환 {#covert-a-unix-timestamp-to-a-datetime}
+### Unix 타임스탬프를 날짜/시간으로 변환 {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

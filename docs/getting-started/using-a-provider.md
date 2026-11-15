@@ -39,9 +39,9 @@ SHOW PROVIDERS;
 
 ## Authenticating to a Provider {#authenticating-to-a-provider}
 
-Authenticating to a cloud provider is often the first step in an StackQL routine. Meta commands such as [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/language-spec/select), [`INSERT`](/language-spec/insert) and [`EXEC`](/language-spec/exec) commands generally require an authenticated session.  
+Authenticating to a cloud provider is often the first step in a StackQL routine. Meta commands such as [`SHOW`](/language-spec/show) and [`DESCRIBE`](/language-spec/describe) can be run against a provider without authenticating, but [`SELECT`](/language-spec/select), [`INSERT`](/language-spec/insert) and [`EXEC`](/language-spec/exec) commands generally require an authenticated session.  
 
-Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have it's own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  The variables can also be sourced from a dotenv-style file at startup using the [`--env.file`](/command-line-usage/global-flags) global flag.  
+Authentication is performed using environment variables set on the system (or sourced as secrets in a CI system), each provider will have its own default unique variables used for authentication, so consult the documentation for your provider using the [StackQL Provider Registry documentation](/providers).  The variables can also be sourced from a dotenv-style file at startup using the [`--env.file`](/command-line-usage/global-flags) global flag.  
 
 :::tip
 

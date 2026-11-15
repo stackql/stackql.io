@@ -46,10 +46,10 @@ SELECT ATAN2(1, 1) AS arc_tangent_value;
 
 此查询返回 π/4，约为 `0.785`，因为点 (1,1) 的反正切对应第一象限中 π/4 弧度的角度。
 
-### 计算点 (10, -10) 的反正切 {#calculate-the-arc-tangent-of-the-point-10--10}
+### 计算点 (-10, 10) 的反正切 {#calculate-the-arc-tangent-of-the-point--10-10}
 
 ```sql
 SELECT ATAN2(10, -10) AS arc_tangent_value;
 ```
 
-此查询计算点 (10, -10) 的反正切，结果为 3π/4，约为 `2.356`，因为该角度在第二象限中的正切为 -1。
+此查询计算点 (-10, 10)（y = 10，x = -10）的角度，结果为 3π/4，约为 `2.356`：该角度的正切为 -1，且该点位于第二象限。

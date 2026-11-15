@@ -155,7 +155,7 @@ __Step 4:__  Run the query
 If you are satisfied with the results of the dry run, remove the `dryrun` and `output` flags (which are not needed) and run the command, as shown here (note that if you are creating or deploying resources in GCP you will need to supply a valid service account key file or authenticate interactively):
 
 ```bash
-stackql exec --iqldata ./cloud_storage_vars.jsonnet --infile ./deploy_buckets.iql --keyfilepath /mnt/c/tmp/stackql-demo.json
+stackql exec --iqldata ./cloud_storage_vars.jsonnet --infile ./deploy_buckets.iql
 ```
 ## Querying buckets using `SELECT` statements
 
@@ -219,7 +219,7 @@ WHERE bucket = '{{.name}}';
 When you are ready to go you can run this command:  
 
 ```jsx
-stackql exec --iqldata ./cloud_storage_vars.jsonnet --infile ./bucket_cleanup.iql --keyfilepath /mnt/c/tmp/stackql-demo.json
+stackql exec --iqldata ./cloud_storage_vars.jsonnet --infile ./bucket_cleanup.iql
 ```
 
 Now you should see a filtered count return `0` resources as shown here:  

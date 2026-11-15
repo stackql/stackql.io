@@ -54,10 +54,10 @@ __*ROWS BETWEEN frame_start AND frame_end*__
 
 ## 示例 {#examples}
 
-### 获取贡献数第二高的贡献者 {#get-the-second-highest-contributor}
+### 获取前三名贡献者 {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

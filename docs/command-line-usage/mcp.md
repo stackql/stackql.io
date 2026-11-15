@@ -481,7 +481,7 @@ The audit write happens **after** the tool executes (or is gated out) but **befo
 
 #### Disabling audit {#disabling-audit}
 
-To turn audit off entirely (the pre-PR2 behaviour):
+To turn audit off entirely, as in releases before `v0.10.474`, which had no audit:
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ One static prompt is published.
 |`--mcp.protocol.version`|Newest protocol revision advertised: `auto` (default), `2026-07-28` or an older revision such as `2025-11-25`.  See [Pinning the revision](#pinning-the-revision).|
 |`--env.file`|Dotenv-style credentials file sourced at startup and re-sourced on demand by the `reload_credentials` tool.  See [Credential (re)sourcing](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|TCP port for the PostgreSQL wire-protocol server (used with `stackql srv`).|
-|`-H`, `--help`|Print help information.|
+|`-h`, `--help`|Print help information.|
 |`-v`, `--verbose`|Run in verbose mode with additional output.|
 
 &nbsp;

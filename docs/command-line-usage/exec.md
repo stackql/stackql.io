@@ -11,7 +11,7 @@ description: "The stackql exec command runs one StackQL statement or a script of
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to run a StackQL query, either as a statement or as a batch of statements from an StackQL script (IQL File).  
+Command used to run a StackQL query, either as a statement or as a batch of statements from a StackQL script (IQL File).  
 
 * * * 
 
@@ -32,13 +32,13 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 | Flag | Description |
 |--|--|
-|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|Output mode, valid values include: `table`(default) `json`, `jsonl` (newline delimited JSON, `ndjson` is accepted as an alias), `csv`, `text` and `otel` (OpenTelemetry log records, see [Output Modes](/getting-started/output-modes#otel-output)), example: `--output jsonl` |
+|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|Output mode, valid values include: `table` (default), `json`, `jsonl` (newline delimited JSON, `ndjson` is accepted as an alias), `csv`, `text` and `otel` (OpenTelemetry log records, see [Output Modes](/getting-started/output-modes#otel-output)), example: `--output jsonl` |
 |<span class="nowrap">`-i`</span><br/><span class="nowrap">`--infile`</span>|Run query from the specified file if required, if specified any query provided as an argument will be ignored, example: `--infile myquery.iql` |
 |<span class="nowrap">`-q`</span><br/><span class="nowrap">`--iqldata`</span>|Source data for the command using a `json` or `jsonnet` file, example: `--iqldata vars.jsonnet`|
-|<span class="nowrap">`--dryrun`</span>|Dry run flag; preprocessor only will run and output will returned |
+|<span class="nowrap">`--dryrun`</span>|Dry run flag; preprocessor only will run and output will be returned |
 |<span class="nowrap">`--var`</span>|External variables (can be environment vars or secrets) sourced by jsonnet files specified using the `--iqldata` flag, example `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|File to output results to if required (default behavior is to output results to the console only), example `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Print help information|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Print help information|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected this additional logging information will be written to the output file along with the query results|
 <br/>
 <br/>

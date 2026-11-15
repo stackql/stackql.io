@@ -33,7 +33,7 @@ Zéro ou plusieurs modificateurs à appliquer à *datetime_expression*.  Pour pl
 
 ## Valeur(s) renvoyée(s) {#return-values}
 
-Renvoie le [jour julien](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) représentant la composante date de l'entrée *datetime_expression* après application de *modifier*.
+Renvoie le [jour julien](https://en.wikipedia.org/wiki/Julian_day) de l'entrée *datetime_expression* après application de *modifier* : le nombre de jours, y compris la fraction correspondant à l'heure de la journée, écoulés depuis midi à Greenwich le 24 novembre 4714 av. J.-C. dans le [calendrier grégorien proleptique](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar).
 
 * * *
 

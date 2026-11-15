@@ -72,6 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
+
 ### 列から末尾の *n* 文字を返す {#return-the-last-n-characters-from-a-column}
 
 ```sql

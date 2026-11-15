@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: Query and Deploy Azure Cloud Infrastructure and Resources using SQL
+description: "Query Azure Monitor activity logs with StackQL: filter events server-side by time, resource or correlation ID, count them by severity and join them to virtual machines."
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span c
 
 ## Basic query {#basic-query}
 
-The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) resource in the [__`azure`__](https://azure.stackql.io/providers/azure/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
+The basic query shown below uses the [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) resource in the [__`azure`__](https://azure-provider.stackql.io/) provider; substitute the `subscriptionId` with yours.  In this query we will use `jsonnet` with external variables for StackQL query pre-processing, see [Using Variables](/getting-started/variables) for more information.  In this case we have done this as an inline `jsonnet` code block, but this can also be supplied as an external file using either the `--iqldata` or `-q` arguments to `stackql exec` or `stackql shell`.  
 
 The [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) and [__`SPLIT_PART`__](/language-spec/functions/string/split_part) functions are used to manipulate response data.  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Getting activities for a specific resource {#getting-activities-for-a-specific-resource-1}
+### Getting activities for a correlation ID {#getting-activities-for-a-correlation-id}
 
 The correlation ID is a unique identifier used to track and group events related to a particular operation or transaction in Azure. This query helps in pinpointing specific events within a given time frame that are related to a particular operation, making it easier to troubleshoot or understand the sequence of activities.  Here is an example using a `correlationId` captured in the previous query:  
 
@@ -261,7 +261,7 @@ AND caller = 'javen@stackql.io';
 
 ## Running summary/aggregate queries {#running-summaryaggregate-queries}
 
-As StackQL is a complete SQL engine, `GROUP BY`/aggregate queries (including [__`AVG`__](/language-spec/functions/aggregate/avg), [__`COUNT`__](/language-spec/functions/aggregate/count), [__`SUM`__](/language-spec/functions/aggregate/sum), [__`MIN`__](/language-spec/functions/aggregate/min), [__`MAX`__](/language-spec/functions/aggregate/max) and more are natively available for all providers, services and resources.
+As StackQL is a complete SQL engine, `GROUP BY`/aggregate queries (including [__`AVG`__](/language-spec/functions/aggregate/avg), [__`COUNT`__](/language-spec/functions/aggregate/count), [__`SUM`__](/language-spec/functions/aggregate/sum), [__`MIN`__](/language-spec/functions/aggregate/min), [__`MAX`__](/language-spec/functions/aggregate/max) and more) are natively available for all providers, services and resources.
 
 ### Count events by severity level {#count-events-by-severity-level}
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`WHERE` parameters in a `JOIN` query which are not disambiguated, such as `subscriptionId` in the above case are shared by both resources (`azure.monitor.activity_logs` and `azure.compute.virtual_machines` in this case).
+`WHERE` parameters in a `JOIN` query which are not disambiguated, such as `subscription_id` in the above case are shared by both resources (`azure.monitor.activity_logs` and `azure.compute.virtual_machines` in this case).
 
 :::

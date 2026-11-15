@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: SQL を使用した Azure クラウドインフラストラクチャとリソースのクエリとデプロイ
+description: "StackQL による Azure Monitor アクティビティログのクエリ：時間、リソース、相関 ID によるサーバー側のフィルタリング、重大度別の集計、仮想マシンとの結合。"
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 
 ## 基本的なクエリ {#basic-query}
 
-次の基本的なクエリでは、[__`azure`__](https://azure.stackql.io/providers/azure/) プロバイダーの [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) リソースを使用します。`subscriptionId` は実際の値に置き換えてください。このクエリでは、StackQL クエリの前処理に外部変数付きの `jsonnet` を使用します。詳細については、[変数の使用](/getting-started/variables)を参照してください。ここではインラインの `jsonnet` コードブロックとして記述していますが、`stackql exec` または `stackql shell` の `--iqldata` 引数または `-q` 引数を使用して、外部ファイルとして指定することもできます。  
+次の基本的なクエリでは、[__`azure`__](https://azure-provider.stackql.io/) プロバイダーの [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) リソースを使用します。`subscriptionId` は実際の値に置き換えてください。このクエリでは、StackQL クエリの前処理に外部変数付きの `jsonnet` を使用します。詳細については、[変数の使用](/getting-started/variables)を参照してください。ここではインラインの `jsonnet` コードブロックとして記述していますが、`stackql exec` または `stackql shell` の `--iqldata` 引数または `-q` 引数を使用して、外部ファイルとして指定することもできます。  
 
 レスポンスデータの加工には、[__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) 関数と [__`SPLIT_PART`__](/language-spec/functions/string/split_part) 関数を使用します。  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### 特定のリソースのアクティビティを取得する {#getting-activities-for-a-specific-resource-1}
+### 相関 ID のアクティビティを取得する {#getting-activities-for-a-correlation-id}
 
 相関 ID は、Azure で特定の操作やトランザクションに関連するイベントを追跡し、グループ化するための一意の識別子です。このクエリを使用すると、指定した期間内で特定の操作に関連するイベントを特定できるため、トラブルシューティングやアクティビティの順序の把握が容易になります。前のクエリで取得した `correlationId` を使用した例を次に示します。  
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`JOIN` クエリ内で曖昧さが解消されていない `WHERE` パラメーター（上記の例の `subscriptionId` など）は、両方のリソース（この例では `azure.monitor.activity_logs` と `azure.compute.virtual_machines`）で共有されます。
+`JOIN` クエリ内で曖昧さが解消されていない `WHERE` パラメーター（上記の例の `subscription_id` など）は、両方のリソース（この例では `azure.monitor.activity_logs` と `azure.compute.virtual_machines`）で共有されます。
 
 :::

@@ -38,7 +38,7 @@ Befehl zum Ausführen einer StackQL-Abfrage, entweder als einzelne Anweisung ode
 |<span class="nowrap">`--dryrun`</span>|Dry-Run-Flag; nur der Präprozessor wird ausgeführt und die Ausgabe wird zurückgegeben |
 |<span class="nowrap">`--var`</span>|Externe Variablen (können Umgebungsvariablen oder Secrets sein), die von den mit dem Flag `--iqldata` angegebenen jsonnet-Dateien eingelesen werden, Beispiel `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|Datei, in die die Ergebnisse bei Bedarf geschrieben werden (standardmäßig werden die Ergebnisse nur auf der Konsole ausgegeben), Beispiel `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Hilfeinformationen ausgeben|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Hilfeinformationen ausgeben|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Führt Abfragen im ausführlichen Modus mit zusätzlicher Ausgabe auf stdout aus; ist die Option `-f` gewählt, werden diese zusätzlichen Protokollinformationen zusammen mit den Abfrageergebnissen in die Ausgabedatei geschrieben|
 <br/>
 <br/>

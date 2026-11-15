@@ -18,7 +18,7 @@ StackQL data types are used to represent values for input or output fields (prop
 | `string` | sequence of Unicode characters enclosed by single quotes | `'mybucket'` |
 | `array` | ordered collection of values, surrounded by brackets `[ ]`, separated by a comma | `[0,1,2]` |
 | `object` | unordered set of zero or more name/value pairs inserted between `{ }` and separated by a comma | `{"name": "mydb"}` |
-| `boolean` | `true` or `false`, boolean values are not surrounded within quotes and will be treated as string values | `true` |
+| `boolean` | `true` or `false`, not enclosed in quotes (a quoted value such as `'true'` is treated as a string) | `true` |
 | `integer` | a whole number that can be positive, negative, or zero | `2` |
 | `double` | double-precision floating-point number, can be positive or negative | `0.95` |
 <br/>

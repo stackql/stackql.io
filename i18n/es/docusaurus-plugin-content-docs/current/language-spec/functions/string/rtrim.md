@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventario de nube
-description: "Función RTRIM en StackQL: eliminar los espacios en blanco, o un conjunto de caracteres dado, del lado derecho de una cadena."
+description: "Función RTRIM en StackQL: eliminar los espacios, o cualquiera de un conjunto de caracteres dado, del lado derecho de una cadena."
 image: "/img/stackql-featured-image.png"
 ---
-Devuelve una cadena formada al eliminar los espacios en blanco o los caracteres indicados que aparecen en el lado derecho de una cadena de entrada.  
+Devuelve una cadena formada al eliminar los espacios, o cualquiera de un conjunto de caracteres dado, del lado derecho de una cadena de entrada.  
 
 Consulte también:  
 [[` SELECT `]](/language-spec/select) [[` LTRIM `]](/language-spec/functions/string/ltrim) [[` TRIM `]](/language-spec/functions/string/trim) 
@@ -29,7 +29,7 @@ __*character_expression*__
 Una cadena literal o una columna de cadena.
 
 __*character*__  
-Un carácter opcional que se elimina si se encuentra al final de *character_expression*.
+Una cadena de caracteres opcional: cada uno de sus caracteres se elimina del final de *character_expression*.  Si se omite, se eliminan los espacios (no las tabulaciones ni los saltos de línea).
 
 ## Valor(es) devuelto(s) {#return-values}
 Devuelve una cadena.
@@ -38,7 +38,7 @@ Devuelve una cadena.
 
 ## Ejemplos {#examples}
 
-### Eliminar los espacios en blanco finales de una columna de cadena {#remove-trailing-whitespace-from-a-string-column}
+### Eliminar los espacios finales de una columna de cadena {#remove-trailing-spaces-from-a-string-column}
 
 ```sql
 SELECT rtrim(description) AS trailing_whitespace_removed

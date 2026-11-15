@@ -81,7 +81,7 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'es', 'fr', 'ja', 'ko', 'zh-Hans'],
+  locales: ['en', 'de', 'es', 'fr', 'ja', 'ko', 'pt-BR', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
@@ -89,14 +89,16 @@ const i18nConfig = {
     fr: { label: 'Français', htmlLang: 'fr' },
     ja: { label: '日本語', htmlLang: 'ja' },
     ko: { label: '한국어', htmlLang: 'ko' },
-    // The URL path is lower case on purpose. Netlify answers a page URL that
-    // has upper-case letters with a 301 to its lower-case form, so with the
-    // default /zh-Hans/ every canonical, hreflang and sitemap URL of the
-    // locale was a redirect, and the page then ran at /zh-hans/ with a
-    // baseUrl of /zh-Hans/: the language switcher strips the baseUrl from
-    // the path case-sensitively and linked to //zh-hans/, which a browser
-    // reads as a host name (November 2026). The locale code, the i18n/
-    // directory and the lang attribute stay zh-Hans.
+    // The URL paths of pt-BR and zh-Hans are lower case on purpose. Netlify
+    // answers a page URL that has upper-case letters with a 301 to its
+    // lower-case form, so with the default /zh-Hans/ every canonical,
+    // hreflang and sitemap URL of the locale was a redirect, and the page
+    // then ran at /zh-hans/ with a baseUrl of /zh-Hans/: the language
+    // switcher strips the baseUrl from the path case-sensitively and linked
+    // to //zh-hans/, which a browser reads as a host name (November 2026).
+    // The locale code, the i18n/ directory and the lang attribute keep their
+    // case (pt-BR, zh-Hans).
+    'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
   },
 };

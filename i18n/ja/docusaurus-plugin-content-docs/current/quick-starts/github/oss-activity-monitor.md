@@ -41,7 +41,7 @@ image: "/img/tutorials/github/stackql-github-provider-featured-image.png"
 
 ## 仕組み {#how-it-works}
 
-このプロジェクトはコンテナー（`docker` またはその他のコンテナーデプロイプラットフォームを使用）にデプロイされます。`python` と [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) パッケージで構築されており、`stackql` の [`github`](https://github.stackql.io/providers/github/) プロバイダーと [`homebrew`](https://homebrew.stackql.io/providers/homebrew) プロバイダーを使用します。マテリアライズドビューと `SELECT` 文を使用して、監視対象の GitHub と Homebrew のエンドポイントについて、現在と前回のメトリクスの状態を取得して比較します。これを次の図に示します。  
+このプロジェクトはコンテナー（`docker` またはその他のコンテナーデプロイプラットフォームを使用）にデプロイされます。`python` と [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) パッケージで構築されており、`stackql` の [`github`](https://github-provider.stackql.io/) プロバイダーと [`homebrew`](https://homebrew-provider.stackql.io/) プロバイダーを使用します。マテリアライズドビューと `SELECT` 文を使用して、監視対象の GitHub と Homebrew のエンドポイントについて、現在と前回のメトリクスの状態を取得して比較します。これを次の図に示します。  
 
 ```mermaid
 graph TB

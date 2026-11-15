@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## 引数 {#arguments}
 
 __*source*__  
-正規表現（`pattern`）で定義したパターンに基づいて部分文字列を抽出する、文字列リテラルまたは文字列型の列です。  
+正規表現 `pattern` に一致する部分を `replacement` で置換する対象の、文字列リテラルまたは文字列型の列です。  
 
 __*pattern*__  
 検索する正規表現パターンです。  

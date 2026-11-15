@@ -12,7 +12,7 @@ keywords:
 description: SQL を使って、2 つの AWS IAM ポリシードキュメントまたは AWS タグ配列が意味的に等価かどうかを比較します。
 image: "/img/stackql-featured-image.png"
 ---
-2 つの AWS IAM ポリシーの JSON 文字列（または AWS タグ配列）を比較し、AWS のポリシー評価ルールに従って意味的に等価であれば `true` を、そうでなければ `false` を返します。  
+2 つの AWS IAM ポリシーの JSON 文字列（または AWS タグ配列）を比較し、AWS のポリシー評価ルールに従って意味的に等価であれば `1` を、そうでなければ `0` を返します。  
 
 関連項目：  
 [__[` SELECT `]__](/language-spec/select) [__[` DESCRIBE `]__](/language-spec/describe) [__[` JSON_EQUAL `]__](/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/language-spec/functions/json/json_extract) [[ データ型 ]](/language-spec/data-types)

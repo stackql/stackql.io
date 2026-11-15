@@ -36,7 +36,7 @@ SELECT MIN(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>
 __*columnExpression*__  
 Una columna o expresión, incluidos operadores (`+`, `-`, ...).
 
-> La función `MIN` devuelve el menor valor de la columna indicada según el tipo de datos de la columna; por ejemplo, una operación `MIN` sobre una columna de enteros devuelve el menor entero de esa columna o agrupación de columnas, mientras que una operación `MIN` sobre una columna o agrupación de columnas de cadenas devuelve el menor valor ASCII (generalmente el primer valor al ordenar en orden lexicográfico inverso, con algunas diferencias).
+> La función `MIN` devuelve el menor valor de la columna indicada según el tipo de datos de la columna; por ejemplo, una operación `MIN` sobre una columna de enteros devuelve el menor entero de esa columna o agrupación de columnas, mientras que una operación `MIN` sobre una columna o agrupación de columnas de cadenas devuelve el valor que queda en primer lugar al ordenar, comparando las cadenas con la función de intercalación `BINARY` (byte a byte, por lo que las letras mayúsculas se ordenan antes que las minúsculas).
 
 __*groupByColumn*__  
 Una o varias columnas sobre las que se realizan operaciones de resumen o de agregación.  La cláusula `GROUP BY` devuelve una fila por cada agrupación de columnas.

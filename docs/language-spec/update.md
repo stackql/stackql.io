@@ -41,19 +41,17 @@ SET field_name = value [, field_name = value ...]
 ## Examples {#examples}
 
 ### Basic `UPDATE` statement {#basic-update-statement}
-Run an `UPDATE` statement to modify a Compute Engine Disk resource's size.
+Run an `UPDATE` statement to set the labels on a Google Cloud Storage bucket.
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-UPDATE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Set the labels on a Google Cloud Storage bucket
+UPDATE google.storage.buckets
+SET data__labels = '{"env": "prod", "team": "platform"}'
+WHERE bucket = 'stackql-demo-bucket';
 ```
 
 ### `UPDATE` statement (blocking) {#update-statement-blocking}
-Run an `UPDATE` statement to modify a Compute Engine Disk resource's size. This is a blocking (synchronous) invocation.
+Run an `UPDATE` statement to modify a Compute Engine firewall rule. This is a blocking (synchronous) invocation.
 
 ```sql
 -- Synchronous update of a google firewall 
@@ -64,26 +62,19 @@ SET
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### `UPDATE` statement with JSON modification {#update-statement-with-json-modification}
-Run an `UPDATE` statement to modify a resource using JSON manipulation.
+### `UPDATE` statement with JSON functions {#update-statement-with-json-functions}
+Run an `UPDATE` statement whose value is built with JSON functions. A function that reads no columns is evaluated before the request is sent. A `SET` value cannot read the row being updated, so to change part of an existing value, read it with a `SELECT` first and set the modified value.
 
 ```sql
--- Update an Azure Network Interface's properties
-UPDATE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
+-- Set the protocols and ports a firewall rule allows
+UPDATE google.compute.firewalls
+SET data__allowed = json_array(
+  json_object('IPProtocol', 'tcp', 'ports', json_array('22', '443')),
+  json_object('IPProtocol', 'icmp')
 )
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+WHERE firewall = 'test-fw'
+AND project = 'stackql-demo';
 ```

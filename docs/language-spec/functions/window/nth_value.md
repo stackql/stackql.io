@@ -54,10 +54,10 @@ Returns the value of the expression evaluated against the Nth row in the window 
 
 ## Examples {#examples}
 
-### Get the second-highest contributor {#get-the-second-highest-contributor}
+### Get the top three contributors {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

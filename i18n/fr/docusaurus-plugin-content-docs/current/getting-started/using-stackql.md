@@ -43,7 +43,7 @@ Vous pouvez changer le jeu de couleurs du shell StackQL avec l'option `--colorsc
 Les valeurs par défaut des options de commande StackQL, comme le format de sortie et le jeu de couleurs évoqués précédemment, peuvent être définies dans le fichier d'initialisation `stackqlrc`. Si ce fichier existe dans le répertoire courant utilisé par l'exécutable StackQL, il est chargé automatiquement ; il peut aussi être désigné avec l'option `--configfile`, comme illustré ci-dessous :
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 Pour plus d'informations sur les options de commande, consultez la rubrique Options globales.
@@ -58,15 +58,15 @@ Voici un exemple de script Windows PowerShell contenant une commande StackQL :
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ Les fichiers d'entrée StackQL permettent d'exécuter plusieurs commandes termin
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

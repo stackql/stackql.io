@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 
 ## Overview {#overview}
 
-The date or time values datetime functions in StackQL can be followed by zero or more modifiers that alter the date and/or time. Each modifier is a transformation that is applied to the time value to its left. Modifiers are applied in order from left to right. The available modifiers are as follows:
+In StackQL datetime functions, a date or time value can be followed by zero or more modifiers that alter the date and/or time. Each modifier is a transformation that is applied to the time value to its left. Modifiers are applied in order from left to right. The available modifiers are as follows:
 
 | Modifier             | Description                                                           |
 |----------------------|-----------------------------------------------------------------------|
@@ -33,7 +33,7 @@ The date or time values datetime functions in StackQL can be followed by zero or
 
 ## Examples {#examples}
 
-### Return the current date and time using the `now` modifier {#return-the-current-date-and-time-using-the-now-modifier}
+### Return the current date and time using the `now` time value {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert datetime to UTC {#covert-datetime-to-utc}
+### Convert datetime to UTC {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Covert a Unix timestamp to a datetime {#covert-a-unix-timestamp-to-a-datetime}
+### Convert a Unix timestamp to a datetime {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts
@@ -89,6 +89,6 @@ FROM google.storage.buckets WHERE project = 'stackql';
 
 :::tip 
 
-To covert a datetime to a Unix epoch timestamp see [**STRFTIME**](/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/language-spec/functions/datetime/julianday).
+To convert a datetime to a Unix epoch timestamp see [**STRFTIME**](/language-spec/functions/datetime/strftime).  To calculate differences between two datetime objects see [**STRFTIME**](/language-spec/functions/datetime/strftime) or [**JULIANDAY**](/language-spec/functions/datetime/julianday).
 
 :::

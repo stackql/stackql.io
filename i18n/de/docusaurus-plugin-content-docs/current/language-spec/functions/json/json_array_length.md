@@ -19,7 +19,7 @@ Siehe auch:
 
 :::tip 
 
-Verwenden Sie die Funktion [**DESCRIBE**](/language-spec/describe), um die Datentypen `array` oder `object` zu finden, die mit den JSON-Funktionen von StackQL verwendet werden können. Verwenden Sie die Funktion [**JSON_TYPE**](/language-spec/functions/json/json_type), um die Datentypen verschachtelter Objekte oder Array-Elemente zu ermitteln.
+Verwenden Sie die Anweisung [**DESCRIBE**](/language-spec/describe), um die Datentypen `array` oder `object` zu finden, die mit den JSON-Funktionen von StackQL verwendet werden können. Verwenden Sie die Funktion [**JSON_TYPE**](/language-spec/functions/json/json_type), um die Datentypen verschachtelter Objekte oder Array-Elemente zu ermitteln.
 
 :::
 

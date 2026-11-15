@@ -35,13 +35,6 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
-
 :::note
 
 リソースまたはサービスの名前にピリオド（`.`）が含まれる場合は、バッククォート記号（__`__）でリソース名を囲みます。例を次に示します。

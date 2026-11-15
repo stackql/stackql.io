@@ -19,13 +19,13 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-使用 [**DESCRIBE**](/language-spec/describe) 函数查找可与 StackQL JSON 函数配合使用的 `array` 或 `object` 数据类型。
+使用 [**DESCRIBE**](/language-spec/describe) 语句查找可与 StackQL JSON 函数配合使用的 `array` 或 `object` 数据类型。
 
 :::
 
 :::note 
 
-搭配 `postgres` SQL 后端使用 stackql 时，`json_object` 函数实现为 `jsonb_build_object`。
+搭配 `postgres` SQL 后端使用 stackql 时，请使用 `jsonb_build_object` 代替 `json_object`：StackQL 会将 `json_object` 原样传递给 PostgreSQL，而 PostgreSQL 中的同名函数以文本数组的形式接收键和值。
 
 :::
 
@@ -51,7 +51,7 @@ JSON 对象中与标签对应的值。
 
 ## 示例 {#examples}
 
-### 返回嵌套在 JSON 对象或数组中的字段的数据类型 {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
+### 从列构建 JSON 对象数组 {#build-an-array-of-json-objects-from-a-column}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: Azure-Cloud-Infrastruktur und -Ressourcen mit SQL abfragen und bereitstellen
+description: "Azure Monitor-Aktivitätsprotokolle mit StackQL abfragen: Ereignisse serverseitig nach Zeit, Ressource oder Korrelations-ID filtern, nach Schweregrad zählen und mit virtuellen Maschinen verknüpfen."
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ Getestet mit <span class="tutorial_tested_on">eingebettetes SQL-Backend</span> <
 
 ## Einfache Abfrage {#basic-query}
 
-Die unten gezeigte einfache Abfrage verwendet die Ressource [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) im Provider [__`azure`__](https://azure.stackql.io/providers/azure/); ersetzen Sie die `subscriptionId` durch Ihre eigene.  In dieser Abfrage verwenden wir `jsonnet` mit externen Variablen für die Vorverarbeitung der StackQL-Abfrage, weitere Informationen finden Sie unter [Variablen verwenden](/getting-started/variables).  In diesem Fall haben wir dies als Inline-`jsonnet`-Codeblock umgesetzt, es kann aber auch als externe Datei über die Argumente `--iqldata` oder `-q` an `stackql exec` oder `stackql shell` übergeben werden.  
+Die unten gezeigte einfache Abfrage verwendet die Ressource [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) im Provider [__`azure`__](https://azure-provider.stackql.io/); ersetzen Sie die `subscriptionId` durch Ihre eigene.  In dieser Abfrage verwenden wir `jsonnet` mit externen Variablen für die Vorverarbeitung der StackQL-Abfrage, weitere Informationen finden Sie unter [Variablen verwenden](/getting-started/variables).  In diesem Fall haben wir dies als Inline-`jsonnet`-Codeblock umgesetzt, es kann aber auch als externe Datei über die Argumente `--iqldata` oder `-q` an `stackql exec` oder `stackql shell` übergeben werden.  
 
 Die Funktionen [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) und [__`SPLIT_PART`__](/language-spec/functions/string/split_part) werden verwendet, um die Antwortdaten aufzubereiten.  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Aktivitäten für eine bestimmte Ressource abrufen {#getting-activities-for-a-specific-resource-1}
+### Aktivitäten für eine Korrelations-ID abrufen {#getting-activities-for-a-correlation-id}
 
 Die Korrelations-ID ist ein eindeutiger Bezeichner, mit dem Ereignisse, die zu einer bestimmten Operation oder Transaktion in Azure gehören, nachverfolgt und gruppiert werden. Diese Abfrage hilft dabei, bestimmte Ereignisse innerhalb eines Zeitraums zu finden, die zu einer bestimmten Operation gehören, was die Fehlersuche und das Nachvollziehen der Abfolge von Aktivitäten erleichtert.  Hier ein Beispiel mit einer `correlationId`, die in der vorherigen Abfrage erfasst wurde:  
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`WHERE`-Parameter in einer `JOIN`-Abfrage, die nicht eindeutig zugeordnet sind, wie `subscriptionId` im obigen Fall, gelten für beide Ressourcen (in diesem Fall `azure.monitor.activity_logs` und `azure.compute.virtual_machines`).
+`WHERE`-Parameter in einer `JOIN`-Abfrage, die nicht eindeutig zugeordnet sind, wie `subscription_id` im obigen Fall, gelten für beide Ressourcen (in diesem Fall `azure.monitor.activity_logs` und `azure.compute.virtual_machines`).
 
 :::

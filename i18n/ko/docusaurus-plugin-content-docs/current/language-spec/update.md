@@ -41,19 +41,17 @@ SET field_name = value [, field_name = value ...]
 ## 예제 {#examples}
 
 ### 기본 `UPDATE` 문 {#basic-update-statement}
-`UPDATE` 문을 실행하여 Compute Engine Disk 리소스의 크기를 수정합니다.
+`UPDATE` 문을 실행하여 Google Cloud Storage 버킷의 레이블을 설정합니다.
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-UPDATE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Set the labels on a Google Cloud Storage bucket
+UPDATE google.storage.buckets
+SET data__labels = '{"env": "prod", "team": "platform"}'
+WHERE bucket = 'stackql-demo-bucket';
 ```
 
 ### `UPDATE` 문(블로킹) {#update-statement-blocking}
-`UPDATE` 문을 실행하여 Compute Engine Disk 리소스의 크기를 수정합니다. 이는 블로킹(동기) 호출입니다.
+`UPDATE` 문을 실행하여 Compute Engine 방화벽 규칙을 수정합니다. 이는 블로킹(동기) 호출입니다.
 
 ```sql
 -- Synchronous update of a google firewall 
@@ -64,26 +62,19 @@ SET
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### JSON 수정을 사용하는 `UPDATE` 문 {#update-statement-with-json-modification}
-`UPDATE` 문을 실행하여 JSON 조작으로 리소스를 수정합니다.
+### JSON 함수를 사용하는 `UPDATE` 문 {#update-statement-with-json-functions}
+JSON 함수로 값을 구성하는 `UPDATE` 문을 실행합니다. 열을 읽지 않는 함수는 요청을 보내기 전에 평가됩니다. `SET` 값은 업데이트 대상 행을 읽을 수 없으므로, 기존 값의 일부를 변경하려면 먼저 `SELECT` 문으로 값을 읽은 다음 수정한 값을 설정하세요.
 
 ```sql
--- Update an Azure Network Interface's properties
-UPDATE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
+-- Set the protocols and ports a firewall rule allows
+UPDATE google.compute.firewalls
+SET data__allowed = json_array(
+  json_object('IPProtocol', 'tcp', 'ports', json_array('22', '443')),
+  json_object('IPProtocol', 'icmp')
 )
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+WHERE firewall = 'test-fw'
+AND project = 'stackql-demo';
 ```

@@ -54,10 +54,10 @@ Gibt den Wert des Ausdrucks zurück, der für die N-te Zeile im Fensterrahmen au
 
 ## Beispiele {#examples}
 
-### Den zweitplatzierten Mitwirkenden ermitteln {#get-the-second-highest-contributor}
+### Die drei Mitwirkenden mit den meisten Beiträgen ermitteln {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

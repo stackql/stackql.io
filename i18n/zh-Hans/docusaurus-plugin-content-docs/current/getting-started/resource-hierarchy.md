@@ -35,13 +35,6 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
-
 :::note
 
 如果资源或服务的名称中包含句点（`.`），请使用反引号（__`__）将资源名称括起来，例如：

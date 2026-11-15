@@ -12,7 +12,7 @@ keywords:
 description: Compare two AWS IAM policy documents or AWS tags arrays for semantic equivalence using SQL.
 image: "/img/stackql-featured-image.png"
 ---
-Compares two AWS IAM policy JSON strings (or AWS tags arrays) and returns `true` if they are semantically equivalent according to AWS policy evaluation rules, `false` otherwise.  
+Compares two AWS IAM policy JSON strings (or AWS tags arrays) and returns `1` if they are semantically equivalent according to AWS policy evaluation rules, `0` otherwise.  
 
 See also:  
 [__[` SELECT `]__](/language-spec/select) [__[` DESCRIBE `]__](/language-spec/describe) [__[` JSON_EQUAL `]__](/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)

@@ -29,7 +29,7 @@ SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 ## 参数 {#arguments}
 
 __*columnExpression*__  
-列或表达式。如果指定 __*__，则统计资源或分组中的所有记录。  
+列或表达式。  
 
 > *columnExpression* 中必须至少有一个值不为 `NULL`，否则返回 `NULL`。
 

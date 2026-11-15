@@ -1,5 +1,5 @@
 ---
-title: Resource Heirarchy
+title: Resource Hierarchy
 hide_title: false
 hide_table_of_contents: false
 keywords:
@@ -22,18 +22,11 @@ Objects in StackQL are represented in the following hierarchy, with an example u
 <ImageSwitcher 
 lightImageSrc="/img/resource-heirarchy.png"
 darkImageSrc="/img/resource-heirarchy-darkbg.png"
-alttext="StackQL Resource Heirarchy"/>
+alttext="StackQL Resource Hierarchy"/>
 
 ### Using the StackQL Object Notation {#using-the-stackql-object-notation}
 
 This hierarchy is expressed in the object notation `<provider>.<service>.<resource>` within the context of a given provider, an example of this object notation used in a [`SELECT`](/language-spec/select) statement is shown here:  
-
-```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
-SELECT * FROM google.compute.instances
-WHERE project = 'stackql-demo'
-AND zone = 'australia-southeast1-a';
-```
 
 ```sql
 -- Selecting all resources deployed within a service using a basic SELECT statement

@@ -41,7 +41,7 @@ Das Projekt [__oss-activity-monitor__](https://github.com/stackql/oss-activity-m
 
 ## Funktionsweise {#how-it-works}
 
-Das Projekt wird in einem Container bereitgestellt (mit `docker` oder einer anderen Container-Plattform), es ist mit `python` und dem Paket [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) gebaut und verwendet die Provider [`github`](https://github.stackql.io/providers/github/) und [`homebrew`](https://homebrew.stackql.io/providers/homebrew) für `stackql`.  Materialized Views und `SELECT`-Anweisungen werden verwendet, um den Zustand der aktuellen und der vorherigen Metriken der überwachten GitHub- und Homebrew-Endpunkte zu erfassen und zu vergleichen, wie im folgenden Diagramm beschrieben:  
+Das Projekt wird in einem Container bereitgestellt (mit `docker` oder einer anderen Container-Plattform), es ist mit `python` und dem Paket [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) gebaut und verwendet die Provider [`github`](https://github-provider.stackql.io/) und [`homebrew`](https://homebrew-provider.stackql.io/) für `stackql`.  Materialized Views und `SELECT`-Anweisungen werden verwendet, um den Zustand der aktuellen und der vorherigen Metriken der überwachten GitHub- und Homebrew-Endpunkte zu erfassen und zu vergleichen, wie im folgenden Diagramm beschrieben:  
 
 ```mermaid
 graph TB
@@ -117,7 +117,7 @@ docker build --no-cache -t oss-activity-monitor .
 docker run --env-file .env oss-activity-monitor
 ```
 
-das war's!  Sie erhalten jetzt Echtzeit-Benachrichtigungen, sobald es Aktivität in Ihrem Open-Source-Projekt gibt.  Um den Container zu stoppen, verwenden Sie:  
+Das war's!  Sie erhalten jetzt Echtzeit-Benachrichtigungen, sobald es Aktivität in Ihrem Open-Source-Projekt gibt.  Um den Container zu stoppen, verwenden Sie:  
 
 ```bash
 docker stop $(docker ps -a -q --filter ancestor=oss-activity-monitor)

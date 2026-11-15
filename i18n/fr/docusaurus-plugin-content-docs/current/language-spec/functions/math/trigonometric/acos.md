@@ -41,7 +41,7 @@ Renvoie l'arc cosinus de la valeur spécifiée, en radians.
 SELECT ACOS(0.5) AS arc_cosine_value;
 ```
 
-Cette requête renvoie environ `1.047`, car l'arc cosinus de 0.5 vaut π/3, soit environ 1.047 radian.
+Cette requête renvoie environ `1.047`, car l'arc cosinus de 0.5 vaut π/3 radian (60 degrés), soit environ 1.047 radian.
 
 ### Calculer l'arc cosinus de 1 {#calculate-the-arc-cosine-of-1}
 

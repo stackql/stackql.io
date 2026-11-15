@@ -45,7 +45,7 @@ Die obige Abfrage besteht tatsächlich aus 17 parallel ausgeführten Abfragen (e
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html), installierbar mit `pip install pystackql`
 - Ein AWS-Benutzer oder eine Rolle (kann mit `sts assume-role` angenommen werden) mit zugewiesener Richtlinie `ReadOnlyAccess` oder weitergehenden Berechtigungen
-- Gesetzte Umgebungsvariablen `AWS_ACCESS_KEY_ID` und `AWS_SECRET_ACCESS_KEY` (dies kann automatisch über [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) erfolgen)
+- Gesetzte Umgebungsvariablen `AWS_ACCESS_KEY_ID` und `AWS_SECRET_ACCESS_KEY` (dies kann automatisch über [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) erfolgen)
 
 ## Der Code {#the-code}
 

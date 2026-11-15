@@ -108,6 +108,20 @@
     X-Robots-Tag = "index, follow"
 
 [[headers]]
+  for = "/pt-br/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/pt-br/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
   for = "/zh-hans/llms.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
@@ -236,6 +250,11 @@
 [[redirects]]
   from = "/ko/*"
   to = "/ko/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/pt-br/*"
+  to = "/pt-br/404.html"
   status = 404
 
 [[redirects]]

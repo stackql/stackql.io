@@ -45,7 +45,7 @@ GROUP BY region;
 
 - `pip install pystackql` でインストールできる [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)
 - `ReadOnlyAccess` ポリシー以上がアタッチされた AWS ユーザーまたはロール（ロールは `sts assume-role` で引き受け可能）
-- `AWS_ACCESS_KEY_ID` および `AWS_SECRET_ACCESS_KEY` 環境変数の設定（[AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) を使用すると自動的に設定可能）
+- `AWS_ACCESS_KEY_ID` および `AWS_SECRET_ACCESS_KEY` 環境変数の設定（[AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) を使用すると自動的に設定可能）
 
 ## コード {#the-code}
 
@@ -54,7 +54,7 @@ GROUP BY region;
 1. すべての AWS リージョンのリスト（`regions`）と、サービスごとにサポートされるリージョンのリスト（`supported_regions`）を定義する（`supported_regions` の導出方法の詳細は [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f) を参照）
 2. [`aws`](https://aws-provider.stackql.io/) および [`awscc`](https://awscc-provider.stackql.io/) StackQL プロバイダーがまだインストールされていない場合は、それらをプルする。
 3. 各サービスを反復処理し（[`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider) を使用）、サービスごとに各リソースを反復処理する（[`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service) を使用）
-4. すべてのリージョンにわたる各リソースのすべてのインスタンスを非同期に [`SELECT`](/language-spec/select) し、データをリージョンごとにグループ化して、リージョンごとに各リソースのインスタンス数をカウントする
+4. すべてのリージョンにわたる各リソースのすべてのインスタンスを非同期に取得し（[`SELECT`](/language-spec/select) を使用）、データをリージョンごとにグループ化して、リージョンごとに各リソースのインスタンス数をカウントする
 
 コードは次のとおりです。
 

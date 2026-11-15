@@ -36,7 +36,7 @@ __*numeric_expression*__
 
 ## 예제 {#examples}
 
-### Google Cloud Storage 버킷 생성 이후 경과 일수를 소수점 이하 2자리로 절사 {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### Google Cloud Storage 버킷 생성 이후 경과 일수를 정수 일 단위로 절사 {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

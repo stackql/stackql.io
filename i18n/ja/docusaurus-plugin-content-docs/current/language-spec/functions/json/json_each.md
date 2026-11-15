@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 関数を使用すると、`json_each` 関数で使用できる `array` データ型を確認できます。
+[**DESCRIBE**](/language-spec/describe) 文を使用すると、`json_each` 関数で使用できる `array` データ型を確認できます。
 
 :::
 
@@ -43,9 +43,9 @@ JSON 配列またはオブジェクト。
 __*json_path*__  
 *json_array_or_object* に含まれる配列またはオブジェクトへの JSON パス。[jsonpath.com](https://jsonpath.com/) を参照してください。
 
-> *json_path* が *json_array_or_object* に存在しない場合、関数は `NULL` を返します。
+> *json_path* が *json_array_or_object* に存在しない場合、関数は行を返しません。
 
-> いずれかの引数が整形式でない場合、`json_type()` 関数はエラーを発生させます。
+> *json_array_or_object* が整形式の JSON でない場合、`json_each()` 関数はエラーを発生させます。
 
 ## 戻り値 {#return-values}
 配列要素またはオブジェクトメンバーごとに 1 行を含むテーブル。

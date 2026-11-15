@@ -15,7 +15,7 @@ See also:
 
 Variables can be supplied in the form of configuration data to StackQL scripts.  StackQL configuration data can be in the form of json or [jsonnet](https://jsonnet.org/ "Jsonnet").
 
-Jsonnet provides additional features such as conditional logic, imports and inheritence, as well as loop structures.
+Jsonnet provides additional features such as conditional logic, imports and inheritance, as well as loop structures.
 
 Data can be provided through `json` or `jsonnet` files referenced through the `--iqldata` parameter of the `stackql exec` command or can be included in an `iql` script using the following `<<<` and `>>>` decorators as shown here:
 
@@ -29,12 +29,12 @@ Data can be provided through `json` or `jsonnet` files referenced through the `-
 ```
 
 ## Jsonnet Configuration Example {#jsonnet-configuration-example}
-The following example demonstrates the use of Jsonnet to supply configuration data to an StackQL script.  Data is supplied using the `--iqldata` parameter to the `exec` command as shown below:
+The following example demonstrates the use of Jsonnet to supply configuration data to a StackQL script.  Data is supplied using the `--iqldata` parameter to the `exec` command as shown below:
 
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Jsonnet Data {#jsonnet-data}
@@ -74,8 +74,8 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### Referencing Jsonnet Data in an StackQL statement {#referencing-jsonnet-data-in-an-stackql-statement}
-The following code snippet demonstrates how to reference jsonnet values from an StackQL command.
+### Referencing Jsonnet Data in a StackQL statement {#referencing-jsonnet-data-in-a-stackql-statement}
+The following code snippet demonstrates how to reference jsonnet values from a StackQL command.
 
 ```sql
 --
@@ -149,12 +149,12 @@ local project = std.extVar("project");
 ```
 
 ## Json Configuration Example {#json-configuration-example}
-Simple json can also be used to supply configuration data to an StackQL script as shown below:
+Simple json can also be used to supply configuration data to a StackQL script as shown below:
 
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Json Data {#json-data}
@@ -183,8 +183,8 @@ The following json data would be in the contents of the `vars.json` file referen
 }
 ```
 
-### Referencing Json Data in an StackQL statement {#referencing-json-data-in-an-stackql-statement}
-The data shown above would be referenced in an StackQL `INSERT` statement as shown here:
+### Referencing Json Data in a StackQL statement {#referencing-json-data-in-a-stackql-statement}
+The data shown above would be referenced in a StackQL `INSERT` statement as shown here:
 
 ```sql
 INSERT /*+ AWAIT  */ INTO google.compute.firewalls
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ You can use the `--dryrun` option to output a preprocessed StackQL script using 
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```
