@@ -1,0 +1,50 @@
+{
+  "link.title.StackQL": {
+    "message": "StackQL",
+    "description": "The title of the footer links column with title=StackQL in the footer"
+  },
+  "link.title.More": {
+    "message": "더 보기",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Documentation": {
+    "message": "문서",
+    "description": "The label of footer link with label=Documentation linking to /"
+  },
+  "link.item.label.Install": {
+    "message": "설치",
+    "description": "The label of footer link with label=Install linking to /installing-stackql"
+  },
+  "link.item.label.Contact us": {
+    "message": "문의하기",
+    "description": "The label of footer link with label=Contact us linking to /contact-us"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "개인정보 처리방침",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
+  },
+  "link.item.label.Terms of Service": {
+    "message": "서비스 약관",
+    "description": "The label of footer link with label=Terms of Service linking to /terms"
+  },
+  "link.item.label.Support": {
+    "message": "지원",
+    "description": "The label of footer link with label=Support linking to /support"
+  },
+  "link.item.label.Providers": {
+    "message": "프로바이더",
+    "description": "The label of footer link with label=Providers linking to /providers"
+  },
+  "link.item.label.Blog": {
+    "message": "블로그",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Quick Starts": {
+    "message": "빠른 시작",
+    "description": "The label of footer link with label=Quick Starts linking to /quick-starts"
+  },
+  "link.item.label.AI Reference": {
+    "message": "AI 참조",
+    "description": "The label of footer link with label=AI Reference linking to /ai"
+  }
+}

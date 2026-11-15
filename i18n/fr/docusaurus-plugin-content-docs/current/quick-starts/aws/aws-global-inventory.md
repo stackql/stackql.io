@@ -52,7 +52,7 @@ La requête ci-dessus correspond en réalité à 17 requêtes exécutées en par
 Le code suivant effectue les actions suivantes :
 
 1. Définit une liste de toutes les régions AWS (`regions`) et une liste des régions prises en charge pour chaque service (`supported_regions`) ; pour plus d'informations sur la façon d'obtenir `supported_regions`, consultez [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. Télécharge les providers StackQL [`aws`](https://aws.stackql.io/providers/aws/) et [`aws`](https://aws.stackql.io/providers/aws/) s'ils ne sont pas déjà installés.
+2. Télécharge les providers StackQL [`aws`](https://aws-provider.stackql.io/) et [`awscc`](https://awscc-provider.stackql.io/) s'ils ne sont pas déjà installés.
 3. Parcourt chaque service (avec [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)), puis, pour chaque service, parcourt chaque ressource (avec [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
 4. Sélectionne avec [`SELECT`](/language-spec/select) toutes les instances de chaque ressource dans toutes les régions de manière asynchrone, regroupe les données par région et compte les instances de chaque ressource pour chaque région
 

@@ -52,7 +52,7 @@ GROUP BY region;
 以下代码执行如下操作：
 
 1. 定义所有 AWS 区域的列表（`regions`）以及每个服务所支持区域的列表（`supported_regions`），有关如何得出 `supported_regions` 的更多信息，请参阅 [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. 拉取 [`aws`](https://aws.stackql.io/providers/aws/) 和 [`aws`](https://aws.stackql.io/providers/aws/) StackQL Provider（如果尚未安装）。
+2. 拉取 [`aws`](https://aws-provider.stackql.io/) 和 [`awscc`](https://awscc-provider.stackql.io/) StackQL Provider（如果尚未安装）。
 3. 遍历每个服务（使用 [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)），然后针对每个服务遍历每个资源（使用 [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service)）
 4. 使用 [`SELECT`](/language-spec/select) 异步查询所有区域中每个资源的全部实例，按区域对数据分组，并统计每个区域中每个资源的实例数量
 

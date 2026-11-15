@@ -1,7 +1,7 @@
 // Copy of theme-classic's NavbarItem/LocaleDropdownNavbarItem (Docusaurus
-// 3.10) with one addition: every locale is shown with a flag and its short
-// code (flags.js) next to its name, and the button shows the current
-// locale's flag and code rather than the globe icon. Switching locale links
+// 3.10) with one addition: every locale is shown with a flag and its
+// language code (flags.js) next to its name, and the button shows the
+// current locale's flag and code rather than the globe icon. Switching locale links
 // to the same page in the other locale, as in theme-classic. Keep the rest
 // in step with theme-classic when Docusaurus is upgraded.
 import React from 'react';
@@ -68,7 +68,7 @@ function useLocaleDropdownUtils() {
   };
 }
 
-// Flag (or a code badge when there is no flag) and the short code.
+// Flag (or a code badge when there is no flag) and the language code.
 function FlagAndCode({locale}) {
   const code = codeFor(locale);
   const flag = <Flag locale={locale} className={styles.flag} />;

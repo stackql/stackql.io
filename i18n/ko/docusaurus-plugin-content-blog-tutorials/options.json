@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "튜토리얼",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "SQL을 사용한 클라우드 운영, 보안 및 자동화를 위한 실용적인 단계별 안내",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "모든 튜토리얼",
+    "description": "The label for the left sidebar"
+  }
+}

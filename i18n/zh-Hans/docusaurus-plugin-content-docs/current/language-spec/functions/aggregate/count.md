@@ -42,7 +42,7 @@ __*groupByColumn*__
 
 ## 示例 {#examples}
 
-### 返回列表达式在整个资源上的平均值 {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### 返回整个资源的行数 {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### 返回按另一个列表达式分组的列表达式的平均值 {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### 返回按列表达式分组的行数 {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

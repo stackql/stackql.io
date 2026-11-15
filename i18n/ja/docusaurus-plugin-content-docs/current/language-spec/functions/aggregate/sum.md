@@ -37,7 +37,7 @@ __*columnExpression*__
 
 > *columnExpression* のすべての値が `NULL` の場合、`SUM` は `NULL` を返します。  
 
-> 計算中のいずれかの時点で整数オーバーフローが発生すると、`SUM` は「integer overflow」例外を発生させます。[`TOTAL`]](/language-spec/functions/aggregate/total) 関数が整数オーバーフローを発生させることはありません。  
+> 計算中のいずれかの時点で整数オーバーフローが発生すると、`SUM` は「integer overflow」例外を発生させます。[`TOTAL`](/language-spec/functions/aggregate/total) 関数が整数オーバーフローを発生させることはありません。  
 
 __*groupByColumn*__  
 要約操作または集約操作の対象となる 1 つ以上の列。`GROUP BY` 句は、列のグループごとに 1 行を返します。

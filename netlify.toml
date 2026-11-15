@@ -94,6 +94,20 @@
     X-Robots-Tag = "index, follow"
 
 [[headers]]
+  for = "/ko/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/ko/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
   for = "/zh-hans/llms.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
@@ -220,6 +234,11 @@
   status = 404
 
 [[redirects]]
+  from = "/ko/*"
+  to = "/ko/404.html"
+  status = 404
+
+[[redirects]]
   from = "/zh-hans/*"
   to = "/zh-hans/404.html"
   status = 404
@@ -305,6 +324,11 @@
 [[redirects]]
   from = "/providers/linode"
   to = "https://linode-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/providers/ovh"
+  to = "https://ovh-provider.stackql.io/"
   status = 301
 
 [[redirects]]
@@ -525,6 +549,11 @@
 [[redirects]]
   from = "/registry/linode"
   to = "https://linode-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/ovh"
+  to = "https://ovh-provider.stackql.io/"
   status = 301
 
 [[redirects]]

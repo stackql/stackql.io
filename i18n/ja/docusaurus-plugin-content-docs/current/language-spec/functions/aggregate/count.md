@@ -42,7 +42,7 @@ __*groupByColumn*__
 
 ## 例 {#examples}
 
-### リソース全体で列式の平均を返す {#return-the-average-of-a-column-expression-over-an-entire-resource}
+### リソース全体の行数を返す {#return-the-number-of-rows-in-an-entire-resource}
 
 ```sql
 SELECT count(*) as num_instances
@@ -51,7 +51,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### 別の列式でグループ化した列式の平均を返す {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
+### 列式でグループ化した行数を返す {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
 SELECT tags, count(*) as num_instances

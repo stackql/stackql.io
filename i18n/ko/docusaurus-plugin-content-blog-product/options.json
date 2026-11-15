@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "제품 공지",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "StackQL의 새로운 릴리스, 기능 및 역량",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "모든 제품 공지",
+    "description": "The label for the left sidebar"
+  }
+}

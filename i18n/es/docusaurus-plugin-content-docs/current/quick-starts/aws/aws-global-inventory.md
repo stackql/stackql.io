@@ -52,7 +52,7 @@ La consulta anterior es en realidad 17 consultas ejecutadas en paralelo (una con
 El siguiente código realiza estas acciones:
 
 1. Define una lista de todas las regiones de AWS (`regions`) y una lista de las regiones admitidas por cada servicio (`supported_regions`); encontrará más información sobre cómo obtener `supported_regions` en [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. Descarga los providers de StackQL [`aws`](https://aws.stackql.io/providers/aws/) y [`aws`](https://aws.stackql.io/providers/aws/) si aún no están instalados.
+2. Descarga los providers de StackQL [`aws`](https://aws-provider.stackql.io/) y [`awscc`](https://awscc-provider.stackql.io/) si aún no están instalados.
 3. Recorre cada servicio (con [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)) y, para cada servicio, recorre cada recurso (con [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
 4. Selecciona con [`SELECT`](/language-spec/select) todas las instancias de cada recurso en todas las regiones de forma asíncrona, agrupa los datos por región y cuenta las instancias de cada recurso en cada región
 

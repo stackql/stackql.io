@@ -52,7 +52,7 @@ The above query is actually 17 queries run in parallel (one query for each regio
 The following code performs the following actions:
 
 1. Defines a list of all AWS regions (`regions`) and a list of regions supported for each service (`supported_regions`), more info on deriving `supported_regions` can be found at [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
-2. Pulls the [`aws`](https://aws.stackql.io/providers/aws/) and [`aws`](https://aws.stackql.io/providers/aws/) StackQL providers if they're not already installed.
+2. Pulls the [`aws`](https://aws-provider.stackql.io/) and [`awscc`](https://awscc-provider.stackql.io/) StackQL providers if they're not already installed.
 3. Iterates through each service (using [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)), then for each service iterates through each resource (using [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
 4. [`SELECT`](/language-spec/select)'s all instances of each resource across all regions asynchronously, groups the data by region and counts the instance of each resource for each region
 

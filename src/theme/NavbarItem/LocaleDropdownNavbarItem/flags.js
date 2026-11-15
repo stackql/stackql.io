@@ -1,26 +1,19 @@
-// Flags and short codes for the locale dropdown
+// Flags and language codes for the locale dropdown
 // (src/theme/NavbarItem/LocaleDropdownNavbarItem). Hand-rolled inline SVGs,
 // 4:3 like the flag-icons set, so no icon library and no emoji (Windows
 // renders flag emoji as letters). A locale with no flag here shows its code
-// in a small badge instead. Add an entry when a locale is added to
-// i18nConfig in docusaurus.config.js.
+// in a small badge instead. Add a flag when a locale is added to i18nConfig
+// in docusaurus.config.js.
 import React from 'react';
 
-// The code shown next to the flag. Not the BCP 47 tag: the short form a
-// reader expects to see in a language switcher.
-export const CODES = {
-  en: 'EN',
-  de: 'DE',
-  es: 'ES',
-  fr: 'FR',
-  'zh-Hans': 'CN',
-  ja: 'JP',
-  ko: 'KR',
-  pl: 'PL',
-};
-
+// The code shown next to the flag: the language subtag of the locale in
+// upper case (en -> EN, ja -> JA, ko -> KO, zh-Hans -> ZH), never a country
+// code. The flag already stands for a country, and the regional flag
+// variants (src/lib/regionalFlags.js) can change it, while the language
+// stays the same. If two locales ever share a language (zh-Hans and
+// zh-Hant), give them distinct codes here.
 export function codeFor(locale) {
-  return CODES[locale] || locale.split('-')[0].toUpperCase();
+  return locale.split('-')[0].toUpperCase();
 }
 
 // A five-pointed star as SVG polygon points.
@@ -32,6 +25,25 @@ function star(cx, cy, r, rotation = -90) {
     points.push(`${(cx + radius * Math.cos(angle)).toFixed(1)},${(cy + radius * Math.sin(angle)).toFixed(1)}`);
   }
   return points.join(' ');
+}
+
+// South Korea: the angle of this 4:3 box's diagonals, on which the taeguk's
+// axis and the four trigrams sit (the flag itself is 3:2; flag-icons fits it
+// to 4:3 the same way).
+const KR_DIAGONAL = ((Math.atan2(3, 4) * 180) / Math.PI).toFixed(2);
+
+// One trigram as a path, pointing along +x: three bars from the inside out,
+// `true` for a solid bar and `false` for a broken one. Official proportions
+// for a 480-unit height: bars 120 long and 20 thick with 10 between them,
+// the inner bar 180 from the centre (a quarter of the taeguk's diameter
+// outside its edge).
+function trigram(bars) {
+  return bars
+    .map((solid, i) => {
+      const x = 180 + i * 30;
+      return solid ? `M${x} -60h20v120h-20z` : `M${x} -60h20v55h-20zM${x} 5h20v55h-20z`;
+    })
+    .join('');
 }
 
 const svgProps = (className) => ({
@@ -106,6 +118,24 @@ const FLAGS = {
     <svg {...svgProps(className)}>
       <path fill="#fff" d="M0 0h640v480H0z" />
       <circle cx="320" cy="240" r="144" fill="#bc002d" />
+    </svg>
+  ),
+  // Taeguk: red above the top-left to bottom-right diagonal, blue below,
+  // the diameter half the height. Trigrams: geon (three solid) top left,
+  // gam top right, ri bottom left, gon (three broken) bottom right.
+  ko: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#fff" d="M0 0h640v480H0z" />
+      <g transform={`translate(320 240) rotate(${KR_DIAGONAL})`}>
+        <circle r="120" fill="#0047a0" />
+        <path fill="#cd2e3a" d="M-120 0A120 120 0 0 1 120 0A60 60 0 0 0 0 0A60 60 0 0 1-120 0z" />
+      </g>
+      <g fill="#000" transform="translate(320 240)">
+        <path transform={`rotate(${180 + Number(KR_DIAGONAL)})`} d={trigram([true, true, true])} />
+        <path transform={`rotate(${-KR_DIAGONAL})`} d={trigram([false, true, false])} />
+        <path transform={`rotate(${180 - KR_DIAGONAL})`} d={trigram([true, false, true])} />
+        <path transform={`rotate(${KR_DIAGONAL})`} d={trigram([false, false, false])} />
+      </g>
     </svg>
   ),
   pl: (className) => (
