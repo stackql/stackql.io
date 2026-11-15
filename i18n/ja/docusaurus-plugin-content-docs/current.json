@@ -1,0 +1,154 @@
+{
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "はじめに",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "はじめに",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "基本概念と最初のステップ：リソース階層、StackQL の使用、プロバイダーの使用、出力モード、変数、セッション変数、プロバイダーセッション、テンプレート機能",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage": {
+    "message": "コマンドラインの使用方法",
+    "description": "The label for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.title": {
+    "message": "コマンドラインの使用方法",
+    "description": "The generated-index page title for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.description": {
+    "message": "stackql コマンドライン：exec、shell、srv、mcp、registry、グローバルフラグ、アクセス管理",
+    "description": "The generated-index page description for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.MCP": {
+    "message": "MCP",
+    "description": "The label for category 'MCP' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedded": {
+    "message": "組み込み",
+    "description": "The label for category 'Embedded' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Language Specification": {
+    "message": "言語仕様",
+    "description": "The label for category 'Language Specification' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Built-in Functions": {
+    "message": "組み込み関数",
+    "description": "The label for category 'Built-in Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Aggregate": {
+    "message": "集約",
+    "description": "The label for category 'Aggregate' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Datetime": {
+    "message": "日付と時刻",
+    "description": "The label for category 'Datetime' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.General": {
+    "message": "一般",
+    "description": "The label for category 'General' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Hash": {
+    "message": "ハッシュ",
+    "description": "The label for category 'Hash' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Json": {
+    "message": "JSON",
+    "description": "The label for category 'Json' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Math": {
+    "message": "数学",
+    "description": "The label for category 'Math' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Logarithmic Functions": {
+    "message": "対数関数",
+    "description": "The label for category 'Logarithmic Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Trigonometric Functions": {
+    "message": "三角関数",
+    "description": "The label for category 'Trigonometric Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Regular Expressions": {
+    "message": "正規表現",
+    "description": "The label for category 'Regular Expressions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Session": {
+    "message": "セッション",
+    "description": "The label for category 'Session' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.String": {
+    "message": "文字列",
+    "description": "The label for category 'String' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Window": {
+    "message": "ウィンドウ関数",
+    "description": "The label for category 'Window' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Developers": {
+    "message": "開発者向け",
+    "description": "The label for category 'Developers' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts": {
+    "message": "クイックスタート",
+    "description": "The label for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.title": {
+    "message": "クイックスタート",
+    "description": "The generated-index page title for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.description": {
+    "message": "StackQL のクイックスタート、ハウツー、実践的な例とユースケース",
+    "description": "The generated-index page description for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.title": {
+    "message": "AWS クイックスタート",
+    "description": "The generated-index page title for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.description": {
+    "message": "AWS に特化した実践的な例とユースケース",
+    "description": "The generated-index page description for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure": {
+    "message": "Microsoft Azure",
+    "description": "The label for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.title": {
+    "message": "Azure クイックスタート",
+    "description": "The generated-index page title for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.description": {
+    "message": "Azure に特化した実践的な例とユースケース",
+    "description": "The generated-index page description for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform": {
+    "message": "Google Cloud Platform",
+    "description": "The label for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.title": {
+    "message": "Google クイックスタート",
+    "description": "The generated-index page title for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.description": {
+    "message": "Google Cloud に特化した実践的な例とユースケース",
+    "description": "The generated-index page description for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.title": {
+    "message": "GitHub クイックスタート",
+    "description": "The generated-index page title for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.description": {
+    "message": "GitHub に特化した実践的な例とユースケース",
+    "description": "The generated-index page description for category 'GitHub' in sidebar 'docsSidebar'"
+  }
+}

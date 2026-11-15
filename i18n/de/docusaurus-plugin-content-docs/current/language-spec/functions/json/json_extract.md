@@ -51,6 +51,7 @@ Der JSON-Pfad zu einem Array oder Objekt, das in *json_array_or_object* enthalte
 
 > Die Angabe von `'$'` als Argument *json_path* gibt das gesamte JSON-Objekt zurück, das der durch das Argument *json_array_or_object* dargestellten Spalte entspricht.
 
+> HINWEIS: Sie können Tools wie [`json-viewer`](https://aarrange.com/json-viewer) verwenden, um JSON-Path-Ausdrücke zu entwickeln und zu testen
 
 ## Rückgabewert(e) {#return-values}
 Eine Zeichenkette, eine Ganzzahl, ein Objekt, ein Array, ein boolescher Wert oder null, abhängig von den als Eingabe übergebenen *json_array_or_object* und *json_path*.

@@ -51,6 +51,7 @@ __*json_path*__
 
 > 将 *json_path* 参数指定为 `'$'` 时，将返回 *json_array_or_object* 参数所表示的列对应的整个 JSON 对象。
 
+> 注意：您可以使用 [`json-viewer`](https://aarrange.com/json-viewer) 等工具来编写和测试 JSON Path 表达式
 
 ## 返回值 {#return-values}
 字符串、整数、对象、数组、布尔值或 null，取决于作为输入提供的 *json_array_or_object* 和 *json_path*。

@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "インストール",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "AI エージェント",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "プロバイダー",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "ブログ",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "MCP サーバー",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "MCP ツール",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "組み込み MCP",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "製品のお知らせ",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "プロバイダーのお知らせ",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "チュートリアル",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "クイックスタート",
+    "description": "Navbar item with label Quick Starts"
+  }
+}

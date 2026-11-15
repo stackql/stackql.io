@@ -81,12 +81,13 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'es', 'fr', 'zh-Hans'],
+  locales: ['en', 'de', 'es', 'fr', 'ja', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
     es: { label: 'Español', htmlLang: 'es' },
     fr: { label: 'Français', htmlLang: 'fr' },
+    ja: { label: '日本語', htmlLang: 'ja' },
     // The URL path is lower case on purpose. Netlify answers a page URL that
     // has upper-case letters with a 301 to its lower-case form, so with the
     // default /zh-Hans/ every canonical, hreflang and sitemap URL of the

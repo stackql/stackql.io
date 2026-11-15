@@ -197,8 +197,9 @@ const nodesOfType = (nodes, type) => nodes.filter((n) => typesOf(n).includes(typ
 
 // --------------------------------------------------------- text and urls
 
+// Han ideographs (U+3400-U+9FFF) and Japanese kana (U+3040-U+30FF).
 function cjkCount(text) {
-  const m = text.match(/[㐀-鿿]/g);
+  const m = text.match(/[぀-ヿ㐀-鿿]/g);
   return m ? m.length : 0;
 }
 function cjkRatio(text) {
