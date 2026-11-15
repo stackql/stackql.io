@@ -1,26 +1,19 @@
-// Flags and short codes for the locale dropdown
+// Flags and language codes for the locale dropdown
 // (src/theme/NavbarItem/LocaleDropdownNavbarItem). Hand-rolled inline SVGs,
 // 4:3 like the flag-icons set, so no icon library and no emoji (Windows
 // renders flag emoji as letters). A locale with no flag here shows its code
-// in a small badge instead. Add an entry when a locale is added to
-// i18nConfig in docusaurus.config.js.
+// in a small badge instead. Add a flag when a locale is added to i18nConfig
+// in docusaurus.config.js.
 import React from 'react';
 
-// The code shown next to the flag. Not the BCP 47 tag: the short form a
-// reader expects to see in a language switcher.
-export const CODES = {
-  en: 'EN',
-  de: 'DE',
-  es: 'ES',
-  fr: 'FR',
-  'zh-Hans': 'CN',
-  ja: 'JP',
-  ko: 'KR',
-  pl: 'PL',
-};
-
+// The code shown next to the flag: the language subtag of the locale in
+// upper case (en -> EN, ja -> JA, ko -> KO, zh-Hans -> ZH), never a country
+// code. The flag already stands for a country, and the regional flag
+// variants (src/lib/regionalFlags.js) can change it, while the language
+// stays the same. If two locales ever share a language (zh-Hans and
+// zh-Hant), give them distinct codes here.
 export function codeFor(locale) {
-  return CODES[locale] || locale.split('-')[0].toUpperCase();
+  return locale.split('-')[0].toUpperCase();
 }
 
 // A five-pointed star as SVG polygon points.

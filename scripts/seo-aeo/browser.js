@@ -149,19 +149,30 @@ async function switcher(ctx) {
           r.fail(`${tag} does not load in a browser: ${opened.error}`);
           continue;
         }
-        const linksJson = await browser.evaluate(
-          "JSON.stringify([...document.querySelectorAll('.navbar__items--right a.dropdown__link[lang]')].map((a) => ({ lang: a.lang, href: a.href })))",
-        );
-        const links = JSON.parse(linksJson);
+        // The code next to each flag is the span that follows it.
+        const linksJson = await browser.evaluate(`JSON.stringify((() => {
+          const codeIn = (el) => ((el && el.querySelector('svg[data-flag-locale] + span')) || {}).textContent || null;
+          return {
+            button: codeIn(document.querySelector('.navbar__items--right .dropdown > .navbar__link:has(svg[data-flag-locale])')),
+            links: [...document.querySelectorAll('.navbar__items--right a.dropdown__link[lang]')].map((a) => ({ lang: a.lang, href: a.href, code: codeIn(a) })),
+          };
+        })())`);
+        const { button, links } = JSON.parse(linksJson);
         const wrong = [];
+        const codes = [];
         for (const other of all) {
           const link = links.find((x) => x.lang === cfg.locales[other].htmlLang);
           const want = address(other, page);
           if (!link) wrong.push(`no ${other} link`);
-          else if (!same(link.href, want)) wrong.push(`${other} link is ${link.href}, expected ${want}`);
+          else {
+            if (!same(link.href, want)) wrong.push(`${other} link is ${link.href}, expected ${want}`);
+            if (link.code !== cfg.locales[other].code) codes.push(`${other} entry shows ${link.code}, expected ${cfg.locales[other].code}`);
+          }
         }
+        if (button !== cfg.locales[l].code) codes.push(`the button shows ${button}, expected ${cfg.locales[l].code}`);
         const at = same(opened.href, address(l, page)) ? '' : ` (the browser ended on ${opened.href})`;
         r.check(wrong.length === 0, `${tag}: after hydration the language switcher links to this page in ${all.join(', ')}`, `${wrong.join('; ')}${at}`);
+        r.check(codes.length === 0, `${tag}: the language switcher shows ${cfg.locales[l].code} and the codes ${all.map((x) => cfg.locales[x].code).join(', ')}`, codes.join('; '));
       }
     }
     // Walk through the switcher the way a visitor does: every ordered pair.
