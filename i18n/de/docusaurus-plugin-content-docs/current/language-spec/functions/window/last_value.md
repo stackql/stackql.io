@@ -42,8 +42,10 @@ Legt die Reihenfolge fest, in der die Zeilen verarbeitet werden.
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 Optional. Definiert den Fensterrahmen. Gängige Optionen sind:
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (Standard)
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+Ohne Rahmenklausel ist der Fensterrahmen `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`: Er endet bei der letzten Zeile, die in den `ORDER BY`-Spalten mit der aktuellen Zeile gleichrangig ist, nicht bei der aktuellen Zeile.
 
 ## Rückgabewert(e) {#return-values}
 

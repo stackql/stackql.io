@@ -39,6 +39,6 @@ Gibt die größte Ganzzahl zurück, die kleiner oder gleich dem angegebenen nume
 
 ```sql
 SELECT name, timeCreated,
-floor(julianday('now')-julianday(timeCreated)) as days_since_ceiling
+floor(julianday('now')-julianday(timeCreated)) as days_since_floor
 FROM google.storage.buckets WHERE project = 'stackql';
 ```

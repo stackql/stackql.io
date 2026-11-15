@@ -34,7 +34,7 @@ Jsonnet には、条件ロジック、インポート、継承に加えて、ル
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Jsonnet データ {#jsonnet-data}
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### StackQL 文での Jsonnet データの参照 {#referencing-jsonnet-data-in-an-stackql-statement}
+### StackQL 文での Jsonnet データの参照 {#referencing-jsonnet-data-in-a-stackql-statement}
 次のコードスニペットは、StackQL コマンドから jsonnet の値を参照する方法を示しています。
 
 ```sql
@@ -154,7 +154,7 @@ local project = std.extVar("project");
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Json データ {#json-data}
@@ -183,7 +183,7 @@ stackql exec -i myscript.iql \
 }
 ```
 
-### StackQL 文での Json データの参照 {#referencing-json-data-in-an-stackql-statement}
+### StackQL 文での Json データの参照 {#referencing-json-data-in-a-stackql-statement}
 上記のデータは、次のように StackQL の `INSERT` 文で参照します。
 
 ```sql
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ SELECT
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```

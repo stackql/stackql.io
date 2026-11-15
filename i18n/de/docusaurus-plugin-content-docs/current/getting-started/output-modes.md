@@ -22,7 +22,7 @@ Ergebnisse können mit dem Wert `table` für den Parameter `--output` wie unten 
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output table
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output table
 
 |---------------------|-----------------|
 |         ID          |      NAME       |
@@ -42,7 +42,7 @@ Ergebnisse können mit dem Wert `json` für den Parameter `--output` wie unten g
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output json
 
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
@@ -57,7 +57,7 @@ Ergebnisse können mit dem Wert `jsonl` für den Parameter `--output` wie unten 
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output jsonl
 
 {"id":"5584456226809282885","name":"demo-instance-3"}
 {"id":"1257085253691867467","name":"demo-instance-1"}
@@ -72,7 +72,7 @@ Ergebnisse können mit dem Wert `csv` für den Parameter `--output` wie unten ge
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv
 
 id,name
 1257085253691867467,demo-instance-1
@@ -87,7 +87,7 @@ Für das Ausgabeformat `csv` kann mit dem Schalter `-d` wie unten gezeigt ein al
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv -d "|"
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv -d "|"
 
 id|name
 1257085253691867467|demo-instance-1
@@ -102,7 +102,7 @@ Ergebnisse können mit dem Wert `otel` für den Parameter `--output` als OpenTel
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 Ein Zeilen-Record, formatiert ausgegeben (die Datei enthält jeden Record in einer Zeile):
@@ -172,7 +172,7 @@ TRACEPARENT=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 #### Versand der Records {#shipping-the-records}
@@ -202,8 +202,8 @@ Die Records können zusätzlich zum Schreiben in die Datei oder nach stdout dire
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }'
 ```
 
 | Schlüssel | Zweck |

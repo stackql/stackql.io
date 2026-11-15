@@ -42,8 +42,10 @@ Especifica el orden en que se procesan las filas.
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 Opcional. Define el marco de ventana. Las opciones habituales incluyen:
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (valor predeterminado)
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+Sin una cláusula de marco, el marco es `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`: termina en la última fila empatada con la fila actual en las columnas de `ORDER BY`, no en la fila actual.
 
 ## Valor(es) devuelto(s) {#return-values}
 

@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の LTRIM 関数：文字列の左側から空白文字、または指定した文字の集合を削除します。"
+description: "StackQL の LTRIM 関数：文字列の左側からスペース、または指定した文字の集合に含まれる文字を削除します。"
 image: "/img/stackql-featured-image.png"
 ---
-入力文字列の左側から、空白文字または指定した文字を削除した文字列を返します。  
+入力文字列の左側から、スペース、または指定した文字の集合に含まれる文字を削除した文字列を返します。  
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) [[` RTRIM `]](/language-spec/functions/string/rtrim) [[` TRIM `]](/language-spec/functions/string/trim) 
@@ -29,7 +29,7 @@ __*character_expression*__
 文字列リテラルまたは文字列型の列です。
 
 __*character*__  
-省略可能な引数で、*character_expression* の先頭にある場合に削除する文字です。
+省略可能な文字列です。この文字列に含まれるすべての文字が *character_expression* の先頭から削除されます。省略した場合はスペースが削除されます（タブや改行は削除されません）。
 
 ## 戻り値 {#return-values}
 文字列を返します。
@@ -38,7 +38,7 @@ __*character*__
 
 ## 例 {#examples}
 
-### 文字列型の列から先頭の空白文字を削除する {#remove-leading-whitespace-from-a-string-column}
+### 文字列型の列から先頭のスペースを削除する {#remove-leading-spaces-from-a-string-column}
 
 ```sql
 SELECT ltrim(description) AS leading_whitespace_removed

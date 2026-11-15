@@ -15,7 +15,7 @@ image: "/img/stackql-featured-image.png"
 
 :::info
 
-仅限 `SELECT`，且只能有一条语句，包含多条语句的负载会被拒绝，并返回 `validate_select_query accepts exactly one statement`。
+仅限 `SELECT`，且只能有一条语句：包含多条语句的负载会被拒绝，并返回 `validate_select_query accepts exactly one statement`。
 
 :::
 

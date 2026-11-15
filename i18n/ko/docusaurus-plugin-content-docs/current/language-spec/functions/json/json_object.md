@@ -19,13 +19,13 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 함수를 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다.
+[**DESCRIBE**](/language-spec/describe) 문을 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다.
 
 :::
 
 :::note 
 
-`postgres` SQL 백엔드와 함께 stackql을 사용하는 경우 `json_object` 함수는 `jsonb_build_object` 함수로 구현됩니다.
+`postgres` SQL 백엔드와 함께 stackql을 사용하는 경우 `json_object` 함수 대신 `jsonb_build_object` 함수를 사용하세요. StackQL은 `json_object` 함수를 변경 없이 PostgreSQL에 전달하며, 같은 이름의 PostgreSQL 함수는 키와 값을 텍스트 배열로 받습니다.
 
 :::
 
@@ -51,7 +51,7 @@ JSON 객체의 레이블에 해당하는 값입니다.
 
 ## 예제 {#examples}
 
-### JSON 객체 또는 배열 안에 중첩된 필드의 데이터 형식 반환 {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
+### 열에서 JSON 객체 배열 생성 {#build-an-array-of-json-objects-from-a-column}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

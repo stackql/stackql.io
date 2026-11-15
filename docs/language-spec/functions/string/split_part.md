@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Splits source string based upon a seperator and returns the given part (counting from one).  
+Splits source string based upon a separator and returns the given part (counting from one).  
 
 See also:  
 [[` SELECT `]](/language-spec/select) 
@@ -49,7 +49,7 @@ Returns a string.
 
 ## Examples {#examples}
 
-### Extract elements from a string seperated by a forward slash {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### Extract elements from a string separated by a forward slash {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

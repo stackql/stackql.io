@@ -34,7 +34,7 @@ El siguiente ejemplo muestra el uso de Jsonnet para suministrar datos de configu
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Datos de Jsonnet {#jsonnet-data}
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### Hacer referencia a datos de Jsonnet en una instrucción de StackQL {#referencing-jsonnet-data-in-an-stackql-statement}
+### Hacer referencia a datos de Jsonnet en una instrucción de StackQL {#referencing-jsonnet-data-in-a-stackql-statement}
 El siguiente fragmento de código muestra cómo hacer referencia a valores de jsonnet desde un comando de StackQL.
 
 ```sql
@@ -154,7 +154,7 @@ También se puede usar json simple para suministrar datos de configuración a un
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Datos JSON {#json-data}
@@ -183,7 +183,7 @@ Los siguientes datos json serían el contenido del archivo `vars.json` al que ha
 }
 ```
 
-### Hacer referencia a datos JSON en una instrucción de StackQL {#referencing-json-data-in-an-stackql-statement}
+### Hacer referencia a datos JSON en una instrucción de StackQL {#referencing-json-data-in-a-stackql-statement}
 Los datos anteriores se referenciarían en una instrucción `INSERT` de StackQL como se muestra aquí:
 
 ```sql
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ Puede usar la opción `--dryrun` para obtener un script de StackQL preprocesado 
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```

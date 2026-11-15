@@ -71,7 +71,7 @@ services/
 - __サービスドキュメント__：標準的な OpenAPI 3 ドキュメントです。必須の追加は `components.x-stackQL-resources` だけで、テーブルとして公開するリソースを宣言します。
 - __リソース__：`id`、`name`、`methods`、`sqlVerbs`。各リソースは 1 つのテーブルです。その列は、プライマリの `select` メソッドのレスポンススキーマから得られます。
 - __メソッド__：`paths` 内を指す JSON ポインターである `operation`（たとえば `$ref: '#/paths/~1orgs~1{org}~1repos/get'`）、行の場所をエンジンに伝える `response` ブロック（`mediaType`、`openAPIDocKey`、`objectKey`）、省略可能な `request` ブロックと `config`。
-- __SQL 動詞のマッピング__：`sqlVerbs.select`、`insert`、`update`、`replace`、`delete` は、メソッド参照の順序付きリストです。参照は記述された順に試され、必須パラメーターが `WHERE` 句で満たされる最初の参照が選ばれます。そのため、`list` は `get` より前に記述します。どの動詞リストからも参照されていないメソッドは、`EXEC` で呼び出せます。
+- __SQL 動詞のマッピング__：`sqlVerbs.select`、`insert`、`update`、`replace`、`delete` は、メソッド参照の順序付きリストです。StackQL は、参照されているメソッドのうち必須パラメーターがすべて `WHERE` 句で指定されているものを候補とし、リストの順序にかかわらず、必須パラメーターが最も多いメソッドを選びます。`get` が必要とする識別子を指定したクエリは `get` にルーティングされ、指定しないクエリは `list` にルーティングされます。必須パラメーターの数が同じ 2 つのメソッドは、一方が選ばれるのではなく、エラーとして報告されます。どの動詞リストからも参照されていないメソッドは、`EXEC` で呼び出せます。
 
 最小限のリソースは次のようになります。
 
@@ -275,7 +275,7 @@ REGISTRY PULL myprovider;
 1. [stackql-provider-registry](https://github.com/stackql/stackql-provider-registry) をフォークし、機能ブランチで、生成された `provider-dev/openapi/src/<name>` ディレクトリを `providers/src/<name>` にコピーします。
 2. プロバイダーと変更内容の説明を添えて、`dev` ブランチに対するプルリクエストを作成します（レジストリの[コントリビューションガイド](https://github.com/stackql/stackql-provider-registry/blob/main/.github/CONTRIBUTING.md)を参照）。
 3. GitHub Actions が [stackql-provider-tests](https://github.com/stackql/stackql-provider-tests) を使用してプロバイダーを検証、テストします。評価されるルールは、ドキュメントが有効な OpenAPI 仕様であること、すべてのサービスでリソースを列挙できること、すべてのリソースでメソッドを列挙できること、`SELECT` で呼び出せるメソッドに有効なレスポンススキーマがあること、`INSERT` で呼び出せるメソッドに有効なリクエストスキーマがあることです。
-4. マージされると、ワークフローがバージョンを割り当て、ドキュメントに署名し（Ed25519）、パッケージ化して、アーティファクトを AWS S3 のアーカイブに公開します。続いて、ドキュメントツリーが Cloudflare R2 にミラーリングされ、`registry-dev.stackql.app` を配信する Cloudflare Worker がデプロイされます。プロバイダーは、`dev` レジストリを使用するように設定されたインストール環境ですぐに利用できるようになります。
+4. マージされると、ワークフローがバージョンを割り当て、ドキュメントに署名し（ML-DSA-65）、パッケージ化して、アーティファクトを AWS S3 のアーカイブに公開します。続いて、ドキュメントツリーが Cloudflare R2 にミラーリングされ、`registry-dev.stackql.app` を配信する Cloudflare Worker がデプロイされます。プロバイダーは、`dev` レジストリを使用するように設定されたインストール環境ですぐに利用できるようになります。
 5. 一定期間の監視の後、`dev` が `main` に昇格され、`registry.stackql.app` に対して同じ公開処理が繰り返されます。これが、デフォルト設定の StackQL インスタンス向けの公開となります。
 
 同じ `stackql-provider-tests` ハーネスは、PR を作成する前に、ローカルのレジストリディレクトリに対して実行できます。

@@ -36,7 +36,7 @@ Renvoie une valeur numérique tronquée à sa composante entière.
 
 ## Exemples {#examples}
 
-### Tronquer à deux décimales le nombre de jours écoulés depuis la création de buckets Google Cloud Storage {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### Tronquer en jours entiers le nombre de jours écoulés depuis la création de buckets Google Cloud Storage {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## Arguments {#arguments}
 
 __*source*__  
-Une chaîne littérale ou une colonne de type chaîne dont vous souhaitez extraire une sous-chaîne d'après un motif défini par une expression régulière (`pattern`).  
+Une chaîne littérale ou une colonne de type chaîne dans laquelle les correspondances de l'expression régulière `pattern` sont remplacées par `replacement`.  
 
 __*pattern*__  
 Le motif d'expression régulière à rechercher.  

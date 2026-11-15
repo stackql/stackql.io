@@ -69,7 +69,7 @@ Si StackQL est déjà installé, vous pouvez enregistrer le serveur MCP StackQL 
 
 Avant de configurer StackQL avec Claude Desktop, vérifiez que vous disposez des éléments suivants :
 
-1. **StackQL installé** - Téléchargez et installez StackQL depuis [stackql.io](https://stackql.io/downloads) ou utilisez un gestionnaire de paquets
+1. **StackQL installé** - Téléchargez et installez StackQL depuis [stackql.io](/installing-stackql) ou utilisez un gestionnaire de paquets
 2. **Claude Desktop** - Téléchargez-le depuis le [site d'Anthropic](https://claude.ai/desktop)
 3. **Identifiants des fournisseurs cloud** - Clés d'API ou identifiants des fournisseurs cloud avec lesquels vous souhaitez travailler
 

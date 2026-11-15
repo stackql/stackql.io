@@ -49,7 +49,7 @@ The datatype of the *result_if_true* or *result_if_false* arguments.
 
 ## Examples {#examples}
 
-### Catgorize disk sizes of compute engine instances {#catgorize-disk-sizes-of-compute-engine-instances}
+### Categorize disk sizes of compute engine instances {#categorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
 SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size

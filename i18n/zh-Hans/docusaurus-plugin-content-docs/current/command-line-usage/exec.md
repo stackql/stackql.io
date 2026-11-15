@@ -38,7 +38,7 @@ image: "/img/stackql-featured-image.png"
 |<span class="nowrap">`--dryrun`</span>|试运行标志；只运行预处理器并返回输出 |
 |<span class="nowrap">`--var`</span>|外部变量（可以是环境变量或机密），由通过 `--iqldata` 标志指定的 jsonnet 文件读取，示例 `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|需要时用于输出结果的文件（默认行为是只将结果输出到控制台），示例 `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|打印帮助信息|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|打印帮助信息|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|以详细模式运行查询，并将额外输出发送到 stdout，如果选择了 `-f` 选项，这些额外的日志信息将与查询结果一起写入输出文件|
 <br/>
 <br/>

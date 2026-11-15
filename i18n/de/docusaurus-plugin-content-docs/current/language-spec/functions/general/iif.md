@@ -49,7 +49,7 @@ Der Datentyp des *result_if_true*- oder *result_if_false*-Arguments.
 
 ## Beispiele {#examples}
 
-### Datenträgergrößen von Compute-Engine-Instanzen kategorisieren {#catgorize-disk-sizes-of-compute-engine-instances}
+### Datenträgergrößen von Compute-Engine-Instanzen kategorisieren {#categorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
 SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size

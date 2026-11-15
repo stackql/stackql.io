@@ -19,7 +19,7 @@ See also:
 
 :::tip 
 
-Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
+Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
 
 :::
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 A JSON array or object.
 
 __*json_path*__  
-The JSON path to an array or object contained within an *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
+The JSON path to an array or object contained within a *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
 
 > If *json_path* does not exist in *json_array_or_object*, then the function returns `NULL`.
 

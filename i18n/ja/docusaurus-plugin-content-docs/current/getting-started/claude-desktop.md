@@ -69,7 +69,7 @@ StackQL がすでにインストールされている場合は、Claude Desktop 
 
 Claude Desktop で StackQL をセットアップする前に、次のものが揃っていることを確認してください。
 
-1. **インストール済みの StackQL**：[stackql.io](https://stackql.io/downloads) から StackQL をダウンロードしてインストールするか、パッケージマネージャーを使用する
+1. **インストール済みの StackQL**：[stackql.io](/installing-stackql) から StackQL をダウンロードしてインストールするか、パッケージマネージャーを使用する
 2. **Claude Desktop**：[Anthropic の Web サイト](https://claude.ai/desktop)からダウンロードする
 3. **クラウドベンダーの認証情報**：使用するクラウドベンダーの API キーまたは認証情報
 

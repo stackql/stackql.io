@@ -104,7 +104,7 @@ Instructions for installing StackQL on various different platforms are provided 
   </TabItem>
   <TabItem value="package">
 
-  StackQL is available as a signed and notarized, interactive `pkg` installer for MacOS.
+  StackQL is available as a signed and notarized, interactive `pkg` installer for macOS.
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
       <div className={clsx(buttonStyles.buttons)}>
@@ -145,7 +145,7 @@ Instructions for installing StackQL on various different platforms are provided 
   >
   <TabItem value="curl">
 
-  To install a `stackql` executable binary in the current directory for your linux architecture (amd64 or arm64), run the following command in your terminal:
+  To install a `stackql` executable binary in the current directory for your Linux architecture (amd64 or arm64), run the following command in your terminal:
 
   ```bash
   curl -fsSL https://get-stackql.io/install | sh
@@ -209,7 +209,7 @@ Instructions for installing StackQL on various different platforms are provided 
   </TabItem>
   <TabItem value="irm">
 
-  To install an Authenticode executable in the current directory, run the following in a Powershell terminal: 
+  To install an Authenticode executable in the current directory, run the following in a PowerShell terminal: 
 
   ```powershell
   Invoke-RestMethod https://get-stackql.io/install | Invoke-Expression
@@ -343,7 +343,7 @@ cargo install stackql-deploy
   >
   <TabItem value="aws">
 
-  ### AWS Cloud Shell
+  ### AWS CloudShell
 
   AWS CloudShell provides a browser-based shell with AWS CLI pre-installed and authenticated. Running StackQL in AWS CloudShell allows you to query and manage AWS resources without additional authentication steps. For detailed instructions, see our [AWS CloudShell tutorial](/quick-starts/aws/aws-cloud-shell).
 
@@ -1127,7 +1127,7 @@ __Example usage__
     query: |
       select total_private_repos
       from github.orgs.orgs
-      where org = 'stackql'"
+      where org = 'stackql'
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
@@ -1179,7 +1179,7 @@ __Example usage__
 
 ## Other Libraries {#other-libraries}
 
-StackQL provides several integration methods that allow you for use in different programming languages and environments. These libraries extend StackQL's functionality, making it easy to incorporate cloud resource querying and management into your existing applications and workflows.  
+StackQL provides several integration methods for use in different programming languages and environments. These libraries extend StackQL's functionality, making it easy to incorporate cloud resource querying and management into your existing applications and workflows.  
 
 <Tabs
   defaultValue="pystackql"
@@ -1191,7 +1191,7 @@ StackQL provides several integration methods that allow you for use in different
 
 ### `pystackql` Python Package {#pystackql-python-package}
 
-Python wrapper to use StackQL in your Python programs. The `pystackql` package is available on [__PyPi__](https://pypi.org/project/pystackql/), documentation for the `pystackql` package is available via [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). To install the `pystackql` package, run the following command:
+Python wrapper to use StackQL in your Python programs. The `pystackql` package is available on [__PyPI__](https://pypi.org/project/pystackql/), documentation for the `pystackql` package is available via [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/). To install the `pystackql` package, run the following command:
 
 ```bash
 pip install pystackql

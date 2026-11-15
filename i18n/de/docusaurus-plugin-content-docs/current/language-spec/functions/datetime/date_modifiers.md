@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 
 ## Überblick {#overview}
 
-Auf die Datums- oder Zeitwerte der Datetime-Funktionen in StackQL können null oder mehr Modifikatoren folgen, die das Datum und/oder die Uhrzeit verändern. Jeder Modifikator ist eine Transformation, die auf den Zeitwert links von ihm angewendet wird. Modifikatoren werden der Reihe nach von links nach rechts angewendet. Die verfügbaren Modifikatoren sind:
+In den Datetime-Funktionen von StackQL können auf einen Datums- oder Zeitwert null oder mehr Modifikatoren folgen, die das Datum und/oder die Uhrzeit verändern. Jeder Modifikator ist eine Transformation, die auf den Zeitwert links von ihm angewendet wird. Modifikatoren werden der Reihe nach von links nach rechts angewendet. Die verfügbaren Modifikatoren sind:
 
 | Modifikator          | Beschreibung                                                                        |
 |----------------------|-------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Auf die Datums- oder Zeitwerte der Datetime-Funktionen in StackQL können null o
 
 ## Beispiele {#examples}
 
-### Das aktuelle Datum und die aktuelle Uhrzeit mit dem Modifikator `now` zurückgeben {#return-the-current-date-and-time-using-the-now-modifier}
+### Das aktuelle Datum und die aktuelle Uhrzeit mit dem Zeitwert `now` zurückgeben {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Datetime in UTC umwandeln {#covert-datetime-to-utc}
+### Datetime in UTC umwandeln {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Einen Unix-Zeitstempel in einen Datetime-Wert umwandeln {#covert-a-unix-timestamp-to-a-datetime}
+### Einen Unix-Zeitstempel in einen Datetime-Wert umwandeln {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

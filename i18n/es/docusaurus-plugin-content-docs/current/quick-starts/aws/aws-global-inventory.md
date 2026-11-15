@@ -45,7 +45,7 @@ La consulta anterior es en realidad 17 consultas ejecutadas en paralelo (una con
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html), que se puede instalar con `pip install pystackql`
 - Un usuario de AWS o un rol (se puede asumir con `sts assume-role`) que tenga asociada la política `ReadOnlyAccess` o una superior
-- Las variables de entorno `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` definidas (esto se puede hacer automáticamente con [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
+- Las variables de entorno `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` definidas (esto se puede hacer automáticamente con [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
 ## El código {#the-code}
 
@@ -54,7 +54,7 @@ El siguiente código realiza estas acciones:
 1. Define una lista de todas las regiones de AWS (`regions`) y una lista de las regiones admitidas por cada servicio (`supported_regions`); encontrará más información sobre cómo obtener `supported_regions` en [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
 2. Descarga los providers de StackQL [`aws`](https://aws-provider.stackql.io/) y [`awscc`](https://awscc-provider.stackql.io/) si aún no están instalados.
 3. Recorre cada servicio (con [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)) y, para cada servicio, recorre cada recurso (con [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
-4. Selecciona con [`SELECT`](/language-spec/select) todas las instancias de cada recurso en todas las regiones de forma asíncrona, agrupa los datos por región y cuenta las instancias de cada recurso en cada región
+4. Selecciona todas las instancias de cada recurso en todas las regiones de forma asíncrona (con [`SELECT`](/language-spec/select)), agrupa los datos por región y cuenta las instancias de cada recurso en cada región
 
 Aquí está...
 

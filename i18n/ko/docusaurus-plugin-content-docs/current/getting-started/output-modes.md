@@ -22,7 +22,7 @@ StackQL 쿼리에서 반환된 결과는 표 형식(table)뿐 아니라 json, js
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output table
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output table
 
 |---------------------|-----------------|
 |         ID          |      NAME       |
@@ -42,7 +42,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output json
 
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
@@ -57,7 +57,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output jsonl
 
 {"id":"5584456226809282885","name":"demo-instance-3"}
 {"id":"1257085253691867467","name":"demo-instance-1"}
@@ -66,13 +66,13 @@ and zone = 'australia-southeast1-a'" \
 
 
 ### `csv` 출력 {#csv-output}
-아래와 같이 `--output` 매개 변수에 `csv` 값을 사용하면 결과를 JSON 형식으로 반환할 수 있습니다. 이 출력 형식은 Excel에서 결과를 구문 분석하거나 다른 시스템에 데이터 인터페이스를 제공하는 데 유용합니다:
+아래와 같이 `--output` 매개 변수에 `csv` 값을 사용하면 결과를 CSV 형식으로 반환할 수 있습니다. 이 출력 형식은 Excel에서 결과를 구문 분석하거나 다른 시스템에 데이터 인터페이스를 제공하는 데 유용합니다:
 
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv
 
 id,name
 1257085253691867467,demo-instance-1
@@ -87,7 +87,7 @@ id,name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv -d "|"
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv -d "|"
 
 id|name
 1257085253691867467|demo-instance-1
@@ -102,7 +102,7 @@ id|name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 다음은 보기 좋게 출력한 행 레코드 1개입니다(파일에는 각 레코드가 한 줄에 저장됩니다):
@@ -172,7 +172,7 @@ TRACEPARENT=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 #### 레코드 전송 {#shipping-the-records}
@@ -202,8 +202,8 @@ service:
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }'
 ```
 
 | 키 | 용도 |

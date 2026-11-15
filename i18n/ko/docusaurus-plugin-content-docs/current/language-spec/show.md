@@ -49,9 +49,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 ## 예제 {#examples}
 
 ### 모든 프로바이더 나열 {#list-all-providers}
-설치된 버전의 StackQL에서 사용할 수 있는 모든 프로바이더를 나열합니다.
+로컬 StackQL 환경에서 사용할 수 있는 프로바이더를 나열합니다. 프로바이더 레지스트리에서 가져온 프로바이더와 StackQL에 기본 제공되는 프로바이더가 포함됩니다.
 ```sql
--- Returns all of the available cloud providers
+-- Returns the providers available locally
 SHOW PROVIDERS;
 ```
 <details>
@@ -78,7 +78,7 @@ SHOW PROVIDERS;
 ### 프로바이더의 모든 서비스 나열 {#list-all-services-in-a-cloud-provider}
 특정 프로바이더에서 사용할 수 있는 모든 서비스를 나열합니다. 선택적 EXTENDED 키워드를 사용하면 추가 정보를 반환합니다.
 ```sql
--- Returns all services available in a cloud provider
+-- Returns all services available in a provider
 SHOW EXTENDED SERVICES IN google;
 ```
 <details>

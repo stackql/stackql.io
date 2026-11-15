@@ -35,7 +35,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 __*expression*__  
 An ASCII string or a BLOB.
 
-> If *expression* is a string then characters indices refer to actual UTF-8 characters. If *expression* is a BLOB then the indices refer to bytes.
+> If *expression* is a string then character indices refer to actual UTF-8 characters. If *expression* is a BLOB then the indices refer to bytes.
 
 __*start*__  
 An integer representing the first character or byte of the sub sequence of the input expression to be returned.  If *start* is negative then the first character of the substring is found by counting from the right rather than the left.
@@ -72,6 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
+
 ### Return the last *n* characters from a column {#return-the-last-n-characters-from-a-column}
 
 ```sql

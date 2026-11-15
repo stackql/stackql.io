@@ -34,7 +34,7 @@ Das folgende Beispiel zeigt die Verwendung von Jsonnet, um einem StackQL-Skript 
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Jsonnet-Daten {#jsonnet-data}
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### Jsonnet-Daten in einer StackQL-Anweisung referenzieren {#referencing-jsonnet-data-in-an-stackql-statement}
+### Jsonnet-Daten in einer StackQL-Anweisung referenzieren {#referencing-jsonnet-data-in-a-stackql-statement}
 Der folgende Codeausschnitt zeigt, wie jsonnet-Werte aus einem StackQL-Befehl referenziert werden.
 
 ```sql
@@ -154,7 +154,7 @@ Auch einfaches json kann verwendet werden, um einem StackQL-Skript Konfiguration
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Json-Daten {#json-data}
@@ -183,7 +183,7 @@ Die folgenden JSON-Daten stehen in der Datei `vars.json`, auf die der Parameter 
 }
 ```
 
-### Json-Daten in einer StackQL-Anweisung referenzieren {#referencing-json-data-in-an-stackql-statement}
+### Json-Daten in einer StackQL-Anweisung referenzieren {#referencing-json-data-in-a-stackql-statement}
 Die oben gezeigten Daten würden in einer StackQL-`INSERT`-Anweisung wie hier gezeigt referenziert:
 
 ```sql
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ Mit der Option `--dryrun` können Sie ein vorverarbeitetes StackQL-Skript aus Ih
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```

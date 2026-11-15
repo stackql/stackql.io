@@ -19,7 +19,7 @@ JSON 配列の要素数を返します。
 
 :::tip 
 
-StackQL の JSON 関数で使用できる `array` または `object` データ型を見つけるには、[**DESCRIBE**](/language-spec/describe) 関数を使用します。ネストされたオブジェクトや配列要素のデータ型を判別するには、[**JSON_TYPE**](/language-spec/functions/json/json_type) 関数を使用します。
+StackQL の JSON 関数で使用できる `array` または `object` データ型を見つけるには、[**DESCRIBE**](/language-spec/describe) 文を使用します。ネストされたオブジェクトや配列要素のデータ型を判別するには、[**JSON_TYPE**](/language-spec/functions/json/json_type) 関数を使用します。
 
 :::
 

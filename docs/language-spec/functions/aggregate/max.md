@@ -34,9 +34,9 @@ SELECT MAX(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>
 ### Aggregate function {#aggregate-function}
 
 __*columnExpression*__  
-A column or expression including operands (`+`, `-`, ...).
+A column or expression including operators (`+`, `-`, ...).
 
-> The `MAX` function will return the largest value for the given column based upon the column data type, for example a `MAX` operation on an integer column will return the largest integer for that column or column grouping, whereas a `MAX` operation on a string column or column grouping will return the largest ASCII value (generally the first value when sorted in lexographic order with some differences).
+> The `MAX` function will return the largest value for the given column based upon the column data type, for example a `MAX` operation on an integer column will return the largest integer for that column or column grouping, whereas a `MAX` operation on a string column or column grouping will return the value that sorts last, comparing strings with the `BINARY` collating function (byte by byte, so upper-case letters sort before lower-case letters).
 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
@@ -48,13 +48,13 @@ A column or columns used to perform summary or aggregate operations against.  Th
 ### Scalar function {#scalar-function}
 
 __*scalarExpression*__  
-A list columns or expressions (2 or more) from which the largest value is determined and returned. 
+A list of columns or expressions (2 or more) from which the largest value is determined and returned. 
 
 > The scalar `MAX` function returns `NULL` if any argument is `NULL`. 
 
 > The scalar or multi-argument `MAX` function searches its arguments from left to right for an argument that defines a collating function and uses that collating function for all string comparisons. 
 
-> If none of the arguments the scalar `MAX` function define a collating function, then the `BINARY` collating function is used. 
+> If none of the arguments to the scalar `MAX` function defines a collating function, then the `BINARY` collating function is used. 
 
 > If only one argument is provided, then the `MAX` aggregate function is invoked.
 

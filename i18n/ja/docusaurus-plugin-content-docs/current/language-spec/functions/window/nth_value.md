@@ -54,10 +54,10 @@ __*ROWS BETWEEN frame_start AND frame_end*__
 
 ## 例 {#examples}
 
-### コントリビューション数が 2 番目に多いコントリビューターを取得する {#get-the-second-highest-contributor}
+### 上位 3 人のコントリビューターを取得する {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

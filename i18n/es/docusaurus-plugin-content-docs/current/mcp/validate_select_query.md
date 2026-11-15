@@ -15,7 +15,7 @@ Analiza y planifica una única instrucción `SELECT` sin ejecutarla.  Devuelve `
 
 :::info
 
-Solo `SELECT`, y exactamente una instrucción; una carga útil que contiene más de una instrucción se rechaza con `validate_select_query accepts exactly one statement`.
+Solo `SELECT`, y exactamente una instrucción: una carga útil que contiene más de una instrucción se rechaza con `validate_select_query accepts exactly one statement`.
 
 :::
 

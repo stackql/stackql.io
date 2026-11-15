@@ -36,7 +36,7 @@ SELECT MAX(scalarExpression1, scalarExpressionN, ...) FROM <multipartIdentifier>
 __*columnExpression*__  
 Une colonne ou une expression incluant des opérateurs (`+`, `-`, ...).
 
-> La fonction `MAX` renvoie la plus grande valeur de la colonne donnée selon le type de données de la colonne ; par exemple, une opération `MAX` sur une colonne d'entiers renvoie le plus grand entier de cette colonne ou de ce regroupement de colonnes, tandis qu'une opération `MAX` sur une colonne ou un regroupement de colonnes de type chaîne de caractères renvoie la plus grande valeur ASCII (généralement la première valeur dans l'ordre lexicographique inverse, à quelques différences près).
+> La fonction `MAX` renvoie la plus grande valeur de la colonne donnée selon le type de données de la colonne ; par exemple, une opération `MAX` sur une colonne d'entiers renvoie le plus grand entier de cette colonne ou de ce regroupement de colonnes, tandis qu'une opération `MAX` sur une colonne ou un regroupement de colonnes de type chaîne de caractères renvoie la valeur qui vient en dernier dans le tri, les chaînes étant comparées avec la fonction de collation `BINARY` (octet par octet, de sorte que les majuscules sont triées avant les minuscules).
 
 __*groupByColumn*__  
 Une ou plusieurs colonnes sur lesquelles effectuer des opérations de synthèse ou d'agrégation.  La clause `GROUP BY` renvoie une ligne pour chaque regroupement de colonnes.

@@ -49,7 +49,7 @@ __*part*__
 
 ## 示例 {#examples}
 
-### 从以正斜杠分隔的字符串中提取元素 {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### 从以正斜杠分隔的字符串中提取元素 {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

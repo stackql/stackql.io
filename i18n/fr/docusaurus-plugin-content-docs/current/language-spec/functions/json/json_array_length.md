@@ -19,7 +19,7 @@ Voir aussi :
 
 :::tip 
 
-Utilisez la fonction [**DESCRIBE**](/language-spec/describe) pour repérer les types de données `array` ou `object` utilisables avec les fonctions JSON de StackQL. Utilisez la fonction [**JSON_TYPE**](/language-spec/functions/json/json_type) pour déterminer les types de données des objets imbriqués ou des éléments de tableau.
+Utilisez l'instruction [**DESCRIBE**](/language-spec/describe) pour repérer les types de données `array` ou `object` utilisables avec les fonctions JSON de StackQL. Utilisez la fonction [**JSON_TYPE**](/language-spec/functions/json/json_type) pour déterminer les types de données des objets imbriqués ou des éléments de tableau.
 
 :::
 

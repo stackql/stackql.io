@@ -19,7 +19,7 @@ See also:
 
 :::tip 
 
-Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
+Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
 
 :::
 

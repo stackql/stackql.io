@@ -73,10 +73,11 @@ where account_id = 'abcd1234-1234-5678-90ab-abcdef123456'
 AND active = false;
 ```
 
-**결과:**
+**결과** (표시 이름이 `Jane Doe`이고 ID가 `1234567890123456`인 사용자의 경우):
 
 ```
-He said "Hello" and left.
+/* Jane Doe */
+DELETE FROM databricks_account.iam.account_users WHERE account_id = 'abcd1234-1234-5678-90ab-abcdef123456' AND id = '1234567890123456'
 ```
 
 * * *

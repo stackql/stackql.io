@@ -32,13 +32,13 @@ StackQL 쿼리를 단일 문으로 실행하거나 StackQL 스크립트(IQL 파�
 
 | 플래그 | 설명 |
 |--|--|
-|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|출력 모드입니다. 유효한 값은 `table`(기본값) `json`, `jsonl`(줄 바꿈으로 구분된 JSON, `ndjson`도 별칭으로 허용됨), `csv`, `text`, `otel`(OpenTelemetry 로그 레코드, [출력 모드](/getting-started/output-modes#otel-output) 참조)입니다. 예: `--output jsonl` |
+|<span class="nowrap">`-o`</span><br/><span class="nowrap">`--output`</span>|출력 모드입니다. 유효한 값은 `table`(기본값), `json`, `jsonl`(줄 바꿈으로 구분된 JSON, `ndjson`도 별칭으로 허용됨), `csv`, `text`, `otel`(OpenTelemetry 로그 레코드, [출력 모드](/getting-started/output-modes#otel-output) 참조)입니다. 예: `--output jsonl` |
 |<span class="nowrap">`-i`</span><br/><span class="nowrap">`--infile`</span>|필요한 경우 지정한 파일에서 쿼리를 실행합니다. 이 플래그를 지정하면 인수로 제공한 쿼리는 무시됩니다. 예: `--infile myquery.iql` |
 |<span class="nowrap">`-q`</span><br/><span class="nowrap">`--iqldata`</span>|`json` 또는 `jsonnet` 파일을 사용하는 명령의 소스 데이터입니다. 예: `--iqldata vars.jsonnet`|
 |<span class="nowrap">`--dryrun`</span>|드라이 런 플래그입니다. 전처리기만 실행되고 그 출력이 반환됩니다 |
 |<span class="nowrap">`--var`</span>|`--iqldata` 플래그로 지정한 jsonnet 파일에서 사용하는 외부 변수(환경 변수 또는 시크릿 사용 가능)입니다. 예: `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|필요한 경우 결과를 출력할 파일입니다(기본 동작은 결과를 콘솔에만 출력하는 것입니다). 예: `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|도움말 정보를 출력합니다|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|도움말 정보를 출력합니다|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|추가 출력을 stdout으로 보내는 자세한 정보 표시 모드로 쿼리를 실행합니다. `-f` 옵션을 선택하면 이 추가 로깅 정보가 쿼리 결과와 함께 출력 파일에 기록됩니다|
 <br/>
 <br/>

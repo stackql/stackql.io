@@ -46,10 +46,10 @@ SELECT ATAN2(1, 1) AS arc_tangent_value;
 
 Diese Abfrage gibt π/4 oder ungefähr `0.785` zurück, da der Arkustangens des Punkts (1,1) einem Winkel von π/4 Radiant im ersten Quadranten entspricht.
 
-### Den Arkustangens des Punkts (10, -10) berechnen {#calculate-the-arc-tangent-of-the-point-10--10}
+### Den Arkustangens des Punkts (-10, 10) berechnen {#calculate-the-arc-tangent-of-the-point--10-10}
 
 ```sql
 SELECT ATAN2(10, -10) AS arc_tangent_value;
 ```
 
-Diese Abfrage berechnet den Arkustangens des Punkts (10, -10) und ergibt 3π/4 oder ungefähr `2.356`, da der Tangens dieses Winkels im zweiten Quadranten -1 ist.
+Diese Abfrage berechnet den Winkel des Punkts (-10, 10) mit y = 10 und x = -10 und ergibt 3π/4 oder ungefähr `2.356`: Der Tangens dieses Winkels ist -1, und der Punkt liegt im zweiten Quadranten.

@@ -31,7 +31,7 @@ Die folgende Syntax für reguläre Ausdrücke wird in StackQL unterstützt:
 | `^X` | `X` am Anfang des Strings |
 | `X$` | `X` am Ende des Strings |
 | `.` | Entspricht einem beliebigen einzelnen Zeichen |
-| `\c` | Zeichen `c`, wobei `c` eines von `\{}()[]`&vert;`*+?.` ist
+| `\c` | Zeichen `c`, wobei `c` eines von `\{}()[]`&vert;`*+?.` ist |
 | `\c` | Escape-Sequenzen der Sprache C für `c` in `afnrtv`, z. B. `\t` oder `\n` |
 | `[abc]` | Ein beliebiges einzelnes Zeichen aus der Menge `abc` |
 | `[^abc]` | Ein beliebiges einzelnes Zeichen, das nicht in der Menge `abc` enthalten ist |

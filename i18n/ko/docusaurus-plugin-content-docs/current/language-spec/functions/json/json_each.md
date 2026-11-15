@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 함수를 사용하면 `json_each` 함수와 함께 사용할 수 있는 `array` 데이터 형식을 찾을 수 있습니다.
+[**DESCRIBE**](/language-spec/describe) 문을 사용하면 `json_each` 함수와 함께 사용할 수 있는 `array` 데이터 형식을 찾을 수 있습니다.
 
 :::
 
@@ -43,9 +43,9 @@ JSON 배열 또는 객체입니다.
 __*json_path*__  
 *json_array_or_object* 안에 포함된 배열 또는 객체에 대한 JSON 경로입니다. [jsonpath.com](https://jsonpath.com/)을 참조하세요.
 
-> *json_path*가 *json_array_or_object*에 없으면 함수는 `NULL`을 반환합니다.
+> *json_path*가 *json_array_or_object*에 없으면 함수는 행을 반환하지 않습니다.
 
-> 인수 중 하나라도 올바른 형식이 아니면 `json_type()` 함수는 오류를 발생시킵니다.
+> *json_array_or_object*가 올바른 형식의 JSON이 아니면 `json_each()` 함수는 오류를 발생시킵니다.
 
 ## 반환 값 {#return-values}
 각 배열 요소 또는 객체 멤버당 1행으로 구성된 테이블입니다.

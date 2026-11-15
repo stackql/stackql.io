@@ -45,7 +45,7 @@ GROUP BY region;
 
 - `pip install pystackql` 명령으로 설치할 수 있는 [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)
 - `ReadOnlyAccess` 정책 이상이 연결된 AWS 사용자 또는 역할(역할은 `sts assume-role` 명령으로 수임할 수 있음)
-- `AWS_ACCESS_KEY_ID` 및 `AWS_SECRET_ACCESS_KEY` 환경 변수 설정([AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell)을 사용하면 자동으로 설정할 수 있음)
+- `AWS_ACCESS_KEY_ID` 및 `AWS_SECRET_ACCESS_KEY` 환경 변수 설정([AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell)을 사용하면 자동으로 설정할 수 있음)
 
 ## 코드 {#the-code}
 

@@ -19,7 +19,7 @@ Voir aussi :
 
 :::tip 
 
-Utilisez la fonction [**DESCRIBE**](/language-spec/describe) pour repérer les types de données `array` utilisables avec la fonction `json_each`.
+Utilisez l'instruction [**DESCRIBE**](/language-spec/describe) pour repérer les types de données `array` utilisables avec la fonction `json_each`.
 
 :::
 
@@ -43,9 +43,9 @@ Un tableau ou un objet JSON.
 __*json_path*__  
 Le chemin JSON vers un tableau ou un objet contenu dans *json_array_or_object*.  Consultez [jsonpath.com](https://jsonpath.com/).
 
-> Si *json_path* n'existe pas dans *json_array_or_object*, la fonction renvoie `NULL`.
+> Si *json_path* n'existe pas dans *json_array_or_object*, la fonction ne renvoie aucune ligne.
 
-> La fonction `json_type()` lève une erreur si l'un de ses arguments n'est pas bien formé.
+> La fonction `json_each()` lève une erreur si *json_array_or_object* n'est pas du JSON bien formé.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 Une table composée d'une ligne pour chaque élément de tableau ou membre d'objet.

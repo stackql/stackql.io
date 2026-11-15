@@ -113,8 +113,8 @@ HAVING location != 'ASIA';
 
 For more information on the `COUNT` function and other aggregate functions supported by StackQL see [Aggregate Functions](/language-spec/functions/aggregate/count).
 
-### Get list of On Demand VMs and corresponding network interface from Azure VM Scaleset {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
-Run a `SELECT` statement using the [`SPLIT_PART`](/language-spec/functions/string/split_part) and [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) functions to get list of OD VMs and their NICs. Note that without a qualifier the subscription_id and resource_group_name is applied to all the three Resources.
+### Get list of On Demand VMs and corresponding network interface from Azure VM Scale Set {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
+Run a `SELECT` statement using the [`SPLIT_PART`](/language-spec/functions/string/split_part) and [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) functions to get list of OD VMs and their NICs. Note that without a qualifier the subscription_id and resource_group_name are applied to all the three Resources.
 
 ```sql
 SELECT  c.name AS vm_name,
@@ -129,8 +129,6 @@ WHERE subscription_id = '0123456789'
 AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
-
-For more information on window functions, see [Window Functions](/language-spec/windowing_functions).
 
 ### Using Common Table Expressions (CTEs) with `WITH` {#using-common-table-expressions-ctes-with-with}
 
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 For more information on CTEs, see [WITH (CTEs)](/language-spec/with).
+
+For more information on window functions, see [Window Functions](/language-spec/windowing_functions).

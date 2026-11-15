@@ -19,7 +19,7 @@ Siehe auch:
 
 :::tip 
 
-Verwenden Sie die Funktion [**DESCRIBE**](/language-spec/describe), um `array`-Datentypen zu finden, die mit der Funktion `json_each` verwendet werden können.
+Verwenden Sie die Anweisung [**DESCRIBE**](/language-spec/describe), um `array`-Datentypen zu finden, die mit der Funktion `json_each` verwendet werden können.
 
 :::
 
@@ -43,9 +43,9 @@ Ein JSON-Array oder -Objekt.
 __*json_path*__  
 Der JSON-Pfad zu einem Array oder Objekt, das in *json_array_or_object* enthalten ist.  Siehe [jsonpath.com](https://jsonpath.com/).
 
-> Wenn *json_path* in *json_array_or_object* nicht vorhanden ist, gibt die Funktion `NULL` zurück.
+> Wenn *json_path* in *json_array_or_object* nicht vorhanden ist, gibt die Funktion keine Zeilen zurück.
 
-> Die Funktion `json_type()` löst einen Fehler aus, wenn eines ihrer Argumente nicht wohlgeformt ist.
+> Die Funktion `json_each()` löst einen Fehler aus, wenn *json_array_or_object* kein wohlgeformtes JSON ist.
 
 ## Rückgabewert(e) {#return-values}
 Eine Tabelle, die aus einer Zeile pro Array-Element oder Objektmember besteht.

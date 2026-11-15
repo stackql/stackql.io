@@ -41,19 +41,17 @@ SET field_name = value [, field_name = value ...]
 ## 例 {#examples}
 
 ### 基本的な `UPDATE` 文 {#basic-update-statement}
-`UPDATE` 文を実行して、Compute Engine Disk リソースのサイズを変更します。
+`UPDATE` 文を実行して、Google Cloud Storage バケットのラベルを設定します。
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-UPDATE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Set the labels on a Google Cloud Storage bucket
+UPDATE google.storage.buckets
+SET data__labels = '{"env": "prod", "team": "platform"}'
+WHERE bucket = 'stackql-demo-bucket';
 ```
 
 ### `UPDATE` 文（ブロッキング） {#update-statement-blocking}
-`UPDATE` 文を実行して、Compute Engine Disk リソースのサイズを変更します。これはブロッキング（同期）呼び出しです。
+`UPDATE` 文を実行して、Compute Engine のファイアウォールルールを変更します。これはブロッキング（同期）呼び出しです。
 
 ```sql
 -- Synchronous update of a google firewall 
@@ -64,26 +62,19 @@ SET
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### JSON を変更する `UPDATE` 文 {#update-statement-with-json-modification}
-`UPDATE` 文を実行して、JSON 操作でリソースを変更します。
+### JSON 関数を使用する `UPDATE` 文 {#update-statement-with-json-functions}
+値を JSON 関数で組み立てる `UPDATE` 文を実行します。列を読み取らない関数は、リクエストの送信前に評価されます。`SET` の値は更新対象の行を読み取れません。そのため、既存の値の一部を変更するには、まず `SELECT` で値を読み取り、変更後の値を設定します。
 
 ```sql
--- Update an Azure Network Interface's properties
-UPDATE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
+-- Set the protocols and ports a firewall rule allows
+UPDATE google.compute.firewalls
+SET data__allowed = json_array(
+  json_object('IPProtocol', 'tcp', 'ports', json_array('22', '443')),
+  json_object('IPProtocol', 'icmp')
 )
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+WHERE firewall = 'test-fw'
+AND project = 'stackql-demo';
 ```

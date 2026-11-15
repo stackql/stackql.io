@@ -10,7 +10,7 @@ keywords:
 description: "JSON_OBJECT function in StackQL: build a JSON object from key and value arguments, for example to construct request bodies for INSERT and UPDATE."
 image: "/img/stackql-featured-image.png"
 ---
-Returns an object constructred from arguments provided.  
+Returns an object constructed from the arguments provided.  
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)
@@ -19,13 +19,13 @@ See also:
 
 :::tip 
 
-Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
+Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `object` datatypes which can be used with StackQL JSON functions.
 
 :::
 
 :::note 
 
-The `json_object` function as `jsonb_build_object` if you are using stackql with a `postgres` SQL backend.
+If you are using stackql with a `postgres` SQL backend, use `jsonb_build_object` in place of `json_object`: StackQL passes `json_object` to PostgreSQL unchanged, and the PostgreSQL function of that name takes its keys and values as text arrays.
 
 :::
 
@@ -51,7 +51,7 @@ A string representing the well-formed JSON object.
 
 ## Examples {#examples}
 
-### Return the datatype of a field nested within a JSON object or array {#return-the-datatype-of-a-field-nested-within-a-json-object-or-array}
+### Build an array of JSON objects from a column {#build-an-array-of-json-objects-from-a-column}
 
 ```sql
 SELECT JSON_GROUP_ARRAY(json_object('instance', selfLink)) as instance_links

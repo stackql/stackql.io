@@ -43,7 +43,7 @@ Puede cambiar el esquema de colores del shell de StackQL con la opción `--color
 Los valores predeterminados de las opciones de comando de StackQL, como el formato de salida y el esquema de colores comentados anteriormente, se pueden establecer con el archivo de inicialización `stackqlrc`. Si este archivo existe en el directorio actual que usa el ejecutable de StackQL, se carga automáticamente; como alternativa, se puede indicar con la opción `--configfile`, como se muestra a continuación:
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 Encontrará más información sobre las opciones de comando en el tema Opciones globales.
@@ -58,15 +58,15 @@ A continuación se muestra un ejemplo de un script de Windows PowerShell que inc
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ Los archivos de entrada de StackQL se pueden usar para ejecutar varios comandos 
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

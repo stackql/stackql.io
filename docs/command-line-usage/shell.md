@@ -11,7 +11,7 @@ description: "The stackql shell command launches the interactive StackQL command
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch the interactive StackQL Command Shell.  For more information see [Using the Interactive StackQL Shell](/getting-started/using-stackql#using-the-stackql-interactive-shell).
+Command used to launch the interactive StackQL Command Shell.  For more information see [Using the StackQL Interactive Shell](/getting-started/using-stackql#using-the-stackql-interactive-shell).
 
 * * * 
 
@@ -25,7 +25,7 @@ Command used to launch the interactive StackQL Command Shell.  For more informat
 
 | Flag | Description |
 |--|--|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Print help information|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Print help information|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected this additional logging information will be written to the output file along with the query results|
 <br/>
 <br/>
@@ -37,5 +37,5 @@ Command used to launch the interactive StackQL Command Shell.  For more informat
 
 Launch the StackQL shell, using a service account key file for authentication.
 ```shell
-stackql shell --keyfilepath /tmp/stackql-demo.json
+stackql shell --auth '{ "google": { "type": "service_account", "credentialsfilepath": "/tmp/stackql-demo.json" } }'
 ```

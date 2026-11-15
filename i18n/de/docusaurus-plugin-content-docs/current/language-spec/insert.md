@@ -78,7 +78,7 @@ SELECT 'stackql-demo',
 Führen Sie eine INSERT-Anweisung mit SELECT aus.
 
 ```sql
--- Create a Azure Network Interface
+-- Create an Azure Network Interface
 INSERT INTO azure.network.network_interfaces
   (
     resource_group_name,

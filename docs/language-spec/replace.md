@@ -41,49 +41,39 @@ SET field_name = value [, field_name = value ...]
 ## Examples {#examples}
 
 ### Basic `REPLACE` statement {#basic-replace-statement}
-Run an `REPLACE` statement to modify a Compute Engine Disk resource's size.
+Run a `REPLACE` statement to replace all of the topics on a GitHub repository.
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-REPLACE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Replace all of the topics on a GitHub repository
+REPLACE github.repos.topics
+SET data__names = '["sql", "cloud-infrastructure"]'
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```
 
 ### `REPLACE` statement (blocking) {#replace-statement-blocking}
-Run an `REPLACE` statement to modify a Compute Engine Disk resource's size. This is a blocking (synchronous) invocation.
+Run a `REPLACE` statement to replace a Compute Engine firewall rule. This is a blocking (synchronous) invocation.
 
 ```sql
 -- Synchronous update of a google firewall 
 REPLACE /*+ AWAIT */ google.compute.firewalls
 SET
+ data__name = 'test-fw',
  data__network = 'https://www.googleapis.com/compute/v1/projects/stackql-demo/global/networks/my-vpc',
  data__direction = 'INGRESS',
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### `REPLACE` statement with JSON modification {#replace-statement-with-json-modification}
-Run an `REPLACE` statement to modify a resource using JSON manipulation.
+### `REPLACE` statement with JSON functions {#replace-statement-with-json-functions}
+Run a `REPLACE` statement whose value is built with JSON functions. A function that reads no columns is evaluated before the request is sent. A `SET` value cannot read the row being replaced, so to change part of an existing value, read it with a `SELECT` first and set the modified value.
 
 ```sql
--- Update an Azure Network Interface's properties
-REPLACE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
-)
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+-- Replace the topics on a GitHub repository with a list built by json_array
+REPLACE github.repos.topics
+SET data__names = json_array('sql', 'cloud-infrastructure', 'infrastructure-as-code')
+WHERE owner = 'my-org'
+AND repo = 'my-repo';
 ```

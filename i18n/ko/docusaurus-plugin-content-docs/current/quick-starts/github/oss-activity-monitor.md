@@ -41,7 +41,7 @@ Slack과 Discord에서 다음과 같은 알림을 실시간으로 받을 수 있
 
 ## 작동 방식 {#how-it-works}
 
-이 프로젝트는 컨테이너(`docker` 또는 기타 컨테이너 배포 플랫폼 사용)에 배포됩니다. `python` 및 [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) 패키지를 사용하여 빌드되었으며, `stackql`용 [`github`](https://github.stackql.io/providers/github/) 및 [`homebrew`](https://homebrew.stackql.io/providers/homebrew) 프로바이더를 사용합니다. 구체화된 뷰와 `SELECT` 문을 사용하여 모니터링 대상인 GitHub 및 Homebrew 엔드포인트의 현재 지표와 이전 지표 사이의 상태를 캡처하고 비교합니다. 이 과정은 다음 다이어그램과 같습니다:  
+이 프로젝트는 컨테이너(`docker` 또는 기타 컨테이너 배포 플랫폼 사용)에 배포됩니다. `python` 및 [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) 패키지를 사용하여 빌드되었으며, `stackql`용 [`github`](https://github-provider.stackql.io/) 및 [`homebrew`](https://homebrew-provider.stackql.io/) 프로바이더를 사용합니다. 구체화된 뷰와 `SELECT` 문을 사용하여 모니터링 대상인 GitHub 및 Homebrew 엔드포인트의 현재 지표와 이전 지표 사이의 상태를 캡처하고 비교합니다. 이 과정은 다음 다이어그램과 같습니다:  
 
 ```mermaid
 graph TB

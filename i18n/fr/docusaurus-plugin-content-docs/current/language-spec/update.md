@@ -41,19 +41,17 @@ SET field_name = value [, field_name = value ...]
 ## Exemples {#examples}
 
 ### Instruction `UPDATE` de base {#basic-update-statement}
-Exécutez une instruction `UPDATE` pour modifier la taille d'une ressource Compute Engine Disk.
+Exécutez une instruction `UPDATE` pour définir les libellés d'un bucket Google Cloud Storage.
 
 ```sql
--- Update the size of a Compute Engine Disk resource
-UPDATE google.compute.disks 
-SET sizeGb = 20
-WHERE project = 'stackql-demo' 
-AND zone = 'australia-southeast1-a' 
-AND name = 'test10gbdisk';
+-- Set the labels on a Google Cloud Storage bucket
+UPDATE google.storage.buckets
+SET data__labels = '{"env": "prod", "team": "platform"}'
+WHERE bucket = 'stackql-demo-bucket';
 ```
 
 ### Instruction `UPDATE` (bloquante) {#update-statement-blocking}
-Exécutez une instruction `UPDATE` pour modifier la taille d'une ressource Compute Engine Disk. Il s'agit d'un appel bloquant (synchrone).
+Exécutez une instruction `UPDATE` pour modifier une règle de pare-feu Compute Engine. Il s'agit d'un appel bloquant (synchrone).
 
 ```sql
 -- Synchronous update of a google firewall 
@@ -64,26 +62,19 @@ SET
  data__sourceRanges = '["0.0.0.0/0"]',
  data__allowed = '[{"IPProtocol": "tcp", "ports": ["22"]}, {"IPProtocol": "tcp", "ports": ["6443"]},{"IPProtocol": "icmp"}]'
 WHERE firewall = 'test-fw'
-AND project = 'stackql-demo' 
+AND project = 'stackql-demo';
 ```
 
-### Instruction `UPDATE` avec modification de JSON {#update-statement-with-json-modification}
-Exécutez une instruction `UPDATE` pour modifier une ressource par manipulation de JSON.
+### Instruction `UPDATE` avec des fonctions JSON {#update-statement-with-json-functions}
+Exécutez une instruction `UPDATE` dont la valeur est construite avec des fonctions JSON. Une fonction qui ne lit aucune colonne est évaluée avant l'envoi de la requête HTTP. Une valeur de `SET` ne peut pas lire la ligne mise à jour : pour modifier une partie d'une valeur existante, lisez-la d'abord avec un `SELECT`, puis définissez la valeur modifiée.
 
 ```sql
--- Update an Azure Network Interface's properties
-UPDATE azure.network.network_interfaces
-SET data__properties = json_replace(
-  json_remove(data__properties,
-    '$.auxiliarySku',
-    '$.provisioningState',
-    '$.resourceGuid',
-    '$.macAddress'
-  ),
-  '$.ipConfigurations[0].name',
-  'newIpConfigurationName'
+-- Set the protocols and ports a firewall rule allows
+UPDATE google.compute.firewalls
+SET data__allowed = json_array(
+  json_object('IPProtocol', 'tcp', 'ports', json_array('22', '443')),
+  json_object('IPProtocol', 'icmp')
 )
-WHERE subscription_id = '0123456789'
-AND resource_group_name = 'vmss-flex'
-AND network_interface_name = 'vmss-nic-01';
+WHERE firewall = 'test-fw'
+AND project = 'stackql-demo';
 ```

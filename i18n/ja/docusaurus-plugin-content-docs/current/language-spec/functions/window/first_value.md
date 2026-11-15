@@ -42,8 +42,10 @@ __*ORDER BY column*__
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 省略可能。ウィンドウフレームを定義します。主なオプションは次のとおりです。
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`（デフォルト）
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+フレーム句を省略した場合、フレームは `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` になります。このフレームの終端は現在の行ではなく、`ORDER BY` の列で現在の行と同順位になる最後の行です。
 
 ## 戻り値 {#return-values}
 

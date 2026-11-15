@@ -45,7 +45,7 @@ GROUP BY region;
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)，可使用 `pip install pystackql` 安装
 - 一个附加了 `ReadOnlyAccess` 或更高权限策略的 AWS 用户或角色（可使用 `sts assume-role` 担任）
-- 已设置 `AWS_ACCESS_KEY_ID` 和 `AWS_SECRET_ACCESS_KEY` 环境变量（可通过 [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) 自动完成）
+- 已设置 `AWS_ACCESS_KEY_ID` 和 `AWS_SECRET_ACCESS_KEY` 环境变量（可通过 [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) 自动完成）
 
 ## 代码 {#the-code}
 

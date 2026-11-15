@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## 参数 {#arguments}
 
 __*source*__  
-要根据由正则表达式（`pattern`）定义的模式从中提取子字符串的字符串字面量或字符串列。  
+字符串字面量或字符串列，其中与正则表达式 `pattern` 匹配的部分会被替换为 `replacement`。  
 
 __*pattern*__  
 要搜索的正则表达式模式。  

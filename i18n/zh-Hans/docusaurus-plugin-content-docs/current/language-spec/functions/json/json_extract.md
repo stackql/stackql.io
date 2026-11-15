@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-使用 [**DESCRIBE**](/language-spec/describe) 函数查找可用于 StackQL JSON 函数的 `array` 或 `object` 数据类型。使用 [**JSON_TYPE**](/language-spec/functions/json/json_type) 函数解析嵌套对象或数组元素的数据类型。
+使用 [**DESCRIBE**](/language-spec/describe) 语句查找可用于 StackQL JSON 函数的 `array` 或 `object` 数据类型。使用 [**JSON_TYPE**](/language-spec/functions/json/json_type) 函数解析嵌套对象或数组元素的数据类型。
 
 :::
 
@@ -79,7 +79,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### 返回附加到每个 Google Compute Engine 实例的第一个 NIC 的网络层级 {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
+### 返回附加到每个 Google Compute Engine 实例的第一个 NIC 的网络层级 {#return-the-network-tier-of-the-first-nic-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier

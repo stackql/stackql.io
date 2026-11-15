@@ -49,7 +49,7 @@ __*part*__
 
 ## 예제 {#examples}
 
-### 슬래시로 구분된 문자열에서 요소 추출 {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### 슬래시로 구분된 문자열에서 요소 추출 {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

@@ -47,7 +47,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convertir une date et heure en UTC {#covert-datetime-to-utc}
+### Convertir une date et heure en UTC {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -79,7 +79,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convertir un horodatage Unix en date et heure {#covert-a-unix-timestamp-to-a-datetime}
+### Convertir un horodatage Unix en date et heure {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 함수를 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다.
+[**DESCRIBE**](/language-spec/describe) 문을 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다.
 
 :::
 

@@ -22,7 +22,7 @@ StackQL 查询返回的结果可以格式化为表格（table）格式，也可�
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output table
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output table
 
 |---------------------|-----------------|
 |         ID          |      NAME       |
@@ -42,7 +42,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output json
 
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
@@ -57,7 +57,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output jsonl
 
 {"id":"5584456226809282885","name":"demo-instance-3"}
 {"id":"1257085253691867467","name":"demo-instance-1"}
@@ -66,13 +66,13 @@ and zone = 'australia-southeast1-a'" \
 
 
 ### `csv` 输出 {#csv-output}
-如下所示，将 `--output` 参数的值设为 `csv`，即可以 JSON 格式返回结果。这种输出格式适合在 Excel 中解析结果，或为其他系统提供数据接口：
+如下所示，将 `--output` 参数的值设为 `csv`，即可以 CSV 格式返回结果。这种输出格式适合在 Excel 中解析结果，或为其他系统提供数据接口：
 
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv
 
 id,name
 1257085253691867467,demo-instance-1
@@ -87,7 +87,7 @@ id,name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv -d "|"
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv -d "|"
 
 id|name
 1257085253691867467|demo-instance-1
@@ -102,7 +102,7 @@ id|name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 一条行记录，已美化输出（文件中每条记录占一行）：
@@ -172,7 +172,7 @@ TRACEPARENT=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 #### 发送记录 {#shipping-the-records}
@@ -202,8 +202,8 @@ service:
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }'
 ```
 
 | 键 | 用途 |

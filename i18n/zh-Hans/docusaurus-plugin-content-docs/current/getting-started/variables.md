@@ -34,7 +34,7 @@ Jsonnet 提供了条件逻辑、导入和继承以及循环结构等额外功能
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Jsonnet 数据 {#jsonnet-data}
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### 在 StackQL 语句中引用 Jsonnet 数据 {#referencing-jsonnet-data-in-an-stackql-statement}
+### 在 StackQL 语句中引用 Jsonnet 数据 {#referencing-jsonnet-data-in-a-stackql-statement}
 以下代码片段演示如何在 StackQL 命令中引用 jsonnet 值。
 
 ```sql
@@ -154,7 +154,7 @@ local project = std.extVar("project");
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Json 数据 {#json-data}
@@ -183,7 +183,7 @@ stackql exec -i myscript.iql \
 }
 ```
 
-### 在 StackQL 语句中引用 Json 数据 {#referencing-json-data-in-an-stackql-statement}
+### 在 StackQL 语句中引用 Json 数据 {#referencing-json-data-in-a-stackql-statement}
 上面的数据在 StackQL `INSERT` 语句中的引用方式如下所示：
 
 ```sql
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ SELECT
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```

@@ -49,9 +49,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 ## 例 {#examples}
 
 ### すべてのプロバイダーを一覧表示する {#list-all-providers}
-インストールされているバージョンの StackQL で利用できるすべてのクラウドベンダーを一覧表示します。
+ローカルの StackQL 環境で利用できるプロバイダーを一覧表示します。対象は、プロバイダーレジストリからプル済みのプロバイダーと、StackQL に組み込まれているプロバイダーです。
 ```sql
--- Returns all of the available cloud providers
+-- Returns the providers available locally
 SHOW PROVIDERS;
 ```
 <details>
@@ -76,9 +76,9 @@ SHOW PROVIDERS;
 </details>
 
 ### クラウドベンダーのすべてのサービスを一覧表示する {#list-all-services-in-a-cloud-provider}
-特定のクラウドベンダーで利用できるすべてのサービスを一覧表示します。追加情報を返すには、省略可能な EXTENDED キーワードを使用します。
+特定のプロバイダーで利用できるすべてのサービスを一覧表示します。追加情報を返すには、省略可能な EXTENDED キーワードを使用します。
 ```sql
--- Returns all services available in a cloud provider
+-- Returns all services available in a provider
 SHOW EXTENDED SERVICES IN google;
 ```
 <details>

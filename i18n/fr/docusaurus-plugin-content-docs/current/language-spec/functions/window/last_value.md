@@ -42,8 +42,10 @@ Spécifie l'ordre dans lequel les lignes sont traitées.
 
 __*ROWS BETWEEN frame_start AND frame_end*__
 Facultatif. Définit le cadre de fenêtre. Les options courantes sont notamment :
-- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` (valeur par défaut)
+- `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 - `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`
+
+Sans clause de cadre, le cadre est `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` : il se termine à la dernière ligne à égalité avec la ligne courante sur les colonnes de `ORDER BY`, et non à la ligne courante.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 

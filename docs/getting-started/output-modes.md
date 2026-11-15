@@ -22,7 +22,7 @@ Results can be formatted in a table format using the `table` value for the `--ou
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output table
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output table
 
 |---------------------|-----------------|
 |         ID          |      NAME       |
@@ -42,7 +42,7 @@ Results can be returned in JSON format using the `json` value for the `--output`
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output json
 
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
@@ -57,7 +57,7 @@ Results can be returned in newline delimited JSON (JSON Lines) format using the 
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output jsonl
 
 {"id":"5584456226809282885","name":"demo-instance-3"}
 {"id":"1257085253691867467","name":"demo-instance-1"}
@@ -66,13 +66,13 @@ and zone = 'australia-southeast1-a'" \
 
 
 ### `csv` Output {#csv-output}
-Results can be returned in JSON format using the `csv` value for the `--output` parameter as shown below, this output format is useful for parsing results in Excel or providing a data interface to another system:
+Results can be returned in CSV format using the `csv` value for the `--output` parameter as shown below, this output format is useful for parsing results in Excel or providing a data interface to another system:
 
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv
 
 id,name
 1257085253691867467,demo-instance-1
@@ -81,13 +81,13 @@ id,name
 ```
 
 #### Csv Output Example (with alternative delimiter) {#csv-output-example-with-alternative-delimiter}
-An alternatate delimiter can be specified for the `csv` output format using the `-d` switch as shown below:
+An alternate delimiter can be specified for the `csv` output format using the `-d` switch as shown below:
 
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv -d "|"
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv -d "|"
 
 id|name
 1257085253691867467|demo-instance-1
@@ -102,7 +102,7 @@ Results can be emitted as OpenTelemetry log records using the `otel` value for t
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 One row record, pretty-printed (the file holds each record on one line):
@@ -172,7 +172,7 @@ TRACEPARENT=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 #### Shipping the records {#shipping-the-records}
@@ -202,8 +202,8 @@ The records can be pushed straight to an OTLP/HTTP logs endpoint, as well as bei
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }'
 ```
 
 | Key | Purpose |

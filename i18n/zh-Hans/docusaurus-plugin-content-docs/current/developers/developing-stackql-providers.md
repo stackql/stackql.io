@@ -71,7 +71,7 @@ services/
 - __服务文档__：标准的 OpenAPI 3 文档。唯一必需的补充是 `components.x-stackQL-resources`，它声明作为表公开的资源。
 - __资源__：`id`、`name`、`methods` 和 `sqlVerbs`。每个资源是一张表；它的列来自其主 `select` 方法的响应 schema。
 - __方法__：一个 `operation`，它是指向 `paths` 的 JSON 指针（例如 `$ref: '#/paths/~1orgs~1{org}~1repos/get'`）；一个 `response` 块（`mediaType`、`openAPIDocKey`、`objectKey`），告诉引擎行在哪里；以及可选的 `request` 块和 `config`。
-- __SQL 动词映射__：`sqlVerbs.select`、`insert`、`update`、`replace` 和 `delete` 是方法引用的有序列表。引用按书写顺序依次尝试，第一个其必需参数被 `WHERE` 子句满足的引用胜出，因此应把 `list` 列在 `get` 之前。任何未被动词列表引用的方法都可以通过 `EXEC` 调用。
+- __SQL 动词映射__：`sqlVerbs.select`、`insert`、`update`、`replace` 和 `delete` 是方法引用的有序列表。StackQL 会考虑其必需参数全部由 `WHERE` 子句提供的那些被引用方法，并从中选择必需参数最多的一个，与列表顺序无关：提供了 `get` 所需标识符的查询会路由到 `get`，未提供的则路由到 `list`，两个方法打平时会报告为错误，而不是从中任选一个。任何未被动词列表引用的方法都可以通过 `EXEC` 调用。
 
 一个最小的资源如下所示：
 
@@ -275,7 +275,7 @@ REGISTRY PULL myprovider;
 1. Fork [stackql-provider-registry](https://github.com/stackql/stackql-provider-registry)，并在一个功能分支中将生成的 `provider-dev/openapi/src/<name>` 目录复制到 `providers/src/<name>`。
 2. 针对 `dev` 分支发起 pull request，并附上对 Provider 和所做更改的说明（见注册表的[贡献指南](https://github.com/stackql/stackql-provider-registry/blob/main/.github/CONTRIBUTING.md)）。
 3. GitHub Actions 使用 [stackql-provider-tests](https://github.com/stackql/stackql-provider-tests) 验证和测试 Provider。检查的规则是：文档必须是有效的 OpenAPI 规范，所有服务都必须能够枚举出资源，所有资源都必须能够枚举出方法，可通过 `SELECT` 调用的方法必须有有效的响应 schema，可通过 `INSERT` 调用的方法必须有有效的请求 schema。
-4. 合并时，工作流分配一个版本，对文档签名（Ed25519），将其打包，并将制品发布到 AWS S3 归档。随后文档树被镜像到 Cloudflare R2，并部署为 `registry-dev.stackql.app` 提供服务的 Cloudflare Worker。配置为使用 `dev` 注册表的安装可立即使用该 Provider。
+4. 合并时，工作流分配一个版本，对文档签名（ML-DSA-65），将其打包，并将制品发布到 AWS S3 归档。随后文档树被镜像到 Cloudflare R2，并部署为 `registry-dev.stackql.app` 提供服务的 Cloudflare Worker。配置为使用 `dev` 注册表的安装可立即使用该 Provider。
 5. 经过一段时间的监控后，`dev` 被提升到 `main`，这会针对 `registry.stackql.app` 重复发布过程。这就是面向采用默认配置的 StackQL 实例的发布。
 
 在发起 PR 之前，可以在本地针对某个注册表目录运行同一个 `stackql-provider-tests` 测试工具：

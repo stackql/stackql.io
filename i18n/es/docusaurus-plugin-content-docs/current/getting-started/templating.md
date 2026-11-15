@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Consulte también:  
 [[` exec `]](/command-line-usage/exec) [[` INSERT `]](/language-spec/insert) [[` SHOW `]](/language-spec/show) [[ Usar variables ]](/getting-started/variables)
 
-Los recursos en la nube se despliegan con StackQL mediante instrucciones `INSERT`. Las plantillas `INSERT` para los distintos recursos en la nube se generan con el comando `SHOW INSERT`.
+Los recursos en la nube se despliegan con StackQL mediante instrucciones `INSERT`. Las plantillas `INSERT` para los distintos recursos en la nube se pueden generar con el comando `SHOW INSERT`.
 
 ### Generar una plantilla `INSERT` con el comando `SHOW INSERT` {#generating-an-insert-template-using-the-show-insert-command}
 
@@ -72,7 +72,7 @@ SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
 Esto se puede ejecutar desde el `shell` o con un comando `exec`, como se muestra aquí:
 
 ```shell
-./stackql exec 'show insert /*+ REQUIRED */ into compute.instances' --output text -H
+./stackql exec 'show insert /*+ REQUIRED */ into google.compute.instances' --output text -H
 ```
 
 *__Devuelve:__*  

@@ -22,7 +22,7 @@ StackQL のクエリから返される結果は、表形式（table）のほか�
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output table
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output table
 
 |---------------------|-----------------|
 |         ID          |      NAME       |
@@ -42,7 +42,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output json
 
 [{"id":"5584456226809282885","name":"demo-instance-3"}
 ,{"id":"1257085253691867467","name":"demo-instance-1"}
@@ -57,7 +57,7 @@ and zone = 'australia-southeast1-a'" \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output jsonl
 
 {"id":"5584456226809282885","name":"demo-instance-3"}
 {"id":"1257085253691867467","name":"demo-instance-1"}
@@ -66,13 +66,13 @@ and zone = 'australia-southeast1-a'" \
 
 
 ### `csv` 出力 {#csv-output}
-次のように `--output` パラメーターに `csv` 値を指定すると、結果を JSON 形式で返すことができます。この出力形式は、Excel で結果を解析する場合や、ほかのシステムにデータインターフェイスを提供する場合に便利です：
+次のように `--output` パラメーターに `csv` 値を指定すると、結果を CSV 形式で返すことができます。この出力形式は、Excel で結果を解析する場合や、ほかのシステムにデータインターフェイスを提供する場合に便利です：
 
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv
 
 id,name
 1257085253691867467,demo-instance-1
@@ -87,7 +87,7 @@ id,name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output csv -d "|"
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output csv -d "|"
 
 id|name
 1257085253691867467|demo-instance-1
@@ -102,7 +102,7 @@ id|name
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 1 つの行レコードを整形して表示したものです（ファイルでは各レコードが 1 行に格納されます）：
@@ -172,7 +172,7 @@ TRACEPARENT=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01 \
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl
 ```
 
 #### レコードの送信 {#shipping-the-records}
@@ -202,8 +202,8 @@ service:
 ```shell
 stackql exec "select id, name from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'" \
---keyfilepath stackql-demo.json --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\'
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' --output otel -f instances.otlp.jsonl \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }'
 ```
 
 | キー | 用途 |

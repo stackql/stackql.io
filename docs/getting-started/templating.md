@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 See also:  
 [[` exec `]](/command-line-usage/exec) [[` INSERT `]](/language-spec/insert) [[` SHOW `]](/language-spec/show) [[ Using Variables ]](/getting-started/variables)
 
-Cloud resources are deployed with StackQL using `INSERT` statements.  `INSERT` templates for different cloud resources using the `SHOW INSERT` command.
+Cloud resources are deployed with StackQL using `INSERT` statements.  `INSERT` templates for different cloud resources can be generated using the `SHOW INSERT` command.
 
 ### Generating an `INSERT` template using the `SHOW INSERT` command {#generating-an-insert-template-using-the-show-insert-command}
 
@@ -60,11 +60,11 @@ SELECT
   '{{ .values.data__subnetwork }}'
 ```
 
-> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [Using Variables](/getting-started/variables).
+> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time; for more information see [Using Variables](/getting-started/variables).
 
 ### Generating an `INSERT` template with only required parameters {#generating-an-insert-template-with-only-required-parameters}
 
-To generate an StackQL `INSERT` template with only mandatory attributes use the `/*+ REQUIRED */` query hint as shown here:
+To generate a StackQL `INSERT` template with only mandatory attributes use the `/*+ REQUIRED */` query hint as shown here:
 
 ```sql
 SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
@@ -72,7 +72,7 @@ SHOW INSERT /*+ REQUIRED */ INTO google.compute.instances;
 This can be run through the `shell` or using an `exec` command as shown here:
 
 ```shell
-./stackql exec 'show insert /*+ REQUIRED */ into compute.instances' --output text -H
+./stackql exec 'show insert /*+ REQUIRED */ into google.compute.instances' --output text -H
 ```
 
 *__Returns :__*  

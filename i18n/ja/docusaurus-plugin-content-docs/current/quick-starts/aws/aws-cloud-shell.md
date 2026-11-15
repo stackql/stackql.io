@@ -1,5 +1,5 @@
 ---
-title: AWS Cloud Shell での StackQL
+title: AWS CloudShell での StackQL
 hide_title: true
 hide_table_of_contents: false
 keywords:
@@ -14,17 +14,17 @@ description: "ログイン中のユーザーとして AWS CloudShell で StackQL
 image: "/img/tutorials/aws/stackql-aws-provider-featured-image.png"
 ---
 
-# AWS Cloud Shell で StackQL を使用する
+# AWS CloudShell で StackQL を使用する
 
-このガイドでは、AWS Cloud Shell 内から StackQL を使用する方法を示します。AWS Console へのログインセッションのユーザーコンテキストを使用するか、別の IAM ロールを引き受けて実行します。StackQL は、SQL 構文を使ってクラウドインフラストラクチャとリソースのクエリおよびデプロイを可能にする強力な開発ツールです。    
+このガイドでは、AWS CloudShell 内から StackQL を使用する方法を示します。AWS Console へのログインセッションのユーザーコンテキストを使用するか、別の IAM ロールを引き受けて実行します。StackQL は、SQL 構文を使ってクラウドインフラストラクチャとリソースのクエリおよびデプロイを可能にする強力な開発ツールです。    
 
 動作確認済み <span class="tutorial_tested_on">組み込み SQL バックエンド</span> <span class="tutorial_tested_on">linux</span>
 
 <details>
 
-<summary><b>AWS Cloud Shell</b> とは？</summary>
+<summary><b>AWS CloudShell</b> とは？</summary>
 
-> AWS Cloud Shell は、Amazon Web Services（AWS）が提供する、ブラウザーベースで事前認証済みのシェルサービスです。開発者や IT 担当者は、Web ブラウザーから直接クラウドリソースを管理できます。AWS Cloud Shell を使用すると、ローカルマシンに AWS CLI（Command Line Interface）をインストールしたり設定したりすることなく、AWS サービスに関連するコマンドをすばやく実行できます。このサービスは、AWS CLI、Python、Node.js などの一般的な開発ツールと管理ツールがプリインストールされた、すぐに使える環境を提供します。これにより、AWS サービスの操作やタスクの自動化が容易になります。AWS Cloud Shell は AWS Management Console と直接統合されており、管理タスクの実行、AWS サービスの調査、インフラストラクチャの管理をシームレスに行えます。AWS Cloud Shell は AWS Console へのログインを通じてユーザーを自動的に認証するため、AWS アカウントのコンテキストでコマンドやスクリプトを実行するプロセスが簡単になり、クラウド運用の生産性と効率が向上します。
+> AWS CloudShell は、Amazon Web Services（AWS）が提供する、ブラウザーベースで事前認証済みのシェルサービスです。開発者や IT 担当者は、Web ブラウザーから直接クラウドリソースを管理できます。AWS CloudShell を使用すると、ローカルマシンに AWS CLI（Command Line Interface）をインストールしたり設定したりすることなく、AWS サービスに関連するコマンドをすばやく実行できます。このサービスは、AWS CLI、Python、Node.js などの一般的な開発ツールと管理ツールがプリインストールされた、すぐに使える環境を提供します。これにより、AWS サービスの操作やタスクの自動化が容易になります。AWS CloudShell は AWS Management Console と直接統合されており、管理タスクの実行、AWS サービスの調査、インフラストラクチャの管理をシームレスに行えます。AWS CloudShell は AWS Console へのログインを通じてユーザーを自動的に認証するため、AWS アカウントのコンテキストでコマンドやスクリプトを実行するプロセスが簡単になり、クラウド運用の生産性と効率が向上します。
 
 </details>
 
@@ -52,20 +52,20 @@ Usage:
 
 `stackql-aws-cloud-shell.sh` スクリプトは、StackQL 用の最新の AWS プロバイダーを自動的にダウンロードします。同梱のクラウドシェルスクリプトのソースコードは、[__github.com/stackql/cloud-shell-scripts__](https://github.com/stackql/cloud-shell-scripts) にあります。  
 
-## AWS Cloud Shell から `stackql` Linux パッケージをダウンロードする {#download-the-stackql-linux-package-from-aws-cloud-shell}
+## AWS CloudShell から `stackql` Linux パッケージをダウンロードする {#download-the-stackql-linux-package-from-aws-cloud-shell}
 
-まず、AWS Cloud Shell から次のコマンドを使用して、StackQL の最新の Linux バイナリをダウンロードします：  
+まず、AWS CloudShell から次のコマンドを使用して、StackQL の最新の Linux バイナリをダウンロードします：  
 
 ```shell
 curl -L https://bit.ly/stackql-zip -O \
 && unzip stackql-zip
 ```
 
-これにより、`stackql` バイナリと `stackql-aws-cloud-shell.sh` スクリプトが AWS Cloud Shell 環境のホームディレクトリにダウンロードされ、展開されます。これで準備は完了です！  
+これにより、`stackql` バイナリと `stackql-aws-cloud-shell.sh` スクリプトが AWS CloudShell 環境のホームディレクトリにダウンロードされ、展開されます。これで準備は完了です！  
 
-## AWS Cloud Shell から `stackql shell` を使用する {#using-the-stackql-shell-from-aws-cloud-shell}
+## AWS CloudShell から `stackql shell` を使用する {#using-the-stackql-shell-from-aws-cloud-shell}
 
-AWS Cloud Shell 内から認証済みの StackQL コマンドシェルを起動するのは、次のように簡単です：  
+AWS CloudShell 内から認証済みの StackQL コマンドシェルを起動するのは、次のように簡単です：  
 
 ```shell
 sh stackql-aws-cloud-shell.sh
@@ -87,11 +87,11 @@ AWS で IAM ロールを引き受けると、デフォルトのユーザー権�
 
 > IAM ロールの引き受けは、AWS リソースへの一時的なアクセスを付与する安全な方法です。ロールを引き受けると、AWS STS から一時的なセキュリティ認証情報が提供されます。この認証情報を使うと、そのロールに使用権限がある AWS サービスとリソースにアクセスできます。この仕組みは、クロスアカウントアクセス、ユーザーへの一時的なアクセスの付与、最小権限の原則の順守に最適です。
 
-> ロールは、AWS Management Console、AWS CLI または AWS CLI を使用して、また StackQL 内で直接引き受けることができます。これにより、ユーザーとアプリケーションは必要な期間だけ必要な権限を持つことになり、AWS 環境のセキュリティ体制が強化されます。
+> ロールは、AWS Management Console、AWS CLI または AWS SDK を使用して、また StackQL 内で直接引き受けることができます。これにより、ユーザーとアプリケーションは必要な期間だけ必要な権限を持つことになり、AWS 環境のセキュリティ体制が強化されます。
 
 </details>
 
-AWS Cloud Shell で StackQL を使用して IAM ロールを引き受けるには、`stackql-aws-cloud-shell.sh` スクリプトで `--role-arn` オプションを使用します。このオプションには、引き受けるロールの Amazon Resource Name（ARN）が必要です。指定した場合、StackQL はクエリやコマンドを実行する前に、AWS Security Token Service（STS）を使用して指定されたロールを引き受けます。
+AWS CloudShell で StackQL を使用して IAM ロールを引き受けるには、`stackql-aws-cloud-shell.sh` スクリプトで `--role-arn` オプションを使用します。このオプションには、引き受けるロールの Amazon Resource Name（ARN）が必要です。指定した場合、StackQL はクエリやコマンドを実行する前に、AWS Security Token Service（STS）を使用して指定されたロールを引き受けます。
 
 ```shell
 sh stackql-aws-cloud-shell.sh --role-arn arn:aws:iam::123456789012:role/YourRoleName
@@ -101,7 +101,7 @@ sh stackql-aws-cloud-shell.sh --role-arn arn:aws:iam::123456789012:role/YourRole
 
 引き受けた IAM ロールで StackQL のコマンドやスクリプトを実行する場合は、目的の操作の実行と指定したリソースへのアクセスに必要な権限がそのロールにあることを確認してください。このアプローチにより、きめ細かなアクセス制御が容易になり、セキュリティとガバナンスに関する AWS のベストプラクティスにも沿います。  
 
-## AWS Cloud Shell から `stackql exec`（バッチ操作）を実行する {#running-stackql-exec-batch-operations-from-aws-cloud-shell}
+## AWS CloudShell から `stackql exec`（バッチ操作）を実行する {#running-stackql-exec-batch-operations-from-aws-cloud-shell}
 
 StackQL のクエリは `exec` コマンドを使用して実行することもできます。これは次の用途に役立つオプションです：
 
@@ -110,7 +110,7 @@ StackQL のクエリは `exec` コマンドを使用して実行することも�
 - 入力ファイル（慣例では `.iql` ファイル）で提供される StackQL クエリの使用
 - 変数の読み込みやクエリの前処理（`json` または `jsonnet` を使用）を含む複雑な操作の実行
 
-AWS Cloud Shell 内で `exec` を使用する例を次に示します：  
+AWS CloudShell 内で `exec` を使用する例を次に示します：  
 
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
@@ -118,7 +118,7 @@ sh stackql-aws-cloud-shell.sh exec \
 "SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
-上の例では、指定した StackQL クエリを実行し、`CSV` の出力ファイルを生成します。このファイルは AWS Cloud Shell からダウンロードできます。さらに、`--role-arn` 引数で IAM ロールを指定すると、クエリやミューテーション操作に別のロールを引き受けることができます。次に例を示します（この例では、クエリを入力ファイルから読み込んでいます）：  
+上の例では、指定した StackQL クエリを実行し、`CSV` の出力ファイルを生成します。このファイルは AWS CloudShell からダウンロードできます。さらに、`--role-arn` 引数で IAM ロールを指定すると、クエリやミューテーション操作に別のロールを引き受けることができます。次に例を示します（この例では、クエリを入力ファイルから読み込んでいます）：  
 
 ```shell
 sh stackql-aws-cloud-shell.sh \
@@ -127,4 +127,4 @@ sh stackql-aws-cloud-shell.sh \
 --output csv --outfile output.csv
 ```
 
-`exec` コマンドの詳細については、[__こちら__](/command-line-usage/exec)を参照してください
+`exec` コマンドの詳細については、[__こちら__](/command-line-usage/exec)を参照してください。

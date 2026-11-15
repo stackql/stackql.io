@@ -19,7 +19,7 @@ Consulte también:
 
 :::tip 
 
-Use la función [**DESCRIBE**](/language-spec/describe) para localizar los tipos de datos `array` u `object` que se pueden usar con las funciones JSON de StackQL. Use la función [**JSON_TYPE**](/language-spec/functions/json/json_type) para determinar los tipos de datos de los objetos anidados o de los elementos de un array.
+Use la instrucción [**DESCRIBE**](/language-spec/describe) para localizar los tipos de datos `array` u `object` que se pueden usar con las funciones JSON de StackQL. Use la función [**JSON_TYPE**](/language-spec/functions/json/json_type) para determinar los tipos de datos de los objetos anidados o de los elementos de un array.
 
 :::
 
@@ -79,7 +79,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Devolver el nivel de red de la primera NIC conectada a cada instancia de Google Compute Engine {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
+### Devolver el nivel de red de la primera NIC conectada a cada instancia de Google Compute Engine {#return-the-network-tier-of-the-first-nic-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier

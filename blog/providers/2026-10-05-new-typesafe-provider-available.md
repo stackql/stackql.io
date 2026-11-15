@@ -259,7 +259,7 @@ Every statement in this post was checked before publication: the typesafe statem
 
 Pull the provider from the public registry:
 
-```bash
+```sql
 registry pull typesafe;
 ```
 

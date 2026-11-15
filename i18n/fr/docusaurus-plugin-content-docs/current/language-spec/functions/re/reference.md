@@ -31,7 +31,7 @@ La syntaxe d'expressions régulières suivante est prise en charge dans StackQL 
 | `^X` | `X` au début de la chaîne de caractères |
 | `X$` | `X` à la fin de la chaîne |
 | `.` | Correspond à n'importe quel caractère unique |
-| `\c` | Caractère `c`, où `c` est l'un de `\{}()[]`&vert;`*+?.`
+| `\c` | Caractère `c`, où `c` est l'un de `\{}()[]`&vert;`*+?.` |
 | `\c` | Échappements du langage C pour `c` dans `afnrtv`, par exemple `\t` ou `\n` |
 | `[abc]` | N'importe quel caractère unique de l'ensemble `abc` |
 | `[^abc]` | N'importe quel caractère unique absent de l'ensemble `abc` |

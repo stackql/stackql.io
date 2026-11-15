@@ -29,7 +29,7 @@ SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 ## Argumente {#arguments}
 
 __*columnExpression*__  
-Eine Spalte oder ein Ausdruck.  Wenn __*__ angegeben ist, werden alle Datensätze in der Ressource oder Gruppierung gezählt.  
+Eine Spalte oder ein Ausdruck.  
 
 > Mindestens ein Wert der *columnExpression* darf nicht `NULL` sein, andernfalls wird `NULL` zurückgegeben.
 

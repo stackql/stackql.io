@@ -31,7 +31,7 @@ The following regular expression syntax is supported in StackQL:
 | `^X` | `X` occurring at the beginning of the string |
 | `X$` | `X` occurring at the end of the string |
 | `.` | Match any single character |
-| `\c` | Character `c` where `c` is one of `\{}()[]`&vert;`*+?.`
+| `\c` | Character `c` where `c` is one of `\{}()[]`&vert;`*+?.` |
 | `\c` | C-language escapes for `c` in `afnrtv`. ex: `\t` or `\n` |
 | `[abc]` | Any single character from the set `abc` |
 | `[^abc]` | Any single character not in the set `abc` |

@@ -69,7 +69,7 @@ If you already have StackQL installed, you can register the StackQL MCP server i
 
 Before setting up StackQL with Claude Desktop, ensure you have:
 
-1. **StackQL installed** - Download and install StackQL from [stackql.io](https://stackql.io/downloads) or use a package manager
+1. **StackQL installed** - Download and install StackQL from [stackql.io](/installing-stackql) or use a package manager
 2. **Claude Desktop** - Download from [Anthropic's website](https://claude.ai/desktop)
 3. **Cloud provider credentials** - API keys or credentials for the cloud providers you want to work with
 
@@ -186,7 +186,7 @@ Why this beats the `env` block:
 
 ### Provider-Specific Credentials {#provider-specific-credentials}
 
-Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/providers](/providers))for the environment variables required for your desired provider(s).
+Different cloud providers require different authentication methods, see the provider docs ([https://stackql.io/providers](/providers)) for the environment variables required for your desired provider(s).
 
 
 ### Restarting Claude Desktop {#restarting-claude-desktop}

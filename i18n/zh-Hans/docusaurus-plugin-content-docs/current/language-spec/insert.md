@@ -78,7 +78,7 @@ SELECT 'stackql-demo',
 运行带 SELECT 的 INSERT 语句。
 
 ```sql
--- Create a Azure Network Interface
+-- Create an Azure Network Interface
 INSERT INTO azure.network.network_interfaces
   (
     resource_group_name,

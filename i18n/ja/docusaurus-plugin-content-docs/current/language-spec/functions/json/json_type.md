@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 関数を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を見つけられます。
+[**DESCRIBE**](/language-spec/describe) 文を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を見つけられます。
 
 :::
 

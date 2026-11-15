@@ -29,7 +29,7 @@ SELECT REGEXP_REPLACE(source, pattern, replacement) FROM <multipartIdentifier>;
 ## 인수 {#arguments}
 
 __*source*__  
-정규식(`pattern`)으로 정의된 패턴을 기준으로 부분 문자열을 추출할 리터럴 문자열 또는 문자열 열입니다.  
+정규식 `pattern`과 일치하는 부분이 `replacement`로 바뀌는 리터럴 문자열 또는 문자열 열입니다.  
 
 __*pattern*__  
 검색할 정규식 패턴입니다.  

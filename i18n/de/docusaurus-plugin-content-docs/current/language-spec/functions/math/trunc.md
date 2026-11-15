@@ -36,7 +36,7 @@ Gibt einen auf seinen ganzzahligen Anteil abgeschnittenen numerischen Wert zurü
 
 ## Beispiele {#examples}
 
-### Die Anzahl der Tage seit der Erstellung von Google Cloud Storage-Buckets auf zwei Dezimalstellen abschneiden {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### Die Anzahl der Tage seit der Erstellung von Google Cloud Storage-Buckets auf ganze Tage abschneiden {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

@@ -18,7 +18,7 @@ Les types de données StackQL servent à représenter les valeurs des champs d'e
 | `string` | séquence de caractères Unicode placée entre guillemets simples | `'mybucket'` |
 | `array` | collection ordonnée de valeurs, placées entre crochets `[ ]` et séparées par une virgule | `[0,1,2]` |
 | `object` | ensemble non ordonné de zéro ou plusieurs paires nom/valeur placées entre `{ }` et séparées par une virgule | `{"name": "mydb"}` |
-| `boolean` | `true` ou `false`, les valeurs booléennes ne sont pas placées entre guillemets, sans quoi elles sont traitées comme des chaînes de caractères | `true` |
+| `boolean` | `true` ou `false`, sans guillemets (une valeur entre guillemets comme `'true'` est traitée comme une chaîne de caractères) | `true` |
 | `integer` | un nombre entier qui peut être positif, négatif ou nul | `2` |
 | `double` | nombre à virgule flottante en double précision, peut être positif ou négatif | `0.95` |
 <br/>

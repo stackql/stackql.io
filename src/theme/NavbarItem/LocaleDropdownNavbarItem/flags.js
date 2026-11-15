@@ -7,7 +7,7 @@
 import React from 'react';
 
 // The code shown next to the flag: the language subtag of the locale in
-// upper case (en -> EN, ja -> JA, ko -> KO, zh-Hans -> ZH), never a country
+// upper case (en -> EN, ja -> JA, ko -> KO, pt-BR -> PT, zh-Hans -> ZH), never a country
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. If two locales ever share a language (zh-Hans and
@@ -136,6 +136,25 @@ const FLAGS = {
         <path transform={`rotate(${180 - KR_DIAGONAL})`} d={trigram([true, false, true])} />
         <path transform={`rotate(${KR_DIAGONAL})`} d={trigram([false, false, false])} />
       </g>
+    </svg>
+  ),
+  // Brazil: the rhombus 1.7 of 20 units from the sides and 1.7 of 14 from
+  // top and bottom (the flag is 10:7; flag-icons fits it to 4:3 the same
+  // way), the globe kept round with a radius of a quarter of the height.
+  // The band is the part of the globe between two arcs of radius 8 and 8.5
+  // units centred 2 units left of the globe's vertical axis on the bottom
+  // edge (the 1971 construction), drawn as a path so no clipPath id is
+  // needed. The stars and the motto are left out: at 20 by 15 pixels they
+  // are below a pixel.
+  'pt-BR': (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#009c3b" d="M0 0h640v480H0z" />
+      <path fill="#ffdf00" d="M54.4 240 320 58.3 585.6 240 320 421.7z" />
+      <circle cx="320" cy="240" r="120" fill="#002776" />
+      <path
+        fill="#fff"
+        d="M210.25 191.5A291.43 291.43 0 0 1 438.81 256.8A120 120 0 0 1 434.52 275.78A274.29 274.29 0 0 0 203.86 209.88A120 120 0 0 1 210.25 191.5z"
+      />
     </svg>
   ),
   pl: (className) => (

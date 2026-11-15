@@ -130,8 +130,6 @@ AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
 
-윈도우 함수에 대한 자세한 내용은 [윈도우 함수](/language-spec/windowing_functions)를 참조하세요.
-
 ### `WITH` 절로 공통 테이블 식(CTE) 사용 {#using-common-table-expressions-ctes-with-with}
 
 CTE를 사용하면 주 쿼리에서 참조할 수 있는, 이름이 지정된 임시 결과 집합을 정의할 수 있습니다.
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 CTE에 대한 자세한 내용은 [WITH (CTEs)](/language-spec/with)를 참조하세요.
+
+윈도우 함수에 대한 자세한 내용은 [윈도우 함수](/language-spec/windowing_functions)를 참조하세요.

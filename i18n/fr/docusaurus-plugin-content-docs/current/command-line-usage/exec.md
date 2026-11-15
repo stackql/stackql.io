@@ -38,7 +38,7 @@ Commande servant à exécuter une requête StackQL, soit sous forme d'instructio
 |<span class="nowrap">`--dryrun`</span>|Option d'exécution à blanc ; seul le préprocesseur s'exécute et la sortie est renvoyée |
 |<span class="nowrap">`--var`</span>|Variables externes (qui peuvent être des variables d'environnement ou des secrets) lues par les fichiers jsonnet spécifiés avec l'option `--iqldata`, exemple `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|Fichier dans lequel écrire les résultats si nécessaire (par défaut, les résultats sont uniquement affichés dans la console), exemple `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Affiche les informations d'aide|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Affiche les informations d'aide|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option `-f` est sélectionnée, ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
 <br/>
 <br/>

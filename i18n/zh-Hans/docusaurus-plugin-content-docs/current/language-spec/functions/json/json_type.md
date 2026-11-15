@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-使用 [**DESCRIBE**](/language-spec/describe) 函数查找可与 StackQL JSON 函数配合使用的 `array` 或 `object` 数据类型。
+使用 [**DESCRIBE**](/language-spec/describe) 语句查找可与 StackQL JSON 函数配合使用的 `array` 或 `object` 数据类型。
 
 :::
 

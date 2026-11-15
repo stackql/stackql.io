@@ -29,19 +29,19 @@ SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 ## Arguments {#arguments}
 
 __*columnExpression*__  
-A column or expression.  If __*__ is specified then all records in the resource or grouping are counted.  
+A column or expression.  
 
 > At least one value from the *columnExpression* must be non `NULL` otherwise `NULL` is returned.
 
 __*separator*__  
-Seperator used for the concatenated result, the default of `,` is used if *separator* is not specified.
+Separator used for the concatenated result, the default of `,` is used if *separator* is not specified.
 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.
 
 ## Return Value(s) {#return-values}
 
-Returns a string as a list of values seperated by the *separator* or `,`.
+Returns a string as a list of values separated by the *separator* or `,`.
 
 * * *
 

@@ -18,7 +18,7 @@ StackQL-Datentypen stellen Werte für Ein- oder Ausgabefelder (Eigenschaften ode
 | `string` | Folge von Unicode-Zeichen in einfachen Anführungszeichen | `'mybucket'` |
 | `array` | geordnete Sammlung von Werten, eingeschlossen in eckige Klammern `[ ]` und durch Komma getrennt | `[0,1,2]` |
 | `object` | ungeordnete Menge von null oder mehr Name/Wert-Paaren, eingeschlossen in `{ }` und durch Komma getrennt | `{"name": "mydb"}` |
-| `boolean` | `true` oder `false`, boolesche Werte stehen nicht in Anführungszeichen und werden als String-Werte behandelt | `true` |
+| `boolean` | `true` oder `false`, nicht in Anführungszeichen (ein Wert in Anführungszeichen wie `'true'` wird als String behandelt) | `true` |
 | `integer` | eine ganze Zahl, die positiv, negativ oder null sein kann | `2` |
 | `double` | Gleitkommazahl mit doppelter Genauigkeit, kann positiv oder negativ sein | `0.95` |
 <br/>

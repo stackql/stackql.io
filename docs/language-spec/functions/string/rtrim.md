@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "RTRIM function in StackQL: remove whitespace, or a given set of characters, from the right of a string."
+description: "RTRIM function in StackQL: remove spaces, or any of a given set of characters, from the right of a string."
 image: "/img/stackql-featured-image.png"
 ---
-Returns a string formed by removing white space or any characters that appear from the right side of an input string.  
+Returns a string formed by removing spaces, or any of a given set of characters, from the right side of an input string.  
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[` LTRIM `]](/language-spec/functions/string/ltrim) [[` TRIM `]](/language-spec/functions/string/trim) 
@@ -29,7 +29,7 @@ __*character_expression*__
 A literal string or string column.
 
 __*character*__  
-An optional character to remove if found at the end of the *character_expression*.
+An optional string of characters: every character in it is removed from the end of the *character_expression*.  If omitted, spaces are removed (not tabs or newlines).
 
 ## Return Value(s) {#return-values}
 Returns a string.
@@ -38,7 +38,7 @@ Returns a string.
 
 ## Examples {#examples}
 
-### Remove trailing whitespace from a string column {#remove-trailing-whitespace-from-a-string-column}
+### Remove trailing spaces from a string column {#remove-trailing-spaces-from-a-string-column}
 
 ```sql
 SELECT rtrim(description) AS trailing_whitespace_removed

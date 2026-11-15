@@ -63,7 +63,7 @@ Dans une session authentifiée, exécutez une instruction `EXEC` pour démarrer 
 
 ```sql
 -- Start a stopped Compute Engine resource instance
-EXEC /*+ AWAIT  */ google.compute.instances.stop 
+EXEC /*+ AWAIT  */ google.compute.instances.start 
 @instance = 'demo-instance-1', 
 @project = 'stackql-demo', 
 @zone = 'australia-southeast1-a';
@@ -88,7 +88,7 @@ Dans une session authentifiée, exécutez une instruction `EXEC` pour attacher u
 
 ```sql
 -- Attach a Disk resource to a Compute Engine instance
-EXEC google.compute.instances.attachDisk 
+EXEC google.compute.instances.attach_disk 
 @zone='australia-southeast1-a', 
 @project='stackql-demo', 
 @instance='demo-instance-1' 

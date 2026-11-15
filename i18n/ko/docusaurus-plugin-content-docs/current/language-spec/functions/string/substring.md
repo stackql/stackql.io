@@ -72,6 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
+
 ### 열에서 마지막 *n*개 문자 반환 {#return-the-last-n-characters-from-a-column}
 
 ```sql

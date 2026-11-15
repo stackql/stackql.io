@@ -1,5 +1,5 @@
 ---
-title: StackQL in AWS Cloud Shell
+title: StackQL in AWS CloudShell
 hide_title: true
 hide_table_of_contents: false
 keywords:
@@ -14,17 +14,17 @@ description: "StackQL als angemeldeter Benutzer in AWS CloudShell ausführen: Li
 image: "/img/tutorials/aws/stackql-aws-provider-featured-image.png"
 ---
 
-# StackQL in AWS Cloud Shell verwenden
+# StackQL in AWS CloudShell verwenden
 
-In dieser Anleitung zeigen wir die Verwendung von StackQL, einem leistungsfähigen Entwicklungstool, mit dem sich Cloud-Infrastruktur und -Ressourcen per SQL-Syntax abfragen und bereitstellen lassen, aus AWS Cloud Shell heraus - mit dem Benutzerkontext der Anmeldesitzung an der AWS Console oder durch Annehmen einer anderen IAM-Rolle.    
+In dieser Anleitung zeigen wir die Verwendung von StackQL, einem leistungsfähigen Entwicklungstool, mit dem sich Cloud-Infrastruktur und -Ressourcen per SQL-Syntax abfragen und bereitstellen lassen, aus AWS CloudShell heraus - mit dem Benutzerkontext der Anmeldesitzung an der AWS Console oder durch Annehmen einer anderen IAM-Rolle.    
 
 Getestet mit <span class="tutorial_tested_on">eingebettetes SQL-Backend</span> <span class="tutorial_tested_on">linux</span>
 
 <details>
 
-<summary>Was ist <b>AWS Cloud Shell</b>?</summary>
+<summary>Was ist <b>AWS CloudShell</b>?</summary>
 
-> AWS Cloud Shell ist ein browserbasierter, vorauthentifizierter Shell-Dienst von Amazon Web Services (AWS).  Er ermöglicht Entwicklern und IT-Fachleuten, ihre Cloud-Ressourcen direkt aus dem Webbrowser zu verwalten.  Mit AWS Cloud Shell können Benutzer schnell Befehle für AWS-Services ausführen, ohne die AWS CLI (Command Line Interface) auf ihren lokalen Rechnern installieren oder konfigurieren zu müssen.  Der Dienst stellt eine einsatzbereite Umgebung mit vorinstallierten gängigen Entwicklungs- und Verwaltungswerkzeugen bereit, etwa der AWS CLI, Python, Node.js und mehr, was die Interaktion mit AWS-Services und die Automatisierung von Aufgaben erleichtert.  AWS Cloud Shell ist direkt in die AWS Management Console integriert und bietet so ein nahtloses Erlebnis beim Ausführen administrativer Aufgaben, beim Erkunden von AWS-Services und beim Verwalten von Infrastruktur.  Da AWS Cloud Shell Benutzer automatisch über ihre Anmeldung an der AWS Console authentifiziert, vereinfacht es das Ausführen von Befehlen und Skripten im Kontext ihres AWS-Kontos und steigert so Produktivität und Effizienz im Cloud-Betrieb.
+> AWS CloudShell ist ein browserbasierter, vorauthentifizierter Shell-Dienst von Amazon Web Services (AWS).  Er ermöglicht Entwicklern und IT-Fachleuten, ihre Cloud-Ressourcen direkt aus dem Webbrowser zu verwalten.  Mit AWS CloudShell können Benutzer schnell Befehle für AWS-Services ausführen, ohne die AWS CLI (Command Line Interface) auf ihren lokalen Rechnern installieren oder konfigurieren zu müssen.  Der Dienst stellt eine einsatzbereite Umgebung mit vorinstallierten gängigen Entwicklungs- und Verwaltungswerkzeugen bereit, etwa der AWS CLI, Python, Node.js und mehr, was die Interaktion mit AWS-Services und die Automatisierung von Aufgaben erleichtert.  AWS CloudShell ist direkt in die AWS Management Console integriert und bietet so ein nahtloses Erlebnis beim Ausführen administrativer Aufgaben, beim Erkunden von AWS-Services und beim Verwalten von Infrastruktur.  Da AWS CloudShell Benutzer automatisch über ihre Anmeldung an der AWS Console authentifiziert, vereinfacht es das Ausführen von Befehlen und Skripten im Kontext ihres AWS-Kontos und steigert so Produktivität und Effizienz im Cloud-Betrieb.
 
 </details>
 
@@ -52,20 +52,20 @@ Usage:
 
 Das Skript `stackql-aws-cloud-shell.sh` lädt automatisch den neuesten AWS-Provider für StackQL herunter.  Der Quellcode der enthaltenen Cloud-Shell-Skripte ist unter [__github.com/stackql/cloud-shell-scripts__](https://github.com/stackql/cloud-shell-scripts) zu finden.  
 
-## Das `stackql`-Linux-Paket aus AWS Cloud Shell herunterladen {#download-the-stackql-linux-package-from-aws-cloud-shell}
+## Das `stackql`-Linux-Paket aus AWS CloudShell herunterladen {#download-the-stackql-linux-package-from-aws-cloud-shell}
 
-Laden Sie zunächst aus AWS Cloud Shell die neueste Linux-Binärdatei für StackQL mit den folgenden Befehlen herunter:  
+Laden Sie zunächst aus AWS CloudShell die neueste Linux-Binärdatei für StackQL mit den folgenden Befehlen herunter:  
 
 ```shell
 curl -L https://bit.ly/stackql-zip -O \
 && unzip stackql-zip
 ```
 
-Dadurch werden die `stackql`-Binärdatei und das Skript `stackql-aws-cloud-shell.sh` heruntergeladen und in das Home-Verzeichnis Ihrer AWS Cloud Shell-Umgebung entpackt.  Jetzt kann es losgehen!  
+Dadurch werden die `stackql`-Binärdatei und das Skript `stackql-aws-cloud-shell.sh` heruntergeladen und in das Home-Verzeichnis Ihrer AWS CloudShell-Umgebung entpackt.  Jetzt kann es losgehen!  
 
-## Die `stackql shell` aus AWS Cloud Shell verwenden {#using-the-stackql-shell-from-aws-cloud-shell}
+## Die `stackql shell` aus AWS CloudShell verwenden {#using-the-stackql-shell-from-aws-cloud-shell}
 
-Eine authentifizierte StackQL-Kommandoshell starten Sie aus AWS Cloud Shell heraus ganz einfach mit:  
+Eine authentifizierte StackQL-Kommandoshell starten Sie aus AWS CloudShell heraus ganz einfach mit:  
 
 ```shell
 sh stackql-aws-cloud-shell.sh
@@ -87,11 +87,11 @@ Das Annehmen einer IAM-Rolle in AWS ermöglicht es Ihnen, Aktionen auszuführen 
 
 > Das Annehmen einer IAM-Rolle ist eine sichere Methode, um vorübergehenden Zugriff auf AWS-Ressourcen zu gewähren.  Wenn Sie eine Rolle annehmen, stellt AWS STS Ihnen temporäre Sicherheitsanmeldedaten bereit, mit denen Sie auf die AWS-Services und -Ressourcen zugreifen können, für die die Rolle berechtigt ist.  Dieser Mechanismus eignet sich ideal für kontoübergreifenden Zugriff, vorübergehenden Zugriff für Benutzer oder die Einhaltung des Prinzips der geringsten Berechtigung.
 
-> Rollen können über die AWS Management Console, die AWS CLI sowie direkt in StackQL angenommen werden. So ist sichergestellt, dass Benutzer und Anwendungen nur für die erforderliche Dauer über die notwendigen Berechtigungen verfügen, was die Sicherheitslage Ihrer AWS-Umgebung verbessert.
+> Rollen können über die AWS Management Console, die AWS CLI oder die AWS SDKs sowie direkt in StackQL angenommen werden. So ist sichergestellt, dass Benutzer und Anwendungen nur für die erforderliche Dauer über die notwendigen Berechtigungen verfügen, was die Sicherheitslage Ihrer AWS-Umgebung verbessert.
 
 </details>
 
-Um eine IAM-Rolle mit StackQL in AWS Cloud Shell anzunehmen, verwenden Sie die Option `--role-arn` des Skripts `stackql-aws-cloud-shell.sh`.  Diese Option erfordert den Amazon Resource Name (ARN) der Rolle, die Sie annehmen möchten.  Ist sie angegeben, nimmt StackQL die angegebene Rolle über den AWS Security Token Service (STS) an, bevor Abfragen oder Befehle ausgeführt werden.
+Um eine IAM-Rolle mit StackQL in AWS CloudShell anzunehmen, verwenden Sie die Option `--role-arn` des Skripts `stackql-aws-cloud-shell.sh`.  Diese Option erfordert den Amazon Resource Name (ARN) der Rolle, die Sie annehmen möchten.  Ist sie angegeben, nimmt StackQL die angegebene Rolle über den AWS Security Token Service (STS) an, bevor Abfragen oder Befehle ausgeführt werden.
 
 ```shell
 sh stackql-aws-cloud-shell.sh --role-arn arn:aws:iam::123456789012:role/YourRoleName
@@ -101,7 +101,7 @@ Durch das Annehmen einer Rolle können Sie mit StackQL auf AWS-Ressourcen zugrei
 
 Stellen Sie beim Ausführen von StackQL-Befehlen oder -Skripten mit einer angenommenen IAM-Rolle sicher, dass die Rolle über die erforderlichen Berechtigungen verfügt, um die gewünschten Aktionen auszuführen und auf die angegebenen Ressourcen zuzugreifen.  Dieser Ansatz ermöglicht eine granulare Zugriffskontrolle und entspricht den AWS Best Practices für Sicherheit und Governance.  
 
-## `stackql exec` (Batch-Operationen) aus AWS Cloud Shell ausführen {#running-stackql-exec-batch-operations-from-aws-cloud-shell}
+## `stackql exec` (Batch-Operationen) aus AWS CloudShell ausführen {#running-stackql-exec-batch-operations-from-aws-cloud-shell}
 
 StackQL-Abfragen können auch mit dem Befehl `exec` ausgeführt werden; das ist eine nützliche Option für:
 
@@ -110,7 +110,7 @@ StackQL-Abfragen können auch mit dem Befehl `exec` ausgeführt werden; das ist 
 - die Verwendung von StackQL-Abfragen aus Eingabedateien (per Konvention `.iql`-Dateien)
 - das Ausführen komplexer Operationen, einschließlich des Einlesens von Variablen oder der Vorverarbeitung von Abfragen (mit `json` oder `jsonnet`)
 
-Beispiele für die Verwendung von `exec` in AWS Cloud Shell sind hier dargestellt:  
+Beispiele für die Verwendung von `exec` in AWS CloudShell sind hier dargestellt:  
 
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
@@ -118,7 +118,7 @@ sh stackql-aws-cloud-shell.sh exec \
 "SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
-Das obige Beispiel führt die angegebene StackQL-Abfrage aus und erzeugt eine `CSV`-Ausgabedatei, die aus AWS Cloud Shell heruntergeladen werden kann.  Zusätzlich können Sie mit dem Argument `--role-arn` eine IAM-Rolle angeben, um für Ihre Abfrage- oder Mutationsoperation eine andere Rolle anzunehmen; ein Beispiel ist hier dargestellt (in diesem Fall stammt die Abfrage aus einer Eingabedatei):  
+Das obige Beispiel führt die angegebene StackQL-Abfrage aus und erzeugt eine `CSV`-Ausgabedatei, die aus AWS CloudShell heruntergeladen werden kann.  Zusätzlich können Sie mit dem Argument `--role-arn` eine IAM-Rolle angeben, um für Ihre Abfrage- oder Mutationsoperation eine andere Rolle anzunehmen; ein Beispiel ist hier dargestellt (in diesem Fall stammt die Abfrage aus einer Eingabedatei):  
 
 ```shell
 sh stackql-aws-cloud-shell.sh \
@@ -127,4 +127,4 @@ sh stackql-aws-cloud-shell.sh \
 --output csv --outfile output.csv
 ```
 
-Weitere Informationen zum Befehl `exec` finden Sie [__hier__](/command-line-usage/exec)
+Weitere Informationen zum Befehl `exec` finden Sie [__hier__](/command-line-usage/exec).

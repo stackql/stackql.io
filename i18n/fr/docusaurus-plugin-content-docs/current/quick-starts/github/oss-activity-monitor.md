@@ -41,7 +41,7 @@ Le projet [__oss-activity-monitor__](https://github.com/stackql/oss-activity-mon
 
 ## Fonctionnement {#how-it-works}
 
-Le projet est déployé dans un conteneur (avec `docker` ou une autre plateforme de déploiement de conteneurs) ; il est écrit en `python` avec le paquet [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) et utilise les providers [`github`](https://github.stackql.io/providers/github/) et [`homebrew`](https://homebrew.stackql.io/providers/homebrew) pour `stackql`.  Des vues matérialisées et des instructions `SELECT` servent à capturer et à comparer l'état entre les métriques actuelles et précédentes des points de terminaison GitHub et Homebrew surveillés, comme le décrit le diagramme ci-dessous :  
+Le projet est déployé dans un conteneur (avec `docker` ou une autre plateforme de déploiement de conteneurs) ; il est écrit en `python` avec le paquet [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) et utilise les providers [`github`](https://github-provider.stackql.io/) et [`homebrew`](https://homebrew-provider.stackql.io/) pour `stackql`.  Des vues matérialisées et des instructions `SELECT` servent à capturer et à comparer l'état entre les métriques actuelles et précédentes des points de terminaison GitHub et Homebrew surveillés, comme le décrit le diagramme ci-dessous :  
 
 ```mermaid
 graph TB

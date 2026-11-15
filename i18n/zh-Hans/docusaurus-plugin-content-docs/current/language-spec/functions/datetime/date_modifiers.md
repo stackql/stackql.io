@@ -33,7 +33,7 @@ StackQL 日期时间函数中的日期或时间值之后可以跟零个或多个
 
 ## 示例 {#examples}
 
-### 使用 `now` 修饰符返回当前日期和时间 {#return-the-current-date-and-time-using-the-now-modifier}
+### 使用 `now` 时间值返回当前日期和时间 {#return-the-current-date-and-time-using-the-now-time-value}
 
 ```sql
 SELECT name, date('now') as date, time('now') as time
@@ -48,7 +48,7 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 将日期时间转换为 UTC {#covert-datetime-to-utc}
+### 将日期时间转换为 UTC {#convert-datetime-to-utc}
 
 ```sql
 SELECT name, timeCreated,
@@ -80,7 +80,7 @@ datetime(timeCreated, 'start of month') as start_of_month
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 将 Unix 时间戳转换为日期时间 {#covert-a-unix-timestamp-to-a-datetime}
+### 将 Unix 时间戳转换为日期时间 {#convert-a-unix-timestamp-to-a-datetime}
 
 ```sql
 SELECT datetime(1576417943, 'unixepoch') as date_from_ts

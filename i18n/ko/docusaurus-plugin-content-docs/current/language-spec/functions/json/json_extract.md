@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 함수를 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다. [**JSON_TYPE**](/language-spec/functions/json/json_type) 함수를 사용하면 중첩된 객체 또는 배열 요소의 데이터 형식을 확인할 수 있습니다.
+[**DESCRIBE**](/language-spec/describe) 문을 사용하면 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾을 수 있습니다. [**JSON_TYPE**](/language-spec/functions/json/json_type) 함수를 사용하면 중첩된 객체 또는 배열 요소의 데이터 형식을 확인할 수 있습니다.
 
 :::
 
@@ -79,7 +79,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### 각 Google Compute Engine 인스턴스에 연결된 첫 번째 NIC의 네트워크 계층 반환 {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
+### 각 Google Compute Engine 인스턴스에 연결된 첫 번째 NIC의 네트워크 계층 반환 {#return-the-network-tier-of-the-first-nic-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier

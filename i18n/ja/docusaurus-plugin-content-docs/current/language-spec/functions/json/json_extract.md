@@ -19,7 +19,7 @@ image: "/img/stackql-featured-image.png"
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 関数を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を確認できます。ネストしたオブジェクトや配列要素のデータ型を調べるには、[**JSON_TYPE**](/language-spec/functions/json/json_type) 関数を使用します。
+[**DESCRIBE**](/language-spec/describe) 文を使用すると、StackQL の JSON 関数で使用できる `array` または `object` データ型を確認できます。ネストしたオブジェクトや配列要素のデータ型を調べるには、[**JSON_TYPE**](/language-spec/functions/json/json_type) 関数を使用します。
 
 :::
 
@@ -79,7 +79,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### 各 Google Compute Engine インスタンスにアタッチされた最初の NIC のネットワーク階層を返す {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
+### 各 Google Compute Engine インスタンスにアタッチされた最初の NIC のネットワーク階層を返す {#return-the-network-tier-of-the-first-nic-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier

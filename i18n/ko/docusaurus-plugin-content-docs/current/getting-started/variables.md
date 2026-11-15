@@ -34,7 +34,7 @@ Jsonnet은 조건부 논리, 가져오기, 상속, 루프 구조 같은 추가 �
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.jsonnet \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### Jsonnet 데이터 {#jsonnet-data}
@@ -74,7 +74,7 @@ local nw_self_link = 'https://compute.googleapis.com/compute/v1/projects/' + pro
 }
 ```
 
-### StackQL 문에서 Jsonnet 데이터 참조 {#referencing-jsonnet-data-in-an-stackql-statement}
+### StackQL 문에서 Jsonnet 데이터 참조 {#referencing-jsonnet-data-in-a-stackql-statement}
 다음 코드 조각은 StackQL 명령에서 jsonnet 값을 참조하는 방법을 보여 줍니다.
 
 ```sql
@@ -154,7 +154,7 @@ local project = std.extVar("project");
 ```shell
 stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }'
 ```
 
 ### JSON 데이터 {#json-data}
@@ -183,7 +183,7 @@ stackql exec -i myscript.iql \
 }
 ```
 
-### StackQL 문에서 JSON 데이터 참조 {#referencing-json-data-in-an-stackql-statement}
+### StackQL 문에서 JSON 데이터 참조 {#referencing-json-data-in-a-stackql-statement}
 위에 표시된 데이터는 다음과 같이 StackQL `INSERT` 문에서 참조합니다.
 
 ```sql
@@ -204,7 +204,7 @@ SELECT
 '{{ firewalls[0].sourceRanges }}',
 '{{ firewalls[0].allowed }}';
 
-INSERT /*+ AWAIT  */ INTO compute.firewalls
+INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
  project,
  data__name,
@@ -228,7 +228,7 @@ SELECT
 ```shell
 ./stackql exec -i myscript.iql \
 --iqldata vars.json \
---keyfilepath stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "stackql-demo.json" } }' \
 --dryrun \
 --output text
 ```

@@ -104,7 +104,7 @@ export const tabLabel = (icon, text) => (
   </TabItem>
   <TabItem value="package">
 
-  StackQL은 MacOS용으로 서명 및 공증된 대화형 `pkg` 설치 관리자로 제공됩니다.
+  StackQL은 macOS용으로 서명 및 공증된 대화형 `pkg` 설치 관리자로 제공됩니다.
 
   <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
       <div className={clsx(buttonStyles.buttons)}>
@@ -145,7 +145,7 @@ export const tabLabel = (icon, text) => (
   >
   <TabItem value="curl">
 
-  사용 중인 linux 아키텍처(amd64 또는 arm64)용 `stackql` 실행 바이너리를 현재 디렉터리에 설치하려면 터미널에서 다음 명령을 실행합니다:
+  사용 중인 Linux 아키텍처(amd64 또는 arm64)용 `stackql` 실행 바이너리를 현재 디렉터리에 설치하려면 터미널에서 다음 명령을 실행합니다:
 
   ```bash
   curl -fsSL https://get-stackql.io/install | sh
@@ -209,7 +209,7 @@ export const tabLabel = (icon, text) => (
   </TabItem>
   <TabItem value="irm">
 
-  Authenticode 서명 실행 파일을 현재 디렉터리에 설치하려면 Powershell 터미널에서 다음을 실행합니다:
+  Authenticode 서명 실행 파일을 현재 디렉터리에 설치하려면 PowerShell 터미널에서 다음을 실행합니다:
 
   ```powershell
   Invoke-RestMethod https://get-stackql.io/install | Invoke-Expression
@@ -343,7 +343,7 @@ cargo install stackql-deploy
   >
   <TabItem value="aws">
 
-  ### AWS Cloud Shell
+  ### AWS CloudShell
 
   AWS CloudShell은 AWS CLI가 사전 설치 및 인증된 브라우저 기반 셸을 제공합니다. AWS CloudShell에서 StackQL을 실행하면 추가 인증 단계 없이 AWS 리소스를 쿼리하고 관리할 수 있습니다. 자세한 지침은 [AWS CloudShell 튜토리얼](/quick-starts/aws/aws-cloud-shell)을 참조하세요.
 
@@ -1127,7 +1127,7 @@ __사용 예__
     query: |
       select total_private_repos
       from github.orgs.orgs
-      where org = 'stackql'"
+      where org = 'stackql'
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}
@@ -1191,7 +1191,7 @@ StackQL은 다양한 프로그래밍 언어와 환경에서 사용할 수 있는
 
 ### `pystackql` Python 패키지 {#pystackql-python-package}
 
-Python 프로그램에서 StackQL을 사용하기 위한 Python 래퍼입니다. `pystackql` 패키지는 [__PyPi__](https://pypi.org/project/pystackql/)에서 제공되며, `pystackql` 패키지에 대한 문서는 [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/)에서 볼 수 있습니다. `pystackql` 패키지를 설치하려면 다음 명령을 실행합니다:
+Python 프로그램에서 StackQL을 사용하기 위한 Python 래퍼입니다. `pystackql` 패키지는 [__PyPI__](https://pypi.org/project/pystackql/)에서 제공되며, `pystackql` 패키지에 대한 문서는 [__Read the Docs__](https://pystackql.readthedocs.io/en/latest/)에서 볼 수 있습니다. `pystackql` 패키지를 설치하려면 다음 명령을 실행합니다:
 
 ```bash
 pip install pystackql

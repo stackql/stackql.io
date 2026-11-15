@@ -43,7 +43,7 @@ stackql shell --auth="${AUTH}"
 StackQL 命令选项的默认值（例如前面讨论的输出格式和配色方案）可以通过 `stackqlrc` 初始化文件设置。如果该文件存在于 StackQL 可执行文件所使用的当前目录中，则会被自动加载；也可以使用 `--configfile` 标志引用它，如下所示：
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 有关命令选项的更多信息，请参阅“全局标志”主题。
@@ -58,15 +58,15 @@ StackQL 可执行文件的输出会发送到所用系统的 stdout，可以在 B
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ StackQL 输入文件可用于执行多条以分号结尾的命令。这是进行
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

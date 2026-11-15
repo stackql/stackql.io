@@ -105,7 +105,7 @@ ORDER BY updated_date DESC;
 Helm charts, endpoints, blueprints, agents, playbooks, APIs and skills come through the generic artifacts resource (`artifact_type` takes the plural path segment); team-scoped registry paths are the same resources with `team_name` in the `WHERE` clause:
 
 ```sql
-SELECT name, display_name, latest_version_id_str, updated_date
+SELECT name, display_name, latest_version_id, updated_date
 FROM nvidia.private_registry.artifacts
 WHERE artifact_type = 'helm-charts';
 
@@ -195,7 +195,7 @@ SELECT 'aws', region, json_extract(gpu_info, '$.Gpus[0].Name')
 FROM aws.ec2.instance_types
 WHERE region = 'us-east-1' AND gpu_info IS NOT NULL
 UNION ALL
-SELECT 'google', json_extract(zone, '$'), json_extract(accelerators, '$[0].guestAcceleratorType')
+SELECT 'google', zone, json_extract(accelerators, '$[0].guestAcceleratorType')
 FROM google.compute.machine_types
 WHERE project = 'my-project' AND zone = 'us-central1-a' AND accelerators IS NOT NULL;
 ```

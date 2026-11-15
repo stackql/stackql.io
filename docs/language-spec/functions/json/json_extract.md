@@ -19,7 +19,7 @@ See also:
 
 :::tip 
 
-Use the [**DESCRIBE**](/language-spec/describe) function to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
+Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `object` datatypes which can be used with StackQL JSON functions. Use the [**JSON_TYPE**](/language-spec/functions/json/json_type) function to resolve the datatypes of nested objects or array elements.
 
 :::
 
@@ -43,7 +43,7 @@ __*json_array_or_object*__
 A JSON array or object.
 
 __*json_path*__  
-The JSON path to an array or object contained within an *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
+The JSON path to an array or object contained within a *json_array_or_object*.  See [jsonpath.com](https://jsonpath.com/).
 
 > If a single *json_path* is provided then a scalar result is returned mapping to the datatype of the resolved path.
 
@@ -79,7 +79,7 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-### Return the network tier of first NIC attached to each Google Compute Engine instances {#return-the-network-tier-of-first-nic-attached-to-each-google-compute-engine-instances}
+### Return the network tier of the first NIC attached to each Google Compute Engine instance {#return-the-network-tier-of-the-first-nic-attached-to-each-google-compute-engine-instance}
 
 ```sql
 SELECT name, json_extract(networkInterfaces, '$[0].accessConfigs[0].networkTier') as network_tier

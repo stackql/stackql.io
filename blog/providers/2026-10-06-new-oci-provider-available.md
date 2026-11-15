@@ -190,9 +190,9 @@ SELECT 'aws', instance_id, instance_type, json_extract(state, '$.name')
 FROM aws.ec2.instances
 WHERE region = 'us-east-1'
 UNION ALL
-SELECT 'azure', name, json_extract(properties, '$.hardwareProfile.vmSize'), json_extract(properties, '$.provisioningState')
+SELECT 'azure', name, json_extract(hardware_profile, '$.vmSize'), provisioning_state
 FROM azure.compute.virtual_machines
-WHERE subscriptionId = '00000000-0000-0000-0000-000000000000' AND resourceGroupName = 'my-rg'
+WHERE subscription_id = '00000000-0000-0000-0000-000000000000' AND resource_group_name = 'my-rg'
 UNION ALL
 SELECT 'google', name, machineType, status
 FROM google.compute.instances
@@ -209,7 +209,7 @@ This release ships the tier-1 services listed above. OCI has dozens more (AI ser
 
 The provider needs stackql `v0.12.732` or later. Pull it from the public registry:
 
-```bash
+```sql
 registry pull oci;
 ```
 

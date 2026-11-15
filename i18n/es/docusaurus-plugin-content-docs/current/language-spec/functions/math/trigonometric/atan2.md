@@ -46,10 +46,10 @@ SELECT ATAN2(1, 1) AS arc_tangent_value;
 
 Esta consulta devuelve π/4 o aproximadamente `0.785`, ya que la arcotangente del punto (1,1) corresponde a un ángulo de π/4 radianes en el primer cuadrante.
 
-### Calcular la arcotangente del punto (10, -10) {#calculate-the-arc-tangent-of-the-point-10--10}
+### Calcular la arcotangente del punto (-10, 10) {#calculate-the-arc-tangent-of-the-point--10-10}
 
 ```sql
 SELECT ATAN2(10, -10) AS arc_tangent_value;
 ```
 
-Esta consulta calcula la arcotangente del punto (10, -10), cuyo resultado es 3π/4 o aproximadamente `2.356`, ya que la tangente de este ángulo es -1 en el segundo cuadrante.
+Esta consulta calcula el ángulo del punto (-10, 10), con y = 10 y x = -10, cuyo resultado es 3π/4 o aproximadamente `2.356`: la tangente de este ángulo es -1 y el punto está en el segundo cuadrante.

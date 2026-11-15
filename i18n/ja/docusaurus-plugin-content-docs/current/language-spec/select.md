@@ -113,7 +113,7 @@ HAVING location != 'ASIA';
 
 `COUNT` 関数および StackQL がサポートするその他の集約関数の詳細については、[集約関数](/language-spec/functions/aggregate/count)を参照してください。
 
-### Azure VM Scaleset からオンデマンド VM と対応するネットワークインターフェイスの一覧を取得する {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
+### Azure VM Scale Set からオンデマンド VM と対応するネットワークインターフェイスの一覧を取得する {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
 [`SPLIT_PART`](/language-spec/functions/string/split_part) 関数と [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 関数を使用する `SELECT` 文を実行して、OD VM とその NIC の一覧を取得します。なお、修飾子がない場合、subscription_id と resource_group_name は 3 つのリソースすべてに適用されます。
 
 ```sql
@@ -129,8 +129,6 @@ WHERE subscription_id = '0123456789'
 AND resource_group_name = 'vmss-flex'
 AND JSON_EXTRACT(c.properties,'$.priority') is null;
 ```
-
-ウィンドウ関数の詳細については、[ウィンドウ関数](/language-spec/windowing_functions)を参照してください。
 
 ### `WITH` で共通テーブル式（CTE）を使用する {#using-common-table-expressions-ctes-with-with}
 
@@ -162,3 +160,5 @@ ORDER BY total_contributions DESC;
 ```
 
 CTE の詳細については、[WITH (CTEs)](/language-spec/with) を参照してください。
+
+ウィンドウ関数の詳細については、[ウィンドウ関数](/language-spec/windowing_functions)を参照してください。

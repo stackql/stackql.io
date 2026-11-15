@@ -49,7 +49,7 @@ __*result_if_false*__
 
 ## 示例 {#examples}
 
-### 对 Compute Engine 实例的磁盘大小进行分类 {#catgorize-disk-sizes-of-compute-engine-instances}
+### 对 Compute Engine 实例的磁盘大小进行分类 {#categorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
 SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size

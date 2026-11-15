@@ -49,9 +49,9 @@ SHOW [ EXTENDED ] DEPENDENCIES [ LIKE '<pattern>' ];
 ## Examples {#examples}
 
 ### List all providers {#list-all-providers}
-List all of the available cloud providers in the installed version of StackQL.
+List the providers available in the local StackQL environment: those pulled from the provider registry, plus the providers built into StackQL.
 ```sql
--- Returns all of the available cloud providers
+-- Returns the providers available locally
 SHOW PROVIDERS;
 ```
 <details>
@@ -76,9 +76,9 @@ SHOW PROVIDERS;
 </details>
 
 ### List all services in a cloud provider {#list-all-services-in-a-cloud-provider}
-List all of the services available within a given cloud provider, use the optional EXTENDED keyword to return additional information.
+List all of the services available within a given provider, use the optional EXTENDED keyword to return additional information.
 ```sql
--- Returns all services available in a cloud provider
+-- Returns all services available in a provider
 SHOW EXTENDED SERVICES IN google;
 ```
 <details>
@@ -207,7 +207,7 @@ SELECT
 
 > The fields returned can be limited to only those required by the provider, see [__Creating Infrastructure Templates__](/getting-started/templating) for examples of this.
 
-> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time,for more information see [__Using Variables__](/getting-started/variables).
+> This template can then be used along with a `json` or `jsonnet` data file to supply values at run time; for more information see [__Using Variables__](/getting-started/variables).
 
 ### Show the StackQL version {#show-the-stackql-version}
 

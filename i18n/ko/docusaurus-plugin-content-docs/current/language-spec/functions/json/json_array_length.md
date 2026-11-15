@@ -19,7 +19,7 @@ JSON 배열의 요소 수를 반환합니다.
 
 :::tip 
 
-[**DESCRIBE**](/language-spec/describe) 함수를 사용하여 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾으세요. 중첩된 객체 또는 배열 요소의 데이터 형식을 확인하려면 [**JSON_TYPE**](/language-spec/functions/json/json_type) 함수를 사용하세요.
+[**DESCRIBE**](/language-spec/describe) 문을 사용하여 StackQL JSON 함수와 함께 사용할 수 있는 `array` 또는 `object` 데이터 형식을 찾으세요. 중첩된 객체 또는 배열 요소의 데이터 형식을 확인하려면 [**JSON_TYPE**](/language-spec/functions/json/json_type) 함수를 사용하세요.
 
 :::
 

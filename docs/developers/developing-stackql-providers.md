@@ -71,7 +71,7 @@ services/
 - __Service document__: a standard OpenAPI 3 document. The only required addition is `components.x-stackQL-resources`, which declares the resources exposed as tables.
 - __Resource__: `id`, `name`, `methods` and `sqlVerbs`. Each resource is a table; its columns come from the response schema of its primary `select` method.
 - __Method__: an `operation` that is a JSON pointer into `paths` (for example `$ref: '#/paths/~1orgs~1{org}~1repos/get'`), a `response` block (`mediaType`, `openAPIDocKey`, `objectKey`) that tells the engine where the rows are, and an optional `request` block and `config`.
-- __SQL verb mapping__: `sqlVerbs.select`, `insert`, `update`, `replace` and `delete` are ordered lists of method references. References are tried in the order written and the first whose required parameters are satisfied by the `WHERE` clause wins, so list `list` before `get`. Any method not referenced by a verb list is callable via `EXEC`.
+- __SQL verb mapping__: `sqlVerbs.select`, `insert`, `update`, `replace` and `delete` are ordered lists of method references. StackQL considers the referenced methods whose required parameters are all supplied by the `WHERE` clause and chooses the one with the most required parameters, whatever the order of the list: a query that supplies the identifier `get` requires is routed to `get`, one that does not is routed to `list`, and two methods that tie are reported as an error rather than chosen between. Any method not referenced by a verb list is callable via `EXEC`.
 
 A minimal resource looks like this:
 
@@ -275,7 +275,7 @@ Publishing is a separate, human-in-the-loop step and is not part of the template
 1. Fork [stackql-provider-registry](https://github.com/stackql/stackql-provider-registry) and copy the generated `provider-dev/openapi/src/<name>` directory to `providers/src/<name>` in a feature branch.
 2. Raise a pull request against the `dev` branch with a description of the provider and the changes (see the registry [contribution guide](https://github.com/stackql/stackql-provider-registry/blob/main/.github/CONTRIBUTING.md)).
 3. GitHub Actions validates and tests the provider using [stackql-provider-tests](https://github.com/stackql/stackql-provider-tests). The rules evaluated are: the document must be a valid OpenAPI specification, all services must be enumerable for resources, all resources must be enumerable for methods, methods callable via `SELECT` must have a valid response schema, and methods callable via `INSERT` must have a valid request schema.
-4. On merge, the workflow allocates a version, signs the documents (Ed25519), packages them and publishes the artifact to the AWS S3 archive. The docs tree is then mirrored to Cloudflare R2 and the Cloudflare Worker serving `registry-dev.stackql.app` is deployed. The provider is immediately available to installations configured to use the `dev` registry.
+4. On merge, the workflow allocates a version, signs the documents (ML-DSA-65), packages them and publishes the artifact to the AWS S3 archive. The docs tree is then mirrored to Cloudflare R2 and the Cloudflare Worker serving `registry-dev.stackql.app` is deployed. The provider is immediately available to installations configured to use the `dev` registry.
 5. After a period of monitoring, `dev` is promoted to `main`, which repeats the publish for `registry.stackql.app`. This is publication for default configured instances of StackQL.
 
 The same `stackql-provider-tests` harness can be run locally against a registry directory before raising a PR:

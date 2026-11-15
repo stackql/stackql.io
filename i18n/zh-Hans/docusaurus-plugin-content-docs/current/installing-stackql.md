@@ -343,7 +343,7 @@ cargo install stackql-deploy
   >
   <TabItem value="aws">
 
-  ### AWS Cloud Shell
+  ### AWS CloudShell
 
   AWS CloudShell 提供基于浏览器的 shell，其中已预装 AWS CLI 并完成身份验证。在 AWS CloudShell 中运行 StackQL，无需额外的身份验证步骤即可查询和管理 AWS 资源。详细说明请参阅 [AWS CloudShell 教程](/quick-starts/aws/aws-cloud-shell)。
 
@@ -1127,7 +1127,7 @@ __用法示例__
     query: |
       select total_private_repos
       from github.orgs.orgs
-      where org = 'stackql'"
+      where org = 'stackql'
   env: 
     STACKQL_GITHUB_USERNAME: ${{  secrets.STACKQL_GITHUB_USERNAME }}
     STACKQL_GITHUB_PASSWORD: ${{  secrets.STACKQL_GITHUB_PASSWORD }}

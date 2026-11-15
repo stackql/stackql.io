@@ -73,10 +73,11 @@ where account_id = 'abcd1234-1234-5678-90ab-abcdef123456'
 AND active = false;
 ```
 
-**結果**：
+**結果**（表示名が `Jane Doe`、ID が `1234567890123456` のユーザーの場合）：
 
 ```
-He said "Hello" and left.
+/* Jane Doe */
+DELETE FROM databricks_account.iam.account_users WHERE account_id = 'abcd1234-1234-5678-90ab-abcdef123456' AND id = '1234567890123456'
 ```
 
 * * *

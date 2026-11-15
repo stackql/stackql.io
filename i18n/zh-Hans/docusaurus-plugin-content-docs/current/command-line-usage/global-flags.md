@@ -50,7 +50,7 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--loglevel`</span> | string | 日志级别，必须是 {`info`, `warn`, `debug`, `fatal`} 之一 | `fatal` |
 | <span class="nowrap">`--mcp.config`</span> | string | [MCP 服务器](/command-line-usage/mcp#mcp-configuration-object)的 JSON / YAML 配置对象（`stackql mcp` 和 `stackql srv`） | `{}` |
 | <span class="nowrap">`--mcp.log.format`</span> | string | MCP 审计日志的编码，`jsonl` 或 `otel`（OTLP/JSON 日志记录）；覆盖 `--mcp.config` 中的 `server.audit.format`。参阅[日志格式](/command-line-usage/mcp#log-format)。在 `v0.11.660` 及之后的 StackQL 发布版本中可用。 | `jsonl` |
-| <span class="nowrap">`--mcp.protocol.version`</span> | string | 对外通告的最新 MCP 协议修订版本，`auto`、`2026-07-28`（仅无会话）或更早的修订版本，如 `2025-11-25`；覆盖 `--mcp.config` 中的 `server.protocol_version`。参阅[固定修订版本](/command-line-usage/mcp#pinning-the-revision)。在 `v0.12.732` 及之后的 StackQL 发布版本中可用。 | `auto` |
+| <span class="nowrap">`--mcp.protocol.version`</span> | string | 对外通告的最新 MCP 协议修订版本，`auto`、`2026-07-28`（仅无会话）或更早的修订版本，如 `2025-11-25`；覆盖 `--mcp.config` 中的 `server.protocol_version`。参阅[固定修订版](/command-line-usage/mcp#pinning-the-revision)。在 `v0.12.732` 及之后的 StackQL 发布版本中可用。 | `auto` |
 | <span class="nowrap">`--mcp.server.type`</span> | string | MCP 服务器类型，{`http`, `stdio`, `reverse_proxy`} 之一。参阅 [MCP 服务器类型](/command-line-usage/mcp#mcp-server-type)。 | `http` |
 | <span class="nowrap">`--metadatattl`</span> | integer | 已缓存元数据文档的 TTL，以秒为单位 | `3600` |
 | <span class="nowrap">`--namespaces`</span> | string | 表示缓存、视图等所用命名空间的 JSON / YAML 字符串 | `{}` |

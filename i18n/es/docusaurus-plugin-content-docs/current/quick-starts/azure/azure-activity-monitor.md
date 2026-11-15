@@ -10,7 +10,7 @@ keywords:
   - cspm
   - azure
   - microsoft azure
-description: Consultar y desplegar infraestructura y recursos en la nube de Azure con SQL
+description: "Consultar logs de actividad de Azure Monitor con StackQL: filtrar eventos en el servidor por fecha, recurso o ID de correlación, contarlos por gravedad y cruzarlos con máquinas virtuales."
 image: "/img/tutorials/azure/stackql-azure-provider-featured-image.png"
 ---
 
@@ -22,7 +22,7 @@ Probado con <span class="tutorial_tested_on">backend SQL integrado</span> <span 
 
 ## Consulta básica {#basic-query}
 
-La consulta básica que se muestra a continuación usa el recurso [__`azure.monitor.activity_logs`__](https://azure.stackql.io/providers/azure/monitor/activity_logs/) del provider [__`azure`__](https://azure.stackql.io/providers/azure/); sustituya el `subscriptionId` por el suyo.  En esta consulta usaremos `jsonnet` con variables externas para el preprocesamiento de consultas de StackQL; para obtener más información, consulte [Usar variables](/getting-started/variables).  En este caso lo hemos hecho con un bloque de código `jsonnet` en línea, pero también se puede proporcionar como un archivo externo mediante los argumentos `--iqldata` o `-q` de `stackql exec` o `stackql shell`.  
+La consulta básica que se muestra a continuación usa el recurso [__`azure.monitor.activity_logs`__](https://azure-provider.stackql.io/services/monitor/activity_logs/) del provider [__`azure`__](https://azure-provider.stackql.io/); sustituya el `subscriptionId` por el suyo.  En esta consulta usaremos `jsonnet` con variables externas para el preprocesamiento de consultas de StackQL; para obtener más información, consulte [Usar variables](/getting-started/variables).  En este caso lo hemos hecho con un bloque de código `jsonnet` en línea, pero también se puede proporcionar como un archivo externo mediante los argumentos `--iqldata` o `-q` de `stackql exec` o `stackql shell`.  
 
 Las funciones [__`JSON_EXTRACT`__](/language-spec/functions/json/json_extract) y [__`SPLIT_PART`__](/language-spec/functions/string/split_part) se usan para manipular los datos de la respuesta.  
 
@@ -202,7 +202,7 @@ WHERE $filter =  'eventTimestamp ge ''2024-01-24T00:00:00Z'' and eventTimestamp 
 AND subscription_id = '631d1c6d-2a65-43e7-93c2-688bfe4e1468';
 ```
 
-### Obtener las actividades de un recurso específico {#getting-activities-for-a-specific-resource-1}
+### Obtener las actividades de un ID de correlación {#getting-activities-for-a-correlation-id}
 
 El ID de correlación es un identificador único que se usa para rastrear y agrupar los eventos relacionados con una operación o transacción concreta en Azure. Esta consulta ayuda a localizar eventos específicos dentro de un período determinado que están relacionados con una operación concreta, lo que facilita la solución de problemas o la comprensión de la secuencia de actividades.  Este es un ejemplo que usa un `correlationId` capturado en la consulta anterior:  
 
@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-Los parámetros de `WHERE` de una consulta con `JOIN` que no están desambiguados, como `subscriptionId` en el caso anterior, se comparten entre ambos recursos (`azure.monitor.activity_logs` y `azure.compute.virtual_machines` en este caso).
+Los parámetros de `WHERE` de una consulta con `JOIN` que no están desambiguados, como `subscription_id` en el caso anterior, se comparten entre ambos recursos (`azure.monitor.activity_logs` y `azure.compute.virtual_machines` en este caso).
 
 :::

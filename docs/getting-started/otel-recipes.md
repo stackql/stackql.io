@@ -296,4 +296,4 @@ jobs:
           path: "*.otlp.jsonl"
 ```
 
-The same job on any other scheduler needs only the flag and the two environment variables; `TRACEPARENT` is optional and is generated per process when absent, in which case the statements of one run still share a trace id.
+The same job on any other scheduler needs only the flag and the two environment variables; `TRACEPARENT` is optional: without it each `stackql exec` process generates its own trace id, which only the statements run by that process share, so the two statements of the run above would carry different trace ids.

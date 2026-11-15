@@ -27,7 +27,7 @@ Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span c
 
 ## Overview {#overview}
 
-When I looked for tools to monitor our open source project, I found most of them didn't work as advertised or didn't work at all (in the case of thrid part apps in GitHub), so I built our own which you could launch and use on your open source GitHub project...  
+When I looked for tools to monitor our open source project, I found most of them didn't work as advertised or didn't work at all (in the case of third-party apps in GitHub), so I built our own which you could launch and use on your open source GitHub project...  
 
 The [__oss-activity-monitor__](https://github.com/stackql/oss-activity-monitor) project uses [__stackql__](https://github.com/stackql/stackql) to perform real-time open source project activity monitoring, this includes real time notification of:
 
@@ -41,7 +41,7 @@ The [__oss-activity-monitor__](https://github.com/stackql/oss-activity-monitor) 
 
 ## How it works {#how-it-works}
 
-The project is deployed in a container (using `docker` or other container deployment platform), it is built using `python` and the [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) package, using the [`github`](https://github.stackql.io/providers/github/) and [`homebrew`](https://homebrew.stackql.io/providers/homebrew) providers for `stackql`.  Materialized views and `SELECT` statements are used to capture and compare state between current and previous metrics for GitHub and Homebrew monitored endpoints, this is described in the diagram here:  
+The project is deployed in a container (using `docker` or other container deployment platform), it is built using `python` and the [`pystackql`](https://pystackql.readthedocs.io/en/latest/intro.html) package, using the [`github`](https://github-provider.stackql.io/) and [`homebrew`](https://homebrew-provider.stackql.io/) providers for `stackql`.  Materialized views and `SELECT` statements are used to capture and compare state between current and previous metrics for GitHub and Homebrew monitored endpoints, this is described in the diagram here:  
 
 ```mermaid
 graph TB
@@ -117,7 +117,7 @@ docker build --no-cache -t oss-activity-monitor .
 docker run --env-file .env oss-activity-monitor
 ```
 
-thats it!  You'll now get real-time alerts when there is activity on your open source project.  To stop the container, use:  
+That's it!  You'll now get real-time alerts when there is activity on your open source project.  To stop the container, use:  
 
 ```bash
 docker stop $(docker ps -a -q --filter ancestor=oss-activity-monitor)

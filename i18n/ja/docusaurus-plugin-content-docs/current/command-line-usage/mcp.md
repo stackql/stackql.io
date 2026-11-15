@@ -481,7 +481,7 @@ Body は `execute_tool <tool>` / `elicitation <tool>` で、重大度は `INFO`�
 
 #### 監査の無効化 {#disabling-audit}
 
-監査を完全に無効にするには、次のように設定します（PR2 より前の動作）。
+監査を完全に無効にして、監査機能のなかった `v0.10.474` より前のリリースと同じ状態にするには、次のように設定します。
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ SQL を一から書く前に `query_library_search` を確認し、次に `query
 |`--mcp.protocol.version`|公開する最新のプロトコルリビジョン：`auto`（デフォルト）、`2026-07-28`、または `2025-11-25` などの古いリビジョン。[リビジョンの固定](#pinning-the-revision)を参照してください。|
 |`--env.file`|起動時に読み込まれ、`reload_credentials` ツールによって必要に応じて再読み込みされる dotenv 形式の認証情報ファイル。[認証情報の（再）読み込み](#credential-resourcing---envfile--reload_credentials)を参照してください。|
 |`--pgsrv.port`|PostgreSQL ワイヤプロトコルサーバーの TCP ポート（`stackql srv` と組み合わせて使用）。|
-|`-H`, `--help`|ヘルプ情報を表示します。|
+|`-h`, `--help`|ヘルプ情報を表示します。|
 |`-v`, `--verbose`|追加の出力を含む詳細モードで実行します。|
 
 &nbsp;

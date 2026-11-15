@@ -43,7 +43,7 @@ StackQL シェルはデフォルトで表形式の結果を返しますが、`--
 前述の出力形式や配色など、StackQL のコマンドオプションのデフォルトは、`stackqlrc` 初期化ファイルで設定できます。このファイルが StackQL 実行ファイルの使用するカレントディレクトリに存在する場合は、自動的に読み込まれます。または、次のように `--configfile` フラグを使用して参照することもできます。
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 コマンドオプションの詳細については、グローバルフラグのトピックを参照してください。
@@ -58,15 +58,15 @@ StackQL コマンドを含む Windows PowerShell スクリプトの例を次に�
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ StackQL の入力ファイルを使用すると、セミコロンで終端され
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```

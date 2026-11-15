@@ -72,6 +72,7 @@ FROM google.compute.instances
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';
 ```
+
 ### 返回列的最后 *n* 个字符 {#return-the-last-n-characters-from-a-column}
 
 ```sql

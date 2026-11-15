@@ -54,10 +54,10 @@ __*ROWS BETWEEN frame_start AND frame_end*__
 
 ## 예제 {#examples}
 
-### 기여 수가 두 번째로 많은 기여자 조회 {#get-the-second-highest-contributor}
+### 기여 수 상위 3명의 기여자 조회 {#get-the-top-three-contributors}
 
 ```sql
--- Get the top 3 contributors by name for comparison
+-- Get the top 3 contributors by number of contributions
 SELECT
     login,
     contributions,

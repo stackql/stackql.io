@@ -29,7 +29,7 @@ SELECT GROUP_CONCAT(columnExpression [, separator]) FROM <multipartIdentifier>
 ## 인수 {#arguments}
 
 __*columnExpression*__  
-열 또는 식입니다. __*__ 기호를 지정하면 리소스 또는 그룹의 모든 레코드 수를 셉니다.
+열 또는 식입니다.
 
 > *columnExpression*의 값 중 하나 이상은 `NULL`이 아니어야 합니다. 그렇지 않으면 `NULL`이 반환됩니다.
 

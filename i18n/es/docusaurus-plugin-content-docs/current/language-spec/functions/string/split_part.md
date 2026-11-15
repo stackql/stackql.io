@@ -49,7 +49,7 @@ Devuelve una cadena.
 
 ## Ejemplos {#examples}
 
-### Extraer elementos de una cadena separados por una barra diagonal {#extract-elements-from-a-string-seperated-by-a-forward-slash}
+### Extraer elementos de una cadena separados por una barra diagonal {#extract-elements-from-a-string-separated-by-a-forward-slash}
 
 
 <Tabs

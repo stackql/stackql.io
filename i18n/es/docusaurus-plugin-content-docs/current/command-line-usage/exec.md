@@ -38,7 +38,7 @@ Comando que se usa para ejecutar una consulta de StackQL, ya sea como una instru
 |<span class="nowrap">`--dryrun`</span>|Opción de ejecución de prueba; solo se ejecuta el preprocesador y se devuelve la salida |
 |<span class="nowrap">`--var`</span>|Variables externas (pueden ser variables de entorno o secretos) que usan los archivos jsonnet especificados con la opción `--iqldata`, ejemplo `--var region=${AWS_REGION}`|
 |<span class="nowrap">`-f`</span><br/><span class="nowrap">`--outfile`</span>|Archivo en el que se escriben los resultados si es necesario (el comportamiento predeterminado es mostrar los resultados solo en la consola), ejemplo `--outfile myoutput.csv`|
-|<span class="nowrap">`-H`</span><br/><span class="nowrap">`--help`</span>|Muestra la información de ayuda|
+|<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Muestra la información de ayuda|
 |<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se selecciona la opción `-f`, esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
 <br/>
 <br/>

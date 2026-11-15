@@ -12,7 +12,7 @@ keywords:
 description: Zwei AWS IAM-Richtliniendokumente oder AWS-Tags-Arrays mit SQL auf semantische Äquivalenz vergleichen.
 image: "/img/stackql-featured-image.png"
 ---
-Vergleicht zwei JSON-Zeichenketten mit AWS IAM-Richtlinien (oder AWS-Tags-Arrays) und gibt `true` zurück, wenn sie gemäß den Regeln der AWS-Richtlinienauswertung semantisch äquivalent sind, andernfalls `false`.  
+Vergleicht zwei JSON-Zeichenketten mit AWS IAM-Richtlinien (oder AWS-Tags-Arrays) und gibt `1` zurück, wenn sie gemäß den Regeln der AWS-Richtlinienauswertung semantisch äquivalent sind, andernfalls `0`.  
 
 Siehe auch:  
 [__[` SELECT `]__](/language-spec/select) [__[` DESCRIBE `]__](/language-spec/describe) [__[` JSON_EQUAL `]__](/language-spec/functions/json/json_equal) [__[` JSON_EXTRACT `]__](/language-spec/functions/json/json_extract) [[ Datentypen ]](/language-spec/data-types)

@@ -37,7 +37,7 @@ WHERE region IN (
 GROUP BY region;
 ```
 
-The above query is actually 17 queries run in parallel (one query for each region), the results are aggregated and presented as a report.  Using [__`pystackql`__](https://pystackql.readthedocs.io/en/latest/pystackql.html) - a Python wrapper for StackQL - we can iterate through __all resources__ in __all services__ for __all regions__ which are supported by the given service.  The result is a report of how many instances are deployed of each resource in each region, as seen in the example below:  
+The above query is actually 17 queries run in parallel (one query for each region); the results are aggregated and presented as a report.  Using [__`pystackql`__](https://pystackql.readthedocs.io/en/latest/pystackql.html) - a Python wrapper for StackQL - we can iterate through __all resources__ in __all services__ for __all regions__ which are supported by the given service.  The result is a report of how many instances are deployed of each resource in each region, as seen in the example below:  
 
 ![aws-inventory-example](/img/blog/aws-inventory.png)
 
@@ -45,7 +45,7 @@ The above query is actually 17 queries run in parallel (one query for each regio
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html) which can be installed using `pip install pystackql`
 - An AWS user or a role (can be assumed using `sts assume-role`) with the `ReadOnlyAccess` policy or greater attached
-- `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables set (this can be done automatically using [AWS Cloud Shell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
+- `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables set (this can be done automatically using [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
 ## The Code {#the-code}
 
@@ -54,7 +54,7 @@ The following code performs the following actions:
 1. Defines a list of all AWS regions (`regions`) and a list of regions supported for each service (`supported_regions`), more info on deriving `supported_regions` can be found at [AWS Service Support by Region at a Glance](https://dev.to/stackql/aws-service-support-by-region-at-a-glance-3p9f)
 2. Pulls the [`aws`](https://aws-provider.stackql.io/) and [`awscc`](https://awscc-provider.stackql.io/) StackQL providers if they're not already installed.
 3. Iterates through each service (using [`SHOW SERVICES`](/language-spec/show#list-all-services-in-a-cloud-provider)), then for each service iterates through each resource (using [`SHOW RESOURCES`](/language-spec/show#list-all-resources-within-a-cloud-provider-service))
-4. [`SELECT`](/language-spec/select)'s all instances of each resource across all regions asynchronously, groups the data by region and counts the instance of each resource for each region
+4. Selects all instances of each resource across all regions asynchronously (using [`SELECT`](/language-spec/select)), groups the data by region and counts the instances of each resource for each region
 
 Here it is...
 
@@ -582,6 +582,3 @@ supported_regions = {
 
 </TabItem>
 </Tabs>
-
-
-

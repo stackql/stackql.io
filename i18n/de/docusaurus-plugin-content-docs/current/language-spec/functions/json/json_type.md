@@ -19,7 +19,7 @@ Siehe auch:
 
 :::tip 
 
-Verwenden Sie die Funktion [**DESCRIBE**](/language-spec/describe), um die Datentypen `array` oder `object` zu finden, die mit den JSON-Funktionen von StackQL verwendet werden können.
+Verwenden Sie die Anweisung [**DESCRIBE**](/language-spec/describe), um die Datentypen `array` oder `object` zu finden, die mit den JSON-Funktionen von StackQL verwendet werden können.
 
 :::
 

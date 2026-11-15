@@ -363,7 +363,7 @@ ORDER BY r.pushed_at;
 
 Pull the provider from the public registry:
 
-```bash
+```sql
 registry pull railway;
 ```
 

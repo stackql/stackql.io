@@ -36,7 +36,7 @@ Returns a numeric value truncated to its integer component.
 
 ## Examples {#examples}
 
-### Truncate the number of days since creation of Google Cloud Storage buckets to two decimal places {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-two-decimal-places}
+### Truncate the number of days since creation of Google Cloud Storage buckets to whole days {#truncate-the-number-of-days-since-creation-of-google-cloud-storage-buckets-to-whole-days}
 
 ```sql
 SELECT name, timeCreated,

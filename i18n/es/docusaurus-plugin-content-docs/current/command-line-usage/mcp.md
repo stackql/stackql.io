@@ -481,7 +481,7 @@ La escritura de auditoría se produce **después** de que la herramienta se ejec
 
 #### Deshabilitar la auditoría {#disabling-audit}
 
-Para deshabilitar la auditoría por completo (el comportamiento anterior a PR2):
+Para deshabilitar la auditoría por completo, como en las versiones anteriores a `v0.10.474`, que no tenían auditoría:
 
 ```bash
 stackql mcp \
@@ -542,7 +542,7 @@ Se publica un prompt estático.
 |`--mcp.protocol.version`|Revisión del protocolo más reciente que se anuncia: `auto` (valor predeterminado), `2026-07-28` o una revisión anterior como `2025-11-25`.  Consulte [Fijar la revisión](#pinning-the-revision).|
 |`--env.file`|Archivo de credenciales de estilo dotenv que se carga al iniciar y que la herramienta `reload_credentials` vuelve a cargar bajo demanda.  Consulte [(Re)carga de credenciales](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|Puerto TCP del servidor del protocolo de red de PostgreSQL (se usa con `stackql srv`).|
-|`-H`, `--help`|Muestra la información de ayuda.|
+|`-h`, `--help`|Muestra la información de ayuda.|
 |`-v`, `--verbose`|Ejecuta en modo detallado con salida adicional.|
 
 &nbsp;

@@ -43,7 +43,7 @@ Sie können das Farbschema der StackQL-Shell mit dem Flag `--colorscheme` änder
 Standardwerte für StackQL-Befehlsoptionen, wie das zuvor besprochene Ausgabeformat und Farbschema, können in der Initialisierungsdatei `stackqlrc` festgelegt werden.  Wenn diese Datei im aktuellen Verzeichnis der ausführbaren StackQL-Datei vorhanden ist, wird sie automatisch geladen; alternativ kann sie mit dem Flag `--configfile` angegeben werden, wie unten gezeigt:
 
 ```shell
-# Specifing a Initialization (.stackqlrc) File
+# Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
 Weitere Informationen zu Befehlsoptionen finden Sie im Thema Globale Flags.
@@ -58,15 +58,15 @@ Ein Beispiel für ein Windows-PowerShell-Skript mit einem StackQL-Befehl sehen S
 ```shell
 $gcp_project = "stackql-demo"
 $gcp_zone = "australia-southeast1-a"
-$keyfilepath = "C:\tmp\stackql-demo.json"
+$env:GOOGLE_CREDENTIALS = Get-Content -Raw "C:\tmp\stackql-demo.json"
 
 Write-Output "Selecting instances in ${gcp_zone}..."
 
 $query = "`"select id, name, machineType `
-			from compute.instances `
+			from google.compute.instances `
 			where project = '${gcp_project}' `
 			and zone = '${gcp_zone}';`""
-$flags = "--keyfilepath ${keyfilepath} --output json"
+$flags = "--output json"
 $cmd = "stackql.exe exec"
 
 $select = $cmd, $query, $flags -join " "
@@ -80,11 +80,11 @@ StackQL-Eingabedateien können verwendet werden, um mehrere durch Semikolons abg
 
 ```shell
 # create an iql file
-echo "select id, name from compute.instances \
+echo "select id, name from google.compute.instances \
 where project = 'stackql-demo' \
 and zone = 'australia-southeast1-a'" > listinstances.iql
 # execute an iql file
 ./stackql exec -i listinstances.iql \
---keyfilepath /mnt/c/tmp/stackql-demo.json \
+--auth '{ "google": { "type": "service_account", "credentialsfilepath": "/mnt/c/tmp/stackql-demo.json" } }' \
 --output json | jq '.[] | .name'
 ```
