@@ -41,7 +41,7 @@ __*numeric_expression*__
 SELECT LOG2(16) AS log_result;
 ```
 
-\(2^4 = 16\)이므로 이 쿼리는 `4`를 반환합니다.
+2^4 = 16이므로 이 쿼리는 `4`를 반환합니다.
 
 ### 밑이 2인 32의 로그 계산 {#calculate-the-base-2-logarithm-of-32}
 
@@ -49,4 +49,4 @@ SELECT LOG2(16) AS log_result;
 SELECT LOG2(32) AS log_result;
 ```
 
-이 쿼리는 밑이 2인 32의 로그를 계산하며, \(2^5 = 32\)이므로 결과는 `5`입니다.
+이 쿼리는 밑이 2인 32의 로그를 계산하며, 2^5 = 32이므로 결과는 `5`입니다.

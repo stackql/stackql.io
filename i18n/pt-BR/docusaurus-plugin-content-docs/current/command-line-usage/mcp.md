@@ -499,7 +499,7 @@ Clique no nome de qualquer ferramenta para ver a página de referência completa
 
 | Ferramenta | Renderizador | Descrição | Entradas |
 |--|--|--|--|
-|[`server_info`](/mcp/server_info)|KV|Identidade e runtime do servidor: versão do stackql, mecanismo SQL de backend, local do registro de providers, modo, opção de somente leitura.  Chame uma vez no início da sessão.|nenhuma|
+|[`server_info`](/mcp/server_info)|KV|Identidade e runtime do servidor: versão do stackql, mecanismo SQL de backend, local do registro de providers, modo, opção de somente leitura.  Chame sob demanda, por exemplo para diagnosticar uma operação recusada ou sujeita a controle, ou para verificar um comportamento específico de uma versão.|nenhuma|
 |[`list_providers`](/mcp/list_providers)|Tabela|Providers já baixados para o cache local - o topo da hierarquia.|nenhuma|
 |[`list_services`](/mcp/list_services)|Tabela|Serviços de um provider.|`provider`|
 |[`list_resources`](/mcp/list_resources)|Tabela|Recursos de um `provider`.`service`.|`provider`, `service`|
@@ -570,7 +570,7 @@ export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
 stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -585,7 +585,7 @@ stackql srv \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -605,7 +605,7 @@ stackql mcp \
       "audit": {"file": {"path": "/var/log/stackql-mcp-audit.log"}}
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -624,7 +624,7 @@ stackql mcp \
       "mode": "full_access"
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -656,7 +656,7 @@ stackql srv \
     }
   }' \
   --pgsrv.port 5446 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -752,17 +752,17 @@ Observe que o `stackql_mcp_client` não envia o cabeçalho `Authorization`, ent�
 
 #### Respostas de exemplo {#example-responses}
 
-`server_info` (em um servidor no modo padrão):
+`server_info` (em um servidor no modo padrão, StackQL `v1.0.888` no Windows via stdio):
 
 ```json
 {
-  "version": "0.10.444",
-  "commit": "abc1234",
-  "build_date": "2026-05-16T10:47:33Z",
-  "platform": "linux/amd64",
-  "transport": "http",
+  "version": "1.0.888",
+  "commit": "f7b4116",
+  "build_date": "2026-11-05T00:26:03Z",
+  "platform": "Windows",
+  "transport": "stdio",
   "sql_backend": "sqlite3",
-  "provider_registry": "https://registry.stackql.io/providers",
+  "provider_registry": "https://registry.stackql.app/providers",
   "mode": "safe",
   "is_read_only": false
 }

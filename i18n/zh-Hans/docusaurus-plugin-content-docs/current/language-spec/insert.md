@@ -53,7 +53,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 ## 示例 {#examples}
 
 ### 基本 `INSERT` 语句 {#basic-insert-statement}
-运行 INSERT 语句，创建 Compute Engine 磁盘资源。这是一次非阻塞（异步）调用。
+运行 `INSERT` 语句，创建 Compute Engine 磁盘资源。这是一次非阻塞（异步）调用。
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT` 语句（阻塞） {#insert-statement-blocking}
-运行 INSERT 语句，创建 Compute Engine 磁盘资源。这是一次阻塞（同步）调用。
+运行 `INSERT` 语句，创建 Compute Engine 磁盘资源。这是一次阻塞（同步）调用。
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### 带 `SELECT` 的 `INSERT` 语句 {#insert-statement-with-select}
-运行带 SELECT 的 INSERT 语句。
+运行带 `SELECT` 的 `INSERT` 语句。
 
 ```sql
 -- Create an Azure Network Interface

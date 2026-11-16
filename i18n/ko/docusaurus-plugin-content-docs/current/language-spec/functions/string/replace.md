@@ -10,7 +10,7 @@ keywords:
 description: "StackQL의 REPLACE 함수: 문자열 내에서 부분 문자열이 나타나는 모든 위치를 다른 문자열로 바꿉니다."
 image: "/img/stackql-featured-image.png"
 ---
-문자열에서 다른 문자열이 나타나는 모든 위치를 지정한 문자열로 대체하여 만든 문자열을 반환합니다.
+부분 문자열이 나타나는 모든 위치를 다른 문자열로 대체한 문자열의 복사본을 반환합니다.
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) 

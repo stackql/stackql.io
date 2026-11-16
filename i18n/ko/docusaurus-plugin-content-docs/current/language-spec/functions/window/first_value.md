@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-기본적으로 윈도우 프레임은 파티션의 시작부터 현재 행까지입니다. 파티션의 모든 행을 포함하려면 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` 절을 사용하세요.
+기본적으로 윈도우 프레임은 파티션의 시작부터 `ORDER BY` 열 기준으로 현재 행과 동순위인 마지막 행까지입니다. `FIRST_VALUE` 함수는 프레임의 첫 번째 행을 읽으므로 기본 프레임과 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` 절에서 같은 값을 반환합니다. 명시적 프레임은 프레임의 더 뒤쪽까지 읽는 `LAST_VALUE` 함수와 `NTH_VALUE` 함수에서 중요합니다.
 
 :::
 

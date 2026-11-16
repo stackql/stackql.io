@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Por padrão, o quadro da janela se estende do início da partição até a linha atual. Para incluir todas as linhas da partição, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Por padrão, o quadro da janela se estende do início da partição até a última linha empatada com a linha atual nas colunas de `ORDER BY`. `FIRST_VALUE` lê a primeira linha do quadro, então retorna o mesmo valor com o quadro padrão e com `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`; o quadro explícito faz diferença para `LAST_VALUE` e `NTH_VALUE`, que leem mais adiante no quadro.
 
 :::
 

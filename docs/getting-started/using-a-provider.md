@@ -45,7 +45,7 @@ Authentication is performed using environment variables set on the system (or so
 
 :::tip
 
-You can authenticate to multiple providers in the same interactive shell or non-interactive batch routine by supplying multiple authentication objects, for example:  
+You can authenticate to multiple providers in the same interactive shell or non-interactive batch routine by setting the authentication variables of each provider, for example:  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

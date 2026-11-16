@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### `text` 输出 {#text-output}
+将 `--output` 参数的值设为 `text`，即可以纯文本形式返回结果。每一行写为以逗号连接的各个值，前面有一个标题行，除非设置了 `-H`（`--hideheaders`）。与 `csv` 不同，值不会加引号或转义，`-d` 分隔符也会被忽略，因此包含逗号或双引号的值会按原样写出：
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+使用 `--output csv` 时，同一查询返回的数据行为 `"a,b","say ""hi"""`。
+
 ### `otel` 输出 {#otel-output}
 将 `--output` 参数的值设为 `otel`，即可将结果作为 OpenTelemetry 日志记录输出。每一行作为一个 OTLP/JSON `LogsData` 对象独占一行写出，与 `jsonl` 一样在写出时即被刷新，随后是该语句的一条完成记录。这种输出格式将查询转换为以遥测数据形式呈现的云配置快照：按计划运行资源清单查询，将记录发送到支持 OTLP 的后端（ClickHouse、Datadog，或置于其他任何系统之前的 OpenTelemetry Collector），然后在那里回答“资产现在是什么样子”“自上次运行以来发生了什么变化”以及“谁拥有过哪项权限分配，从何时开始”。从 `v0.11.660` 起的 StackQL 发布版本中可用。
 

@@ -263,7 +263,7 @@ export const tabLabel = (icon, text) => (
 
   ## Docker
 
-  StackQL 构建版本发布到 [DockerHub](https://hub.docker.com/u/stackql)。  
+  StackQL 构建版本发布到 [Docker Hub](https://hub.docker.com/u/stackql)。  
 
   __Docker Hub__  
 

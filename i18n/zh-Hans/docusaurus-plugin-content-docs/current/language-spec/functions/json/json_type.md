@@ -10,7 +10,7 @@ keywords:
 description: "StackQL 中的 JSON_TYPE 函数：JSON 值最外层元素或其中某个路径的类型（object、array、text、integer、real、true、false 或 null）。"
 image: "/img/stackql-featured-image.png"
 ---
-返回输入的 JSON 对象或数组及路径的最外层元素的数据类型。  
+返回 JSON 值最外层元素的数据类型，或可选路径处元素的数据类型。  
 
 另请参阅：  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ 数据类型 ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-搭配 `postgres` SQL 后端使用 stackql 时，`json_type` 函数实现为 `json_typeof` 函数。
+如果搭配 `postgres` SQL 后端使用 StackQL，请改用 `json_typeof` 函数。
 
 :::
 

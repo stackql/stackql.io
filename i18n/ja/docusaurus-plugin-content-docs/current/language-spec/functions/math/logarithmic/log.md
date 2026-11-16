@@ -10,7 +10,7 @@ keywords:
 description: StackQL で SQL を使って任意の底で数値の対数を計算します。
 image: "/img/stackql-featured-image.png"
 ---
-指定した底で数値の対数を計算します。底 \(e\) を使用する LN と比べて、より一般的な形式の対数関数です。
+指定した底で数値の対数を計算します。底 e を使用する LN と比べて、より一般的な形式の対数関数です。
 
 関連項目：  
 [[`SELECT`]](/language-spec/select) 
@@ -44,11 +44,11 @@ __*numeric_expression*__
 SELECT LOG(10, 1000) AS log_result;
 ```
 
-\(10^3 = 1000\) であるため、このクエリは `3` を返します。
+10^3 = 1000 であるため、このクエリは `3` を返します。
 
 ### 2 を底とする 16 の対数を計算する {#calculate-the-logarithm-of-16-with-base-2}
 
 ```sql
 SELECT LOG(2, 16) AS log_result;
 ```
-このクエリは 2 を底とする 16 の対数を計算します。\(2^4 = 16\) であるため、結果は `4` になります。
+このクエリは 2 を底とする 16 の対数を計算します。2^4 = 16 であるため、結果は `4` になります。

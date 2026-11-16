@@ -49,7 +49,7 @@ Um identificador com prefixo de cifrão, como `$region`, desreferencia uma vari�
 ## Comentários {#comments}
 O StackQL oferece suporte a comentários de várias linhas e comentários em linha nas instruções do StackQL; veja exemplos de comentários a seguir:
 
-```shell
+```sql
 /* This
 Is a
 Multiline

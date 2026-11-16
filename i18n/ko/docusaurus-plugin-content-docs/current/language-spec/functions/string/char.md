@@ -11,7 +11,7 @@ description: "StackQL의 CHAR 함수: 하나 이상의 문자 코드에 해당�
 image: "/img/stackql-featured-image.png"
 ---
 
-`CHAR()` 함수는 지정한 ASCII 코드에 해당하는 문자를 반환합니다.
+`CHAR()` 함수는 하나 이상의 문자 코드에 해당하는 문자로 구성된 문자열을 반환합니다.
 
 참고 항목:  
 [[`SELECT`]](/language-spec/select)
@@ -19,25 +19,25 @@ image: "/img/stackql-featured-image.png"
 * * *
 
 :::note
-PostgreSQL 백엔드와 함께 StackQL을 사용하는 경우 이에 해당하는 함수는 `CHR()`입니다.
+PostgreSQL 백엔드와 함께 StackQL을 사용하는 경우 이에 해당하는 함수는 `CHR()`이며, 이 함수는 코드를 1개만 받습니다.
 :::
 
 ## 구문 {#syntax}
 
 ```sql
-SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
+SELECT CHAR(ascii_code [, ascii_code, ...]) FROM <multipartIdentifier>;
 ```
 
-> `CHAR()` 함수는 지정된 ASCII 코드와 연결된 문자를 반환합니다.
+> 각 인수는 결과에 문자 1개를 추가하므로 `CHAR(72, 105)` 식은 `Hi`를 반환합니다.
 
 ## 인수 {#arguments}
 
 **_ascii_code_**  
-원하는 문자의 ASCII 코드를 나타내는 정수입니다.
+하나 이상의 정수이며, 각 정수는 문자의 코드입니다. ASCII 코드 또는 임의의 유니코드 코드 포인트를 사용할 수 있습니다.
 
 ## 반환 값 {#return-values}
 
-지정한 ASCII 코드에 해당하는 단일 문자 문자열을 반환합니다.
+*ascii_code* 인수 하나당 문자 1개로 구성된 문자열을 반환합니다.
 
 * * *
 

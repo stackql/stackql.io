@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### Ausgabe `text` {#text-output}
+Ergebnisse können mit dem Wert `text` für den Parameter `--output` als reiner Text zurückgegeben werden. Jede Zeile wird als durch Kommas verbundene Liste ihrer Werte geschrieben, mit einer vorangestellten Kopfzeile, sofern nicht `-H` (`--hideheaders`) gesetzt ist. Anders als bei `csv` werden Werte weder in Anführungszeichen gesetzt noch maskiert, und das mit `-d` angegebene Trennzeichen wird ignoriert; ein Wert, der ein Komma oder ein doppeltes Anführungszeichen enthält, wird daher unverändert geschrieben:
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+Mit `--output csv` liefert dieselbe Abfrage `"a,b","say ""hi"""` als Datenzeile.
+
 ### Ausgabe `otel` {#otel-output}
 Ergebnisse können mit dem Wert `otel` für den Parameter `--output` als OpenTelemetry-Log-Records ausgegeben werden. Jede Zeile wird als ein OTLP/JSON-`LogsData`-Objekt in eine eigene Zeile geschrieben und wie bei `jsonl` beim Schreiben sofort geflusht, gefolgt von einem Abschluss-Record für die Anweisung. Dieses Ausgabeformat macht aus einer Abfrage einen Snapshot der Cloud-Konfiguration als Telemetrie: Führen Sie eine Inventarabfrage nach Zeitplan aus, senden Sie die Records an ein OTLP-fähiges Backend (ClickHouse, Datadog oder ein OpenTelemetry Collector vor beliebigen anderen Systemen) und beantworten Sie dort die Fragen "Wie sieht der Bestand jetzt aus", "Was hat sich seit dem letzten Lauf geändert" und "Wer hatte welche Berechtigung, und seit wann". Verfügbar in StackQL-Releases ab `v0.11.660`.
 

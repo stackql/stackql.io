@@ -10,7 +10,7 @@ keywords:
 description: Calcular la arcotangente de dos números (y/x) y devolver un ángulo en radianes con SQL en StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula la arcotangente de dos números, en concreto el ángulo \( \theta \) en radianes cuya tangente es el cociente de dos números especificados (y dividido entre x), y trata correctamente los signos de las entradas para determinar el cuadrante correcto.
+Calcula la arcotangente de dos números, en concreto el ángulo en radianes cuya tangente es el cociente de dos números especificados (y dividido entre x), y trata correctamente los signos de las entradas para determinar el cuadrante correcto.
 
 Consulte también:  
 [[`SELECT`]](/language-spec/select)

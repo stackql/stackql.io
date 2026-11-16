@@ -108,7 +108,7 @@ SHOW EXTENDED SERVICES IN google;
 ### 프로바이더 서비스의 모든 리소스 나열 {#list-all-resources-within-a-cloud-provider-service}
 프로바이더의 특정 서비스에서 사용할 수 있는 모든 리소스를 나열합니다. 선택적 `EXTENDED` 키워드를 사용하면 리소스 이름과 함께 리소스 설명을 반환합니다.
 ```sql
--- Returns all resources available in a cloud provider service
+-- Returns all resources available in a provider service
 SHOW EXTENDED RESOURCES IN google.compute;
 ```
 <details>
@@ -137,7 +137,7 @@ SHOW EXTENDED RESOURCES IN google.compute;
 ### 프로바이더 서비스에 속한 리소스의 사용 가능한 메서드 표시 {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 특정 리소스에 사용할 수 있는 모든 메서드를 나열합니다.
 ```sql
--- Returns all methods available for a cloud provider resource
+-- Returns all methods available for a provider resource
 SHOW EXTENDED METHODS IN google.compute.instances;
 ```
 <details>

@@ -75,7 +75,7 @@ SHOW PROVIDERS;
 
 </details>
 
-### 列出云服务商的所有服务 {#list-all-services-in-a-cloud-provider}
+### 列出 Provider 中的所有服务 {#list-all-services-in-a-cloud-provider}
 列出给定 Provider 中所有可用的服务，使用可选的 EXTENDED 关键字可返回更多信息。
 ```sql
 -- Returns all services available in a provider
@@ -105,10 +105,10 @@ SHOW EXTENDED SERVICES IN google;
 </details>
 
 
-### 列出云服务商某个服务中的所有资源 {#list-all-resources-within-a-cloud-provider-service}
-列出云服务商的给定服务中所有可用的资源。可选的 `EXTENDED` 关键字除资源名称外还会返回资源描述。
+### 列出 Provider 某个服务中的所有资源 {#list-all-resources-within-a-cloud-provider-service}
+列出 Provider 的给定服务中所有可用的资源。可选的 `EXTENDED` 关键字除资源名称外还会返回资源描述。
 ```sql
--- Returns all resources available in a cloud provider service
+-- Returns all resources available in a provider service
 SHOW EXTENDED RESOURCES IN google.compute;
 ```
 <details>
@@ -134,10 +134,10 @@ SHOW EXTENDED RESOURCES IN google.compute;
 
 </details>
 
-### 显示云服务商某个服务中某个资源的可用方法 {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
+### 显示 Provider 某个服务中某个资源的可用方法 {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 列出给定资源的所有可用方法。
 ```sql
--- Returns all methods available for a cloud provider resource
+-- Returns all methods available for a provider resource
 SHOW EXTENDED METHODS IN google.compute.instances;
 ```
 <details>

@@ -39,7 +39,7 @@ Todos os objetos filhos herdam as vinculações do IAM aplicadas no nível de or
 
 Este guia mostra como manter a versão mestre das vinculações do IAM no seu repositório de código-fonte, tornando-o a fonte da verdade para o estado e o histórico (um conceito conhecido como GitOps), e como usar o StackQL para aplicar alterações com workflows de CI/CD.   
 
-Este exemplo mostra como mapear *muitos* membros ou principais para *muitas* roles a partir de um manifesto `json` armazenado no controle de código-fonte.  
+Este exemplo mostra como mapear *muitos* membros ou principals para *muitas* roles a partir de um manifesto `json` armazenado no controle de código-fonte.  
 
 > O console do GCP e os utilitários `terraform` e `gcloud` só permitem mapear *um* membro para uma ou mais roles em cada operação  
 
@@ -251,7 +251,7 @@ local generate_conditional_binding(x) =
 
 > este arquivo __precisará ser modificado__ para alterar as vinculações de políticas
 
-Esta é a fonte mestre dos dados de políticas e vinculações; a estrutura de dados mapeia um ou vários principais (grupos, contas de serviço etc.) para uma ou várias roles (predefinidas ou personalizadas) em um determinado nível (pai), como mostrado abaixo:
+Esta é a fonte mestre dos dados de políticas e vinculações; a estrutura de dados mapeia um ou vários principals (grupos, contas de serviço etc.) para uma ou várias roles (predefinidas ou personalizadas) em um determinado nível (pai), como mostrado abaixo:
 
 ```json
   "<< level >>": [

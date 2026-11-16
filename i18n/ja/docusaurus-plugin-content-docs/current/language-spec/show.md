@@ -75,7 +75,7 @@ SHOW PROVIDERS;
 
 </details>
 
-### クラウドベンダーのすべてのサービスを一覧表示する {#list-all-services-in-a-cloud-provider}
+### プロバイダーのすべてのサービスを一覧表示する {#list-all-services-in-a-cloud-provider}
 特定のプロバイダーで利用できるすべてのサービスを一覧表示します。追加情報を返すには、省略可能な EXTENDED キーワードを使用します。
 ```sql
 -- Returns all services available in a provider
@@ -105,10 +105,10 @@ SHOW EXTENDED SERVICES IN google;
 </details>
 
 
-### クラウドベンダーのサービス内のすべてのリソースを一覧表示する {#list-all-resources-within-a-cloud-provider-service}
-クラウドベンダーの特定のサービスで利用できるすべてのリソースを一覧表示します。省略可能な `EXTENDED` キーワードを指定すると、リソース名に加えてリソースの説明も返されます。
+### プロバイダーのサービス内のすべてのリソースを一覧表示する {#list-all-resources-within-a-cloud-provider-service}
+プロバイダーの特定のサービスで利用できるすべてのリソースを一覧表示します。省略可能な `EXTENDED` キーワードを指定すると、リソース名に加えてリソースの説明も返されます。
 ```sql
--- Returns all resources available in a cloud provider service
+-- Returns all resources available in a provider service
 SHOW EXTENDED RESOURCES IN google.compute;
 ```
 <details>
@@ -134,10 +134,10 @@ SHOW EXTENDED RESOURCES IN google.compute;
 
 </details>
 
-### クラウドベンダーのサービス内のリソースで利用できるメソッドを表示する {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
+### プロバイダーのサービス内のリソースで利用できるメソッドを表示する {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 特定のリソースで利用できるすべてのメソッドを一覧表示します。
 ```sql
--- Returns all methods available for a cloud provider resource
+-- Returns all methods available for a provider resource
 SHOW EXTENDED METHODS IN google.compute.instances;
 ```
 <details>

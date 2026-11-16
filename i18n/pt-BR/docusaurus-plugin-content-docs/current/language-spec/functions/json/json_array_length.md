@@ -41,7 +41,7 @@ O caminho JSON opcional para um array contido em um objeto.  Consulte [jsonpath.
 
 > Se *json_path* for informado, a função `json_array_length` localiza o caminho dentro de *json_array_or_object* e retorna o comprimento do array, ou `0` se *json_path* for um objeto (e não um array).  Se *json_path* não puder ser localizado dentro de *json_array_or_object*, a função retorna `NULL`.
 
-> Se *json_array_or_object* ou *json_path* não forem objetos JSON ou não forem bem formados, a função gera um erro.
+> Se *json_array_or_object* não for um JSON bem formado, ou se *json_path* não for um caminho JSON bem formado, a função gera um erro.
 
 ## Valor(es) retornado(s) {#return-values}
 Retorna um inteiro.

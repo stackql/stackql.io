@@ -182,7 +182,7 @@ stackql mcp \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "stateless": true}}'
 ```
 
-A sessionless server issues no `Mcp-Session-Id`, answers `GET` and `DELETE` with 405 (there is no session to tear down), keeps `tools/list`, `prompts/list` and `resources/list` connection-invariant, and runs the approval round trip through `input_required`.  It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at initialise (each request gets an ephemeral session), so older clients cannot approve gated writes on a sessionless server.  Choose `stateless` for current-revision hosts and the default for a fleet that still includes older clients.
+A sessionless server issues no `Mcp-Session-Id`, answers `GET` and `DELETE` with 405 (there is no session to tear down), keeps `tools/list`, `prompts/list` and `resources/list` connection-invariant, and runs the approval round trip through `input_required`.  It still accepts an older client's `initialize` and serves reads to it, but it cannot retain the elicitation capability that client declared at initialization (each request gets an ephemeral session), so older clients cannot approve gated writes on a sessionless server.  Choose `stateless` for current-revision hosts and the default for a fleet that still includes older clients.
 
 The server holds no cross-call state: mode, audit and provider credentials are process-level configuration, so nothing needs to move behind explicit handles.
 
@@ -316,7 +316,7 @@ From `v1.0`, starting the server with [`--access.config`](/command-line-usage/ac
 
 **Needs approval** uses the MCP elicitation flow, shaped by the negotiated [protocol revision](#protocol-revision-support):
 
-- If the client advertised the elicitation capability (at initialise, or in the per-request `_meta` client capabilities on `2026-07-28`), the server asks the user to approve the action with a short message (tool name, query class, SQL).  On `2026-07-28` the prompt is returned as an `input_required` result carrying an `elicitation/create` input request under the id `stackql_approval`, and the client retries the call with the answer in `inputResponses`; on earlier revisions the server sends the `elicitation/create` request itself mid-call.  The user accepts, declines, or cancels.
+- If the client advertised the elicitation capability (at initialization, or in the per-request `_meta` client capabilities on `2026-07-28`), the server asks the user to approve the action with a short message (tool name, query class, SQL).  On `2026-07-28` the prompt is returned as an `input_required` result carrying an `elicitation/create` input request under the id `stackql_approval`, and the client retries the call with the answer in `inputResponses`; on earlier revisions the server sends the `elicitation/create` request itself mid-call.  The user accepts, declines, or cancels.
 - If the client did **not** advertise elicitation, the tool is refused with a message that explains the gap and points the operator at `full_access` mode.
 
 Approval is answered by the client, so it guards against an agent acting without its user, not against an untrusted caller.  Pair the HTTP transport with [client authentication](#http-client-authentication) where callers are not trusted.
@@ -499,7 +499,7 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 
 | Tool | Renderer | Description | Inputs |
 |--|--|--|--|
-|[`server_info`](/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call once at session start.|none|
+|[`server_info`](/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call on demand, for example to diagnose a refused or gated operation or to check version-specific behavior.|none|
 |[`list_providers`](/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
 |[`list_services`](/mcp/list_services)|Table|Services under a provider.|`provider`|
 |[`list_resources`](/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
@@ -570,7 +570,7 @@ export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
 stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -585,7 +585,7 @@ stackql srv \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -605,7 +605,7 @@ stackql mcp \
       "audit": {"file": {"path": "/var/log/stackql-mcp-audit.log"}}
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -624,7 +624,7 @@ stackql mcp \
       "mode": "full_access"
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -656,7 +656,7 @@ stackql srv \
     }
   }' \
   --pgsrv.port 5446 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -752,17 +752,17 @@ Note that `stackql_mcp_client` sends no `Authorization` header, so the server it
 
 #### Example responses {#example-responses}
 
-`server_info` (against a default-mode server):
+`server_info` (against a default-mode server, StackQL `v1.0.888` on Windows over stdio):
 
 ```json
 {
-  "version": "0.10.444",
-  "commit": "abc1234",
-  "build_date": "2026-05-16T10:47:33Z",
-  "platform": "linux/amd64",
-  "transport": "http",
+  "version": "1.0.888",
+  "commit": "f7b4116",
+  "build_date": "2026-11-05T00:26:03Z",
+  "platform": "Windows",
+  "transport": "stdio",
   "sql_backend": "sqlite3",
-  "provider_registry": "https://registry.stackql.io/providers",
+  "provider_registry": "https://registry.stackql.app/providers",
   "mode": "safe",
   "is_read_only": false
 }

@@ -34,7 +34,7 @@ Commande servant à interagir avec le registre de providers StackQL.  L'emplacem
 
 | Option | Description |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|Affiche les informations d'aide|
+|<span class="nowrap">`-h, --help`</span>|Affiche les informations d'aide|
 <br/>
 <br/>
 > consultez [Options globales](/command-line-usage/global-flags) pour des options supplémentaires

@@ -11,7 +11,7 @@ description: "StackQL の CHAR 関数：文字列に改行、引用符、タブ�
 image: "/img/stackql-featured-image.png"
 ---
 
-`CHAR()` 関数は、指定した ASCII コードに対応する文字を返します。
+`CHAR()` 関数は、1 つ以上の文字コードに対応する文字からなる文字列を返します。
 
 関連項目：  
 [[`SELECT`]](/language-spec/select)
@@ -19,25 +19,25 @@ image: "/img/stackql-featured-image.png"
 * * *
 
 :::note
-PostgreSQL バックエンドで StackQL を使用する場合、同等の関数は `CHR()` です。
+PostgreSQL バックエンドで StackQL を使用する場合、同等の関数は、コードを 1 つだけ受け取る `CHR()` です。
 :::
 
 ## 構文 {#syntax}
 
 ```sql
-SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
+SELECT CHAR(ascii_code [, ascii_code, ...]) FROM <multipartIdentifier>;
 ```
 
-> `CHAR()` 関数は、指定した ASCII コードに関連付けられた文字を返します。
+> 各引数が結果に 1 文字ずつ追加されるため、`CHAR(72, 105)` は `Hi` を返します。
 
 ## 引数 {#arguments}
 
 **_ascii_code_**  
-目的の文字の ASCII コードを表す整数です。
+1 つ以上の整数で、それぞれが 1 文字のコードを表します。ASCII コード、または任意の Unicode コードポイントを指定できます。
 
 ## 戻り値 {#return-values}
 
-指定した ASCII コードに対応する 1 文字の文字列を返します。
+*ascii_code* 引数ごとに 1 文字を含む文字列を返します。
 
 * * *
 

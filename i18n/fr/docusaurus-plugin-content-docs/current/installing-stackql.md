@@ -263,7 +263,7 @@ Les instructions d'installation de StackQL sur différentes plateformes sont fou
 
   ## Docker
 
-  Les builds de StackQL sont publiés sur [DockerHub](https://hub.docker.com/u/stackql).  
+  Les builds de StackQL sont publiés sur [Docker Hub](https://hub.docker.com/u/stackql).  
 
   __Docker Hub__  
 

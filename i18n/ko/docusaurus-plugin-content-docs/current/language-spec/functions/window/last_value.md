@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-기본적으로 윈도우 프레임은 파티션의 시작부터 현재 행까지이므로 `LAST_VALUE` 함수는 현재 행의 값을 반환하게 됩니다. 파티션의 실제 마지막 값을 가져오려면 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` 절을 사용하세요.
+기본적으로 윈도우 프레임은 파티션의 시작부터 `ORDER BY` 열 기준으로 현재 행과 동순위인 마지막 행까지이므로, `LAST_VALUE` 함수는 파티션의 마지막 값이 아니라 동순위인 마지막 행의 값(현재 행의 `ORDER BY` 열 값이 고유하면 현재 행 자체의 값)을 반환합니다. 파티션의 마지막 값을 가져오려면 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` 절을 사용하세요.
 
 :::
 

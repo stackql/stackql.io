@@ -10,7 +10,7 @@ keywords:
 description: "Fonction REPLACE dans StackQL : remplacer chaque occurrence d'une sous-chaîne dans une chaîne de caractères par une autre chaîne."
 image: "/img/stackql-featured-image.png"
 ---
-Renvoie une chaîne de caractères formée en substituant une portion de chaîne à chaque occurrence d'une autre chaîne.
+Renvoie une copie d'une chaîne de caractères dans laquelle chaque occurrence d'une sous-chaîne est remplacée par une autre chaîne.
 
 Voir aussi :  
 [[` SELECT `]](/language-spec/select) 

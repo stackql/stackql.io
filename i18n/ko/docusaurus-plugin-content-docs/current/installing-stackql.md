@@ -263,7 +263,7 @@ export const tabLabel = (icon, text) => (
 
   ## Docker
 
-  StackQL 빌드는 [DockerHub](https://hub.docker.com/u/stackql)에 게시됩니다.
+  StackQL 빌드는 [Docker Hub](https://hub.docker.com/u/stackql)에 게시됩니다.
 
   __Docker Hub__  
 

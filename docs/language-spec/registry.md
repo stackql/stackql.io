@@ -53,11 +53,11 @@ REGISTRY LIST google;
 ```
 
 ### Install the latest version of a provider {#install-the-latest-version-of-a-provider}
-```
+```sql
 REGISTRY PULL okta;
 ```
 
 ### Install a specific version of a provider {#install-a-specific-version-of-a-provider}
-```
+```sql
 REGISTRY PULL azure v23.01.00104;
 ```

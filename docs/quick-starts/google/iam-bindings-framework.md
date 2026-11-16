@@ -30,7 +30,7 @@ IAM bindings can be created at any of the following levels:
 - organization level
 - folder level
 - project level
-- resource level (Buckets, BigQuery Datasets, etc)
+- resource level (Buckets, BigQuery Datasets, etc.)
 - billing account level
 
 IAM bindings applied at organization or folder level are inherited by all child objects.  
@@ -41,7 +41,7 @@ The guide will show you how to master IAM bindings in your source code repositor
 
 This example shows you how to map *many* members or principals to *many* roles from a `json` manifest stored in source control.  
 
-> The GCP console, `terraform`, `gcloud` utilities only allow you to map *one* member to one or more roles in each operation  
+> The GCP console, `terraform` and `gcloud` utilities only allow you to map *one* member to one or more roles in each operation  
 
 ## How it works {#how-it-works}
 
@@ -64,7 +64,7 @@ The following directory tree is used for this bindings deployment framework:
 
 ### `iql/iam.iql` file {#iqliamiql-file}
 
-This is the main file which will be run by the `stackql`, using `data/iam.jsonnet` this will render and apply the transpiled policy bindings generated from the data in `data/iam/bindings.json`
+This is the main file which will be run by `stackql`, using `data/iam.jsonnet` this will render and apply the transpiled policy bindings generated from the data in `data/iam/bindings.json`
 
 > this file should not need to be modified
 
@@ -251,7 +251,7 @@ local generate_conditional_binding(x) =
 
 > this file __will need to be modified__ to make policy binding changes
 
-This is the master source of policy and binding data, the data structure maps one or many principals (groups, serviceaccount, etc) to one or many roles (predefined or custom) at a particular level (parent) as shown below:
+This is the master source of policy and binding data, the data structure maps one or many principals (groups, service accounts, etc.) to one or many roles (predefined or custom) at a particular level (parent) as shown below:
 
 ```json
   "<< level >>": [

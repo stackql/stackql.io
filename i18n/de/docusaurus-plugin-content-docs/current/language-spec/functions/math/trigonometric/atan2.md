@@ -10,7 +10,7 @@ keywords:
 description: Den Arkustangens zweier Zahlen (y/x) mit SQL in StackQL berechnen und einen Winkel im Bogenmaß zurückgeben.
 image: "/img/stackql-featured-image.png"
 ---
-Berechnet den Arkustangens zweier Zahlen, genauer den Winkel \( \theta \) im Bogenmaß, dessen Tangens das Verhältnis der beiden angegebenen Zahlen (y geteilt durch x) ist, und berücksichtigt dabei die Vorzeichen der Eingaben korrekt, um den richtigen Quadranten zu bestimmen.
+Berechnet den Arkustangens zweier Zahlen, genauer den Winkel im Bogenmaß, dessen Tangens das Verhältnis der beiden angegebenen Zahlen (y geteilt durch x) ist, und berücksichtigt dabei die Vorzeichen der Eingaben korrekt, um den richtigen Quadranten zu bestimmen.
 
 Siehe auch:  
 [[`SELECT`]](/language-spec/select)

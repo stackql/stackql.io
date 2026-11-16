@@ -10,7 +10,7 @@ keywords:
 description: Calcular o arco tangente de dois números (y/x) e retornar um ângulo em radianos com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula o arco tangente de dois números, especificamente o ângulo \( \theta \) em radianos cuja tangente é a razão entre dois números especificados (y dividido por x), tratando corretamente os sinais das entradas para determinar o quadrante correto.
+Calcula o arco tangente de dois números, especificamente o ângulo em radianos cuja tangente é a razão entre dois números especificados (y dividido por x), tratando corretamente os sinais das entradas para determinar o quadrante correto.
 
 Veja também:  
 [[`SELECT`]](/language-spec/select)

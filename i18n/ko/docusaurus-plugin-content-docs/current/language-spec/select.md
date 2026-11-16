@@ -105,7 +105,7 @@ ORDER BY timeCreated DESC LIMIT 1;
 
 ```sql
 -- Return a count of the number of buckets in every location other than Asia
-SELECT name, location, count(*) as num_buckets 
+SELECT location, count(*) as num_buckets 
 FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location
 HAVING location != 'ASIA';
@@ -114,7 +114,7 @@ HAVING location != 'ASIA';
 `COUNT` 함수 및 StackQL에서 지원하는 기타 집계 함수에 대한 자세한 내용은 [집계 함수](/language-spec/functions/aggregate/count)를 참조하세요.
 
 ### Azure VM 확장 집합에서 온디맨드 VM 및 해당 네트워크 인터페이스 목록 조회 {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
-[`SPLIT_PART`](/language-spec/functions/string/split_part) 함수와 [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 함수를 사용하는 `SELECT` 문을 실행하여 OD VM과 해당 NIC 목록을 조회합니다. 한정자가 없으면 subscription_id와 resource_group_name이 세 리소스 모두에 적용됩니다.
+[`SPLIT_PART`](/language-spec/functions/string/split_part) 함수와 [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 함수를 사용하는 `SELECT` 문을 실행하여 온디맨드(OD) VM과 해당 NIC 목록을 조회합니다. 한정자가 없으면 `subscription_id` 및 `resource_group_name` 매개 변수가 세 리소스 모두에 적용됩니다.
 
 ```sql
 SELECT  c.name AS vm_name,

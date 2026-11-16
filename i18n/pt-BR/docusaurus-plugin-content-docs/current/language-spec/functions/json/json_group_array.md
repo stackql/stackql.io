@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventário de nuvem
-description: Agregar objetos JSON em um array JSON com SQL no StackQL.
+description: Agregar valores em um array JSON com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
 Agrega valores como um array JSON. `JSON_GROUP_ARRAY()` coleta todos os valores de cada grupo em uma coluna especificada e os combina em um array JSON.

@@ -10,7 +10,7 @@ keywords:
 description: Calculer l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre et renvoyer un angle en radians avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcule l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre, c'est-à-dire la valeur \( \theta \) en radians dont la tangente hyperbolique est le nombre spécifié.
+Calcule l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre, c'est-à-dire la valeur en radians dont la tangente hyperbolique est le nombre spécifié.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)

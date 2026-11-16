@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## 参数 {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 可选关键字，允许 CTE 引用自身，从而支持递归查询，例如遍历层次结构数据。
 
-__*cte_name*__
+__*cte_name*__  
 为 CTE 指定的名称。在主查询中可以像引用表一样引用该名称。
 
-__*column_name*__
+__*column_name*__  
 可选。CTE 结果集的列名。如果未指定，列名将从 SELECT 语句推导得出。
 
-__*select_statement*__
+__*select_statement*__  
 定义 CTE 结果集的查询。
 
 ## 返回值 {#return-values}

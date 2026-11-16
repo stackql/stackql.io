@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-De forma predeterminada, el marco de ventana se extiende desde el inicio de la partición hasta la fila actual. Para incluir todas las filas de la partición, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+De forma predeterminada, el marco de ventana se extiende desde el inicio de la partición hasta la última fila que empata con la fila actual en las columnas de `ORDER BY`. `FIRST_VALUE` lee la primera fila del marco, por lo que devuelve el mismo valor con el marco predeterminado y con `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`; el marco explícito importa para `LAST_VALUE` y `NTH_VALUE`, que leen más allá dentro del marco.
 
 :::
 

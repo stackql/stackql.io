@@ -41,7 +41,7 @@ Returns the base-10 logarithm of the specified numeric value.
 SELECT LOG10(100) AS log_result;
 ```
 
-This query returns `2`, as \(10^2 = 100\).
+This query returns `2`, as 10^2 = 100.
 
 ### Calculate the base-10 logarithm of 1000 {#calculate-the-base-10-logarithm-of-1000}
 
@@ -49,4 +49,4 @@ This query returns `2`, as \(10^2 = 100\).
 SELECT LOG10(1000) AS log_result;
 ```
 
-This query calculates the base-10 logarithm of 1000, resulting in `3`, since \(10^3 = 1000\).
+This query calculates the base-10 logarithm of 1000, resulting in `3`, since 10^3 = 1000.

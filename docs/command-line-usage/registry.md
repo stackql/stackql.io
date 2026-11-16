@@ -34,7 +34,7 @@ Command used to interact with the StackQL Provider Registry.  The registry locat
 
 | Flag | Description |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|Print help information|
+|<span class="nowrap">`-h, --help`</span>|Print help information|
 <br/>
 <br/>
 > see [Global Flags](/command-line-usage/global-flags) for additional options

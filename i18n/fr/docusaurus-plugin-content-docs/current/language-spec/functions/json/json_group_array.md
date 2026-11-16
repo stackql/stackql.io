@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaire cloud
-description: Agréger des objets JSON en un tableau JSON avec SQL dans StackQL.
+description: Agréger des valeurs en un tableau JSON avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
 Agrège des valeurs sous la forme d'un tableau JSON. `JSON_GROUP_ARRAY()` collecte toutes les valeurs de chaque groupe dans une colonne spécifiée et les combine en un tableau JSON.

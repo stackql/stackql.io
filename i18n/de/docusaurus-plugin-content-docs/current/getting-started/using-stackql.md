@@ -40,13 +40,13 @@ Sie können das Farbschema der StackQL-Shell mit dem Flag `--colorscheme` änder
 ```
 ### Die Initialisierungsdatei `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Standardwerte für StackQL-Befehlsoptionen, wie das zuvor besprochene Ausgabeformat und Farbschema, können in der Initialisierungsdatei `stackqlrc` festgelegt werden.  Wenn diese Datei im aktuellen Verzeichnis der ausführbaren StackQL-Datei vorhanden ist, wird sie automatisch geladen; alternativ kann sie mit dem Flag `--configfile` angegeben werden, wie unten gezeigt:
+Standardwerte für StackQL-Befehlsoptionen, wie das zuvor besprochene Ausgabeformat und Farbschema, können in der Initialisierungsdatei `.stackqlrc` festgelegt werden.  Wenn diese Datei im aktuellen Verzeichnis der ausführbaren StackQL-Datei vorhanden ist, wird sie automatisch geladen; alternativ kann sie mit dem Flag `--configfile` angegeben werden, wie unten gezeigt:
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-Weitere Informationen zu Befehlsoptionen finden Sie im Thema Globale Flags.
+Weitere Informationen zu Befehlsoptionen finden Sie unter [Globale Flags](/command-line-usage/global-flags).
 
 ### Das StackQL-Kommandozeilenwerkzeug verwenden {#using-the-stackql-command-line-utility}
 StackQL-Befehle können nicht-interaktiv mit dem Befehl exec der ausführbaren StackQL-Datei ausgeführt werden.  Mehrere Befehle können in einem Batch ausgeführt werden, sofern jeder einzelne Befehl mit einem Semikolon (`;`) abgeschlossen ist.  Befehlsflags, wie das Flag `--output`, können auf der Kommandozeile oder in der zuvor besprochenen Initialisierungsdatei `.stackqlrc` angegeben werden.  

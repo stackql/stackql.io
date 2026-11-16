@@ -499,7 +499,7 @@ stackql mcp \
 
 | 工具 | 渲染器 | 说明 | 输入 |
 |--|--|--|--|
-|[`server_info`](/mcp/server_info)|KV|服务器标识和运行时：stackql 版本、后端 SQL 引擎、Provider 注册表位置、模式、只读标志。在会话开始时调用一次。|无|
+|[`server_info`](/mcp/server_info)|KV|服务器标识和运行时：stackql 版本、后端 SQL 引擎、Provider 注册表位置、模式、只读标志。按需调用，例如用于诊断被拒绝或受门控的操作，或检查特定于版本的行为。|无|
 |[`list_providers`](/mcp/list_providers)|表格|已拉取到本地缓存的 Provider，即层次结构的顶层。|无|
 |[`list_services`](/mcp/list_services)|表格|某个 Provider 下的服务。|`provider`|
 |[`list_resources`](/mcp/list_resources)|表格|某个 `provider`.`service` 下的资源。|`provider`、`service`|
@@ -570,7 +570,7 @@ export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
 stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -585,7 +585,7 @@ stackql srv \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -605,7 +605,7 @@ stackql mcp \
       "audit": {"file": {"path": "/var/log/stackql-mcp-audit.log"}}
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -624,7 +624,7 @@ stackql mcp \
       "mode": "full_access"
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -656,7 +656,7 @@ stackql srv \
     }
   }' \
   --pgsrv.port 5446 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -752,17 +752,17 @@ python cicd/python/build.py --build-mcp-client
 
 #### 示例响应 {#example-responses}
 
-`server_info`（针对默认模式的服务器）：
+`server_info`（针对默认模式的服务器，Windows 上通过 stdio 运行的 StackQL `v1.0.888`）：
 
 ```json
 {
-  "version": "0.10.444",
-  "commit": "abc1234",
-  "build_date": "2026-05-16T10:47:33Z",
-  "platform": "linux/amd64",
-  "transport": "http",
+  "version": "1.0.888",
+  "commit": "f7b4116",
+  "build_date": "2026-11-05T00:26:03Z",
+  "platform": "Windows",
+  "transport": "stdio",
   "sql_backend": "sqlite3",
-  "provider_registry": "https://registry.stackql.io/providers",
+  "provider_registry": "https://registry.stackql.app/providers",
   "mode": "safe",
   "is_read_only": false
 }

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: StackQL で SQL を使って JSON オブジェクトを JSON 配列に集約します。
+description: StackQL で SQL を使って値を JSON 配列に集約します。
 image: "/img/stackql-featured-image.png"
 ---
 値を JSON 配列として集約します。`JSON_GROUP_ARRAY()` は、指定した列のすべての値をグループごとに収集し、JSON 配列にまとめます。

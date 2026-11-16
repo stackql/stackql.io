@@ -11,7 +11,7 @@ description: MCP tool returning StackQL MCP server identity and runtime
 image: "/img/stackql-featured-image.png"
 ---
 
-Returns the StackQL MCP server's identity and runtime: version, backing SQL engine, provider registry location, server mode, and the legacy read-only flag.  Call this once at session start so the agent knows what it is connected to.
+Returns the StackQL MCP server's identity and runtime: version, backing SQL engine, provider registry location, server mode, and the legacy read-only flag.  Call it on demand, for example to diagnose a refused or gated operation or to check version-specific behavior; it is not needed at session start or before queries.
 
 See also:
 [[ MCP overview ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

@@ -40,13 +40,13 @@ stackql shell --auth="${AUTH}"
 ```
 ### `.stackqlrc` 초기화 파일 {#the-stackqlrc-initialization-file}
 
-앞에서 설명한 출력 형식, 색 구성표 같은 StackQL 명령 옵션의 기본값은 `stackqlrc` 초기화 파일을 사용하여 설정할 수 있습니다. 이 파일이 StackQL 실행 파일이 사용하는 현재 디렉터리에 있으면 자동으로 로드됩니다. 또는 아래와 같이 `--configfile` 플래그를 사용하여 이 파일을 참조할 수도 있습니다.
+앞에서 설명한 출력 형식, 색 구성표 같은 StackQL 명령 옵션의 기본값은 `.stackqlrc` 초기화 파일을 사용하여 설정할 수 있습니다. 이 파일이 StackQL 실행 파일이 사용하는 현재 디렉터리에 있으면 자동으로 로드됩니다. 또는 아래와 같이 `--configfile` 플래그를 사용하여 이 파일을 참조할 수도 있습니다.
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-명령 옵션에 대한 자세한 내용은 전역 플래그 항목에서 확인할 수 있습니다.
+명령 옵션에 대한 자세한 내용은 [전역 플래그](/command-line-usage/global-flags)에서 확인할 수 있습니다.
 
 ### StackQL 명령줄 유틸리티 사용 {#using-the-stackql-command-line-utility}
 StackQL 명령은 StackQL 실행 파일의 exec 명령을 사용하여 비대화형으로 실행할 수 있습니다. 각 개별 명령이 세미콜론(`;`)으로 끝나면 여러 명령을 하나의 배치로 실행할 수 있습니다. `--output` 플래그 같은 명령 플래그는 명령줄에서 지정하거나 앞에서 설명한 `.stackqlrc` 초기화 파일을 사용하여 지정할 수 있습니다.  

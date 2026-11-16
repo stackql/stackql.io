@@ -41,7 +41,7 @@ The optional JSON path to an array contained within an object.  See [jsonpath.co
 
 > If *json_path* is supplied then the `json_array_length` function locates the path within *json_array_or_object* and returns the length of the array or `0` if *json_path* is an object (not an array).  If *json_path* cannot be located within *json_array_or_object*, then `NULL` is returned.
 
-> If *json_array_or_object* or *json_path* are not JSON objects or are not well-formed, then an error is thrown.
+> If *json_array_or_object* is not well-formed JSON, or *json_path* is not a well-formed JSON path, then an error is thrown.
 
 ## Return Value(s) {#return-values}
 Returns an integer.

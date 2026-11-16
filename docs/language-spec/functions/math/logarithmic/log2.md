@@ -41,7 +41,7 @@ Returns the base-2 logarithm of the specified numeric value.
 SELECT LOG2(16) AS log_result;
 ```
 
-This query returns `4`, as \(2^4 = 16\).
+This query returns `4`, as 2^4 = 16.
 
 ### Calculate the base-2 logarithm of 32 {#calculate-the-base-2-logarithm-of-32}
 
@@ -49,4 +49,4 @@ This query returns `4`, as \(2^4 = 16\).
 SELECT LOG2(32) AS log_result;
 ```
 
-This query calculates the base-2 logarithm of 32, resulting in `5`, since \(2^5 = 32\).
+This query calculates the base-2 logarithm of 32, resulting in `5`, since 2^5 = 32.

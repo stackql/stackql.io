@@ -70,7 +70,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.start
 ```
 
 ### AWS EC2 インスタンスを起動および停止する {#starting-and-stopping-an-aws-ec2-instance}
-認証済みのセッションで `EXEC` 文を実行し、AWS EC2 インスタンスを起動します。
+認証済みのセッションで `EXEC` 文を実行し、AWS EC2 インスタンスを起動および停止します。
 
 ```sql
 -- Start an EC2 instance

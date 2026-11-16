@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 计算一个数的自然对数。
 image: "/img/stackql-featured-image.png"
 ---
-计算给定数的自然对数（以 \(e\) 为底数的对数）。
+计算给定数的自然对数（以 e 为底数的对数）。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select) 
@@ -35,13 +35,13 @@ __*numeric_expression*__
 
 ## 示例 {#examples}
 
-### 计算 2.71828（约等于 \(e\)）的自然对数 {#calculate-the-natural-logarithm-of-271828-approximately-e}
+### 计算 2.71828（约等于 e）的自然对数 {#calculate-the-natural-logarithm-of-271828-approximately-e}
 
 ```sql
 SELECT LN(2.71828) AS natural_log;
 ```
 
-此查询返回一个接近 `1` 的值，因为 \(e\)（约等于 2.71828）的自然对数为 1。
+此查询返回一个接近 `1` 的值，因为 e（约等于 2.71828）的自然对数为 1。
 
 ### 计算一个较大数的自然对数 {#calculate-the-natural-logarithm-of-a-larger-number}
 
@@ -49,4 +49,4 @@ SELECT LN(2.71828) AS natural_log;
 SELECT LN(10) AS natural_log;
 ```
 
-此查询计算 10 的自然对数，给出 10 以 \(e\) 为底数的对数值。
+此查询计算 10 的自然对数，给出 10 以 e 为底数的对数值。

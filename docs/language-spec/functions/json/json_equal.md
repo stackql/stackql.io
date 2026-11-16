@@ -10,7 +10,7 @@ keywords:
 description: Compare two JSON strings for equivalence using SQL.
 image: "/img/stackql-featured-image.png"
 ---
-Compares two JSON strings and returns true if they are equivalent, false otherwise.
+Compares two JSON strings and returns 1 if they are equivalent, 0 otherwise.
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ Data Types ]](/language-spec/data-types)

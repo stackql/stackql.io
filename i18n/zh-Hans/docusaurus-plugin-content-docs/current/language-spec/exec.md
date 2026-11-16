@@ -70,7 +70,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.start
 ```
 
 ### 启动和停止 AWS EC2 实例 {#starting-and-stopping-an-aws-ec2-instance}
-在已通过身份验证的会话中运行 `EXEC` 语句，启动 AWS EC2 实例。
+在已通过身份验证的会话中运行 `EXEC` 语句，启动和停止 AWS EC2 实例。
 
 ```sql
 -- Start an EC2 instance

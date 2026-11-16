@@ -26,7 +26,7 @@ Commande servant à lancer le shell de commandes interactif de StackQL.  Pour pl
 | Option | Description |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Affiche les informations d'aide|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option `-f` est sélectionnée, ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option globale `-f` (`--outfile`) est définie, ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
 <br/>
 <br/>
 > consultez [Options globales](/command-line-usage/global-flags) pour des options supplémentaires

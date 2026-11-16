@@ -81,12 +81,13 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'es', 'fr', 'ja', 'ko', 'pt-BR', 'zh-Hans'],
+  locales: ['en', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
     es: { label: 'Español', htmlLang: 'es' },
     fr: { label: 'Français', htmlLang: 'fr' },
+    id: { label: 'Bahasa Indonesia', htmlLang: 'id' },
     ja: { label: '日本語', htmlLang: 'ja' },
     ko: { label: '한국어', htmlLang: 'ko' },
     // The URL paths of pt-BR and zh-Hans are lower case on purpose. Netlify

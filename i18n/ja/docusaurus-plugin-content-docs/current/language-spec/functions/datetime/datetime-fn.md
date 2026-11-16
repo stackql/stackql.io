@@ -20,7 +20,7 @@ image: "/img/stackql-featured-image.png"
 ## 構文 {#syntax}
 
 ```sql
-SELECT DATETIME(datetime_expression , modifier, ...) FROM <multipartIdentifier>;
+SELECT DATETIME(datetime_expression [, modifier, ...]) FROM <multipartIdentifier>;
 ```
 
 ## 引数 {#arguments}

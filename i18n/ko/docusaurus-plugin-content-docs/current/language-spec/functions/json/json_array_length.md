@@ -41,7 +41,7 @@ __*json_path*__
 
 > *json_path*를 지정하면 `json_array_length` 함수는 *json_array_or_object* 안에서 해당 경로를 찾아 배열의 길이를 반환하며, *json_path*가 객체(배열이 아님)이면 `0`을 반환합니다. *json_array_or_object* 안에서 *json_path*를 찾을 수 없으면 `NULL`이 반환됩니다.
 
-> *json_array_or_object* 또는 *json_path*가 JSON 객체가 아니거나 올바른 형식이 아니면 오류가 발생합니다.
+> *json_array_or_object*가 올바른 형식의 JSON이 아니거나 *json_path*가 올바른 형식의 JSON 경로가 아니면 오류가 발생합니다.
 
 ## 반환 값 {#return-values}
 정수를 반환합니다.

@@ -85,8 +85,8 @@ Pour `stackql srv`, le fichier est lu une seule fois au démarrage ; le recharge
 
 | Option | Description |
 |--|--|
-|`-H,--help`|Affiche les informations d'aide|
-|`-v,--verbose`|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option `-f` est sélectionnée,<br/>ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
+|`-h,--help`|Affiche les informations d'aide|
+|`-v,--verbose`|Exécute les requêtes en mode détaillé, avec une sortie supplémentaire envoyée vers stdout ; si l'option globale `-f` (`--outfile`) est définie,<br/>ces informations de journalisation supplémentaires sont écrites dans le fichier de sortie avec les résultats de la requête|
 
 <br/>
 

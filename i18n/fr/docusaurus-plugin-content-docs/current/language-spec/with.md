@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## Arguments {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 Mot-clé facultatif qui permet à la CTE de se référencer elle-même, ce qui autorise des requêtes récursives comme le parcours de données hiérarchiques.
 
-__*cte_name*__
+__*cte_name*__  
 Nom attribué à la CTE. Ce nom peut être référencé dans la requête principale comme s'il s'agissait d'une table.
 
-__*column_name*__
+__*column_name*__  
 Facultatif. Noms des colonnes du jeu de résultats de la CTE. S'ils ne sont pas indiqués, les noms de colonnes sont dérivés de l'instruction SELECT.
 
-__*select_statement*__
+__*select_statement*__  
 Requête qui définit le jeu de résultats de la CTE.
 
 ## Valeur(s) renvoyée(s) {#return-values}

@@ -61,7 +61,7 @@ __*ORDER BY column*__
 ### 各リリースを前のリリースと比較する {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,

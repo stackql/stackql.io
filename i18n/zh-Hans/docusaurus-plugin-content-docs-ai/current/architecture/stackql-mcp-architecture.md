@@ -35,7 +35,7 @@ StackQL 的 MCP 服务器内置于引擎二进制文件中，并将 StackQL 的�
 - **注册表**：`list_registry`（可用的 Provider 及其版本）、`pull_provider`（安装到本地缓存）。
 - **验证**：`validate_select_query`，解析并规划 `SELECT` 而不执行。
 - **执行**：`run_select_query`（读取）、`run_mutation_query`（`INSERT`/`UPDATE`/`REPLACE`/`DELETE`，会产生真实的副作用）、`run_lifecycle_operation`（`EXEC`）。
-- **标识**：`server_info`（版本、后端、注册表、模式）；在会话开始时调用一次。
+- **标识**：`server_info`（版本、后端、注册表、模式）；按需调用（用于诊断被拒绝或受门控的操作，或检查特定于版本的行为），而不是在会话开始时调用。
 - **凭据**：`reload_credentials`，在会话中途将 `--env.file` 指定的 dotenv 文件重新加载到进程环境中，并报告每个 Provider 的凭据解析状态；只包含名称和状态，绝不包含机密值（在 v0.10.542 之后的发布版本中可用）。
 
 1 个静态提示词 `write_safe_select` 讲授方法发现工作流。

@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Par défaut, le cadre de fenêtre s'étend du début de la partition à la ligne courante, ce qui signifie que `LAST_VALUE` renverrait la valeur de la ligne courante. Pour obtenir la véritable dernière valeur de la partition, utilisez `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Par défaut, le cadre de fenêtre s'étend du début de la partition à la dernière ligne à égalité avec la ligne courante sur les colonnes de `ORDER BY` : `LAST_VALUE` renvoie donc la valeur de cette dernière ligne à égalité (la ligne courante elle-même lorsque sa valeur `ORDER BY` est unique), et non la dernière valeur de la partition. Pour obtenir la dernière valeur de la partition, utilisez `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 :::
 

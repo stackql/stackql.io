@@ -45,7 +45,7 @@ Die Authentifizierung erfolgt über auf dem System gesetzte Umgebungsvariablen (
 
 :::tip
 
-Sie können sich in derselben interaktiven Shell oder nicht-interaktiven Batch-Routine bei mehreren Providern authentifizieren, indem Sie mehrere Authentifizierungsobjekte angeben, zum Beispiel:  
+Sie können sich in derselben interaktiven Shell oder nicht-interaktiven Batch-Routine bei mehreren Providern authentifizieren, indem Sie die Authentifizierungsvariablen jedes Providers setzen, zum Beispiel:  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

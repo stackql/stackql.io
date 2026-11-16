@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### `text` Output {#text-output}
+Results can be returned as plain text using the `text` value for the `--output` parameter.  Each row is written as its values joined by commas, preceded by a header row unless `-H` (`--hideheaders`) is set.  Unlike `csv`, values are not quoted or escaped and the `-d` delimiter is ignored, so a value that contains a comma or a double quote is written as it is:
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+With `--output csv` the same query returns `"a,b","say ""hi"""` as its data row.
+
 ### `otel` Output {#otel-output}
 Results can be emitted as OpenTelemetry log records using the `otel` value for the `--output` parameter.  Each row is written as one OTLP/JSON `LogsData` object on its own line, flushed as it is written like `jsonl`, followed by one completion record for the statement.  This output format turns a query into a cloud configuration snapshot as telemetry: run an inventory query on a schedule, ship the records to an OTLP-capable backend (ClickHouse, Datadog, or an OpenTelemetry Collector in front of anything else), and answer "what does the estate look like now", "what changed since the last run", and "who has had which entitlement, and since when" there.  Available in StackQL releases from `v0.11.660`.
 

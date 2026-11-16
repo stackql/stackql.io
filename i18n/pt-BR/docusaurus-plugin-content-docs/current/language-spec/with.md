@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## Argumentos {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 Palavra-chave opcional que permite que a CTE faça referência a si mesma, possibilitando consultas recursivas, como percorrer dados hierárquicos.
 
-__*cte_name*__
+__*cte_name*__  
 O nome atribuído à CTE. Esse nome pode ser referenciado na consulta principal como se fosse uma tabela.
 
-__*column_name*__
+__*column_name*__  
 Opcional. Nomes das colunas do conjunto de resultados da CTE. Se não forem especificados, os nomes das colunas são derivados da instrução SELECT.
 
-__*select_statement*__
+__*select_statement*__  
 A consulta que define o conjunto de resultados da CTE.
 
 ## Valor(es) retornado(s) {#return-values}

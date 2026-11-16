@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Aggregate JSON objects into a JSON array using SQL in StackQL.
+description: Aggregate values into a JSON array using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
 Aggregates values as a JSON array. `JSON_GROUP_ARRAY()` collects all values for each group in a specified column and combines them into a JSON array.

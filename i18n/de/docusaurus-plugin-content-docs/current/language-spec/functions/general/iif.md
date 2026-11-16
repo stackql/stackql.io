@@ -52,7 +52,7 @@ Der Datentyp des *result_if_true*- oder *result_if_false*-Arguments.
 ### Datenträgergrößen von Compute-Engine-Instanzen kategorisieren {#categorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
-SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size
+SELECT iif(CAST(json_extract(disks, '$[0].diskSizeGb') AS INTEGER) > 10, '> 10GB', '<= 10GB') as disk_size
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';

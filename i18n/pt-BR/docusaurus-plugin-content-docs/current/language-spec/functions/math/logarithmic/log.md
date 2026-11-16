@@ -10,7 +10,7 @@ keywords:
 description: Calcular o logaritmo de um número em qualquer base com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula o logaritmo de um número em uma base especificada, uma forma mais geral de função logarítmica em comparação com LN, que usa a base \(e\).
+Calcula o logaritmo de um número em uma base especificada, uma forma mais geral de função logarítmica em comparação com LN, que usa a base e.
 
 Veja também:  
 [[`SELECT`]](/language-spec/select) 
@@ -44,11 +44,11 @@ Retorna o logaritmo do valor numérico especificado na base especificada.
 SELECT LOG(10, 1000) AS log_result;
 ```
 
-Esta consulta retorna `3`, pois \(10^3 = 1000\).
+Esta consulta retorna `3`, pois 10^3 = 1000.
 
 ### Calcular o logaritmo de 16 na base 2 {#calculate-the-logarithm-of-16-with-base-2}
 
 ```sql
 SELECT LOG(2, 16) AS log_result;
 ```
-Esta consulta calcula o logaritmo de 16 na base 2, o que resulta em `4`, pois \(2^4 = 16\).
+Esta consulta calcula o logaritmo de 16 na base 2, o que resulta em `4`, pois 2^4 = 16.

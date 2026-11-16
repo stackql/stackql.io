@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 计算一个数的反双曲正弦（双曲正弦的反函数），返回以弧度表示的角度。
 image: "/img/stackql-featured-image.png"
 ---
-计算一个数的反双曲正弦（双曲正弦的反函数），即双曲正弦等于指定数的弧度值 \( \theta \)。
+计算一个数的反双曲正弦（双曲正弦的反函数），即双曲正弦等于指定数的弧度值。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select)

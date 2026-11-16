@@ -34,7 +34,7 @@ Comando que se usa para interactuar con el StackQL Provider Registry.  La ubicac
 
 | Opción | Descripción |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|Muestra la información de ayuda|
+|<span class="nowrap">`-h, --help`</span>|Muestra la información de ayuda|
 <br/>
 <br/>
 > consulte [Opciones globales](/command-line-usage/global-flags) para ver opciones adicionales

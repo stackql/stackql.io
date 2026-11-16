@@ -10,7 +10,7 @@ keywords:
 description: "Função REPLACE no StackQL: substituir cada ocorrência de uma substring dentro de uma string por outra string."
 image: "/img/stackql-featured-image.png"
 ---
-Retorna uma string formada pela substituição de cada ocorrência de outra string por uma parte de uma string.
+Retorna uma cópia de uma string em que cada ocorrência de uma substring é substituída por outra string.
 
 Veja também:  
 [[` SELECT `]](/language-spec/select) 

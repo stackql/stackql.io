@@ -26,7 +26,7 @@ Comando usado para iniciar o shell de comandos interativo do StackQL.  Para obte
 | Opção | Descrição |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Exibe as informações de ajuda|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Executa as consultas no modo detalhado, com saída adicional enviada para stdout; se a opção `-f` for selecionada, essas informações de log adicionais são gravadas no arquivo de saída junto com os resultados da consulta|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Executa as consultas no modo detalhado, com saída adicional enviada para stdout; se a opção global `-f` (`--outfile`) estiver definida, essas informações de log adicionais são gravadas no arquivo de saída junto com os resultados da consulta|
 <br/>
 <br/>
 > consulte [Opções globais](/command-line-usage/global-flags) para ver opções adicionais

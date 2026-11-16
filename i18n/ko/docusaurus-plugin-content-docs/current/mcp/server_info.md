@@ -11,7 +11,7 @@ description: StackQL MCP 서버의 ID와 런타임 정보를 반환하는 MCP �
 image: "/img/stackql-featured-image.png"
 ---
 
-StackQL MCP 서버의 ID와 런타임 정보(버전, 기반 SQL 엔진, 프로바이더 레지스트리 위치, 서버 모드, 레거시 읽기 전용 플래그)를 반환합니다. 에이전트가 연결된 대상을 파악할 수 있도록 세션 시작 시 이 도구를 한 번 호출하세요.
+StackQL MCP 서버의 ID와 런타임 정보(버전, 기반 SQL 엔진, 프로바이더 레지스트리 위치, 서버 모드, 레거시 읽기 전용 플래그)를 반환합니다. 필요할 때 이 도구를 호출하세요. 예를 들어 거부되었거나 게이트 제어 대상인 작업을 진단하거나 버전별 동작을 확인할 때 호출합니다. 세션 시작 시나 쿼리 전에는 호출할 필요가 없습니다.
 
 참고 항목:
 [[ MCP 개요 ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

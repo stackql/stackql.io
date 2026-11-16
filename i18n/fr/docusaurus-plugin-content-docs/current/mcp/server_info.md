@@ -11,7 +11,7 @@ description: Outil MCP qui renvoie l'identité et le runtime du serveur MCP Stac
 image: "/img/stackql-featured-image.png"
 ---
 
-Renvoie l'identité et le runtime du serveur MCP StackQL : version, moteur SQL sous-jacent, emplacement du registre de providers, mode du serveur et booléen de lecture seule hérité. Appelez-le une fois en début de session pour que l'agent sache à quoi il est connecté.
+Renvoie l'identité et le runtime du serveur MCP StackQL : version, moteur SQL sous-jacent, emplacement du registre de providers, mode du serveur et booléen de lecture seule hérité. Appelez-le à la demande, par exemple pour diagnostiquer une opération refusée ou soumise à contrôle, ou pour vérifier un comportement propre à une version ; il n'est pas nécessaire en début de session ni avant les requêtes.
 
 Voir aussi :
 [[ Présentation de MCP ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

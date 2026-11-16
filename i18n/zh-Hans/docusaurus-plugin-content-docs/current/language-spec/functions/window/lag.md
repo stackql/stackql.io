@@ -61,7 +61,7 @@ __*ORDER BY column*__
 ### 将每个发布版本与上一个发布版本进行比较 {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,

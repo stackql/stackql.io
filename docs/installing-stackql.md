@@ -263,7 +263,7 @@ Instructions for installing StackQL on various different platforms are provided 
 
   ## Docker
 
-  StackQL builds are published to [DockerHub](https://hub.docker.com/u/stackql).  
+  StackQL builds are published to [Docker Hub](https://hub.docker.com/u/stackql).  
 
   __Docker Hub__  
 
@@ -1013,7 +1013,7 @@ jobs:
 
 ### `setup-stackql` {#setup-stackql}
 
-Setup StackQL in your GitHub Actions workflow.  
+Set up StackQL in your GitHub Actions workflow.  
 
 <Box sx={{ mt: 2, mb: 1, display: 'flex', gap: 2 }}>
     <div className={clsx(buttonStyles.buttons)} style={{ display: 'flex', gap: '12px' }}>

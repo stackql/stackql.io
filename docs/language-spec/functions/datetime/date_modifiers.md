@@ -22,7 +22,7 @@ In StackQL datetime functions, a date or time value can be followed by zero or m
 | NNN minute(s)        | Add ±NNN minutes to a date and time                                   |
 | NNN[.NNNN] second(s) | Add ±NNN seconds to/from a date and time                              |
 | NNN month(s)         | Add ±NNN months to a date and time                                    |
-| NNN year(s)          | Add ±NNN year to a date and time                                      |
+| NNN year(s)          | Add ±NNN years to a date and time                                     |
 | start of month       | Backward to the beginning of the month                                |
 | start of year        | Backward to the beginning of the year                                 |
 | start of day         | Backward to the beginning of the day                                  |

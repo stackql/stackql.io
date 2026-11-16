@@ -26,7 +26,7 @@ Befehl zum Starten der interaktiven StackQL-Shell.  Weitere Informationen finden
 | Flag | Beschreibung |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Hilfeinformationen ausgeben|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Führt Abfragen im ausführlichen Modus mit zusätzlicher Ausgabe auf stdout aus; ist die Option `-f` gewählt, werden diese zusätzlichen Protokollinformationen zusammen mit den Abfrageergebnissen in die Ausgabedatei geschrieben|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Führt Abfragen im ausführlichen Modus mit zusätzlicher Ausgabe auf stdout aus; ist das globale Flag `-f` (`--outfile`) gesetzt, werden diese zusätzlichen Protokollinformationen zusammen mit den Abfrageergebnissen in die Ausgabedatei geschrieben|
 <br/>
 <br/>
 > weitere Optionen finden Sie unter [Globale Flags](/command-line-usage/global-flags)

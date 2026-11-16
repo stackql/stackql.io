@@ -41,7 +41,7 @@ O exportador ClickHouse do OpenTelemetry Collector, que o ClickStack inclui, gra
 ```shell
 OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prod,stackql.job=gce-inventory \
 stackql exec --output otel -f instances.otlp.jsonl \
---otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }\' \
+--otel.config '{ "exporter": { "endpoint": "http://clickstack.example:4318/v1/logs", "headers": { "authorization": "'"$CLICKSTACK_INGESTION_KEY"'" } } }' \
 "select id as identity, name, status, machineType, zone from google.compute.instances \
 where project = 'stackql-demo' and zone = 'australia-southeast1-a'"
 ```

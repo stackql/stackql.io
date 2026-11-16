@@ -263,7 +263,7 @@ export const tabLabel = (icon, text) => (
 
   ## Docker
 
-  StackQL のビルドは [DockerHub](https://hub.docker.com/u/stackql) で公開されています。  
+  StackQL のビルドは [Docker Hub](https://hub.docker.com/u/stackql) で公開されています。  
 
   __Docker Hub__  
 

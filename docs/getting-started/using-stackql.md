@@ -40,13 +40,13 @@ You can change the color scheme for the StackQL shell using the `--colorscheme` 
 ```
 ### The `.stackqlrc` Initialization File {#the-stackqlrc-initialization-file}
 
-Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the `stackqlrc` initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
+Defaults for StackQL command options, such as the output format and color scheme discussed previously, can be set using the `.stackqlrc` initialization file.  If this file exists in the current directory used by the StackQL executable it will be automatically loaded, or alternatively can be referenced using the `--configfile` flag as shown below:
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-More information about command options is available in the Global Flags topic.
+More information about command options is available in [Global Flags](/command-line-usage/global-flags).
 
 ### Using the StackQL Command Line Utility {#using-the-stackql-command-line-utility}
 StackQL commands can be executed non-interactively using the exec command of the StackQL executable.  More than one command can be executed in a batch provided each discrete command is terminated with a semicolon (`;`).  Command flags, such as the `--output` flag, can be specified at the command line or using the `.stackqlrc` initialization file discussed previously.  

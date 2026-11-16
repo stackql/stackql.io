@@ -53,11 +53,11 @@ REGISTRY LIST google;
 ```
 
 ### 安装 Provider 的最新版本 {#install-the-latest-version-of-a-provider}
-```
+```sql
 REGISTRY PULL okta;
 ```
 
 ### 安装 Provider 的特定版本 {#install-a-specific-version-of-a-provider}
-```
+```sql
 REGISTRY PULL azure v23.01.00104;
 ```

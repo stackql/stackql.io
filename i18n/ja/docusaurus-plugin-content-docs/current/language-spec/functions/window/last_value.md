@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-デフォルトでは、ウィンドウフレームはパーティションの先頭から現在の行までです。そのため、`LAST_VALUE` は現在の行の値を返します。パーティション内の実際の最後の値を取得するには、`ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` を使用します。
+デフォルトでは、ウィンドウフレームはパーティションの先頭から、`ORDER BY` 列で現在の行と同順位になる最後の行までです。そのため、`LAST_VALUE` はパーティション内の最後の値ではなく、同順位の最後の行の値（`ORDER BY` の値が一意であれば現在の行自体の値）を返します。パーティション内の最後の値を取得するには、`ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` を使用します。
 
 :::
 

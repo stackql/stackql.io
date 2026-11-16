@@ -49,7 +49,7 @@ Un identificador con prefijo de dólar, como `$region`, desreferencia una variab
 ## Comentarios {#comments}
 StackQL admite comentarios de varias líneas y comentarios en línea dentro de las instrucciones de StackQL; a continuación se muestran ejemplos de comentarios:
 
-```shell
+```sql
 /* This
 Is a
 Multiline

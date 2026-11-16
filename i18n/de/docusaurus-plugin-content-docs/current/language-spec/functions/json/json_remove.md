@@ -56,7 +56,7 @@ SELECT JSON_REMOVE('[0,1,2,3,4]', '$[2]', '$[0]') AS modified_json;
 
 Ausgabe: `'[1,3,4]'`
 
-### Letztes Element mit negativem Index entfernen {#remove-last-element-using-negative-index}
+### Letztes und erstes Element mit einem negativen Index entfernen {#remove-last-element-using-negative-index}
 
 ```sql
 -- Example: Remove the last and first elements from a JSON array

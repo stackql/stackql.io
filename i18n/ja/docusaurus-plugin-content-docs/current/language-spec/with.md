@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## 引数 {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 CTE が自身を参照できるようにする省略可能なキーワードです。階層データの走査などの再帰クエリが可能になります。
 
-__*cte_name*__
+__*cte_name*__  
 CTE に割り当てる名前です。この名前は、メインクエリでテーブルと同じように参照できます。
 
-__*column_name*__
+__*column_name*__  
 省略可能。CTE の結果セットの列名です。指定しない場合、列名は SELECT 文から導出されます。
 
-__*select_statement*__
+__*select_statement*__  
 CTE の結果セットを定義するクエリです。
 
 ## 戻り値 {#return-values}

@@ -1,0 +1,154 @@
+{
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "Memulai",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "Memulai",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "Konsep inti dan langkah pertama: hierarki sumber daya, menjalankan StackQL, menggunakan provider, mode output, variabel, variabel sesi, sesi provider, dan penggunaan template",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage": {
+    "message": "Baris perintah",
+    "description": "The label for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.title": {
+    "message": "Baris perintah",
+    "description": "The generated-index page title for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.description": {
+    "message": "Baris perintah stackql: exec, shell, srv, mcp, registry, flag global, dan manajemen akses",
+    "description": "The generated-index page description for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.MCP": {
+    "message": "MCP",
+    "description": "The label for category 'MCP' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedded": {
+    "message": "Tersemat",
+    "description": "The label for category 'Embedded' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Language Specification": {
+    "message": "Spesifikasi bahasa",
+    "description": "The label for category 'Language Specification' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Built-in Functions": {
+    "message": "Fungsi bawaan",
+    "description": "The label for category 'Built-in Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Aggregate": {
+    "message": "Agregat",
+    "description": "The label for category 'Aggregate' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Datetime": {
+    "message": "Tanggal dan waktu",
+    "description": "The label for category 'Datetime' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.General": {
+    "message": "Umum",
+    "description": "The label for category 'General' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Hash": {
+    "message": "Hash",
+    "description": "The label for category 'Hash' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Json": {
+    "message": "JSON",
+    "description": "The label for category 'Json' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Math": {
+    "message": "Matematika",
+    "description": "The label for category 'Math' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Logarithmic Functions": {
+    "message": "Fungsi logaritma",
+    "description": "The label for category 'Logarithmic Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Trigonometric Functions": {
+    "message": "Fungsi trigonometri",
+    "description": "The label for category 'Trigonometric Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Regular Expressions": {
+    "message": "Ekspresi reguler",
+    "description": "The label for category 'Regular Expressions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Session": {
+    "message": "Sesi",
+    "description": "The label for category 'Session' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.String": {
+    "message": "String",
+    "description": "The label for category 'String' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Window": {
+    "message": "Jendela",
+    "description": "The label for category 'Window' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Developers": {
+    "message": "Pengembang",
+    "description": "The label for category 'Developers' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts": {
+    "message": "Panduan mulai cepat",
+    "description": "The label for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.title": {
+    "message": "Panduan mulai cepat",
+    "description": "The generated-index page title for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.description": {
+    "message": "Panduan mulai cepat, panduan cara, contoh praktis, dan kasus penggunaan StackQL",
+    "description": "The generated-index page description for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.title": {
+    "message": "Panduan mulai cepat AWS",
+    "description": "The generated-index page title for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.description": {
+    "message": "Contoh praktis dan kasus penggunaan khusus untuk AWS",
+    "description": "The generated-index page description for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure": {
+    "message": "Microsoft Azure",
+    "description": "The label for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.title": {
+    "message": "Panduan mulai cepat Azure",
+    "description": "The generated-index page title for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.description": {
+    "message": "Contoh praktis dan kasus penggunaan khusus untuk Azure",
+    "description": "The generated-index page description for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform": {
+    "message": "Google Cloud Platform",
+    "description": "The label for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.title": {
+    "message": "Panduan mulai cepat Google",
+    "description": "The generated-index page title for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.description": {
+    "message": "Contoh praktis dan kasus penggunaan khusus untuk Google Cloud",
+    "description": "The generated-index page description for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.title": {
+    "message": "Panduan mulai cepat GitHub",
+    "description": "The generated-index page title for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.description": {
+    "message": "Contoh praktis dan kasus penggunaan khusus untuk GitHub",
+    "description": "The generated-index page description for category 'GitHub' in sidebar 'docsSidebar'"
+  }
+}

@@ -10,7 +10,7 @@ keywords:
 description: "StackQL 中的 REPLACE 函数：将字符串中某个子字符串的每次出现替换为另一个字符串。"
 image: "/img/stackql-featured-image.png"
 ---
-返回将字符串中某一部分的每次出现替换为另一个字符串后形成的字符串。
+返回字符串的一个副本，其中子字符串的每次出现都被替换为另一个字符串。
 
 另请参阅：  
 [[` SELECT `]](/language-spec/select) 

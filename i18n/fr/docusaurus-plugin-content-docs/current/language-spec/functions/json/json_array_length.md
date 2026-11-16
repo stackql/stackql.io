@@ -41,7 +41,7 @@ Le chemin JSON facultatif vers un tableau contenu dans un objet.  Consultez [jso
 
 > Si *json_path* est fourni, la fonction `json_array_length` localise le chemin dans *json_array_or_object* et renvoie la longueur du tableau, ou `0` si *json_path* désigne un objet (et non un tableau).  Si *json_path* est introuvable dans *json_array_or_object*, `NULL` est renvoyé.
 
-> Si *json_array_or_object* ou *json_path* ne sont pas des objets JSON ou ne sont pas bien formés, une erreur est levée.
+> Si *json_array_or_object* n'est pas un JSON bien formé, ou si *json_path* n'est pas un chemin JSON bien formé, une erreur est levée.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 Renvoie un entier.

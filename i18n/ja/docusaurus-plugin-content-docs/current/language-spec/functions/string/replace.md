@@ -10,7 +10,7 @@ keywords:
 description: "StackQL の REPLACE 関数：文字列内に出現するすべての部分文字列を別の文字列に置き換えます。"
 image: "/img/stackql-featured-image.png"
 ---
-文字列内で別の文字列が出現するすべての箇所を置き換えた文字列を返します。
+文字列内で部分文字列が出現するすべての箇所を別の文字列に置き換えた、文字列のコピーを返します。
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) 

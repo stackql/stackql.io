@@ -34,7 +34,7 @@ StackQL Provider Registry와 상호 작용하는 데 사용하는 명령입니�
 
 | 플래그 | 설명 |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|도움말 정보 출력|
+|<span class="nowrap">`-h, --help`</span>|도움말 정보 출력|
 <br/>
 <br/>
 > 추가 옵션은 [전역 플래그](/command-line-usage/global-flags)를 참조하세요.

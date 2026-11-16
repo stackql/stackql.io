@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "Instalasi",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "Agen AI",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "Provider",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "Server MCP",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "Alat MCP",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "MCP tersemat",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "Pengumuman produk",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "Pengumuman provider",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "Tutorial",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "Panduan mulai cepat",
+    "description": "Navbar item with label Quick Starts"
+  }
+}

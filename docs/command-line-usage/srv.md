@@ -11,7 +11,7 @@ description: "The stackql srv command runs StackQL as a PostgreSQL wire protocol
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch StackQL as a service, which can then be accessed by clients using [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
+Command used to launch StackQL as a service, which can then be accessed by [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
 
 * * * 
 
@@ -85,8 +85,8 @@ For `stackql srv` the file is read once at startup; the mid-session re-source pa
 
 | Flag | Description |
 |--|--|
-|`-H,--help`|Print help information|
-|`-v,--verbose`|Run queries in verbose mode with additional output sent to stdout, if the `-f` option is selected<br/>this additional logging information will be written to the output file along with the query results|
+|`-h,--help`|Print help information|
+|`-v,--verbose`|Run queries in verbose mode with additional output sent to stdout, if the global `-f` (`--outfile`) flag is set<br/>this additional logging information will be written to the output file along with the query results|
 
 <br/>
 

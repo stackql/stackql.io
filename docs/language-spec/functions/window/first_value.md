@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-By default, the window frame extends from the start of the partition to the current row. To include all rows in the partition, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+By default, the window frame extends from the start of the partition to the last row that ties with the current row on the `ORDER BY` columns. `FIRST_VALUE` reads the first row of the frame, so it returns the same value with the default frame and with `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`; the explicit frame matters for `LAST_VALUE` and `NTH_VALUE`, which read further into the frame.
 
 :::
 

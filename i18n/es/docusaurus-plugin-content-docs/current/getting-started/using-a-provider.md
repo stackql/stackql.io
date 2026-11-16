@@ -45,7 +45,7 @@ La autenticación se realiza mediante variables de entorno definidas en el siste
 
 :::tip
 
-Puede autenticarse en varios providers en el mismo shell interactivo o en la misma rutina por lotes no interactiva suministrando varios objetos de autenticación, por ejemplo:  
+Puede autenticarse en varios providers en el mismo shell interactivo o en la misma rutina por lotes no interactiva estableciendo las variables de autenticación de cada provider, por ejemplo:  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

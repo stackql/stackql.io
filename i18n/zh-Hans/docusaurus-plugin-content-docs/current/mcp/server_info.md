@@ -11,7 +11,7 @@ description: 返回 StackQL MCP 服务器标识和运行时的 MCP 工具
 image: "/img/stackql-featured-image.png"
 ---
 
-返回 StackQL MCP 服务器的标识和运行时：版本、后端 SQL 引擎、Provider 注册表位置、服务器模式以及旧版只读标志。在会话开始时调用一次，以便智能体了解自己连接的是什么。
+返回 StackQL MCP 服务器的标识和运行时：版本、后端 SQL 引擎、Provider 注册表位置、服务器模式以及旧版只读标志。按需调用，例如用于诊断被拒绝或受门控的操作，或检查特定于版本的行为；在会话开始时或查询之前无需调用。
 
 另请参阅：
 [[ MCP 概述 ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

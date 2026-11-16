@@ -45,7 +45,7 @@ A autenticação usa variáveis de ambiente definidas no sistema (ou obtidas com
 
 :::tip
 
-Você pode se autenticar em vários providers no mesmo shell interativo ou na mesma rotina em lote não interativa fornecendo vários objetos de autenticação, por exemplo:  
+Você pode se autenticar em vários providers no mesmo shell interativo ou na mesma rotina em lote não interativa definindo as variáveis de autenticação de cada provider, por exemplo:  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

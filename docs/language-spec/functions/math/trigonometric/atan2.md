@@ -10,7 +10,7 @@ keywords:
 description: Calculate the arc tangent of two numbers (y/x), returning an angle in radians using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the arc tangent of two numbers, specifically the angle \( \theta \) in radians for which the tangent is the ratio of two specified numbers (y divided by x), correctly handling the signs of the inputs to determine the correct quadrant.
+Calculates the arc tangent of two numbers, specifically the angle in radians for which the tangent is the ratio of two specified numbers (y divided by x), correctly handling the signs of the inputs to determine the correct quadrant.
 
 See also:  
 [[`SELECT`]](/language-spec/select)

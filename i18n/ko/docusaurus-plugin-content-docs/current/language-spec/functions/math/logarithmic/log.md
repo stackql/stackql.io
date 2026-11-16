@@ -10,7 +10,7 @@ keywords:
 description: StackQL에서 SQL로 임의의 밑에 대한 숫자의 로그를 계산합니다.
 image: "/img/stackql-featured-image.png"
 ---
-지정한 밑에 대한 숫자의 로그를 계산합니다. 이는 밑 \(e\)를 사용하는 LN보다 더 일반적인 형태의 로그 함수입니다.
+지정한 밑에 대한 숫자의 로그를 계산합니다. 이는 밑 e를 사용하는 LN보다 더 일반적인 형태의 로그 함수입니다.
 
 참고 항목:  
 [[`SELECT`]](/language-spec/select) 
@@ -44,11 +44,11 @@ __*numeric_expression*__
 SELECT LOG(10, 1000) AS log_result;
 ```
 
-\(10^3 = 1000\)이므로 이 쿼리는 `3`을 반환합니다.
+10^3 = 1000이므로 이 쿼리는 `3`을 반환합니다.
 
 ### 밑이 2인 16의 로그 계산 {#calculate-the-logarithm-of-16-with-base-2}
 
 ```sql
 SELECT LOG(2, 16) AS log_result;
 ```
-이 쿼리는 밑이 2인 16의 로그를 계산하며, \(2^4 = 16\)이므로 결과는 `4`입니다.
+이 쿼리는 밑이 2인 16의 로그를 계산하며, 2^4 = 16이므로 결과는 `4`입니다.

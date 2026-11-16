@@ -10,7 +10,7 @@ keywords:
 description: Den Areakosinus hyperbolicus (Umkehrfunktion des Kosinus hyperbolicus) einer Zahl mit SQL in StackQL berechnen und einen Winkel im Bogenmaß zurückgeben.
 image: "/img/stackql-featured-image.png"
 ---
-Berechnet den Areakosinus hyperbolicus (Umkehrfunktion des Kosinus hyperbolicus) einer Zahl, also den nicht negativen Wert \( \theta \) im Bogenmaß, dessen Kosinus hyperbolicus die angegebene Zahl ist.
+Berechnet den Areakosinus hyperbolicus (Umkehrfunktion des Kosinus hyperbolicus) einer Zahl, also den nicht negativen Wert im Bogenmaß, dessen Kosinus hyperbolicus die angegebene Zahl ist.
 
 Siehe auch:  
 [[`SELECT`]](/language-spec/select)

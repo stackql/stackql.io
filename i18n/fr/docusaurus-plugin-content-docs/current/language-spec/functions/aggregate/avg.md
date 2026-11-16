@@ -56,11 +56,11 @@ AND zone = 'australia-southeast1-a';
 ### Renvoyer la moyenne d'une expression de colonne regroupée selon une autre expression de colonne {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, avg(json_array_length(disks)) as avg_disks
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, avg(json_array_length(disks)) as avg_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 ### Utiliser `AVG` comme fonction de fenêtrage pour calculer des moyennes mobiles {#use-avg-as-a-window-function-to-calculate-moving-averages}

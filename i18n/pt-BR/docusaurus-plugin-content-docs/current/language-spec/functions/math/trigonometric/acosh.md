@@ -10,7 +10,7 @@ keywords:
 description: Calcular o arco cosseno hiperbólico (cosseno hiperbólico inverso) de um número e retornar um ângulo em radianos com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula o arco cosseno hiperbólico (cosseno hiperbólico inverso) de um número, que é o valor não negativo \( \theta \) em radianos cujo cosseno hiperbólico é o número especificado.
+Calcula o arco cosseno hiperbólico (cosseno hiperbólico inverso) de um número, que é o valor não negativo em radianos cujo cosseno hiperbólico é o número especificado.
 
 Veja também:  
 [[`SELECT`]](/language-spec/select)

@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Por padrão, o quadro da janela se estende do início da partição até a linha atual, o que significa que `LAST_VALUE` retornaria o valor da linha atual. Para obter o último valor real da partição, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Por padrão, o quadro da janela se estende do início da partição até a última linha empatada com a linha atual nas colunas de `ORDER BY`; por isso, `LAST_VALUE` retorna o valor dessa última linha empatada (a própria linha atual quando o seu valor de `ORDER BY` é único), e não o último valor da partição. Para obter o último valor da partição, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 :::
 

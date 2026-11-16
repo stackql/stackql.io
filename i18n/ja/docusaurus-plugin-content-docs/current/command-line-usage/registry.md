@@ -34,7 +34,7 @@ StackQL Provider Registry を操作するためのコマンドです。レジス
 
 | フラグ | 説明 |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|ヘルプ情報を表示する|
+|<span class="nowrap">`-h, --help`</span>|ヘルプ情報を表示する|
 <br/>
 <br/>
 > その他のオプションについては、[グローバルフラグ](/command-line-usage/global-flags)を参照してください

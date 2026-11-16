@@ -56,11 +56,11 @@ AND zone = 'australia-southeast1-a';
 ### 別の列式でグループ化した列式の平均を返す {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, avg(json_array_length(disks)) as avg_disks
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, avg(json_array_length(disks)) as avg_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 ### `AVG` をウィンドウ関数として使用して移動平均を計算する {#use-avg-as-a-window-function-to-calculate-moving-averages}

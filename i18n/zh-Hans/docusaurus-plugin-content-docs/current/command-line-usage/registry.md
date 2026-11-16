@@ -34,7 +34,7 @@ image: "/img/stackql-featured-image.png"
 
 | 标志 | 说明 |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|打印帮助信息|
+|<span class="nowrap">`-h, --help`</span>|打印帮助信息|
 <br/>
 <br/>
 > 更多选项参阅[全局标志](/command-line-usage/global-flags)

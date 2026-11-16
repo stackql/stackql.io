@@ -20,7 +20,7 @@ Voir aussi :
 ## Syntaxe {#syntax}
 
 ```sql
-SELECT DATETIME(datetime_expression , modifier, ...) FROM <multipartIdentifier>;
+SELECT DATETIME(datetime_expression [, modifier, ...]) FROM <multipartIdentifier>;
 ```
 
 ## Arguments {#arguments}

@@ -10,7 +10,7 @@ keywords:
 description: SQL로 두 JSON 문자열이 동등한지 비교합니다.
 image: "/img/stackql-featured-image.png"
 ---
-두 JSON 문자열을 비교하여 동등하면 true를, 그렇지 않으면 false를 반환합니다.
+두 JSON 문자열을 비교하여 동등하면 1을, 그렇지 않으면 0을 반환합니다.
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ 데이터 형식 ]](/language-spec/data-types)

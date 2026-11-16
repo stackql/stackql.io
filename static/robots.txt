@@ -10,6 +10,7 @@ Sitemap: https://stackql.io/sitemap.xml
 Sitemap: https://stackql.io/de/sitemap.xml
 Sitemap: https://stackql.io/es/sitemap.xml
 Sitemap: https://stackql.io/fr/sitemap.xml
+Sitemap: https://stackql.io/id/sitemap.xml
 Sitemap: https://stackql.io/ja/sitemap.xml
 Sitemap: https://stackql.io/ko/sitemap.xml
 Sitemap: https://stackql.io/pt-br/sitemap.xml

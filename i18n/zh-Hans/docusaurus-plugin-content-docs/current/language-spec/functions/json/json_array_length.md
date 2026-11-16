@@ -41,7 +41,7 @@ __*json_path*__
 
 > 如果提供了 *json_path*，`json_array_length` 函数会在 *json_array_or_object* 中定位该路径并返回数组的长度；如果 *json_path* 是对象（而非数组），则返回 `0`。如果在 *json_array_or_object* 中无法定位 *json_path*，则返回 `NULL`。
 
-> 如果 *json_array_or_object* 或 *json_path* 不是 JSON 对象或格式不正确，则会抛出错误。
+> 如果 *json_array_or_object* 不是格式正确的 JSON，或 *json_path* 不是格式正确的 JSON 路径，则会抛出错误。
 
 ## 返回值 {#return-values}
 返回一个整数。

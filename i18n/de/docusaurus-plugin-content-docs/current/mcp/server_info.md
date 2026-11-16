@@ -11,7 +11,7 @@ description: MCP-Tool, das Identität und Laufzeitumgebung des StackQL-MCP-Serve
 image: "/img/stackql-featured-image.png"
 ---
 
-Gibt Identität und Laufzeitumgebung des StackQL-MCP-Servers zurück: Version, zugrunde liegende SQL-Engine, Speicherort der Provider-Registry, Servermodus und das veraltete Nur-Lese-Flag.  Rufen Sie dieses Tool einmal zu Sitzungsbeginn auf, damit der Agent weiß, womit er verbunden ist.
+Gibt Identität und Laufzeitumgebung des StackQL-MCP-Servers zurück: Version, zugrunde liegende SQL-Engine, Speicherort der Provider-Registry, Servermodus und das veraltete Nur-Lese-Flag.  Rufen Sie dieses Tool bei Bedarf auf, zum Beispiel um eine abgelehnte oder freigabepflichtige Operation zu diagnostizieren oder versionsspezifisches Verhalten zu prüfen; zu Sitzungsbeginn oder vor Abfragen ist es nicht nötig.
 
 Siehe auch:
 [[ MCP-Übersicht ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

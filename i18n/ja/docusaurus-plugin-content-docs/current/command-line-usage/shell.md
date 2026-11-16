@@ -26,7 +26,7 @@ image: "/img/stackql-featured-image.png"
 | フラグ | 説明 |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|ヘルプ情報を表示する|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|詳細モードでクエリを実行し、追加の出力を stdout に送信します。`-f` オプションを指定した場合、この追加のログ情報はクエリ結果とともに出力ファイルに書き込まれます。|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|詳細モードでクエリを実行し、追加の出力を stdout に送信します。グローバルフラグ `-f`（`--outfile`）を設定した場合、この追加のログ情報はクエリ結果とともに出力ファイルに書き込まれます。|
 <br/>
 <br/>
 > その他のオプションについては、[グローバルフラグ](/command-line-usage/global-flags)を参照してください

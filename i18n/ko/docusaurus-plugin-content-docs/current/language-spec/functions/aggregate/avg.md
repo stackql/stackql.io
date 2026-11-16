@@ -56,11 +56,11 @@ AND zone = 'australia-southeast1-a';
 ### 다른 열 식으로 그룹화된 열 식의 평균 반환 {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, avg(json_array_length(disks)) as avg_disks
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, avg(json_array_length(disks)) as avg_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 ### `AVG` 함수를 윈도우 함수로 사용하여 이동 평균 계산 {#use-avg-as-a-window-function-to-calculate-moving-averages}

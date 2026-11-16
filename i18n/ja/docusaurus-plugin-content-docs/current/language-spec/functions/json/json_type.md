@@ -10,7 +10,7 @@ keywords:
 description: "StackQL の JSON_TYPE 関数：JSON 値の最も外側の要素、またはその中のパスの型（object、array、text、integer、real、true、false または null）。"
 image: "/img/stackql-featured-image.png"
 ---
-入力された JSON オブジェクトまたは配列とパスについて、最も外側の要素のデータ型を返します。  
+JSON 値の最も外側の要素、または省略可能なパスにある要素のデータ型を返します。  
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ データ型 ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-`postgres` SQL バックエンドで stackql を使用している場合、`json_type` 関数は `json_typeof` 関数として実装されています。
+`postgres` SQL バックエンドで StackQL を使用している場合は、代わりに `json_typeof` 関数を使用してください。
 
 :::
 

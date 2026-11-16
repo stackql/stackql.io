@@ -61,7 +61,7 @@ Gibt den Wert des Ausdrucks zurück, der für die angegebene vorherige Zeile aus
 ### Jedes Release mit dem vorherigen Release vergleichen {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,
