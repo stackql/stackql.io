@@ -70,7 +70,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.start
 ```
 
 ### AWS EC2 인스턴스 시작 및 중지 {#starting-and-stopping-an-aws-ec2-instance}
-인증된 세션에서 `EXEC` 문을 실행하여 AWS EC2 인스턴스를 시작합니다.
+인증된 세션에서 `EXEC` 문을 실행하여 AWS EC2 인스턴스를 시작하고 중지합니다.
 
 ```sql
 -- Start an EC2 instance

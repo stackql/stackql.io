@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### `text` 출력 {#text-output}
+`--output` 매개 변수에 `text` 값을 사용하면 결과를 일반 텍스트로 반환할 수 있습니다. 각 행은 값을 쉼표로 연결한 형태로 기록되며, `-H`(`--hideheaders`) 플래그를 설정하지 않으면 그 앞에 머리글 행이 출력됩니다. `csv` 형식과 달리 값을 따옴표로 묶거나 이스케이프하지 않고 `-d` 구분 기호도 무시하므로, 쉼표나 큰따옴표가 포함된 값은 그대로 기록됩니다:
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+`--output csv` 플래그를 사용하면 같은 쿼리의 데이터 행은 `"a,b","say ""hi"""`로 반환됩니다.
+
 ### `otel` 출력 {#otel-output}
 `--output` 매개 변수에 `otel` 값을 사용하면 결과를 OpenTelemetry 로그 레코드로 내보낼 수 있습니다. 각 행은 한 줄에 하나의 OTLP/JSON `LogsData` 객체로 기록되고 `jsonl` 형식처럼 기록되는 즉시 플러시되며, 그 뒤에 해당 문의 완료 레코드 1개가 이어집니다. 이 출력 형식은 쿼리를 텔레메트리 형태의 클라우드 구성 스냅샷으로 변환합니다. 인벤토리 쿼리를 일정에 따라 실행하고, 레코드를 OTLP를 지원하는 백엔드(ClickHouse, Datadog 또는 다른 백엔드 앞에 둔 OpenTelemetry Collector)로 전송한 다음, 그곳에서 "현재 자산은 어떤 상태인가", "마지막 실행 이후 무엇이 변경되었나", "누가 어떤 사용 권한을 언제부터 가지고 있었나"에 답할 수 있습니다. StackQL `v0.11.660` 이상에서 사용할 수 있습니다.
 

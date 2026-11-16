@@ -105,7 +105,7 @@ ORDER BY timeCreated DESC LIMIT 1;
 
 ```sql
 -- Return a count of the number of buckets in every location other than Asia
-SELECT name, location, count(*) as num_buckets 
+SELECT location, count(*) as num_buckets 
 FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location
 HAVING location != 'ASIA';
@@ -114,7 +114,7 @@ HAVING location != 'ASIA';
 有关 `COUNT` 函数以及 StackQL 支持的其他聚合函数的更多信息，请参阅[聚合函数](/language-spec/functions/aggregate/count)。
 
 ### 从 Azure VM Scale Set 获取按需 VM 及其对应网络接口的列表 {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
-运行 `SELECT` 语句，使用 [`SPLIT_PART`](/language-spec/functions/string/split_part) 和 [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 函数获取 OD VM 及其 NIC 的列表。注意，在不带限定符的情况下，subscription_id 和 resource_group_name 会应用于全部三个资源。
+运行 `SELECT` 语句，使用 [`SPLIT_PART`](/language-spec/functions/string/split_part) 和 [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 函数获取按需（OD）VM 及其 NIC 的列表。注意，在不带限定符的情况下，`subscription_id` 和 `resource_group_name` 会应用于全部三个资源。
 
 ```sql
 SELECT  c.name AS vm_name,

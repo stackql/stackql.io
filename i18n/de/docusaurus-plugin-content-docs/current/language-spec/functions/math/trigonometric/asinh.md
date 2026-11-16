@@ -10,7 +10,7 @@ keywords:
 description: Den Areasinus hyperbolicus (Umkehrfunktion des Sinus hyperbolicus) einer Zahl mit SQL in StackQL berechnen und einen Winkel im Bogenmaß zurückgeben.
 image: "/img/stackql-featured-image.png"
 ---
-Berechnet den Areasinus hyperbolicus (Umkehrfunktion des Sinus hyperbolicus) einer Zahl, also den Wert \( \theta \) im Bogenmaß, dessen Sinus hyperbolicus die angegebene Zahl ist.
+Berechnet den Areasinus hyperbolicus (Umkehrfunktion des Sinus hyperbolicus) einer Zahl, also den Wert im Bogenmaß, dessen Sinus hyperbolicus die angegebene Zahl ist.
 
 Siehe auch:  
 [[`SELECT`]](/language-spec/select)

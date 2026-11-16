@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 计算一个数在任意底数下的对数。
 image: "/img/stackql-featured-image.png"
 ---
-计算一个数在指定底数下的对数，与以 \(e\) 为底数的 LN 相比，这是对数函数更一般的形式。
+计算一个数在指定底数下的对数，与以 e 为底数的 LN 相比，这是对数函数更一般的形式。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select) 
@@ -44,11 +44,11 @@ __*numeric_expression*__
 SELECT LOG(10, 1000) AS log_result;
 ```
 
-此查询返回 `3`，因为 \(10^3 = 1000\)。
+此查询返回 `3`，因为 10^3 = 1000。
 
 ### 计算 16 以 2 为底数的对数 {#calculate-the-logarithm-of-16-with-base-2}
 
 ```sql
 SELECT LOG(2, 16) AS log_result;
 ```
-此查询计算 16 以 2 为底数的对数，结果为 `4`，因为 \(2^4 = 16\)。
+此查询计算 16 以 2 为底数的对数，结果为 `4`，因为 2^4 = 16。

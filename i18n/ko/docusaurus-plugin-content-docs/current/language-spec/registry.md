@@ -53,11 +53,11 @@ REGISTRY LIST google;
 ```
 
 ### 프로바이더의 최신 버전 설치 {#install-the-latest-version-of-a-provider}
-```
+```sql
 REGISTRY PULL okta;
 ```
 
 ### 프로바이더의 특정 버전 설치 {#install-a-specific-version-of-a-provider}
-```
+```sql
 REGISTRY PULL azure v23.01.00104;
 ```

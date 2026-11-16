@@ -40,13 +40,13 @@ StackQL シェルはデフォルトで表形式の結果を返しますが、`--
 ```
 ### `.stackqlrc` 初期化ファイル {#the-stackqlrc-initialization-file}
 
-前述の出力形式や配色など、StackQL のコマンドオプションのデフォルトは、`stackqlrc` 初期化ファイルで設定できます。このファイルが StackQL 実行ファイルの使用するカレントディレクトリに存在する場合は、自動的に読み込まれます。または、次のように `--configfile` フラグを使用して参照することもできます。
+前述の出力形式や配色など、StackQL のコマンドオプションのデフォルトは、`.stackqlrc` 初期化ファイルで設定できます。このファイルが StackQL 実行ファイルの使用するカレントディレクトリに存在する場合は、自動的に読み込まれます。または、次のように `--configfile` フラグを使用して参照することもできます。
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-コマンドオプションの詳細については、グローバルフラグのトピックを参照してください。
+コマンドオプションの詳細については、[グローバルフラグ](/command-line-usage/global-flags)を参照してください。
 
 ### StackQL コマンドラインユーティリティの使用 {#using-the-stackql-command-line-utility}
 StackQL のコマンドは、StackQL 実行ファイルの exec コマンドを使用して非対話的に実行できます。個々のコマンドをセミコロン（`;`）で終端すれば、複数のコマンドをバッチで実行できます。`--output` フラグなどのコマンドフラグは、コマンドラインで指定することも、前述の `.stackqlrc` 初期化ファイルで指定することもできます。

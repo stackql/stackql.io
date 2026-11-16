@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-默认情况下，窗口帧从分区开头延伸到当前行。要包含分区中的所有行，请使用 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`。
+默认情况下，窗口帧从分区开头延伸到 `ORDER BY` 列的值与当前行相同的最后一行。`FIRST_VALUE` 读取窗口帧的第一行，因此使用默认窗口帧和使用 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` 时返回的值相同；显式窗口帧对 `LAST_VALUE` 和 `NTH_VALUE` 才有影响，因为它们会读取窗口帧中更靠后的行。
 
 :::
 

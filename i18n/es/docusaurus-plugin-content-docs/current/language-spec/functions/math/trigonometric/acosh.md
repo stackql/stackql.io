@@ -10,7 +10,7 @@ keywords:
 description: Calcular el arcocoseno hiperbólico (coseno hiperbólico inverso) de un número y devolver un ángulo en radianes con SQL en StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula el arcocoseno hiperbólico (coseno hiperbólico inverso) de un número, que es el valor no negativo \( \theta \) en radianes cuyo coseno hiperbólico es el número especificado.
+Calcula el arcocoseno hiperbólico (coseno hiperbólico inverso) de un número, que es el valor no negativo en radianes cuyo coseno hiperbólico es el número especificado.
 
 Consulte también:  
 [[`SELECT`]](/language-spec/select)

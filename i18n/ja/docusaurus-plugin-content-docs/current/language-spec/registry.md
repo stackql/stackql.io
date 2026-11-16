@@ -53,11 +53,11 @@ REGISTRY LIST google;
 ```
 
 ### プロバイダーの最新バージョンをインストールする {#install-the-latest-version-of-a-provider}
-```
+```sql
 REGISTRY PULL okta;
 ```
 
 ### プロバイダーの特定のバージョンをインストールする {#install-a-specific-version-of-a-provider}
-```
+```sql
 REGISTRY PULL azure v23.01.00104;
 ```

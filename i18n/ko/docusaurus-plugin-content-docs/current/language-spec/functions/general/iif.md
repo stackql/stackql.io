@@ -52,7 +52,7 @@ __*result_if_false*__
 ### compute engine 인스턴스의 디스크 크기 분류 {#categorize-disk-sizes-of-compute-engine-instances}
 
 ```sql
-SELECT iif(json_extract(disks, '$[0].diskSizeGb') > 9, "> 10GB", "<= 10GB") as disk_size
+SELECT iif(CAST(json_extract(disks, '$[0].diskSizeGb') AS INTEGER) > 10, '> 10GB', '<= 10GB') as disk_size
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';

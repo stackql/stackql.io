@@ -10,7 +10,7 @@ keywords:
 description: Zwei JSON-Zeichenketten mit SQL auf Äquivalenz vergleichen.
 image: "/img/stackql-featured-image.png"
 ---
-Vergleicht zwei JSON-Zeichenketten und gibt true zurück, wenn sie äquivalent sind, andernfalls false.
+Vergleicht zwei JSON-Zeichenketten und gibt 1 zurück, wenn sie äquivalent sind, andernfalls 0.
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ Datentypen ]](/language-spec/data-types)

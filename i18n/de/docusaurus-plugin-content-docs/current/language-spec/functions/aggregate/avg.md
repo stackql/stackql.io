@@ -56,11 +56,11 @@ AND zone = 'australia-southeast1-a';
 ### Den Durchschnitt eines Spaltenausdrucks gruppiert nach einem anderen Spaltenausdruck zurückgeben {#return-the-average-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, avg(json_array_length(disks)) as avg_disks
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, avg(json_array_length(disks)) as avg_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 ### `AVG` als Fensterfunktion zur Berechnung gleitender Durchschnitte verwenden {#use-avg-as-a-window-function-to-calculate-moving-averages}

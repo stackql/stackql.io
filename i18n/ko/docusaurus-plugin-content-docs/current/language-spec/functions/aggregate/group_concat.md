@@ -59,11 +59,11 @@ AND zone = 'australia-southeast1-a';
 ### 다른 열 식으로 그룹화된 열 식의 값 목록 반환 {#return-a-list-of-values-for-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, group_concat(name) as instance_list
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, group_concat(name) as instance_list
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 자세한 내용은 [https://www.sqlite.org/lang_aggfunc.html#group_concat](https://www.sqlite.org/lang_aggfunc.html#group_concat) 문서를 참조하세요.

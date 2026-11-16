@@ -85,7 +85,7 @@ GROUP BY location;
 ### 스칼라 `max` 함수를 사용하여 값 목록에서 최댓값 반환 {#return-the-maximum-value-from-a-list-of-values-using-the-scalar-max-function}
 
 ```sql
-SELECT max(json_extract(disks, '$[0].diskSizeGb'),json_extract(disks, '$[1].diskSizeGb')) as largest_disk
+SELECT max(CAST(json_extract(disks, '$[0].diskSizeGb') AS INTEGER), CAST(json_extract(disks, '$[1].diskSizeGb') AS INTEGER)) as largest_disk
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';

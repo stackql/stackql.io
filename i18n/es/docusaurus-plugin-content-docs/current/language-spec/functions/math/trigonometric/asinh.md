@@ -10,7 +10,7 @@ keywords:
 description: Calcular el arcoseno hiperbólico (seno hiperbólico inverso) de un número y devolver un ángulo en radianes con SQL en StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula el arcoseno hiperbólico (seno hiperbólico inverso) de un número, que es el valor \( \theta \) en radianes cuyo seno hiperbólico es el número especificado.
+Calcula el arcoseno hiperbólico (seno hiperbólico inverso) de un número, que es el valor en radianes cuyo seno hiperbólico es el número especificado.
 
 Consulte también:  
 [[`SELECT`]](/language-spec/select)

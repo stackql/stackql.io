@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-默认情况下，窗口帧从分区开头延伸到当前行，这意味着 `LAST_VALUE` 会返回当前行的值。要获取分区中真正的最后一个值，请使用 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`。
+默认情况下，窗口帧从分区开头延伸到 `ORDER BY` 列的值与当前行相同的最后一行，因此 `LAST_VALUE` 返回的是这最后一个值相同的行的值（当前行的 `ORDER BY` 值唯一时即为当前行本身），而不是分区中的最后一个值。要获取分区中的最后一个值，请使用 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`。
 
 :::
 

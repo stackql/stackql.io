@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: 在 StackQL 中使用 SQL 将 JSON 对象聚合为 JSON 数组。
+description: 在 StackQL 中使用 SQL 将值聚合为 JSON 数组。
 image: "/img/stackql-featured-image.png"
 ---
 将值聚合为 JSON 数组。`JSON_GROUP_ARRAY()` 收集指定列中每个分组的所有值，并将它们合并为一个 JSON 数组。

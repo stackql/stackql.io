@@ -10,7 +10,7 @@ keywords:
 description: Calcular o logaritmo natural de um número com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula o logaritmo natural (logaritmo na base \(e\)) de um determinado número.
+Calcula o logaritmo natural (logaritmo na base e) de um determinado número.
 
 Veja também:  
 [[`SELECT`]](/language-spec/select) 
@@ -35,13 +35,13 @@ Retorna o logaritmo natural do valor numérico positivo especificado.
 
 ## Exemplos {#examples}
 
-### Calcular o logaritmo natural de 2.71828 (aproximadamente \(e\)) {#calculate-the-natural-logarithm-of-271828-approximately-e}
+### Calcular o logaritmo natural de 2.71828 (aproximadamente e) {#calculate-the-natural-logarithm-of-271828-approximately-e}
 
 ```sql
 SELECT LN(2.71828) AS natural_log;
 ```
 
-Esta consulta retorna um valor próximo de `1`, pois o logaritmo natural de \(e\) (aproximadamente 2.71828) é 1.
+Esta consulta retorna um valor próximo de `1`, pois o logaritmo natural de e (aproximadamente 2.71828) é 1.
 
 ### Calcular o logaritmo natural de um número maior {#calculate-the-natural-logarithm-of-a-larger-number}
 
@@ -49,4 +49,4 @@ Esta consulta retorna um valor próximo de `1`, pois o logaritmo natural de \(e\
 SELECT LN(10) AS natural_log;
 ```
 
-Esta consulta calcula o logaritmo natural de 10, fornecendo o valor logarítmico de 10 na base \(e\).
+Esta consulta calcula o logaritmo natural de 10, fornecendo o valor logarítmico de 10 na base e.

@@ -85,7 +85,7 @@ GROUP BY location;
 ### 使用标量 `min` 函数从值列表中返回最小值 {#return-the-minimum-value-from-a-list-of-values-using-the-scalar-min-function}
 
 ```sql
-SELECT min(json_extract(disks, '$[0].diskSizeGb'),json_extract(disks, '$[1].diskSizeGb')) as smallest_disk
+SELECT min(CAST(json_extract(disks, '$[0].diskSizeGb') AS INTEGER), CAST(json_extract(disks, '$[1].diskSizeGb') AS INTEGER)) as smallest_disk
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a';

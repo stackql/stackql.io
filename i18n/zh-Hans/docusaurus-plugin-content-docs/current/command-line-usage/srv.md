@@ -11,7 +11,7 @@ description: "stackql srv 命令将 StackQL 作为 PostgreSQL 线协议服务器
 image: "/img/stackql-featured-image.png"
 ---
 
-用于将 StackQL 作为服务启动的命令，之后客户端可以使用通过 mTLS 进行身份验证的 [Postgres 线协议](https://www.postgresql.org/docs/current/protocol.html)客户端访问该服务。`srv` 命令还可以在 PostgreSQL 线协议服务器之外同时运行一个 [Model Context Protocol（MCP）](/command-line-usage/mcp)服务器，为传统数据库客户端和 AI 智能体提供双协议访问。
+用于将 StackQL 作为服务启动的命令，之后可由通过 mTLS 进行身份验证的 [Postgres 线协议](https://www.postgresql.org/docs/current/protocol.html)客户端访问该服务。`srv` 命令还可以在 PostgreSQL 线协议服务器之外同时运行一个 [Model Context Protocol（MCP）](/command-line-usage/mcp)服务器，为传统数据库客户端和 AI 智能体提供双协议访问。
 
 * * * 
 
@@ -85,8 +85,8 @@ stackql srv --pgsrv.port 5444 --env.file /etc/stackql/credentials.env
 
 | 标志 | 说明 |
 |--|--|
-|`-H,--help`|打印帮助信息|
-|`-v,--verbose`|以详细模式运行查询，并将额外输出发送到 stdout，如果选择了 `-f` 选项，<br/>这些额外的日志信息将与查询结果一起写入输出文件|
+|`-h,--help`|打印帮助信息|
+|`-v,--verbose`|以详细模式运行查询，并将额外输出发送到 stdout，如果设置了全局 `-f`（`--outfile`）标志，<br/>这些额外的日志信息将与查询结果一起写入输出文件|
 
 <br/>
 

@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-By default, the window frame extends from the start of the partition to the current row, which means `LAST_VALUE` would return the current row's value. To get the actual last value in the partition, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+By default, the window frame extends from the start of the partition to the last row that ties with the current row on the `ORDER BY` columns, so `LAST_VALUE` returns the value of that last tied row (the current row itself when its `ORDER BY` value is unique), not the last value in the partition. To get the last value in the partition, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 :::
 

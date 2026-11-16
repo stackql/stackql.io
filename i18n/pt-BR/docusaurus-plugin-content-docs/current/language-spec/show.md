@@ -75,7 +75,7 @@ SHOW PROVIDERS;
 
 </details>
 
-### Listar todos os serviços de um provedor de nuvem {#list-all-services-in-a-cloud-provider}
+### Listar todos os serviços de um provider {#list-all-services-in-a-cloud-provider}
 Liste todos os serviços disponíveis em um determinado provider; use a palavra-chave opcional EXTENDED para retornar informações adicionais.
 ```sql
 -- Returns all services available in a provider
@@ -105,10 +105,10 @@ SHOW EXTENDED SERVICES IN google;
 </details>
 
 
-### Listar todos os recursos de um serviço de um provedor de nuvem {#list-all-resources-within-a-cloud-provider-service}
-Liste todos os recursos disponíveis em um determinado serviço de um provedor de nuvem.  A palavra-chave opcional `EXTENDED` retorna a descrição do recurso além do nome do recurso.
+### Listar todos os recursos de um serviço de um provider {#list-all-resources-within-a-cloud-provider-service}
+Liste todos os recursos disponíveis em um determinado serviço de um provider.  A palavra-chave opcional `EXTENDED` retorna a descrição do recurso além do nome do recurso.
 ```sql
--- Returns all resources available in a cloud provider service
+-- Returns all resources available in a provider service
 SHOW EXTENDED RESOURCES IN google.compute;
 ```
 <details>
@@ -134,10 +134,10 @@ SHOW EXTENDED RESOURCES IN google.compute;
 
 </details>
 
-### Mostrar os métodos disponíveis para um recurso de um serviço de um provedor de nuvem {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
+### Mostrar os métodos disponíveis para um recurso de um serviço de um provider {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 Liste todos os métodos disponíveis para um determinado recurso.
 ```sql
--- Returns all methods available for a cloud provider resource
+-- Returns all methods available for a provider resource
 SHOW EXTENDED METHODS IN google.compute.instances;
 ```
 <details>

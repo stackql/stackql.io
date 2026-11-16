@@ -43,6 +43,7 @@ module.exports = {
     de: { prefix: '/de', htmlLang: 'de', code: 'DE', inLanguage: 'de', script: null },
     es: { prefix: '/es', htmlLang: 'es', code: 'ES', inLanguage: 'es', script: null },
     fr: { prefix: '/fr', htmlLang: 'fr', code: 'FR', inLanguage: 'fr', script: null },
+    id: { prefix: '/id', htmlLang: 'id', code: 'ID', inLanguage: 'id', script: null },
     ja: { prefix: '/ja', htmlLang: 'ja', code: 'JA', inLanguage: 'ja', script: 'cjk', language: 'Japanese' },
     ko: { prefix: '/ko', htmlLang: 'ko', code: 'KO', inLanguage: 'ko', script: 'cjk', language: 'Korean' },
     'pt-BR': { prefix: '/pt-br', htmlLang: 'pt-BR', code: 'PT', inLanguage: 'pt-BR', script: null },
@@ -57,8 +58,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, ja: 150, ko: 150, 'pt-BR': 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, ja: 150, ko: 150, 'pt-BR': 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,

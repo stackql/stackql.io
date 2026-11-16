@@ -61,7 +61,7 @@ Retorna o valor da expressão avaliada na linha anterior especificada, ou `NULL`
 ### Comparar cada versão com a versão anterior {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,

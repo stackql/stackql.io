@@ -53,7 +53,7 @@ Os campos especificados na cláusula `RETURNING` são desserializados da respost
 ## Exemplos {#examples}
 
 ### Instrução `INSERT` básica {#basic-insert-statement}
-Execute uma instrução INSERT para criar um recurso de disco do Compute Engine.  Esta é uma invocação não bloqueante (assíncrona).
+Execute uma instrução `INSERT` para criar um recurso de disco do Compute Engine.  Esta é uma invocação não bloqueante (assíncrona).
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### Instrução `INSERT` (bloqueante) {#insert-statement-blocking}
-Execute uma instrução INSERT para criar um recurso de disco do Compute Engine.  Esta é uma invocação bloqueante (síncrona).
+Execute uma instrução `INSERT` para criar um recurso de disco do Compute Engine.  Esta é uma invocação bloqueante (síncrona).
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### Instrução `INSERT` com `SELECT` {#insert-statement-with-select}
-Execute uma instrução INSERT com SELECT.
+Execute uma instrução `INSERT` com `SELECT`.
 
 ```sql
 -- Create an Azure Network Interface

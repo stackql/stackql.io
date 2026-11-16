@@ -53,7 +53,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 ## 예제 {#examples}
 
 ### 기본 `INSERT` 문 {#basic-insert-statement}
-INSERT 문을 실행하여 Compute Engine 디스크 리소스를 생성합니다.  이 호출은 논블로킹(비동기) 호출입니다.
+`INSERT` 문을 실행하여 Compute Engine 디스크 리소스를 생성합니다.  이 호출은 논블로킹(비동기) 호출입니다.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT` 문(블로킹) {#insert-statement-blocking}
-INSERT 문을 실행하여 Compute Engine 디스크 리소스를 생성합니다.  이 호출은 블로킹(동기) 호출입니다.
+`INSERT` 문을 실행하여 Compute Engine 디스크 리소스를 생성합니다.  이 호출은 블로킹(동기) 호출입니다.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `SELECT` 문을 사용하는 `INSERT` 문 {#insert-statement-with-select}
-SELECT 문과 함께 INSERT 문을 실행합니다.
+`SELECT` 문과 함께 `INSERT` 문을 실행합니다.
 
 ```sql
 -- Create an Azure Network Interface

@@ -26,7 +26,7 @@ Comando que se usa para iniciar el shell de comandos interactivo de StackQL.  Pa
 | Opción | Descripción |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|Muestra la información de ayuda|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se selecciona la opción `-f`, esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se establece la opción global `-f` (`--outfile`), esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
 <br/>
 <br/>
 > consulte [Opciones globales](/command-line-usage/global-flags) para ver opciones adicionales

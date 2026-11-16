@@ -52,7 +52,9 @@ AND zone = 'australia-southeast1-a';
 /*
 equivalent to: 
 SELECT COUNT(*) FROM google.compute.instances 
-WHERE name != 'controller-0';
+WHERE project = 'stackql-demo' 
+AND zone = 'australia-southeast1-a' 
+AND name != 'controller-0';
 */
 ```
 

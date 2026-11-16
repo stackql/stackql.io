@@ -41,7 +41,7 @@ __*numeric_expression*__
 SELECT LOG10(100) AS log_result;
 ```
 
-此查询返回 `2`，因为 \(10^2 = 100\)。
+此查询返回 `2`，因为 10^2 = 100。
 
 ### 计算 1000 以 10 为底数的对数 {#calculate-the-base-10-logarithm-of-1000}
 
@@ -49,4 +49,4 @@ SELECT LOG10(100) AS log_result;
 SELECT LOG10(1000) AS log_result;
 ```
 
-此查询计算 1000 以 10 为底数的对数，结果为 `3`，因为 \(10^3 = 1000\)。
+此查询计算 1000 以 10 为底数的对数，结果为 `3`，因为 10^3 = 1000。

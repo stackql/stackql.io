@@ -41,7 +41,7 @@ __*json_path*__
 
 > *json_path* が指定された場合、`json_array_length` 関数は *json_array_or_object* 内でそのパスを特定し、配列の長さを返します。*json_path* が（配列ではなく）オブジェクトの場合は `0` を返します。*json_path* が *json_array_or_object* 内で見つからない場合は、`NULL` が返されます。
 
-> *json_array_or_object* または *json_path* が JSON オブジェクトでない場合、または整形式でない場合は、エラーが発生します。
+> *json_array_or_object* が整形式の JSON でない場合、または *json_path* が整形式の JSON パスでない場合は、エラーが発生します。
 
 ## 戻り値 {#return-values}
 整数を返します。

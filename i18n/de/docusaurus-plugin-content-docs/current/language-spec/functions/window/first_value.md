@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Standardmäßig erstreckt sich der Fensterrahmen vom Anfang der Partition bis zur aktuellen Zeile. Um alle Zeilen der Partition einzubeziehen, verwenden Sie `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Standardmäßig erstreckt sich der Fensterrahmen vom Anfang der Partition bis zur letzten Zeile, die in den `ORDER BY`-Spalten mit der aktuellen Zeile gleichrangig ist. `FIRST_VALUE` liest die erste Zeile des Rahmens und gibt daher mit dem Standardrahmen und mit `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` denselben Wert zurück; der explizite Rahmen ist für `LAST_VALUE` und `NTH_VALUE` relevant, die weiter in den Rahmen hineinlesen.
 
 :::
 

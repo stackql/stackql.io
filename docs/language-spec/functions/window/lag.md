@@ -61,7 +61,7 @@ Returns the value of the expression evaluated against the specified previous row
 ### Compare each release to the previous release {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,

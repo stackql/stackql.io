@@ -41,7 +41,7 @@ Der optionale JSON-Pfad zu einem Array, das in einem Objekt enthalten ist.  Sieh
 
 > Wenn *json_path* angegeben ist, sucht die Funktion `json_array_length` den Pfad in *json_array_or_object* und gibt die Länge des Arrays zurück, oder `0`, wenn *json_path* ein Objekt (kein Array) ist.  Wenn *json_path* in *json_array_or_object* nicht gefunden werden kann, wird `NULL` zurückgegeben.
 
-> Wenn *json_array_or_object* oder *json_path* keine JSON-Objekte oder nicht wohlgeformt sind, wird ein Fehler ausgelöst.
+> Wenn *json_array_or_object* kein wohlgeformtes JSON oder *json_path* kein wohlgeformter JSON-Pfad ist, wird ein Fehler ausgelöst.
 
 ## Rückgabewert(e) {#return-values}
 Gibt eine Ganzzahl zurück.

@@ -54,11 +54,11 @@ AND zone = 'australia-southeast1-a';
 ### Devolver el número de filas agrupadas por una expresión de columna {#return-the-number-of-rows-grouped-by-a-column-expression}
 
 ```sql
-SELECT tags, count(*) as num_instances
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, count(*) as num_instances
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 ### Usar `COUNT` como función de ventana para calcular recuentos acumulados {#use-count-as-a-window-function-to-calculate-cumulative-counts}

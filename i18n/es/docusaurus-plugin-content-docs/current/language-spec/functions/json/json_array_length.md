@@ -41,7 +41,7 @@ La ruta JSON opcional a un array contenido en un objeto.  Consulte [jsonpath.com
 
 > Si se proporciona *json_path*, la función `json_array_length` localiza la ruta dentro de *json_array_or_object* y devuelve la longitud del array, o `0` si *json_path* es un objeto (no un array).  Si *json_path* no se puede localizar dentro de *json_array_or_object*, se devuelve `NULL`.
 
-> Si *json_array_or_object* o *json_path* no son objetos JSON o no están bien formados, se genera un error.
+> Si *json_array_or_object* no es un JSON bien formado, o *json_path* no es una ruta JSON bien formada, se genera un error.
 
 ## Valor(es) devuelto(s) {#return-values}
 Devuelve un entero.

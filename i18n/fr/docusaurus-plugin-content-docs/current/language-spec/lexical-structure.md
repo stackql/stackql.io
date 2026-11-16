@@ -49,7 +49,7 @@ Un identifiant préfixé par un dollar, tel que `$region`, déréférence une va
 ## Commentaires {#comments}
 StackQL prend en charge les commentaires sur plusieurs lignes et les commentaires en ligne dans les instructions StackQL ; des exemples de commentaires sont présentés ci-dessous :
 
-```shell
+```sql
 /* This
 Is a
 Multiline

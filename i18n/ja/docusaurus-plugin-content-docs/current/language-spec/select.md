@@ -105,7 +105,7 @@ ORDER BY timeCreated DESC LIMIT 1;
 
 ```sql
 -- Return a count of the number of buckets in every location other than Asia
-SELECT name, location, count(*) as num_buckets 
+SELECT location, count(*) as num_buckets 
 FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location
 HAVING location != 'ASIA';
@@ -114,7 +114,7 @@ HAVING location != 'ASIA';
 `COUNT` 関数および StackQL がサポートするその他の集約関数の詳細については、[集約関数](/language-spec/functions/aggregate/count)を参照してください。
 
 ### Azure VM Scale Set からオンデマンド VM と対応するネットワークインターフェイスの一覧を取得する {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
-[`SPLIT_PART`](/language-spec/functions/string/split_part) 関数と [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 関数を使用する `SELECT` 文を実行して、OD VM とその NIC の一覧を取得します。なお、修飾子がない場合、subscription_id と resource_group_name は 3 つのリソースすべてに適用されます。
+[`SPLIT_PART`](/language-spec/functions/string/split_part) 関数と [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) 関数を使用する `SELECT` 文を実行して、オンデマンド（OD）VM とその NIC の一覧を取得します。なお、修飾子がない場合、`subscription_id` と `resource_group_name` は 3 つのリソースすべてに適用されます。
 
 ```sql
 SELECT  c.name AS vm_name,

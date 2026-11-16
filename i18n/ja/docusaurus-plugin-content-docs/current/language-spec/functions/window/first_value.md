@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-デフォルトでは、ウィンドウフレームはパーティションの先頭から現在の行までです。パーティション内のすべての行を含めるには、`ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` を使用します。
+デフォルトでは、ウィンドウフレームはパーティションの先頭から、`ORDER BY` 列で現在の行と同順位になる最後の行までです。`FIRST_VALUE` はフレームの最初の行を読み取るため、デフォルトのフレームでも `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` でも同じ値を返します。明示的なフレームが意味を持つのは、フレームのさらに先まで読み取る `LAST_VALUE` と `NTH_VALUE` です。
 
 :::
 

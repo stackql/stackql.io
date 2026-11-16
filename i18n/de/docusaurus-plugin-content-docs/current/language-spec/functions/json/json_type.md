@@ -10,7 +10,7 @@ keywords:
 description: "Die Funktion JSON_TYPE in StackQL: der Typ (object, array, text, integer, real, true, false oder null) des äußersten Elements eines JSON-Werts oder Pfads darin."
 image: "/img/stackql-featured-image.png"
 ---
-Gibt den Datentyp des äußersten Elements eines eingegebenen JSON-Objekts oder -Arrays und Pfads zurück.  
+Gibt den Datentyp des äußersten Elements eines JSON-Werts oder des Elements am optionalen Pfad zurück.  
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Datentypen ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ Verwenden Sie die Anweisung [**DESCRIBE**](/language-spec/describe), um die Date
 
 :::note 
 
-Die Funktion `json_type` ist als Funktion `json_typeof` implementiert, wenn Sie stackql mit einem `postgres`-SQL-Backend verwenden
+Wenn Sie StackQL mit einem `postgres`-SQL-Backend verwenden, nutzen Sie stattdessen die Funktion `json_typeof`.
 
 :::
 

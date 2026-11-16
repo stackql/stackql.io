@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### Saída `text` {#text-output}
+Os resultados podem ser retornados como texto simples com o valor `text` do parâmetro `--output`.  Cada linha do resultado é gravada como os seus valores unidos por vírgulas, precedida de uma linha de cabeçalho, a menos que a opção `-H` (`--hideheaders`) esteja definida.  Diferentemente do `csv`, os valores não são colocados entre aspas nem escapados e o delimitador `-d` é ignorado; por isso, um valor que contém uma vírgula ou aspas duplas é gravado como está:
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+Com `--output csv`, a mesma consulta retorna `"a,b","say ""hi"""` como linha de dados.
+
 ### Saída `otel` {#otel-output}
 Os resultados podem ser emitidos como registros de log do OpenTelemetry com o valor `otel` do parâmetro `--output`.  Cada linha do resultado é gravada como um objeto OTLP/JSON `LogsData` em uma linha própria, liberada (flush) assim que é gravada, como em `jsonl`, seguida de um registro de conclusão da instrução.  Este formato de saída transforma uma consulta em um snapshot da configuração na nuvem na forma de telemetria: execute uma consulta de inventário de forma agendada, envie os registros a um backend compatível com OTLP (ClickHouse, Datadog ou um OpenTelemetry Collector na frente de qualquer outro) e responda ali a "como está o parque agora", "o que mudou desde a última execução" e "quem teve qual direito de acesso, e desde quando".  Disponível a partir do StackQL `v0.11.660`.
 

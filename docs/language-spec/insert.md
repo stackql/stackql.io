@@ -53,7 +53,7 @@ The fields specified in the `RETURNING` clause will be deserialized from the API
 ## Examples {#examples}
 
 ### Basic `INSERT` statement {#basic-insert-statement}
-Run an INSERT statement to create a Compute Engine Disk resource.  This is a non blocking (asynchronous) invocation.
+Run an `INSERT` statement to create a Compute Engine Disk resource.  This is a non-blocking (asynchronous) invocation.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT` statement (blocking) {#insert-statement-blocking}
-Run an INSERT statement to create a Compute Engine Disk resource.  This is a blocking (synchronous) invocation.
+Run an `INSERT` statement to create a Compute Engine Disk resource.  This is a blocking (synchronous) invocation.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT` statement with `SELECT` {#insert-statement-with-select}
-Run an INSERT statement with SELECT.
+Run an `INSERT` statement with `SELECT`.
 
 ```sql
 -- Create an Azure Network Interface

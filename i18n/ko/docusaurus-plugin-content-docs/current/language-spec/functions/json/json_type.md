@@ -10,7 +10,7 @@ keywords:
 description: "StackQL의 JSON_TYPE 함수: JSON 값의 가장 바깥쪽 요소 또는 그 안의 경로가 가리키는 값의 형식(object, array, text, integer, real, true, false 또는 null)입니다."
 image: "/img/stackql-featured-image.png"
 ---
-입력 JSON 객체 또는 배열과 경로에 대해 가장 바깥쪽 요소의 데이터 형식을 반환합니다.  
+JSON 값의 가장 바깥쪽 요소 또는 선택적 경로에 있는 요소의 데이터 형식을 반환합니다.  
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ 데이터 형식 ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-`postgres` SQL 백엔드와 함께 stackql을 사용하는 경우 `json_type` 함수는 `json_typeof` 함수로 구현됩니다.
+`postgres` SQL 백엔드와 함께 StackQL을 사용하는 경우 `json_typeof` 함수를 대신 사용하세요.
 
 :::
 

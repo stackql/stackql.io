@@ -85,8 +85,8 @@ stackql srv --pgsrv.port 5444 --env.file /etc/stackql/credentials.env
 
 | 플래그 | 설명 |
 |--|--|
-|`-H,--help`|도움말 정보 출력|
-|`-v,--verbose`|상세 모드로 쿼리를 실행하며 추가 출력은 stdout으로 전송됩니다. `-f` 옵션을 선택한 경우<br/>이 추가 로깅 정보는 쿼리 결과와 함께 출력 파일에 기록됩니다.|
+|`-h,--help`|도움말 정보 출력|
+|`-v,--verbose`|상세 모드로 쿼리를 실행하며 추가 출력은 stdout으로 전송됩니다. 전역 `-f`(`--outfile`) 플래그를 설정한 경우<br/>이 추가 로깅 정보는 쿼리 결과와 함께 출력 파일에 기록됩니다.|
 
 <br/>
 

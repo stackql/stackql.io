@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Prüft, ob der Quellstring dem Muster entspricht, und gibt `true` oder `false` zurück.  
 
 Siehe auch:  
-[[` SELECT `]](/language-spec/select) [[ Referenz für reguläre Ausdrücke ]](/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regex-Referenz ]](/language-spec/functions/re/reference) 
 
 * * * 
 

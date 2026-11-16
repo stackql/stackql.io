@@ -11,7 +11,7 @@ description: Ferramenta MCP que retorna a identidade e o runtime do servidor MCP
 image: "/img/stackql-featured-image.png"
 ---
 
-Retorna a identidade e o runtime do servidor MCP do StackQL: versão, mecanismo SQL subjacente, local do registro de providers, modo do servidor e o indicador legado de somente leitura.  Chame esta ferramenta uma vez no início da sessão para que o agente saiba a que está conectado.
+Retorna a identidade e o runtime do servidor MCP do StackQL: versão, mecanismo SQL subjacente, local do registro de providers, modo do servidor e o indicador legado de somente leitura.  Chame esta ferramenta sob demanda, por exemplo para diagnosticar uma operação recusada ou sujeita a controle, ou para verificar um comportamento específico de uma versão; ela não é necessária no início da sessão nem antes das consultas.
 
 Veja também:
 [[ Visão geral do MCP ]](/command-line-usage/mcp) [[ `list_providers` ]](/mcp/list_providers) [[ `list_registry` ]](/mcp/list_registry)

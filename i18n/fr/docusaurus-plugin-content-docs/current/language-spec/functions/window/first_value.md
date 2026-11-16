@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Par défaut, le cadre de fenêtre s'étend du début de la partition à la ligne courante. Pour inclure toutes les lignes de la partition, utilisez `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Par défaut, le cadre de fenêtre s'étend du début de la partition à la dernière ligne à égalité avec la ligne courante sur les colonnes de `ORDER BY`. `FIRST_VALUE` lit la première ligne du cadre : elle renvoie donc la même valeur avec le cadre par défaut et avec `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING` ; le cadre explicite compte pour `LAST_VALUE` et `NTH_VALUE`, qui lisent plus loin dans le cadre.
 
 :::
 

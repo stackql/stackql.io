@@ -26,7 +26,7 @@ StackQL 대화형 명령 셸을 시작하는 데 사용하는 명령입니다. �
 | 플래그 | 설명 |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|도움말 정보 출력|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|상세 모드로 쿼리를 실행하며 추가 출력은 stdout으로 전송됩니다. `-f` 옵션을 선택한 경우 이 추가 로깅 정보는 쿼리 결과와 함께 출력 파일에 기록됩니다.|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|상세 모드로 쿼리를 실행하며 추가 출력은 stdout으로 전송됩니다. 전역 `-f`(`--outfile`) 플래그를 설정한 경우 이 추가 로깅 정보는 쿼리 결과와 함께 출력 파일에 기록됩니다.|
 <br/>
 <br/>
 > 추가 옵션은 [전역 플래그](/command-line-usage/global-flags)를 참조하세요.

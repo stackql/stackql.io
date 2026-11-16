@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Ersetzt einen passenden Teilstring durch den Ersetzungsstring.  
 
 Siehe auch:  
-[[` SELECT `]](/language-spec/select) [[ Referenz für reguläre Ausdrücke ]](/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regex-Referenz ]](/language-spec/functions/re/reference) 
 
 * * * 
 

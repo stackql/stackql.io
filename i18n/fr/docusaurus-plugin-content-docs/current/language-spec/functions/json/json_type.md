@@ -10,7 +10,7 @@ keywords:
 description: "Fonction JSON_TYPE dans StackQL : type (object, array, text, integer, real, true, false ou null) de l'élément le plus externe d'une valeur JSON ou d'un chemin de celle-ci."
 image: "/img/stackql-featured-image.png"
 ---
-Renvoie le type de données de l'élément le plus externe d'un objet ou d'un tableau JSON fourni en entrée et d'un chemin.  
+Renvoie le type de données de l'élément le plus externe d'une valeur JSON, ou de l'élément situé au chemin facultatif.  
 
 Voir aussi :  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Types de données ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ Utilisez l'instruction [**DESCRIBE**](/language-spec/describe) pour repérer les
 
 :::note 
 
-La fonction `json_type` est implémentée en tant que fonction `json_typeof` si vous utilisez stackql avec un backend SQL `postgres`
+Si vous utilisez StackQL avec un backend SQL `postgres`, utilisez plutôt la fonction `json_typeof`.
 
 :::
 

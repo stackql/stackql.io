@@ -34,7 +34,7 @@ Befehl zur Interaktion mit der StackQL Provider Registry.  Der Speicherort der R
 
 | Flag | Beschreibung |
 |--|--|
-|<span class="nowrap">`-H, --help`</span>|Hilfeinformationen ausgeben|
+|<span class="nowrap">`-h, --help`</span>|Hilfeinformationen ausgeben|
 <br/>
 <br/>
 > weitere Optionen finden Sie unter [Globale Flags](/command-line-usage/global-flags)

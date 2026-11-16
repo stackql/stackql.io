@@ -10,7 +10,7 @@ keywords:
 description: Calculate the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, returning an angle in radians using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, which is the value \( \theta \) in radians whose hyperbolic tangent is the specified number.
+Calculates the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, which is the value in radians whose hyperbolic tangent is the specified number.
 
 See also:  
 [[`SELECT`]](/language-spec/select)

@@ -240,7 +240,7 @@ The full demo, including infrastructure provisioning via [__`stackql-deploy`__](
 
 Try wiring StackQL into your own agent loop:
 
-- *Pick any provider in the [StackQL registry](https://registry.stackql.io/) and pull it.*
+- *Pick any provider in the [StackQL registry](/providers) and pull it.*
 - *Point an MCP-aware client (Claude Desktop, Cline, or your own SDK loop) at the StackQL MCP server.*
 - *Let the model discover the schema via `SHOW METHODS` and `DESCRIBE` - no fine-tuning, no provider-specific prompting.*
 

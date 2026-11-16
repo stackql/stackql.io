@@ -7,7 +7,7 @@
 import React from 'react';
 
 // The code shown next to the flag: the language subtag of the locale in
-// upper case (en -> EN, ja -> JA, ko -> KO, pt-BR -> PT, zh-Hans -> ZH), never a country
+// upper case (en -> EN, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, zh-Hans -> ZH), never a country
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. If two locales ever share a language (zh-Hans and
@@ -100,6 +100,14 @@ const FLAGS = {
       <path fill="#fff" d="M0 0h640v480H0z" />
       <path fill="#000091" d="M0 0h213.3v480H0z" />
       <path fill="#e1000f" d="M426.7 0H640v480H426.7z" />
+    </svg>
+  ),
+  // Indonesia: red over white, the halves equal (the flag is 3:2; the 4:3
+  // box keeps the proportion of the bands).
+  id: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#fff" d="M0 240h640v240H0z" />
+      <path fill="#e70011" d="M0 0h640v240H0z" />
     </svg>
   ),
   'zh-Hans': (className) => (

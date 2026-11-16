@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## Arguments {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 Optional keyword that enables the CTE to reference itself, allowing for recursive queries such as traversing hierarchical data.
 
-__*cte_name*__
+__*cte_name*__  
 The name assigned to the CTE. This name can be referenced in the main query as if it were a table.
 
-__*column_name*__
+__*column_name*__  
 Optional. Column names for the CTE result set. If not specified, column names are derived from the SELECT statement.
 
-__*select_statement*__
+__*select_statement*__  
 The query that defines the CTE's result set.
 
 ## Return Value(s) {#return-values}

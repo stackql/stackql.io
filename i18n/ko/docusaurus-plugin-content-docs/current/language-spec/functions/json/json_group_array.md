@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: StackQL에서 SQL로 JSON 객체를 JSON 배열로 집계합니다.
+description: StackQL에서 SQL로 값을 JSON 배열로 집계합니다.
 image: "/img/stackql-featured-image.png"
 ---
 값을 JSON 배열로 집계합니다. `JSON_GROUP_ARRAY()` 함수는 지정한 열에서 각 그룹의 모든 값을 수집하여 하나의 JSON 배열로 결합합니다.

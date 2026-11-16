@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 计算两个数（y/x）的反正切，返回以弧度表示的角度。
 image: "/img/stackql-featured-image.png"
 ---
-计算两个数的反正切，具体而言是正切等于两个指定数之比（y 除以 x）的角度 \( \theta \)，以弧度表示，并正确处理输入的符号以确定正确的象限。
+计算两个数的反正切，具体而言是正切等于两个指定数之比（y 除以 x）的角度，以弧度表示，并正确处理输入的符号以确定正确的象限。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select)

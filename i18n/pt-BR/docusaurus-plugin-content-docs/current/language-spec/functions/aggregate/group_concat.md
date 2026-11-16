@@ -59,11 +59,11 @@ AND zone = 'australia-southeast1-a';
 ### Retornar uma lista de valores de uma expressão de coluna agrupada por outra expressão de coluna {#return-a-list-of-values-for-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, group_concat(name) as instance_list
+SELECT SPLIT_PART(machineType, '/', -1) as machine_type, group_concat(name) as instance_list
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY SPLIT_PART(machineType, '/', -1);
 ```
 
 Para obter mais informações, consulte [https://www.sqlite.org/lang_aggfunc.html#group_concat](https://www.sqlite.org/lang_aggfunc.html#group_concat).

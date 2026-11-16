@@ -61,7 +61,7 @@ Renvoie la valeur de l'expression évaluée sur la ligne précédente indiquée,
 ### Comparer chaque version à la version précédente {#compare-each-release-to-the-previous-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous release
 SELECT
     tag_name,
     name,

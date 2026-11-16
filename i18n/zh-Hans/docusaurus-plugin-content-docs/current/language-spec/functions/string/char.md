@@ -11,7 +11,7 @@ description: "StackQL 中的 CHAR 函数：返回一个或多个字符代码对�
 image: "/img/stackql-featured-image.png"
 ---
 
-`CHAR()` 函数返回与指定 ASCII 码对应的字符。
+`CHAR()` 函数返回由一个或多个字符代码对应的字符组成的字符串。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select)
@@ -19,25 +19,25 @@ image: "/img/stackql-featured-image.png"
 * * *
 
 :::note
-将 StackQL 与 PostgreSQL 后端搭配使用时，等效函数为 `CHR()`。
+将 StackQL 与 PostgreSQL 后端搭配使用时，等效函数为 `CHR()`，它只接受一个字符代码。
 :::
 
 ## 语法 {#syntax}
 
 ```sql
-SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
+SELECT CHAR(ascii_code [, ascii_code, ...]) FROM <multipartIdentifier>;
 ```
 
-> `CHAR()` 函数返回与给定 ASCII 码关联的字符。
+> 每个参数向结果添加一个字符，因此 `CHAR(72, 105)` 返回 `Hi`。
 
 ## 参数 {#arguments}
 
 **_ascii_code_**  
-一个整数，表示所需字符的 ASCII 码。
+一个或多个整数，每个都是一个字符的代码：ASCII 码，或任意 Unicode 码位。
 
 ## 返回值 {#return-values}
 
-返回与指定 ASCII 码对应的单字符字符串。
+返回一个字符串，其中每个 *ascii_code* 参数对应一个字符。
 
 * * *
 

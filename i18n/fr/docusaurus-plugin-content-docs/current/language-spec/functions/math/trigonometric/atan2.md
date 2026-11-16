@@ -10,7 +10,7 @@ keywords:
 description: Calculer l'arc tangente de deux nombres (y/x) et renvoyer un angle en radians avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcule l'arc tangente de deux nombres, plus précisément l'angle \( \theta \) en radians dont la tangente est le rapport des deux nombres spécifiés (y divisé par x), en gérant correctement le signe des entrées pour déterminer le bon quadrant.
+Calcule l'arc tangente de deux nombres, plus précisément l'angle en radians dont la tangente est le rapport des deux nombres spécifiés (y divisé par x), en gérant correctement le signe des entrées pour déterminer le bon quadrant.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)

@@ -53,8 +53,6 @@
     "react-responsive": "^9.0.0-beta.5",
     "react-scroll-to-top": "^1.0.8",
     "react-syntax-highlighter": "^15.4.5",
-    "rehype-katex": "7",
-    "remark-math": "6",
     "url-loader": "^4.1.1"
   },
   "browserslist": {

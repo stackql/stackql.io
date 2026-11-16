@@ -1776,3 +1776,342 @@ Style:
 - Example prompts addressed to an AI assistant use the same você imperative as the rest of the page ("Mostre", "Crie", "Liste").
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Portuguese text is longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).
+
+## id
+
+Audience: Indonesian engineers reading technical documentation. Standard formal Indonesian (bahasa Indonesia baku) in the spelling of KBBI and EYD (Edisi V), the register of vendor documentation in Indonesian (Google Cloud, Microsoft Learn, AWS): never Malaysian Malay (fail, kemas kini, muat turun, pangkalan data, perisian, pelayan, rangkaian, boleh for "can", sila, cuba, semak, tetapan, padam) and never colloquial Indonesian (kamu, gak, nggak, aja, bikin, pakai for "use", gimana, udah, banget). Address the reader as Anda, always with a capital A, never kamu, kalian or Saudara; the possessive is "komputer Anda", never a clitic (-mu). Present tense, short sentences. Instructions use the plain imperative of the verb ("Jalankan perintah berikut", "Gunakan", "Lihat", "Instal"), without the particle -lah and without "silakan" or "harap"; task headings use the meN- verb ("Menginstal StackQL", "Membuat template"). Keep the English terms Indonesian developers use as a matter of course (the "Kept in English" row); do not coin Indonesian names for products or APIs. No marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Indonesian | Not |
+|---|---|---|
+| provider (a StackQL provider) | provider (lower case in prose; no plural ending: "semua provider", "beberapa provider") | penyedia (that is the cloud vendor), providers, provider-provider |
+| cloud provider (the vendor) | penyedia cloud | provider cloud, penyedia awan, penyedia layanan awan |
+| vendor (the company behind an API or SDK, not only cloud) | vendor; "vendor-published" = dipublikasikan oleh vendor | pemasok, penjual |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | cloud, after the noun (sumber daya cloud, infrastruktur cloud) | awan, komputasi awan (except for "cloud computing" = komputasi cloud) |
+| service | layanan | servis, jasa |
+| resource | sumber daya | resource, sumberdaya |
+| method | metode | method |
+| operation | operasi | |
+| query (noun) / to query | kueri / mengkueri; "run a query" = menjalankan kueri | query, permintaan (that is a request), mengquery, menanyakan |
+| statement | pernyataan ("pernyataan `SELECT`") | statement, perintah (that is a command), kalimat |
+| result set | kumpulan hasil | set hasil, himpunan hasil |
+| row / column | baris / kolom | rekaman, record (for a row) |
+| table | tabel | |
+| view | tampilan ("tampilan `CREATE VIEW`" reads "tampilan yang dibuat dengan `CREATE VIEW`") | view, pandangan |
+| materialized view | tampilan terwujud | tampilan termaterialisasi |
+| window function | fungsi jendela | fungsi window, fungsi analitik |
+| window frame | bingkai jendela | frame |
+| aggregate function / scalar function | fungsi agregat / fungsi skalar | fungsi agregasi |
+| function / expression / clause | fungsi / ekspresi / klausa | klausul |
+| keyword / operator / predicate | kata kunci / operator / predikat | keyword |
+| subquery / alias / join | subkueri / alias / join (`JOIN` where the source has code) | sub-kueri, sub kueri, penggabungan (that is concatenation) |
+| partition / peer, peer group / tie (window functions) | partisi / baris setara, kelompok baris setara / seri ("baris yang seri", "dengan celah", "tanpa celah") | peer |
+| offset (`LAG`, `LEAD`) | offset (the argument name `offset` stays as code) | pergeseran |
+| target (of `SET` and `UNSET`) | target ("Target" as the heading) | tujuan (that is an audit sink) |
+| override (a credential, a default) / dereference | mengganti, penggantian ("credential override" = penggantian kredensial) / dereferensi, mendereferensi | menimpa (that is overwrite), override |
+| overwrite (a value, a key) | menimpa, ditimpa ("Timpa jika sudah ada?") | mengganti (that is override) |
+| data type / literal / identifier | tipe data / literal / pengidentifikasi | jenis data, identifier |
+| string / integer / boolean | string / bilangan bulat / boolean | untaian, integer (in prose) |
+| whitespace | spasi kosong | spasi putih, whitespace |
+| parameter / argument | parameter / argumen | |
+| flag (CLI) / option | flag / opsi ("global flags" = flag global) | bendera, penanda |
+| environment variable | variabel lingkungan | variabel environment, variabel env |
+| field / key / value | field / kunci / nilai | bidang, kolom (that is a column) |
+| schema | skema | |
+| control plane / data plane | bidang kontrol / bidang data | control plane, data plane |
+| agent, AI agent | agen, agen AI | agen kecerdasan buatan, agent |
+| tool (an MCP tool) | alat ("alat MCP") | tool, perkakas |
+| prompt (text sent to a model) | prompt | perintah (that is a command), petunjuk |
+| approval prompt, elicitation prompt (a dialog shown to the user) | permintaan persetujuan, permintaan elisitasi | prompt persetujuan |
+| elicitation (MCP) | elisitasi | penggalian |
+| gating / gated (MCP) | pengendalian / dikendalikan; "gated by X" = dikendalikan oleh X; "gated writes" = operasi tulis yang memerlukan persetujuan | gating, pembatasan |
+| approval / approve | persetujuan / menyetujui | |
+| server mode, safety mode | mode server, mode keamanan | |
+| read-only | hanya baca | baca-saja, read-only |
+| write (noun, a mutating call) | operasi tulis | penulisan |
+| mutation / mutating statement | mutasi / pernyataan mutasi | |
+| lifecycle operation | operasi siklus hidup | operasi lifecycle |
+| resource lifecycle | siklus hidup sumber daya | |
+| log / audit log | log / log audit | catatan, logging (as a noun) |
+| log record / completion record / row record (OTel output) | catatan log / catatan penyelesaian / catatan baris | rekaman |
+| credentials | kredensial | kredensi, kredential |
+| authentication / authorization | autentikasi / otorisasi | otentikasi |
+| principal / service principal | prinsipal / prinsipal layanan | principal, entitas keamanan |
+| subject / issuer / audience / claim (JWT, certificate identity) | subjek / penerbit / audiens / klaim | |
+| membership (group, directory) | keanggotaan | |
+| service account | akun layanan | akun servis |
+| token / API key / access key | token / kunci API / kunci akses | API key |
+| secret / secret store | rahasia / penyimpanan rahasia | secret, brankas |
+| scope (OAuth, and of a variable or a setting) | cakupan | lingkup, scope |
+| role / permission | peran / izin | role, ijin, hak (for a permission) |
+| assume a role (AWS) | mengambil peran | mengasumsikan peran |
+| session / session variable | sesi / variabel sesi | |
+| deployment / to deploy | deployment / men-deploy, di-deploy | penyebaran, menyebarkan, deploy as a verb without the prefix, mendeploy |
+| infrastructure as code | infrastruktur sebagai kode (IaC) | |
+| registry (generic) / provider registry | registri / registri provider | registry, registrasi (that is a sign-up) |
+| pull (a provider) | mengunduh; "pulled" = diunduh | menarik, mem-pull |
+| download / upload | mengunduh, unduhan / mengunggah, unggahan | download as a verb, muat turun, muat naik |
+| repository | repositori | repository |
+| release | rilis (noun and verb: "merilis") | |
+| command line | baris perintah | command line, garis perintah |
+| shell / interactive shell | shell / shell interaktif | cangkang |
+| server / client | server / klien | peladen, pelayan |
+| transport (MCP) | transport | transportasi, angkutan |
+| stateless / stateful | tanpa status / dengan status | stateless, stateful |
+| endpoint | endpoint | titik akhir |
+| request / response | permintaan / respons | request, tanggapan |
+| request body | isi permintaan | badan permintaan |
+| payload | payload | muatan |
+| header (HTTP) | header | tajuk, kepala |
+| pagination | paginasi | penomoran halaman |
+| output / output format / output mode | output / format output / mode output | keluaran |
+| template / templating | template / penggunaan template | templat, cetakan |
+| model (AI) | model | |
+| dry run | uji coba | dry run, simulasi kering |
+| guardrail | batasan pengaman | guardrail, pagar pembatas |
+| answer engine | mesin jawaban | answer engine |
+| region / project / subscription / tenant | region / proyek / langganan / tenant | wilayah, project (in prose), penyewa |
+| account | akun | |
+| open source | sumber terbuka | open source, kode terbuka |
+| binary / library | biner / library | binari, pustaka, perpustakaan |
+| embedded (Embedded MCP) / to embed | tersemat (MCP tersemat) / menyematkan | tertanam, embedded |
+| built-in | bawaan ("fungsi bawaan") | built-in, terintegrasi |
+| installation / to install / installed | instalasi / menginstal / terinstal, diinstal | penginstalan, menginstall, menginstalasi |
+| documentation | dokumentasi | |
+| tutorial | tutorial | |
+| quick start | panduan mulai cepat; "Quick start" as a heading = Mulai cepat | quickstart, panduan memulai cepat |
+| getting started | memulai | |
+| announcement | pengumuman | |
+| feature | fitur | |
+| example | contoh | |
+| syntax / usage | sintaksis / penggunaan | sintaks, sintak |
+| note / tip / warning (admonition titles are translated by the theme) | catatan / tips / peringatan | |
+| resource hierarchy | hierarki sumber daya | hirarki |
+| access management | manajemen akses | pengelolaan akses |
+| provider session | sesi provider | |
+| SQL backend | backend SQL | |
+| query engine / parser | mesin kueri / parser | pengurai (for the component) |
+| wire protocol | protokol komunikasi (protokol komunikasi PostgreSQL) | protokol kabel |
+| reverse proxy | reverse proxy | proksi terbalik |
+| local cache | cache lokal | tembolok |
+| key-value pair | pasangan kunci-nilai | |
+| delimiter / separator | pembatas / pemisah | delimiter |
+| bucket (object storage) / bucket (NTILE) | bucket / kelompok | ember, wadah |
+| throw an error / return an error | menghasilkan error / mengembalikan error | melempar error, galat, kesalahan (for a returned error object) |
+| return (a value) | mengembalikan | menampilkan, memberikan, me-return |
+| well-formed / valid (JSON) | berformat benar / valid | terbentuk dengan baik |
+| file / state file | file / file status | berkas, fail |
+| directory (of principals, of plugins, filesystem) / folder | direktori / folder | |
+| computer, machine | komputer, mesin | |
+| screen / user / team | layar / pengguna / tim | user (in prose) |
+| app, application | aplikasi | apl, app |
+| drift / infrastructure drift | penyimpangan / penyimpangan infrastruktur | drift, pergeseran |
+| cloud inventory, inventory | inventaris cloud, inventaris | inventori |
+| compliance | kepatuhan | compliance, komplians |
+| provision (resources) | menyediakan, penyediaan | memprovisi, provisioning |
+| operator (the person running StackQL) | operator; the context separates it from a SQL operator | |
+| caller | pemanggil | |
+| filter (noun and verb) | filter / memfilter | menyaring |
+| concatenation | penggabungan | konkatenasi |
+| parse / plan (a statement) | mengurai / merencanakan | mem-parse, parsing (as a verb) |
+| contract (I/O contract, safety contract) | kontrak | |
+| source of truth | sumber kebenaran | |
+| entitlement | hak akses | |
+| snapshot / checksum / digest | snapshot / checksum / hash | cuplikan, ringkasan (that is a summary) |
+| estate / fingerprint | lingkungan (lingkungan cloud) / sidik jari | estate, aset |
+| allowlist | daftar izin | whitelist, daftar putih |
+| opt in / explicit opt-in | mengaktifkan secara eksplisit / aktivasi eksplisit | |
+| enable / disable | mengaktifkan / menonaktifkan | menghidupkan, mematikan, non-aktifkan |
+| support (a feature, a format) / supported | mendukung / didukung | men-support |
+| hint (in an MCP error or tool annotation) | petunjuk | hint |
+| advertise (a capability) | menyatakan | mengiklankan |
+| artifact (build or release output) | artefak | artifak |
+| stack (of resources) | stack | tumpukan |
+| pipeline | pipeline | jalur pipa |
+| notarized / signed | dinotarisasi / ditandatangani | |
+| common table expression (CTE) | ekspresi tabel umum (CTE) | |
+| default / by default | default / secara default | bawaan (that is built-in), standar |
+| array (JSON, data type) | array | larik, deret |
+| policy (IAM, access policy) / IAM binding | kebijakan / binding IAM | policy, pengikatan IAM |
+| bind, binding (alias, secret store) | mengikat, pengikatan | |
+| assign, assignment (`SET`) | menetapkan, penetapan | |
+| token (lexical) | token leksikal | |
+| pin (a version, a key, an issuer) | mengunci; the heading "Pinning the revision" is "Mengunci revisi" | menyematkan (that is embed), pin |
+| exporter / receiver (OTel) / sink (audit) | exporter / receiver / tujuan | pengekspor, penerima |
+| tenancy (the alias label) | tenancy | |
+| preview (a feature in preview) | dalam pratinjau | preview, pratayang |
+| legacy | lama | legacy, warisan |
+| batch / statement batch | batch / batch pernyataan | kelompok |
+| wildcard | karakter pengganti | wildcard, karakter liar |
+| query hint | petunjuk kueri | |
+| substring / pattern (regex) / regular expression | substring / pola / ekspresi reguler | sub-string, regex (in prose, except in names) |
+| collating function / collating sequence | fungsi kolasi / urutan kolasi | |
+| timestamp | stempel waktu | cap waktu, timestamp |
+| current row / rank / running total (window functions) | baris saat ini / peringkat / total berjalan | |
+| installer | penginstal | installer |
+| workspace | ruang kerja | workspace |
+| monitoring / to monitor / monitor (noun) | pemantauan / memantau / monitor | monitoring, memonitor |
+| run, execute / list / delete, remove / manage | menjalankan / mencantumkan / menghapus / mengelola | mengeksekusi (except "eksekusi" for a statement's execution), me-list, mendelete |
+| framework | framework | kerangka kerja |
+| capability (of an MCP client or server) | kemampuan ("klien MCP yang mendukung elisitasi" for an elicitation-capable client) | kapabilitas, fitur |
+| Query Library entry | entri ("ID entri Query Library") | item, input (that is an input) |
+| job (CI, scheduled) | job ("job CI terjadwal", "nama job") | tugas, pekerjaan |
+| container | container | kontainer, wadah |
+| trace / span / trace id | trace / span / ID trace | jejak |
+| SQL engine / backing (SQL engine, server) | mesin SQL / yang mendasari | |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | mandiri / siap pakai / peluncur | prebuilt |
+| to vendor (a binary, a dependency) | melakukan vendoring; "vendored into your app" = disertakan dalam aplikasi Anda melalui vendoring | |
+| Cargo features (`sidecar`, `vendored`) | fitur Cargo | feature flag |
+| predicate pushdown | pushdown predikat | |
+| verbose mode | mode verbose | mode bertele-tele, mode rinci |
+| floating point / Unix timestamp / Julian day | floating point / stempel waktu Unix / hari Julian | titik mengambang |
+| update (noun and verb) / settings / configuration | pembaruan, memperbarui / pengaturan / konfigurasi | update, mengupdate, kemas kini, tetapan, setelan |
+| database / software / network / password | database / perangkat lunak / jaringan / kata sandi | basis data, pangkalan data, perisian, rangkaian, kata laluan |
+| link (noun) / page / website | tautan / halaman / situs web | link, pranala, website |
+| custom | kustom | custom, tersuai |
+| interface / object / instance | antarmuka / objek / instance | antar muka, interface, obyek, instans |
+| script / browser / plugin | skrip / browser / plugin | script, peramban |
+| build (noun) / to build | build / membangun | membuild, mem-build |
+| path (file, JSON, module, root) | jalur ("jalur file", "jalur JSON", "ekspresi jalur JSON", "jalur root"); the `PATH` variable and argument names such as `path` stay as code | path (in prose) |
+| nested | bersarang | bertingkat |
+| real-time | waktu nyata ("dalam waktu nyata") | real-time |
+| executable (noun) | file executable; self-contained executable = file executable mandiri; after a code span "`stackql` yang dapat dieksekusi" | |
+| agentic | agentik ("workflow agentik", "rekayasa platform agentik") | |
+| subcommand / restart / reset | subperintah / memulai ulang / mengatur ulang | |
+| encoding / encoded | pengodean / dikodekan ("dikodekan URL") | encoding, enkode |
+| privileges / least privilege | hak istimewa / hak istimewa minimum | privilese |
+| dependency / relation | dependensi / relasi | |
+| resolve (a variable, an alias, credentials) | me-resolve, di-resolve; "resolves to" = menjadi | memecahkan |
+| refresh (a materialized view) | menyegarkan | me-refresh |
+| blocking / non-blocking (invocation) | memblokir / tidak memblokir | |
+| listing (directory, registry, marketplace) | entri | daftar (that is a list) |
+| event / alert / notification | peristiwa / peringatan / notifikasi | event |
+| engineer, data engineer | engineer, data engineer | insinyur |
+| hosted / self-host | di-hosting / meng-host sendiri | dihosting |
+| escape (a character, a string) | meng-escape, di-escape; "escape sequence" = urutan escape | |
+| datetime value / modifier (date functions) | nilai datetime / pengubah | |
+| regex: character class / quantifier / capture group / backreference / occurrence / to match | kelas karakter / kuantifier / grup tangkapan / referensi balik / kemunculan / mencocokkan, cocok dengan | |
+| Unicode code point / character code | titik kode Unicode / kode karakter | |
+| arc cosine, arc sine, arc tangent / hyperbolic | arkus kosinus, arkus sinus, arkus tangen / hiperbolik ("kosinus hiperbolik 1" in example headings, without "dari") | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | Registri provider StackQL |
+| Kept in English | backend, bundle (the `.mcpb`; the format name MCP Bundle too), sidecar, vendored, crate, worker, bearer (token bearer), dotenv, pull request, fork, issue, webhook, plugin, runtime, fan-out, proxy, SaaS, wrapper, skill, build, workflow, tag, handshake, log, hash, snapshot, cache, listener, loopback, harness, upstream, placeholder, fallback, staging, smoke test, toolchain, action (a GitHub action), marketplace, endpoint, payload, header, flag, field, offset, stack, pipeline, framework, library, container, region, tenant, bucket, array, string, boolean, prompt, error; third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Indonesian |
+|---|---|
+| Install | Instalasi |
+| Installing StackQL | Menginstal StackQL |
+| Getting Started | Memulai |
+| Command Line Usage | Baris perintah |
+| Language Specification | Spesifikasi bahasa |
+| Built-in Functions | Fungsi bawaan |
+| Functions | Fungsi |
+| Developers | Pengembang |
+| Providers | Provider |
+| Quick Starts | Panduan mulai cepat |
+| AI Agents | Agen AI |
+| MCP Server / MCP Tools / Embedded MCP | Server MCP / Alat MCP / MCP tersemat |
+| Embedded (sidebar category) | Tersemat |
+| Blog | Blog |
+| Product Announcements | Pengumuman produk |
+| Provider Announcements | Pengumuman provider |
+| Tutorials | Tutorial |
+| Documentation | Dokumentasi |
+| Contact us | Hubungi kami |
+| Privacy Policy | Kebijakan privasi |
+| Terms of Service | Ketentuan layanan |
+| Support | Dukungan |
+| AI Reference | Referensi AI |
+| More | Lainnya |
+| Welcome to StackQL | Selamat datang di StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Indonesian |
+|---|---|
+| Syntax | Sintaksis |
+| Arguments | Argumen |
+| Return Value(s) | Nilai yang dikembalikan |
+| Example / Examples | Contoh (one word for both) |
+| Inputs / Output | Input / Output |
+| Flags | Flag |
+| Overview | Ringkasan |
+| How it works | Cara kerja |
+| Modes | Mode |
+| Gating | Pengendalian |
+| Install | Instalasi |
+| Quick start | Mulai cepat |
+| Demo app | Aplikasi demo |
+| Repo link | Tautan repositori |
+| Vendoring / embedding | Vendoring / penyematan |
+| Prerequisites | Prasyarat |
+| Next steps | Langkah berikutnya |
+| Related | Terkait |
+| See also: | Lihat juga: |
+| See X. | Lihat X. |
+| For more information, see X. | Untuk informasi selengkapnya, lihat X. |
+| Optional. / Defaults to X. | Opsional. / Nilai default: X. |
+| Returns X. (the sentence that opens a function or tool page) | Mengembalikan X. |
+| Return the absolute value of a number (an example heading that names a task) | Mengembalikan nilai absolut suatu bilangan (meN- verb) |
+| X function in StackQL: ... (description pattern) | Fungsi X di StackQL: ... (a noun phrase or a meN- verb after the colon, as in the source) |
+| X window function in StackQL: ... (description pattern) | Fungsi jendela X di StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X di StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... menggunakan SQL di StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Tersedia mulai StackQL `vX` |
+| Available in StackQL releases after `vX` | Tersedia di rilis StackQL setelah `vX` |
+| None. (no arguments, no inputs) | Tidak ada. |
+| Query / Results (tab labels), Output: | Kueri / Hasil, Output: |
+| Tested with (badge line on quick starts) | Diuji dengan |
+| Best Practices / Troubleshooting / Further reading | Praktik terbaik / Pemecahan masalah / Bacaan lebih lanjut |
+| MCP tool listing X / MCP tool that does X (description pattern) | Alat MCP yang mencantumkan X / Alat MCP yang melakukan X |
+| MCP overview (link text) | Ringkasan MCP |
+| Argument / Required / Description (table headers) | Argumen / Wajib / Deskripsi |
+| Renderer / Shape (table headers) | Perender / Bentuk |
+| Table / One row per X (table cells) | Tabel / Satu baris per X |
+| Yes / No (table cells) | Ya / Tidak |
+| For example | Misalnya |
+| Aggregate function / Scalar function | Fungsi agregat / Fungsi skalar |
+| When to use, Use case / Example usage | Kapan digunakan, Kasus penggunaan / Contoh penggunaan |
+| Conclusion / Get started (homepage heading) | Kesimpulan / Mulai sekarang |
+| Returns : (a `<summary>` or bold label) | Mengembalikan: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL: |
+| Here's an example in Claude Desktop: | Berikut contohnya di Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | izinkan / tolak / perlu persetujuan; diizinkan / ditolak / (default) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | Dikendalikan oleh mode server. / Diizinkan di semua mode server. Hanya baca. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | backend SQL tersemat / backend SQL postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | Hierarki sumber daya StackQL / Sesi provider / Penggunaan template / Referensi fungsi jendela / X di spesifikasi bahasa |
+| keyword `cloud inventory` | inventaris cloud |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Headings in sentence case: a capital on the first word and on proper nouns only, never title case ("Variabel sesi", not "Variabel Sesi"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Word order is head first: the noun comes before what modifies it ("kunci API", "variabel lingkungan", "provider StackQL", "server MCP StackQL", "fungsi jendela `RANK`"). An inline code span that names a thing takes its class noun before it (perintah `stackql exec`, flag `--output`, parameter `region`, fungsi `json_extract`, pernyataan `SELECT`).
+- Nouns are not pluralized. An English loanword never takes -s ("semua provider", "beberapa token", "tiga endpoint"), and words are not reduplicated to mark the plural where context or a quantifier (semua, beberapa, setiap, banyak) already does; never reduplicate an English word or a code span. Do not use "para" for things.
+- Affixes: the preposition `di` and `ke` are written apart from the noun ("di server", "ke direktori"), the passive prefix `di-` is attached to the verb ("dijalankan", "diinstal"); "di mana" is two words. An Indonesian affix on an English word that is not absorbed into Indonesian takes a hyphen, per EYD ("men-deploy", "di-deploy"); never put an affix or the suffix -nya on inline code, a link or a bold term, rephrase instead ("nilai `x`", not "`x`-nya").
+- No anglicisms in relative clauses: "yang", not "di mana" or "yang mana", introduces a relative clause ("tabel yang berisi...", not "tabel di mana..."). "daripada" only in comparisons.
+- Formal word choice: "dapat" rather than "bisa" in prose, "tidak" (never "gak", "nggak", "enggak"), "untuk" (never "buat" for "for"), "menggunakan" (never "pakai"), "membuat" (never "bikin"), "saja" (never "aja"), "sudah" or "telah" (never "udah").
+- KBBI spelling: praktik, aktivitas, analisis, objek, standar, risiko, hierarki, izin, silakan, sistem, kategori, efektif, otomatis, nonaktif, antarmuka, memengaruhi, mengubah, subkueri, lintas region; never praktek, aktifitas, analisa, obyek, standard, resiko, hirarki, ijin, silahkan, non-aktif, antar muka, mempengaruhi, merubah.
+- "Anda" always with a capital A. "kita" (inclusive) where the source speaks as "we" in a walkthrough ("we will create a view" = "kita akan membuat tampilan"); "kami" where "we" is StackQL the project or company ("we recommend" = "kami menyarankan").
+- The active and the di- passive are both natural in Indonesian technical writing; use whichever reads naturally, and keep the subject of the English sentence where the meaning depends on it (who returns what, who must approve).
+- Lists of three or more items take a comma before "dan" or "atau" ("baris, kolom, dan tabel"), per EYD.
+- English loanwords and English terms from the "Kept in English" row are written plain, never in italics and never in quotes: added italics change the page structure that `yarn i18n:verify` and the node-count check compare.
+- No space before `:`, `;`, `?` or `!`. The word after a colon is lower case unless it is a name or starts a quoted sentence.
+- Quotation marks are straight double quotes ("..."). No typographic quotes, no typographic apostrophe, no angle quotes, so the text stays greppable.
+- No dash punctuation other than the keyboard hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, write ` - `, or use commas or parentheses. Never write an em dash, an en dash or a double hyphen in prose. Hyphens that belong to Indonesian spelling (kunci-nilai, reduplication such as "masing-masing", "men-deploy") are kept.
+- No capital on common nouns after the first word of a sentence or label; names of languages, months and days are capitalized as in Indonesian (bahasa Inggris, Januari, Senin). Product, provider and vendor names keep their own spelling.
+- Prefer the simple verb to the padded one ("gunakan", not "lakukan penggunaan"; "untuk", not "dalam rangka untuk"). Avoid "adalah" where the sentence reads without it, and do not open sentences with "Dimana" or "Yang mana".
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the Indonesian decimal comma is not applied inside code or tables of command output, and prose numbers follow the source.
+- The `description` front matter stays one sentence and under about 170 characters (Indonesian runs 10 to 20 percent longer than English; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> inventaris cloud); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "Fungsi X di StackQL: ..." always needs the double quotes the source already has.
+- Strings in JSX and in exported data arrays keep the quote style of the source; a translated string that gains a double quote goes in single quotes, and the other way around. A single-quoted string cannot hold an apostrophe (rare in Indonesian, except in names such as Jum'at; rephrase or switch the quotes).
+- Bold and italic markers stay where the source has them, with no space inside the markers. Punctuation that follows a bold term stays outside the markers when the source has it outside. A closing `**` must not be followed directly by a letter when it follows punctuation or inline code (it would not close in CommonMark), and a closing `__` or `_` must never be followed directly by a letter; leave a space or punctuation after the marker.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Fungsi jendela `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("Tampilkan", "Buat", "Cantumkan").
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Indonesian is a little longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).

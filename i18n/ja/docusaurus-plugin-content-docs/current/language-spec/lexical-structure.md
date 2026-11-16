@@ -49,7 +49,7 @@ SELECT 'myProject', 'australia-southeast1-a', 'my10GbDisk', 10;
 ## コメント {#comments}
 StackQL は、StackQL の文内で複数行コメントとインラインコメントをサポートしています。コメントの例を次に示します。
 
-```shell
+```sql
 /* This
 Is a
 Multiline

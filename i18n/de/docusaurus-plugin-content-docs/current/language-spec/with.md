@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## Argumente {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 Optionales Schlüsselwort, das es der CTE erlaubt, auf sich selbst zu verweisen, und damit rekursive Abfragen wie das Durchlaufen hierarchischer Daten ermöglicht.
 
-__*cte_name*__
+__*cte_name*__  
 Der der CTE zugewiesene Name. Auf diesen Namen kann in der Hauptabfrage wie auf eine Tabelle verwiesen werden.
 
-__*column_name*__
+__*column_name*__  
 Optional. Spaltennamen für die Ergebnismenge der CTE. Werden sie nicht angegeben, werden die Spaltennamen aus der SELECT-Anweisung abgeleitet.
 
-__*select_statement*__
+__*select_statement*__  
 Die Abfrage, die die Ergebnismenge der CTE definiert.
 
 ## Rückgabewert(e) {#return-values}

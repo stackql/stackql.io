@@ -53,7 +53,7 @@ Die in der `RETURNING`-Klausel angegebenen Felder werden aus der API-Antwort des
 ## Beispiele {#examples}
 
 ### Einfache `INSERT`-Anweisung {#basic-insert-statement}
-Führen Sie eine INSERT-Anweisung aus, um eine Compute Engine Disk-Ressource zu erstellen.  Dies ist ein nicht blockierender (asynchroner) Aufruf.
+Führen Sie eine `INSERT`-Anweisung aus, um eine Compute Engine Disk-Ressource zu erstellen.  Dies ist ein nicht blockierender (asynchroner) Aufruf.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT`-Anweisung (blockierend) {#insert-statement-blocking}
-Führen Sie eine INSERT-Anweisung aus, um eine Compute Engine Disk-Ressource zu erstellen.  Dies ist ein blockierender (synchroner) Aufruf.
+Führen Sie eine `INSERT`-Anweisung aus, um eine Compute Engine Disk-Ressource zu erstellen.  Dies ist ein blockierender (synchroner) Aufruf.
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT`-Anweisung mit `SELECT` {#insert-statement-with-select}
-Führen Sie eine INSERT-Anweisung mit SELECT aus.
+Führen Sie eine `INSERT`-Anweisung mit `SELECT` aus.
 
 ```sql
 -- Create an Azure Network Interface

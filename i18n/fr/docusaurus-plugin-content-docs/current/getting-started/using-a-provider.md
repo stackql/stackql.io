@@ -45,7 +45,7 @@ L'authentification s'effectue au moyen de variables d'environnement définies su
 
 :::tip
 
-Vous pouvez vous authentifier auprès de plusieurs providers dans le même shell interactif ou la même routine par lots non interactive en fournissant plusieurs objets d'authentification, par exemple :  
+Vous pouvez vous authentifier auprès de plusieurs providers dans le même shell interactif ou la même routine par lots non interactive en définissant les variables d'authentification de chaque provider, par exemple :  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

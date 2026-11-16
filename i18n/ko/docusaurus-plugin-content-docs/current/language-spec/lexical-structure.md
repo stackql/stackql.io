@@ -49,7 +49,7 @@ SELECT 'myProject', 'australia-southeast1-a', 'my10GbDisk', 10;
 ## 주석 {#comments}
 StackQL은 StackQL 문 안에서 여러 줄 주석과 인라인 주석을 지원합니다. 다음은 주석의 예입니다.
 
-```shell
+```sql
 /* This
 Is a
 Multiline

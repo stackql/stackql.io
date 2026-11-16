@@ -95,6 +95,18 @@ id|name
 5584456226809282885|demo-instance-3
 ```
 
+### Sortie `text` {#text-output}
+Les résultats peuvent être renvoyés en texte brut en donnant la valeur `text` au paramètre `--output`. Chaque ligne est écrite sous la forme de ses valeurs séparées par des virgules, précédée d'une ligne d'en-tête sauf si `-H` (`--hideheaders`) est défini. Contrairement à `csv`, les valeurs ne sont ni mises entre guillemets ni échappées et le délimiteur `-d` est ignoré ; une valeur qui contient une virgule ou un guillemet double est donc écrite telle quelle :
+
+```shell
+stackql exec "SELECT 'a,b' AS letters, 'say \"hi\"' AS greeting" --output text
+
+letters,greeting
+a,b,say "hi"
+```
+
+Avec `--output csv`, la même requête renvoie `"a,b","say ""hi"""` comme ligne de données.
+
 ### Sortie `otel` {#otel-output}
 Les résultats peuvent être émis sous forme d'enregistrements de journal OpenTelemetry en donnant la valeur `otel` au paramètre `--output`. Chaque ligne du jeu de résultats est écrite sous la forme d'un objet OTLP/JSON `LogsData` sur sa propre ligne de texte, vidée du tampon au fur et à mesure de son écriture comme pour `jsonl`, et l'ensemble est suivi d'un enregistrement de fin pour l'instruction. Ce format de sortie transforme une requête en instantané de configuration cloud sous forme de télémétrie : exécutez une requête d'inventaire de façon planifiée, acheminez les enregistrements vers un backend compatible OTLP (ClickHouse, Datadog ou un OpenTelemetry Collector placé devant tout autre système), et répondez-y aux questions "à quoi ressemble le parc actuellement", "qu'est-ce qui a changé depuis la dernière exécution" et "qui a détenu quel droit d'accès, et depuis quand". Disponible à partir de StackQL `v0.11.660`.
 

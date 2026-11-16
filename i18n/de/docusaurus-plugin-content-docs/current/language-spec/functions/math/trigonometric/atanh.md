@@ -10,7 +10,7 @@ keywords:
 description: Den Areatangens hyperbolicus (Umkehrfunktion des Tangens hyperbolicus) einer Zahl mit SQL in StackQL berechnen und einen Winkel im Bogenmaß zurückgeben.
 image: "/img/stackql-featured-image.png"
 ---
-Berechnet den Areatangens hyperbolicus (Umkehrfunktion des Tangens hyperbolicus) einer Zahl, also den Wert \( \theta \) im Bogenmaß, dessen Tangens hyperbolicus die angegebene Zahl ist.
+Berechnet den Areatangens hyperbolicus (Umkehrfunktion des Tangens hyperbolicus) einer Zahl, also den Wert im Bogenmaß, dessen Tangens hyperbolicus die angegebene Zahl ist.
 
 Siehe auch:  
 [[`SELECT`]](/language-spec/select)

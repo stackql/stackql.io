@@ -40,13 +40,13 @@ Vous pouvez changer le jeu de couleurs du shell StackQL avec l'option `--colorsc
 ```
 ### Le fichier d'initialisation `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Les valeurs par défaut des options de commande StackQL, comme le format de sortie et le jeu de couleurs évoqués précédemment, peuvent être définies dans le fichier d'initialisation `stackqlrc`. Si ce fichier existe dans le répertoire courant utilisé par l'exécutable StackQL, il est chargé automatiquement ; il peut aussi être désigné avec l'option `--configfile`, comme illustré ci-dessous :
+Les valeurs par défaut des options de commande StackQL, comme le format de sortie et le jeu de couleurs évoqués précédemment, peuvent être définies dans le fichier d'initialisation `.stackqlrc`. Si ce fichier existe dans le répertoire courant utilisé par l'exécutable StackQL, il est chargé automatiquement ; il peut aussi être désigné avec l'option `--configfile`, comme illustré ci-dessous :
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-Pour plus d'informations sur les options de commande, consultez la rubrique Options globales.
+Pour plus d'informations sur les options de commande, consultez [Options globales](/command-line-usage/global-flags).
 
 ### Utiliser l'utilitaire en ligne de commande StackQL {#using-the-stackql-command-line-utility}
 Les commandes StackQL peuvent être exécutées de manière non interactive avec la commande exec de l'exécutable StackQL. Plusieurs commandes peuvent être exécutées dans un même lot, à condition que chaque commande se termine par un point-virgule (`;`). Les options de commande, comme l'option `--output`, peuvent être indiquées sur la ligne de commande ou dans le fichier d'initialisation `.stackqlrc` évoqué précédemment.  

@@ -85,8 +85,8 @@ Para `stackql srv`, el archivo se lee una sola vez al iniciar; la vía para volv
 
 | Opción | Descripción |
 |--|--|
-|`-H,--help`|Muestra la información de ayuda|
-|`-v,--verbose`|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se selecciona la opción `-f`,<br/>esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
+|`-h,--help`|Muestra la información de ayuda|
+|`-v,--verbose`|Ejecuta las consultas en modo detallado con salida adicional enviada a stdout; si se establece la opción global `-f` (`--outfile`),<br/>esta información de log adicional se escribe en el archivo de salida junto con los resultados de la consulta|
 
 <br/>
 

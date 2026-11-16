@@ -26,7 +26,7 @@ image: "/img/stackql-featured-image.png"
 | 标志 | 说明 |
 |--|--|
 |<span class="nowrap">`-h`</span><br/><span class="nowrap">`--help`</span>|打印帮助信息|
-|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|以详细模式运行查询，并将额外输出发送到 stdout，如果选择了 `-f` 选项，这些额外的日志信息将与查询结果一起写入输出文件|
+|<span class="nowrap">`-v`</span><br/><span class="nowrap">`--verbose`</span>|以详细模式运行查询，并将额外输出发送到 stdout，如果设置了全局 `-f`（`--outfile`）标志，这些额外的日志信息将与查询结果一起写入输出文件|
 <br/>
 <br/>
 > 更多选项参阅[全局标志](/command-line-usage/global-flags)

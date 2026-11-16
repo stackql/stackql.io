@@ -10,7 +10,7 @@ keywords:
 description: "REPLACE-Funktion in StackQL: jedes Vorkommen eines Teilstrings innerhalb eines Strings durch einen anderen String ersetzen."
 image: "/img/stackql-featured-image.png"
 ---
-Gibt einen String zurück, der durch Ersetzen jedes Vorkommens eines Strings durch einen anderen String gebildet wird.
+Gibt eine Kopie eines Strings zurück, in der jedes Vorkommen eines Teilstrings durch einen anderen String ersetzt ist.
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) 

@@ -75,7 +75,7 @@ SHOW PROVIDERS;
 
 </details>
 
-### List all services in a cloud provider {#list-all-services-in-a-cloud-provider}
+### List all services in a provider {#list-all-services-in-a-cloud-provider}
 List all of the services available within a given provider, use the optional EXTENDED keyword to return additional information.
 ```sql
 -- Returns all services available in a provider
@@ -105,10 +105,10 @@ SHOW EXTENDED SERVICES IN google;
 </details>
 
 
-### List all resources within a cloud provider service {#list-all-resources-within-a-cloud-provider-service}
-List all of the resources available within a given service of a cloud provider.  The optional `EXTENDED` keyword returns the resource description in addition to the resource name.
+### List all resources within a provider service {#list-all-resources-within-a-cloud-provider-service}
+List all of the resources available within a given service of a provider.  The optional `EXTENDED` keyword returns the resource description in addition to the resource name.
 ```sql
--- Returns all resources available in a cloud provider service
+-- Returns all resources available in a provider service
 SHOW EXTENDED RESOURCES IN google.compute;
 ```
 <details>
@@ -134,10 +134,10 @@ SHOW EXTENDED RESOURCES IN google.compute;
 
 </details>
 
-### Show available methods for a resource within a cloud provider service {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
+### Show available methods for a resource within a provider service {#show-available-methods-for-a-resource-within-a-cloud-provider-service}
 List all of the methods available for a given resource.
 ```sql
--- Returns all methods available for a cloud provider resource
+-- Returns all methods available for a provider resource
 SHOW EXTENDED METHODS IN google.compute.instances;
 ```
 <details>
@@ -205,7 +205,7 @@ SELECT
 
 </details>
 
-> The fields returned can be limited to only those required by the provider, see [__Creating Infrastructure Templates__](/getting-started/templating) for examples of this.
+> The fields returned can be limited to only those required by the provider; see [__Creating Infrastructure Templates__](/getting-started/templating) for examples of this.
 
 > This template can then be used along with a `json` or `jsonnet` data file to supply values at run time; for more information see [__Using Variables__](/getting-started/variables).
 

@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Gibt einen Teilstring aus einem Eingabestring zurück, der einem angegebenen Muster entspricht.  
 
 Siehe auch:  
-[[` SELECT `]](/language-spec/select) [[ Referenz für reguläre Ausdrücke ]](/language-spec/functions/re/reference) 
+[[` SELECT `]](/language-spec/select) [[ Regex-Referenz ]](/language-spec/functions/re/reference) 
 
 * * * 
 

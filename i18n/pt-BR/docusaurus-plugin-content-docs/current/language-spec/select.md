@@ -105,7 +105,7 @@ Execute uma instrução `SELECT` com a função `COUNT`, usando as cláusulas `G
 
 ```sql
 -- Return a count of the number of buckets in every location other than Asia
-SELECT name, location, count(*) as num_buckets 
+SELECT location, count(*) as num_buckets 
 FROM google.storage.buckets WHERE project = 'stackql'
 GROUP BY location
 HAVING location != 'ASIA';
@@ -114,7 +114,7 @@ HAVING location != 'ASIA';
 Para obter mais informações sobre a função `COUNT` e outras funções de agregação compatíveis com o StackQL, consulte [Funções de agregação](/language-spec/functions/aggregate/count).
 
 ### Obter a lista de VMs sob demanda e as interfaces de rede correspondentes de um VM Scale Set do Azure {#get-list-of-on-demand-vms-and-corresponding-network-interface-from-azure-vm-scaleset}
-Execute uma instrução `SELECT` com as funções [`SPLIT_PART`](/language-spec/functions/string/split_part) e [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) para obter a lista de VMs OD e suas NICs. Observe que, sem um qualificador, subscription_id e resource_group_name são aplicados aos três recursos.
+Execute uma instrução `SELECT` com as funções [`SPLIT_PART`](/language-spec/functions/string/split_part) e [`JSON_EXTRACT`](/language-spec/functions/json/json_extract) para obter uma lista de VMs sob demanda (On Demand, OD) e suas NICs. Observe que, sem um qualificador, `subscription_id` e `resource_group_name` são aplicados aos três recursos.
 
 ```sql
 SELECT  c.name AS vm_name,

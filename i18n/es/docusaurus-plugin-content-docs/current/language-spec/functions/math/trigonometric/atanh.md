@@ -10,7 +10,7 @@ keywords:
 description: Calcular la arcotangente hiperbólica (tangente hiperbólica inversa) de un número y devolver un ángulo en radianes con SQL en StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula la arcotangente hiperbólica (tangente hiperbólica inversa) de un número, que es el valor \( \theta \) en radianes cuya tangente hiperbólica es el número especificado.
+Calcula la arcotangente hiperbólica (tangente hiperbólica inversa) de un número, que es el valor en radianes cuya tangente hiperbólica es el número especificado.
 
 Consulte también:  
 [[`SELECT`]](/language-spec/select)

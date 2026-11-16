@@ -70,7 +70,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.start
 ```
 
 ### Eine AWS EC2-Instanz starten und stoppen {#starting-and-stopping-an-aws-ec2-instance}
-Führen Sie eine `EXEC`-Anweisung aus, um eine AWS EC2-Instanz in einer authentifizierten Sitzung zu starten.
+Führen Sie `EXEC`-Anweisungen aus, um eine AWS EC2-Instanz in einer authentifizierten Sitzung zu starten und zu stoppen.
 
 ```sql
 -- Start an EC2 instance

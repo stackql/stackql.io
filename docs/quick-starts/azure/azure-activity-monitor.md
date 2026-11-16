@@ -337,6 +337,6 @@ AND l.$filter =  'eventTimestamp ge ''2024-01-28T00:00:00Z'' and resourceGroupNa
 
 :::info
 
-`WHERE` parameters in a `JOIN` query which are not disambiguated, such as `subscription_id` in the above case are shared by both resources (`azure.monitor.activity_logs` and `azure.compute.virtual_machines` in this case).
+`WHERE` parameters in a `JOIN` query which are not disambiguated, such as `subscription_id` in the above case, are shared by both resources (`azure.monitor.activity_logs` and `azure.compute.virtual_machines` in this case).
 
 :::

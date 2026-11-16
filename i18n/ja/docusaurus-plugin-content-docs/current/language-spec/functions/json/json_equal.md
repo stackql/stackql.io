@@ -10,7 +10,7 @@ keywords:
 description: SQL を使って 2 つの JSON 文字列が等価かどうかを比較します。
 image: "/img/stackql-featured-image.png"
 ---
-2 つの JSON 文字列を比較し、等価であれば true、そうでなければ false を返します。
+2 つの JSON 文字列を比較し、等価であれば 1、そうでなければ 0 を返します。
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ データ型 ]](/language-spec/data-types)

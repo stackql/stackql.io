@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-Standardmäßig erstreckt sich der Fensterrahmen vom Anfang der Partition bis zur aktuellen Zeile, sodass `LAST_VALUE` den Wert der aktuellen Zeile zurückgeben würde. Um den tatsächlich letzten Wert der Partition zu erhalten, verwenden Sie `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+Standardmäßig erstreckt sich der Fensterrahmen vom Anfang der Partition bis zur letzten Zeile, die in den `ORDER BY`-Spalten mit der aktuellen Zeile gleichrangig ist, sodass `LAST_VALUE` den Wert dieser letzten gleichrangigen Zeile zurückgibt (die aktuelle Zeile selbst, wenn ihr `ORDER BY`-Wert eindeutig ist), nicht den letzten Wert der Partition. Um den letzten Wert der Partition zu erhalten, verwenden Sie `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 :::
 

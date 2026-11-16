@@ -48,16 +48,16 @@ SELECT ... FROM cte_name ...;
 
 ## 인수 {#arguments}
 
-__*RECURSIVE*__
+__*RECURSIVE*__  
 CTE가 자기 자신을 참조할 수 있게 하는 선택적 키워드입니다. 이를 통해 계층적 데이터 순회와 같은 재귀 쿼리를 작성할 수 있습니다.
 
-__*cte_name*__
+__*cte_name*__  
 CTE에 할당되는 이름입니다. 이 이름은 주 쿼리에서 테이블처럼 참조할 수 있습니다.
 
-__*column_name*__
+__*column_name*__  
 선택 사항입니다. CTE 결과 집합의 열 이름입니다. 지정하지 않으면 열 이름은 SELECT 문에서 파생됩니다.
 
-__*select_statement*__
+__*select_statement*__  
 CTE의 결과 집합을 정의하는 쿼리입니다.
 
 ## 반환 값 {#return-values}

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Tutorial",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Panduan praktis untuk operasi cloud, keamanan, dan otomatisasi menggunakan SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Semua tutorial",
+    "description": "The label for the left sidebar"
+  }
+}

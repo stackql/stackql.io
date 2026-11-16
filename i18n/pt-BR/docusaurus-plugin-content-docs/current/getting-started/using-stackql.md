@@ -40,13 +40,13 @@ Você pode alterar o esquema de cores do shell do StackQL com a opção `--color
 ```
 ### O arquivo de inicialização `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Os valores padrão das opções de comando do StackQL, como o formato de saída e o esquema de cores mencionados anteriormente, podem ser definidos no arquivo de inicialização `stackqlrc`. Se esse arquivo existir no diretório atual usado pelo executável do StackQL, ele será carregado automaticamente; como alternativa, você pode referenciá-lo com a opção `--configfile`, como mostrado a seguir:
+Os valores padrão das opções de comando do StackQL, como o formato de saída e o esquema de cores mencionados anteriormente, podem ser definidos no arquivo de inicialização `.stackqlrc`. Se esse arquivo existir no diretório atual usado pelo executável do StackQL, ele será carregado automaticamente; como alternativa, você pode referenciá-lo com a opção `--configfile`, como mostrado a seguir:
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-Mais informações sobre as opções de comando estão disponíveis no tópico Opções globais.
+Mais informações sobre as opções de comando estão disponíveis em [Opções globais](/command-line-usage/global-flags).
 
 ### Usar o utilitário de linha de comando do StackQL {#using-the-stackql-command-line-utility}
 Os comandos do StackQL podem ser executados de forma não interativa com o comando exec do executável do StackQL. É possível executar mais de um comando em um lote, desde que cada comando seja terminado com um ponto e vírgula (`;`). As opções de comando, como a opção `--output`, podem ser especificadas na linha de comando ou no arquivo de inicialização `.stackqlrc` mencionado anteriormente.

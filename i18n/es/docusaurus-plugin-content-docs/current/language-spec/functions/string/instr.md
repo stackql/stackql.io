@@ -10,7 +10,7 @@ keywords:
 description: "Función INSTR en StackQL: la posición (a partir de 1) de la primera aparición de una cadena dentro de otra, o 0 si no se encuentra."
 image: "/img/stackql-featured-image.png"
 ---
-Devuelve la posición del carácter de la primera aparición de una cadena dentro de otra cadena; devuelve 0 si no se encuentra la cadena buscada.
+Devuelve la posición del carácter de la primera aparición de una cadena dentro de otra cadena, o 0 si no se encuentra la cadena buscada.
 
 Consulte también:  
 [[` SELECT `]](/language-spec/select)

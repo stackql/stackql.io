@@ -15,7 +15,7 @@ Siehe auch:
 [[ StackQL-Ressourcenhierarchie ]](/getting-started/resource-hierarchy) [[ Schlüsselwörter ]](/language-spec/keywords) [[ Datentypen ]](/language-spec/data-types) [[ DESCRIBE ]](/language-spec/describe)
 
 
-Die lexikalische Struktur und Grammatik von StackQL orientiert sich an der Sprachimplementierung von MySQL (einer Adaption des ANSI-SQL-92-Standards) mit einigen Erweiterungen.  StackQL-Anweisungen dienen dazu, Cloud-Ressourcen abzufragen (mit der `SELECT`-Grammatik) oder Infrastruktur mit standardmäßigen Data-Manipulation-Language-Anweisungen (DML) wie `INSERT`, `UPDATE`, `REPLACE` und `DELETE` zu erstellen, zu ändern oder zu löschen.  Darüber hinaus sind Nicht-DML-Operationen, etwa das Starten einer Instanz oder das Abrufen oder Ablegen eines Objekts in einem Bucket in AWS S3, als integrierte Provider-Prozeduren implementiert (vergleichbar mit Stored Procedures in einem DBMS).  Integrierte Provider-Prozeduren werden mit der `EXEC`-Anweisung aufgerufen.
+Die lexikalische Struktur und Grammatik von StackQL orientieren sich an der Sprachimplementierung von MySQL (einer Adaption des ANSI-SQL-92-Standards) mit einigen Erweiterungen.  StackQL-Anweisungen dienen dazu, Cloud-Ressourcen abzufragen (mit der `SELECT`-Grammatik) oder Infrastruktur mit standardmäßigen Data-Manipulation-Language-Anweisungen (DML) wie `INSERT`, `UPDATE`, `REPLACE` und `DELETE` zu erstellen, zu ändern oder zu löschen.  Darüber hinaus sind Nicht-DML-Operationen, etwa das Starten einer Instanz oder das Abrufen oder Ablegen eines Objekts in einem Bucket in AWS S3, als integrierte Provider-Prozeduren implementiert (vergleichbar mit Stored Procedures in einem DBMS).  Integrierte Provider-Prozeduren werden mit der `EXEC`-Anweisung aufgerufen.
 
 Die domänenspezifische SQL-Sprache von StackQL ermöglicht sowohl deklarative als auch prozedurale Infrastrukturprogrammierung.
 
@@ -49,7 +49,7 @@ Ein Bezeichner mit Dollar-Präfix wie `$region` dereferenziert eine mit [`SET`](
 ## Kommentare {#comments}
 StackQL unterstützt mehrzeilige Kommentare und Inline-Kommentare innerhalb von StackQL-Anweisungen; Beispiele für Kommentare sind nachfolgend dargestellt:
 
-```shell
+```sql
 /* This
 Is a
 Multiline

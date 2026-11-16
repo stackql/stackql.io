@@ -53,7 +53,7 @@ INSERT [ /*+ AWAIT  */ ] [ IGNORE ] [ INTO ] <multipartIdentifier>
 ## 例 {#examples}
 
 ### 基本的な `INSERT` 文 {#basic-insert-statement}
-INSERT 文を実行して Compute Engine Disk リソースを作成します。これはノンブロッキング（非同期）呼び出しです。
+`INSERT` 文を実行して Compute Engine Disk リソースを作成します。これはノンブロッキング（非同期）呼び出しです。
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -64,7 +64,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `INSERT` 文（ブロッキング） {#insert-statement-blocking}
-INSERT 文を実行して Compute Engine Disk リソースを作成します。これはブロッキング（同期）呼び出しです。
+`INSERT` 文を実行して Compute Engine Disk リソースを作成します。これはブロッキング（同期）呼び出しです。
 
 ```sql
 -- Create a Compute Engine Disk resource
@@ -75,7 +75,7 @@ SELECT 'stackql-demo',
 ```
 
 ### `SELECT` を使用した `INSERT` 文 {#insert-statement-with-select}
-SELECT を使用して INSERT 文を実行します。
+`SELECT` を使用して `INSERT` 文を実行します。
 
 ```sql
 -- Create an Azure Network Interface

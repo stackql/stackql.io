@@ -10,7 +10,7 @@ keywords:
 description: "JSON_TYPE function in StackQL: the type (object, array, text, integer, real, true, false or null) of a JSON value's outermost element, or of a path within it."
 image: "/img/stackql-featured-image.png"
 ---
-Returns the datatype of the outermost element of an input JSON object or array and path.  
+Returns the datatype of the outermost element of a JSON value, or of the element at the optional path.  
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[ Data Types ]](/language-spec/data-types)
@@ -25,7 +25,7 @@ Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `
 
 :::note 
 
-The `json_type` function is implemented as the `json_typeof` function if you are using stackql with a `postgres` sql backend
+If you are using StackQL with a `postgres` SQL backend, use the `json_typeof` function instead.
 
 :::
 

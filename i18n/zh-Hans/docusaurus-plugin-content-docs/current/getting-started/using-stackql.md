@@ -40,13 +40,13 @@ stackql shell --auth="${AUTH}"
 ```
 ### `.stackqlrc` 初始化文件 {#the-stackqlrc-initialization-file}
 
-StackQL 命令选项的默认值（例如前面讨论的输出格式和配色方案）可以通过 `stackqlrc` 初始化文件设置。如果该文件存在于 StackQL 可执行文件所使用的当前目录中，则会被自动加载；也可以使用 `--configfile` 标志引用它，如下所示：
+StackQL 命令选项的默认值（例如前面讨论的输出格式和配色方案）可以通过 `.stackqlrc` 初始化文件设置。如果该文件存在于 StackQL 可执行文件所使用的当前目录中，则会被自动加载；也可以使用 `--configfile` 标志引用它，如下所示：
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File
 ./stackql shell --configfile /tmp/.stackqlrc
 ```
-有关命令选项的更多信息，请参阅“全局标志”主题。
+有关命令选项的更多信息，请参阅[全局标志](/command-line-usage/global-flags)。
 
 ### 使用 StackQL 命令行工具 {#using-the-stackql-command-line-utility}
 可以使用 StackQL 可执行文件的 exec 命令以非交互方式执行 StackQL 命令。只要每条独立的命令都以分号（`;`）结尾，就可以在一个批次中执行多条命令。命令标志（例如 `--output` 标志）可以在命令行中指定，也可以通过前面讨论的 `.stackqlrc` 初始化文件指定。  

@@ -10,7 +10,7 @@ keywords:
 description: 使用 SQL 比较两个 JSON 字符串是否等价。
 image: "/img/stackql-featured-image.png"
 ---
-比较两个 JSON 字符串，如果二者等价则返回 true，否则返回 false。
+比较两个 JSON 字符串，如果二者等价则返回 1，否则返回 0。
 
 另请参阅：  
 [[` SELECT `]](/language-spec/select) [[` DESCRIBE `]](/language-spec/describe) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_ARRAY_LENGTH `]](/language-spec/functions/json/json_array_length) [[ 数据类型 ]](/language-spec/data-types)

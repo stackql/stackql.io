@@ -41,7 +41,7 @@ __*numeric_expression*__
 SELECT LOG2(16) AS log_result;
 ```
 
-此查询返回 `4`，因为 \(2^4 = 16\)。
+此查询返回 `4`，因为 2^4 = 16。
 
 ### 计算 32 以 2 为底数的对数 {#calculate-the-base-2-logarithm-of-32}
 
@@ -49,4 +49,4 @@ SELECT LOG2(16) AS log_result;
 SELECT LOG2(32) AS log_result;
 ```
 
-此查询计算 32 以 2 为底数的对数，结果为 `5`，因为 \(2^5 = 32\)。
+此查询计算 32 以 2 为底数的对数，结果为 `5`，因为 2^5 = 32。

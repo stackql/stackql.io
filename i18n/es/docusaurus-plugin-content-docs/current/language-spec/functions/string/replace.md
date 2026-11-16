@@ -10,7 +10,7 @@ keywords:
 description: "Función REPLACE en StackQL: sustituir cada aparición de una subcadena dentro de una cadena por otra cadena."
 image: "/img/stackql-featured-image.png"
 ---
-Devuelve una cadena formada al sustituir cada aparición de una cadena por otra cadena.
+Devuelve una copia de una cadena en la que cada aparición de una subcadena se sustituye por otra cadena.
 
 Consulte también:  
 [[` SELECT `]](/language-spec/select) 

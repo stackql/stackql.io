@@ -10,7 +10,7 @@ keywords:
 description: Calculate the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, returning an angle in radians using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, which is the non-negative value \( \theta \) in radians whose hyperbolic cosine is the specified number.
+Calculates the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, which is the non-negative value in radians whose hyperbolic cosine is the specified number.
 
 See also:  
 [[`SELECT`]](/language-spec/select)

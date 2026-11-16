@@ -49,7 +49,7 @@ SELECT 'myProject', 'australia-southeast1-a', 'my10GbDisk', 10;
 ## 注释 {#comments}
 StackQL 支持在 StackQL 语句中使用多行注释和行内注释，注释示例如下：
 
-```shell
+```sql
 /* This
 Is a
 Multiline

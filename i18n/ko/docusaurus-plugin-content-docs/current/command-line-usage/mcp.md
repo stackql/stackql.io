@@ -499,7 +499,7 @@ MCP 서버로 실행할 때 StackQL은 구성된 `enabled_tools` 허용 목록�
 
 | 도구 | 렌더러 | 설명 | 입력 |
 |--|--|--|--|
-|[`server_info`](/mcp/server_info)|KV|서버 ID 및 런타임: stackql 버전, 기반 SQL 엔진, 프로바이더 레지스트리 위치, 모드, 읽기 전용 플래그. 세션 시작 시 1번 호출하세요.|없음|
+|[`server_info`](/mcp/server_info)|KV|서버 ID 및 런타임: stackql 버전, 기반 SQL 엔진, 프로바이더 레지스트리 위치, 모드, 읽기 전용 플래그. 필요할 때 호출하세요. 예를 들어 거부되었거나 게이트 제어 대상인 작업을 진단하거나 버전별 동작을 확인할 때 호출합니다.|없음|
 |[`list_providers`](/mcp/list_providers)|테이블|로컬 캐시로 이미 가져온 프로바이더(계층 구조의 최상위).|없음|
 |[`list_services`](/mcp/list_services)|테이블|프로바이더 아래의 서비스.|`provider`|
 |[`list_resources`](/mcp/list_resources)|테이블|`provider`.`service` 아래의 리소스.|`provider`, `service`|
@@ -570,7 +570,7 @@ export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
 stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "auth_token_env_var": "STACKQL_MCP_TOKEN"}}' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -585,7 +585,7 @@ stackql srv \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true}}' \
   --pgsrv.port 5665 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -605,7 +605,7 @@ stackql mcp \
       "audit": {"file": {"path": "/var/log/stackql-mcp-audit.log"}}
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -624,7 +624,7 @@ stackql mcp \
       "mode": "full_access"
     }
   }' \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -656,7 +656,7 @@ stackql srv \
     }
   }' \
   --pgsrv.port 5446 \
-  --registry='{"url": "https://registry.stackql.io/providers"}' \
+  --registry='{"url": "https://registry.stackql.app/providers"}' \
   --auth='{"google": {"type": "service_account", "credentialsfilepath": "/path/to/google-credentials.json"}}'
 ```
 
@@ -752,17 +752,17 @@ python cicd/python/build.py --build-mcp-client
 
 #### 응답 예제 {#example-responses}
 
-`server_info`(기본 모드 서버 대상):
+`server_info`(기본 모드 서버 대상, Windows에서 stdio로 실행하는 StackQL `v1.0.888`):
 
 ```json
 {
-  "version": "0.10.444",
-  "commit": "abc1234",
-  "build_date": "2026-05-16T10:47:33Z",
-  "platform": "linux/amd64",
-  "transport": "http",
+  "version": "1.0.888",
+  "commit": "f7b4116",
+  "build_date": "2026-11-05T00:26:03Z",
+  "platform": "Windows",
+  "transport": "stdio",
   "sql_backend": "sqlite3",
-  "provider_registry": "https://registry.stackql.io/providers",
+  "provider_registry": "https://registry.stackql.app/providers",
   "mode": "safe",
   "is_read_only": false
 }

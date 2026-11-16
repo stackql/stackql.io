@@ -45,7 +45,7 @@ SHOW PROVIDERS;
 
 :::tip
 
-通过提供多个身份验证对象，你可以在同一个交互式 shell 或非交互式批处理例程中向多个 Provider 进行身份验证，例如：  
+通过设置每个 Provider 的身份验证变量，你可以在同一个交互式 shell 或非交互式批处理例程中向多个 Provider 进行身份验证，例如：  
 
 ```
 export AWS_ACCESS_KEY_ID=YOURACCESSKEYID

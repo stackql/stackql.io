@@ -78,7 +78,7 @@ WHERE owner = 'stackql'
 
 :::tip
 
-De forma predeterminada, el marco de ventana se extiende desde el inicio de la partición hasta la fila actual, por lo que `LAST_VALUE` devolvería el valor de la fila actual. Para obtener el último valor real de la partición, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+De forma predeterminada, el marco de ventana se extiende desde el inicio de la partición hasta la última fila que empata con la fila actual en las columnas de `ORDER BY`, por lo que `LAST_VALUE` devuelve el valor de esa última fila empatada (la propia fila actual cuando su valor de `ORDER BY` es único), no el último valor de la partición. Para obtener el último valor de la partición, use `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 :::
 

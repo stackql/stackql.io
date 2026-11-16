@@ -11,7 +11,7 @@ description: "Fonction CHAR dans StackQL : les caractères d'un ou plusieurs cod
 image: "/img/stackql-featured-image.png"
 ---
 
-La fonction `CHAR()` renvoie le caractère correspondant au code ASCII indiqué.
+La fonction `CHAR()` renvoie une chaîne de caractères composée des caractères correspondant à un ou plusieurs codes de caractères.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)
@@ -19,25 +19,25 @@ Voir aussi :
 * * *
 
 :::note
-Lorsque StackQL est utilisé avec un backend PostgreSQL, la fonction équivalente est `CHR()`.
+Lorsque StackQL est utilisé avec un backend PostgreSQL, la fonction équivalente est `CHR()`, qui n'accepte qu'un seul code.
 :::
 
 ## Syntaxe {#syntax}
 
 ```sql
-SELECT CHAR(ascii_code) FROM <multipartIdentifier>;
+SELECT CHAR(ascii_code [, ascii_code, ...]) FROM <multipartIdentifier>;
 ```
 
-> La fonction `CHAR()` renvoie le caractère associé au code ASCII donné.
+> Chaque argument ajoute un caractère au résultat : `CHAR(72, 105)` renvoie donc `Hi`.
 
 ## Arguments {#arguments}
 
 **_ascii_code_**  
-Un entier représentant le code ASCII du caractère souhaité.
+Un ou plusieurs entiers, chacun étant le code d'un caractère : un code ASCII ou n'importe quel point de code Unicode.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 
-Renvoie une chaîne de caractères composée d'un seul caractère, correspondant au code ASCII indiqué.
+Renvoie une chaîne de caractères comportant un caractère pour chaque argument *ascii_code*.
 
 * * *
 

@@ -10,7 +10,7 @@ keywords:
 description: Calculer l'arc cosinus hyperbolique (réciproque du cosinus hyperbolique) d'un nombre et renvoyer un angle en radians avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcule l'arc cosinus hyperbolique (réciproque du cosinus hyperbolique) d'un nombre, c'est-à-dire la valeur non négative \( \theta \) en radians dont le cosinus hyperbolique est le nombre spécifié.
+Calcule l'arc cosinus hyperbolique (réciproque du cosinus hyperbolique) d'un nombre, c'est-à-dire la valeur non négative en radians dont le cosinus hyperbolique est le nombre spécifié.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)

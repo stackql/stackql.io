@@ -70,7 +70,7 @@ EXEC /*+ AWAIT  */ google.compute.instances.start
 ```
 
 ### Démarrer et arrêter une instance AWS EC2 {#starting-and-stopping-an-aws-ec2-instance}
-Dans une session authentifiée, exécutez une instruction `EXEC` pour démarrer une instance AWS EC2.
+Dans une session authentifiée, exécutez des instructions `EXEC` pour démarrer et arrêter une instance AWS EC2.
 
 ```sql
 -- Start an EC2 instance
