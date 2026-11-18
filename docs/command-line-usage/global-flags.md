@@ -11,12 +11,11 @@ description: "Global flags for the stackql binary: authentication, output format
 image: "/img/stackql-featured-image.png"
 ---
 
-Global flags specify runtime program behavior for the StackQL application, these flags are set at the command line when the StackQL application is launched (in either the interactive/shell mode or non-interactive exec mode) or are sourced from the StackQL initialization ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)) file.  Flags include:  
+Global flags are accepted by StackQL commands, but some apply only to a particular mode. Set them on the command line or, where supported, in the StackQL initialization ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)) file. The `--pgsrv.*` flags are listed under [PostgreSQL server options](/command-line-usage/srv#server-options).
 
 | Flag | Data Type | Description | Default |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | Caller access configuration, a JSON envelope `{"path": "/path/to/access.json"}` (a bare file path is also accepted).  Enables [access management](/command-line-usage/access-management): callers are authenticated by JWT, static bearer token, mutual TLS or local OS identity and statements are authorised against policy rules.  Local token credentials are read from `STACKQL_CALLER_TOKEN`.  Available in StackQL releases from `v1.0`. | |
-| <span class="nowrap">`--acid`</span> | string | JSON / YAML string representing ACID config | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | Allow a session to select a persistent OS secret store (macOS Keychain, Linux Secret Service or Windows Credential Manager) with `SET "$.secret_store"`.  Flat-file stores are refused even with the flag.  See [Provider Sessions and Secrets](/getting-started/provider-sessions#persistent-os-secret-stores).  Available in StackQL releases from `v1.0`. | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | Allow secret and credential values to be dereferenced in SQL expressions (`"$secrets.name"`, `"$auth.provider.field"`), with the consequence that they can enter results, logs and persisted query artefacts.  Not needed for normal provider authentication.  See [Secret values in SQL](/getting-started/provider-sessions#secret-values-in-sql).  Available in StackQL releases from `v1.0`. | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | API request timeout in seconds, 0 for no timeout | `45` |
@@ -59,6 +58,7 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`-o`, `--output`</span> | string | Output format, must be one of {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` is accepted as an alias for `jsonl`).  `otel` emits OpenTelemetry log records, see [Output Modes](/getting-started/output-modes#otel-output); available in StackQL releases from `v0.11.660`.  With an exporter configured in `--otel.config`, `otel` records are also pushed to that endpoint | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | JSON / YAML string configuring the `otel` output format; `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms` and `exporter.batch_size` push the records to an OTLP/HTTP logs endpoint, see [Pushing to an OTLP endpoint](/getting-started/output-modes#pushing-to-an-otlp-endpoint).  Available in StackQL releases from `v0.12.732` | `{}` |
 | <span class="nowrap">`--preview`</span> | string | JSON string enabling preview functionality.  `{"unstable": true}` exposes the document-driven `stackql_unstable_<provider>.<service>.<resource>` relations, which are resolved and run by `omnisdk` straight from the provider documents with rows streamed as they are produced; the remaining keys (`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`) tune that backend.  Preview functionality is not stable: behaviour, syntax and output may change or break between releases without notice, so do not rely on it in production.  From `v1.0` the same opt-in exposes the `stackql_preview.iac.run` and `stackql_preview.iac.destroy` relations, which apply and tear down a declared resource set through `omnisdk` with state kept under the application root.  See [Preview functionality](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
+| <span class="nowrap">`--provider`</span> | string | Initial default provider. For example, with `--provider github`, `repos.repos` resolves to `github.repos.repos` without a preceding `USE` statement. Does not authenticate to the provider. | none |
 | <span class="nowrap">`--querycachesize`</span> | integer | Size in number of entries of LRU cache for query plans | `10000` |
 | <span class="nowrap">`--registry`</span> | string | JSON / YAML string configuring the provider registry location and provider document signature verification | see [`--registry`](#--registry) |
 | <span class="nowrap">`--session`</span> | string | JSON / YAML string representing session config | `{}` |
@@ -66,10 +66,13 @@ Global flags specify runtime program behavior for the StackQL application, these
 | <span class="nowrap">`--store.txn`</span> | string | JSON / YAML string representing Txn store config | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | Path to CA bundle, if not specified then system defaults used |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | Allow trust of insecure certificates (not recommended) |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | JSON / YAML policy for explicitly tolerating HTTP response statuses on provider reads. See [`--upstream.errors`](#--upstream-errors). | `{}` |
 | <span class="nowrap">`--var`</span> | string | External variables provided as key/value pairs for sourcing into StackQL queries through `jsonnet` data files |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | Verbose output | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | Context specific help for stackql | |
 | <span class="nowrap">`--version`</span> | | Displays the version of the StackQL program | |
+
+`--colorscheme` is deprecated and no longer changes shell colours. `--usenonpreferredapis` is accepted but does not change API selection in the current engine.
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ Databricks exposes a PostgreSQL-compatible interface that can be used as a Stack
 :::note
 Special characters in the username or password (such as `@`) must be URL-encoded in the DSN (e.g., `@` becomes `%40`).
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+Use `http.ignoreStatusCodes` to list the HTTP response statuses a provider read should explicitly tolerate. Entries are strings: use an exact code such as `"503"` or a class such as `"5xx"`. The default `{}` adds no exceptions to the engine's normal handling of upstream responses. This setting does not retry failed requests or apply to mutations or authentication exchanges.
+
+An ignored response contributes no rows. Other reads in the query can still return rows, so a successful query can return incomplete results. StackQL reports the ignored HTTP status as a diagnostic.
+
+For example, the [mocked GitHub join test](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104) uses this option:
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+In the test, the collaborators request for one repository returns HTTP `500`. The query still returns collaborator rows for the other repositories, and stderr includes `ignoring upstream response: 500 INTERNAL SERVER ERROR`. Prefer an exact status code when only one failure is expected.
