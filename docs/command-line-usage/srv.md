@@ -31,12 +31,14 @@ Parameters sent over the extended query protocol (`Parse` / `Bind` / `Execute`, 
 
 ### Server Options {#server-options}
 
-| Option | Description |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|Address the server is listening on (typically `0.0.0.0`)|
-|<span class="nowrap">`--pgsrv.port`</span>|Port the server is listening on (e.g. `5444`)|
-|<span class="nowrap">`--pgsrv.tls`</span>|mTLS configuration object, see the [example](#examples) below|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|Log level (default `WARN`)|
+| Option | Description | Default |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|Address the server listens on.|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|TCP port the server listens on.|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|JSON TLS configuration object. See the [mTLS example](#examples) below.|none|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|Enable query debug output for PostgreSQL clients, for example with `stackql srv --pgsrv.debug.enable=true`. Leave off unless clients should receive debug information.|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|Advanced JSON or YAML mapping passed to the PostgreSQL wire server only when `--pgsrv.tls` is not set.|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|Accepted but does not set the logger level in the current engine. Use `--loglevel` instead.|`WARN`|
 
 <br/>
 
