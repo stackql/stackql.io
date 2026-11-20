@@ -1,0 +1,154 @@
+{
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "بدء الاستخدام",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "بدء الاستخدام",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "المفاهيم الأساسية والخطوات الأولى: التسلسل الهرمي للموارد، وتشغيل StackQL، واستخدام موفر، وأوضاع الإخراج، والمتغيرات، ومتغيرات الجلسة، وجلسات الموفرين، واستخدام القوالب",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage": {
+    "message": "استخدام سطر الأوامر",
+    "description": "The label for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.title": {
+    "message": "استخدام سطر الأوامر",
+    "description": "The generated-index page title for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.description": {
+    "message": "سطر أوامر stackql: الأوامر exec وshell وsrv وmcp وregistry، والعلامات العامة، وإدارة الوصول",
+    "description": "The generated-index page description for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.MCP": {
+    "message": "MCP",
+    "description": "The label for category 'MCP' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedded": {
+    "message": "مضمن",
+    "description": "The label for category 'Embedded' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Language Specification": {
+    "message": "مواصفات اللغة",
+    "description": "The label for category 'Language Specification' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Built-in Functions": {
+    "message": "الدوال المدمجة",
+    "description": "The label for category 'Built-in Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Aggregate": {
+    "message": "التجميع",
+    "description": "The label for category 'Aggregate' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Datetime": {
+    "message": "التاريخ والوقت",
+    "description": "The label for category 'Datetime' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.General": {
+    "message": "عامة",
+    "description": "The label for category 'General' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Hash": {
+    "message": "التجزئة",
+    "description": "The label for category 'Hash' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Json": {
+    "message": "JSON",
+    "description": "The label for category 'Json' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Math": {
+    "message": "الرياضيات",
+    "description": "The label for category 'Math' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Logarithmic Functions": {
+    "message": "الدوال اللوغاريتمية",
+    "description": "The label for category 'Logarithmic Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Trigonometric Functions": {
+    "message": "الدوال المثلثية",
+    "description": "The label for category 'Trigonometric Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Regular Expressions": {
+    "message": "التعبيرات النمطية",
+    "description": "The label for category 'Regular Expressions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Session": {
+    "message": "الجلسة",
+    "description": "The label for category 'Session' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.String": {
+    "message": "السلاسل النصية",
+    "description": "The label for category 'String' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Window": {
+    "message": "النافذة",
+    "description": "The label for category 'Window' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Developers": {
+    "message": "المطورون",
+    "description": "The label for category 'Developers' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts": {
+    "message": "البدء السريع",
+    "description": "The label for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.title": {
+    "message": "البدء السريع",
+    "description": "The generated-index page title for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.description": {
+    "message": "أدلة البدء السريع لـ StackQL، وإرشادات عملية، وأمثلة تطبيقية، وحالات استخدام",
+    "description": "The generated-index page description for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.title": {
+    "message": "البدء السريع مع AWS",
+    "description": "The generated-index page title for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.description": {
+    "message": "أمثلة عملية وحالات استخدام خاصة بـ AWS",
+    "description": "The generated-index page description for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure": {
+    "message": "Microsoft Azure",
+    "description": "The label for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.title": {
+    "message": "البدء السريع مع Azure",
+    "description": "The generated-index page title for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.description": {
+    "message": "أمثلة عملية وحالات استخدام خاصة بـ Azure",
+    "description": "The generated-index page description for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform": {
+    "message": "Google Cloud Platform",
+    "description": "The label for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.title": {
+    "message": "البدء السريع مع Google",
+    "description": "The generated-index page title for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.description": {
+    "message": "أمثلة عملية وحالات استخدام خاصة بـ Google Cloud",
+    "description": "The generated-index page description for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.title": {
+    "message": "البدء السريع مع GitHub",
+    "description": "The generated-index page title for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.description": {
+    "message": "أمثلة عملية وحالات استخدام خاصة بـ GitHub",
+    "description": "The generated-index page description for category 'GitHub' in sidebar 'docsSidebar'"
+  }
+}

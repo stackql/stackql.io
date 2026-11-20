@@ -62,11 +62,11 @@ AND zone = 'australia-southeast1-a';
 ### Trả về tổng của một biểu thức cột được nhóm theo một biểu thức cột khác {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, sum(json_array_length(disks)) as sum_disks
+SELECT status, sum(json_array_length(disks)) as sum_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 ### Dùng `SUM` làm hàm cửa sổ để tính tổng lũy kế {#use-sum-as-a-window-function-to-calculate-running-totals}

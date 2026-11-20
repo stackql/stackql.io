@@ -34,12 +34,17 @@ module.exports = {
   //               (a language, never a country: JA, not JP)
   //   inLanguage  JSON-LD inLanguage of the page-level nodes
   //   script      'cjk' when translated text must contain CJK characters
-  //               (Han ideographs, Japanese kana or Korean Hangul)
-  //   language    the language name used in the 'cjk' check messages
+  //               (Han ideographs, Japanese kana or Korean Hangul),
+  //               'arabic' when it must contain Arabic letters; null for
+  //               Latin-script locales, which are not checked this way
+  //   language    the language name used in the script check messages
+  //   dir         'rtl' for a right-to-left locale (<html dir>); 'ltr'
+  //               when absent
   //   mainlandChina  true for a locale read in mainland China: warns about
   //               third-party hosts that are slow or blocked there
   locales: {
     en: { prefix: '', htmlLang: 'en', code: 'EN', inLanguage: 'en-US', script: null },
+    ar: { prefix: '/ar', htmlLang: 'ar', code: 'AR', inLanguage: 'ar', script: 'arabic', language: 'Arabic', dir: 'rtl' },
     de: { prefix: '/de', htmlLang: 'de', code: 'DE', inLanguage: 'de', script: null },
     es: { prefix: '/es', htmlLang: 'es', code: 'ES', inLanguage: 'es', script: null },
     fr: { prefix: '/fr', htmlLang: 'fr', code: 'FR', inLanguage: 'fr', script: null },
@@ -59,12 +64,15 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
+    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,
-    cjkRatio: 0.15,
+    // share of the locale's script among the visible characters of a
+    // translated page or of llms-full.txt (code included), for the locales
+    // with a `script`
+    scriptRatio: 0.15,
   },
 
   // llms.txt sections, in order, and the source set each one is built from.
@@ -203,6 +211,19 @@ module.exports = {
   // the default locale when absent) and the variant expected (null: the
   // default flag). Add a case when a variant is added.
   flagCases: [
+    // Arabic: Saudi Arabia by default, the visitor's Arab League country
+    // otherwise. ar-SA is the default "Arabic" setting, so the time zone
+    // decides, as it does for es-ES
+    { locale: 'ar', languages: 'ar-SA,ar', timeZone: 'Asia/Riyadh', flag: null },
+    { locale: 'ar', languages: 'ar-SA,ar', timeZone: 'Africa/Cairo', flag: 'eg' },
+    { locale: 'ar', languages: 'ar-EG,ar', timeZone: 'Asia/Riyadh', flag: 'eg' },
+    { locale: 'ar', languages: 'en-US,en', timeZone: 'Asia/Dubai', flag: 'ae' },
+    { locale: 'ar', languages: 'ar-MA,fr-FR', timeZone: 'Europe/Paris', flag: 'ma' },
+    { locale: 'ar', languages: 'en-GB,en', timeZone: 'Asia/Kuwait', flag: 'kw' },
+    { locale: 'ar', languages: 'ar', timeZone: 'Asia/Hebron', flag: 'ps' },
+    // no country named and no Arab League time zone: the default
+    { locale: 'ar', languages: 'ar', timeZone: 'Europe/London', flag: null },
+    { locale: 'ar', languages: 'en-US,en', timeZone: 'Asia/Tehran', flag: null },
     // Spanish: Spain by default, the visitor's country in the Americas
     { locale: 'es', languages: 'es-ES,es', timeZone: 'Europe/Madrid', flag: null },
     { locale: 'es', languages: 'es-MX,es', timeZone: 'Europe/Madrid', flag: 'mx' },

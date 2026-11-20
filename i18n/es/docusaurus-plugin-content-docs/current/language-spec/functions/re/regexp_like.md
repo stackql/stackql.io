@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventario de nube
-description: "Función REGEXP_LIKE en StackQL: comprobar si una cadena coincide con una expresión regular y devolver true o false, para filtros de patrones en cláusulas WHERE."
+description: "Función REGEXP_LIKE en StackQL: comprobar si una cadena coincide con una expresión regular y devolver 1 para true y 0 para false, para filtros de patrones en cláusulas WHERE."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Comprueba si la cadena de origen coincide con el patrón y devuelve `true` o `false`.  
+Comprueba si la cadena de origen coincide con el patrón y devuelve `1` para true o `0` para false.  
 
 Consulte también:  
 [[` SELECT `]](/language-spec/select) [[ Referencia de expresiones regulares ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 El patrón de expresión regular que se busca.  
 
 ## Valor(es) devuelto(s) {#return-values}
-Devuelve `0` si es `false` y `1` si es `true`.  
+Devuelve `1` para true (la cadena de origen coincide con el patrón) o `0` para false.  
 
 * * *
 
@@ -55,7 +55,7 @@ Devuelve `0` si es `false` y `1` si es `true`.
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

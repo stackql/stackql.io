@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "البرامج التعليمية",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "شروح تفصيلية عملية لعمليات السحابة والأمان والأتمتة باستخدام SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "جميع البرامج التعليمية",
+    "description": "The label for the left sidebar"
+  }
+}

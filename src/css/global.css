@@ -237,6 +237,34 @@ html[data-theme='dark'] .hero--primary {
  code {
 	 font-weight: bold;
 }
+/* Inline code is a left-to-right isolate. In a right-to-left page (the
+   Arabic locale) the bidirectional algorithm otherwise moves the leading or
+   trailing punctuation of a code span inside Arabic text: `--output` shows
+   as "output--". The Arabic build runs this file through rtlcss, which
+   mirrors `direction`, hence rtl:ignore. In the left-to-right locales the
+   rule changes nothing. Code blocks are left to right already (theme). */
+ :not(pre) > code {
+	/* rtl:ignore */
+	 direction: ltr;
+	 unicode-bidi: isolate;
+}
+/* An untranslated page served at an Arabic URL is English text inside a
+   right-to-left layout. Its content is wrapped in a left-to-right block
+   (src/lib/i18n.js, FallbackDirection); the rules below restore the list
+   indent there, which Infima's RTL stylesheet puts on the right. Logical
+   properties are not mirrored by rtlcss. */
+ .fallback-ltr ul, .fallback-ltr ol {
+	 padding-inline-start: var(--ifm-list-left-padding);
+	 padding-inline-end: 0;
+}
+ .fallback-ltr blockquote {
+	 border-inline-start: var(--ifm-blockquote-border-left-width) solid var(--ifm-blockquote-border-color);
+	 border-inline-end: 0;
+}
+ .fallback-ltr .alert {
+	 border-inline-start-width: var(--ifm-alert-border-left-width);
+	 border-inline-end-width: var(--ifm-alert-border-width);
+}
  table {
 	 display: block;
 	 max-width: -moz-fit-content;
@@ -245,7 +273,13 @@ html[data-theme='dark'] .hero--primary {
 	 overflow-x: auto;
 	 white-space: nowrap;
 }
-/* Railroad diagrams */
+/* Railroad diagrams (static/js/RailroadDiagram, rendered left to right in
+   every locale). The production label above each one (*deleteStatement::=*)
+   is left to right too: in the Arabic page it would read =::deleteStatement. */
+ .markdown p:has(+ div.light[dir='ltr']), .markdown p:has(+ div.dark[dir='ltr']) {
+	/* rtl:ignore */
+	 direction: ltr;
+}
  div.light, div.dark {
 	 overflow: scroll;
 	 border: solid 0px;

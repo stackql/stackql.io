@@ -81,9 +81,16 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans'],
+  locales: ['en', 'ar', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
+    // Right to left. Docusaurus derives the direction from the locale, but
+    // it is stated here so it is not a surprise: the Arabic build uses
+    // Infima's RTL stylesheet and runs every other stylesheet through
+    // rtlcss, which mirrors physical properties (margin-left becomes
+    // margin-right). A declaration that must not be mirrored takes a
+    // /* rtl:ignore */ comment, as the inline code rule in custom.css does.
+    ar: { label: 'العربية', htmlLang: 'ar', direction: 'rtl' },
     de: { label: 'Deutsch', htmlLang: 'de' },
     es: { label: 'Español', htmlLang: 'es' },
     fr: { label: 'Français', htmlLang: 'fr' },

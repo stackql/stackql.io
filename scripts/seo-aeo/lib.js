@@ -208,6 +208,30 @@ function cjkRatio(text) {
   return visible.length === 0 ? 0 : cjkCount(visible) / visible.length;
 }
 
+// Letters of the Arabic script (U+0620-U+064A, U+066E-U+06D3), diacritics,
+// digits and punctuation excluded.
+function arabicCount(text) {
+  const m = text.match(/[ؠ-يٮ-ۓ]/g);
+  return m ? m.length : 0;
+}
+
+// The same per locale `script` of scripts/seo-aeo/config.js: 'cjk' or
+// 'arabic' (a locale with script null is not checked this way).
+function scriptCount(text, script) {
+  if (script === 'cjk') return cjkCount(text);
+  if (script === 'arabic') return arabicCount(text);
+  return 0;
+}
+function scriptRatio(text, script) {
+  const visible = text.replace(/\s+/g, '');
+  return visible.length === 0 ? 0 : scriptCount(visible, script) / visible.length;
+}
+
+function htmlDir(html) {
+  const m = html.match(/<html\b[^>]*>/i);
+  return (m && parseAttrs(m[0]).dir) || 'ltr';
+}
+
 // n items spread evenly over the list, the same ones on every run.
 function sample(list, n) {
   if (n >= list.length) return list.slice();
@@ -318,6 +342,6 @@ module.exports = {
   DEFAULT_UA, LEVELS,
   createClient, createReport,
   parseAttrs, tags, meta, metaAll, links, htmlLang, title, h1, mainText, stripTags, jsonLd, typesOf, nodesOfType,
-  cjkCount, cjkRatio, sample, normalizeUrl, sameUrl,
+  cjkCount, cjkRatio, arabicCount, scriptCount, scriptRatio, htmlDir, sample, normalizeUrl, sameUrl,
   parseRobots, robotsAllows, parseSitemap,
 };

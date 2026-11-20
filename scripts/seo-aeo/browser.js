@@ -170,6 +170,13 @@ async function switcher(ctx) {
           }
         }
         if (button !== cfg.locales[l].code) codes.push(`the button shows ${button}, expected ${cfg.locales[l].code}`);
+        // Menu order: this page's locale, then English, then the others by
+        // the language code they show (orderLocales in the component).
+        const order = [l, ...(l !== cfg.defaultLocale ? [cfg.defaultLocale] : []),
+          ...all.filter((x) => x !== l && x !== cfg.defaultLocale)
+            .sort((a, b) => cfg.locales[a].code.localeCompare(cfg.locales[b].code, 'en') || a.localeCompare(b, 'en'))];
+        const shown = links.map((x) => (all.find((o) => cfg.locales[o].htmlLang === x.lang) || x.lang));
+        r.check(shown.join(',') === order.join(','), `${tag}: the language menu lists ${order.map((x) => cfg.locales[x].code).join(', ')} in that order`, `it lists ${shown.join(', ')}`);
         const at = same(opened.href, address(l, page)) ? '' : ` (the browser ended on ${opened.href})`;
         r.check(wrong.length === 0, `${tag}: after hydration the language switcher links to this page in ${all.join(', ')}`, `${wrong.join('; ')}${at}`);
         r.check(codes.length === 0, `${tag}: the language switcher shows ${cfg.locales[l].code} and the codes ${all.map((x) => cfg.locales[x].code).join(', ')}`, codes.join('; '));

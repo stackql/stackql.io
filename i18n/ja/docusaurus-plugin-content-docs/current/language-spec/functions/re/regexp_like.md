@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の REGEXP_LIKE 関数：文字列が正規表現に一致するかを判定して true または false を返し、WHERE 句でのパターンによるフィルターに使用します。"
+description: "StackQL の REGEXP_LIKE 関数：文字列が正規表現に一致するかを判定して true の場合は 1、false の場合は 0 を返し、WHERE 句でのパターンによるフィルターに使用します。"
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-ソース文字列がパターンに一致するかどうかを確認し、`true` または `false` を返します。  
+ソース文字列がパターンに一致するかどうかを確認し、true の場合は `1`、false の場合は `0` を返します。  
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) [[ 正規表現リファレンス ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 検索する正規表現パターンです。  
 
 ## 戻り値 {#return-values}
-`false` の場合は `0`、`true` の場合は `1` を返します。  
+true（ソース文字列がパターンに一致する）の場合は `1`、false の場合は `0` を返します。  
 
 * * *
 
@@ -55,7 +55,7 @@ __*pattern*__
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

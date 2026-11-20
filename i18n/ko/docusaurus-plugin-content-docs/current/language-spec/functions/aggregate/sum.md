@@ -62,11 +62,11 @@ AND zone = 'australia-southeast1-a';
 ### 다른 열 식으로 그룹화된 열 식의 합계 반환 {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, sum(json_array_length(disks)) as sum_disks
+SELECT status, sum(json_array_length(disks)) as sum_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 ### `SUM` 함수를 윈도우 함수로 사용하여 누계 계산 {#use-sum-as-a-window-function-to-calculate-running-totals}

@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "StackQL의 REGEXP_LIKE 함수: 문자열이 정규식과 일치하는지 검사하여 true 또는 false를 반환하며, WHERE 절의 패턴 필터에 사용합니다."
+description: "StackQL의 REGEXP_LIKE 함수: 문자열이 정규식과 일치하는지 검사하여 true이면 1, false이면 0을 반환하며, WHERE 절의 패턴 필터에 사용합니다."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-원본 문자열이 패턴과 일치하는지 확인하고 `true` 또는 `false`를 반환합니다.  
+원본 문자열이 패턴과 일치하는지 확인하고 true이면 `1`, false이면 `0`을 반환합니다.  
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) [[ 정규식 참조 ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 검색할 정규식 패턴입니다.  
 
 ## 반환 값 {#return-values}
-결과가 `false`인 경우 `0`, `true`인 경우 `1`을 반환합니다.  
+true(원본 문자열이 패턴과 일치함)이면 `1`, false이면 `0`을 반환합니다.  
 
 * * *
 
@@ -55,7 +55,7 @@ __*pattern*__
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

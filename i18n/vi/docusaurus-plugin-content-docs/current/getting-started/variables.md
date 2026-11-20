@@ -179,7 +179,7 @@ Dữ liệu json sau sẽ là nội dung của tệp `vars.json` được tham c
       "network": "https://compute.googleapis.com/compute/v1/projects/stackql-demo/global/networks/myapp-vpc/",
       "sourceRanges": ["0.0.0.0/0"]
     }
-  ],
+  ]
 }
 ```
 

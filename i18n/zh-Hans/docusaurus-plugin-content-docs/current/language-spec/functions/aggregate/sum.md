@@ -62,11 +62,11 @@ AND zone = 'australia-southeast1-a';
 ### 返回按另一个列表达式分组的列表达式的总和 {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, sum(json_array_length(disks)) as sum_disks
+SELECT status, sum(json_array_length(disks)) as sum_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 ### 将 `SUM` 用作窗口函数来计算累计总和 {#use-sum-as-a-window-function-to-calculate-running-totals}

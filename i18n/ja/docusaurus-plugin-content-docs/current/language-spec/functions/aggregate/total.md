@@ -54,11 +54,11 @@ AND zone = 'australia-southeast1-a';
 ### 別の列式でグループ化した列式の合計を返す {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, total(json_array_length(disks)) as total_disks
+SELECT status, total(json_array_length(disks)) as total_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 詳細については、[https://www.sqlite.org/lang_aggfunc.html#sumunc](https://www.sqlite.org/lang_aggfunc.html#sumunc) を参照してください。

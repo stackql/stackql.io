@@ -179,7 +179,7 @@ Los siguientes datos json serían el contenido del archivo `vars.json` al que ha
       "network": "https://compute.googleapis.com/compute/v1/projects/stackql-demo/global/networks/myapp-vpc/",
       "sourceRanges": ["0.0.0.0/0"]
     }
-  ],
+  ]
 }
 ```
 

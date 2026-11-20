@@ -7,7 +7,8 @@
 // per-locale sitemap until a translation exists. A translated doc gets a
 // short notice that it was translated with AI assistance, linking to the
 // English page; `hide_translation_notice: true` in the front matter drops
-// the notice.
+// the notice. In a right-to-left locale the English fallback content is
+// laid out left to right (FallbackDirection in src/lib/i18n.js).
 import React from 'react';
 import Content from '@theme-original/DocItem/Content';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
@@ -17,7 +18,7 @@ import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import Admonition from '@theme/Admonition';
 import NoIndex from '@theme/NoIndex';
-import {isLocalizedSource, useIsLocalizedBuild} from '@site/src/lib/i18n';
+import {FallbackDirection, isLocalizedSource, useIsLocalizedBuild} from '@site/src/lib/i18n';
 
 function TranslationNotice() {
   const alternatePageUtils = useAlternatePageUtils();
@@ -72,7 +73,13 @@ export default function DocItemContentWrapper(props) {
     <>
       {fallback && <NoIndex />}
       {showNotice && <TranslationNotice />}
-      <Content {...props} />
+      {fallback ? (
+        <FallbackDirection>
+          <Content {...props} />
+        </FallbackDirection>
+      ) : (
+        <Content {...props} />
+      )}
     </>
   );
 }

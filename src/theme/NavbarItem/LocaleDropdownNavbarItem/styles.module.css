@@ -127,6 +127,99 @@
   display: none;
 }
 
+/* Arabic: the default is the flag of Saudi Arabia (flags.js); a visitor in
+   another Arab League country sees that country's flag. Emblems and script
+   are reduced as for Spanish: the eagle of Egypt to a gold shield, the takbir
+   of Iraq and the dagger of Oman to strokes, the cedar of Lebanon to a
+   stacked tree. Syria is the green, white and black flag with three red
+   stars adopted in 2025. */
+:global(html[data-flag-ar='ae']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%2300732f' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path d='M0 320h640v160H0z'/><path fill='%23f00' d='M0 0h220v480H0z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='bh']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ce1126' d='M0 0h640v480H0z'/><polygon fill='%23fff' points='0,0 130,0 250,48 130,96 250,144 130,192 250,240 130,288 250,336 130,384 250,432 130,480 0,480'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='dz']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23006233' d='M0 0h320v480H0z'/><path fill='%23fff' d='M320 0h320v480H320z'/><path fill='%23d21034' d='M414.8 325A120 120 0 1 1 414.8 155A100 100 0 1 0 414.8 325Z'/><polygon fill='%23d21034' points='339,240 377.7,227.4 377.7,186.7 401.6,219.7 440.3,207.1 416.4,240 440.3,272.9 401.6,260.3 377.7,293.3 377.7,252.6'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='dj']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%236ab2e7' d='M0 0h640v240H0z'/><path fill='%2312ad2b' d='M0 240h640v240H0z'/><path fill='%23fff' d='M0 0l415.7 240L0 480z'/><polygon fill='%23d7141a' points='140,180 153.5,221.5 197.1,221.5 161.8,247.1 175.3,288.5 140,262.9 104.7,288.5 118.2,247.1 82.9,221.5 126.5,221.5'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='eg']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ce1126' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23000' d='M0 320h640v160H0z'/><path fill='%23c09300' d='M292 196h56v52q0 34-28 52q-28-18-28-52zM292 206l-50 22 50 28zM348 206l50 22-50 28z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='iq']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ce1126' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23000' d='M0 320h640v160H0z'/><path fill='%23007a3d' d='M190 268h260v16H190zM210 196h14v72h-14zM272 206h14v62h-14zM334 196h14v72h-14zM396 210h14v58h-14zM430 196h14v72h-14z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='jo']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23000' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23007a3d' d='M0 320h640v160H0z'/><path fill='%23ce1126' d='M0 0l320 240L0 480z'/><polygon fill='%23fff' points='110,198 119.1,221.1 142.8,213.8 130.5,235.3 150.9,249.3 126.4,253.1 128.2,277.8 110,261 91.8,277.8 93.6,253.1 69.1,249.3 89.5,235.3 77.2,213.8 100.9,221.1'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='km']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ffd100' d='M0 0h640v120H0z'/><path fill='%23fff' d='M0 120h640v120H0z'/><path fill='%23ce1126' d='M0 240h640v120H0z'/><path fill='%23003da5' d='M0 360h640v120H0z'/><path fill='%233a7728' d='M0 0l300 240L0 480z'/><path fill='%23fff' d='M124.1 293A62 62 0 1 1 124.1 187A54 54 0 1 0 124.1 293Z'/><polygon fill='%23fff' points='132,175 134.5,182.6 142.5,182.6 136,187.3 138.5,194.9 132,190.2 125.5,194.9 128,187.3 121.5,182.6 129.5,182.6'/><polygon fill='%23fff' points='140,211 142.5,218.6 150.5,218.6 144,223.3 146.5,230.9 140,226.2 133.5,230.9 136,223.3 129.5,218.6 137.5,218.6'/><polygon fill='%23fff' points='140,247 142.5,254.6 150.5,254.6 144,259.3 146.5,266.9 140,262.2 133.5,266.9 136,259.3 129.5,254.6 137.5,254.6'/><polygon fill='%23fff' points='132,283 134.5,290.6 142.5,290.6 136,295.3 138.5,302.9 132,298.2 125.5,302.9 128,295.3 121.5,290.6 129.5,290.6'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='kw']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23007a3d' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23ce1126' d='M0 320h640v160H0z'/><path d='M0 0l160 160v160L0 480z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='lb']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ed1c24' d='M0 0h640v120H0zM0 360h640v120H0z'/><path fill='%23fff' d='M0 120h640v240H0z'/><path fill='%2300a651' d='M320 138l66 76h-28l48 56h-36l44 54H226l44-54h-36l48-56h-28zM310 324h20v26h-20z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='ly']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23e70013' d='M0 0h640v120H0z'/><path d='M0 120h640v240H0z'/><path fill='%23239e46' d='M0 360h640v120H0z'/><path fill='%23fff' d='M341.8 288.5A64 64 0 1 1 341.8 191.5A54 54 0 1 0 341.8 288.5Z'/><polygon fill='%23fff' points='322,240 342.7,233.3 342.7,211.5 355.5,229.1 376.3,222.4 363.5,240 376.3,257.6 355.5,250.9 342.7,268.5 342.7,246.7'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='ma']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23c1272d' d='M0 0h640v480H0z'/><path fill='none' stroke='%23006233' stroke-width='16' stroke-linejoin='round' d='M320 130L390.5 347.1L205.9 212.9L434.1 212.9L249.5 347.1Z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='mr']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%2300a95c' d='M0 0h640v480H0z'/><path fill='%23d01c1f' d='M0 0h640v72H0zM0 408h640v72H0z'/><path fill='%23ffd700' d='M437.2 196.6A128 128 0 1 1 202.8 196.6A118 118 0 1 0 437.2 196.6Z'/><polygon fill='%23ffd700' points='320,132 330.3,163.8 363.7,163.8 336.7,183.4 347,215.2 320,195.6 293,215.2 303.3,183.4 276.3,163.8 309.7,163.8'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='om']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fff' d='M0 0h640v160H0z'/><path fill='%23db161b' d='M0 160h640v160H0z'/><path fill='%23008000' d='M0 320h640v160H0z'/><path fill='%23db161b' d='M0 0h210v480H0z'/><path fill='%23fff' d='M80 52h50v12h-19v44l-6 12-6-12V64H80zM66 70l78 50-6 8-78-50zM144 70l-78 50 6 8 78-50z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='ps']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23000' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23009639' d='M0 320h640v160H0z'/><path fill='%23ed2e38' d='M0 0l300 240L0 480z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='qa']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%238d1b3d' d='M0 0h640v480H0z'/><polygon fill='%23fff' points='0,0 158,0 230,26.7 158,53.3 230,80 158,106.7 230,133.3 158,160 230,186.7 158,213.3 230,240 158,266.7 230,293.3 158,320 230,346.7 158,373.3 230,400 158,426.7 230,453.3 158,480 0,480'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='so']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%234189dd' d='M0 0h640v480H0z'/><polygon fill='%23fff' points='320,125 346.9,207.9 434.1,207.9 363.6,259.2 390.5,342.1 320,290.8 249.5,342.1 276.4,259.2 205.9,207.9 293.1,207.9'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='sd']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23d21034' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23000' d='M0 320h640v160H0z'/><path fill='%23007229' d='M0 0l280 240L0 480z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='sy']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23007a3d' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23000' d='M0 320h640v160H0z'/><polygon fill='%23ce1126' points='200,198 209.4,227 239.9,227 215.3,245 224.7,274 200,256 175.3,274 184.7,245 160.1,227 190.6,227'/><polygon fill='%23ce1126' points='320,198 329.4,227 359.9,227 335.3,245 344.7,274 320,256 295.3,274 304.7,245 280.1,227 310.6,227'/><polygon fill='%23ce1126' points='440,198 449.4,227 479.9,227 455.3,245 464.7,274 440,256 415.3,274 424.7,245 400.1,227 430.6,227'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='tn']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23e70013' d='M0 0h640v480H0z'/><circle cx='320' cy='240' r='120' fill='%23fff'/><path fill='%23e70013' d='M374.7 305.4A92 92 0 1 1 374.7 174.6A76 76 0 1 0 374.7 305.4Z'/><polygon fill='%23e70013' points='302,240 336.5,228.8 336.5,192.4 357.9,221.8 392.5,210.6 371.1,240 392.5,269.4 357.9,258.2 336.5,287.6 336.5,251.2'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='ye']) .flag[data-flag-locale='ar'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23ce1126' d='M0 0h640v160H0z'/><path fill='%23fff' d='M0 160h640v160H0z'/><path fill='%23000' d='M0 320h640v160H0z'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-ar='ae']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='bh']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='dz']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='dj']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='eg']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='iq']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='jo']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='km']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='kw']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='lb']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='ly']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='ma']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='mr']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='om']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='ps']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='qa']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='so']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='sd']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='sy']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='tn']) .flag[data-flag-locale='ar'] > *,
+:global(html[data-flag-ar='ye']) .flag[data-flag-locale='ar'] > * {
+  display: none;
+}
+
 .badge {
   display: inline-block;
   min-width: 20px;
@@ -143,11 +236,18 @@
   background: var(--ifm-color-emphasis-200);
 }
 
+/* The code and the name are separate bidi isolates: in a right-to-left page
+   (Arabic) two adjacent Latin spans otherwise form one left-to-right run,
+   the name lands on the far side of the code and the mirrored margin ends
+   up outside the pair ("ENEnglish"). Isolated, they follow the page
+   direction like the flag. */
 .code {
   font-weight: 600;
   letter-spacing: 0.02em;
+  unicode-bidi: isolate;
 }
 
 .name {
   margin-left: 6px;
+  unicode-bidi: isolate;
 }

@@ -80,7 +80,10 @@ const RailroadDiagram = ({ type }) => {
 	}	
 
 	return (
-		<div className={colorMode === 'dark' ? "dark" : "light"} >{ svg }</div>
+		// dir="ltr": a diagram reads left to right in every locale; in the
+		// right-to-left Arabic page the scroll box would otherwise start at
+		// its right end and hide the beginning of the statement
+		<div className={colorMode === 'dark' ? "dark" : "light"} dir="ltr">{ svg }</div>
 	)
 }
 

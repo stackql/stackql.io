@@ -38,6 +38,20 @@
 # The same two files per locale (i18n.locales in docusaurus.config.js other
 # than the default). Each lists only the pages translated into that language.
 [[headers]]
+  for = "/ar/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/ar/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
   for = "/de/llms.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
@@ -255,6 +269,11 @@
 # missing /de/... path. Not forced, so every built file under /de/ still
 # wins. One rule per locale in docusaurus.config.js i18n.locales other than
 # the default.
+[[redirects]]
+  from = "/ar/*"
+  to = "/ar/404.html"
+  status = 404
+
 [[redirects]]
   from = "/de/*"
   to = "/de/404.html"

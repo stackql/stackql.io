@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "REGEXP_LIKE function in StackQL: test whether a string matches a regular expression, returning true or false, for pattern filters in WHERE clauses."
+description: "REGEXP_LIKE function in StackQL: test whether a string matches a regular expression, returning 1 for true and 0 for false, for pattern filters in WHERE clauses."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Checks if source string matches pattern and returns `true` or `false`.  
+Checks whether the source string matches the pattern and returns `1` for true or `0` for false.  
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[ Regex Reference ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 The regular expression pattern to search for.  
 
 ## Return Value(s) {#return-values}
-Returns a `0` if `false` and `1` if `true`.  
+Returns `1` for true (the source matches the pattern) or `0` for false.  
 
 * * *
 
@@ -55,7 +55,7 @@ Returns a `0` if `false` and `1` if `true`.
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

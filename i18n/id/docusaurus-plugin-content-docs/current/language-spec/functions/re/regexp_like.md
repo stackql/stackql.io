@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "Fungsi REGEXP_LIKE di StackQL: menguji apakah string cocok dengan ekspresi reguler dan mengembalikan true atau false, untuk filter pola dalam klausa WHERE."
+description: "Fungsi REGEXP_LIKE di StackQL: menguji apakah string cocok dengan ekspresi reguler dan mengembalikan 1 untuk true dan 0 untuk false, untuk filter pola dalam klausa WHERE."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Memeriksa apakah string sumber cocok dengan pola dan mengembalikan `true` atau `false`.  
+Memeriksa apakah string sumber cocok dengan pola dan mengembalikan `1` untuk true atau `0` untuk false.  
 
 Lihat juga:  
 [[` SELECT `]](/language-spec/select) [[ Referensi ekspresi reguler ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 Pola ekspresi reguler yang dicari.  
 
 ## Nilai yang dikembalikan {#return-values}
-Mengembalikan `0` jika `false` dan `1` jika `true`.  
+Mengembalikan `1` untuk true (string sumber cocok dengan pola) atau `0` untuk false.  
 
 * * *
 
@@ -55,7 +55,7 @@ Mengembalikan `0` jika `false` dan `1` jika `true`.
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

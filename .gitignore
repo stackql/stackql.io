@@ -1,6 +1,8 @@
 # stackql
 stackql
 /.stackql
+/logs
+stackql_mcp_server_*.log
 
 # antlr
 ref/antlr/.antlr/

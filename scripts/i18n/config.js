@@ -52,6 +52,17 @@ module.exports = {
   // correct rendering in that locale (product and vendor names), so
   // yarn i18n:strings does not report them as untranslated.
   locales: {
+    ar: {
+      sources: ['docs'],
+      sameAsEnglish: [
+        'link.title.StackQL',
+        'sidebar.docsSidebar.category.MCP',
+        'sidebar.docsSidebar.category.AWS',
+        'sidebar.docsSidebar.category.Microsoft Azure',
+        'sidebar.docsSidebar.category.Google Cloud Platform',
+        'sidebar.docsSidebar.category.GitHub',
+      ],
+    },
     de: {
       sources: ['docs'],
       sameAsEnglish: [

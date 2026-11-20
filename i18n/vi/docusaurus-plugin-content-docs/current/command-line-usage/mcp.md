@@ -333,7 +333,7 @@ Từ bản phát hành `v0.12.742`, một payload chứa nhiều câu lệnh đ�
 
 #### Thay đổi hành vi của chế độ mặc định {#default-mode-behaviour-change}
 
-Các bản phát hành trước chỉ thực thi an toàn qua một cờ `read_only: true/false` duy nhất có mặc định là "không thực thi". Mặc định hiện tại (`mode: safe`) khiến các thao tác thay đổi dữ liệu cần người dùng phê duyệt ngay từ đầu. Người vận hành chạy một ứng dụng khách MCP hỗ trợ elicitation (Claude Desktop, Cursor, Continue, v.v.) sẽ thấy một yêu cầu phê duyệt cho mỗi thao tác thay đổi dữ liệu. Người vận hành chạy tự động hóa, hoặc `stackql_mcp_client` đi kèm (không công bố elicitation), phải chủ động bật `mode: full_access` một cách rõ ràng để chạy các thao tác thay đổi dữ liệu và thao tác vòng đời.
+Các bản phát hành trước chỉ thực thi an toàn qua một cờ `read_only: true/false` duy nhất có mặc định là "không thực thi". Mặc định hiện tại (`mode: safe`) khiến các thao tác thay đổi dữ liệu cần người dùng phê duyệt ngay từ đầu. Người vận hành chạy một ứng dụng khách MCP hỗ trợ elicitation (Claude Desktop, Cursor, Continue, v.v.) sẽ thấy một yêu cầu phê duyệt cho mỗi thao tác thay đổi dữ liệu. Người vận hành chạy tự động hóa, hoặc `stackql_mcp_client` đi kèm (không công bố elicitation), phải chủ động bật một chế độ ít hạn chế hơn một cách rõ ràng: `mode: delete_safe` để chạy `INSERT`, `UPDATE` và `REPLACE`, hoặc `mode: full_access` để chạy thêm cả `DELETE` và thao tác vòng đời.
 
 Khóa JSON / YAML cũ `read_only: true` vẫn được chấp nhận để tương thích ngược và được xem là tương đương với `mode: read_only`.
 
