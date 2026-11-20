@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "教學",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "使用 SQL 進行雲端維運、安全性與自動化的實務逐步解說",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "所有教學",
+    "description": "The label for the left sidebar"
+  }
+}

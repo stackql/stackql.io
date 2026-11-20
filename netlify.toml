@@ -177,6 +177,20 @@
     Cache-Control = "public, max-age=300, must-revalidate"
     X-Robots-Tag = "index, follow"
 
+[[headers]]
+  for = "/zh-hant/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/zh-hant/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
 # /providers.json: the provider catalog published for the shared chrome in
 # the docusaurus-config repo (written by plugins/provider-catalog). The
 # provider microsites and the query library fetch it at build time, so a
@@ -317,6 +331,11 @@
 [[redirects]]
   from = "/zh-hans/*"
   to = "/zh-hans/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/zh-hant/*"
+  to = "/zh-hant/404.html"
   status = 404
 
 # Former top-level meta-refresh stubs (src/pages/tutorials.js, cookbooks.js,

@@ -73,7 +73,7 @@ The StackQL query library lives in its own repo (query-library.stackql.io) and i
 
 ### SEO and AEO checks
 
-`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `ar`, `de`, `es`, `fr`, `id`, `ja`, `ko`, `pt-BR`, `vi`, `zh-Hans`). It is run by hand, against a local build or against production:
+`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `ar`, `de`, `es`, `fr`, `id`, `ja`, `ko`, `pt-BR`, `vi`, `zh-Hans`, `zh-Hant`). It is run by hand, against a local build or against production:
 
 ```
 # a local build: build it, serve it in one terminal, check it in another
@@ -91,7 +91,7 @@ Run it locally before a deploy that touches locales, URLs, `netlify.toml`, `stat
 |---|---|---|---|
 | `robots` | `robots.txt` allows every crawler token in the config and lists one sitemap per locale | yes | yes |
 | `sitemaps` | per locale: URL count, only that locale's own indexable pages, lower-case paths, `lastmod`; sampled URLs answer 200, are self-canonical and in the right language | yes | yes, and no redirects |
-| `llms` | per locale: `llms.txt` sections and entries, only translated pages listed, Arabic text for `ar`, Chinese for `zh-Hans`, Japanese for `ja` and Korean for `ko`, sampled `.md` companions, `llms-full.txt` | yes | yes, and content types and `X-Robots-Tag` |
+| `llms` | per locale: `llms.txt` sections and entries, only translated pages listed, Arabic text for `ar`, Chinese for `zh-Hans` and `zh-Hant`, Japanese for `ja` and Korean for `ko`, sampled `.md` companions, `llms-full.txt` | yes | yes, and content types and `X-Robots-Tag` |
 | `pages` | representative pages per locale: `lang`, `dir` (`rtl` for `ar`), title, description, canonical, robots meta, `hreflang`, social tags, JSON-LD types and language, the markdown twin, and that the text is in the served HTML (no JavaScript needed) | yes | yes, and no redirects |
 | `assets` | third-party hosts on the rendering path; a warning for hosts that are slow or unreachable from mainland China | yes | yes |
 | `switcher` | in headless Chrome: after the page hydrates, the language switcher links to the same page in every locale, for every pair of locales, and shows each locale's language code (EN, AR, DE, ES, FR, ID, JA, KO, PT, VI, ZH; a language, never a country code) in the order current locale, English, then the rest as listed in `src/lib/localeMenuOrder.js`; the English flag follows the browser's region (AU, NZ, ZA, GB) and is the US flag otherwise, the Spanish flag follows it to the visitor's country in the Americas (MX, AR, CO and the rest) and is Spain's otherwise, the Arabic flag follows it to the visitor's Arab League country (EG, AE, MA and the rest) and is Saudi Arabia's otherwise, and every variant the head script can pick has artwork in the stylesheet | yes | yes |
@@ -114,7 +114,7 @@ yarn seo:check --base http://localhost:3111          # a build served somewhere 
 
 The expectations (locales and their URL prefixes, the pages checked, the crawler list, minimum counts) are in `scripts/seo-aeo/config.js`; review the crawler list when a lab publishes or renames a crawler. The `switcher` section needs Chrome or Chromium (set `CHROME_PATH` if it is not in a standard location) and is skipped without one; nothing else needs more than Node 22.
 
-Locale URL prefixes must be lower case. Netlify answers a page URL that has upper-case letters with a 301 to its lower-case form, which is why the Simplified Chinese locale (`zh-Hans`) is served at `/zh-hans/`.
+Locale URL prefixes must be lower case. Netlify answers a page URL that has upper-case letters with a 301 to its lower-case form, which is why the Chinese locales (`zh-Hans`, `zh-Hant`) are served at `/zh-hans/` and `/zh-hant/`, and Brazilian Portuguese (`pt-BR`) at `/pt-br/`.
 
 What it cannot tell you: whether the site is reachable from mainland China, what Google Search Console, Bing Webmaster Tools or Baidu's webmaster platform report (coverage, sitemap submission, site verification), whether a crawler is blocked by IP rather than by user-agent, and page speed.
 

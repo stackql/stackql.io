@@ -54,6 +54,7 @@ module.exports = {
     'pt-BR': { prefix: '/pt-br', htmlLang: 'pt-BR', code: 'PT', inLanguage: 'pt-BR', script: null },
     vi: { prefix: '/vi', htmlLang: 'vi', code: 'VI', inLanguage: 'vi', script: null },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', code: 'ZH', inLanguage: 'zh-Hans', script: 'cjk', language: 'Chinese', mainlandChina: true },
+    'zh-Hant': { prefix: '/zh-hant', htmlLang: 'zh-Hant', code: 'ZH-HANT', inLanguage: 'zh-Hant', script: 'cjk', language: 'Traditional Chinese' },
   },
 
   // Source sets translated per locale (the default locale has all of them).
@@ -64,8 +65,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
-    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200 },
+    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,
@@ -211,6 +212,23 @@ module.exports = {
   // the default locale when absent) and the variant expected (null: the
   // default flag). Add a case when a variant is added.
   flagCases: [
+    // Traditional Chinese: Hong Kong by default, Taiwan or Macau otherwise.
+    // zh-HK decides on the default wherever the machine is; zh-TW is the
+    // plain "Traditional Chinese" setting, also used in Hong Kong, so it
+    // only counts when the time zone says nothing
+    { locale: 'zh-Hant', languages: 'zh-HK,zh', timeZone: 'Asia/Hong_Kong', flag: null },
+    { locale: 'zh-Hant', languages: 'zh-TW,zh', timeZone: 'Asia/Taipei', flag: 'tw' },
+    { locale: 'zh-Hant', languages: 'en-US,en', timeZone: 'Asia/Taipei', flag: 'tw' },
+    { locale: 'zh-Hant', languages: 'zh-TW,zh', timeZone: 'Asia/Hong_Kong', flag: null },
+    { locale: 'zh-Hant', languages: 'zh-TW,zh', timeZone: 'America/Los_Angeles', flag: 'tw' },
+    { locale: 'zh-Hant', languages: 'zh-HK,zh', timeZone: 'Asia/Taipei', flag: null },
+    { locale: 'zh-Hant', languages: 'zh-MO,zh', timeZone: 'Asia/Hong_Kong', flag: 'mo' },
+    { locale: 'zh-Hant', languages: 'en-US,en', timeZone: 'Asia/Macau', flag: 'mo' },
+    // script-tagged languages carry the region in the third subtag
+    { locale: 'zh-Hant', languages: 'zh-Hant-TW,zh-Hant', timeZone: 'Europe/London', flag: 'tw' },
+    // Simplified Chinese and everything else: the default
+    { locale: 'zh-Hant', languages: 'zh-CN,zh', timeZone: 'Asia/Shanghai', flag: null },
+    { locale: 'zh-Hant', languages: 'en-US,en', timeZone: 'America/New_York', flag: null },
     // Arabic: Saudi Arabia by default, the visitor's Arab League country
     // otherwise. ar-SA is the default "Arabic" setting, so the time zone
     // decides, as it does for es-ES

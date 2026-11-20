@@ -220,6 +220,24 @@
   display: none;
 }
 
+/* Traditional Chinese: the default is the flag of Hong Kong; a visitor in
+   Taiwan or Macau sees that flag. Taiwan: the canton a quarter of the flag,
+   the sun's twelve rays on a circle a quarter of the canton's width, ring
+   and disc 19/30 and 17/30 of that radius. Macau: the stars on an arc, the
+   lotus as three petals, the bridge as an arc and four lines of water; the
+   petals' inner lines are below a pixel at this size. The attribute is
+   data-flag-zh-hant, lower case, as HTML stores every attribute name. */
+:global(html[data-flag-zh-hant='tw']) .flag[data-flag-locale='zh-Hant'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%23fe0000' d='M0 0h640v480H0z'/><path fill='%23000095' d='M0 0h320v240H0z'/><polygon fill='%23fff' points='160,40 172.4,73.6 200,50.7 193.9,86.1 229.3,80 206.4,107.6 240,120 206.4,132.4 229.3,160 193.9,153.9 200,189.3 172.4,166.4 160,200 147.6,166.4 120,189.3 126.1,153.9 90.7,160 113.6,132.4 80,120 113.6,107.6 90.7,80 126.1,86.1 120,50.7 147.6,73.6'/><circle cx='160' cy='120' r='50.7' fill='%23000095'/><circle cx='160' cy='120' r='45.3' fill='%23fff'/></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-zh-hant='mo']) .flag[data-flag-locale='zh-Hant'] {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'><path fill='%2300785e' d='M0 0h640v480H0z'/><g fill='%23fbd116'><polygon points='320,52 329,79.6 358,79.6 334.5,96.7 343.5,124.4 320,107.3 296.5,124.4 305.5,96.7 282,79.6 311,79.6'/><polygon points='197.4,129.2 201.5,141.6 214.6,141.6 204,149.3 208,161.7 197.4,154 186.9,161.7 190.9,149.3 180.3,141.6 193.4,141.6'/><polygon points='252.4,87 256.4,99.4 269.5,99.4 258.9,107.1 263,119.6 252.4,111.9 241.8,119.6 245.8,107.1 235.3,99.4 248.3,99.4'/><polygon points='387.6,87 391.7,99.4 404.7,99.4 394.2,107.1 398.2,119.6 387.6,111.9 377,119.6 381.1,107.1 370.5,99.4 383.6,99.4'/><polygon points='442.6,129.2 446.6,141.6 459.7,141.6 449.1,149.3 453.1,161.7 442.6,154 432,161.7 436,149.3 425.4,141.6 438.5,141.6'/></g><g fill='%23fff'><path d='M320 178c28 32 30 84 0 124c-30-40-28-92 0-124z'/><path d='M310 304c-52-4-84-40-90-86c42 4 76 36 90 86z'/><path d='M330 304c52-4 84-40 90-86c-42 4-76 36-90 86z'/></g><g fill='none' stroke='%23fff' stroke-width='10' stroke-linecap='round'><path d='M226 330q94-34 188 0'/><path d='M236 356h168M252 378h136M268 400h104M286 422h68'/></g></svg>") center / 100% 100% no-repeat;
+}
+:global(html[data-flag-zh-hant='tw']) .flag[data-flag-locale='zh-Hant'] > *,
+:global(html[data-flag-zh-hant='mo']) .flag[data-flag-locale='zh-Hant'] > * {
+  display: none;
+}
+
 .badge {
   display: inline-block;
   min-width: 20px;

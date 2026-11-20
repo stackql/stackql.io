@@ -24,7 +24,7 @@ const LOCALE_MENU_ORDER = [
   'ru', //      RU       Русский (planned)
   'fr', //      FR       Français
   'ko', //      KO       한국어
-  'zh-Hant', // ZH-HANT  繁體中文 (planned)
+  'zh-Hant', // ZH-HANT  繁體中文
   'uk', //      UK       Українська (planned)
   'vi', //      VI       Tiếng Việt
   'hi', //      HI       हिन्दी (planned)
