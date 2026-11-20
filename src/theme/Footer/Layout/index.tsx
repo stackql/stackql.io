@@ -8,6 +8,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/Footer/Layout';
+import ThemedImage from '@theme/ThemedImage';
 import type { JSX } from 'react';
 
 export default function FooterLayout({
@@ -34,7 +35,7 @@ export default function FooterLayout({
                   </p>
                   <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
                     <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '50px' }} />
-                    <img src="/img/LF_MemberLevel_silver.svg" alt="Linux Foundation Member" style={{ height: '50px' }} />
+                    <ThemedImage alt="GitHub Secure Open Source Fund" sources={{ light: '/img/github-secure-oss-fund-logo.svg', dark: '/img/github-secure-oss-fund-logo-dark.svg' }} style={{ height: '40px', width: 'auto' }} />
                   </div>
                 </div>
               </div>

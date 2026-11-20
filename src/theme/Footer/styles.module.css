@@ -14,3 +14,13 @@
   opacity: 0.5;
 }
 
+/* Sized to sit beside the 90px AAIF badge in the 329px first footer column
+   (90 + 16 gap + 220); on narrow phones the row wraps and the logo scales
+   down rather than overflowing. ThemedImage's theme rules set display on the
+   img, so the link is a flex container to drop the inline baseline gap. */
+.footerSecureFundLogo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
+
