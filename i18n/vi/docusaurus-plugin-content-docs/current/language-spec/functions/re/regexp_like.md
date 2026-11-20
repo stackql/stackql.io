@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "Hàm REGEXP_LIKE trong StackQL: kiểm tra xem một chuỗi có khớp với biểu thức chính quy hay không, trả về true hoặc false, để lọc theo mẫu trong mệnh đề WHERE."
+description: "Hàm REGEXP_LIKE trong StackQL: kiểm tra xem một chuỗi có khớp với biểu thức chính quy hay không, trả về 1 cho true và 0 cho false, để lọc theo mẫu trong mệnh đề WHERE."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Kiểm tra xem chuỗi nguồn có khớp với mẫu hay không và trả về `true` hoặc `false`.  
+Kiểm tra xem chuỗi nguồn có khớp với mẫu hay không và trả về `1` cho true hoặc `0` cho false.  
 
 Xem thêm:  
 [[` SELECT `]](/language-spec/select) [[ Tham khảo biểu thức chính quy ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 Mẫu biểu thức chính quy cần tìm.  
 
 ## Giá trị trả về {#return-values}
-Trả về `0` nếu `false` và `1` nếu `true`.  
+Trả về `1` cho true (chuỗi nguồn khớp với mẫu) hoặc `0` cho false.  
 
 * * *
 
@@ -55,7 +55,7 @@ Trả về `0` nếu `false` và `1` nếu `true`.
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

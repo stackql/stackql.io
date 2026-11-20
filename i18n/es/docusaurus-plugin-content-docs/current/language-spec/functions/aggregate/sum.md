@@ -62,11 +62,11 @@ AND zone = 'australia-southeast1-a';
 ### Devolver la suma de una expresión de columna agrupada por otra expresión de columna {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, sum(json_array_length(disks)) as sum_disks
+SELECT status, sum(json_array_length(disks)) as sum_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 ### Usar `SUM` como función de ventana para calcular totales acumulados {#use-sum-as-a-window-function-to-calculate-running-totals}

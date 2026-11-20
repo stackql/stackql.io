@@ -62,11 +62,11 @@ AND zone = 'australia-southeast1-a';
 ### Return the sum of a column expression grouped by another column expression {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, sum(json_array_length(disks)) as sum_disks
+SELECT status, sum(json_array_length(disks)) as sum_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 ### Use `SUM` as a window function to calculate running totals {#use-sum-as-a-window-function-to-calculate-running-totals}

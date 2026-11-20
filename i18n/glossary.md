@@ -2502,3 +2502,413 @@ Style:
 - Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("Hiển thị", "Tạo", "Liệt kê").
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Vietnamese is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).
+
+## ar
+
+Audience: Arabic-speaking engineers in every Arab country reading technical documentation. Modern Standard Arabic in the register of vendor documentation in Arabic (Microsoft Learn, Google Cloud, AWS): neutral, precise, the same text for readers in the Gulf, the Levant, Egypt and the Maghreb; no dialect words (no مش، عشان، كده، إيش، شلون، بدّك، هيك). Address the reader in the second person singular as those vendors do ("يمكنك"، "لديك"، "جهاز الكمبيوتر الخاص بك"), with the masculine singular as the generic form; never "حضرتك" or the plural "أنتم". Present tense, short sentences. Instructions use the plain imperative ("شغّل الأمر التالي"، "استخدم"، "راجع"، "ثبّت"، "أنشئ")، not "قم بـ" + verbal noun, which is acceptable only where the verb has no natural imperative. Headings that name a task use the verbal noun (مصدر): "تثبيت StackQL"، "إنشاء قالب"، "إرجاع القيمة المطلقة لعدد". Keep the English terms Arabic developers write in Latin script (the "Kept in English" row); do not coin Arabic names for products or APIs. No marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Arabic | Not |
+|---|---|---|
+| provider (a StackQL provider) | موفر (plural موفرون / موفري; "موفر StackQL"، "الموفر `aws`"، "Available Providers" = "الموفرون المتاحون") | مزود (that is the cloud vendor), الموفرات, provider (in prose), بروفايدر |
+| cloud provider (the vendor) | مزود الخدمات السحابية; short form مزود السحابة (plural مزودو الخدمات السحابية) | موفر (that is a StackQL provider), بائع |
+| vendor (the company behind an API or SDK, not only cloud) | الجهة المزودة; "vendor-published" = تنشره الجهة المزودة | البائع، vendor |
+| cloud (as an adjective) | سحابي / سحابية after the noun ("الموارد السحابية"، "البنية التحتية السحابية") | كلاود |
+| API | API (Latin, with a class noun where Arabic needs one: "واجهة API"، plural "واجهات API"; "REST API" = "واجهة REST API") | واجهة برمجة التطبيقات (except where the source spells it out) |
+| service | خدمة (plural خدمات) | |
+| resource | مورد (plural موارد) | مصدر (that is a source) |
+| method | أسلوب (plural أساليب) | طريقة، دالة (that is a function), method |
+| operation | عملية (plural عمليات) | |
+| query (noun) / to query | استعلام (plural استعلامات) / الاستعلام عن; "run a query" = تشغيل استعلام | سؤال |
+| statement | جملة (plural جمل; "جملة `SELECT`") | عبارة (that is a clause), أمر (that is a command) |
+| command (CLI) / subcommand | أمر (plural أوامر; "الأمر `stackql exec`") / أمر فرعي | جملة (that is a statement) |
+| clause | عبارة ("عبارة `WHERE`") | جملة (that is a statement), شرط (that is a condition) |
+| result set | مجموعة النتائج | |
+| row / column | صف / عمود | سطر (that is a line of text), سجل (for a row) |
+| line (of text, of output) | سطر | صف |
+| table | جدول | |
+| view | طريقة عرض (plural طرق عرض; "طريقة العرض `CREATE VIEW`") | عرض alone, view (in prose) |
+| materialized view | طريقة عرض مجسدة | طريقة عرض مادية |
+| window function | دالة نافذة (plural دوال النافذة; "دالة النافذة `RANK`") | دالة window، دالة تحليلية |
+| window frame | إطار النافذة | frame |
+| aggregate function / scalar function | دالة تجميعية / دالة عددية | دالة تجميع، دالة قياسية |
+| function / expression | دالة (plural دوال) / تعبير | وظيفة (that is a job or a feature), دالات |
+| keyword / operator / predicate, condition | كلمة أساسية / عامل (plural عوامل) / شرط | كلمة مفتاحية، معامل (that is ambiguous), مؤثر |
+| subquery / alias / join | استعلام فرعي / اسم مستعار / ربط ("عمليات الربط `JOIN`") | subquery، alias (in prose)، صلة |
+| partition / peer, peer group / tie (window functions) | قسم (plural أقسام) / صف نظير، مجموعة الصفوف النظيرة / تعادل ("الصفوف المتعادلة"، "مع فجوات"، "بدون فجوات") | peer |
+| offset (`LAG`, `LEAD`) | الإزاحة (the argument name `offset` stays as code) | offset (in prose) |
+| target (of `SET` and `UNSET`) | الهدف ("الهدف" as the heading) | |
+| override (a credential, a default) / overwrite (a value, a key) | تجاوز ("credential override" = تجاوز بيانات الاعتماد) / الكتابة فوق ("الكتابة فوق القيمة إذا كانت موجودة؟") | override |
+| dereference | إلغاء المرجعية | |
+| data type / literal / identifier | نوع البيانات / قيمة حرفية ("قيمة حرفية نصية"، "قيمة حرفية رقمية") / معرف | ثابت (for a literal), identifier |
+| string / integer / boolean | سلسلة نصية / عدد صحيح / قيمة منطقية (boolean as an adjective: منطقي) | string (in prose)، نص (for a string value) |
+| whitespace | مسافة بيضاء | فراغ |
+| parameter / argument | معلمة (plural معلمات) / وسيطة (plural وسيطات) | باراميتر، معامل، بارامتر |
+| flag (CLI) / option | علامة (plural علامات; "global flags" = العلامات العامة; "العلامة `--output`") / خيار | flag (in prose)، علم |
+| environment variable | متغير البيئة (plural متغيرات البيئة) | متغير بيئي |
+| field / key / value | حقل / مفتاح / قيمة | |
+| schema | مخطط | schema (in prose)، سكيما |
+| control plane / data plane | مستوى التحكم / مستوى البيانات | control plane، data plane |
+| agent, AI agent | وكيل (plural وكلاء)، وكيل ذكاء اصطناعي ("AI Agents" = وكلاء الذكاء الاصطناعي) | عميل (that is a client), agent |
+| tool (an MCP tool) | أداة (plural أدوات; "أداة MCP") | tool |
+| prompt (text sent to a model) | موجه (plural موجهات) | مطالبة (that is a claim), prompt (in prose) |
+| approval prompt (a dialog shown to the user) | طلب موافقة | موجه الموافقة |
+| elicitation (MCP) / elicitation prompt | elicitation (the MCP feature name, kept) / طلب elicitation; "elicitation-capable client" = عميل MCP يدعم elicitation | استنباط، استخلاص |
+| gating / gated (MCP) | التقييد / مقيد; "gated by X" = يخضع لـ X; "gated writes" = عمليات الكتابة التي تتطلب موافقة | gating، بوابة |
+| approval / approve | الموافقة / الموافقة على | الاعتماد (that is credentials) |
+| server mode, safety mode | وضع الخادم، وضع الأمان | |
+| read-only | للقراءة فقط | |
+| write (noun, a mutating call) | عملية كتابة | كتابة alone |
+| mutation / mutating statement | عملية تعديل البيانات / جملة تعديل البيانات | طفرة، mutation |
+| lifecycle operation | عملية دورة الحياة | عملية lifecycle |
+| resource lifecycle | دورة حياة الموارد | |
+| log / audit log | سجل (plural سجلات) / سجل التدقيق | log (in prose) |
+| log record / completion record / row record (OTel output) | إدخال السجل / سجل الإكمال / سجل الصف | |
+| credentials | بيانات الاعتماد | أوراق الاعتماد، شهادات (that is certificates), credentials |
+| authentication / authorization | المصادقة / التخويل | التوثيق، الترخيص (that is licensing) |
+| principal / service principal | كيان الأمان / كيان الخدمة | المدير، الرئيسي |
+| subject / issuer / audience / claim (JWT, certificate identity) | الموضوع / جهة الإصدار / الجمهور / مطالبة | |
+| membership (group, directory) | العضوية | |
+| service account | حساب الخدمة | |
+| token (credential) / API key / access key | رمز مميز (plural رموز مميزة) / مفتاح API / مفتاح الوصول | توكن، API key |
+| secret / secret store | سر (plural أسرار) / مخزن الأسرار | secret (in prose)، كلمة سر (that is a password) |
+| scope (OAuth, and of a variable or a setting) | النطاق | scope |
+| role / permission | دور (plural أدوار) / إذن (plural أذونات) | صلاحية (except "privileges")، role |
+| assume a role (AWS) | تولي دور | افتراض دور |
+| session / session variable | جلسة / متغير الجلسة | session |
+| deployment / to deploy | النشر / نشر | deploy (in prose)، تطوير (that is develop) |
+| infrastructure / infrastructure as code | البنية التحتية / البنية التحتية كتعليمات برمجية (IaC) | البنية الأساسية، البنية التحتية ككود |
+| registry (generic) / provider registry | السجل / سجل الموفرين (the names StackQL Registry and StackQL Provider Registry stay as they are) | المستودع (that is a repository) |
+| pull (a provider) | سحب ("سحب موفر"; "pulled" = تم سحبه) | pull (in prose)، جلب |
+| download / upload | تنزيل / تحميل | تحميل for download (in documentation تحميل is upload) |
+| repository | مستودع | repo (in prose)، مخزن |
+| release / version / revision | إصدار (all of release, version; "to release" = أصدر) / مراجعة | نسخة (for a version) |
+| command line | سطر الأوامر | |
+| shell / interactive shell | واجهة الأوامر / واجهة الأوامر التفاعلية | الصدفة، الغلاف، شل |
+| server / client | خادم (plural خوادم) / عميل (plural عملاء; "خادم MCP"، "عميل MCP") | سيرفر، زبون |
+| transport (MCP) | وسيلة النقل ("وسيلة النقل stdio") | transport |
+| stateless / stateful | عديم الحالة / ذو حالة | |
+| endpoint | نقطة نهاية (plural نقاط نهاية) | endpoint |
+| request / response | طلب / استجابة | رد |
+| request body | نص الطلب | جسم الطلب |
+| payload | الحمولة | |
+| header (HTTP) | رأس (plural رؤوس; "رأس HTTP") | عنوان (that is a heading or a title), ترويسة |
+| pagination | التقسيم إلى صفحات | ترقيم الصفحات |
+| output / output format / output mode | الإخراج / تنسيق الإخراج / وضع الإخراج | المخرجات، output |
+| input | الإدخال | المدخلات |
+| template / templating | قالب (plural قوالب) / استخدام القوالب | نموذج (that is an AI model), template |
+| model (AI) | نموذج (plural نماذج) | موديل |
+| dry run | تشغيل تجريبي | |
+| guardrail | ضابط حماية (plural ضوابط الحماية) | حاجز حماية |
+| answer engine | محرك إجابات | |
+| region / project / subscription / tenant | منطقة / مشروع / اشتراك / مستأجر | إقليم |
+| account | حساب | |
+| open source | مفتوح المصدر | |
+| binary / library | ملف ثنائي / مكتبة | binary (in prose) |
+| embedded (Embedded MCP) / to embed | مضمن ("MCP المضمن"، "خوادم MCP المضمنة") / تضمين | مدمج (that is built-in) |
+| built-in | مدمج ("الدوال المدمجة") | مضمن (that is embedded), built-in |
+| installation / to install / installed | التثبيت / تثبيت / مثبت | تنصيب |
+| settings / configuration | الإعدادات / التكوين ("ملف التكوين") | الضبط، config (in prose) |
+| documentation | الوثائق | التوثيق، المستندات |
+| tutorial | برنامج تعليمي (plural البرامج التعليمية) | درس |
+| quick start | البدء السريع | |
+| getting started | بدء الاستخدام | |
+| announcement | إعلان | |
+| feature | ميزة (plural ميزات) | خاصية |
+| example | مثال (plural أمثلة) | |
+| syntax / usage | بناء الجملة / الاستخدام | الصيغة |
+| note / tip / warning (admonition titles are translated by the theme) | ملاحظة / تلميح / تحذير | |
+| resource hierarchy | التسلسل الهرمي للموارد | |
+| access management | إدارة الوصول | |
+| provider session | جلسة الموفر | |
+| SQL backend | واجهة SQL الخلفية | backend (in prose) |
+| query engine / parser | محرك الاستعلامات / المحلل | parser (in prose) |
+| wire protocol | بروتوكول الاتصال ("بروتوكول الاتصال الخاص بـ PostgreSQL") | بروتوكول السلك |
+| proxy / reverse proxy | خادم وكيل / وكيل عكسي (never a bare وكيل for a proxy: وكيل is an agent) | بروكسي |
+| cache / local cache | ذاكرة التخزين المؤقت / ذاكرة التخزين المؤقت المحلية | كاش |
+| key-value pair | زوج مفتاح وقيمة (plural أزواج المفاتيح والقيم) | |
+| delimiter / separator | فاصل (both) | محدد |
+| bucket (object storage) / bucket (NTILE) | حاوية ("حاوية S3"، "حاوية Cloud Storage") / مجموعة | دلو، bucket |
+| container | حاوية ("حاوية Docker") | |
+| throw an error / return an error | يطرح خطأ / يعيد خطأ | يرمي خطأ |
+| return (a value) / return value | يعيد (the verb, agreeing with its subject: "تعيد الدالة"، "يعيد الأمر") / القيمة المرجعة | يرجع، القيمة المعادة |
+| well-formed / valid (JSON) | جيد التكوين / صالح | |
+| file / state file | ملف / ملف الحالة | |
+| directory (of principals, filesystem) / folder | دليل / مجلد | |
+| computer, machine | كمبيوتر ("جهاز الكمبيوتر")، جهاز | حاسوب، حاسب |
+| screen / user / team | شاشة / مستخدم / فريق | |
+| app, application | تطبيق | |
+| drift / infrastructure drift | الانحراف / انحراف البنية التحتية | drift |
+| cloud inventory, inventory | جرد الموارد السحابية، جرد ("جرد الموارد") | inventory، مخزون |
+| compliance | الامتثال | |
+| provision (resources) | توفير ("توفير الموارد") | تجهيز |
+| operator (the person running StackQL) | المشغل | عامل (that is a SQL operator) |
+| caller | الجهة المستدعية | المتصل |
+| filter (noun and verb) | مرشح / تصفية | فلتر |
+| concatenation | الدمج ("عامل الدمج"، "دمج السلاسل النصية") | التسلسل، السلسلة |
+| parse / plan (a statement) | تحليل / تخطيط | parse (in prose) |
+| contract (I/O contract, safety contract) | عقد ("عقد الإدخال والإخراج"، "عقد الأمان") | contract |
+| source of truth | المصدر الموثوق | مصدر الحقيقة |
+| entitlement | الاستحقاق | |
+| snapshot / checksum / digest / hash | لقطة / المجموع الاختباري / الملخص / تجزئة ("دوال التجزئة") | هاش |
+| estate / fingerprint | البيئة ("البيئة السحابية") / البصمة | العقارات، الممتلكات |
+| allowlist | قائمة السماح | القائمة البيضاء، whitelist |
+| opt in / explicit opt-in | تفعيل اختياري / تفعيل صريح | |
+| enable / disable | تمكين / تعطيل | تفعيل (except "opt in")، إيقاف |
+| support (a feature, a format) / supported | دعم / مدعوم | |
+| hint (in an MCP error or tool annotation) / query hint | تلميح / تلميح الاستعلام | hint |
+| advertise (a capability) | الإعلان عن | |
+| artifact (build or release output) | ملف ناتج (plural الملفات الناتجة; "release artifacts" = ملفات الإصدار) | أداة، artifact |
+| stack (of resources) | مكدس | stack (in prose) |
+| pipeline | خط أنابيب ("خط أنابيب CI/CD") | مسار (that is a path), pipeline |
+| notarized / signed | موثق / موقع رقميًا | |
+| common table expression (CTE) | تعبير جدول شائع (CTE) | |
+| default / by default | الافتراضي / افتراضيًا | default |
+| array (JSON, data type) | مصفوفة | صفيف، array (in prose) |
+| policy (IAM, access policy) / IAM binding | سياسة (plural سياسات) / ربط IAM (plural روابط IAM) | نهج، policy |
+| bind, binding (alias, secret store) | ربط | |
+| assign, assignment (`SET`) | تعيين | إسناد |
+| token (lexical) | وحدة معجمية | رمز مميز (that is a credential) |
+| pin (a version, a key, an issuer) | قفل ("قفل الإصدار"; the heading "Pinning the revision" is "قفل المراجعة") | تثبيت (that is install), pin |
+| exporter / receiver / collector (OTel) / sink (audit) | exporter / receiver / collector (OTel component kinds, kept) / الوجهة | مصدّر، مستقبل |
+| tenancy (the alias label) | tenancy | |
+| preview (a feature in preview) | معاينة ("في مرحلة المعاينة") | preview |
+| legacy | قديم | موروث، legacy |
+| batch / statement batch | دفعة / دفعة جمل | batch (in prose) |
+| wildcard | حرف بدل | |
+| substring / pattern (regex) / regular expression | سلسلة فرعية / نمط / تعبير نمطي (plural التعبيرات النمطية) | تعبير عادي، regex (in prose, except in names) |
+| collating function / collating sequence | دالة الترتيب / تسلسل الترتيب | |
+| timestamp | الطابع الزمني | الختم الزمني |
+| current row / rank / running total (window functions) | الصف الحالي / الترتيب / المجموع التراكمي | |
+| installer | برنامج التثبيت | المثبت |
+| workspace | مساحة العمل | |
+| monitoring / to monitor / monitor (noun) | المراقبة / مراقبة / أداة مراقبة | الرصد |
+| run / execute | تشغيل / تنفيذ | |
+| list (verb) / delete / remove / manage | سرد / حذف / إزالة / إدارة | عرض قائمة |
+| framework | إطار عمل | فريموورك |
+| capability (of an MCP client or server) | قدرة (plural قدرات) | إمكانية |
+| Query Library entry | إدخال ("معرف إدخال Query Library") | مقالة |
+| job (CI, scheduled) / task (generic) | مهمة (plural مهام; "مهمة CI مجدولة") / مهمة | وظيفة |
+| trace / span / trace id | تتبع / span / معرف التتبع | أثر |
+| SQL engine / backing (SQL engine, server) | محرك SQL / الأساسي ("محرك SQL الأساسي") | |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | مستقل / مبني مسبقًا / أداة التشغيل | |
+| to vendor (a binary, a dependency) / vendored | تضمين نسخة محلية / مضمن كنسخة محلية | vendoring (in prose) |
+| Cargo features (`sidecar`, `vendored`) | ميزات Cargo | feature flag |
+| predicate pushdown | دفع الشروط إلى المصدر (predicate pushdown) | |
+| verbose mode | الوضع المفصل | |
+| floating point / Unix timestamp / Julian day | الفاصلة العائمة / الطابع الزمني لـ Unix / اليوم اليولياني | النقطة العائمة |
+| update (noun and verb) | تحديث | |
+| database / software / network / password | قاعدة بيانات / برنامج، برمجيات / شبكة / كلمة المرور | داتابيز |
+| link (noun) / page / website | رابط / صفحة / موقع ويب | لينك |
+| custom | مخصص | |
+| interface / object / instance | واجهة / كائن / مثيل ("مثيل EC2") | نسخة (for an instance) |
+| script / browser / plugin | برنامج نصي / متصفح / مكون إضافي | سكريبت، بلجن |
+| build (noun) / to build | البناء / بناء | |
+| path (file, JSON, module, root) | مسار ("مسار الملف"، "مسار JSON"، "تعبير مسار JSON"، "المسار الجذر"); the `PATH` variable and argument names such as `path` stay as code | path (in prose) |
+| nested | متداخل | |
+| real-time | في الوقت الفعلي | الزمن الحقيقي |
+| executable (noun) | ملف تنفيذي ("الملف التنفيذي `stackql`") | |
+| agentic | قائم على الوكلاء ("سير عمل قائم على الوكلاء") | وكيلي |
+| restart / reset | إعادة التشغيل / إعادة التعيين | |
+| encoding / encoded | الترميز / مرمز ("مرمز بتنسيق URL") | التشفير (that is encryption) |
+| encryption / encrypted | التشفير / مشفر | |
+| privileges / least privilege | الامتيازات / الحد الأدنى من الامتيازات | |
+| dependency / relation | تبعية (plural تبعيات) / علاقة | اعتمادية |
+| resolve (a variable, an alias, credentials) | حل; "resolves to" = يُحل إلى | تحليل (that is parse) |
+| refresh (a materialized view) | تحديث | |
+| blocking / non-blocking (invocation) | حاجب / غير حاجب | |
+| listing (directory, registry, marketplace) | إدراج | قائمة (that is a list) |
+| event / alert / notification | حدث / تنبيه / إعلام | إشعار |
+| engineer, data engineer | مهندس، مهندس بيانات | |
+| hosted / self-host | مستضاف / استضافة ذاتية | |
+| escape (a character, a string) | إلغاء; "escape sequence" = تسلسل الإلغاء; "escape character" = حرف الإلغاء | هروب |
+| datetime value / modifier (date functions) | قيمة datetime / معدّل (plural معدّلات) | مغير |
+| regex: character class / quantifier / capture group / backreference / occurrence / to match | فئة الأحرف / محدد الكمية / مجموعة الالتقاط / مرجع خلفي / تكرار / مطابقة | |
+| Unicode code point / character code | نقطة رمز Unicode / رمز الحرف | |
+| sine, cosine, tangent / inverse sine, inverse cosine, inverse tangent / hyperbolic | الجيب، جيب التمام، الظل / الجيب العكسي، جيب التمام العكسي، الظل العكسي / الزائدي ("جيب التمام الزائدي للعدد 1" in example headings) | قوس الجيب، ظل الزاوية |
+| logarithm / natural logarithm | اللوغاريتم / اللوغاريتم الطبيعي | لوغارتم |
+| validate, validation (a query, parameters, a document, configuration) / verify (a signature, a binary, a checksum) | التحقق من صحة / التحقق من | |
+| implement, implemented as / implementation (of a function, a language) | تنفيذ، تُنفذ باستخدام / التنفيذ ("تُنفذ الدالة `json_each` باستخدام الدالة `json_array_elements_text`") | تطبيق (that is an application) |
+| evaluate (an expression, a predicate, a policy) | تقييم | |
+| unset (a variable, a field) | إلغاء التعيين | |
+| deprecated | مهمل | متقادم |
+| mutual TLS | TLS المتبادل (mTLS) | |
+| grant (access, a permission) | منح ("منح حق الوصول") | |
+| identity (caller, resource, OS) | الهوية | |
+| metadata | بيانات التعريف | بيانات وصفية، metadata (in prose) |
+| rotate (a key, a secret, credentials) | تدوير | |
+| source / re-source (an env file, variables) | تحميل / إعادة تحميل; the heading "Credential (re)sourcing" is "(إعادة) تحميل بيانات الاعتماد" | |
+| process (OS) / subprocess / spawn | عملية / عملية فرعية / تشغيل | |
+| production / development (environment) | بيئة الإنتاج / بيئة التطوير | |
+| render (a template, rendered SQL) / render (display text) | إنشاء SQL من القالب، SQL الناتج / عرض | تصيير |
+| call (noun: tool call, API call), invocation / function call | استدعاء ("استدعاء أداة"، "استدعاء حاجب (متزامن)") / استدعاء دالة | مكالمة |
+| synchronous / asynchronous | متزامن / غير متزامن | |
+| comment (SQL) / commented-out statement | تعليق / جملة داخل كتلة تعليق | ملاحظة (that is an admonition note) |
+| sessionless | بدون جلسة ("وضع بدون جلسات") | |
+| SQL dialect | لهجة SQL | |
+| archive (ZIP, tarball) | ملف مضغوط | أرشيف |
+| walkthrough | شرح تفصيلي | |
+| canonical | المعياري | القانوني |
+| namespace | مساحة الاسم | |
+| host (a network host, an MCP host application) / host (a machine) | مضيف / جهاز | خادم (that is a server) |
+| terminal | الوحدة الطرفية | التيرمنال |
+| cast (to a type) | تحويل النوع ("التحويل إلى `INTEGER`") | |
+| lowercase / uppercase / case-insensitive / case-sensitive | أحرف صغيرة / أحرف كبيرة / غير حساس لحالة الأحرف / حساس لحالة الأحرف | |
+| non-NULL | غير `NULL` | |
+| table-valued function / qualified name | دالة ذات قيمة جدولية / الاسم المؤهل | |
+| floating-point number / radians / degrees | عدد بفاصلة عائمة / راديان ("بالراديان") / درجات | |
+| natural language | اللغة الطبيعية | |
+| contributor / contribution | مساهم / مساهمة | |
+| available (methods, entries, on a platform) | متاح | |
+| side effect / breaking change / entry point | أثر جانبي / تغيير جذري / نقطة الدخول | |
+| clone / commit / merge (git) | استنساخ / إيداع / دمج | تثبيت (for commit) |
+| pull request / fork / issue (GitHub) | طلب سحب / نسخة متفرعة / مشكلة (issue) | |
+| image (container, Docker) | صورة ("صورة Docker"، "صورة الحاوية") | |
+| dropdown | قائمة منسدلة | |
+| production keys, production account | مفاتيح الإنتاج، حساب الإنتاج | |
+| webhook / workflow / runtime / wrapper / placeholder / fallback / handshake / listener / toolchain | خطاف ويب / سير العمل / وقت التشغيل / غلاف / عنصر نائب / بديل احتياطي / المصافحة / المستمع / سلسلة الأدوات | the English words in prose |
+| tag (label) | وسم (plural وسوم) | علامة (that is a CLI flag) |
+| skill (a Claude skill) | مهارة | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | سجل موفري StackQL |
+| compile / compiled (application, identifiers) | تجميع / مجمع ("التطبيقات المجمعة"، "تطبيق Go مجمع") | مترجم (that reads as "translated") |
+| scalar (a value or a field that is not an object) | قيمة مفردة، حقل مفرد | قيمة عددية (that is a number; a scalar function is still دالة عددية) |
+| attribute (OTel, template, resource) | سمة (plural سمات; "سمات الموارد") | خاصية (that is a property) |
+| property (of a resource or an object) | خاصية (plural خصائص) | |
+| SDK | SDK (with حزمة SDK where Arabic needs a class noun; "حزمة SDK للموفرين") | مجموعة تطوير البرامج alone |
+| document (provider document, service document, JSON document) | مستند (plural مستندات) | المستندات for documentation |
+| diagram | رسم تخطيطي | مخطط (that is a schema) |
+| mapping (YAML mapping, verb mapping, parameter mapping) | تعيين | |
+| virtual machine / resource group (Azure) / label (Google Cloud) / organization (GCP, GitHub) | جهاز ظاهري (plural الأجهزة الظاهرية) / مجموعة موارد / تصنيف / مؤسسة | جهاز افتراضي, وسم (that is a tag) for a label |
+| package / platform / tab (UI) / extension (OpenAPI `x-`, an app extension) | حزمة / منصة / علامة تبويب / ملحق | |
+| action (GitHub action, IAM or policy action) | إجراء | |
+| code, source code | التعليمات البرمجية، التعليمات البرمجية المصدر | الكود |
+| console / initialization file / timeout / sandbox | وحدة التحكم / ملف التهيئة / مهلة / بيئة معزولة | |
+| staging (rows in the SQL backend) / telemetry / ingestion / push (records to an endpoint) | التخزين المرحلي / بيانات القياس عن بعد / الاستيعاب / دفع | |
+| projection / unnest / recursive (CTE, query) | الإسقاط / فك التداخل / عودي | |
+| time zone / observability / severity / correlation key, correlation ID | المنطقة الزمنية / قابلية الملاحظة / مستوى الخطورة / مفتاح الارتباط، معرف الارتباط | |
+| preprocessor / concurrently | المعالج المسبق / بالتوازي | متزامن for concurrently (that is synchronous) |
+| fetch (a spec, results) | استرداد، الحصول على | جلب |
+| LLM / connector (Claude) / catalog / deep link | نموذج اللغة الكبير (LLM) / موصل / كتالوج / رابط عميق | |
+| dense rank / percentile rank / tile (`NTILE`) | الترتيب الكثيف / الترتيب المئيني / شريحة | |
+| leading / trailing (spaces) / one-based | البادئة / اللاحقة / بترقيم يبدأ من 1 | |
+| Kept in English | sidecar, crate, dotenv, bundle (the `.mcpb`; the format name MCP Bundle too), stdio, SaaS, bearer (in "bearer token" = رمز مميز من نوع bearer), span, exporter, receiver, collector, elicitation, tenancy, fan-out (in names; in prose التوزيع المتوازي); product, vendor and file-format names (JSON, YAML, CSV); third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Arabic |
+|---|---|
+| Install | التثبيت |
+| Installing StackQL | تثبيت StackQL |
+| Getting Started | بدء الاستخدام |
+| Command Line Usage | استخدام سطر الأوامر |
+| Language Specification | مواصفات اللغة |
+| Built-in Functions | الدوال المدمجة |
+| Functions | الدوال |
+| Developers | المطورون |
+| Providers | الموفرون |
+| Quick Starts | البدء السريع |
+| AI Agents | وكلاء الذكاء الاصطناعي |
+| MCP Server / MCP Tools / Embedded MCP | خادم MCP / أدوات MCP / MCP المضمن |
+| Embedded (sidebar category) | مضمن |
+| Blog | المدونة |
+| Product Announcements | إعلانات المنتج |
+| Provider Announcements | إعلانات الموفرين |
+| Tutorials | البرامج التعليمية |
+| Documentation | الوثائق |
+| Contact us | اتصل بنا |
+| Privacy Policy | سياسة الخصوصية |
+| Terms of Service | شروط الخدمة |
+| Support | الدعم |
+| AI Reference | مرجع الذكاء الاصطناعي |
+| More | المزيد |
+| Welcome to StackQL | مرحبًا بك في StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Arabic |
+|---|---|
+| Syntax | بناء الجملة |
+| Arguments | الوسيطات |
+| Return Value(s) (also Return Value, Return Values) | القيمة المرجعة (one form for all three) |
+| Example / Examples | مثال / أمثلة (follow the number of the source) |
+| Inputs / Output | الإدخالات / الإخراج |
+| Flags | العلامات |
+| Overview | نظرة عامة |
+| How it works | آلية العمل |
+| Modes | الأوضاع |
+| Gating | التقييد |
+| Install | التثبيت |
+| Quick start | البدء السريع |
+| Demo app | تطبيق توضيحي |
+| Repo link | رابط المستودع |
+| Vendoring / embedding | تضمين نسخة محلية / التضمين |
+| Prerequisites | المتطلبات الأساسية |
+| Next steps | الخطوات التالية |
+| Related | محتوى ذو صلة |
+| See also: | راجع أيضًا: |
+| See X. | راجع X. |
+| For more information, see X. | لمزيد من المعلومات، راجع X. |
+| Optional. / Defaults to X. | اختياري. / القيمة الافتراضية: X. |
+| Returns X. (the sentence that opens a function or tool page) | تعيد X. (feminine for a دالة or أداة, يعيد for a أمر) |
+| Return the absolute value of a number (an example heading that names a task) | إرجاع القيمة المطلقة لعدد (a verbal noun) |
+| X function in StackQL: ... (description pattern) | الدالة X في StackQL: ... |
+| X window function in StackQL: ... (description pattern) | دالة النافذة X في StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X في StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... باستخدام SQL في StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | متاح في StackQL من الإصدار `vX` فصاعدًا |
+| Available in StackQL releases after `vX` | متاح في إصدارات StackQL بعد `vX` |
+| None. (no arguments, no inputs) | لا يوجد. |
+| Query / Results (tab labels), Output: | الاستعلام / النتائج، الإخراج: |
+| Tested with (badge line on quick starts) | تم الاختبار باستخدام |
+| Best Practices / Troubleshooting / Further reading | أفضل الممارسات / استكشاف الأخطاء وإصلاحها / قراءات إضافية |
+| MCP tool listing X / MCP tool that does X (description pattern) | أداة MCP تسرد X / أداة MCP تقوم بـ X (or a verb that names the action: "أداة MCP تنفذ ...") |
+| MCP overview (link text) | نظرة عامة على MCP |
+| Argument / Required / Description (table headers) | الوسيطة / مطلوب / الوصف |
+| Renderer / Shape (table headers) | أداة العرض / الشكل |
+| Table / One row per X (table cells) | جدول / صف واحد لكل X |
+| Yes / No (table cells) | نعم / لا |
+| For example | على سبيل المثال |
+| Aggregate function / Scalar function | دالة تجميعية / دالة عددية |
+| When to use, Use case / Example usage | متى تستخدم، حالة الاستخدام / مثال على الاستخدام |
+| Conclusion / Get started (homepage heading) | الخلاصة / ابدأ الآن |
+| Returns : (a `<summary>` or bold label) | القيمة المرجعة: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | جرّب هذا الموجه مع أي عميل MCP يدعم elicitation ومسجل فيه خادم StackQL MCP: |
+| Here's an example in Claude Desktop: | إليك مثالًا في Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | سماح / رفض / يتطلب موافقة; مسموح / مرفوض / (افتراضي) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | يخضع لوضع الخادم. / مسموح في جميع أوضاع الخادم. للقراءة فقط. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | واجهة SQL الخلفية المضمنة / واجهة SQL الخلفية postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | التسلسل الهرمي لموارد StackQL / جلسات الموفر / استخدام القوالب / مرجع دوال النافذة / X في مواصفات اللغة |
+| keyword `cloud inventory` | جرد الموارد السحابية |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Arabic letters only from the Arabic block as Arabic uses them: ك (U+0643), ي (U+064A) and ى (U+0649), ه and ة as standard orthography requires. Never the Persian or Urdu forms ک (U+06A9), ی (U+06CC), ە or ۀ, which some keyboards produce and which break search. Hamza spelled by the standard rules (إ، أ، ؤ، ئ، ء; "إعداد"، "أداة"، "مسؤول"، "بيئة").
+- Digits are Western (0 to 9) everywhere, as in the Arabic documentation of Microsoft, Google and AWS: in prose, tables, version numbers and counts. Never Arabic-Indic digits (U+0660 to U+0669) or Extended Arabic-Indic digits (U+06F0 to U+06F9), never the Arabic percent sign ٪ or the Arabic decimal separator ٫.
+- Diacritics: none, with two exceptions. A shadda where a word would otherwise read as a different common word, mainly the imperative of form II verbs (شغّل، ثبّت، حدّد، فعّل، جرّب، غيّر) and معدّل; and tanwin fath on every word that ends in the alif of the indefinite accusative, written on the letter before the alif: adverbs (أيضًا، افتراضيًا، حاليًا، تلقائيًا، مثلًا، فصاعدًا، رقميًا، مسبقًا، دائمًا، أولًا) and nouns and adjectives alike ("تعيد عددًا صحيحًا"، "11 صفًا"، "إليك مثالًا"، "اسمًا مستعارًا"). A damma only on the first letter of a passive verb whose active reading would mislead (يُحل إلى، تُنفذ باستخدام). No fatha, kasra or sukun, and no tanwin elsewhere.
+- Punctuation: the Arabic comma ، (U+060C), the Arabic semicolon ؛ (U+061B) and the Arabic question mark ؟ (U+061F) in Arabic prose; the full stop `.`, the colon `:`, the exclamation mark `!`, parentheses and `%` are the ASCII ones. No space before a punctuation mark, one space after. Inside inline code, code fences, front matter keys and quoted English output the punctuation is the source's.
+- Quotation marks are straight double quotes ("..."). No guillemets (« »), no typographic quotes, no typographic apostrophe, so the text stays greppable.
+- No dash punctuation other than the keyboard hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, write ` - `, or use a colon, the Arabic comma or parentheses. Never an em dash, an en dash or a double hyphen in prose.
+- No invisible characters: no bidirectional control marks (U+200E LRM, U+200F RLM, U+061C ALM, U+202A to U+202E, U+2066 to U+2069), no zero-width joiner or non-joiner (U+200C, U+200D), no non-breaking space. The page is rendered right to left by the theme; text is typed in logical order and never reordered or marked to make it look right in an editor.
+- No tatweel (ـ U+0640), except after a one-letter prefix written before a Latin word, inline code, a number or a link: "بـ `SELECT`"، "لـ AWS"، "كـ JSON" (tatweel, then one space). The conjunction و attaches directly to the next word, Latin or Arabic, and to inline code ("AWS وAzure وGoogle Cloud"، "و`DELETE`"). The definite article ال never attaches to a Latin word or inline code: use the class noun with the article ("الأمر `exec`"، "خادم MCP"، "موفر `aws`"), not "ال`exec`" or "الـ MCP".
+- Word order is head first: the noun comes before what modifies it ("مفتاح API"، "متغير البيئة"، "موفر StackQL"، "خادم StackQL MCP"، "دالة النافذة `RANK`"). An inline code span that names a thing takes its class noun before it ("الأمر `stackql exec`"، "العلامة `--output`"، "المعلمة `region`"، "الدالة `json_extract`"، "جملة `SELECT`"، "الملف `stackql.yml`").
+- Agreement: دالة، أداة، جملة and قيمة are feminine ("تعيد الدالة"، "الأداة متاحة"); أمر، استعلام، موفر، مورد and حقل are masculine ("يعيد الأمر"). Plurals of things take feminine singular agreement ("الموارد المتاحة"، "الأدوات التي تعيد"). Providers are the exception: this glossary treats موفر as a sound masculine plural, as Microsoft does for resource providers ("الموفرون المتاحون"، "يدعم الموفرون"، "قائمة الموفرين"), never "الموفرات". Counted nouns follow the usual rules with Western digits ("صف واحد"، "صفان"، "3 صفوف"، "11 صفًا"، "100 صف").
+- A statement page opens with a feminine verb, the implied subject being جملة ("تنشئ"، "تحذف"، "تصف"), as a function page does for دالة ("تعيد").
+- "we" as StackQL the project or company is first person plural ("نوصي بـ"، "ننشر"); "we" in a walkthrough that includes the reader is also first person plural ("سننشئ طريقة عرض").
+- Prefer the active voice with a clear subject. Use "يتم" + verbal noun sparingly (not in every sentence); a passive verb ("تعاد القيمة"، "يُحل المتغير", with the damma only where the active reading would mislead) is fine where the agent is unknown.
+- Lists of three or more items in prose join every item after the first with و ("الصفوف والأعمدة والجداول"); with long items write the Arabic comma before each و ("..."، و"...").
+- Headings: no end punctuation; keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is. Latin names keep their own case.
+- English loanwords and English terms from the "Kept in English" row are written plain, never in italics and never in quotes: added italics change the page structure that `yarn i18n:verify` and the node-count check compare.
+- Names of languages and countries as Arabic writes them ("الإنجليزية"، "العربية"); months, when they occur, as يناير، فبراير، مارس. Product, provider and vendor names keep their own spelling in Latin script.
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence. Tables keep the source's column order (the browser shows the first column on the right).
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- The `description` front matter stays one sentence and under about 170 characters.
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> جرد الموارد السحابية); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "الدالة X في StackQL: ..." always needs the double quotes the source already has.
+- Strings in JSX and in exported data arrays keep the quote style of the source; a translated string that gains a double quote goes in single quotes, and the other way around. Arabic has no apostrophes in ordinary words, so single-quoted strings are safe.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Arabic letters count as letters for the CommonMark rules, and a prefix letter (و، ب، ل، ك، ف) is a letter: an opening `**` or `*` must not have a letter directly before it when the character after it is punctuation or a backtick, and a closing `**` or `*` must not have a letter directly after it when the character before it is punctuation or a backtick (neither would be emphasis); `__` and `_` must never touch a letter on the outside. Leave a space, or move the prefix inside the markers ("و**مهم**" works because a letter follows the opening marker; "و**`SELECT`**" does not, write "و `SELECT`" or rephrase).
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` دوال النافذة `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("اعرض"، "أنشئ"، "اسرد").
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Arabic is about as long as English in characters, so a `length ratio` warning from `yarn i18n:verify` is worth a look for an omission, except on short pages whose code fences carry padded result tables.

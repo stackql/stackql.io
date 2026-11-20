@@ -2,7 +2,9 @@
 // in Australia, New Zealand, South Africa or the United Kingdom sees that
 // country's flag next to "EN" instead of the US one, and a visitor in a
 // Spanish-speaking country of the Americas (or in Equatorial Guinea) sees
-// that country's flag next to "ES" instead of Spain's. Cosmetic only: the
+// that country's flag next to "ES" instead of Spain's, and a visitor in an
+// Arab League country other than Saudi Arabia sees that country's flag next
+// to "AR". Cosmetic only: the
 // locale, its URL and its content are the same for everyone.
 //
 // How it works. The site is static, so every page is served with the default
@@ -52,6 +54,14 @@
 // Mexico and Argentina have no common prefix, so every zone is listed;
 // Chrome reports five Argentine zones under their pre-1993 names
 // (America/Buenos_Aires), Firefox under America/Argentina/.
+//
+// Arabic (ar) has Saudi Arabia as the default and a variant for each other
+// member of the Arab League. ar-SA is what Windows and most browsers report
+// when plain "Arabic" is chosen, so like es-ES it names no country here:
+// an ar-SA browser in Cairo gets the Egyptian flag. ar-EG, ar-MA and the
+// other regions decide wherever the machine is. Each country has one zone
+// (two for Palestine); browsers report the per-country CLDR names
+// (Asia/Kuwait, not the IANA link target Asia/Riyadh).
 const REGIONAL_FLAGS = {
   en: {
     regions: { AU: 'au', NZ: 'nz', ZA: 'za' },
@@ -111,6 +121,37 @@ const REGIONAL_FLAGS = {
       ['America/Montevideo', 'uy'],
       ['America/Puerto_Rico', 'pr'],
       ['Africa/Malabo', 'gq'],
+    ],
+  },
+  ar: {
+    regions: {
+      AE: 'ae', BH: 'bh', DZ: 'dz', DJ: 'dj', EG: 'eg', IQ: 'iq', JO: 'jo',
+      KM: 'km', KW: 'kw', LB: 'lb', LY: 'ly', MA: 'ma', MR: 'mr', OM: 'om',
+      PS: 'ps', QA: 'qa', SO: 'so', SD: 'sd', SY: 'sy', TN: 'tn', YE: 'ye',
+    },
+    timeZones: [
+      ['Asia/Dubai', 'ae'],
+      ['Asia/Bahrain', 'bh'],
+      ['Africa/Algiers', 'dz'],
+      ['Africa/Djibouti', 'dj'],
+      ['Africa/Cairo', 'eg'],
+      ['Asia/Baghdad', 'iq'],
+      ['Asia/Amman', 'jo'],
+      ['Indian/Comoro', 'km'],
+      ['Asia/Kuwait', 'kw'],
+      ['Asia/Beirut', 'lb'],
+      ['Africa/Tripoli', 'ly'],
+      ['Africa/Casablanca', 'ma'],
+      ['Africa/Nouakchott', 'mr'],
+      ['Asia/Muscat', 'om'],
+      ['Asia/Gaza', 'ps'],
+      ['Asia/Hebron', 'ps'],
+      ['Asia/Qatar', 'qa'],
+      ['Africa/Mogadishu', 'so'],
+      ['Africa/Khartoum', 'sd'],
+      ['Asia/Damascus', 'sy'],
+      ['Africa/Tunis', 'tn'],
+      ['Asia/Aden', 'ye'],
     ],
   },
 };

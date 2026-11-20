@@ -333,7 +333,7 @@ TLS（`tls_cert_file` / `tls_key_file`）对传输进行加密，但不对客户
 
 #### 默认模式的行为变化 {#default-mode-behaviour-change}
 
-之前的发布版本仅通过单个 `read_only: true/false` 标志来实施安全控制，其默认值为“不强制”。当前的默认值（`mode: safe`）使变更开箱即需要用户审批。使用支持征询的客户端（Claude Desktop、Cursor、Continue 等）的运维人员，每次变更都会看到一次审批请求。运行自动化流程或随附的 `stackql_mcp_client`（它不通告征询能力）的运维人员，必须显式选择启用 `mode: full_access` 才能运行变更和生命周期操作。
+之前的发布版本仅通过单个 `read_only: true/false` 标志来实施安全控制，其默认值为“不强制”。当前的默认值（`mode: safe`）使变更开箱即需要用户审批。使用支持征询的客户端（Claude Desktop、Cursor、Continue 等）的运维人员，每次变更都会看到一次审批请求。运行自动化流程或随附的 `stackql_mcp_client`（它不通告征询能力）的运维人员，必须显式选择启用限制较少的模式：`mode: delete_safe` 可运行 `INSERT`、`UPDATE` 和 `REPLACE`，`mode: full_access` 还可运行 `DELETE` 和生命周期操作。
 
 为保持向后兼容，旧版的 `read_only: true` JSON / YAML 键仍被接受，并被视为等同于 `mode: read_only`。
 

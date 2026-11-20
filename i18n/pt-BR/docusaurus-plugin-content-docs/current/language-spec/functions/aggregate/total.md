@@ -54,11 +54,11 @@ AND zone = 'australia-southeast1-a';
 ### Retornar a soma de uma expressão de coluna agrupada por outra expressão de coluna {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, total(json_array_length(disks)) as total_disks
+SELECT status, total(json_array_length(disks)) as total_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 Para obter mais informações, consulte [https://www.sqlite.org/lang_aggfunc.html#sumunc](https://www.sqlite.org/lang_aggfunc.html#sumunc).

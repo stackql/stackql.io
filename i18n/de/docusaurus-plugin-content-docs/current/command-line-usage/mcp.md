@@ -333,7 +333,7 @@ Ab Release `v0.12.742` wird eine Payload mit mehreren Anweisungen in jedem Modus
 
 #### Verhaltensänderung des Standardmodus {#default-mode-behaviour-change}
 
-Frühere Releases setzten Sicherheit nur über ein einzelnes Flag `read_only: true/false` durch, dessen Standard "keine Durchsetzung" war.  Der aktuelle Standard (`mode: safe`) verlangt für Mutationen von Haus aus die Genehmigung des Benutzers.  Betreiber eines Elicitation-fähigen Clients (Claude Desktop, Cursor, Continue usw.) sehen eine Genehmigungsaufforderung pro Mutation.  Betreiber von Automatisierung oder des mitgelieferten `stackql_mcp_client` (der Elicitation nicht bekannt gibt) müssen sich ausdrücklich für `mode: full_access` entscheiden, um Mutationen und Lebenszyklusoperationen auszuführen.
+Frühere Releases setzten Sicherheit nur über ein einzelnes Flag `read_only: true/false` durch, dessen Standard "keine Durchsetzung" war.  Der aktuelle Standard (`mode: safe`) verlangt für Mutationen von Haus aus die Genehmigung des Benutzers.  Betreiber eines Elicitation-fähigen Clients (Claude Desktop, Cursor, Continue usw.) sehen eine Genehmigungsaufforderung pro Mutation.  Betreiber von Automatisierung oder des mitgelieferten `stackql_mcp_client` (der Elicitation nicht bekannt gibt) müssen sich ausdrücklich für einen weniger restriktiven Modus entscheiden: `mode: delete_safe`, um `INSERT`, `UPDATE` und `REPLACE` auszuführen, oder `mode: full_access`, um zusätzlich `DELETE` und Lebenszyklusoperationen auszuführen.
 
 Der veraltete JSON-/YAML-Schlüssel `read_only: true` wird aus Gründen der Abwärtskompatibilität weiterhin akzeptiert und als gleichwertig zu `mode: read_only` behandelt.
 

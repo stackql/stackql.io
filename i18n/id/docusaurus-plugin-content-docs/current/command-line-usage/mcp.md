@@ -333,7 +333,7 @@ Mulai rilis `v0.12.742`, payload yang berisi beberapa pernyataan dikendalikan be
 
 #### Perubahan perilaku mode default {#default-mode-behaviour-change}
 
-Rilis sebelumnya menerapkan keamanan hanya melalui satu flag `read_only: true/false` dengan nilai default "tanpa penegakan".  Default saat ini (`mode: safe`) membuat mutasi memerlukan persetujuan pengguna sejak awal.  Operator yang menjalankan klien yang mendukung elisitasi (Claude Desktop, Cursor, Continue, dll.) akan melihat satu permintaan persetujuan per mutasi.  Operator yang menjalankan otomatisasi, atau `stackql_mcp_client` yang disertakan (yang tidak menyatakan elisitasi), harus secara eksplisit mengaktifkan `mode: full_access` untuk menjalankan mutasi dan operasi siklus hidup.
+Rilis sebelumnya menerapkan keamanan hanya melalui satu flag `read_only: true/false` dengan nilai default "tanpa penegakan".  Default saat ini (`mode: safe`) membuat mutasi memerlukan persetujuan pengguna sejak awal.  Operator yang menjalankan klien yang mendukung elisitasi (Claude Desktop, Cursor, Continue, dll.) akan melihat satu permintaan persetujuan per mutasi.  Operator yang menjalankan otomatisasi, atau `stackql_mcp_client` yang disertakan (yang tidak menyatakan elisitasi), harus secara eksplisit mengaktifkan mode yang kurang ketat: `mode: delete_safe` untuk menjalankan `INSERT`, `UPDATE`, dan `REPLACE`, atau `mode: full_access` untuk juga menjalankan `DELETE` dan operasi siklus hidup.
 
 Kunci JSON / YAML lama `read_only: true` masih diterima demi kompatibilitas mundur dan diperlakukan setara dengan `mode: read_only`.
 

@@ -54,11 +54,11 @@ AND zone = 'australia-southeast1-a';
 ### Trả về tổng của một biểu thức cột được nhóm theo một biểu thức cột khác {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, total(json_array_length(disks)) as total_disks
+SELECT status, total(json_array_length(disks)) as total_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 Để biết thêm thông tin, hãy xem [https://www.sqlite.org/lang_aggfunc.html#sumunc](https://www.sqlite.org/lang_aggfunc.html#sumunc).

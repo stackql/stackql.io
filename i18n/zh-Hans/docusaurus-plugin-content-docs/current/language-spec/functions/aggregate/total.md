@@ -54,11 +54,11 @@ AND zone = 'australia-southeast1-a';
 ### 返回按另一个列表达式分组的列表达式的总和 {#return-the-sum-of-a-column-expression-grouped-by-another-column-expression}
 
 ```sql
-SELECT tags, total(json_array_length(disks)) as total_disks
+SELECT status, total(json_array_length(disks)) as total_disks
 FROM google.compute.instances 
 WHERE project = 'stackql-demo' 
 AND zone = 'australia-southeast1-a'
-GROUP BY json_extract(tags, '$.instanceType');
+GROUP BY status;
 ```
 
 有关更多信息，请参阅 [https://www.sqlite.org/lang_aggfunc.html#sumunc](https://www.sqlite.org/lang_aggfunc.html#sumunc)。

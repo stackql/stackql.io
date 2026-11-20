@@ -7,7 +7,7 @@
 import React from 'react';
 
 // The code shown next to the flag: the language subtag of the locale in
-// upper case (en -> EN, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, vi -> VI, zh-Hans -> ZH), never a country
+// upper case (en -> EN, ar -> AR, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, vi -> VI, zh-Hans -> ZH), never a country
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. If two locales ever share a language (zh-Hans and
@@ -76,6 +76,23 @@ const FLAGS = {
           )),
         )}
       </g>
+    </svg>
+  ),
+  // Saudi Arabia, the default for Arabic (a visitor in another Arab League
+  // country sees that country's flag, src/lib/regionalFlags.js). The Shahada
+  // and the sword are reduced to white strokes that read at 20 by 15 pixels;
+  // the calligraphy itself cannot be drawn at that size.
+  ar: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#006c35" d="M0 0h640v480H0z" />
+      <path
+        fill="#fff"
+        d="M126 250h388v20H126zM144 124h18v126h-18zM188 156h18v94h-18zM232 112h18v138h-18zM274 170h18v80h-18zM318 128h18v122h-18zM360 156h18v94h-18zM404 112h18v138h-18zM446 166h18v84h-18zM488 132h18v118h-18zM116 350l28-16h332v32H144zM476 318h18v64h-18zM494 340h44v20h-44z"
+      />
+      <path fill="none" stroke="#fff" strokeWidth="16" d="M170 272q30 36 60 0M340 272q30 36 60 0" />
+      <circle cx="210" cy="96" r="11" fill="#fff" />
+      <circle cx="340" cy="92" r="11" fill="#fff" />
+      <circle cx="466" cy="100" r="11" fill="#fff" />
     </svg>
   ),
   de: (className) => (

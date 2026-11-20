@@ -333,7 +333,7 @@ From release `v0.12.742`, a payload holding several statements is gated by its m
 
 #### Default-mode behaviour change {#default-mode-behaviour-change}
 
-Prior releases enforced safety only through a single `read_only: true/false` flag whose default was "no enforcement".  The current default (`mode: safe`) makes mutations require user approval out of the box.  Operators running an elicitation-capable client (Claude Desktop, Cursor, Continue, etc) will see one approval prompt per mutation.  Operators running automation, or the bundled `stackql_mcp_client` (which does not advertise elicitation), must explicitly opt into `mode: full_access` to run mutations and lifecycle operations.
+Prior releases enforced safety only through a single `read_only: true/false` flag whose default was "no enforcement".  The current default (`mode: safe`) makes mutations require user approval out of the box.  Operators running an elicitation-capable client (Claude Desktop, Cursor, Continue, etc) will see one approval prompt per mutation.  Operators running automation, or the bundled `stackql_mcp_client` (which does not advertise elicitation), must explicitly opt into a less restrictive mode: `mode: delete_safe` to run `INSERT`, `UPDATE` and `REPLACE`, or `mode: full_access` to also run `DELETE` and lifecycle operations.
 
 The legacy `read_only: true` JSON / YAML key is still accepted for back-compat and is treated as equivalent to `mode: read_only`.
 

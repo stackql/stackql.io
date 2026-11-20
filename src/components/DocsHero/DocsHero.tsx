@@ -24,7 +24,10 @@ export default function DocsHero({ lightSrc, darkSrc, alt = "", title, byline }:
         {/* the page's one H1: docs/index.md sets hide_title, so nothing else renders one */}
         <h1 className={styles.headline}>{title}</h1>
         <br/>
-        <div className={styles.byline}>{byline}</div>
+        {/* <bdi>: the byline stays in English in most locales, and in the
+            right-to-left Arabic page its final full stop would otherwise
+            move to the start of the line */}
+        <div className={styles.byline}><bdi>{byline}</bdi></div>
       </div>
     </section>
   );

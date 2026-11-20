@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "التثبيت",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "وكلاء الذكاء الاصطناعي",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "الموفرون",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "المدونة",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "خادم MCP",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "أدوات MCP",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "MCP المضمن",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "إعلانات المنتج",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "إعلانات الموفرين",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "البرامج التعليمية",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "البدء السريع",
+    "description": "Navbar item with label Quick Starts"
+  }
+}

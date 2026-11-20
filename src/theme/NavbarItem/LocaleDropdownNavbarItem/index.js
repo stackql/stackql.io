@@ -1,7 +1,9 @@
 // Copy of theme-classic's NavbarItem/LocaleDropdownNavbarItem (Docusaurus
-// 3.10) with one addition: every locale is shown with a flag and its
+// 3.10) with two additions: every locale is shown with a flag and its
 // language code (flags.js) next to its name, and the button shows the
-// current locale's flag and code rather than the globe icon. Switching locale links
+// current locale's flag and code rather than the globe icon; and the menu
+// is ordered current locale, English, then the rest by language code
+// (orderLocales below) rather than in config order. Switching locale links
 // to the same page in the other locale, as in theme-classic. Keep the rest
 // in step with theme-classic when Docusaurus is upgraded.
 import React from 'react';
@@ -68,6 +70,21 @@ function useLocaleDropdownUtils() {
   };
 }
 
+// Menu order: the current locale first, then English (when it is not the
+// current locale), then every other locale in alphabetical order of the
+// language code the menu shows (AR, DE, ES, FR, ...). The current locale is
+// known when each locale is built, so the server-rendered menu and the
+// hydrated one are the same.
+const ENGLISH = 'en';
+export function orderLocales(locales, currentLocale) {
+  const first = [currentLocale];
+  if (currentLocale !== ENGLISH && locales.includes(ENGLISH)) first.push(ENGLISH);
+  const rest = locales
+    .filter((locale) => !first.includes(locale))
+    .sort((a, b) => codeFor(a).localeCompare(codeFor(b), 'en') || a.localeCompare(b, 'en'));
+  return [...first, ...rest];
+}
+
 // Flag (or a code badge when there is no flag) and the language code.
 function FlagAndCode({locale}) {
   const code = codeFor(locale);
@@ -91,7 +108,7 @@ export default function LocaleDropdownNavbarItem({
   const {
     i18n: {currentLocale, locales},
   } = useDocusaurusContext();
-  const localeItems = locales.map((locale) => {
+  const localeItems = orderLocales(locales, currentLocale).map((locale) => {
     return {
       label: (
         <>

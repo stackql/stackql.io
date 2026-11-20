@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import NoIndex from '@theme/NoIndex';
-import { useIsLocalizedBuild } from '@site/src/lib/i18n';
+import { FallbackDirection, useIsLocalizedBuild } from '@site/src/lib/i18n';
 import { contactusPageData } from '../data/contact-us';
 
 // /contact-us was a meta-refresh stub to GitHub Discussions, which agents and
@@ -39,7 +39,9 @@ const community = [
 export default function ContactUs() {
   const { address } = contactusPageData.body;
   // The page is English only; in a localized build (/de/contact-us) it is
-  // served as is and kept out of the index like the other untranslated pages.
+  // served as is and kept out of the index like the other untranslated pages,
+  // and in a right-to-left locale (/ar/contact-us) its text is laid out left
+  // to right (FallbackDirection).
   const localizedBuild = useIsLocalizedBuild();
   return (
     <Layout
@@ -49,6 +51,7 @@ export default function ContactUs() {
       <main className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 col--offset-2">
+            <FallbackDirection>
             <h1>Contact us</h1>
             <p>
               StackQL is open source and community supported. For help using
@@ -96,6 +99,7 @@ export default function ContactUs() {
                 {address.line2}
               </p>
             </address>
+            </FallbackDirection>
           </div>
         </div>
       </main>

@@ -333,7 +333,7 @@ TLS(`tls_cert_file` / `tls_key_file`)는 통신을 암호화하지만 클라이�
 
 #### 기본 모드 동작 변경 {#default-mode-behaviour-change}
 
-이전 릴리스에서는 기본값이 "적용 안 함"인 단일 `read_only: true/false` 플래그로만 안전을 적용했습니다. 현재 기본값(`mode: safe`)에서는 별도 설정 없이도 변경 작업에 사용자 승인이 필요합니다. 엘리시테이션을 지원하는 클라이언트(Claude Desktop, Cursor, Continue 등)를 사용하는 운영자에게는 변경 작업마다 승인 요청이 1번 표시됩니다. 자동화나 번들로 제공되는 `stackql_mcp_client` 클라이언트(엘리시테이션 기능을 알리지 않음)를 사용하는 경우, 변경 작업과 수명 주기 작업을 실행하려면 `mode: full_access`에 명시적으로 옵트인하세요.
+이전 릴리스에서는 기본값이 "적용 안 함"인 단일 `read_only: true/false` 플래그로만 안전을 적용했습니다. 현재 기본값(`mode: safe`)에서는 별도 설정 없이도 변경 작업에 사용자 승인이 필요합니다. 엘리시테이션을 지원하는 클라이언트(Claude Desktop, Cursor, Continue 등)를 사용하는 운영자에게는 변경 작업마다 승인 요청이 1번 표시됩니다. 자동화나 번들로 제공되는 `stackql_mcp_client` 클라이언트(엘리시테이션 기능을 알리지 않음)를 사용하는 경우, 덜 제한적인 모드에 명시적으로 옵트인하세요. `INSERT`, `UPDATE`, `REPLACE`를 실행하려면 `mode: delete_safe`를, `DELETE`와 수명 주기 작업까지 실행하려면 `mode: full_access`를 사용합니다.
 
 레거시 `read_only: true` JSON / YAML 키는 이전 버전과의 호환성을 위해 여전히 허용되며, `mode: read_only`와 동일하게 처리됩니다.
 

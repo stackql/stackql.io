@@ -179,7 +179,7 @@ Data json berikut akan menjadi isi file `vars.json` yang dirujuk dalam parameter
       "network": "https://compute.googleapis.com/compute/v1/projects/stackql-demo/global/networks/myapp-vpc/",
       "sourceRanges": ["0.0.0.0/0"]
     }
-  ],
+  ]
 }
 ```
 

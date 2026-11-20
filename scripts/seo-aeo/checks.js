@@ -171,8 +171,8 @@ async function llms(ctx) {
     const routes = h.untranslatedRoutes(l);
     const untranslated = entries.filter((e) => h.inLocale(l, e.url) && routes.some((route) => h.underRoute(h.sitePath(l, e.url).replace(/\.md$/, ''), route))).map((e) => e.url);
     r.check(untranslated.length === 0, `${tag} llms.txt lists no untranslated (English) page`, h.list(untranslated));
-    if (h.loc(l).script === 'cjk') {
-      const latin = entries.filter((e) => lib.cjkCount(e.title + e.description) === 0);
+    if (h.loc(l).script) {
+      const latin = entries.filter((e) => lib.scriptCount(e.title + e.description, h.loc(l).script) === 0);
       r.check(latin.length <= entries.length * 0.05, `${tag} llms.txt titles and descriptions are in ${h.loc(l).language} (${entries.length - latin.length} of ${entries.length})`, h.list(latin.map((e) => e.title)));
     }
     const full = doc.entries.find((e) => e.section === 'Optional');
@@ -197,9 +197,9 @@ async function llms(ctx) {
     if (r.check(fullRes.status === 200, `${tag} llms-full.txt is served`, `status ${fullRes.status}`)) {
       r.check(fullRes.bytes >= cfg.minimums.llmsFullBytes, `${tag} llms-full.txt is ${(fullRes.bytes / 1024).toFixed(0)} KB (at least ${cfg.minimums.llmsFullBytes / 1024} KB expected)`);
       if (target.edge) r.check(/text\/plain/.test(contentType(fullRes)) && /utf-8/.test(contentType(fullRes)), `${tag} llms-full.txt is text/plain; charset=utf-8`, contentType(fullRes));
-      if (h.loc(l).script === 'cjk') {
-        const ratio = lib.cjkRatio(fullRes.body);
-        r.check(ratio >= cfg.minimums.cjkRatio, `${tag} llms-full.txt is in ${h.loc(l).language} (${(ratio * 100).toFixed(0)}% CJK characters, code included)`);
+      if (h.loc(l).script) {
+        const ratio = lib.scriptRatio(fullRes.body, h.loc(l).script);
+        r.check(ratio >= cfg.minimums.scriptRatio, `${tag} llms-full.txt is in ${h.loc(l).language} (${(ratio * 100).toFixed(0)}% ${h.loc(l).language} characters, code included)`);
       }
     }
 
@@ -247,6 +247,7 @@ async function pages(ctx) {
 
       // language, title, description
       if (lib.htmlLang(html) !== L.htmlLang) issues.push(`<html lang> is ${lib.htmlLang(html)}, expected ${L.htmlLang}`);
+      if (lib.htmlDir(html) !== (L.dir || 'ltr')) issues.push(`<html dir> is ${lib.htmlDir(html)}, expected ${L.dir || 'ltr'}`);
       const title = lib.title(html);
       if (!title) issues.push('no <title>');
       else if (!title.includes(cfg.siteName)) warnings.push(`<title> does not name ${cfg.siteName}: ${title}`);
@@ -258,7 +259,7 @@ async function pages(ctx) {
       }
       // (a title can be a name that stays Latin, such as SELECT; the
       // description is always prose)
-      if (indexable && L.script === 'cjk' && description && lib.cjkCount(description) === 0) issues.push(`meta description is not in ${L.language}`);
+      if (indexable && L.script && description && lib.scriptCount(description, L.script) === 0) issues.push(`meta description is not in ${L.language}`);
 
       // canonical, robots, hreflang
       const canonical = (lib.links(html, 'canonical')[0] || {}).href;
@@ -319,7 +320,7 @@ async function pages(ctx) {
           const questions = [].concat(faq.mainEntity || []);
           if (questions.length === 0) issues.push('FAQPage has no questions');
           if (questions.some((q) => !q.name || !q.acceptedAnswer || !q.acceptedAnswer.text)) issues.push('FAQPage has a question without text or answer');
-          if (L.script === 'cjk' && questions.some((q) => lib.cjkCount(`${q.name}${q.acceptedAnswer && q.acceptedAnswer.text}`) === 0)) issues.push(`FAQPage questions are not in ${L.language}`);
+          if (L.script && questions.some((q) => lib.scriptCount(`${q.name}${q.acceptedAnswer && q.acceptedAnswer.text}`, L.script) === 0)) issues.push(`FAQPage questions are not in ${L.language}`);
         }
         for (const crumbs of lib.nodesOfType(nodes, 'BreadcrumbList')) {
           const bad = [].concat(crumbs.itemListElement || []).map((i) => (i.item && (i.item['@id'] || i.item)) || '').filter((u) => typeof u === 'string' && u && !h.inLocale(l, u));
@@ -346,7 +347,7 @@ async function pages(ctx) {
         if (page.h1 !== false && !lib.h1(html)) issues.push('no <h1> in the served HTML');
         const text = lib.mainText(html);
         if (text.length < cfg.minimums.mainTextChars) issues.push(`only ${text.length} characters of text in the served HTML (content needs JavaScript?)`);
-        else if (L.script === 'cjk' && lib.cjkRatio(text) < cfg.minimums.cjkRatio) issues.push(`body text is ${(lib.cjkRatio(text) * 100).toFixed(0)}% ${L.language}: not translated?`);
+        else if (L.script && lib.scriptRatio(text, L.script) < cfg.minimums.scriptRatio) issues.push(`body text is ${(lib.scriptRatio(text, L.script) * 100).toFixed(0)}% ${L.language}: not translated?`);
       }
 
       const kind = indexable ? 'indexable' : page.noindex ? 'noindex list page' : 'noindex English fallback';

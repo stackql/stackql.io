@@ -7,14 +7,14 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - Cloud-Inventar
-description: "REGEXP_LIKE-Funktion in StackQL: prüft, ob ein String einem regulären Ausdruck entspricht, und gibt true oder false zurück, für Musterfilter in WHERE-Klauseln."
+description: "REGEXP_LIKE-Funktion in StackQL: prüft, ob ein String einem regulären Ausdruck entspricht, und gibt 1 für true und 0 für false zurück, für Musterfilter in WHERE-Klauseln."
 image: "/img/stackql-featured-image.png"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prüft, ob der Quellstring dem Muster entspricht, und gibt `true` oder `false` zurück.  
+Prüft, ob der Quellstring dem Muster entspricht, und gibt `1` für true oder `0` für false zurück.  
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) [[ Regex-Referenz ]](/language-spec/functions/re/reference) 
@@ -36,7 +36,7 @@ __*pattern*__
 Das Muster des regulären Ausdrucks, nach dem gesucht wird.  
 
 ## Rückgabewert(e) {#return-values}
-Gibt `0` zurück, wenn `false`, und `1`, wenn `true`.  
+Gibt `1` für true (der Quellstring entspricht dem Muster) oder `0` für false zurück.  
 
 * * *
 
@@ -55,7 +55,7 @@ Gibt `0` zurück, wenn `false`, und `1`, wenn `true`.
 
 ```sql
 select name, 
-regexp_like(name, 'vm[0-9]+') as name_starts_with_vm 
+regexp_like(name, '^vm[0-9]+') as name_starts_with_vm 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```

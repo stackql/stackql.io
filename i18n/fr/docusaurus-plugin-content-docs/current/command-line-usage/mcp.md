@@ -333,7 +333,7 @@ Le mode est global pour chaque serveur.  Il n'existe pas de dérogation par outi
 
 #### Changement de comportement du mode par défaut {#default-mode-behaviour-change}
 
-Les versions précédentes n'appliquaient la sécurité qu'au moyen d'une seule option `read_only: true/false` dont la valeur par défaut était "aucune application".  La valeur par défaut actuelle (`mode: safe`) soumet d'emblée les mutations à l'approbation de l'utilisateur.  Les exploitants qui utilisent un client compatible avec l'élicitation (Claude Desktop, Cursor, Continue, etc.) verront une demande d'approbation par mutation.  Les exploitants qui exécutent des automatisations, ou le `stackql_mcp_client` fourni (qui n'annonce pas l'élicitation), doivent activer explicitement `mode: full_access` pour exécuter des mutations et des opérations de cycle de vie.
+Les versions précédentes n'appliquaient la sécurité qu'au moyen d'une seule option `read_only: true/false` dont la valeur par défaut était "aucune application".  La valeur par défaut actuelle (`mode: safe`) soumet d'emblée les mutations à l'approbation de l'utilisateur.  Les exploitants qui utilisent un client compatible avec l'élicitation (Claude Desktop, Cursor, Continue, etc.) verront une demande d'approbation par mutation.  Les exploitants qui exécutent des automatisations, ou le `stackql_mcp_client` fourni (qui n'annonce pas l'élicitation), doivent activer explicitement un mode moins restrictif : `mode: delete_safe` pour exécuter `INSERT`, `UPDATE` et `REPLACE`, ou `mode: full_access` pour exécuter aussi `DELETE` et les opérations de cycle de vie.
 
 La clé JSON / YAML héritée `read_only: true` est toujours acceptée par compatibilité ascendante et est traitée comme équivalente à `mode: read_only`.
 

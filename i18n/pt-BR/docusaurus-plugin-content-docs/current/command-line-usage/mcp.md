@@ -333,7 +333,7 @@ A partir da versão `v0.12.742`, um payload com várias instruções é controla
 
 #### Mudança de comportamento do modo padrão {#default-mode-behaviour-change}
 
-As versões anteriores aplicavam a segurança somente por meio de uma única opção `read_only: true/false`, cujo valor padrão era "sem aplicação".  O padrão atual (`mode: safe`) faz com que as mutações exijam aprovação do usuário desde o início.  Os operadores que usam um cliente com suporte a elicitação (Claude Desktop, Cursor, Continue etc.) verão uma solicitação de aprovação por mutação.  Os operadores que executam automações, ou o `stackql_mcp_client` incluído (que não anuncia elicitação), precisam ativar explicitamente `mode: full_access` para executar mutações e operações de ciclo de vida.
+As versões anteriores aplicavam a segurança somente por meio de uma única opção `read_only: true/false`, cujo valor padrão era "sem aplicação".  O padrão atual (`mode: safe`) faz com que as mutações exijam aprovação do usuário desde o início.  Os operadores que usam um cliente com suporte a elicitação (Claude Desktop, Cursor, Continue etc.) verão uma solicitação de aprovação por mutação.  Os operadores que executam automações, ou o `stackql_mcp_client` incluído (que não anuncia elicitação), precisam ativar explicitamente um modo menos restritivo: `mode: delete_safe` para executar `INSERT`, `UPDATE` e `REPLACE`, ou `mode: full_access` para executar também `DELETE` e operações de ciclo de vida.
 
 A chave legada `read_only: true` em JSON / YAML ainda é aceita por compatibilidade com versões anteriores e é tratada como equivalente a `mode: read_only`.
 
