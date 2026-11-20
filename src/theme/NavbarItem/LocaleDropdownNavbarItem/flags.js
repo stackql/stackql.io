@@ -10,10 +10,12 @@ import React from 'react';
 // upper case (en -> EN, ar -> AR, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, vi -> VI, zh-Hans -> ZH), never a country
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
-// stays the same. If two locales ever share a language (zh-Hans and
-// zh-Hant), give them distinct codes here.
+// stays the same. Two locales that share a language get distinct codes in
+// CODES: Traditional Chinese (zh-Hant, planned) shows ZH-HANT next to
+// Simplified Chinese's ZH.
+const CODES = { 'zh-Hant': 'ZH-HANT' };
 export function codeFor(locale) {
-  return locale.split('-')[0].toUpperCase();
+  return CODES[locale] || locale.split('-')[0].toUpperCase();
 }
 
 // A five-pointed star as SVG polygon points.
