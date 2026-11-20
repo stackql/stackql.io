@@ -31,12 +31,14 @@ Les paramètres envoyés par le protocole de requête étendu (`Parse` / `Bind` 
 
 ### Options du serveur {#server-options}
 
-| Option | Description |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|Adresse sur laquelle le serveur écoute (généralement `0.0.0.0`)|
-|<span class="nowrap">`--pgsrv.port`</span>|Port sur lequel le serveur écoute (par exemple `5444`)|
-|<span class="nowrap">`--pgsrv.tls`</span>|Objet de configuration mTLS, consultez l'[exemple](#examples) ci-dessous|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|Niveau de journalisation (valeur par défaut `WARN`)|
+| Option | Description | Valeur par défaut |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|Adresse sur laquelle le serveur écoute.|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|Port TCP sur lequel le serveur écoute.|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|Objet de configuration TLS au format JSON. Consultez l'[exemple mTLS](#examples) ci-dessous.|aucun|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|Active la sortie de débogage des requêtes pour les clients PostgreSQL, par exemple avec `stackql srv --pgsrv.debug.enable=true`. Laissez cette option désactivée, sauf si les clients doivent recevoir des informations de débogage.|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|Mappage JSON ou YAML avancé transmis au serveur du protocole filaire PostgreSQL uniquement lorsque `--pgsrv.tls` n'est pas défini.|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|Acceptée, mais ne définit pas le niveau de journalisation dans le moteur actuel. Utilisez plutôt `--loglevel`.|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-Configurez un objet d'authentification pour chacun des providers auxquels le serveur devra accéder, par exemple pour GitHub.  
+Définissez les identifiants des providers dont le serveur a besoin.  Pour GitHub, le provider lit un nom d'utilisateur et un jeton d'accès personnel depuis ces deux variables :  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 Dans un autre terminal, connectez-vous au serveur avec le client en ligne de commande `psql`.  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 Exécutez maintenant une requête StackQL sur un provider authentifié.  
@@ -148,11 +150,11 @@ Exécutez maintenant une requête StackQL sur un provider authentifié.
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

@@ -11,12 +11,11 @@ description: "stackql バイナリのグローバルフラグ：認証、出力�
 image: "/img/stackql-featured-image.png"
 ---
 
-グローバルフラグは、StackQL アプリケーションの実行時の動作を指定します。これらのフラグは、StackQL アプリケーションの起動時（対話型シェルモードまたは非対話型の exec モード）にコマンドラインで設定するか、StackQL の初期化ファイル（[`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)）から読み込まれます。フラグは次のとおりです：  
+グローバルフラグは StackQL のコマンドで受け付けられますが、一部のフラグは特定のモードでのみ適用されます。コマンドラインで設定するか、サポートされている場合は StackQL の初期化ファイル（[`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)）で設定します。`--pgsrv.*` フラグは [PostgreSQL サーバーオプション](/command-line-usage/srv#server-options)に記載されています。
 
 | フラグ | データ型 | 説明 | デフォルト |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | 呼び出し元のアクセス設定。JSON エンベロープ `{"path": "/path/to/access.json"}` で指定します（ファイルパスをそのまま指定することもできます）。[アクセス管理](/command-line-usage/access-management)を有効にします。呼び出し元は JWT、静的 Bearer トークン、相互 TLS、ローカル OS ID のいずれかで認証され、文はポリシールールに照らして認可されます。ローカルのトークン認証情報は `STACKQL_CALLER_TOKEN` から読み込まれます。StackQL `v1.0` 以降で利用できます。 | |
-| <span class="nowrap">`--acid`</span> | string | ACID の設定を表す JSON / YAML 文字列 | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | セッションが `SET "$.secret_store"` で永続的な OS シークレットストア（macOS Keychain、Linux Secret Service、Windows Credential Manager）を選択できるようにします。フラットファイルのストアは、このフラグがあっても拒否されます。[プロバイダーセッションとシークレット](/getting-started/provider-sessions#persistent-os-secret-stores)を参照してください。StackQL `v1.0` 以降で利用できます。 | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | SQL 式でシークレットと認証情報の値を参照解決できるようにします（`"$secrets.name"`、`"$auth.provider.field"`）。その結果、これらの値が結果、ログ、永続化されたクエリのアーティファクトに含まれる可能性があります。通常のプロバイダー認証には必要ありません。[SQL でのシークレット値](/getting-started/provider-sessions#secret-values-in-sql)を参照してください。StackQL `v1.0` 以降で利用できます。 | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | API リクエストのタイムアウト（秒）。0 でタイムアウトなし | `45` |
@@ -59,6 +58,7 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`-o`, `--output`</span> | string | 出力形式。{`json`, `jsonl`, `table`, `csv`, `text`, `otel`} のいずれかである必要があります（`ndjson` は `jsonl` のエイリアスとして受け付けます）。`otel` は OpenTelemetry のログレコードを出力します。[出力モード](/getting-started/output-modes#otel-output)を参照してください。StackQL `v0.11.660` 以降で利用できます。`--otel.config` でエクスポーターを設定すると、`otel` のレコードはそのエンドポイントにもプッシュされます | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | `otel` 出力形式を設定する JSON / YAML 文字列。`exporter.endpoint`、`exporter.headers`、`exporter.timeout_ms`、`exporter.batch_size` で、レコードを OTLP/HTTP のログエンドポイントにプッシュします。[OTLP エンドポイントへのプッシュ](/getting-started/output-modes#pushing-to-an-otlp-endpoint)を参照してください。StackQL `v0.12.732` 以降で利用できます | `{}` |
 | <span class="nowrap">`--preview`</span> | string | プレビュー版の機能を有効にする JSON 文字列。`{"unstable": true}` は、ドキュメント駆動の `stackql_unstable_<provider>.<service>.<resource>` リレーションを公開します。これらのリレーションは、`omnisdk` によってプロバイダードキュメントから直接解決されて実行され、行は生成されるそばからストリーミングされます。残りのキー（`batchSize`、`flushInterval`、`endpoint`、`insecureSkipTLSVerify`）は、そのバックエンドを調整します。プレビュー版の機能は安定していません。動作、構文、出力はリリース間で予告なく変更されたり動作しなくなったりする可能性があるため、本番環境ではこれに依存しないでください。`v1.0` 以降では、同じオプトインによって `stackql_preview.iac.run` リレーションと `stackql_preview.iac.destroy` リレーションも公開されます。これらは `omnisdk` を通じて宣言されたリソースセットを適用および破棄し、ステートはアプリケーションルートの下に保持されます。[プレビュー版の機能](https://github.com/stackql/stackql/blob/main/docs/preview.md)を参照してください | `{}` |
+| <span class="nowrap">`--provider`</span> | string | 初期のデフォルトプロバイダー。たとえば `--provider github` を指定すると、事前に `USE` 文を実行しなくても `repos.repos` が `github.repos.repos` に解決されます。プロバイダーへの認証は行いません。 | なし |
 | <span class="nowrap">`--querycachesize`</span> | integer | クエリ計画の LRU キャッシュのサイズ（エントリ数） | `10000` |
 | <span class="nowrap">`--registry`</span> | string | プロバイダーレジストリの場所と、プロバイダードキュメントの署名検証を設定する JSON / YAML 文字列 | [`--registry`](#--registry) を参照 |
 | <span class="nowrap">`--session`</span> | string | セッションの設定を表す JSON / YAML 文字列 | `{}` |
@@ -66,10 +66,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--store.txn`</span> | string | Txn ストアの設定を表す JSON / YAML 文字列 | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | CA バンドルへのパス。指定しない場合はシステムのデフォルトが使用されます |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | 安全でない証明書の信頼を許可します（非推奨） |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | プロバイダーの読み取りで HTTP レスポンスステータスを明示的に許容するための JSON / YAML ポリシー。[`--upstream.errors`](#--upstream-errors) を参照してください。 | `{}` |
 | <span class="nowrap">`--var`</span> | string | `jsonnet` データファイルを通じて StackQL クエリに取り込むための、キーと値のペアとして指定する外部変数 |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | 詳細出力 | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | stackql のコンテキストに応じたヘルプ | |
 | <span class="nowrap">`--version`</span> | | StackQL プログラムのバージョンを表示します | |
+
+`--colorscheme` は非推奨で、シェルの色を変更しなくなりました。`--usenonpreferredapis` は受け付けられますが、現在のエンジンでは API の選択を変更しません。
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ Databricks は、StackQL の SQL バックエンドとして使用できる Post
 :::note
 ユーザー名またはパスワードに含まれる特殊文字（`@` など）は、DSN 内で URL エンコードする必要があります（たとえば、`@` は `%40` になります）。
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+`http.ignoreStatusCodes` には、プロバイダーの読み取りで明示的に許容する HTTP レスポンスステータスを列挙します。各エントリは文字列です。`"503"` のような正確なコード、または `"5xx"` のようなクラスを指定します。デフォルトの `{}` では、アップストリームのレスポンスに対するエンジンの通常の処理に例外は追加されません。この設定は、失敗したリクエストを再試行せず、ミューテーションや認証のやり取りにも適用されません。
+
+無視されたレスポンスからは行が返されません。クエリ内のほかの読み取りは引き続き行を返すことができるため、成功したクエリが不完全な結果を返す場合があります。StackQL は、無視された HTTP ステータスを診断情報として報告します。
+
+たとえば、[GitHub のモックを使用した結合テスト](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104)では、このオプションを使用しています：
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+このテストでは、1 つのリポジトリに対するコラボレーターのリクエストが HTTP `500` を返します。それでもクエリはほかのリポジトリのコラボレーターの行を返し、stderr には `ignoring upstream response: 500 INTERNAL SERVER ERROR` が含まれます。想定される失敗が 1 つだけの場合は、正確なステータスコードを使用することを推奨します。

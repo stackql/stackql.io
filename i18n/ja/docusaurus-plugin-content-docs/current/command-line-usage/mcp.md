@@ -641,6 +641,8 @@ openssl req -x509 -newkey rsa:4096 -keyout server_key.pem -out server_cert.pem -
 次に、サーバーを起動します。
 
 ```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
 stackql srv \
   --mcp.server.type=reverse_proxy \
   --mcp.config '{
@@ -672,7 +674,7 @@ python cicd/python/build.py --build-mcp-client
 
 これにより `./build/stackql_mcp_client` が生成されます。
 
-`stackql_mcp_client` は `Authorization` ヘッダーを送信しないため、対象のサーバーでは `"allow_unauthenticated": true` を設定する必要があります（上記の例のとおり）。トークンで保護されたサーバーは `401` を返します。また、MCP のエリシテーション機能も公開**しません**。非対話型のスクリプト用だからです。`safe` または `delete_safe` のサーバーに対しては、ミューテーションとライフサイクルの呼び出しで「client does not support elicitation」による拒否を受け取ります。エリシテーションリクエストを使用した対話型のテストには、エディターに組み込まれた MCP クライアント（Claude Desktop、Cursor、Continue）を使用してください。
+`stackql_mcp_client` は `Authorization` ヘッダーを送信しないため、対象のサーバーでは `"allow_unauthenticated": true` を設定する必要があります（上記の例のとおり）。トークンで保護されたサーバーは `401` を返します。また、MCP のエリシテーション機能も公開**しません**。非対話型のスクリプト用だからです。`safe` のサーバーに対しては、ミューテーションとライフサイクルの呼び出しで「client does not support elicitation」による拒否を受け取ります。`delete_safe` のサーバーに対しては、`DELETE` と `EXEC` の呼び出しでこの拒否を受け取ります。エリシテーションリクエストを使用した対話型のテストには、エディターに組み込まれた MCP クライアント（Claude Desktop、Cursor、Continue）を使用してください。
 
 ```bash
 # List all available tools

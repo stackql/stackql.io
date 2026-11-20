@@ -55,7 +55,7 @@ Devuelve el documento JSON con el nuevo valor insertado si la ruta especificada 
 
 ```sql
 -- Example: Insert a new 'region' key with the value 'Europe' into a JSON object
-SELECT JSON_INSERT(json_data, '$.region', 'Europe') as updated_object;
+SELECT JSON_INSERT('{"name":"ResourceOne","type":"Storage"}', '$.region', 'Europe') as updated_object;
 
 /* expected output...
 |-----------------------------------------------------------|

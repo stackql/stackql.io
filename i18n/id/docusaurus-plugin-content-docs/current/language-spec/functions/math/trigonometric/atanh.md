@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: Menghitung arkus tangen hiperbolik (invers tangen hiperbolik) suatu bilangan, yang mengembalikan sudut dalam radian, menggunakan SQL di StackQL.
+description: Menghitung arkus tangen hiperbolik (invers tangen hiperbolik) suatu bilangan menggunakan SQL di StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Menghitung arkus tangen hiperbolik (invers tangen hiperbolik) suatu bilangan, yaitu nilai dalam radian yang tangen hiperboliknya sama dengan bilangan yang ditentukan.
+Menghitung arkus tangen hiperbolik (invers tangen hiperbolik) suatu bilangan, yaitu nilai yang tangen hiperboliknya sama dengan bilangan yang ditentukan.
 
 Lihat juga:  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 Ekspresi numerik dalam rentang -1 hingga 1 (eksklusif), yang arkus tangen hiperboliknya akan dihitung.
 
 ## Nilai yang dikembalikan {#return-values}
-Mengembalikan arkus tangen hiperbolik dari nilai yang ditentukan dalam radian.
+Mengembalikan arkus tangen hiperbolik dari nilai yang ditentukan.
 
 * * *
 
@@ -41,7 +41,7 @@ Mengembalikan arkus tangen hiperbolik dari nilai yang ditentukan dalam radian.
 SELECT ATANH(0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-Kueri ini mengembalikan kira-kira `0.5493`, karena arkus tangen hiperbolik 0.5 adalah sekitar 0.5493 radian.
+Kueri ini mengembalikan kira-kira `0.5493`, karena arkus tangen hiperbolik 0.5 adalah sekitar 0.5493.
 
 ### Menghitung arkus tangen hiperbolik -0.5 {#calculate-the-hyperbolic-arc-tangent-of--05}
 
@@ -49,4 +49,4 @@ Kueri ini mengembalikan kira-kira `0.5493`, karena arkus tangen hiperbolik 0.5 a
 SELECT ATANH(-0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-Kueri ini menghitung arkus tangen hiperbolik -0.5, yang menghasilkan kira-kira `-0.5493`, karena itulah nilai dalam radian yang tangen hiperboliknya adalah -0.5.
+Kueri ini menghitung arkus tangen hiperbolik -0.5, yang menghasilkan kira-kira `-0.5493`, karena itulah nilai yang tangen hiperboliknya adalah -0.5.

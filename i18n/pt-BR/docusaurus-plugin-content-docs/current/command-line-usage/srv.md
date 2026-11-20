@@ -31,12 +31,14 @@ Os parâmetros enviados pelo protocolo de consulta estendido (`Parse` / `Bind` /
 
 ### Opções do servidor {#server-options}
 
-| Opção | Descrição |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|Endereço em que o servidor escuta (normalmente `0.0.0.0`)|
-|<span class="nowrap">`--pgsrv.port`</span>|Porta em que o servidor escuta (por exemplo, `5444`)|
-|<span class="nowrap">`--pgsrv.tls`</span>|Objeto de configuração do mTLS; consulte o [exemplo](#examples) abaixo|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|Nível de log (valor padrão: `WARN`)|
+| Opção | Descrição | Valor padrão |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|Endereço em que o servidor escuta.|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|Porta TCP em que o servidor escuta.|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|Objeto de configuração TLS em JSON. Consulte o [exemplo de mTLS](#examples) abaixo.|nenhum|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|Habilita a saída de depuração de consultas para clientes PostgreSQL, por exemplo com `stackql srv --pgsrv.debug.enable=true`. Mantenha-a desabilitada, a menos que os clientes devam receber informações de depuração.|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|Mapeamento JSON ou YAML avançado passado ao servidor do protocolo de comunicação do PostgreSQL somente quando `--pgsrv.tls` não está definida.|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|Aceita, mas não define o nível de log no mecanismo atual. Use `--loglevel` no lugar dela.|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-Configure um objeto de autenticação para cada provider ao qual o servidor precisará ter acesso, por exemplo, para o GitHub.  
+Defina as credenciais dos providers de que o servidor precisa.  Para o GitHub, o provider lê um nome de usuário e um token de acesso pessoal destas duas variáveis:  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 Em outro terminal, conecte-se ao servidor com o cliente de linha de comando `psql`.  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 Agora execute uma consulta do StackQL em um provider autenticado.  
@@ -148,11 +150,11 @@ Agora execute uma consulta do StackQL em um provider autenticado.
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

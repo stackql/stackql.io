@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Calculate the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, returning an angle in radians using SQL in StackQL.
+description: Calculate the hyperbolic arc cosine (inverse hyperbolic cosine) of a number using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, which is the non-negative value in radians whose hyperbolic cosine is the specified number.
+Calculates the hyperbolic arc cosine (inverse hyperbolic cosine) of a number, which is the non-negative value whose hyperbolic cosine is the specified number.
 
 See also:  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 A numeric expression greater than or equal to 1, for which the hyperbolic arc cosine is to be calculated.
 
 ## Return Value(s) {#return-values}
-Returns the hyperbolic arc cosine of the specified value in radians.
+Returns the hyperbolic arc cosine of the specified value.
 
 * * *
 
@@ -41,7 +41,7 @@ Returns the hyperbolic arc cosine of the specified value in radians.
 SELECT ACOSH(1) AS hyperbolic_arc_cosine_value;
 ```
 
-This query returns `0`, as the hyperbolic arc cosine of 1 is 0 radians.
+This query returns `0`, as the hyperbolic arc cosine of 1 is 0.
 
 ### Calculate the hyperbolic arc cosine of 10 {#calculate-the-hyperbolic-arc-cosine-of-10}
 
@@ -49,4 +49,4 @@ This query returns `0`, as the hyperbolic arc cosine of 1 is 0 radians.
 SELECT ACOSH(10) AS hyperbolic_arc_cosine_value;
 ```
 
-This query calculates the hyperbolic arc cosine of 10, resulting in approximately `2.9932`, as this is the value in radians whose hyperbolic cosine is 10.
+This query calculates the hyperbolic arc cosine of 10, resulting in approximately `2.9932`, as this is the value whose hyperbolic cosine is 10.

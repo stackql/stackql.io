@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaire cloud
-description: Calculer l'arc sinus hyperbolique (réciproque du sinus hyperbolique) d'un nombre et renvoyer un angle en radians avec SQL dans StackQL.
+description: Calculer l'arc sinus hyperbolique (réciproque du sinus hyperbolique) d'un nombre avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcule l'arc sinus hyperbolique (réciproque du sinus hyperbolique) d'un nombre, c'est-à-dire la valeur en radians dont le sinus hyperbolique est le nombre spécifié.
+Calcule l'arc sinus hyperbolique (réciproque du sinus hyperbolique) d'un nombre, c'est-à-dire la valeur dont le sinus hyperbolique est le nombre spécifié.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 Une expression numérique dont l'arc sinus hyperbolique doit être calculé.
 
 ## Valeur(s) renvoyée(s) {#return-values}
-Renvoie l'arc sinus hyperbolique de la valeur spécifiée, en radians.
+Renvoie l'arc sinus hyperbolique de la valeur spécifiée.
 
 * * *
 
@@ -41,7 +41,7 @@ Renvoie l'arc sinus hyperbolique de la valeur spécifiée, en radians.
 SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
 ```
 
-Cette requête renvoie environ `0.4812`, car l'arc sinus hyperbolique de 0.5 vaut environ 0.4812 radian.
+Cette requête renvoie environ `0.4812`, car l'arc sinus hyperbolique de 0.5 vaut environ 0.4812.
 
 ### Calculer l'arc sinus hyperbolique de -1 {#calculate-the-hyperbolic-arc-sine-of--1}
 
@@ -49,4 +49,4 @@ Cette requête renvoie environ `0.4812`, car l'arc sinus hyperbolique de 0.5 vau
 SELECT ASINH(-1) AS hyperbolic_arc_sine_value;
 ```
 
-Cette requête calcule l'arc sinus hyperbolique de -1, ce qui donne environ `-0.8814`, car il s'agit de la valeur en radians dont le sinus hyperbolique est -1.
+Cette requête calcule l'arc sinus hyperbolique de -1, ce qui donne environ `-0.8814`, car il s'agit de la valeur dont le sinus hyperbolique est -1.

@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__ 또는 __*__  
 열 또는 식입니다. __*__ 기호를 지정하면 리소스 또는 그룹의 모든 레코드 수를 셉니다.
 
-> *columnExpression*의 값 중 하나 이상은 `NULL`이 아니어야 합니다. 그렇지 않으면 `NULL`이 반환됩니다.
+> *columnExpression*의 `NULL` 값은 개수에 포함되지 않습니다. 모든 값이 `NULL`이면 `COUNT` 함수는 `0`을 반환합니다.
 
 __*groupByColumn*__  
 요약 또는 집계 작업을 수행하는 데 사용되는 하나 이상의 열입니다. `GROUP BY` 절은 열 그룹당 1행을 반환합니다.

@@ -32,15 +32,9 @@ stackql shell --auth="${AUTH}"
 
 기본적으로 StackQL 셸은 표 형식의 결과를 반환하지만, `--output` 플래그를 사용하여 `json`, `jsonl`, `csv`, `text` 출력 형식을 사용할 수도 있습니다. [출력 모드](/getting-started/output-modes)를 참조하세요.  
 
-아래와 같이 `--colorscheme` 플래그를 사용하여 StackQL 셸의 색 구성표를 변경할 수 있습니다.  
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### `.stackqlrc` 초기화 파일 {#the-stackqlrc-initialization-file}
 
-앞에서 설명한 출력 형식, 색 구성표 같은 StackQL 명령 옵션의 기본값은 `.stackqlrc` 초기화 파일을 사용하여 설정할 수 있습니다. 이 파일이 StackQL 실행 파일이 사용하는 현재 디렉터리에 있으면 자동으로 로드됩니다. 또는 아래와 같이 `--configfile` 플래그를 사용하여 이 파일을 참조할 수도 있습니다.
+출력 형식 같은 StackQL 명령 옵션의 기본값은 `.stackqlrc` 초기화 파일을 사용하여 설정할 수 있습니다. 이 파일이 StackQL 실행 파일이 사용하는 현재 디렉터리에 있으면 자동으로 로드됩니다. 또는 아래와 같이 `--configfile` 플래그를 사용하여 이 파일을 참조할 수도 있습니다.
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

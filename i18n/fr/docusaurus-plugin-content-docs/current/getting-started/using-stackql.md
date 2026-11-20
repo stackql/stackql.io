@@ -32,15 +32,9 @@ Une fois dans un shell authentifié auprès d'un fournisseur cloud, vous pouvez 
 
 Par défaut, le shell StackQL renvoie des résultats tabulaires ; les formats de sortie `json`, `jsonl`, `csv` et `text` sont toutefois disponibles avec l'option `--output`, consultez [Modes de sortie](/getting-started/output-modes).  
 
-Vous pouvez changer le jeu de couleurs du shell StackQL avec l'option `--colorscheme`, comme illustré ci-dessous :  
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### Le fichier d'initialisation `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Les valeurs par défaut des options de commande StackQL, comme le format de sortie et le jeu de couleurs évoqués précédemment, peuvent être définies dans le fichier d'initialisation `.stackqlrc`. Si ce fichier existe dans le répertoire courant utilisé par l'exécutable StackQL, il est chargé automatiquement ; il peut aussi être désigné avec l'option `--configfile`, comme illustré ci-dessous :
+Les valeurs par défaut des options de commande StackQL, comme le format de sortie, peuvent être définies dans le fichier d'initialisation `.stackqlrc`. Si ce fichier existe dans le répertoire courant utilisé par l'exécutable StackQL, il est chargé automatiquement ; il peut aussi être désigné avec l'option `--configfile`, comme illustré ci-dessous :
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

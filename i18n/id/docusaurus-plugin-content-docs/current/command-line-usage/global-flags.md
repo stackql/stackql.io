@@ -11,12 +11,11 @@ description: "Flag global untuk biner stackql: autentikasi, format output, lokas
 image: "/img/stackql-featured-image.png"
 ---
 
-Flag global menentukan perilaku program saat runtime untuk aplikasi StackQL; flag ini ditetapkan di baris perintah saat aplikasi StackQL dijalankan (dalam mode interaktif/shell atau mode exec non-interaktif) atau diambil dari file inisialisasi StackQL ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)).  Flag yang tersedia meliputi:  
+Flag global diterima oleh perintah StackQL, tetapi sebagian hanya berlaku untuk mode tertentu. Tetapkan flag ini di baris perintah atau, jika didukung, di file inisialisasi StackQL ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)). Flag `--pgsrv.*` tercantum di [opsi server PostgreSQL](/command-line-usage/srv#server-options).
 
 | Flag | Tipe data | Deskripsi | Default |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | Konfigurasi akses pemanggil, objek pembungkus JSON `{"path": "/path/to/access.json"}` (jalur file biasa juga diterima).  Mengaktifkan [manajemen akses](/command-line-usage/access-management): pemanggil diautentikasi dengan JWT, token bearer statis, TLS mutual, atau identitas OS lokal, dan pernyataan diotorisasi berdasarkan aturan kebijakan.  Kredensial token lokal dibaca dari `STACKQL_CALLER_TOKEN`.  Tersedia mulai StackQL `v1.0`. | |
-| <span class="nowrap">`--acid`</span> | string | String JSON / YAML yang merepresentasikan konfigurasi ACID | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | Mengizinkan sesi memilih penyimpanan rahasia OS persisten (macOS Keychain, Linux Secret Service, atau Windows Credential Manager) dengan `SET "$.secret_store"`.  Penyimpanan berbasis file datar tetap ditolak meskipun flag ini digunakan.  Lihat [Sesi provider dan rahasia](/getting-started/provider-sessions#persistent-os-secret-stores).  Tersedia mulai StackQL `v1.0`. | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | Mengizinkan nilai rahasia dan kredensial didereferensi dalam ekspresi SQL (`"$secrets.name"`, `"$auth.provider.field"`), dengan konsekuensi nilai tersebut dapat masuk ke hasil, log, dan artefak kueri yang disimpan.  Tidak diperlukan untuk autentikasi provider biasa.  Lihat [Nilai rahasia di SQL](/getting-started/provider-sessions#secret-values-in-sql).  Tersedia mulai StackQL `v1.0`. | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | Batas waktu permintaan API dalam detik, 0 berarti tanpa batas waktu | `45` |
@@ -59,6 +58,7 @@ Flag global menentukan perilaku program saat runtime untuk aplikasi StackQL; fla
 | <span class="nowrap">`-o`, `--output`</span> | string | Format output, harus salah satu dari {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` diterima sebagai alias untuk `jsonl`).  `otel` menghasilkan catatan log OpenTelemetry, lihat [Mode output](/getting-started/output-modes#otel-output); tersedia mulai StackQL `v0.11.660`.  Dengan exporter yang dikonfigurasi di `--otel.config`, catatan `otel` juga dikirim ke endpoint tersebut | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | String JSON / YAML yang mengonfigurasi format output `otel`; `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms`, dan `exporter.batch_size` mengirim catatan ke endpoint log OTLP/HTTP, lihat [Mengirim langsung ke endpoint OTLP](/getting-started/output-modes#pushing-to-an-otlp-endpoint).  Tersedia mulai StackQL `v0.12.732` | `{}` |
 | <span class="nowrap">`--preview`</span> | string | String JSON yang mengaktifkan fungsionalitas pratinjau.  `{"unstable": true}` mengekspos relasi `stackql_unstable_<provider>.<service>.<resource>` berbasis dokumen, yang diselesaikan dan dijalankan oleh `omnisdk` langsung dari dokumen provider dengan baris yang dialirkan segera setelah dihasilkan; kunci lainnya (`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`) menyesuaikan backend tersebut.  Fungsionalitas pratinjau tidak stabil: perilaku, sintaksis, dan output dapat berubah atau rusak di antara rilis tanpa pemberitahuan, jadi jangan mengandalkannya di lingkungan produksi.  Mulai `v1.0`, aktivasi eksplisit yang sama mengekspos relasi `stackql_preview.iac.run` dan `stackql_preview.iac.destroy`, yang menerapkan dan menghapus kumpulan sumber daya yang dideklarasikan melalui `omnisdk` dengan status yang disimpan di bawah root aplikasi.  Lihat [Fungsionalitas pratinjau](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
+| <span class="nowrap">`--provider`</span> | string | Provider default awal. Misalnya, dengan `--provider github`, `repos.repos` di-resolve menjadi `github.repos.repos` tanpa pernyataan `USE` sebelumnya. Tidak melakukan autentikasi ke provider. | tidak ada |
 | <span class="nowrap">`--querycachesize`</span> | integer | Ukuran cache LRU untuk rencana kueri, dalam jumlah entri | `10000` |
 | <span class="nowrap">`--registry`</span> | string | String JSON / YAML yang mengonfigurasi lokasi registri provider dan verifikasi tanda tangan dokumen provider | lihat [`--registry`](#--registry) |
 | <span class="nowrap">`--session`</span> | string | String JSON / YAML yang merepresentasikan konfigurasi sesi | `{}` |
@@ -66,10 +66,13 @@ Flag global menentukan perilaku program saat runtime untuk aplikasi StackQL; fla
 | <span class="nowrap">`--store.txn`</span> | string | String JSON / YAML yang merepresentasikan konfigurasi penyimpanan Txn | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | Jalur ke bundle CA; jika tidak ditentukan, default sistem akan digunakan |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | Mengizinkan kepercayaan terhadap sertifikat yang tidak aman (tidak disarankan) |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | Kebijakan JSON / YAML untuk menoleransi status respons HTTP secara eksplisit pada operasi baca provider. Lihat [`--upstream.errors`](#--upstream-errors). | `{}` |
 | <span class="nowrap">`--var`</span> | string | Variabel eksternal yang diberikan sebagai pasangan kunci/nilai untuk dimasukkan ke kueri StackQL melalui file data `jsonnet` |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | Output verbose | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | Bantuan sesuai konteks untuk stackql | |
 | <span class="nowrap">`--version`</span> | | Menampilkan versi program StackQL | |
+
+Flag `--colorscheme` tidak digunakan lagi dan sudah tidak mengubah warna shell. Flag `--usenonpreferredapis` diterima, tetapi tidak mengubah pemilihan API di mesin saat ini.
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ Databricks menyediakan antarmuka yang kompatibel dengan PostgreSQL yang dapat di
 :::note
 Karakter khusus dalam nama pengguna atau kata sandi (seperti `@`) harus dikodekan URL di DSN (misalnya, `@` menjadi `%40`).
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+Gunakan `http.ignoreStatusCodes` untuk mencantumkan status respons HTTP yang harus ditoleransi secara eksplisit oleh operasi baca provider. Entri berupa string: gunakan kode persis seperti `"503"` atau kelas seperti `"5xx"`. Nilai default `{}` tidak menambahkan pengecualian apa pun pada penanganan normal respons upstream oleh mesin. Pengaturan ini tidak mencoba ulang permintaan yang gagal dan tidak berlaku untuk mutasi atau pertukaran autentikasi.
+
+Respons yang diabaikan tidak menghasilkan baris. Operasi baca lain dalam kueri tetap dapat mengembalikan baris, sehingga kueri yang berhasil dapat mengembalikan hasil yang tidak lengkap. StackQL melaporkan status HTTP yang diabaikan sebagai diagnostik.
+
+Misalnya, [pengujian join GitHub dengan API mock](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104) menggunakan opsi ini:
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+Dalam pengujian tersebut, permintaan kolaborator untuk satu repositori mengembalikan HTTP `500`. Kueri tetap mengembalikan baris kolaborator untuk repositori lainnya, dan stderr berisi `ignoring upstream response: 500 INTERNAL SERVER ERROR`. Utamakan kode status persis jika hanya satu kegagalan yang diperkirakan.

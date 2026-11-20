@@ -11,12 +11,11 @@ description: "Opções globais do binário stackql: autenticação, formato de s
 image: "/img/stackql-featured-image.png"
 ---
 
-As opções globais especificam o comportamento do programa em tempo de execução para a aplicação StackQL; essas opções são definidas na linha de comando quando a aplicação StackQL é iniciada (no modo interativo/shell ou no modo exec não interativo) ou são obtidas do arquivo de inicialização do StackQL ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)).  As opções incluem:  
+Os comandos do StackQL aceitam as opções globais, mas algumas se aplicam somente a um modo específico. Defina-as na linha de comando ou, onde houver suporte, no arquivo de inicialização do StackQL ([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)). As opções `--pgsrv.*` estão listadas em [Opções do servidor PostgreSQL](/command-line-usage/srv#server-options).
 
 | Opção | Tipo de dados | Descrição | Valor padrão |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | Configuração de acesso de chamadores, um envelope JSON `{"path": "/path/to/access.json"}` (um caminho de arquivo simples também é aceito).  Habilita o [gerenciamento de acesso](/command-line-usage/access-management): os chamadores são autenticados por JWT, token bearer estático, TLS mútuo ou identidade local do SO, e as instruções são autorizadas com base em regras de política.  As credenciais de token locais são lidas de `STACKQL_CALLER_TOKEN`.  Disponível a partir do StackQL `v1.0`. | |
-| <span class="nowrap">`--acid`</span> | string | String JSON / YAML que representa a configuração ACID | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | Permite que uma sessão selecione um repositório de segredos persistente do SO (macOS Keychain, Linux Secret Service ou Windows Credential Manager) com `SET "$.secret_store"`.  Repositórios em arquivo simples são recusados mesmo com a opção.  Consulte [Sessões de provider e segredos](/getting-started/provider-sessions#persistent-os-secret-stores).  Disponível a partir do StackQL `v1.0`. | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | Permite que valores de segredos e de credenciais sejam desreferenciados em expressões SQL (`"$secrets.name"`, `"$auth.provider.field"`), com a consequência de que eles podem aparecer em resultados, logs e artefatos de consulta persistidos.  Não é necessária para a autenticação normal de providers.  Consulte [Valores de segredos no SQL](/getting-started/provider-sessions#secret-values-in-sql).  Disponível a partir do StackQL `v1.0`. | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | Tempo limite das solicitações de API em segundos, 0 para nenhum tempo limite | `45` |
@@ -59,6 +58,7 @@ As opções globais especificam o comportamento do programa em tempo de execuç�
 | <span class="nowrap">`-o`, `--output`</span> | string | Formato de saída, deve ser um de {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} (`ndjson` é aceito como alias de `jsonl`).  `otel` emite registros de log do OpenTelemetry, consulte [Modos de saída](/getting-started/output-modes#otel-output); disponível a partir do StackQL `v0.11.660`.  Com um exportador configurado em `--otel.config`, os registros `otel` também são enviados para esse endpoint | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | String JSON / YAML que configura o formato de saída `otel`; `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms` e `exporter.batch_size` enviam os registros para um endpoint de logs OTLP/HTTP, consulte [Enviar para um endpoint OTLP](/getting-started/output-modes#pushing-to-an-otlp-endpoint).  Disponível a partir do StackQL `v0.12.732` | `{}` |
 | <span class="nowrap">`--preview`</span> | string | String JSON que habilita funcionalidades em versão prévia.  `{"unstable": true}` expõe as relações `stackql_unstable_<provider>.<service>.<resource>` orientadas por documentos, que o `omnisdk` resolve e executa diretamente a partir dos documentos de provider, com as linhas transmitidas à medida que são produzidas; as demais chaves (`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`) ajustam esse backend.  As funcionalidades em versão prévia não são estáveis: o comportamento, a sintaxe e a saída podem mudar ou deixar de funcionar entre versões sem aviso prévio, portanto não dependa delas em produção.  A partir da `v1.0`, a mesma ativação explícita expõe as relações `stackql_preview.iac.run` e `stackql_preview.iac.destroy`, que aplicam e desmontam um conjunto declarado de recursos por meio do `omnisdk`, com o estado mantido na raiz da aplicação.  Consulte [Funcionalidades em versão prévia](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
+| <span class="nowrap">`--provider`</span> | string | Provider padrão inicial. Por exemplo, com `--provider github`, `repos.repos` é resolvido como `github.repos.repos` sem uma instrução `USE` anterior. Não faz a autenticação no provider. | nenhum |
 | <span class="nowrap">`--querycachesize`</span> | integer | Tamanho, em número de entradas, do cache LRU de planos de consulta | `10000` |
 | <span class="nowrap">`--registry`</span> | string | String JSON / YAML que configura o local do registro de providers e a verificação de assinatura dos documentos de provider | consulte [`--registry`](#--registry) |
 | <span class="nowrap">`--session`</span> | string | String JSON / YAML que representa a configuração da sessão | `{}` |
@@ -66,10 +66,13 @@ As opções globais especificam o comportamento do programa em tempo de execuç�
 | <span class="nowrap">`--store.txn`</span> | string | String JSON / YAML que representa a configuração do armazenamento de transações | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | Caminho para o bundle de CAs; se não for especificado, os padrões do sistema são usados |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | Permite confiar em certificados inseguros (não recomendado) |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | Política JSON / YAML para tolerar explicitamente status de resposta HTTP nas leituras de providers. Consulte [`--upstream.errors`](#--upstream-errors). | `{}` |
 | <span class="nowrap">`--var`</span> | string | Variáveis externas fornecidas como pares chave-valor para uso em consultas do StackQL por meio de arquivos de dados `jsonnet` |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | Saída detalhada | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | Ajuda contextual do stackql | |
 | <span class="nowrap">`--version`</span> | | Exibe a versão do programa StackQL | |
+
+A opção `--colorscheme` está obsoleta e não altera mais as cores do shell. A opção `--usenonpreferredapis` é aceita, mas não altera a seleção de APIs no mecanismo atual.
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ O Databricks expõe uma interface compatível com PostgreSQL que pode ser usada 
 :::note
 Caracteres especiais no nome de usuário ou na senha (como `@`) devem ser codificados para URL no DSN (por exemplo, `@` se torna `%40`).
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+Use `http.ignoreStatusCodes` para listar os status de resposta HTTP que uma leitura de provider deve tolerar explicitamente. Os itens são strings: use um código exato, como `"503"`, ou uma classe, como `"5xx"`. O valor padrão `{}` não adiciona exceções ao tratamento normal que o mecanismo dá às respostas upstream. Essa configuração não tenta novamente as solicitações com falha nem se aplica a mutações ou a trocas de autenticação.
+
+Uma resposta ignorada não contribui com linhas. Outras leituras da consulta ainda podem retornar linhas, portanto uma consulta bem-sucedida pode retornar resultados incompletos. O StackQL informa o status HTTP ignorado como diagnóstico.
+
+Por exemplo, o [teste de join com o GitHub simulado](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104) usa esta opção:
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+No teste, a solicitação de colaboradores de um dos repositórios retorna HTTP `500`. A consulta ainda retorna linhas de colaboradores dos outros repositórios, e o stderr inclui `ignoring upstream response: 500 INTERNAL SERVER ERROR`. Prefira um código de status exato quando apenas uma falha for esperada.

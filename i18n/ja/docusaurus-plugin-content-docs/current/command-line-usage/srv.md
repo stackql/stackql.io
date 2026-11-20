@@ -31,12 +31,14 @@ StackQL サーバーは Postgres ワイヤプロトコルを使用しますが�
 
 ### サーバーオプション {#server-options}
 
-| オプション | 説明 |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|サーバーがリッスンするアドレス（通常は `0.0.0.0`）|
-|<span class="nowrap">`--pgsrv.port`</span>|サーバーがリッスンするポート（たとえば `5444`）|
-|<span class="nowrap">`--pgsrv.tls`</span>|mTLS 設定オブジェクト（下記の[例](#examples)を参照）|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|ログレベル（デフォルトは `WARN`）|
+| オプション | 説明 | デフォルト |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|サーバーがリッスンするアドレス。|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|サーバーがリッスンする TCP ポート。|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|JSON の TLS 設定オブジェクト。下記の [mTLS の例](#examples)を参照してください。|なし|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|PostgreSQL クライアント向けのクエリのデバッグ出力を有効にします。たとえば `stackql srv --pgsrv.debug.enable=true` のように指定します。クライアントにデバッグ情報を渡す必要がある場合を除き、無効のままにしてください。|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|`--pgsrv.tls` が設定されていない場合にのみ PostgreSQL ワイヤプロトコルサーバーに渡される、高度な JSON または YAML のマッピング。|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|受け付けられますが、現在のエンジンではロガーのレベルを設定しません。代わりに `--loglevel` を使用してください。|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-サーバーがアクセスする必要のあるプロバイダーについて、認証オブジェクトを設定します（たとえば GitHub の場合）。  
+サーバーが必要とするプロバイダーの認証情報を設定します。GitHub の場合、プロバイダーは次の 2 つの変数からユーザー名と個人用アクセストークンを読み込みます：  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 別のターミナルで、`psql` コマンドラインクライアントを使用してサーバーに接続します。  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 次に、認証済みのプロバイダーに対して StackQL クエリを実行します。  
@@ -148,11 +150,11 @@ psql 127.0.0.1
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

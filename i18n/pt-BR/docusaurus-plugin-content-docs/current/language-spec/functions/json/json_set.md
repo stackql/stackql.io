@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Atualiza valores existentes ou insere novos valores em um documento JSON nos caminhos especificados.
 
 Veja também:  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
 
 * * * 
 
@@ -55,15 +55,13 @@ Retorna um documento JSON com o valor definido no caminho especificado. Se o cam
 
 ```sql
 -- Example: Update the 'status' key's value to 'active' in a JSON object
-SELECT JSON_SET(json_data, '$.status', 'active') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending","region":"US"}', '$.status', 'active') as updated_json;
 
 -- Expected output:
 -- |---------------------------------------------------------|
 -- |                    updated_json                         |
 -- |---------------------------------------------------------|
--- | {"name":"ServiceOne", "status":"active", "region":"US"} |
+-- | {"name":"ServiceOne","status":"active","region":"US"}   |
 -- |---------------------------------------------------------|
 ```
 
@@ -72,16 +70,14 @@ Esta consulta atualiza a chave 'status' para 'active' no documento JSON se a cha
 ### Adicionar um novo par chave-valor a um objeto JSON {#add-a-new-key-value-pair-to-a-json-object}
 
 ```sql
--- Example: Add a new key 'lastChecked' with the current date to a JSON object
-SELECT JSON_SET(json_data, '$.lastChecked', '2024-04-29') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+-- Example: Add a new key 'lastChecked' with a date value to a JSON object
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending"}', '$.lastChecked', '2024-04-29') as updated_json;
 
 /* expected output...
 |-----------------------------------------------------------------------|
 |                          updated_json                                 |
 |-----------------------------------------------------------------------|
-| {"name":"ServiceOne", "status":"pending", "lastChecked":"2024-04-29"} |
+| {"name":"ServiceOne","status":"pending","lastChecked":"2024-04-29"}   |
 |-----------------------------------------------------------------------|
 */
 ```

@@ -11,12 +11,11 @@ description: "stackql 二进制文件的全局标志：身份验证、输出格�
 image: "/img/stackql-featured-image.png"
 ---
 
-全局标志指定 StackQL 应用程序的运行时行为，这些标志在启动 StackQL 应用程序时（交互式 shell 模式或非交互式 exec 模式）在命令行中设置，或者从 StackQL 初始化文件（[`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)）中读取。标志包括：  
+StackQL 命令都接受全局标志，但其中一些仅适用于特定模式。在命令行中设置这些标志，或者在支持的情况下，在 StackQL 初始化文件（[`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)）中设置。`--pgsrv.*` 标志列在 [PostgreSQL 服务器选项](/command-line-usage/srv#server-options)中。
 
 | 标志 | 数据类型 | 说明 | 默认值 |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | 调用方访问配置，一个 JSON 封装对象 `{"path": "/path/to/access.json"}`（也接受直接传入文件路径）。启用[访问管理](/command-line-usage/access-management)：通过 JWT、静态 bearer 令牌、双向 TLS 或本地 OS 身份对调用方进行身份验证，并依据策略规则对语句进行授权。本地令牌凭据从 `STACKQL_CALLER_TOKEN` 读取。在 `v1.0` 及之后的 StackQL 发布版本中可用。 | |
-| <span class="nowrap">`--acid`</span> | string | 表示 ACID 配置的 JSON / YAML 字符串 | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | 允许会话通过 `SET "$.secret_store"` 选择持久化的 OS 机密存储（macOS Keychain、Linux Secret Service 或 Windows Credential Manager）。即使设置了该标志，平面文件存储也会被拒绝。参阅 [Provider 会话与机密](/getting-started/provider-sessions#persistent-os-secret-stores)。在 `v1.0` 及之后的 StackQL 发布版本中可用。 | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | 允许在 SQL 表达式中解引用机密和凭据的值（`"$secrets.name"`、`"$auth.provider.field"`），其后果是这些值可能进入结果、日志和持久化的查询产物。正常的 Provider 身份验证不需要此标志。参阅 [SQL 中的机密值](/getting-started/provider-sessions#secret-values-in-sql)。在 `v1.0` 及之后的 StackQL 发布版本中可用。 | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | API 请求超时时间，以秒为单位，0 表示不超时 | `45` |
@@ -59,6 +58,7 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`-o`, `--output`</span> | string | 输出格式，必须是 {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} 之一（`ndjson` 可作为 `jsonl` 的别名）。`otel` 输出 OpenTelemetry 日志记录，参阅[输出模式](/getting-started/output-modes#otel-output)；在 `v0.11.660` 及之后的 StackQL 发布版本中可用。在 `--otel.config` 中配置了导出器时，`otel` 记录还会推送到该端点 | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | 用于配置 `otel` 输出格式的 JSON / YAML 字符串；`exporter.endpoint`、`exporter.headers`、`exporter.timeout_ms` 和 `exporter.batch_size` 将记录推送到 OTLP/HTTP 日志端点，参阅[推送到 OTLP 端点](/getting-started/output-modes#pushing-to-an-otlp-endpoint)。在 `v0.12.732` 及之后的 StackQL 发布版本中可用 | `{}` |
 | <span class="nowrap">`--preview`</span> | string | 启用预览功能的 JSON 字符串。`{"unstable": true}` 会开放文档驱动的 `stackql_unstable_<provider>.<service>.<resource>` 关系，这些关系由 `omnisdk` 直接根据 Provider 文档解析并运行，行在生成时即以流式返回；其余的键（`batchSize`、`flushInterval`、`endpoint`、`insecureSkipTLSVerify`）用于调整该后端。预览功能并不稳定：行为、语法和输出可能在不同发布版本之间发生变化或失效，且不另行通知，因此不要在生产环境中依赖它。自 `v1.0` 起，同一启用选项还会开放 `stackql_preview.iac.run` 和 `stackql_preview.iac.destroy` 关系，它们通过 `omnisdk` 应用和拆除一组声明的资源，状态保存在应用程序根路径下。参阅[预览功能](https://github.com/stackql/stackql/blob/main/docs/preview.md) | `{}` |
+| <span class="nowrap">`--provider`</span> | string | 初始默认 Provider。例如，使用 `--provider github` 时，`repos.repos` 解析为 `github.repos.repos`，无需事先执行 `USE` 语句。不会对该 Provider 进行身份验证。 | 无 |
 | <span class="nowrap">`--querycachesize`</span> | integer | 查询计划 LRU 缓存的大小，以条目数计 | `10000` |
 | <span class="nowrap">`--registry`</span> | string | 用于配置 Provider 注册表位置和 Provider 文档签名验证的 JSON / YAML 字符串 | 参阅 [`--registry`](#--registry) |
 | <span class="nowrap">`--session`</span> | string | 表示会话配置的 JSON / YAML 字符串 | `{}` |
@@ -66,10 +66,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--store.txn`</span> | string | 表示 Txn 存储配置的 JSON / YAML 字符串 | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | CA 证书包的路径，未指定时使用系统默认值 |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | 允许信任不安全的证书（不推荐） |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | 用于在 Provider 读取操作中显式容忍特定 HTTP 响应状态的 JSON / YAML 策略。参阅 [`--upstream.errors`](#--upstream-errors)。 | `{}` |
 | <span class="nowrap">`--var`</span> | string | 以键/值对形式提供的外部变量，通过 `jsonnet` 数据文件引入 StackQL 查询 |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | 详细输出 | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | stackql 的上下文相关帮助 | |
 | <span class="nowrap">`--version`</span> | | 显示 StackQL 程序的版本 | |
+
+`--colorscheme` 已弃用，不再更改 shell 颜色。`--usenonpreferredapis` 仍被接受，但在当前引擎中不会改变 API 的选择。
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ Databricks 提供了一个兼容 PostgreSQL 的接口，可用作 StackQL 的 SQ
 :::note
 用户名或密码中的特殊字符（如 `@`）在 DSN 中必须进行 URL 编码（例如，`@` 变为 `%40`）。
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+使用 `http.ignoreStatusCodes` 列出 Provider 读取操作应显式容忍的 HTTP 响应状态。条目为字符串：使用确切的状态码（如 `"503"`）或状态类别（如 `"5xx"`）。默认值 `{}` 不会在引擎对上游响应的常规处理之外添加任何例外。此设置不会重试失败的请求，也不适用于变更或身份验证交换。
+
+被忽略的响应不提供任何行。查询中的其他读取操作仍可返回行，因此成功的查询可能返回不完整的结果。StackQL 会将被忽略的 HTTP 状态作为诊断信息报告。
+
+例如，[模拟 GitHub 连接测试](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104)使用了此选项：
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+在该测试中，对其中一个仓库的协作者请求返回 HTTP `500`。查询仍会返回其他仓库的协作者行，并且 stderr 中包含 `ignoring upstream response: 500 INTERNAL SERVER ERROR`。如果只预期出现一种失败，优先使用确切的状态码。

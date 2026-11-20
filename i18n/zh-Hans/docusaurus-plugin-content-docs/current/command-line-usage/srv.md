@@ -31,12 +31,14 @@ image: "/img/stackql-featured-image.png"
 
 ### 服务器选项 {#server-options}
 
-| 选项 | 说明 |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|服务器监听的地址（通常为 `0.0.0.0`）|
-|<span class="nowrap">`--pgsrv.port`</span>|服务器监听的端口（例如 `5444`）|
-|<span class="nowrap">`--pgsrv.tls`</span>|mTLS 配置对象，参阅下面的[示例](#examples)|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|日志级别（默认 `WARN`）|
+| 选项 | 说明 | 默认值 |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|服务器监听的地址。|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|服务器监听的 TCP 端口。|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|JSON TLS 配置对象。参阅下面的 [mTLS 示例](#examples)。|无|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|为 PostgreSQL 客户端启用查询调试输出，例如 `stackql srv --pgsrv.debug.enable=true`。除非客户端应当接收调试信息，否则保持关闭。|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|高级 JSON 或 YAML 映射，仅在未设置 `--pgsrv.tls` 时传递给 PostgreSQL 线协议服务器。|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|仍被接受，但在当前引擎中不会设置日志记录器级别。请改用 `--loglevel`。|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-为服务器需要访问的 Provider 设置身份验证对象，例如 GitHub。  
+为服务器需要的 Provider 设置凭据。对于 GitHub，该 Provider 从以下两个变量中读取用户名和个人访问令牌：  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 在另一个终端中，使用 `psql` 命令行客户端连接到服务器。  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 现在对已通过身份验证的 Provider 运行 StackQL 查询。  
@@ -148,11 +150,11 @@ psql 127.0.0.1
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

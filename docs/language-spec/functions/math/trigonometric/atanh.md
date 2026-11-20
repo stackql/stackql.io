@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Calculate the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, returning an angle in radians using SQL in StackQL.
+description: Calculate the hyperbolic arc tangent (inverse hyperbolic tangent) of a number using SQL in StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calculates the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, which is the value in radians whose hyperbolic tangent is the specified number.
+Calculates the hyperbolic arc tangent (inverse hyperbolic tangent) of a number, which is the value whose hyperbolic tangent is the specified number.
 
 See also:  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 A numeric expression within the range of -1 to 1 (exclusive), for which the hyperbolic arc tangent is to be calculated.
 
 ## Return Value(s) {#return-values}
-Returns the hyperbolic arc tangent of the specified value in radians.
+Returns the hyperbolic arc tangent of the specified value.
 
 * * *
 
@@ -41,7 +41,7 @@ Returns the hyperbolic arc tangent of the specified value in radians.
 SELECT ATANH(0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-This query returns approximately `0.5493`, as the hyperbolic arc tangent of 0.5 is about 0.5493 radians.
+This query returns approximately `0.5493`, as the hyperbolic arc tangent of 0.5 is about 0.5493.
 
 ### Calculate the hyperbolic arc tangent of -0.5 {#calculate-the-hyperbolic-arc-tangent-of--05}
 
@@ -49,4 +49,4 @@ This query returns approximately `0.5493`, as the hyperbolic arc tangent of 0.5 
 SELECT ATANH(-0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-This query calculates the hyperbolic arc tangent of -0.5, resulting in approximately `-0.5493`, as this is the value in radians whose hyperbolic tangent is -0.5.
+This query calculates the hyperbolic arc tangent of -0.5, resulting in approximately `-0.5493`, as this is the value whose hyperbolic tangent is -0.5.

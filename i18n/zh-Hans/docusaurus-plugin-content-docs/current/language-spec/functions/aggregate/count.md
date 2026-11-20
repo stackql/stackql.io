@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__ 或 __*__  
 列或表达式。如果指定 __*__，则统计资源或分组中的所有记录。  
 
-> *columnExpression* 中必须至少有一个值不为 `NULL`，否则返回 `NULL`。
+> *columnExpression* 中的 `NULL` 值不计入计数。如果所有值都是 `NULL`，`COUNT` 返回 `0`。
 
 __*groupByColumn*__  
 用于执行汇总或聚合操作的一列或多列。`GROUP BY` 子句为每个列分组返回一行。

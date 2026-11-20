@@ -47,13 +47,15 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Convertir una fecha y hora a UTC {#convert-datetime-to-utc}
+### Convertir una hora local a UTC {#convert-datetime-to-utc}
+
+El modificador `utc` trata su entrada como una hora local del equipo que ejecuta StackQL y la convierte a UTC.  Un valor que ya está en UTC, como `'now'` o una marca de tiempo con el sufijo `Z`, se devuelve sin cambios.
 
 ```sql
-SELECT name, timeCreated,
-datetime('now', 'utc') as now_utc
-FROM google.storage.buckets WHERE project = 'stackql';
+SELECT datetime('2026-11-20 17:59:24', 'utc') as utc_time;
 ```
+
+En un equipo cuya zona horaria es UTC+11, esta consulta devuelve `2026-11-20 06:59:24`.
 
 ### Calcular una fecha relativa a otra fecha {#calculate-a-date-relative-to-another-date}
 

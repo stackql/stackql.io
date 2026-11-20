@@ -32,15 +32,9 @@ Sobald Sie sich in einer bei einem Cloud-Anbieter authentifizierten Shell befind
 
 Standardmäßig gibt die StackQL-Shell tabellarische Ergebnisse zurück; die Ausgabeformate `json`, `jsonl`, `csv` und `text` sind jedoch über das Flag `--output` verfügbar, siehe [Ausgabemodi](/getting-started/output-modes).  
 
-Sie können das Farbschema der StackQL-Shell mit dem Flag `--colorscheme` ändern, wie unten gezeigt:  
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### Die Initialisierungsdatei `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Standardwerte für StackQL-Befehlsoptionen, wie das zuvor besprochene Ausgabeformat und Farbschema, können in der Initialisierungsdatei `.stackqlrc` festgelegt werden.  Wenn diese Datei im aktuellen Verzeichnis der ausführbaren StackQL-Datei vorhanden ist, wird sie automatisch geladen; alternativ kann sie mit dem Flag `--configfile` angegeben werden, wie unten gezeigt:
+Standardwerte für StackQL-Befehlsoptionen, wie das Ausgabeformat, können in der Initialisierungsdatei `.stackqlrc` festgelegt werden.  Wenn diese Datei im aktuellen Verzeichnis der ausführbaren StackQL-Datei vorhanden ist, wird sie automatisch geladen; alternativ kann sie mit dem Flag `--configfile` angegeben werden, wie unten gezeigt:
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

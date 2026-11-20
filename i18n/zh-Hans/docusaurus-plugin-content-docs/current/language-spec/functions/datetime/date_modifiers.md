@@ -48,13 +48,15 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 将日期时间转换为 UTC {#convert-datetime-to-utc}
+### 将本地时间转换为 UTC {#convert-datetime-to-utc}
+
+`utc` 修饰符将其输入视为运行 StackQL 的机器上的本地时间，并将其转换为 UTC。已经是 UTC 的值（例如 `'now'` 或带 `Z` 后缀的时间戳）会原样返回。
 
 ```sql
-SELECT name, timeCreated,
-datetime('now', 'utc') as now_utc
-FROM google.storage.buckets WHERE project = 'stackql';
+SELECT datetime('2026-11-20 17:59:24', 'utc') as utc_time;
 ```
+
+在时区为 UTC+11 的机器上，此查询返回 `2026-11-20 06:59:24`。
 
 ### 计算相对于另一个日期的日期 {#calculate-a-date-relative-to-another-date}
 

@@ -55,7 +55,7 @@ JSON 문서의 지정한 경로에 삽입할 값입니다.
 
 ```sql
 -- Example: Insert a new 'region' key with the value 'Europe' into a JSON object
-SELECT JSON_INSERT(json_data, '$.region', 'Europe') as updated_object;
+SELECT JSON_INSERT('{"name":"ResourceOne","type":"Storage"}', '$.region', 'Europe') as updated_object;
 
 /* expected output...
 |-----------------------------------------------------------|

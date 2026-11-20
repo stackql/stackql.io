@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 Updates existing values or inserts new values in a JSON document at specified paths.
 
 See also:  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
 
 * * * 
 
@@ -55,15 +55,13 @@ Returns a JSON document with the value set at the specified path. If the path ex
 
 ```sql
 -- Example: Update the 'status' key's value to 'active' in a JSON object
-SELECT JSON_SET(json_data, '$.status', 'active') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending","region":"US"}', '$.status', 'active') as updated_json;
 
 -- Expected output:
 -- |---------------------------------------------------------|
 -- |                    updated_json                         |
 -- |---------------------------------------------------------|
--- | {"name":"ServiceOne", "status":"active", "region":"US"} |
+-- | {"name":"ServiceOne","status":"active","region":"US"}   |
 -- |---------------------------------------------------------|
 ```
 
@@ -72,16 +70,14 @@ This query updates the 'status' key to 'active' in the JSON document if the 'sta
 ### Add a new key-value pair to a JSON object {#add-a-new-key-value-pair-to-a-json-object}
 
 ```sql
--- Example: Add a new key 'lastChecked' with the current date to a JSON object
-SELECT JSON_SET(json_data, '$.lastChecked', '2024-04-29') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+-- Example: Add a new key 'lastChecked' with a date value to a JSON object
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending"}', '$.lastChecked', '2024-04-29') as updated_json;
 
 /* expected output...
 |-----------------------------------------------------------------------|
 |                          updated_json                                 |
 |-----------------------------------------------------------------------|
-| {"name":"ServiceOne", "status":"pending", "lastChecked":"2024-04-29"} |
+| {"name":"ServiceOne","status":"pending","lastChecked":"2024-04-29"}   |
 |-----------------------------------------------------------------------|
 */
 ```

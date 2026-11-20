@@ -31,12 +31,14 @@ StackQL 서버는 Postgres 와이어 프로토콜을 사용하지만 Postgres �
 
 ### 서버 옵션 {#server-options}
 
-| 옵션 | 설명 |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|서버가 수신 대기하는 주소(일반적으로 `0.0.0.0`)|
-|<span class="nowrap">`--pgsrv.port`</span>|서버가 수신 대기하는 포트(예: `5444`)|
-|<span class="nowrap">`--pgsrv.tls`</span>|mTLS 구성 객체(아래 [예제](#examples) 참조)|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|로그 수준(기본값 `WARN`)|
+| 옵션 | 설명 | 기본값 |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|서버가 수신 대기하는 주소입니다.|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|서버가 수신 대기하는 TCP 포트입니다.|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|JSON TLS 구성 객체입니다. 아래 [mTLS 예제](#examples)를 참조하세요.|없음|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|PostgreSQL 클라이언트에 대한 쿼리 디버그 출력을 활성화합니다(예: `stackql srv --pgsrv.debug.enable=true`). 클라이언트가 디버그 정보를 받아야 하는 경우가 아니면 비활성화된 상태로 두세요.|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|`--pgsrv.tls` 플래그가 설정되지 않은 경우에만 PostgreSQL 와이어 서버에 전달되는 고급 JSON 또는 YAML 매핑입니다.|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|허용되지만 현재 엔진에서는 로거 수준을 설정하지 않습니다. 대신 `--loglevel` 플래그를 사용하세요.|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-서버가 액세스해야 하는 각 프로바이더(예: GitHub)에 대한 인증 객체를 설정합니다.
+서버에 필요한 프로바이더의 자격 증명을 설정합니다. GitHub의 경우 프로바이더는 다음 두 변수에서 사용자 이름과 개인용 액세스 토큰을 읽습니다:
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 다른 터미널에서 `psql` 명령줄 클라이언트를 사용하여 서버에 연결합니다.
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 이제 인증된 프로바이더에 대해 StackQL 쿼리를 실행합니다.
@@ -148,11 +150,11 @@ psql 127.0.0.1
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

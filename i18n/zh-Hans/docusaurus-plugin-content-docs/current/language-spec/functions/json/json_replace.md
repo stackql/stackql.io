@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 根据路径更新 JSON 对象中的现有值。`JSON_REPLACE` 不会向文档添加新键，只会替换现有键的值。
 
 另请参阅：  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert)
 
 * * * 
 

@@ -55,7 +55,7 @@ JSON ドキュメントの指定したパスに挿入する値。
 
 ```sql
 -- Example: Insert a new 'region' key with the value 'Europe' into a JSON object
-SELECT JSON_INSERT(json_data, '$.region', 'Europe') as updated_object;
+SELECT JSON_INSERT('{"name":"ResourceOne","type":"Storage"}', '$.region', 'Europe') as updated_object;
 
 /* expected output...
 |-----------------------------------------------------------|

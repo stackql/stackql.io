@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__ または __*__  
 列または式。__*__ を指定すると、リソースまたはグループ内のすべての行がカウントされます。  
 
-> *columnExpression* の値のうち少なくとも 1 つが `NULL` 以外である必要があります。そうでない場合は `NULL` が返されます。
+> *columnExpression* の `NULL` 値はカウントされません。すべての値が `NULL` の場合、`COUNT` は `0` を返します。
 
 __*groupByColumn*__  
 要約操作または集約操作の対象となる 1 つ以上の列。`GROUP BY` 句は、列のグループごとに 1 行を返します。

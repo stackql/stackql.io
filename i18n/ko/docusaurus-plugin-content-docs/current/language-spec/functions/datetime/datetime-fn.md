@@ -47,13 +47,15 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 날짜/시간을 UTC로 변환 {#convert-datetime-to-utc}
+### 로컬 시간을 UTC로 변환 {#convert-datetime-to-utc}
+
+`utc` 한정자는 입력을 StackQL을 실행하는 머신의 로컬 시간으로 간주하여 UTC로 변환합니다. `'now'` 또는 `Z` 접미사가 있는 타임스탬프처럼 이미 UTC인 값은 변경되지 않고 그대로 반환됩니다.
 
 ```sql
-SELECT name, timeCreated,
-datetime('now', 'utc') as now_utc
-FROM google.storage.buckets WHERE project = 'stackql';
+SELECT datetime('2026-11-20 17:59:24', 'utc') as utc_time;
 ```
+
+시간대가 UTC+11인 머신에서 이 쿼리는 `2026-11-20 06:59:24`를 반환합니다.
 
 ### 다른 날짜를 기준으로 한 날짜 계산 {#calculate-a-date-relative-to-another-date}
 
