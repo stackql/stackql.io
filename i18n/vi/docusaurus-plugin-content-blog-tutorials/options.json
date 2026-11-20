@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Hướng dẫn",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Hướng dẫn thực hành về vận hành đám mây, bảo mật và tự động hóa bằng SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Tất cả hướng dẫn",
+    "description": "The label for the left sidebar"
+  }
+}

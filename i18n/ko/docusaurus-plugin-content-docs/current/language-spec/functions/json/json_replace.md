@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 경로를 기준으로 JSON 객체의 기존 값을 업데이트합니다. `JSON_REPLACE` 함수는 문서에 새 키를 추가하지 않으며, 기존 키의 값만 교체합니다.
 
 참고 항목:  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert)
 
 * * * 
 

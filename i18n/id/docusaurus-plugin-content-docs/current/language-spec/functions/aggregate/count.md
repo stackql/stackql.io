@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__  atau __*__  
 Kolom atau ekspresi. Jika __*__ ditentukan, semua baris dalam sumber daya atau pengelompokan akan dihitung.
 
-> Setidaknya satu nilai dari *columnExpression* harus bukan `NULL`; jika tidak, `NULL` dikembalikan.
+> Nilai `NULL` dari *columnExpression* tidak dihitung.  Jika semua nilai berupa `NULL`, fungsi `COUNT` mengembalikan `0`.
 
 __*groupByColumn*__  
 Satu atau beberapa kolom yang menjadi dasar operasi ringkasan atau agregat. Klausa `GROUP BY` mengembalikan satu baris untuk setiap pengelompokan kolom.

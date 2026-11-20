@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Memperbarui nilai yang sudah ada dalam objek JSON berdasarkan jalurnya. `JSON_REPLACE` tidak menambahkan kunci baru ke dokumen; fungsi ini hanya mengganti nilai dari kunci yang sudah ada.
 
 Lihat juga:  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert)
 
 * * * 
 

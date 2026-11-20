@@ -2115,3 +2115,390 @@ Style:
 - Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("Tampilkan", "Buat", "Cantumkan").
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Indonesian is a little longer than English, so a `length ratio` warning from `yarn i18n:verify` is not expected; if one appears, check for an omission or an addition. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).
+
+## vi
+
+Audience: Vietnamese engineers reading technical documentation. Standard written Vietnamese in the register of vendor documentation in Vietnamese (Microsoft Learn, Google Cloud, AWS): neutral, precise, no regional or colloquial forms (không có "ko", "đc", "dc", "mình" for the reader, "nha", "nhé", "ạ"). Address the reader as "bạn" (lower case inside a sentence), never "quý vị", "anh/chị" or "các bạn"; the possessive is "máy tính của bạn". Present tense, short sentences. Instructions use the plain imperative ("Chạy lệnh sau", "Sử dụng", "Xem", "Cài đặt"); "hãy" only where a bare verb would read abruptly (opening an instruction paragraph, "Để biết thêm thông tin, hãy xem X."), never "vui lòng" in documentation prose. Task headings are verb phrases ("Cài đặt StackQL", "Tạo template"). Keep the English terms Vietnamese developers use as a matter of course (the "Kept in English" row); do not coin Vietnamese names for products or APIs. No marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Vietnamese | Not |
+|---|---|---|
+| provider (a StackQL provider) | provider (lower case in prose; no plural ending: "các provider", "mọi provider") | nhà cung cấp (that is the cloud vendor), providers |
+| cloud provider (the vendor) | nhà cung cấp đám mây | provider đám mây, nhà cung cấp cloud |
+| vendor (the company behind an API or SDK, not only cloud) | nhà cung cấp; "vendor-published" = do nhà cung cấp phát hành | vendor (in prose), người bán |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | đám mây, after the noun (tài nguyên đám mây, hạ tầng đám mây) | cloud (in prose), mây |
+| service | dịch vụ | service |
+| resource | tài nguyên | resource |
+| method | phương thức | method, phương pháp |
+| operation | thao tác | hoạt động (that is activity), operation |
+| query (noun) / to query | truy vấn (noun and verb); "run a query" = chạy truy vấn | query, câu hỏi |
+| statement | câu lệnh ("câu lệnh `SELECT`") | lệnh (that is a command), phát biểu, statement |
+| command (CLI) / subcommand | lệnh ("lệnh `stackql exec`") / lệnh con | câu lệnh (that is a statement) |
+| result set | tập kết quả | bộ kết quả, tập hợp kết quả |
+| row / column | hàng / cột | dòng (that is a line of text), bản ghi (for a row) |
+| line (of text, of output) | dòng | hàng |
+| table | bảng | |
+| view | dạng xem ("dạng xem `CREATE VIEW`" reads "dạng xem được tạo bằng `CREATE VIEW`") | view (in prose), khung nhìn |
+| materialized view | dạng xem vật chất hóa | dạng xem cụ thể hóa, materialized view (in prose) |
+| window function | hàm cửa sổ | hàm window, hàm phân tích |
+| window frame | khung cửa sổ | frame |
+| aggregate function / scalar function | hàm tổng hợp / hàm vô hướng | hàm gộp, hàm kết tập |
+| function / expression / clause | hàm / biểu thức / mệnh đề | chức năng (that is a feature) |
+| keyword / operator / predicate | từ khóa / toán tử / vị từ | keyword |
+| subquery / alias / join | truy vấn con / bí danh / phép nối (`JOIN` where the source has code) | subquery, alias (in prose) |
+| partition / peer, peer group / tie (window functions) | phân vùng / hàng ngang hàng, nhóm hàng ngang hàng / đồng hạng ("các hàng đồng hạng", "có khoảng trống", "không có khoảng trống") | peer |
+| offset (`LAG`, `LEAD`) | độ lệch (the argument name `offset` stays as code) | offset (in prose) |
+| target (of `SET` and `UNSET`) | đích ("Đích" as the heading) | mục tiêu |
+| override (a credential, a default) / overwrite (a value, a key) | ghi đè for both ("credential override" = ghi đè thông tin xác thực; "Ghi đè nếu đã tồn tại?") | override, thay đè |
+| dereference | giải tham chiếu | |
+| data type / literal / identifier | kiểu dữ liệu / literal ("literal chuỗi", "literal số") / định danh | loại dữ liệu, hằng (for a literal), identifier |
+| string / integer / boolean | chuỗi / số nguyên / boolean | string (in prose), xâu |
+| whitespace | khoảng trắng | ký tự trắng, whitespace |
+| parameter / argument | tham số / đối số | |
+| flag (CLI) / option | cờ / tùy chọn ("global flags" = cờ toàn cục; "cờ `--output`") | flag (in prose), lá cờ |
+| environment variable | biến môi trường | biến env |
+| field / key / value | trường / khóa / giá trị | field, key (in prose) |
+| schema | lược đồ | schema (in prose) |
+| control plane / data plane | mặt phẳng điều khiển / mặt phẳng dữ liệu | control plane, data plane |
+| agent, AI agent | tác nhân, tác nhân AI | agent, đại lý |
+| tool (an MCP tool) | công cụ ("công cụ MCP") | tool |
+| prompt (text sent to a model) | lời nhắc | prompt (in prose), dấu nhắc (that is a shell prompt) |
+| approval prompt (a dialog shown to the user) | yêu cầu phê duyệt | lời nhắc phê duyệt |
+| elicitation (MCP) / elicitation prompt | elicitation (the MCP feature name, kept) / yêu cầu elicitation; "elicitation-capable client" = ứng dụng khách MCP hỗ trợ elicitation | gợi hỏi, khơi gợi |
+| gating / gated (MCP) | kiểm soát / được kiểm soát; "gated by X" = được kiểm soát bởi X; "gated writes" = các thao tác ghi cần phê duyệt | gating, chặn cổng |
+| approval / approve | phê duyệt | chấp thuận |
+| server mode, safety mode | chế độ máy chủ, chế độ an toàn | |
+| read-only | chỉ đọc | |
+| write (noun, a mutating call) | thao tác ghi | việc viết |
+| mutation / mutating statement | thao tác thay đổi dữ liệu / câu lệnh thay đổi dữ liệu | đột biến, mutation |
+| lifecycle operation | thao tác vòng đời | thao tác lifecycle |
+| resource lifecycle | vòng đời tài nguyên | |
+| log / audit log | nhật ký / nhật ký kiểm tra | log (in prose), sổ ghi |
+| log record / completion record / row record (OTel output) | bản ghi nhật ký / bản ghi hoàn tất / bản ghi hàng | |
+| credentials | thông tin xác thực | chứng chỉ (that is a certificate), credentials |
+| authentication / authorization | xác thực / ủy quyền | chứng thực, cấp quyền |
+| principal / service principal | principal / service principal (kept, Azure and IAM terms) | chủ thể bảo mật |
+| subject / issuer / audience / claim (JWT, certificate identity) | chủ thể / bên phát hành / đối tượng nhận / claim | |
+| membership (group, directory) | tư cách thành viên | |
+| service account | tài khoản dịch vụ | |
+| token / API key / access key | token / khóa API / khóa truy cập | mã thông báo, API key |
+| secret / secret store | bí mật / kho bí mật | secret (in prose), mật mã |
+| scope (OAuth, and of a variable or a setting) | phạm vi | scope |
+| role / permission | vai trò / quyền | role, sự cho phép |
+| assume a role (AWS) | đảm nhận vai trò | giả định vai trò |
+| session / session variable | phiên / biến phiên | session |
+| deployment / to deploy | triển khai (noun and verb) | deploy (in prose), phát triển (that is develop) |
+| infrastructure / infrastructure as code | hạ tầng / hạ tầng dưới dạng mã (IaC) | cơ sở hạ tầng, hạ tầng như mã |
+| registry (generic) / provider registry | registry / registry provider | sổ đăng ký, kho đăng ký |
+| pull (a provider) | tải xuống; "pulled" = đã tải xuống | kéo, pull (in prose) |
+| download / upload | tải xuống / tải lên | download, tải về |
+| repository | kho lưu trữ | repository, repo (in prose) |
+| release | bản phát hành; to release = phát hành | release |
+| command line | dòng lệnh | command line |
+| shell / interactive shell | shell / shell tương tác | vỏ |
+| server / client | máy chủ / ứng dụng khách ("máy chủ MCP", "ứng dụng khách MCP") | server, client (in prose), máy khách (that is a client machine) |
+| transport (MCP) | phương thức truyền tải ("phương thức truyền tải stdio") | giao vận, transport |
+| stateless / stateful | phi trạng thái / có trạng thái | không trạng thái, stateless |
+| endpoint | điểm cuối | endpoint |
+| request / response | yêu cầu / phản hồi | request, đáp ứng |
+| request body | phần thân yêu cầu | body |
+| payload | payload | tải trọng |
+| header (HTTP) | header | tiêu đề (that is a heading or a title) |
+| pagination | phân trang | |
+| output / output format / output mode | đầu ra / định dạng đầu ra / chế độ đầu ra | output, kết xuất |
+| input | đầu vào | input |
+| template / templating | template / sử dụng template | mẫu (that is a regex pattern), khuôn mẫu |
+| model (AI) | mô hình | model |
+| dry run | chạy thử | dry run, chạy khô |
+| guardrail | cơ chế bảo vệ | guardrail, lan can |
+| answer engine | công cụ trả lời | answer engine |
+| region / project / subscription / tenant | khu vực / dự án / gói đăng ký / tenant | vùng, region (in prose), project (in prose), người thuê |
+| account | tài khoản | |
+| open source | mã nguồn mở | open source |
+| binary / library | tệp nhị phân / thư viện | binary (in prose), library |
+| embedded (Embedded MCP) / to embed | nhúng (MCP nhúng) / nhúng | được nhúng sẵn, embedded |
+| built-in | tích hợp sẵn ("hàm tích hợp sẵn") | dựng sẵn, built-in, có sẵn |
+| installation / to install / installed | cài đặt (noun and verb) / đã cài đặt | install (in prose), lắp đặt |
+| settings / configuration | thiết lập / cấu hình | cài đặt (that is installation), setting (in prose) |
+| documentation | tài liệu | tư liệu |
+| tutorial | hướng dẫn | tutorial (in prose) |
+| quick start | hướng dẫn bắt đầu nhanh; "Quick start" as a heading = Bắt đầu nhanh | quickstart |
+| getting started | bắt đầu | khởi đầu |
+| announcement | thông báo | |
+| feature | tính năng | chức năng (that is a function) |
+| example | ví dụ | mẫu (that is a pattern or a template) |
+| syntax / usage | cú pháp / cách dùng | |
+| note / tip / warning (admonition titles are translated by the theme) | ghi chú / mẹo / cảnh báo | |
+| resource hierarchy | phân cấp tài nguyên | hệ thống phân cấp tài nguyên |
+| access management | quản lý truy cập | |
+| provider session | phiên provider | |
+| SQL backend | backend SQL | phụ trợ SQL |
+| query engine / parser | công cụ truy vấn / trình phân tích cú pháp | bộ máy truy vấn, parser (in prose) |
+| wire protocol | giao thức wire ("giao thức wire của PostgreSQL") | giao thức dây |
+| reverse proxy | reverse proxy | proxy ngược |
+| local cache | bộ nhớ đệm cục bộ | cache cục bộ |
+| key-value pair | cặp khóa-giá trị | |
+| delimiter / separator | dấu phân cách (both) | delimiter |
+| bucket (object storage) / bucket (NTILE) | bucket / nhóm | xô, thùng |
+| throw an error / return an error | báo lỗi / trả về lỗi | ném lỗi, quăng lỗi |
+| return (a value) | trả về | hoàn trả, return |
+| well-formed / valid (JSON) | đúng định dạng / hợp lệ | |
+| file / state file | tệp / tệp trạng thái | file (in prose), tập tin |
+| directory (of principals, of plugins, filesystem) / folder | thư mục (both) | directory |
+| computer, machine | máy tính, máy | |
+| screen / user / team | màn hình / người dùng / nhóm | user (in prose) |
+| app, application | ứng dụng | app (in prose) |
+| drift / infrastructure drift | sai lệch / sai lệch hạ tầng | drift, độ trôi |
+| cloud inventory, inventory | kiểm kê đám mây, kiểm kê ("kiểm kê tài nguyên") | inventory, hàng tồn kho |
+| compliance | tuân thủ | compliance |
+| provision (resources) | cấp phát | cung cấp, provision |
+| operator (the person running StackQL) | người vận hành | operator (in prose), toán tử (that is a SQL operator) |
+| caller | bên gọi | người gọi |
+| filter (noun and verb) | bộ lọc / lọc | |
+| concatenation | nối chuỗi ("toán tử nối chuỗi") | ghép nối, phép nối (that is a join) |
+| parse / plan (a statement) | phân tích cú pháp / lập kế hoạch | parse (in prose) |
+| contract (I/O contract, safety contract) | hợp đồng ("hợp đồng I/O", "hợp đồng an toàn") | contract |
+| source of truth | nguồn dữ liệu gốc | nguồn sự thật |
+| entitlement | quyền sử dụng | |
+| snapshot / checksum / digest | ảnh chụp nhanh / checksum / hash | snapshot (in prose), bản tóm tắt |
+| estate / fingerprint | môi trường ("môi trường đám mây") / dấu vân tay | bất động sản, tài sản |
+| allowlist | danh sách cho phép | whitelist, danh sách trắng |
+| opt in / explicit opt-in | chủ động bật / bật một cách rõ ràng | |
+| enable / disable | bật / tắt | kích hoạt, vô hiệu hóa (except when the source says "deactivate") |
+| support (a feature, a format) / supported | hỗ trợ / được hỗ trợ | support |
+| hint (in an MCP error or tool annotation) | gợi ý | hint |
+| advertise (a capability) | công bố | quảng cáo |
+| artifact (build or release output) | artifact | tạo phẩm, hiện vật |
+| stack (of resources) | stack | ngăn xếp (that is the data structure) |
+| pipeline | pipeline | đường ống |
+| notarized / signed | được công chứng / được ký | |
+| common table expression (CTE) | biểu thức bảng chung (CTE) | |
+| default / by default | mặc định / theo mặc định | default |
+| array (JSON, data type) | mảng | array (in prose) |
+| policy (IAM, access policy) / IAM binding | chính sách / liên kết IAM | policy, ràng buộc IAM |
+| bind, binding (alias, secret store) | liên kết | ràng buộc |
+| assign, assignment (`SET`) | gán, phép gán | |
+| token (lexical) | token từ vựng | |
+| pin (a version, a key, an issuer) | ghim; the heading "Pinning the revision" is "Ghim phiên bản sửa đổi" | pin, cố định |
+| exporter / receiver (OTel) / sink (audit) | exporter / receiver / đích | bộ xuất, bộ nhận |
+| tenancy (the alias label) | tenancy | |
+| preview (a feature in preview) | bản xem trước ("đang ở giai đoạn xem trước") | preview |
+| legacy | cũ | legacy, di sản |
+| batch / statement batch | lô / lô câu lệnh | batch (in prose), mẻ |
+| wildcard | ký tự đại diện | wildcard |
+| query hint | gợi ý truy vấn | |
+| substring / pattern (regex) / regular expression | chuỗi con / mẫu / biểu thức chính quy | regex (in prose, except in names), xâu con |
+| collating function / collating sequence | hàm đối chiếu / thứ tự đối chiếu | |
+| timestamp | dấu thời gian | tem thời gian, timestamp (in prose) |
+| current row / rank / running total (window functions) | hàng hiện tại / thứ hạng / tổng lũy kế | |
+| installer | trình cài đặt | installer |
+| workspace | không gian làm việc | workspace |
+| monitoring / to monitor / monitor (noun) | giám sát (noun and verb) / trình giám sát | theo dõi, monitor (in prose) |
+| run / execute | chạy / thực thi | |
+| list (verb) / delete, remove / manage | liệt kê / xóa / quản lý | gỡ (except for uninstall) |
+| framework | framework | khung, khuôn khổ |
+| capability (of an MCP client or server) | khả năng ("ứng dụng khách MCP hỗ trợ elicitation" for an elicitation-capable client) | năng lực, capability |
+| Query Library entry | mục ("ID mục Query Library") | bài, đầu vào |
+| job (CI, scheduled) | job ("job CI định kỳ", "tên job") | công việc, tác vụ |
+| task (generic) | tác vụ | |
+| container | container | vùng chứa, thùng chứa |
+| trace / span / trace id | trace / span / ID trace | dấu vết |
+| SQL engine / backing (SQL engine, server) | công cụ SQL / bên dưới ("công cụ SQL bên dưới") | |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | độc lập / dựng sẵn / trình khởi chạy | prebuilt |
+| to vendor (a binary, a dependency) | vendoring ("đưa vào ứng dụng của bạn theo kiểu vendoring") | |
+| Cargo features (`sidecar`, `vendored`) | tính năng Cargo | feature flag |
+| predicate pushdown | đẩy vị từ xuống (predicate pushdown) | |
+| verbose mode | chế độ chi tiết | chế độ dài dòng, verbose (in prose) |
+| floating point / Unix timestamp / Julian day | dấu phẩy động / dấu thời gian Unix / ngày Julian | dấu chấm động |
+| update (noun and verb) | bản cập nhật, cập nhật | update |
+| database / software / network / password | cơ sở dữ liệu / phần mềm / mạng / mật khẩu | database (in prose), CSDL |
+| link (noun) / page / website | liên kết / trang / trang web | link (in prose), đường link, website |
+| custom | tùy chỉnh | custom |
+| interface / object / instance | giao diện / đối tượng / instance ("instance EC2") | phiên bản (that is a version), thể hiện |
+| version / revision | phiên bản / bản sửa đổi | |
+| script / browser / plugin | tập lệnh / trình duyệt / plugin | script (in prose), kịch bản |
+| build (noun) / to build | bản dựng / dựng | build (in prose), xây dựng (except for "build a solution") |
+| path (file, JSON, module, root) | đường dẫn ("đường dẫn tệp", "đường dẫn JSON", "biểu thức đường dẫn JSON", "đường dẫn gốc"); the `PATH` variable and argument names such as `path` stay as code | path (in prose) |
+| nested | lồng nhau | lồng ghép |
+| real-time | thời gian thực ("theo thời gian thực") | real-time |
+| executable (noun) | tệp thực thi; self-contained executable = tệp thực thi độc lập; after a code span "tệp thực thi `stackql`" | |
+| agentic | dựa trên tác nhân ("quy trình làm việc dựa trên tác nhân", "kỹ thuật nền tảng dựa trên tác nhân") | agentic, mang tính tác nhân |
+| restart / reset | khởi động lại / đặt lại | |
+| encoding / encoded | mã hóa / được mã hóa ("được mã hóa URL") | encoding, encode |
+| privileges / least privilege | đặc quyền / đặc quyền tối thiểu | |
+| dependency / relation | phần phụ thuộc / quan hệ | dependency |
+| resolve (a variable, an alias, credentials) | phân giải; "resolves to" = được phân giải thành | giải quyết |
+| refresh (a materialized view) | làm mới | refresh |
+| blocking / non-blocking (invocation) | chặn / không chặn | |
+| listing (directory, registry, marketplace) | mục | danh sách (that is a list) |
+| event / alert / notification | sự kiện / cảnh báo / thông báo | event |
+| engineer, data engineer | kỹ sư, kỹ sư dữ liệu | |
+| hosted / self-host | được lưu trữ / tự lưu trữ | hosting (as a verb), được host |
+| escape (a character, a string) | thoát; "escape sequence" = chuỗi thoát; "escape character" = ký tự thoát | |
+| datetime value / modifier (date functions) | giá trị datetime / bộ điều chỉnh | |
+| regex: character class / quantifier / capture group / backreference / occurrence / to match | lớp ký tự / bộ định lượng / nhóm bắt / tham chiếu ngược / lần xuất hiện / khớp | |
+| Unicode code point / character code | điểm mã Unicode / mã ký tự | |
+| sine, cosine, tangent / arc sine, arc cosine, arc tangent / hyperbolic | sin, cosin, tang / arcsin, arccos, arctan / hyperbolic ("cosin hyperbolic của 1" in example headings) | sinus, cosinus, tiếp tuyến (that is a geometric tangent), hypebolic |
+| logarithm / natural logarithm | logarit / logarit tự nhiên | lôgarit, logarit nepe |
+| validate, validation (a query, parameters, a document, configuration) / verify (a signature, a binary, a checksum) | kiểm tra tính hợp lệ / xác minh | xác thực (that is authentication) |
+| implement, implemented as / implementation (of a function, a language) | hiện thực, được hiện thực bằng / cách hiện thực ("Hàm `json_each` được hiện thực bằng hàm `json_array_elements_text`") | triển khai (that is deploy), thực hiện bằng, cài đặt |
+| evaluate (an expression, a predicate, a policy) | đánh giá ("quy tắc đánh giá chính sách của AWS") | |
+| unset (a variable, a field) | hủy thiết lập | hủy đặt, bỏ đặt |
+| deprecated | đã lỗi thời | đã ngừng sử dụng, không dùng nữa |
+| mutual TLS | TLS hai chiều (mTLS) | mutual TLS (in prose), TLS tương hỗ |
+| grant (access, a permission) | trao quyền; "grant access" = cho phép truy cập | cấp quyền (that is authorization) |
+| identity (caller, resource, OS) | danh tính ("danh tính hệ điều hành cục bộ") | định danh (that is an identifier) |
+| metadata | siêu dữ liệu | metadata (in prose) |
+| rotate (a key, a secret, credentials) | xoay vòng | luân chuyển, rotate |
+| source / re-source (an env file, variables) | nạp / nạp lại; the heading "Credential (re)sourcing" is "Nạp (lại) thông tin xác thực" | |
+| process (OS) / subprocess / spawn | tiến trình / tiến trình con / khởi chạy | quá trình for an OS process ("trong quá trình" for "during" is fine), quy trình (that is a workflow or procedure) |
+| production / development (environment) | môi trường sản xuất / môi trường phát triển | môi trường production |
+| render (a template, rendered SQL) / render (display text) | tạo SQL từ template, SQL đã tạo / hiển thị ("định dạng hiển thị văn bản") | kết xuất |
+| call (noun: tool call, API call) / invocation (blocking, non-blocking) / function call | lệnh gọi ("lệnh gọi công cụ", "một lệnh gọi chặn (đồng bộ)") / lời gọi hàm | lời gọi (except "lời gọi hàm"), cuộc gọi |
+| synchronous / asynchronous | đồng bộ / bất đồng bộ | không đồng bộ |
+| comment (SQL) / commented-out statement | chú thích / câu lệnh nằm trong khối chú thích | bình luận, ghi chú (that is an admonition note) |
+| sessionless | không có phiên ("chế độ không có phiên") | phi phiên |
+| SQL dialect | phương ngữ SQL | biến thể SQL |
+| archive (ZIP, tarball) | tệp nén | kho lưu trữ (that is a repository) |
+| walkthrough | hướng dẫn từng bước | |
+| canonical | chuẩn tắc | chính tắc |
+| namespace | không gian tên | namespace (in prose) |
+| host (a network host, an MCP host application) / host (a machine) | host / máy | máy chủ (that is a server) |
+| terminal | terminal | thiết bị đầu cuối |
+| cast (to a type) | ép kiểu | chuyển kiểu |
+| lowercase / uppercase / case-insensitive / case-sensitive | chữ thường / chữ hoa / không phân biệt chữ hoa chữ thường / phân biệt chữ hoa chữ thường | |
+| non-NULL | khác `NULL` | không NULL |
+| table-valued function / qualified name | hàm có giá trị bảng / tên đủ điều kiện | |
+| floating-point number / radians / degrees | số dấu phẩy động / radian / độ ("tính bằng radian" in prose, "theo radian" in descriptions before "bằng SQL trong StackQL") | |
+| inverse (trigonometric) | nghịch đảo ("arccos (cosin nghịch đảo)") | ngược |
+| natural language | ngôn ngữ tự nhiên | |
+| contributor / contribution | người đóng góp / lượt đóng góp | |
+| available (methods, entries) / available (on a platform) | hiện có / khả dụng | có sẵn (that is built-in) |
+| side effect / breaking change / entry point | tác dụng phụ / thay đổi không tương thích ngược / điểm vào | |
+| clone / commit / merge (git) | clone / commit / hợp nhất | sao chép (for clone), cam kết (for commit) |
+| image (container, Docker) | image ("image Docker", "image container") | hình ảnh, ảnh |
+| dropdown | danh sách thả xuống | dropdown |
+| production keys, production account | khóa sản xuất, tài khoản sản xuất | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | Registry provider StackQL |
+| Kept in English | backend, bundle (the `.mcpb`; the format name MCP Bundle too), sidecar, vendored, crate, worker, bearer (token bearer), dotenv, pull request, fork, issue, webhook, plugin, runtime, fan-out, proxy, SaaS, wrapper, skill, workflow, tag, handshake, hash, cache (except "bộ nhớ đệm cục bộ"), listener, loopback, harness, upstream, placeholder, fallback, staging, smoke test, toolchain, action (a GitHub action), marketplace, payload, header, stack, pipeline, framework, container, tenant, bucket, boolean, token, template, literal, instance, artifact, principal, service principal, claim, trace, span, job, exporter, receiver; third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Vietnamese |
+|---|---|
+| Install | Cài đặt |
+| Installing StackQL | Cài đặt StackQL |
+| Getting Started | Bắt đầu |
+| Command Line Usage | Dòng lệnh |
+| Language Specification | Đặc tả ngôn ngữ |
+| Built-in Functions | Hàm tích hợp sẵn |
+| Functions | Hàm |
+| Developers | Nhà phát triển |
+| Providers | Provider |
+| Quick Starts | Bắt đầu nhanh |
+| AI Agents | Tác nhân AI |
+| MCP Server / MCP Tools / Embedded MCP | Máy chủ MCP / Công cụ MCP / MCP nhúng |
+| Embedded (sidebar category) | Nhúng |
+| Blog | Blog |
+| Product Announcements | Thông báo sản phẩm |
+| Provider Announcements | Thông báo provider |
+| Tutorials | Hướng dẫn |
+| Documentation | Tài liệu |
+| Contact us | Liên hệ |
+| Privacy Policy | Chính sách quyền riêng tư |
+| Terms of Service | Điều khoản dịch vụ |
+| Support | Hỗ trợ |
+| AI Reference | Tài liệu tham khảo AI |
+| More | Thêm |
+| Welcome to StackQL | Chào mừng đến với StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Vietnamese |
+|---|---|
+| Syntax | Cú pháp |
+| Arguments | Đối số |
+| Return Value(s) | Giá trị trả về |
+| Example / Examples | Ví dụ (one word for both) |
+| Inputs / Output | Đầu vào / Đầu ra |
+| Flags | Cờ |
+| Overview | Tổng quan |
+| How it works | Cách hoạt động |
+| Modes | Chế độ |
+| Gating | Kiểm soát |
+| Install | Cài đặt |
+| Quick start | Bắt đầu nhanh |
+| Demo app | Ứng dụng minh họa |
+| Repo link | Liên kết kho lưu trữ |
+| Vendoring / embedding | Vendoring / nhúng |
+| Prerequisites | Điều kiện tiên quyết |
+| Next steps | Các bước tiếp theo |
+| Related | Liên quan |
+| See also: | Xem thêm: |
+| See X. | Xem X. |
+| For more information, see X. | Để biết thêm thông tin, hãy xem X. |
+| Optional. / Defaults to X. | Không bắt buộc. / Mặc định: X. |
+| Returns X. (the sentence that opens a function or tool page) | Trả về X. |
+| Return the absolute value of a number (an example heading that names a task) | Trả về giá trị tuyệt đối của một số (a verb phrase) |
+| X function in StackQL: ... (description pattern) | Hàm X trong StackQL: ... (a noun phrase or a verb phrase after the colon, as in the source) |
+| X window function in StackQL: ... (description pattern) | Hàm cửa sổ X trong StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X trong StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... bằng SQL trong StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Có từ StackQL `vX` trở đi |
+| Available in StackQL releases after `vX` | Có trong các bản phát hành StackQL sau `vX` |
+| None. (no arguments, no inputs) | Không có. |
+| Query / Results (tab labels), Output: | Truy vấn / Kết quả, Đầu ra: |
+| Tested with (badge line on quick starts) | Đã kiểm thử với |
+| Best Practices / Troubleshooting / Further reading | Phương pháp hay nhất / Khắc phục sự cố / Đọc thêm |
+| MCP tool listing X / MCP tool that does X (description pattern) | Công cụ MCP liệt kê X / Công cụ MCP thực hiện X |
+| MCP overview (link text) | Tổng quan về MCP |
+| Argument / Required / Description (table headers) | Đối số / Bắt buộc / Mô tả |
+| Renderer / Shape (table headers) | Trình hiển thị / Dạng |
+| Table / One row per X (table cells) | Bảng / Một hàng cho mỗi X |
+| Yes / No (table cells) | Có / Không |
+| For example | Ví dụ |
+| Aggregate function / Scalar function | Hàm tổng hợp / Hàm vô hướng |
+| When to use, Use case / Example usage | Khi nào nên dùng, Trường hợp sử dụng / Ví dụ sử dụng |
+| Conclusion / Get started (homepage heading) | Kết luận / Bắt đầu ngay |
+| Returns : (a `<summary>` or bold label) | Trả về: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào hỗ trợ elicitation và đã đăng ký máy chủ MCP StackQL: |
+| Here's an example in Claude Desktop: | Dưới đây là một ví dụ trong Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | cho phép / từ chối / cần phê duyệt; được cho phép / bị từ chối / (mặc định) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | Được kiểm soát bởi chế độ máy chủ. / Được cho phép ở mọi chế độ máy chủ. Chỉ đọc. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | backend SQL nhúng / backend SQL postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | Phân cấp tài nguyên StackQL / Phiên provider / Sử dụng template / Tài liệu tham khảo hàm cửa sổ / X trong đặc tả ngôn ngữ |
+| keyword `cloud inventory` | kiểm kê đám mây |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Unicode NFC only: every Vietnamese letter is one precomposed character (ế is U+1EBF, not e + U+0302 + U+0301). Text pasted from some editors or typed with some input methods arrives decomposed (NFD); it renders the same but breaks search, grep and the glossary checks. Normalize with `text.normalize('NFC')` before writing if in doubt.
+- Tone marks on `oa`, `oe` and `uy` follow the traditional placement used by Microsoft and Google in Vietnamese and by the Docusaurus Vietnamese theme strings: hóa, hòa, xóa, khóa, tòa, góa, khỏe, thủy, tùy, lũy, hủy, ủy, thúy; never hoá, hoà, xoá, khoá, khoẻ, thuỷ, tuỳ, luỹ, huỷ, uỷ. When a final consonant follows, the mark goes on the second vowel as usual (hoàn, toán, tuyến, khuyến, quyết).
+- `i` and `y` as in the dictionary forms of vendor documentation: kỹ thuật, kỹ sư, lý do, quản lý, xử lý, vật lý, hệ thống, ký tự, ký hiệu, quy tắc, quy trình, Mỹ; never kĩ, lí do, quản lí, xử lí, kí tự, qui tắc, qui trình.
+- Headings in sentence case: a capital on the first word and on proper nouns only ("Biến phiên", not "Biến Phiên"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Word order is head first: the noun comes before what modifies it ("khóa API", "biến môi trường", "provider StackQL", "máy chủ MCP StackQL", "hàm cửa sổ `RANK`"). An inline code span that names a thing takes its class noun before it (lệnh `stackql exec`, cờ `--output`, tham số `region`, hàm `json_extract`, câu lệnh `SELECT`, tệp `stackql.yml`).
+- Nouns are not inflected. An English loanword never takes -s ("các provider", "nhiều token", "ba endpoint"). Use "các" or "những" only where the plural matters and no number or quantifier (mọi, mỗi, một số, nhiều) already marks it; do not put "các" before every plural English noun.
+- Classifiers where Vietnamese needs them, not more: "một hàng", "mỗi cột", "một câu lệnh"; do not add "cái" or "chiếc" to technical nouns.
+- "we" as StackQL the project or company is "chúng tôi" ("we recommend" = "chúng tôi khuyên dùng"); "we" in a walkthrough that includes the reader is "chúng ta" ("we will create a view" = "chúng ta sẽ tạo một dạng xem").
+- Passive voice sparingly: "được" for a neutral or positive passive ("được hỗ trợ", "được trả về"), "bị" only for something adverse ("bị từ chối", "bị lỗi"). Prefer an active sentence where the English subject is clear (who returns what, who must approve).
+- Formal word choice: "có thể" (not "được" alone for ability), "không" (never "ko", "k"), "để" for purpose, "nếu" for "if", "khi" for "when", "sử dụng" or "dùng" for "use" (both fine), "tạo" for "create", "xóa" for "delete".
+- Do not stack Sino-Vietnamese abstractions where a plain verb exists ("dùng", not "tiến hành sử dụng"; "để", not "nhằm mục đích để"). Avoid "thì", "là" and "mà" where the sentence reads without them.
+- Lists of three or more items take no comma before "và" or "hoặc" ("hàng, cột và bảng").
+- No space before `:`, `;`, `?` or `!`; one space after. The word after a colon is lower case unless it is a name or starts a full sentence.
+- Quotation marks are straight double quotes ("..."). No typographic quotes, no typographic apostrophe, no guillemets, so the text stays greppable.
+- No dash punctuation other than the keyboard hyphen. Where the source uses ` - ` or ` -- ` as a dash inside a sentence or between a term and its explanation, write ` - `, or use a colon, commas or parentheses. Never write an em dash, an en dash or a double hyphen in prose. Hyphens in compound terms ("khóa-giá trị") are kept.
+- English loanwords and English terms from the "Kept in English" row are written plain, never in italics and never in quotes: added italics change the page structure that `yarn i18n:verify` and the node-count check compare.
+- Names of languages, countries, months and days follow Vietnamese capitalization: "tiếng Anh", "tiếng Việt", "tháng 1", "thứ Hai". Product, provider and vendor names keep their own spelling.
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the Vietnamese decimal comma and dot thousands separator are not applied inside code or tables of command output, and prose numbers follow the source.
+- The `description` front matter stays one sentence and under about 170 characters (Vietnamese runs 15 to 30 percent longer than English in characters; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> kiểm kê đám mây); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "Hàm X trong StackQL: ..." always needs the double quotes the source already has.
+- Strings in JSX and in exported data arrays keep the quote style of the source; a translated string that gains a double quote goes in single quotes, and the other way around. Vietnamese has no apostrophes in ordinary words, so single-quoted strings are safe.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Punctuation that follows a bold term stays outside the markers when the source has it outside. A closing `**` must not be followed directly by a letter when it follows punctuation or inline code (it would not close in CommonMark), and a closing `__` or `_` must never be followed directly by a letter (Vietnamese letters with diacritics count as letters); leave a space or punctuation after the marker.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Hàm cửa sổ `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("Hiển thị", "Tạo", "Liệt kê").
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Vietnamese is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).

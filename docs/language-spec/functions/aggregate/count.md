@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__  or __*__  
 A column or expression.  If __*__ is specified then all records in the resource or grouping are counted.  
 
-> At least one value from the *columnExpression* must be non `NULL` otherwise `NULL` is returned.
+> `NULL` values of *columnExpression* are not counted.  If every value is `NULL`, `COUNT` returns `0`.
 
 __*groupByColumn*__  
 A column or columns used to perform summary or aggregate operations against.  The `GROUP BY` clause returns one row for each column grouping.

@@ -7,7 +7,7 @@
 import React from 'react';
 
 // The code shown next to the flag: the language subtag of the locale in
-// upper case (en -> EN, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, zh-Hans -> ZH), never a country
+// upper case (en -> EN, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, vi -> VI, zh-Hans -> ZH), never a country
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. If two locales ever share a language (zh-Hans and
@@ -163,6 +163,16 @@ const FLAGS = {
         fill="#fff"
         d="M210.25 191.5A291.43 291.43 0 0 1 438.81 256.8A120 120 0 0 1 434.52 275.78A274.29 274.29 0 0 0 203.86 209.88A120 120 0 0 1 210.25 191.5z"
       />
+    </svg>
+  ),
+  // Vietnam: a yellow star on red, centred, its points on a circle whose
+  // radius is a fifth of the flag's length (the flag is 3:2, so 144 for a
+  // height of 480; the 4:3 box keeps the star's size relative to the
+  // height).
+  vi: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#da251d" d="M0 0h640v480H0z" />
+      <polygon fill="#ff0" points={star(320, 240, 144)} />
     </svg>
   ),
   pl: (className) => (

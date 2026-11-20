@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaire cloud
-description: Calculer l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre et renvoyer un angle en radians avec SQL dans StackQL.
+description: Calculer l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre avec SQL dans StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcule l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre, c'est-à-dire la valeur en radians dont la tangente hyperbolique est le nombre spécifié.
+Calcule l'arc tangente hyperbolique (réciproque de la tangente hyperbolique) d'un nombre, c'est-à-dire la valeur dont la tangente hyperbolique est le nombre spécifié.
 
 Voir aussi :  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 Une expression numérique comprise entre -1 et 1 (bornes exclues), dont l'arc tangente hyperbolique doit être calculé.
 
 ## Valeur(s) renvoyée(s) {#return-values}
-Renvoie l'arc tangente hyperbolique de la valeur spécifiée, en radians.
+Renvoie l'arc tangente hyperbolique de la valeur spécifiée.
 
 * * *
 
@@ -41,7 +41,7 @@ Renvoie l'arc tangente hyperbolique de la valeur spécifiée, en radians.
 SELECT ATANH(0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-Cette requête renvoie environ `0.5493`, car l'arc tangente hyperbolique de 0.5 vaut environ 0.5493 radian.
+Cette requête renvoie environ `0.5493`, car l'arc tangente hyperbolique de 0.5 vaut environ 0.5493.
 
 ### Calculer l'arc tangente hyperbolique de -0.5 {#calculate-the-hyperbolic-arc-tangent-of--05}
 
@@ -49,4 +49,4 @@ Cette requête renvoie environ `0.5493`, car l'arc tangente hyperbolique de 0.5 
 SELECT ATANH(-0.5) AS hyperbolic_arc_tangent_value;
 ```
 
-Cette requête calcule l'arc tangente hyperbolique de -0.5, ce qui donne environ `-0.5493`, car il s'agit de la valeur en radians dont la tangente hyperbolique est -0.5.
+Cette requête calcule l'arc tangente hyperbolique de -0.5, ce qui donne environ `-0.5493`, car il s'agit de la valeur dont la tangente hyperbolique est -0.5.

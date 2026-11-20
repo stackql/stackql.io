@@ -29,7 +29,7 @@ SELECT COUNT( * | columnExpression ) FROM <multipartIdentifier>
 __*columnExpression*__  o __*__  
 Una columna o expresión.  Si se especifica __*__, se cuentan todos los registros del recurso o de la agrupación.  
 
-> Al menos un valor de *columnExpression* debe ser distinto de `NULL`; de lo contrario, se devuelve `NULL`.
+> Los valores `NULL` de *columnExpression* no se cuentan.  Si todos los valores son `NULL`, `COUNT` devuelve `0`.
 
 __*groupByColumn*__  
 Una o varias columnas sobre las que se realizan operaciones de resumen o de agregación.  La cláusula `GROUP BY` devuelve una fila por cada agrupación de columnas.

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Thông báo sản phẩm",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Các bản phát hành, tính năng và khả năng mới của StackQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Tất cả thông báo sản phẩm",
+    "description": "The label for the left sidebar"
+  }
+}

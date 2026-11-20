@@ -32,15 +32,9 @@ Setelah berada di shell yang terautentikasi ke penyedia cloud, Anda dapat mulai 
 
 Secara default, shell StackQL mengembalikan hasil dalam bentuk tabel, tetapi format output `json`, `jsonl`, `csv`, dan `text` tersedia melalui flag `--output`, lihat [Mode output](/getting-started/output-modes).
 
-Anda dapat mengubah skema warna shell StackQL menggunakan flag `--colorscheme`, seperti yang ditunjukkan di bawah ini:
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### File inisialisasi `.stackqlrc` {#the-stackqlrc-initialization-file}
 
-Nilai default untuk opsi perintah StackQL, seperti format output dan skema warna yang dibahas sebelumnya, dapat diatur menggunakan file inisialisasi `.stackqlrc`. Jika file ini ada di direktori saat ini yang digunakan oleh file executable StackQL, file tersebut akan dimuat secara otomatis, atau sebagai alternatif dapat dirujuk menggunakan flag `--configfile` seperti yang ditunjukkan di bawah ini:
+Nilai default untuk opsi perintah StackQL, seperti format output, dapat diatur menggunakan file inisialisasi `.stackqlrc`. Jika file ini ada di direktori saat ini yang digunakan oleh file executable StackQL, file tersebut akan dimuat secara otomatis, atau sebagai alternatif dapat dirujuk menggunakan flag `--configfile` seperti yang ditunjukkan di bawah ini:
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

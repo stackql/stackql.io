@@ -32,15 +32,9 @@ stackql shell --auth="${AUTH}"
 
 StackQL シェルはデフォルトで表形式の結果を返しますが、`--output` フラグを使用すると `json`、`jsonl`、`csv`、`text` の出力形式も利用できます。[出力モード](/getting-started/output-modes)を参照してください。
 
-次のように、`--colorscheme` フラグを使用して StackQL シェルの配色を変更できます。
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### `.stackqlrc` 初期化ファイル {#the-stackqlrc-initialization-file}
 
-前述の出力形式や配色など、StackQL のコマンドオプションのデフォルトは、`.stackqlrc` 初期化ファイルで設定できます。このファイルが StackQL 実行ファイルの使用するカレントディレクトリに存在する場合は、自動的に読み込まれます。または、次のように `--configfile` フラグを使用して参照することもできます。
+出力形式など、StackQL のコマンドオプションのデフォルトは、`.stackqlrc` 初期化ファイルで設定できます。このファイルが StackQL 実行ファイルの使用するカレントディレクトリに存在する場合は、自動的に読み込まれます。または、次のように `--configfile` フラグを使用して参照することもできます。
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

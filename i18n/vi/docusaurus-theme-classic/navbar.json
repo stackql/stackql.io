@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "Cài đặt",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "Tác nhân AI",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "Provider",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "Máy chủ MCP",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "Công cụ MCP",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "MCP nhúng",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "Thông báo sản phẩm",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "Thông báo provider",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "Hướng dẫn",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "Bắt đầu nhanh",
+    "description": "Navbar item with label Quick Starts"
+  }
+}

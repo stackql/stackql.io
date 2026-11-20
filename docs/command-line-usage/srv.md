@@ -122,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-Set up an authentication object for whatever providers the server will need access to, for instance for GitHub.  
+Set the credentials for the providers the server needs.  For GitHub, the provider reads a username and a personal access token from these two variables:  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -141,7 +141,7 @@ stackql srv \
 In another terminal, connect to the server using the `psql` command line client.  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 Now run a StackQL query against an authenticated provider.  
@@ -150,11 +150,11 @@ Now run a StackQL query against an authenticated provider.
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

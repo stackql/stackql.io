@@ -641,6 +641,8 @@ openssl req -x509 -newkey rsa:4096 -keyout server_key.pem -out server_cert.pem -
 Kemudian jalankan server:
 
 ```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
 stackql srv \
   --mcp.server.type=reverse_proxy \
   --mcp.config '{
@@ -672,7 +674,7 @@ python cicd/python/build.py --build-mcp-client
 
 Perintah ini menghasilkan `./build/stackql_mcp_client`.
 
-Perhatikan bahwa `stackql_mcp_client` tidak mengirim header `Authorization`, sehingga server yang ditujunya harus menetapkan `"allow_unauthenticated": true` (seperti pada contoh di atas); server yang dilindungi token menjawabnya dengan `401`.  Klien ini juga **tidak** menyatakan kemampuan elisitasi MCP - klien ini ditujukan untuk skrip noninteraktif.  Terhadap server `safe` atau `delete_safe`, klien ini akan menerima penolakan "client does not support elicitation" pada panggilan mutasi dan siklus hidup.  Untuk pengujian interaktif dengan permintaan elisitasi, gunakan klien MCP yang tersemat di editor (Claude Desktop, Cursor, Continue).
+Perhatikan bahwa `stackql_mcp_client` tidak mengirim header `Authorization`, sehingga server yang ditujunya harus menetapkan `"allow_unauthenticated": true` (seperti pada contoh di atas); server yang dilindungi token menjawabnya dengan `401`.  Klien ini juga **tidak** menyatakan kemampuan elisitasi MCP - klien ini ditujukan untuk skrip noninteraktif.  Terhadap server `safe`, klien ini akan menerima penolakan "client does not support elicitation" pada panggilan mutasi dan siklus hidup; terhadap server `delete_safe`, pada panggilan `DELETE` dan `EXEC`.  Untuk pengujian interaktif dengan permintaan elisitasi, gunakan klien MCP yang tersemat di editor (Claude Desktop, Cursor, Continue).
 
 ```bash
 # List all available tools

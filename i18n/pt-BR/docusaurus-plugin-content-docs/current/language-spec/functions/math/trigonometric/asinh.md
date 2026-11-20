@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventário de nuvem
-description: Calcular o arco seno hiperbólico (seno hiperbólico inverso) de um número e retornar um ângulo em radianos com SQL no StackQL.
+description: Calcular o arco seno hiperbólico (seno hiperbólico inverso) de um número com SQL no StackQL.
 image: "/img/stackql-featured-image.png"
 ---
-Calcula o arco seno hiperbólico (seno hiperbólico inverso) de um número, que é o valor em radianos cujo seno hiperbólico é o número especificado.
+Calcula o arco seno hiperbólico (seno hiperbólico inverso) de um número, que é o valor cujo seno hiperbólico é o número especificado.
 
 Veja também:  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 Uma expressão numérica cujo arco seno hiperbólico será calculado.
 
 ## Valor(es) retornado(s) {#return-values}
-Retorna o arco seno hiperbólico do valor especificado em radianos.
+Retorna o arco seno hiperbólico do valor especificado.
 
 * * *
 
@@ -41,7 +41,7 @@ Retorna o arco seno hiperbólico do valor especificado em radianos.
 SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
 ```
 
-Esta consulta retorna aproximadamente `0.4812`, pois o arco seno hiperbólico de 0.5 é cerca de 0.4812 radianos.
+Esta consulta retorna aproximadamente `0.4812`, pois o arco seno hiperbólico de 0.5 é cerca de 0.4812.
 
 ### Calcular o arco seno hiperbólico de -1 {#calculate-the-hyperbolic-arc-sine-of--1}
 
@@ -49,4 +49,4 @@ Esta consulta retorna aproximadamente `0.4812`, pois o arco seno hiperbólico de
 SELECT ASINH(-1) AS hyperbolic_arc_sine_value;
 ```
 
-Esta consulta calcula o arco seno hiperbólico de -1, o que resulta em aproximadamente `-0.8814`, pois esse é o valor em radianos cujo seno hiperbólico é -1.
+Esta consulta calcula o arco seno hiperbólico de -1, o que resulta em aproximadamente `-0.8814`, pois esse é o valor cujo seno hiperbólico é -1.

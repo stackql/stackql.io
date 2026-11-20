@@ -641,6 +641,8 @@ openssl req -x509 -newkey rsa:4096 -keyout server_key.pem -out server_cert.pem -
 然后启动服务器：
 
 ```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
 stackql srv \
   --mcp.server.type=reverse_proxy \
   --mcp.config '{
@@ -672,7 +674,7 @@ python cicd/python/build.py --build-mcp-client
 
 这会生成 `./build/stackql_mcp_client`。
 
-请注意，`stackql_mcp_client` 不发送 `Authorization` 请求头，因此它所连接的服务器必须设置 `"allow_unauthenticated": true`（如上面的示例所示）；受令牌保护的服务器会以 `401` 应答。它也**不**通告 MCP 征询能力，因为它用于非交互式脚本。面对 `safe` 或 `delete_safe` 服务器时，它在变更和生命周期调用上会收到“client does not support elicitation”拒绝。如需进行带征询请求的交互式测试，请使用嵌入编辑器的 MCP 客户端（Claude Desktop、Cursor、Continue）。
+请注意，`stackql_mcp_client` 不发送 `Authorization` 请求头，因此它所连接的服务器必须设置 `"allow_unauthenticated": true`（如上面的示例所示）；受令牌保护的服务器会以 `401` 应答。它也**不**通告 MCP 征询能力，因为它用于非交互式脚本。面对 `safe` 服务器时，它在变更和生命周期调用上会收到“client does not support elicitation”拒绝；面对 `delete_safe` 服务器时，则在 `DELETE` 和 `EXEC` 调用上收到该拒绝。如需进行带征询请求的交互式测试，请使用嵌入编辑器的 MCP 客户端（Claude Desktop、Cursor、Continue）。
 
 ```bash
 # List all available tools

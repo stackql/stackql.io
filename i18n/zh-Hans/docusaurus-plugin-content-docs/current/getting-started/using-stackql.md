@@ -32,15 +32,9 @@ stackql shell --auth="${AUTH}"
 
 默认情况下，StackQL shell 返回表格形式的结果，不过也可以通过 `--output` 标志使用 `json`、`jsonl`、`csv` 和 `text` 输出格式，参阅[输出模式](/getting-started/output-modes)。  
 
-你可以使用 `--colorscheme` 标志更改 StackQL shell 的配色方案，如下所示：  
-
-```shell
-# Changing the Shell Color Scheme
-./stackql shell --colorscheme light
-```
 ### `.stackqlrc` 初始化文件 {#the-stackqlrc-initialization-file}
 
-StackQL 命令选项的默认值（例如前面讨论的输出格式和配色方案）可以通过 `.stackqlrc` 初始化文件设置。如果该文件存在于 StackQL 可执行文件所使用的当前目录中，则会被自动加载；也可以使用 `--configfile` 标志引用它，如下所示：
+StackQL 命令选项的默认值（例如输出格式）可以通过 `.stackqlrc` 初始化文件设置。如果该文件存在于 StackQL 可执行文件所使用的当前目录中，则会被自动加载；也可以使用 `--configfile` 标志引用它，如下所示：
 
 ```shell
 # Specifying an Initialization (.stackqlrc) File

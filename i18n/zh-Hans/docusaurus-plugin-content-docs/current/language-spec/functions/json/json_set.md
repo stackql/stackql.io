@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 在 JSON 文档的指定路径处更新现有值或插入新值。
 
 另请参阅：  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
 
 * * * 
 
@@ -55,15 +55,13 @@ __*value_to_set*__
 
 ```sql
 -- Example: Update the 'status' key's value to 'active' in a JSON object
-SELECT JSON_SET(json_data, '$.status', 'active') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending","region":"US"}', '$.status', 'active') as updated_json;
 
 -- Expected output:
 -- |---------------------------------------------------------|
 -- |                    updated_json                         |
 -- |---------------------------------------------------------|
--- | {"name":"ServiceOne", "status":"active", "region":"US"} |
+-- | {"name":"ServiceOne","status":"active","region":"US"}   |
 -- |---------------------------------------------------------|
 ```
 
@@ -72,16 +70,14 @@ WHERE service_id = 'service123';
 ### 向 JSON 对象添加新的键值对 {#add-a-new-key-value-pair-to-a-json-object}
 
 ```sql
--- Example: Add a new key 'lastChecked' with the current date to a JSON object
-SELECT JSON_SET(json_data, '$.lastChecked', '2024-04-29') as updated_json
-FROM cloud_services
-WHERE service_id = 'service123';
+-- Example: Add a new key 'lastChecked' with a date value to a JSON object
+SELECT JSON_SET('{"name":"ServiceOne","status":"pending"}', '$.lastChecked', '2024-04-29') as updated_json;
 
 /* expected output...
 |-----------------------------------------------------------------------|
 |                          updated_json                                 |
 |-----------------------------------------------------------------------|
-| {"name":"ServiceOne", "status":"pending", "lastChecked":"2024-04-29"} |
+| {"name":"ServiceOne","status":"pending","lastChecked":"2024-04-29"}   |
 |-----------------------------------------------------------------------|
 */
 ```

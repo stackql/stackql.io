@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 Atualiza valores existentes em um objeto JSON com base no caminho deles. `JSON_REPLACE` não adiciona novas chaves ao documento; apenas substitui os valores das chaves existentes.
 
 Veja também:  
-[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_REPLACE `]](/language-spec/functions/json/json_replace)
+[[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract) [[` JSON_SET `]](/language-spec/functions/json/json_set) [[` JSON_INSERT `]](/language-spec/functions/json/json_insert)
 
 * * * 
 

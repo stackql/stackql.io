@@ -122,7 +122,7 @@ sh stackql-aws-cloud-shell.sh exec \
 
 ```shell
 sh stackql-aws-cloud-shell.sh \
---role-arn arn:aws:iam::824532806693:role/SecurityReviewerRole exec \
+--role-arn arn:aws:iam::123456789012:role/SecurityReviewerRole exec \
 --infile query.iql \
 --output csv --outfile output.csv
 ```

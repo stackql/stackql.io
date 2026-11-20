@@ -11,12 +11,11 @@ description: "모든 명령에서 사용할 수 있는 stackql 바이너리의 �
 image: "/img/stackql-featured-image.png"
 ---
 
-전역 플래그는 StackQL 애플리케이션의 런타임 프로그램 동작을 지정합니다. 이러한 플래그는 StackQL 애플리케이션을 시작할 때(대화형/셸 모드 또는 비대화형 exec 모드) 명령줄에서 설정하거나 StackQL 초기화([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)) 파일에서 로드합니다. 플래그는 다음과 같습니다.  
+전역 플래그는 StackQL 명령에서 허용되지만, 일부는 특정 모드에만 적용됩니다. 명령줄에서 설정하거나, 지원되는 경우 StackQL 초기화([`.stackqlrc`](/getting-started/using-stackql#the-stackqlrc-initialization-file)) 파일에서 설정합니다. `--pgsrv.*` 플래그는 [PostgreSQL 서버 옵션](/command-line-usage/srv#server-options)에 나와 있습니다.
 
 | 플래그 | 데이터 형식 | 설명 | 기본값 |
 | -- | -- | -- | -- |
 | <span class="nowrap">`--access.config`</span> | string | 호출자 액세스 구성으로, JSON 엔벨로프 `{"path": "/path/to/access.json"}` 형식입니다(파일 경로만 지정해도 됩니다). [액세스 관리](/command-line-usage/access-management)를 활성화합니다. 호출자는 JWT, 정적 Bearer 토큰, 상호 TLS 또는 로컬 OS ID로 인증되고, 문은 정책 규칙에 따라 권한이 부여됩니다. 로컬 토큰 자격 증명은 `STACKQL_CALLER_TOKEN` 환경 변수에서 읽습니다. StackQL `v1.0` 이상에서 사용할 수 있습니다. | |
-| <span class="nowrap">`--acid`</span> | string | ACID 구성을 나타내는 JSON / YAML 문자열 | `{}` |
 | <span class="nowrap">`--allow-persistent-secrets`</span> | flag | 세션이 `SET "$.secret_store"` 문으로 영구 OS 시크릿 저장소(macOS Keychain, Linux Secret Service 또는 Windows Credential Manager)를 선택할 수 있도록 허용합니다. 플랫 파일 저장소는 이 플래그가 있어도 거부됩니다. [프로바이더 세션 및 시크릿](/getting-started/provider-sessions#persistent-os-secret-stores)을 참조하세요. StackQL `v1.0` 이상에서 사용할 수 있습니다. | `false` |
 | <span class="nowrap">`--allow-secret-dereference`</span> | flag | SQL 식(`"$secrets.name"`, `"$auth.provider.field"`)에서 시크릿 및 자격 증명 값을 역참조할 수 있도록 허용합니다. 그 결과 이 값이 결과, 로그 및 영구 저장된 쿼리 아티팩트에 포함될 수 있습니다. 일반적인 프로바이더 인증에는 필요하지 않습니다. [SQL의 시크릿 값](/getting-started/provider-sessions#secret-values-in-sql)을 참조하세요. StackQL `v1.0` 이상에서 사용할 수 있습니다. | `false` |
 | <span class="nowrap">`--apirequesttimeout`</span> | integer | API 요청 시간 제한(초), 0이면 시간 제한 없음 | `45` |
@@ -59,6 +58,7 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`-o`, `--output`</span> | string | 출력 형식이며, {`json`, `jsonl`, `table`, `csv`, `text`, `otel`} 중 하나여야 합니다(`ndjson`은 `jsonl`의 별칭으로 허용됩니다). `otel` 형식은 OpenTelemetry 로그 레코드를 내보냅니다. [출력 모드](/getting-started/output-modes#otel-output)를 참조하세요. 이 형식은 StackQL `v0.11.660` 이상에서 사용할 수 있습니다. `--otel.config` 플래그에 익스포터가 구성되어 있으면 `otel` 레코드가 해당 엔드포인트로도 푸시됩니다 | `table` |
 | <span class="nowrap">`--otel.config`</span> | string | `otel` 출력 형식을 구성하는 JSON / YAML 문자열입니다. `exporter.endpoint`, `exporter.headers`, `exporter.timeout_ms`, `exporter.batch_size` 키는 레코드를 OTLP/HTTP 로그 엔드포인트로 푸시합니다. [OTLP 엔드포인트로 푸시](/getting-started/output-modes#pushing-to-an-otlp-endpoint)를 참조하세요. StackQL `v0.12.732` 이상에서 사용할 수 있습니다 | `{}` |
 | <span class="nowrap">`--preview`</span> | string | 미리 보기 기능을 활성화하는 JSON 문자열입니다. `{"unstable": true}` 값은 문서 기반 `stackql_unstable_<provider>.<service>.<resource>` 관계를 노출합니다. 이 관계는 `omnisdk`가 프로바이더 문서에서 직접 해석하고 실행하며, 행은 생성되는 즉시 스트리밍됩니다. 나머지 키(`batchSize`, `flushInterval`, `endpoint`, `insecureSkipTLSVerify`)는 해당 백엔드를 조정합니다. 미리 보기 기능은 안정적이지 않습니다. 동작, 구문 및 출력이 릴리스 간에 예고 없이 변경되거나 중단될 수 있으므로 프로덕션 환경에서 의존하지 마세요. `v1.0`부터는 동일한 옵트인으로 `stackql_preview.iac.run` 및 `stackql_preview.iac.destroy` 관계가 노출됩니다. 이 관계는 `omnisdk`를 통해 선언된 리소스 집합을 적용하고 해체하며, 상태는 애플리케이션 루트 아래에 보관됩니다. [미리 보기 기능](https://github.com/stackql/stackql/blob/main/docs/preview.md)을 참조하세요 | `{}` |
+| <span class="nowrap">`--provider`</span> | string | 초기 기본 프로바이더입니다. 예를 들어 `--provider github` 플래그를 지정하면 앞에 `USE` 문이 없어도 `repos.repos` 리소스가 `github.repos.repos`로 확인됩니다. 프로바이더에 인증하지는 않습니다. | 없음 |
 | <span class="nowrap">`--querycachesize`</span> | integer | 쿼리 계획용 LRU 캐시의 크기(항목 수) | `10000` |
 | <span class="nowrap">`--registry`</span> | string | 프로바이더 레지스트리 위치와 프로바이더 문서 서명 검증을 구성하는 JSON / YAML 문자열 | [`--registry`](#--registry) 참조 |
 | <span class="nowrap">`--session`</span> | string | 세션 구성을 나타내는 JSON / YAML 문자열 | `{}` |
@@ -66,10 +66,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--store.txn`</span> | string | Txn 저장소 구성을 나타내는 JSON / YAML 문자열 | `{}` |
 | <span class="nowrap">`--tls.CABundle`</span> | string | CA 번들 경로이며, 지정하지 않으면 시스템 기본값이 사용됩니다 |  |
 | <span class="nowrap">`--tls.allowInsecure`</span> | flag | 안전하지 않은 인증서 신뢰를 허용합니다(권장하지 않음) |  |
+| <span class="nowrap">`--upstream.errors`</span> | string | 프로바이더 읽기 작업에서 HTTP 응답 상태를 명시적으로 허용하는 JSON / YAML 정책입니다. [`--upstream.errors`](#--upstream-errors)를 참조하세요. | `{}` |
 | <span class="nowrap">`--var`</span> | string | `jsonnet` 데이터 파일을 통해 StackQL 쿼리에 가져올 키/값 쌍으로 제공되는 외부 변수 |  |
 | <span class="nowrap">`-v`, `--verbose`</span> | flag | 자세한 출력 | `false` |
 | <span class="nowrap">`-h`, `--help`</span> | | stackql의 상황별 도움말 | |
 | <span class="nowrap">`--version`</span> | | StackQL 프로그램의 버전을 표시합니다 | |
+
+`--colorscheme` 플래그는 더 이상 사용되지 않으며, 이제 셸 색상을 변경하지 않습니다. `--usenonpreferredapis` 플래그는 허용되지만 현재 엔진에서는 API 선택을 변경하지 않습니다.
 
 ## `--registry` {#--registry}
 
@@ -140,3 +143,21 @@ Databricks는 StackQL SQL 백엔드로 사용할 수 있는 PostgreSQL 호환 �
 :::note
 사용자 이름이나 암호의 특수 문자(예: `@`)는 DSN에서 URL 인코딩해야 합니다(예: `@` 문자는 `%40`이 됩니다).
 :::
+
+## `--upstream.errors` {#--upstream-errors}
+
+`http.ignoreStatusCodes` 키를 사용하여 프로바이더 읽기 작업에서 명시적으로 허용할 HTTP 응답 상태를 나열합니다. 항목은 문자열이며, `"503"` 같은 정확한 코드나 `"5xx"` 같은 클래스를 사용합니다. 기본값인 `{}` 정책은 업스트림 응답에 대한 엔진의 일반적인 처리에 예외를 추가하지 않습니다. 이 설정은 실패한 요청을 다시 시도하지 않으며, 변경 작업이나 인증 교환에는 적용되지 않습니다.
+
+무시된 응답은 결과에 행을 추가하지 않습니다. 쿼리의 다른 읽기 작업은 여전히 행을 반환할 수 있으므로, 성공한 쿼리가 불완전한 결과를 반환할 수 있습니다. StackQL은 무시된 HTTP 상태를 진단 메시지로 보고합니다.
+
+예를 들어 [모의 GitHub 조인 테스트](https://github.com/stackql/stackql/blob/256187fab2410b7c999e7208bd888b12c5df9b9e/test/robot/functional/stackql_mocked_from_cmd_line.robot#L2104)에서 이 옵션을 사용합니다.
+
+```bash
+stackql exec --upstream.errors='{"http":{"ignoreStatusCodes":["5xx"]}}' \
+  "SELECT r.name, c.login FROM github.repos.repos r
+   JOIN github.repos.collaborators c ON c.repo = r.name
+   WHERE r.org = 'example-org' AND c.owner = 'example-org'
+   ORDER BY r.name;"
+```
+
+이 테스트에서는 한 리포지토리에 대한 collaborators 요청이 HTTP `500`을 반환합니다. 쿼리는 여전히 다른 리포지토리의 collaborator 행을 반환하며, stderr에는 `ignoring upstream response: 500 INTERNAL SERVER ERROR` 메시지가 포함됩니다. 실패가 하나만 예상되는 경우에는 정확한 상태 코드를 사용하는 것이 좋습니다.

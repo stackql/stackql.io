@@ -47,13 +47,15 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 日時を UTC に変換する {#convert-datetime-to-utc}
+### ローカル時刻を UTC に変換する {#convert-datetime-to-utc}
+
+`utc` 修飾子は、入力を StackQL を実行しているマシンのローカル時刻として扱い、UTC に変換します。`'now'` や末尾に `Z` が付いたタイムスタンプなど、すでに UTC である値は変更されずに返されます。
 
 ```sql
-SELECT name, timeCreated,
-datetime('now', 'utc') as now_utc
-FROM google.storage.buckets WHERE project = 'stackql';
+SELECT datetime('2026-11-20 17:59:24', 'utc') as utc_time;
 ```
+
+タイムゾーンが UTC+11 のマシンでは、このクエリは `2026-11-20 06:59:24` を返します。
 
 ### 別の日付を基準に日付を計算する {#calculate-a-date-relative-to-another-date}
 

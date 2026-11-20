@@ -81,7 +81,7 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'zh-Hans'],
+  locales: ['en', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     de: { label: 'Deutsch', htmlLang: 'de' },
@@ -100,6 +100,7 @@ const i18nConfig = {
     // The locale code, the i18n/ directory and the lang attribute keep their
     // case (pt-BR, zh-Hans).
     'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
+    vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
   },
 };

@@ -48,13 +48,15 @@ datetime(timeCreated, 'localtime') as local_time_created
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Mengonversi datetime ke UTC {#convert-datetime-to-utc}
+### Mengonversi waktu lokal ke UTC {#convert-datetime-to-utc}
+
+Pengubah `utc` memperlakukan inputnya sebagai waktu lokal di mesin yang menjalankan StackQL dan mengonversinya ke UTC.  Nilai yang sudah dalam UTC, seperti `'now'` atau stempel waktu dengan sufiks `Z`, dikembalikan tanpa perubahan.
 
 ```sql
-SELECT name, timeCreated,
-datetime('now', 'utc') as now_utc
-FROM google.storage.buckets WHERE project = 'stackql';
+SELECT datetime('2026-11-20 17:59:24', 'utc') as utc_time;
 ```
+
+Di mesin dengan zona waktu UTC+11, kueri ini mengembalikan `2026-11-20 06:59:24`.
 
 ### Menghitung tanggal relatif terhadap tanggal lain {#calculate-a-date-relative-to-another-date}
 

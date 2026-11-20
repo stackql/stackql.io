@@ -641,6 +641,8 @@ openssl req -x509 -newkey rsa:4096 -keyout server_key.pem -out server_cert.pem -
 그런 다음 서버를 시작합니다:
 
 ```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
 stackql srv \
   --mcp.server.type=reverse_proxy \
   --mcp.config '{
@@ -672,7 +674,7 @@ python cicd/python/build.py --build-mcp-client
 
 이 명령은 `./build/stackql_mcp_client` 파일을 생성합니다.
 
-`stackql_mcp_client` 클라이언트는 `Authorization` 헤더를 보내지 않으므로, 대상 서버는 `"allow_unauthenticated": true` 값을 설정해야 합니다(위 예제와 같이). 토큰으로 보호되는 서버는 이 클라이언트에 `401`로 응답합니다. 또한 이 클라이언트는 MCP 엘리시테이션 기능을 알리지 **않습니다**. 비대화형 스크립팅용입니다. `safe` 또는 `delete_safe` 서버에서는 변경 작업과 수명 주기 작업을 호출할 때 "client does not support elicitation" 거부를 받습니다. 엘리시테이션 요청을 사용한 대화형 테스트에는 편집기에 내장된 MCP 클라이언트(Claude Desktop, Cursor, Continue)를 사용하세요.
+`stackql_mcp_client` 클라이언트는 `Authorization` 헤더를 보내지 않으므로, 대상 서버는 `"allow_unauthenticated": true` 값을 설정해야 합니다(위 예제와 같이). 토큰으로 보호되는 서버는 이 클라이언트에 `401`로 응답합니다. 또한 이 클라이언트는 MCP 엘리시테이션 기능을 알리지 **않습니다**. 비대화형 스크립팅용입니다. `safe` 서버에서는 변경 작업과 수명 주기 작업을 호출할 때 "client does not support elicitation" 거부를 받고, `delete_safe` 서버에서는 `DELETE` 및 `EXEC` 호출에서 이 거부를 받습니다. 엘리시테이션 요청을 사용한 대화형 테스트에는 편집기에 내장된 MCP 클라이언트(Claude Desktop, Cursor, Continue)를 사용하세요.
 
 ```bash
 # List all available tools

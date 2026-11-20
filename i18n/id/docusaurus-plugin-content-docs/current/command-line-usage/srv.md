@@ -31,12 +31,14 @@ Parameter yang dikirim melalui protokol kueri yang diperluas (`Parse` / `Bind` /
 
 ### Opsi server {#server-options}
 
-| Opsi | Deskripsi |
-|--|--|
-|<span class="nowrap">`--pgsrv.address`</span>|Alamat tempat server mendengarkan (biasanya `0.0.0.0`)|
-|<span class="nowrap">`--pgsrv.port`</span>|Port tempat server mendengarkan (misalnya `5444`)|
-|<span class="nowrap">`--pgsrv.tls`</span>|Objek konfigurasi mTLS, lihat [contoh](#examples) di bawah|
-|<span class="nowrap">`--pgsrv.loglevel`</span>|Level log (default `WARN`)|
+| Opsi | Deskripsi | Default |
+|--|--|--|
+|<span class="nowrap">`--pgsrv.address`</span>|Alamat tempat server mendengarkan.|`0.0.0.0`|
+|<span class="nowrap">`--pgsrv.port`</span>|Port TCP tempat server mendengarkan.|`5466`|
+|<span class="nowrap">`--pgsrv.tls`</span>|Objek konfigurasi TLS JSON. Lihat [contoh mTLS](#examples) di bawah.|tidak ada|
+|<span class="nowrap">`--pgsrv.debug.enable`</span>|Mengaktifkan output debug kueri untuk klien PostgreSQL, misalnya dengan `stackql srv --pgsrv.debug.enable=true`. Biarkan nonaktif kecuali klien memang perlu menerima informasi debug.|`false`|
+|<span class="nowrap">`--pgsrv.sundry`</span>|Pemetaan JSON atau YAML lanjutan yang diteruskan ke server protokol komunikasi PostgreSQL hanya jika opsi `--pgsrv.tls` tidak ditetapkan.|`{}`|
+|<span class="nowrap">`--pgsrv.loglevel`</span>|Diterima, tetapi tidak menetapkan level logger di mesin saat ini. Gunakan flag `--loglevel` sebagai gantinya.|`WARN`|
 
 <br/>
 
@@ -120,7 +122,7 @@ export CLIENT_CERT=$(base64 -w 0 ~/stackqlcreds/client_cert.pem)
 export PGSSLMODE=allow
 ```
 
-Siapkan objek autentikasi untuk provider apa pun yang perlu diakses oleh server, misalnya untuk GitHub.  
+Tetapkan kredensial untuk provider yang dibutuhkan server.  Untuk GitHub, provider membaca nama pengguna dan token akses pribadi dari dua variabel berikut:  
 
 ```bash
 export STACKQL_GITHUB_USERNAME=youruser
@@ -139,7 +141,7 @@ stackql srv \
 Di terminal lain, sambungkan ke server menggunakan klien baris perintah `psql`.  
 
 ```bash
-psql 127.0.0.1
+psql -h 127.0.0.1 -d stackql
 ```
 
 Sekarang jalankan kueri StackQL terhadap provider yang telah diautentikasi.  
@@ -148,11 +150,11 @@ Sekarang jalankan kueri StackQL terhadap provider yang telah diautentikasi.
 psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1), server 0.0.0)
 Type "help" for help.
 
-127.0.0.1=> SHOW SERVICES IN github LIKE '%repos%';
+stackql=> SHOW SERVICES IN github LIKE '%repos%';
       id      | name  |           title
 --------------+-------+----------------------------
  repos:v0.3.3 | repos | GitHub v3 REST API - repos
 (1 row)
 
-127.0.0.1=>
+stackql=>
 ```

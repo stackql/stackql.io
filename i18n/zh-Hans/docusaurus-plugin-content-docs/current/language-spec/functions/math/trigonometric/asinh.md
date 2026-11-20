@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: 在 StackQL 中使用 SQL 计算一个数的反双曲正弦（双曲正弦的反函数），返回以弧度表示的角度。
+description: 在 StackQL 中使用 SQL 计算一个数的反双曲正弦（双曲正弦的反函数）。
 image: "/img/stackql-featured-image.png"
 ---
-计算一个数的反双曲正弦（双曲正弦的反函数），即双曲正弦等于指定数的弧度值。
+计算一个数的反双曲正弦（双曲正弦的反函数），即双曲正弦等于指定数的值。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select)
@@ -29,7 +29,7 @@ __*value*__
 要计算反双曲正弦的数值表达式。
 
 ## 返回值 {#return-values}
-返回指定值的反双曲正弦，以弧度表示。
+返回指定值的反双曲正弦。
 
 * * *
 
@@ -41,7 +41,7 @@ __*value*__
 SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
 ```
 
-此查询返回约 `0.4812`，因为 0.5 的反双曲正弦约为 0.4812 弧度。
+此查询返回约 `0.4812`，因为 0.5 的反双曲正弦约为 0.4812。
 
 ### 计算 -1 的反双曲正弦 {#calculate-the-hyperbolic-arc-sine-of--1}
 
@@ -49,4 +49,4 @@ SELECT ASINH(0.5) AS hyperbolic_arc_sine_value;
 SELECT ASINH(-1) AS hyperbolic_arc_sine_value;
 ```
 
-此查询计算 -1 的反双曲正弦，结果约为 `-0.8814`，因为这是双曲正弦等于 -1 的弧度值。
+此查询计算 -1 的反双曲正弦，结果约为 `-0.8814`，因为这是双曲正弦等于 -1 的值。

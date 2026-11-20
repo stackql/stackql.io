@@ -641,6 +641,8 @@ openssl req -x509 -newkey rsa:4096 -keyout server_key.pem -out server_cert.pem -
 A continuación, inicie el servidor:
 
 ```bash
+export STACKQL_MCP_TOKEN="$(openssl rand -hex 32)"
+
 stackql srv \
   --mcp.server.type=reverse_proxy \
   --mcp.config '{
@@ -672,7 +674,7 @@ python cicd/python/build.py --build-mcp-client
 
 Esto genera `./build/stackql_mcp_client`.
 
-Tenga en cuenta que `stackql_mcp_client` no envía ningún encabezado `Authorization`, por lo que el servidor al que se dirige debe establecer `"allow_unauthenticated": true` (como hacen los ejemplos anteriores); un servidor protegido con token le responde con `401`.  Además, **no** anuncia la capacidad de elicitación de MCP - está pensado para scripts no interactivos.  Con un servidor `safe` o `delete_safe` recibirá el rechazo "client does not support elicitation" en las llamadas de mutación y de ciclo de vida.  Para pruebas interactivas con solicitudes de elicitación, use un cliente MCP integrado en un editor (Claude Desktop, Cursor, Continue).
+Tenga en cuenta que `stackql_mcp_client` no envía ningún encabezado `Authorization`, por lo que el servidor al que se dirige debe establecer `"allow_unauthenticated": true` (como hacen los ejemplos anteriores); un servidor protegido con token le responde con `401`.  Además, **no** anuncia la capacidad de elicitación de MCP - está pensado para scripts no interactivos.  Con un servidor `safe` recibirá el rechazo "client does not support elicitation" en las llamadas de mutación y de ciclo de vida; con un servidor `delete_safe`, en las llamadas `DELETE` y `EXEC`.  Para pruebas interactivas con solicitudes de elicitación, use un cliente MCP integrado en un editor (Claude Desktop, Cursor, Continue).
 
 ```bash
 # List all available tools
