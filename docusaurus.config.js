@@ -550,7 +550,6 @@ const config = {
         {name: 'keywords', content: 'stackql, sql, ai agents, agentic ai, infrastructure as code, cloud services, api, devops, control plane, data plane'},
         {name: 'twitter:site', content: '@stackql'},
         {name: 'twitter:creator', content: '@stackql'},
-        {name: 'twitter:title', content: 'StackQL - SQL for Cloud Infrastructure and AI Agents'},
         {name: 'twitter:description', content: 'StackQL is an open-source infrastructure-as-code tool and the substrate for AI agents to communicate with cloud control planes and data planes using SQL.'},
         // og:locale (and og:locale:alternate per other locale) is emitted by
         // the theme from each locale's htmlLang

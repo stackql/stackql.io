@@ -97,6 +97,10 @@ function Footer(): React.ReactElement | null {
     light: useBaseUrl(typedLogo?.src),
     dark: useBaseUrl(typedLogo?.srcDark || typedLogo?.src),
   };
+  const secureFundLogo = {
+    light: useBaseUrl('/img/github-secure-oss-fund-logo.svg'),
+    dark: useBaseUrl('/img/github-secure-oss-fund-logo-dark.svg'),
+  };
 
   if (!footer) {
     return null;
@@ -131,12 +135,12 @@ function Footer(): React.ReactElement | null {
               <p className="footer__subtitle" style={{ marginTop: '0', marginBottom: '0.5rem' }}>
                 Contact: <a href="mailto:info@stackql.io">info@stackql.io</a> or <Link to="/contact-us">contact us</Link>
               </p>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '1rem', alignItems: 'center' }}>
                 <Link href="https://aaif.io/members/" className={styles.footerLogoLink} target="_blank" rel="noopener">
-                  <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '90px' }} />
+                  <img src="/img/aaif_memberbadge_silver.svg" alt="AAIF Member" style={{ height: '90px', display: 'block' }} />
                 </Link>
-                <Link href="https://www.linuxfoundation.org/about/members" className={styles.footerLogoLink} target="_blank" rel="noopener">
-                  <img src="/img/LF_MemberLevel_silver.svg" alt="Linux Foundation Member" style={{ height: '90px' }} />
+                <Link href="https://github.com/open-source/github-secure-open-source-fund" className={styles.footerLogoLink} style={{ display: 'flex' }} target="_blank" rel="noopener">
+                  <ThemedImage className={styles.footerSecureFundLogo} alt="GitHub Secure Open Source Fund" sources={secureFundLogo} width={220} height={50} />
                 </Link>
               </div>
             </div>
