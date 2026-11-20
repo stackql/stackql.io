@@ -144,6 +144,12 @@ for (const prefix of localeRoutePrefixes) {
   }
 }
 
+// Every built locale needs a place in the language menu's order.
+const unorderedLocales = require('./src/lib/localeMenuOrder.js').missingFromMenuOrder(i18nConfig.locales);
+if (unorderedLocales.length) {
+  throw new Error(`locale(s) ${unorderedLocales.join(', ')} missing from LOCALE_MENU_ORDER in src/lib/localeMenuOrder.js`);
+}
+
 const blogSectionNavItems = blogSections.map(({id, label}) => ({
   label,
   to: `/blog/${id}`,
