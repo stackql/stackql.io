@@ -539,6 +539,7 @@ SQL を一から書く前に `query_library_search` を確認し、次に `query
 |--|--|
 |`--mcp.server.type`|MCP サーバータイプ：`http`、`stdio`、または `reverse_proxy`（後者は `stackql srv` と組み合わせて使用）。|
 |`--mcp.config`|MCP サーバーの JSON 設定オブジェクト。YAML も受け付けます。|
+|`--mcp.log.format`|監査ログのエンコーディング：`jsonl`（デフォルト）または `otel`（OpenTelemetry OTLP/JSON ログレコード）。`server.audit.format` より優先されます。[ログ形式](#log-format)を参照してください。|
 |`--mcp.protocol.version`|公開する最新のプロトコルリビジョン：`auto`（デフォルト）、`2026-07-28`、または `2025-11-25` などの古いリビジョン。[リビジョンの固定](#pinning-the-revision)を参照してください。|
 |`--env.file`|起動時に読み込まれ、`reload_credentials` ツールによって必要に応じて再読み込みされる dotenv 形式の認証情報ファイル。[認証情報の（再）読み込み](#credential-resourcing---envfile--reload_credentials)を参照してください。|
 |`--pgsrv.port`|PostgreSQL ワイヤプロトコルサーバーの TCP ポート（`stackql srv` と組み合わせて使用）。|
@@ -743,8 +744,9 @@ python cicd/python/build.py --build-mcp-client
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

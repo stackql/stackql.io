@@ -33,7 +33,7 @@ Fungsi `json_each` diimplementasikan sebagai fungsi `json_array_elements_text` j
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## Argumen {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 Array atau objek JSON.
 
 __*json_path*__  
-Jalur JSON ke array atau objek yang terdapat di dalam *json_array_or_object*.  Lihat [jsonpath.com](https://jsonpath.com/).
+Opsional. Jalur JSON ke array atau objek yang terdapat di dalam *json_array_or_object*.  Lihat [jsonpath.com](https://jsonpath.com/).
 
 > Jika *json_path* tidak ada di dalam *json_array_or_object*, fungsi tidak mengembalikan baris apa pun.
 

@@ -39,7 +39,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 
 ### JWT {#jwt}
 
-تقدم الجهة المستدعية رمزًا مميزًا موقعًا رقميًا، يتم التحقق منه دون اتصال بالشبكة مقابل المفاتيح المقفلة في التكوين.  يحدد التكوين الأدنى جهة الإصدار والجمهور اللذين يجب أن يحملهما الرمز المميز، ويسرد مفتاحًا عامًا واحدًا، ويمنح المجموعة `readers` حق الوصول للقراءة:
+تقدم الجهة المستدعية رمزًا مميزًا موقعًا رقميًا، يتم التحقق منه دون اتصال بالشبكة مقابل المفاتيح المقفلة في التكوين.  يحدد التكوين الأدنى جهة الإصدار والجمهور اللذين يجب أن يحملهما الرمز المميز، ويسرد مفتاحًا عامًا واحدًا، ويسمح لأعضاء المجموعة `analysts` بتشغيل جمل القراءة (يمكن لأعضاء المجموعة `readers` فعل ذلك دون قاعدة، راجع [قواعد السياسة](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

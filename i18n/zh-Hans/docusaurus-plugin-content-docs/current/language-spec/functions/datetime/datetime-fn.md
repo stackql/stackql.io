@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: "StackQL 中的 DATETIME 函数：根据输入值和一个或多个修饰符计算日期时间值，以 YYYY-MM-DD HH:MM:SS 格式返回。"
+description: "StackQL 中的 DATETIME 函数：根据输入值和零个或多个修饰符计算日期时间值，以 YYYY-MM-DD HH:MM:SS 格式返回。"
 image: "/img/stackql-featured-image.png"
 ---
-根据输入的日期时间和一个或多个修饰符，返回计算得到的日期时间值。  
+根据输入的日期时间和零个或多个修饰符，返回计算得到的日期时间值。  
 
 另请参阅：  
 [[` SELECT `]](/language-spec/select) [[ 日期修饰符 ]](/language-spec/functions/datetime/date_modifiers) 

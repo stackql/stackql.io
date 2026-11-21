@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-تتم معالجة هذا الملف مسبقًا بواسطة `iql/iam.iql` مع الحصول على البيانات من `data/iam/bindings.json`
+يوفر هذا الملف البيانات المستخدمة في المعالجة المسبقة للملف `iql/iam.iql`، مع الحصول عليها من `data/iam/bindings.json`
 
 > لا يفترض أن تحتاج إلى تعديل هذا الملف
 

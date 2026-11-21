@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### 終了ステータス {#exit-status}
 
-`exec` は、入力を処理し終えるとステータス `0` で終了します。個々の文のエラーはコンソールに書き込まれるため、スクリプトでは出力を確認する必要があります。`v1.0` 以降では、[`SET`](/language-spec/set) または [`UNSET`](/language-spec/unset) の設定文が失敗した場合、[アクセス管理](/command-line-usage/access-management)が有効で文が拒否された場合、またはプレビュー版の IaC 実行が失敗したリソースを報告した場合に、ステータス `1` で終了します。
+`exec` は、入力を処理し終えるとステータス `0` で終了します。個々の文のエラーはコンソールに書き込まれるため、スクリプトでは出力を確認する必要があります。`v1.0` 以降では、[`SET`](/language-spec/set) または [`UNSET`](/language-spec/unset) の設定文が失敗した場合、プレビュー版の IaC 実行が失敗したリソースを報告した場合、または[アクセス管理](/command-line-usage/access-management)が有効で、いずれかの文が失敗するか拒否された場合に、ステータス `1` で終了します。

@@ -2912,3 +2912,277 @@ Style:
 - Example prompts addressed to an AI assistant use the same plain imperative as the rest of the page ("اعرض"، "أنشئ"، "اسرد").
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Arabic is about as long as English in characters, so a `length ratio` warning from `yarn i18n:verify` is worth a look for an omission, except on short pages whose code fences carry padded result tables.
+
+## zh-Hant
+
+Audience: engineers in Taiwan, Hong Kong and Macau reading technical documentation in Traditional Chinese. Traditional characters in the Taiwan standard forms (為, 裡, 著, 線, 啟, 戶, 群, 衛, 峰, 綠), never simplified characters and never the mainland vocabulary that a simplified-to-traditional conversion leaves behind (軟件, 數據, 默認, 信息, 網絡, 用戶, 文檔, 代碼, 字符串, 函數, 對象, 接口, 調用). The vocabulary is that of vendor documentation in Traditional Chinese (Microsoft Learn zh-tw, AWS and Google Cloud zh-TW), which readers in Hong Kong and Macau read as well. Translate from the English source; never convert or adapt the zh-Hans translation, whose vocabulary differs (row and column in particular: mainland 行 is a row, here 資料列 is a row and 資料行 a column). Plain technical-documentation register: declarative, short sentences, no marketing tone. Address the reader as 您, only where the source says "you"; prefer an impersonal sentence when it reads naturally. Keep the English terms that developers in Taiwan and Hong Kong use as they are; do not invent Chinese names for products or APIs.
+
+Names that stay in English, in addition to the "All locales" list: SQL, CLI, API, SDK, JSON, YAML, CSV, HTTP, OAuth, IaC, CI/CD, LLM, MCP, macOS, Linux, Windows, Docker, Kubernetes, GitHub Actions, Homebrew, Chocolatey, and every provider, service, resource and method name. Acronyms are not expanded or glossed unless the source does so.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Traditional Chinese | Not |
+|---|---|---|
+| provider (a StackQL provider) | Provider (capitalized, untranslated; no plural form) | 提供者, 提供程式, 供應商, 提供商 |
+| cloud provider (the vendor) | 雲端服務供應商; short form 雲端供應商 | 雲服務商, 雲廠商, 雲提供商 |
+| cloud (as a modifier) | 雲端 (雲端資源, 雲端 API) | 雲 alone as a modifier |
+| service | 服務 | |
+| resource | 資源 | |
+| method | 方法 | |
+| operation | 作業 (生命週期作業) | 操作 for an API operation |
+| query (noun and verb) | 查詢 | |
+| statement | 陳述式 (`SELECT` 陳述式) | 語句, 聲明, 敘述 |
+| command (CLI) / subcommand | 命令 / 子命令 | 指令 |
+| result set | 結果集 | |
+| row / column | 資料列 / 資料行; 列 and 行 alone only in a table of output where the meaning is plain | 行 for a row, 列 for a column, 欄 |
+| table | 資料表 (a markdown or HTML table: 表格) | 表 alone |
+| view | 檢視 | 視圖 |
+| materialized view | 具體化檢視 | 物化視圖, 實體化檢視 |
+| window function | 視窗函式 | 窗口函數, 開窗函數 |
+| window frame | 視窗框架 | 窗口幀 |
+| partition (PARTITION BY) | 分割區 | 分區 |
+| aggregate function / scalar function | 彙總函式 / 純量函式 | 聚合函數, 標量函數 |
+| function (every SQL or programming function, including math, trigonometric and logarithmic ones) | 函式 (三角函式, 對數函式) | 函數 |
+| expression / clause | 運算式 / 子句 | 表達式 |
+| keyword / operator / predicate | 關鍵字 / 運算子 / 述詞 | 關鍵詞 (except front matter `keywords`), 操作符, 運算符, 謂詞 |
+| subquery / alias / join | 子查詢 / 別名 / 聯結 | 連接, 連結 (that is a link) |
+| data type / literal / identifier | 資料型別 / 常值 / 識別碼 | 數據類型, 資料類型, 字面量, 標識符 |
+| string / substring / character | 字串 / 子字串 / 字元 | 字符串, 字符 |
+| integer / floating point / boolean | 整數 / 浮點數 / 布林值 | 布爾值 |
+| array / object / element / nested | 陣列 / 物件 / 元素 / 巢狀 | 數組, 對象, 嵌套 |
+| whitespace | 空白字元 | 空白字符 |
+| parameter / argument | 參數 / 引數 (the "Arguments" heading is 引數) | |
+| variable / environment variable | 變數 / 環境變數 | 變量 |
+| flag (CLI) / option | 旗標 / 選項 | 標誌, 標記 |
+| field / key / value | 欄位 / 鍵 / 值 (a cryptographic or API key is 金鑰) | 字段, 密鑰 |
+| key-value pair | 鍵值對 | |
+| schema | schema (untranslated, lower case) | 模式, 架構, 結構描述 |
+| data / database / information | 資料 / 資料庫 / 資訊 | 數據, 數據庫, 信息 |
+| file / directory / folder | 檔案 / 目錄 / 資料夾 | 文件 (that is documentation) |
+| default (noun and adjective) | 預設 | 默認, 缺省 |
+| support (a feature) | 支援 | 支持 |
+| run / execute | 執行 | 運行 |
+| call / invoke / caller | 呼叫 / 叫用 / 呼叫端 | 調用, 調用方 |
+| create / configure / settings | 建立 / 設定 / 設定 | 創建, 配置 |
+| enable / disable | 啟用 / 停用 | 禁用 |
+| integrate / optimize | 整合 / 最佳化 | 集成, 優化 |
+| software / program / code / source code | 軟體 / 程式 / 程式碼 / 原始碼; 代碼 only for an identifier code (語言代碼, 地區代碼) | 軟件, 程序 (a stored procedure is 預存程序), 代碼 for program code, 源代碼 |
+| status code / error code | 狀態碼 / 錯誤碼 | 狀態代碼 |
+| port / connection / load balancer | 連接埠 / 連線 / 負載平衡器 | 端口, 連接 |
+| script | 指令碼 | 腳本 |
+| network / user / interface | 網路 / 使用者 / 介面 | 網絡, 用戶, 接口, 界面 |
+| message / error message | 訊息 / 錯誤訊息 | 消息, 信息 |
+| access (noun and verb) | 存取 | 訪問 |
+| sign in / log in | 登入 | 登錄 |
+| log (noun and verb) / audit log | 記錄 / 稽核記錄 | 日誌, 日志 |
+| cache / local cache | 快取 / 本機快取 | 緩存, 本地 |
+| memory / process / thread | 記憶體 / 處理程序 / 執行緒 | 內存, 進程, 線程 |
+| asynchronous / synchronous | 非同步 / 同步 | 異步 |
+| module / package / plugin / library | 模組 / 套件 / 外掛程式 / 程式庫 | 模塊, 包, 插件, 庫 alone |
+| application, app | 應用程式 | 應用 alone |
+| binary | 二進位檔 | 二進制 |
+| instance (EC2, VM) | 執行個體 | 實例 |
+| cluster / node / container / image (container) | 叢集 / 節點 / 容器 / 映像檔 | 集群, 鏡像 |
+| virtual machine / disk / storage | 虛擬機器 / 磁碟 / 儲存體 | 虛擬機, 磁盤, 存儲 |
+| bucket (object storage) / bucket (NTILE) | 儲存貯體 / 群組 | 存儲桶, 桶, 值區 |
+| control plane / data plane | 控制平面 / 資料平面 | 控制面, 數據平面 |
+| agent, AI agent | 代理程式, AI 代理程式 | 智能體, 智慧體, 代理 alone |
+| agentic (as in agentic AI) | 代理式 | 智能體 |
+| tool (an MCP tool) | 工具 | |
+| prompt (for an LLM) | 提示詞 | 提示 alone (that is "tip") |
+| elicitation (MCP) | 徵詢（elicitation） at first mention on a page, then 徵詢 | 引導, 啟發, 征詢 |
+| gating / gated (MCP) | 管控 / 受管控; "gated by X" = 由 X 管控 | 門控, 把關 |
+| approval / approve | 核准 / 核准 | 審批, 批准 |
+| approval prompt, elicitation prompt (a dialog shown to the user, not an LLM prompt) | 核准要求, 徵詢要求 | 審批提示 |
+| server mode, safety mode | 伺服器模式, 安全模式 | |
+| read-only | 唯讀 | 只讀 |
+| mutation / mutating statement | 變更 / 變更陳述式 | 突變 |
+| lifecycle / resource lifecycle | 生命週期 / 資源生命週期 | 生命周期 |
+| credentials | 憑證 | 認證, 憑據 |
+| certificate (TLS) | 憑證 (TLS 憑證) | 證書 |
+| authentication / authorization | 驗證 / 授權 (身分驗證 where the source stresses identity) | 認證, 鑑權, 身份 |
+| principal / service principal | 主體 / 服務主體 | |
+| account / service account | 帳戶 / 服務帳戶 | 賬號, 賬戶, 帳號 for a cloud account |
+| token / API key / access key | 權杖 / API 金鑰 / 存取金鑰 (bearer 權杖) | 令牌, 密鑰 |
+| secret / secret store | 祕密 / 祕密存放區 | 機密, 秘密 |
+| scope (OAuth) | 範圍 | 作用域 |
+| role / permission | 角色 / 權限 | |
+| assume a role (AWS) | 擔任角色 | 代入角色 |
+| identity provider (IdP, OIDC provider) | 身分提供者 | 身份提供商 |
+| binding (IAM) / policy | 繫結 / 政策 | 綁定, 策略 |
+| session / session variable / provider session | 工作階段 / 工作階段變數 / Provider 工作階段 | 會話, Session |
+| deployment / deploy | 部署 | |
+| provision (resources) | 佈建 | 預配, 置備, 供應 |
+| infrastructure | 基礎架構 | 基礎設施, 基礎結構 |
+| infrastructure as code | 基礎架構即程式碼 | 基礎設施即代碼 |
+| agentic infrastructure | 代理式基礎架構; add （agentic infrastructure） at first mention on a page | 智能體基礎設施 |
+| queryable infrastructure | 可查詢基礎架構; add （queryable infrastructure） at first mention on a page | |
+| SQL for APIs (the pattern name) | SQL for APIs (untranslated); gloss once as （適用於 API 的 SQL） | |
+| registry (generic) / provider registry | 登錄庫 / Provider 登錄庫 (the product name StackQL Registry stays English) | 註冊表, 註冊中心, 倉庫 |
+| pull (a provider, an image) | 提取 | 拉取 |
+| repository | 存放庫 | 倉庫, 儲存庫 |
+| release | 發行版本 (noun), 發行 (verb) | 發布版本 |
+| command line | 命令列 | 命令行 |
+| shell / interactive shell | shell / 互動式 shell | 交互式 |
+| server / client | 伺服器 / 用戶端 | 服務器, 服務端, 客戶端 |
+| transport (MCP) | 傳輸方式 | |
+| protocol / wire protocol | 協定 / 線路協定 (PostgreSQL 線路協定) | 協議, 有線協議 |
+| stateless / stateful | 無狀態 / 具狀態 | 有狀態 |
+| endpoint | 端點 | 終結點 |
+| request / response / request body | 要求 / 回應 / 要求本文 | 請求, 響應, 請求體 |
+| header (HTTP) | 標頭 (要求標頭 / 回應標頭) | 頭, 請求頭 |
+| payload | 承載 | 負載, 酬載 |
+| pagination | 分頁 | |
+| output / output format / output mode | 輸出 / 輸出格式 / 輸出模式 | |
+| template / templating | 範本 / 範本化 | 模板 |
+| dry run | 試執行 | 試運行 |
+| fan-out | 扇出 | |
+| guardrail | 防護措施 | 護欄 |
+| answer engine | 答案引擎 | |
+| region / project / subscription / tenant | 區域 / 專案 / 訂用帳戶 / 租用戶 | 地域, 項目, 訂閱, 租戶 |
+| open source | 開源 | 開放原始碼 |
+| embed / embedded (Embedded MCP) | 內嵌 / 內嵌式 | 嵌入式, 嵌入 |
+| installation / install | 安裝 | |
+| documentation | 文件 | 文檔 |
+| tutorial | 教學 | 教程 |
+| quick start | 快速入門 | |
+| getting started | 開始使用 | 入門 alone (too close to 快速入門) |
+| announcement | 公告 | |
+| feature | 功能 | 特性 |
+| example | 範例 | 示例, 例子 |
+| syntax / usage | 語法 / 用法 | |
+| note / tip / warning (admonition titles are translated by the theme) | 注意 / 提示 / 警告 | |
+| resource hierarchy | 資源階層 | 資源層次結構, 資源層級 |
+| global (flags, scope) | 全域 (全域旗標) | 全局 |
+| access management | 存取管理 | 訪問管理 |
+| SQL backend | SQL 後端 | |
+| query engine / parser / parse / plan (a statement) | 查詢引擎 / 剖析器 / 剖析 / 規劃 | 解析器, 解析 |
+| reverse proxy / proxy | 反向代理 / Proxy | |
+| delimiter, separator | 分隔符號 | 分隔符 |
+| throw an error / return | 擲回錯誤 / 傳回 | 拋出, 返回 |
+| match / replace (strings, regex) / pattern | 比對 / 取代 / 模式 | 匹配, 替換 |
+| regular expression | 正規表示式 | 正則表達式, 規則運算式 |
+| hash | 雜湊 | 哈希, 散列 |
+| timestamp / time zone / Julian day / modifier | 時間戳記 / 時區 / 儒略日 / 修飾詞 | 時間戳, 修飾符 |
+| well-formed / valid (JSON) | 格式正確 / 有效 | |
+| state file | 狀態檔 | 狀態文件 |
+| drift / infrastructure drift | 漂移 / 基礎架構漂移 | 偏移 |
+| inventory / cloud inventory | 資源清單 / 雲端資源清單 | 清查 |
+| compliance | 合規性 | 合規 alone |
+| operator (the person running StackQL) | 維運人員 | 運維人員, 操作員 |
+| filter (noun and verb) | 篩選 (篩選條件) | 過濾 |
+| concatenation / concatenate | 串連 | 拼接 |
+| relation / dereference | 關聯 / 解除參考 | 解引用 |
+| contract (I/O contract, safety contract) | 契約 | 約定 |
+| source of truth | 事實來源 | 權威來源 |
+| entitlement | 權利 | 權益 |
+| snapshot / checksum / digest | 快照 / 總和檢查碼 / 摘要 | 校驗和 |
+| allowlist | 允許清單 | 白名單 |
+| opt in / explicit opt-in | 選擇加入 / 明確選擇加入 | 選擇啟用 |
+| hint (in an MCP error or tool annotation) | 提示資訊 | |
+| advertise (a capability) | 宣告 | 通告 |
+| bundle (the downloadable `.mcpb`) | 安裝套件; the format name MCP Bundle stays in English | 捆綁包 |
+| artifact (build or release output) | 成品 | 製品, 構件, 工件 |
+| stack (of resources) | 堆疊 | 堆棧 |
+| pipeline | 管線 (CI/CD and data or telemetry) | 流水線, 管道 |
+| notarized / signed | 經過公證 / 已簽署 | 已簽名 |
+| common table expression (CTE) | 通用資料表運算式（CTE） | 公用表表達式 |
+| monitor / metrics / telemetry / trace | 監控 / 指標 / 遙測 / 追蹤 | |
+| runtime / metadata / dependency | 執行階段 / 中繼資料 / 相依性 | 執行時期, 元資料, 依賴 for a dependency |
+| resolve (credentials, a variable, a binary) / validate | 解析 / 驗證 (as Microsoft, the same word as authenticate) | 解決 |
+| render (a template) / escape (a character) / placeholder | 轉譯 / 逸出 / 預留位置 | 渲染, 跳脫, 佔位符 |
+| build (noun and verb) / publish / commit (git) | 建置 / 發佈 / 提交 | 組建, 發布, 認可 |
+| deprecated / legacy / ad hoc | 已淘汰 / 舊版 / 即席 | 已棄用 |
+| desired state / reconciliation / persistent | 期望狀態 / 調和 / 持續性 | 所需狀態, 永續性 |
+| observability / workload / understand / distribution | 可觀測性 / 工作負載 / 了解 / 分佈 | 可觀察性, 工作負荷, 瞭解, 分布 |
+| builder (SDK API) / supervisor (OTP) / pin (a version, a sha256) | 建立器 / 監督器 / 釘選 (sha256 釘選值) | 建構器, 監督者 |
+| zone (Google Cloud) / Availability Zone (AWS) | 可用區 / 可用區域 | |
+| console / terminal / listener / handle / handshake | 主控台 / 終端機 / 接聽程式 / 控制代碼 / 交握 | 控制台, 監聽器 |
+| cursor (database, pagination) / offset (LAG, LEAD) | 資料指標 / 位移 | 游標 for a database cursor |
+| collation / grammar / peer (window functions) / frame clause | 定序 / 文法 (語法 is syntax) / 對等資料列 / 框架子句 | |
+| exception / suffix / prefix | 例外狀況 / 尾碼 / 前置詞 | |
+| token (an LLM token) / context window | token / 上下文視窗 | 權杖 (that is an auth token) |
+| rate limit / personal access token | 速率限制 / 個人存取權杖 | |
+| workflow / job (GitHub Actions) / tab (UI) / extension (Goose, browser) | 工作流程 / 作業 / 索引標籤 / 擴充功能 | |
+| OTel exporter / receiver / instrumentation scope / flush / backoff | 匯出工具 / 接收器 / 檢測範圍 / 排清 / 退避 | |
+| Kept in English | sidecar, vendored, crate, worker, bearer (bearer 權杖), dotenv, pull request, fork, issue, webhook, span, sink, connector (Claude's Connectors), facet | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Traditional Chinese |
+|---|---|
+| Install | 安裝 |
+| Installing StackQL | 安裝 StackQL |
+| Getting Started | 開始使用 |
+| Command Line Usage | 命令列用法 |
+| Language Specification | 語言規格 |
+| Functions / Built-in Functions | 函式 / 內建函式 |
+| Aggregate / Date and Time / General / Hash / Math / Logarithmic / Trigonometric / Regular Expressions / Session / String / Window Functions (function categories) | 彙總 / 日期和時間 / 一般 / 雜湊 / 數學 / 對數函式 / 三角函式 / 正規表示式 / 工作階段 / 字串 / 視窗函式 |
+| Developers | 開發人員 |
+| Providers | Provider |
+| Quick Starts | 快速入門 |
+| AI Agents | AI 代理程式 |
+| MCP Server / MCP Tools / Embedded MCP / Embedded | MCP 伺服器 / MCP 工具 / 內嵌式 MCP / 內嵌式 |
+| Blog | 部落格 |
+| Product Announcements | 產品公告 |
+| Provider Announcements | Provider 公告 |
+| Tutorials | 教學 |
+| Documentation | 文件 |
+| Contact us | 聯絡我們 |
+| Privacy Policy | 隱私權政策 |
+| Terms of Service | 服務條款 |
+| Support | 支援 |
+| AI Reference | AI 參考 |
+| More | 更多 |
+| Welcome to StackQL | 歡迎使用 StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Traditional Chinese |
+|---|---|
+| Syntax | 語法 |
+| Arguments | 引數 |
+| Return Value(s) | 傳回值 |
+| Example, Examples | 範例 |
+| Inputs / Output | 輸入 / 輸出 |
+| Flags | 旗標 |
+| Overview | 概觀 |
+| How it works | 運作方式 |
+| Modes | 模式 |
+| Gating | 管控 |
+| Install | 安裝 |
+| Quick start | 快速入門 |
+| Demo app | 示範應用程式 |
+| Repo link | 存放庫連結 |
+| Vendoring / embedding | Vendoring / 內嵌 |
+| Prerequisites | 必要條件 |
+| Next steps | 後續步驟 |
+| Related | 相關內容 |
+| See also: | 另請參閱： |
+| For more information, see X. | 如需詳細資訊，請參閱 X。 |
+| Optional. / Defaults to X. | 選用。 / 預設為 X。 |
+| X function in StackQL: ... (description pattern) | StackQL 中的 X 函式：... |
+| Argument / Required / Description (table headers) | 引數 / 必要 / 描述 |
+| Yes / No (table cells) | 是 / 否 |
+| For example | 例如 |
+| Aggregate function / Scalar function | 彙總函式 / 純量函式 |
+| keyword `cloud inventory` | 雲端資源清單 |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Punctuation in Chinese prose is full width: ，。：；？！（）、 and 「」 for quotation (『』 for a quotation inside a quotation), as in Taiwan usage; never “” or ‘’. Use 、 between the items of a short inline list. Everything inside code fences and inline code keeps its half-width punctuation, and a sentence that is entirely Latin text or code keeps half-width punctuation too.
+- Parentheses in a Chinese sentence are full width even when they hold English: 基礎架構即程式碼（IaC）.
+- One half-width space between Chinese characters and an adjacent Latin word, number, inline code span or link whose text is Latin: 使用 `stackql exec` 執行查詢, 支援 3 種模式, 在 StackQL 中. No space next to full-width punctuation: 執行 `stackql shell`。 and （請參閱 `--output`）.
+- No dash punctuation in prose: neither ——, nor a spaced hyphen. Where the source uses ` - ` as a dash inside a sentence, use ， or ： or split the sentence. A ` - ` separator in a title between two names stays.
+- Headings: translate the text, no end punctuation, keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- List items and table cells end the way the source does: no 。 added to fragments, 。 where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English, optionally followed by a Chinese gloss in （）only if the source explains it.
+- Numbers are Arabic numerals; versions, dates and units as in the source.
+- The `description` front matter stays one sentence and under about 80 characters (count Chinese characters and Latin words alike; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud` -> 雲端, `infrastructure as code` -> 基礎架構即程式碼); keep the number and order of entries.
+- Bold and italic markers stay where the source has them. Put no space inside the markers (`**唯讀**`, not `** 唯讀 **`).
+- A closing `**` that follows full-width punctuation or a closing 」 and is followed directly by a Chinese character does not close in CommonMark, and the asterisks show on the page (`**適用情境：**任何` renders literally). Move the punctuation outside the markers (`**適用情境**：任何`) or leave a space after the closing marker. The same holds for an opening marker between a Chinese character and full-width punctuation, and for `_` and `__`, which never open or close next to a Chinese character: where the source has `__bold__` or `_italic_` next to translated text, write `**bold**` or `*italic*`.
+- "See X" is 請參閱 X, never 參見 or 請參見.
+- Front matter must stay valid YAML: keep the quoting of the source value, and put a value in double quotes if the Chinese text contains a half-width `: ` or ` #`, or starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`, or with 「. A full-width ： needs no quoting.
+- Chinese text is shorter than English, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.

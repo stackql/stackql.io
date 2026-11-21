@@ -39,7 +39,7 @@ Tệp cấu hình chọn một giá trị `type`: `jwt` (mặc định khi bỏ 
 
 ### JWT {#jwt}
 
-Bên gọi xuất trình một token đã ký, token này được xác minh ngoại tuyến theo các khóa được ghim trong cấu hình.  Một cấu hình tối thiểu nêu bên phát hành và đối tượng nhận mà token phải mang, liệt kê một khóa công khai và trao quyền đọc cho nhóm `readers`:
+Bên gọi xuất trình một token đã ký, token này được xác minh ngoại tuyến theo các khóa được ghim trong cấu hình.  Một cấu hình tối thiểu nêu bên phát hành và đối tượng nhận mà token phải mang, liệt kê một khóa công khai và cho phép thành viên của nhóm `analysts` chạy các câu lệnh đọc (thành viên của nhóm `readers` có thể làm vậy mà không cần quy tắc, xem [Quy tắc chính sách](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ Bên gọi xuất trình một token đã ký, token này được xác minh ngo
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ Bên gọi xuất trình một token không trong suốt và cấu hình liệt 
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ Bên gọi được nhận diện bằng chứng chỉ ứng dụng khách mà n
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ Không có thông tin xác thực nào được trao đổi: chủ thể là dan
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

@@ -2,10 +2,11 @@
 // in Australia, New Zealand, South Africa or the United Kingdom sees that
 // country's flag next to "EN" instead of the US one, and a visitor in a
 // Spanish-speaking country of the Americas (or in Equatorial Guinea) sees
-// that country's flag next to "ES" instead of Spain's, and a visitor in an
+// that country's flag next to "ES" instead of Spain's, a visitor in an
 // Arab League country other than Saudi Arabia sees that country's flag next
-// to "AR". Cosmetic only: the
-// locale, its URL and its content are the same for everyone.
+// to "AR", and a visitor in Taiwan or Macau sees that flag next to "ZH-HANT"
+// instead of Hong Kong's. Cosmetic only: the locale, its URL and its content
+// are the same for everyone.
 //
 // How it works. The site is static, so every page is served with the default
 // flag (inline SVG, in src/theme/NavbarItem/LocaleDropdownNavbarItem/flags.js).
@@ -62,6 +63,18 @@
 // other regions decide wherever the machine is. Each country has one zone
 // (two for Palestine); browsers report the per-country CLDR names
 // (Asia/Kuwait, not the IANA link target Asia/Riyadh).
+//
+// Traditional Chinese (zh-Hant) has Hong Kong as the default and variants
+// for Taiwan and Macau. Its browser languages are zh-TW, zh-HK, zh-MO and
+// the script-tagged zh-Hant-TW and zh-Hant-HK, so `lang` says which language
+// subtag to match (the locale code itself never appears in a browser
+// language) and the region may be any two-letter subtag of the tag. zh-HK
+// and zh-MO decide wherever the machine is; HK maps to "", which settles on
+// the default flag without consulting the time zone. zh-TW is the setting
+// behind a plain "Traditional Chinese" on macOS and in Chrome, used in Hong
+// Kong as well, so like en-GB it is a loose region: a zh-TW browser in Hong
+// Kong keeps the Hong Kong flag (its time zone maps to ""), one in Taipei or
+// with no Chinese time zone gets the Taiwan flag.
 const REGIONAL_FLAGS = {
   en: {
     regions: { AU: 'au', NZ: 'nz', ZA: 'za' },
@@ -154,13 +167,29 @@ const REGIONAL_FLAGS = {
       ['Asia/Aden', 'ye'],
     ],
   },
+  'zh-Hant': {
+    lang: 'zh',
+    regions: { HK: '', MO: 'mo' },
+    timeZones: [
+      ['Asia/Taipei', 'tw'],
+      ['Asia/Macau', 'mo'],
+      ['Asia/Macao', 'mo'],
+      ['Asia/Hong_Kong', ''],
+    ],
+    looseRegions: { TW: 'tw' },
+  },
 };
 
 // The inline script for <head>. Written for old browsers (no arrow
 // functions, no optional chaining) and wrapped so that any error leaves the
-// page exactly as it was served.
+// page exactly as it was served. g() returns the variant a browser language
+// of the locale's language (`lang`, default the locale code) names through
+// one of its two-letter subtags, or undefined; a variant of "" (and a time
+// zone mapped to "") decides on the default flag, so the later signals are
+// not consulted. The attribute is data-flag-<locale> in lower case
+// (data-flag-zh-hant), which is what HTML makes of any attribute name.
 function headScript(config = REGIONAL_FLAGS) {
-  return `!function(){try{var c=${JSON.stringify(config)},d=document.documentElement,n=navigator,l=n.languages&&n.languages.length?n.languages:[n.language||""],z="";try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var g=function(k,m){for(var i=0,p;m&&i<l.length;i++){p=String(l[i]).split("-");if(p[0].toLowerCase()===k&&p[1]&&m[p[1].toUpperCase()])return m[p[1].toUpperCase()]}return""};for(var k in c){var f=g(k,c[k].regions),t=c[k].timeZones||[],i;for(i=0;i<t.length&&!f;i++)if(z.indexOf(t[i][0])===0)f=t[i][1];f=f||g(k,c[k].looseRegions);if(f)d.setAttribute("data-flag-"+k,f)}}catch(e){}}();`;
+  return `!function(){try{var c=${JSON.stringify(config)},d=document.documentElement,n=navigator,l=n.languages&&n.languages.length?n.languages:[n.language||""],z="",u;try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var g=function(k,m){for(var i=0,p,j,r,L=(c[k].lang||k).toLowerCase();m&&i<l.length;i++){p=String(l[i]).split("-");if(p[0].toLowerCase()!==L)continue;for(j=1;j<p.length;j++){r=p[j].toUpperCase();if(r.length===2&&m.hasOwnProperty(r))return m[r]}}return u};for(var k in c){var f=g(k,c[k].regions),t=c[k].timeZones||[],i;for(i=0;i<t.length&&f===u;i++)if(z.indexOf(t[i][0])===0)f=t[i][1];if(f===u)f=g(k,c[k].looseRegions);if(f)d.setAttribute("data-flag-"+k.toLowerCase(),f)}}catch(e){}}();`;
 }
 
 module.exports = { REGIONAL_FLAGS, headScript };

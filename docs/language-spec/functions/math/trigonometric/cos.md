@@ -41,7 +41,7 @@ Returns the cosine of the specified angle.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-This query returns `0.5`, as the cosine of π/3 radians is 0.5.
+This query returns `0.5000000000000001`, the floating point approximation of the cosine of π/3 radians, which is 0.5.
 
 ### Calculate the cosine of π radians {#calculate-the-cosine-of-π-radians}
 

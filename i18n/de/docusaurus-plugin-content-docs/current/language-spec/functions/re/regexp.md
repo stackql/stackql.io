@@ -32,7 +32,7 @@ __*pattern_expression*__
 Das Muster des regulären Ausdrucks, das mit dem Quellstring abgeglichen wird.
 
 ## Rückgabewert(e) {#return-values}
-Gibt einen booleschen Wert zurück: `TRUE`, wenn der Quellstring dem Muster des regulären Ausdrucks entspricht, andernfalls `FALSE`.
+Gibt `1` zurück, wenn der Quellstring dem Muster des regulären Ausdrucks entspricht, andernfalls `0`.
 
 * * *
 
@@ -46,7 +46,7 @@ Dieses Beispiel zeigt, wie geprüft wird, ob der String 'the year is 2021' ein o
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-Diese Abfrage gibt `TRUE` zurück, weil der String den Teilstring '2021' enthält, der dem Muster `[0-9]+` entspricht, das für eine oder mehrere Ziffern steht.
+Diese Abfrage gibt `1` zurück, weil der String den Teilstring '2021' enthält, der dem Muster `[0-9]+` entspricht, das für eine oder mehrere Ziffern steht.
 
 ### E-Mail-Format validieren {#validate-email-format}
 
@@ -56,4 +56,4 @@ So prüfen Sie, ob ein String ein gültiges E-Mail-Format hat:
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Diese Abfrage gibt `TRUE` zurück, was anzeigt, dass 'user@example.com' wie eine typische E-Mail-Adresse formatiert ist und dem angegebenen Muster des regulären Ausdrucks entspricht.
+Diese Abfrage gibt `1` zurück, was anzeigt, dass 'user@example.com' wie eine typische E-Mail-Adresse formatiert ist und dem angegebenen Muster des regulären Ausdrucks entspricht.

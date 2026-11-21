@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventario de nube
-description: "Modos de salida de StackQL: table, json, jsonl, csv y otel, cómo seleccionarlos y qué emite cada uno para el uso con shell, exec y servidor."
+description: "Modos de salida de StackQL: table, json, jsonl, csv, text y otel, cómo seleccionarlos y qué emite cada uno para el uso con shell, exec y servidor."
 image: "/img/stackql-featured-image.png"
 ---
 Consulte también:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-Cada línea es además, byte por byte, el cuerpo de una solicitud OTLP/HTTP `POST /v1/logs`, que es lo que envía el exportador push integrado.
+Cada línea es además un objeto `LogsData` de OTLP/JSON completo que un endpoint OTLP/HTTP `POST /v1/logs` acepta como cuerpo de la solicitud.  El exportador push integrado envía la misma codificación, pero agrupa los registros en lotes, como se describe a continuación.
 
 #### Enviar a un endpoint OTLP {#pushing-to-an-otlp-endpoint}
 

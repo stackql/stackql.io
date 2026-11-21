@@ -44,7 +44,7 @@ GROUP BY region;
 ## 前提条件 {#prerequisites}
 
 - `pip install pystackql` でインストールできる [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)
-- `ReadOnlyAccess` ポリシー以上がアタッチされた AWS ユーザーまたはロール（ロールは `sts assume-role` で引き受け可能）
+- `ReadOnlyAccess` ポリシー以上がアタッチされた AWS ユーザーまたはロール（ロールは `aws sts assume-role` で引き受け可能）
 - `AWS_ACCESS_KEY_ID` および `AWS_SECRET_ACCESS_KEY` 環境変数の設定（[AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) を使用すると自動的に設定可能）
 
 ## コード {#the-code}
@@ -187,7 +187,7 @@ resource_filters = {
         "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
     },
     "ec2": {
-        "snapshots": " AND ownerAlias <> 'amazon'",
+        "snapshots": " AND owner_alias <> 'amazon'",
     },
     "elasticache": {
         "users": " AND user_id <> 'default'",
@@ -197,7 +197,7 @@ resource_filters = {
     },
     "iam": {
         "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
-        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {
         "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",

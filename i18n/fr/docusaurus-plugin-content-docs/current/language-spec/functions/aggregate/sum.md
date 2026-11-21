@@ -44,7 +44,7 @@ Une ou plusieurs colonnes sur lesquelles effectuer des opérations de synthèse 
 
 ## Valeur(s) renvoyée(s) {#return-values}
 
-Renvoie un entier représentant la somme de *columnExpression* si toutes les entrées non `NULL` sont des entiers. Si certaines entrées ne sont pas des entiers ou sont `NULL`, une valeur à virgule flottante, qui peut être une approximation de la somme réelle, est renvoyée.
+Renvoie un entier représentant la somme de *columnExpression* si toutes les entrées non `NULL` sont des entiers. Si une entrée non `NULL` n'est pas un entier, une valeur à virgule flottante, qui peut être une approximation de la somme réelle, est renvoyée.
 
 * * *
 

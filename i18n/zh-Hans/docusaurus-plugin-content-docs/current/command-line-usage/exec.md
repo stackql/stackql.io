@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### 退出状态 {#exit-status}
 
-输入处理完成后，`exec` 以状态 `0` 退出；单条语句的错误会写入控制台，因此脚本应检查输出。从 `v1.0` 起，当 [`SET`](/language-spec/set) 或 [`UNSET`](/language-spec/unset) 配置语句失败时，当[访问管理](/command-line-usage/access-management)已启用且某条语句被拒绝时，或者当预览版 IaC 运行报告某个资源失败时，它以状态 `1` 退出。
+输入处理完成后，`exec` 以状态 `0` 退出；单条语句的错误会写入控制台，因此脚本应检查输出。从 `v1.0` 起，当 [`SET`](/language-spec/set) 或 [`UNSET`](/language-spec/unset) 配置语句失败时，当预览版 IaC 运行报告某个资源失败时，或者在启用了[访问管理](/command-line-usage/access-management)的情况下，当任何语句失败或被拒绝时，它以状态 `1` 退出。

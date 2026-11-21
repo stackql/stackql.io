@@ -44,7 +44,7 @@ Truy vấn ở trên thực chất là 17 truy vấn chạy song song (mỗi khu
 ## Điều kiện tiên quyết {#prerequisites}
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html), có thể cài đặt bằng `pip install pystackql`
-- Một người dùng AWS hoặc một vai trò (có thể đảm nhận bằng `sts assume-role`) được gắn chính sách `ReadOnlyAccess` hoặc một chính sách có quyền cao hơn
+- Một người dùng AWS hoặc một vai trò (có thể đảm nhận bằng `aws sts assume-role`) được gắn chính sách `ReadOnlyAccess` hoặc một chính sách có quyền cao hơn
 - Đã đặt các biến môi trường `AWS_ACCESS_KEY_ID` và `AWS_SECRET_ACCESS_KEY` (có thể thực hiện việc này tự động bằng [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
 ## Mã nguồn {#the-code}
@@ -187,7 +187,7 @@ resource_filters = {
         "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
     },
     "ec2": {
-        "snapshots": " AND ownerAlias <> 'amazon'",
+        "snapshots": " AND owner_alias <> 'amazon'",
     },
     "elasticache": {
         "users": " AND user_id <> 'default'",
@@ -197,7 +197,7 @@ resource_filters = {
     },
     "iam": {
         "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
-        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {
         "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",

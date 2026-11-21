@@ -64,7 +64,7 @@ The server mode sets the safety contract for the whole session:
 | `delete_safe` | allow | allow | needs approval |
 | `full_access` | allow | allow | allow |
 
-"Needs approval" uses MCP elicitation: clients that support it (Claude Desktop, Cursor, Continue) show the user the tool name, query class and SQL and wait for a decision before anything runs; clients that don't advertise it are refused. Every tool call is written to an audit log, HTTP listeners require a bearer token, and credentials are sourced from the environment or a dotenv file without secret values ever being returned to the client. Details are in [Server modes](/command-line-usage/mcp#server-modes), [HTTP client authentication](/command-line-usage/mcp#http-client-authentication) and [Audit log](/command-line-usage/mcp#audit-log).
+"Needs approval" uses MCP elicitation: clients that support it (Claude Desktop, Cursor, Continue) show the user the tool name, query class and SQL and wait for a decision before anything runs; clients that don't advertise it are refused. Every tool call is written to an audit log, HTTP listeners require a bearer token unless they are explicitly opened with `allow_unauthenticated`, and credentials are sourced from the environment or a dotenv file without secret values ever being returned to the client. Details are in [Server modes](/command-line-usage/mcp#server-modes), [HTTP client authentication](/command-line-usage/mcp#http-client-authentication) and [Audit log](/command-line-usage/mcp#audit-log).
 
 ## Next steps {#next-steps}
 

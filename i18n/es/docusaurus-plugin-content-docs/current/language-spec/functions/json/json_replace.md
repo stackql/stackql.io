@@ -73,7 +73,7 @@ AND resource_group_name = 'exampleResourceGroupProd';
 */
 ```
 
-### Reemplazar varios valores en un objeto JSON {#replace-multiple-values-in-a-json-object}
+### Eliminar claves y reemplazar un valor en un objeto JSON {#remove-keys-and-replace-a-value-in-a-json-object}
 
 <Tabs
   defaultValue="query"
@@ -130,7 +130,7 @@ and network_interface_name = 'vm1450_z1'
   "dnsSettings": {
     "appliedDnsServers": [],
     "dnsServers": [],
-    "internalDomainNameSuffix": "02ylkvekgslelowidrppwubzmb.bx.internal.cloudapp.net"
+    "internalDomainNameSuffix": "123ylkvekgslelowidrppwubzmb.bx.internal.cloudapp.net"
   },
   "enableAcceleratedNetworking": false,
   "ipConfigurations": [

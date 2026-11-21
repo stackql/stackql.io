@@ -64,7 +64,7 @@ O modo do servidor define o contrato de segurança de toda a sessão:
 | `delete_safe` | permite | permite | requer aprovação |
 | `full_access` | permite | permite | permite |
 
-"Requer aprovação" usa a elicitação do MCP: os clientes compatíveis com ela (Claude Desktop, Cursor, Continue) mostram ao usuário o nome da ferramenta, a classe da consulta e o SQL e aguardam uma decisão antes de qualquer execução; os clientes que não a anunciam são recusados. Cada chamada de ferramenta é gravada em um log de auditoria, os listeners HTTP exigem um token bearer e as credenciais vêm do ambiente ou de um arquivo dotenv, sem que nenhum valor de segredo seja retornado ao cliente. Os detalhes estão em [Modos do servidor](/command-line-usage/mcp#server-modes), [Autenticação de clientes HTTP](/command-line-usage/mcp#http-client-authentication) e [Log de auditoria](/command-line-usage/mcp#audit-log).
+"Requer aprovação" usa a elicitação do MCP: os clientes compatíveis com ela (Claude Desktop, Cursor, Continue) mostram ao usuário o nome da ferramenta, a classe da consulta e o SQL e aguardam uma decisão antes de qualquer execução; os clientes que não a anunciam são recusados. Cada chamada de ferramenta é gravada em um log de auditoria, os listeners HTTP exigem um token bearer, a menos que sejam abertos explicitamente com `allow_unauthenticated`, e as credenciais vêm do ambiente ou de um arquivo dotenv, sem que nenhum valor de segredo seja retornado ao cliente. Os detalhes estão em [Modos do servidor](/command-line-usage/mcp#server-modes), [Autenticação de clientes HTTP](/command-line-usage/mcp#http-client-authentication) e [Log de auditoria](/command-line-usage/mcp#audit-log).
 
 ## Próximos passos {#next-steps}
 

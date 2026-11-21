@@ -44,7 +44,7 @@ GROUP BY region;
 ## 사전 요구 사항 {#prerequisites}
 
 - `pip install pystackql` 명령으로 설치할 수 있는 [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)
-- `ReadOnlyAccess` 정책 이상이 연결된 AWS 사용자 또는 역할(역할은 `sts assume-role` 명령으로 수임할 수 있음)
+- `ReadOnlyAccess` 정책 이상이 연결된 AWS 사용자 또는 역할(역할은 `aws sts assume-role` 명령으로 수임할 수 있음)
 - `AWS_ACCESS_KEY_ID` 및 `AWS_SECRET_ACCESS_KEY` 환경 변수 설정([AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell)을 사용하면 자동으로 설정할 수 있음)
 
 ## 코드 {#the-code}
@@ -187,7 +187,7 @@ resource_filters = {
         "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
     },
     "ec2": {
-        "snapshots": " AND ownerAlias <> 'amazon'",
+        "snapshots": " AND owner_alias <> 'amazon'",
     },
     "elasticache": {
         "users": " AND user_id <> 'default'",
@@ -197,7 +197,7 @@ resource_filters = {
     },
     "iam": {
         "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
-        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {
         "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",

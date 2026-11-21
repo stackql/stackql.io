@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "Mode output StackQL: table, json, jsonl, csv, dan otel, cara memilihnya, dan apa yang dihasilkan masing-masing untuk penggunaan shell, exec, dan server."
+description: "Mode output StackQL: table, json, jsonl, csv, text, dan otel, cara memilihnya, dan apa yang dihasilkan masing-masing untuk penggunaan shell, exec, dan server."
 image: "/img/stackql-featured-image.png"
 ---
 Lihat juga:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-Setiap baris juga, byte demi byte, merupakan isi permintaan OTLP/HTTP `POST /v1/logs`, yaitu yang dikirim oleh exporter push bawaan.
+Setiap baris juga merupakan objek OTLP/JSON `LogsData` lengkap yang diterima endpoint OTLP/HTTP `POST /v1/logs` sebagai isi permintaan.  Exporter push bawaan mengirim pengodean yang sama tetapi mengelompokkan catatan ke dalam batch, seperti yang dijelaskan di bawah.
 
 #### Mengirim langsung ke endpoint OTLP {#pushing-to-an-otlp-endpoint}
 

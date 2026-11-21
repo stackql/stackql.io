@@ -1,0 +1,154 @@
+{
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "開始使用",
+    "description": "The label for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "開始使用",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "核心概念與第一步：資源階層、執行 StackQL、使用 Provider、輸出模式、變數、工作階段變數、Provider 工作階段與範本化",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage": {
+    "message": "命令列用法",
+    "description": "The label for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.title": {
+    "message": "命令列用法",
+    "description": "The generated-index page title for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Command Line Usage.link.generated-index.description": {
+    "message": "stackql 命令列：exec、shell、srv、mcp、registry、全域旗標與存取管理",
+    "description": "The generated-index page description for category 'Command Line Usage' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.MCP": {
+    "message": "MCP",
+    "description": "The label for category 'MCP' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Embedded": {
+    "message": "內嵌式",
+    "description": "The label for category 'Embedded' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Language Specification": {
+    "message": "語言規格",
+    "description": "The label for category 'Language Specification' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Built-in Functions": {
+    "message": "內建函式",
+    "description": "The label for category 'Built-in Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Aggregate": {
+    "message": "彙總",
+    "description": "The label for category 'Aggregate' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Datetime": {
+    "message": "日期和時間",
+    "description": "The label for category 'Datetime' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.General": {
+    "message": "一般",
+    "description": "The label for category 'General' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Hash": {
+    "message": "雜湊",
+    "description": "The label for category 'Hash' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Json": {
+    "message": "JSON",
+    "description": "The label for category 'Json' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Math": {
+    "message": "數學",
+    "description": "The label for category 'Math' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Logarithmic Functions": {
+    "message": "對數函式",
+    "description": "The label for category 'Logarithmic Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Trigonometric Functions": {
+    "message": "三角函式",
+    "description": "The label for category 'Trigonometric Functions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Regular Expressions": {
+    "message": "正規表示式",
+    "description": "The label for category 'Regular Expressions' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Session": {
+    "message": "工作階段",
+    "description": "The label for category 'Session' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.String": {
+    "message": "字串",
+    "description": "The label for category 'String' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Window": {
+    "message": "視窗函式",
+    "description": "The label for category 'Window' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Developers": {
+    "message": "開發人員",
+    "description": "The label for category 'Developers' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts": {
+    "message": "快速入門",
+    "description": "The label for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.title": {
+    "message": "快速入門",
+    "description": "The generated-index page title for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Quick Starts.link.generated-index.description": {
+    "message": "StackQL 快速入門、操作指南、實用範例與使用案例",
+    "description": "The generated-index page description for category 'Quick Starts' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS": {
+    "message": "AWS",
+    "description": "The label for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.title": {
+    "message": "AWS 快速入門",
+    "description": "The generated-index page title for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.AWS.link.generated-index.description": {
+    "message": "AWS 專屬的實用範例與使用案例",
+    "description": "The generated-index page description for category 'AWS' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure": {
+    "message": "Microsoft Azure",
+    "description": "The label for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.title": {
+    "message": "Azure 快速入門",
+    "description": "The generated-index page title for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Microsoft Azure.link.generated-index.description": {
+    "message": "Azure 專屬的實用範例與使用案例",
+    "description": "The generated-index page description for category 'Microsoft Azure' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform": {
+    "message": "Google Cloud Platform",
+    "description": "The label for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.title": {
+    "message": "Google 快速入門",
+    "description": "The generated-index page title for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.Google Cloud Platform.link.generated-index.description": {
+    "message": "Google Cloud 專屬的實用範例與使用案例",
+    "description": "The generated-index page description for category 'Google Cloud Platform' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub": {
+    "message": "GitHub",
+    "description": "The label for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.title": {
+    "message": "GitHub 快速入門",
+    "description": "The generated-index page title for category 'GitHub' in sidebar 'docsSidebar'"
+  },
+  "sidebar.docsSidebar.category.GitHub.link.generated-index.description": {
+    "message": "GitHub 專屬的實用範例與使用案例",
+    "description": "The generated-index page description for category 'GitHub' in sidebar 'docsSidebar'"
+  }
+}

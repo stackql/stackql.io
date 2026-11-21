@@ -32,7 +32,7 @@ image: "/img/stackql-featured-image.png"
 ## بناء الجملة {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 مصفوفة أو كائن JSON.
 
 __*json_path*__  
-مسار JSON إلى مصفوفة أو كائن موجود داخل *json_array_or_object*. راجع [jsonpath.com](https://jsonpath.com/).
+اختياري. مسار JSON إلى مصفوفة أو كائن موجود داخل *json_array_or_object*. راجع [jsonpath.com](https://jsonpath.com/).
 
 > إذا لم يكن *json_path* موجودًا في *json_array_or_object*، فتعيد الدالة `NULL`.
 

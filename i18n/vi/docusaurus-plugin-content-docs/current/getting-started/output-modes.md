@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "Các chế độ đầu ra của StackQL: table, json, jsonl, csv và otel, cách chọn chúng và đầu ra của mỗi chế độ khi dùng với shell, exec và máy chủ."
+description: "Các chế độ đầu ra của StackQL: table, json, jsonl, csv, text và otel, cách chọn chúng và đầu ra của mỗi chế độ khi dùng với shell, exec và máy chủ."
 image: "/img/stackql-featured-image.png"
 ---
 Xem thêm:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-Mỗi dòng cũng giống hệt từng byte với phần thân của một yêu cầu OTLP/HTTP `POST /v1/logs`, tức là đúng nội dung mà exporter tích hợp sẵn đẩy đi.
+Mỗi dòng cũng là một `LogsData` OTLP/JSON hoàn chỉnh mà một điểm cuối OTLP/HTTP `POST /v1/logs` chấp nhận làm phần thân yêu cầu.  Khi đẩy, exporter tích hợp sẵn gửi cùng cách mã hóa này nhưng gom các bản ghi thành lô, như mô tả bên dưới.
 
 #### Đẩy đến một điểm cuối OTLP {#pushing-to-an-otlp-endpoint}
 

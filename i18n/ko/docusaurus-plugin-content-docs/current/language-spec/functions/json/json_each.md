@@ -33,7 +33,7 @@ image: "/img/stackql-featured-image.png"
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## 인수 {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 JSON 배열 또는 객체입니다.
 
 __*json_path*__  
-*json_array_or_object* 안에 포함된 배열 또는 객체에 대한 JSON 경로입니다. [jsonpath.com](https://jsonpath.com/)을 참조하세요.
+선택 사항입니다. *json_array_or_object* 안에 포함된 배열 또는 객체에 대한 JSON 경로입니다. [jsonpath.com](https://jsonpath.com/)을 참조하세요.
 
 > *json_path*가 *json_array_or_object*에 없으면 함수는 행을 반환하지 않습니다.
 

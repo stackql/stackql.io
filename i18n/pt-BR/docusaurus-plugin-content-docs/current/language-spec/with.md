@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventário de nuvem
-description: "WITH no StackQL: definir expressões de tabela comuns (CTEs), conjuntos de resultados nomeados temporários restritos a uma única instrução SELECT, INSERT, UPDATE ou DELETE."
+description: "WITH no StackQL: definir expressões de tabela comuns (CTEs), conjuntos de resultados nomeados temporários restritos à instrução SELECT que os segue."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-Define uma expressão de tabela comum (CTE) para uso em uma instrução `SELECT`, `INSERT`, `UPDATE` ou `DELETE` subsequente. As CTEs funcionam como conjuntos de resultados nomeados temporários que existem apenas durante a consulta.
+Define uma expressão de tabela comum (CTE) para uso na instrução `SELECT` que a segue. As CTEs funcionam como conjuntos de resultados nomeados temporários que existem apenas durante a consulta.
 
 Veja também:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

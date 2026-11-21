@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - جرد الموارد السحابية
-description: "WITH في StackQL: تعريف تعبيرات الجداول الشائعة (CTE)، وهي مجموعات نتائج مؤقتة مسماة يقتصر نطاقها على جملة SELECT أو INSERT أو UPDATE أو DELETE واحدة."
+description: "WITH في StackQL: تعريف تعبيرات الجداول الشائعة (CTE)، وهي مجموعات نتائج مؤقتة مسماة يقتصر نطاقها على جملة SELECT التي تليها."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-تحدد تعبير جدول شائع (CTE) لاستخدامه في جملة `SELECT` أو `INSERT` أو `UPDATE` أو `DELETE` لاحقة. تعمل تعبيرات CTE كمجموعات نتائج مؤقتة مسماة لا توجد إلا طوال مدة الاستعلام.
+تحدد تعبير جدول شائع (CTE) لاستخدامه في جملة `SELECT` التي تليه. تعمل تعبيرات CTE كمجموعات نتائج مؤقتة مسماة لا توجد إلا طوال مدة الاستعلام.
 
 راجع أيضًا:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

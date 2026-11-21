@@ -11,8 +11,8 @@ import React from 'react';
 // code. The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. Two locales that share a language get distinct codes in
-// CODES: Traditional Chinese (zh-Hant, planned) shows ZH-HANT next to
-// Simplified Chinese's ZH.
+// CODES: Traditional Chinese (zh-Hant) shows ZH-HANT next to Simplified
+// Chinese's ZH.
 const CODES = { 'zh-Hant': 'ZH-HANT' };
 export function codeFor(locale) {
   return CODES[locale] || locale.split('-')[0].toUpperCase();
@@ -138,6 +138,21 @@ const FLAGS = {
         <polygon points={star(288, 96, 24, -90 + 45)} />
         <polygon points={star(288, 168, 24, -90 + 68)} />
         <polygon points={star(240, 216, 24, -90 + 90)} />
+      </g>
+    </svg>
+  ),
+  // Hong Kong, the default for Traditional Chinese: the white bauhinia on
+  // red, its five petals drawn as ellipses turned like a pinwheel. The red
+  // star and stroke inside each petal are left out: at 20 by 15 pixels they
+  // are below a pixel. A visitor in Taiwan or Macau sees that flag instead
+  // (src/lib/regionalFlags.js).
+  'zh-Hant': (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#de2910" d="M0 0h640v480H0z" />
+      <g fill="#fff" transform="translate(320 240)">
+        {[0, 72, 144, 216, 288].map((angle) => (
+          <ellipse key={angle} cx="0" cy="-66" rx="34" ry="64" transform={`rotate(${angle}) rotate(16 0 -66)`} />
+        ))}
       </g>
     </svg>
   ),

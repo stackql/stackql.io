@@ -539,6 +539,7 @@ Satu prompt statis dipublikasikan.
 |--|--|
 |`--mcp.server.type`|Tipe server MCP: `http`, `stdio`, atau `reverse_proxy` (yang terakhir digunakan dengan `stackql srv`).|
 |`--mcp.config`|Objek konfigurasi JSON untuk server MCP.  YAML juga diterima.|
+|`--mcp.log.format`|Pengodean log audit: `jsonl` (default) atau `otel` (catatan log OTLP/JSON OpenTelemetry).  Mengganti nilai `server.audit.format`.  Lihat [Format log](#log-format).|
 |`--mcp.protocol.version`|Revisi protokol terbaru yang dinyatakan: `auto` (default), `2026-07-28`, atau revisi yang lebih lama seperti `2025-11-25`.  Lihat [Mengunci revisi](#pinning-the-revision).|
 |`--env.file`|File kredensial bergaya dotenv yang dimuat saat dimulai dan dimuat ulang sesuai permintaan oleh alat `reload_credentials`.  Lihat [Pemuatan (ulang) kredensial](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|Port TCP untuk server protokol komunikasi PostgreSQL (digunakan dengan `stackql srv`).|
@@ -743,8 +744,9 @@ Perhatikan bahwa `stackql_mcp_client` tidak mengirim header `Authorization`, seh
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

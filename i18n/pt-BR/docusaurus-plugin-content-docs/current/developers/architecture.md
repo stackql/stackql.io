@@ -102,7 +102,7 @@ O SDK de providers, [omnisdk](https://github.com/stackql-labs/omnisdk), gerencia
 
 - **Construção de solicitações de API**: transforma consultas SQL nas chamadas de API REST adequadas para cada provider, cuidando da construção de endpoints, do mapeamento de parâmetros e da formatação das solicitações.
 
-- **Paginação**: trata automaticamente as respostas paginadas das APIs e abstrai a complexidade dos diferentes esquemas de paginação usados pelos diversos providers (baseados em cursor, em offset, em token etc.).
+- **Paginação**: trata automaticamente as respostas paginadas das APIs e abstrai a complexidade dos diferentes esquemas de paginação usados pelos diversos providers (tokens de próxima página, números de página, links de próxima página, cabeçalhos `Link` e cursores do GraphQL).
 
 - **Pushdown de predicados**: envia as condições que correspondem a parâmetros de solicitação, e o `LIMIT` quando nenhuma ordenação é necessária, nas solicitações ao provider, para reduzir o número de solicitações feitas e o volume de dados transferidos.
 

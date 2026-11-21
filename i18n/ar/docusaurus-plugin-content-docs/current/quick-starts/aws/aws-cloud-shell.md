@@ -115,7 +115,7 @@ sh stackql-aws-cloud-shell.sh --role-arn arn:aws:iam::123456789012:role/YourRole
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
 --output csv --outfile instances.csv \
-"SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
+"SELECT region, instance_type FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
 ينفذ المثال أعلاه استعلام StackQL المحدد وينتج ملف إخراج بتنسيق `CSV`، يمكن تنزيله من AWS CloudShell.  بالإضافة إلى ذلك، يمكنك توفير دور IAM باستخدام الوسيطة `--role-arn` لتولي دور آخر لعملية الاستعلام أو تعديل البيانات؛ يظهر مثال على ذلك هنا (في هذه الحالة، قرأنا الاستعلام من ملف إدخال):  

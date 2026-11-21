@@ -64,7 +64,7 @@ MCP 서버는 작고 형식이 지정된 도구 집합을 노출합니다. 각 �
 | `delete_safe` | 허용 | 허용 | 승인 필요 |
 | `full_access` | 허용 | 허용 | 허용 |
 
-"승인 필요"는 MCP 엘리시테이션(elicitation)을 사용합니다. 이를 지원하는 클라이언트(Claude Desktop, Cursor, Continue)는 사용자에게 도구 이름, 쿼리 클래스, SQL을 표시하고, 어떤 작업이든 실행하기 전에 결정을 기다립니다. 이 기능을 알리지 않는 클라이언트는 거부됩니다. 모든 도구 호출은 감사 로그에 기록되고, HTTP 리스너에는 Bearer 토큰이 필요하며, 자격 증명은 환경 또는 dotenv 파일에서 로드되고 시크릿 값은 클라이언트에 반환되지 않습니다. 자세한 내용은 [서버 모드](/command-line-usage/mcp#server-modes), [HTTP 클라이언트 인증](/command-line-usage/mcp#http-client-authentication), [감사 로그](/command-line-usage/mcp#audit-log)를 참조하세요.
+"승인 필요"는 MCP 엘리시테이션(elicitation)을 사용합니다. 이를 지원하는 클라이언트(Claude Desktop, Cursor, Continue)는 사용자에게 도구 이름, 쿼리 클래스, SQL을 표시하고, 어떤 작업이든 실행하기 전에 결정을 기다립니다. 이 기능을 알리지 않는 클라이언트는 거부됩니다. 모든 도구 호출은 감사 로그에 기록되고, HTTP 리스너에는 `allow_unauthenticated` 설정으로 명시적으로 개방하지 않는 한 Bearer 토큰이 필요하며, 자격 증명은 환경 또는 dotenv 파일에서 로드되고 시크릿 값은 클라이언트에 반환되지 않습니다. 자세한 내용은 [서버 모드](/command-line-usage/mcp#server-modes), [HTTP 클라이언트 인증](/command-line-usage/mcp#http-client-authentication), [감사 로그](/command-line-usage/mcp#audit-log)를 참조하세요.
 
 ## 다음 단계 {#next-steps}
 

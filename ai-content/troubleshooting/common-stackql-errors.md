@@ -44,7 +44,7 @@ Provider versions are also listed by `REGISTRY LIST` - re-pulling upgrades to th
 SHOW METHODS IN aws.ec2.instances;
 ```
 
-The `RequiredParams` column tells you, per access method, exactly what the `WHERE` clause must contain - for `aws.ec2.instances` the `describe` method requires `region`. This discovery step is the documented practice for both humans and agents (the MCP server publishes the same data through `list_methods`).
+The `RequiredParams` column tells you, per access method, exactly what the `WHERE` clause must contain - for `aws.ec2.instances` the `describe_instances` method requires `region`. This discovery step is the documented practice for both humans and agents (the MCP server publishes the same data through `list_methods`).
 
 ## Authentication failures {#authentication-failures}
 

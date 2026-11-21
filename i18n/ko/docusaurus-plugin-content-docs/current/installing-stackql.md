@@ -74,7 +74,7 @@ export const tabLabel = (icon, text) => (
   
   ## macOS
   
-  macOS에서는 Homebrew와 `pkg` 설치 관리자로 StackQL을 사용할 수 있습니다. 다중 아키텍처 설치 관리자 하나로 ARM(M1/Apple Silicon)과 AMD 아키텍처를 모두 지원합니다.
+  macOS에서는 Homebrew와 `pkg` 설치 관리자로 StackQL을 사용할 수 있습니다. 다중 아키텍처 설치 관리자 하나로 ARM(M1/Apple Silicon)과 Intel(x86_64) 아키텍처를 모두 지원합니다.
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ ChatGPT 웹과 모바일은 로컬 stdio 서버를 실행할 수 없으므로 �
 
   ### Goose
 
-  Goose는 stdio 확장을 직접 실행하므로 `npx` 런처만 있으면 됩니다(Node.js 18 이상).
+  Goose는 stdio 확장을 직접 실행하므로 `npx` 런처만 있으면 됩니다(Node.js 24.22.1 이상, 해당 릴리스 라인에서는 22.23.4 또는 26.12.1).
 
   **Goose Desktop:** 아래 버튼을 클릭하세요. Goose가 열리고, 실행할 명령을 표시하여 확인을 요청한 다음 StackQL을 확장으로 추가합니다.
 

@@ -539,6 +539,7 @@ Một lời nhắc tĩnh được công bố.
 |--|--|
 |`--mcp.server.type`|Loại máy chủ MCP: `http`, `stdio` hoặc `reverse_proxy` (loại sau cùng được dùng với `stackql srv`).|
 |`--mcp.config`|Đối tượng cấu hình JSON cho máy chủ MCP. YAML cũng được chấp nhận.|
+|`--mcp.log.format`|Cách mã hóa nhật ký kiểm tra: `jsonl` (mặc định) hoặc `otel` (bản ghi nhật ký OTLP/JSON của OpenTelemetry). Ghi đè `server.audit.format`. Xem [Định dạng nhật ký](#log-format).|
 |`--mcp.protocol.version`|Bản sửa đổi giao thức mới nhất được công bố: `auto` (mặc định), `2026-07-28` hoặc một bản sửa đổi cũ hơn như `2025-11-25`. Xem [Ghim phiên bản sửa đổi](#pinning-the-revision).|
 |`--env.file`|Tệp thông tin xác thực kiểu dotenv được nạp khi khởi động và được công cụ `reload_credentials` nạp lại khi cần. Xem [Nạp (lại) thông tin xác thực](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|Cổng TCP cho máy chủ giao thức wire của PostgreSQL (dùng với `stackql srv`).|
@@ -743,8 +744,9 @@ Lưu ý rằng `stackql_mcp_client` không gửi header `Authorization`, vì v�
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

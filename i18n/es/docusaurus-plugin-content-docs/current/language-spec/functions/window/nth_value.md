@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Devuelve el valor de la expresión evaluada sobre la enésima fila del marco de ventana.
 
-Esta función de ventana integrada calcula el marco de ventana de cada fila del mismo modo que una función de ventana de agregación. Devuelve el valor de la expresión evaluada sobre la fila N del marco de ventana. Las filas se numeran dentro del marco de ventana a partir de 1 en el orden definido por la cláusula `ORDER BY`, si está presente, o en un orden arbitrario en caso contrario. Si no hay una enésima fila en la partición, se devuelve `NULL`.
+Esta función de ventana integrada calcula el marco de ventana de cada fila del mismo modo que una función de ventana de agregación. Devuelve el valor de la expresión evaluada sobre la fila N del marco de ventana. Las filas se numeran dentro del marco de ventana a partir de 1 en el orden definido por la cláusula `ORDER BY`, si está presente, o en un orden arbitrario en caso contrario. Si no hay una enésima fila en el marco de ventana, se devuelve `NULL`.
 
 Consulte también:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

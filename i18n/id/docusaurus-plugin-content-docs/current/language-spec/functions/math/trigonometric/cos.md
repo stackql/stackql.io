@@ -41,7 +41,7 @@ Mengembalikan kosinus sudut yang ditentukan.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-Kueri ini mengembalikan `0.5`, karena kosinus π/3 radian adalah 0.5.
+Kueri ini mengembalikan `0.5000000000000001`, yaitu perkiraan floating point dari kosinus π/3 radian, yang nilainya 0.5.
 
 ### Menghitung kosinus π radian {#calculate-the-cosine-of-π-radians}
 

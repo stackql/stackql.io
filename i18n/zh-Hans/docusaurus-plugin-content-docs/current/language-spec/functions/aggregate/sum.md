@@ -44,7 +44,7 @@ __*groupByColumn*__
 
 ## 返回值 {#return-values}
 
-如果所有非 `NULL` 输入均为整数，则返回一个整数，表示 *columnExpression* 的总和。如果任一输入不是整数或为 `NULL`，则返回一个浮点值，该值可能是真实总和的近似值。
+如果所有非 `NULL` 输入均为整数，则返回一个整数，表示 *columnExpression* 的总和。如果任一非 `NULL` 输入不是整数，则返回一个浮点值，该值可能是真实总和的近似值。
 
 * * *
 

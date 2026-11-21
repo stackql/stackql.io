@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "WITH di StackQL: mendefinisikan ekspresi tabel umum (CTE), kumpulan hasil sementara bernama yang cakupannya satu pernyataan SELECT, INSERT, UPDATE, atau DELETE."
+description: "WITH di StackQL: mendefinisikan ekspresi tabel umum (CTE), kumpulan hasil sementara bernama yang cakupannya terbatas pada pernyataan SELECT yang mengikutinya."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-Mendefinisikan ekspresi tabel umum (CTE) untuk digunakan dalam pernyataan `SELECT`, `INSERT`, `UPDATE`, atau `DELETE` berikutnya. CTE berfungsi sebagai kumpulan hasil sementara bernama yang hanya ada selama kueri berlangsung.
+Mendefinisikan ekspresi tabel umum (CTE) untuk digunakan dalam pernyataan `SELECT` yang mengikutinya. CTE berfungsi sebagai kumpulan hasil sementara bernama yang hanya ada selama kueri berlangsung.
 
 Lihat juga:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

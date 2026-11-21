@@ -539,6 +539,7 @@ SQL을 처음부터 작성하기 전에 `query_library_search` 도구를 먼저 
 |--|--|
 |`--mcp.server.type`|MCP 서버 유형: `http`, `stdio` 또는 `reverse_proxy`(후자는 `stackql srv` 명령과 함께 사용).|
 |`--mcp.config`|MCP 서버의 JSON 구성 객체입니다. YAML도 허용됩니다.|
+|`--mcp.log.format`|감사 로그 인코딩: `jsonl`(기본값) 또는 `otel`(OpenTelemetry OTLP/JSON 로그 레코드). `server.audit.format` 설정을 재정의합니다. [로그 형식](#log-format)을 참조하세요.|
 |`--mcp.protocol.version`|알리는 최신 프로토콜 리비전: `auto`(기본값), `2026-07-28` 또는 `2025-11-25` 같은 이전 리비전. [리비전 고정](#pinning-the-revision)을 참조하세요.|
 |`--env.file`|시작 시 로드되고 `reload_credentials` 도구가 요청 시 다시 로드하는 dotenv 형식 자격 증명 파일입니다. [자격 증명 로드 및 다시 로드](#credential-resourcing---envfile--reload_credentials)를 참조하세요.|
 |`--pgsrv.port`|PostgreSQL 와이어 프로토콜 서버의 TCP 포트(`stackql srv` 명령과 함께 사용).|
@@ -743,8 +744,9 @@ python cicd/python/build.py --build-mcp-client
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

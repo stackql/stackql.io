@@ -39,7 +39,7 @@ The configuration file selects one `type`: `jwt` (the default when omitted), `be
 
 ### JWT {#jwt}
 
-The caller presents a signed token, which is verified offline against the keys pinned in the configuration.  A minimal configuration names the issuer and audience the token must carry, lists one public key, and grants the `readers` group read access:
+The caller presents a signed token, which is verified offline against the keys pinned in the configuration.  A minimal configuration names the issuer and audience the token must carry, lists one public key, and lets members of the `analysts` group run read statements (members of the `readers` group can do so without a rule, see [Policy rules](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ The caller presents a signed token, which is verified offline against the keys p
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ The caller presents an opaque token, and the configuration lists the SHA-256 dig
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ The caller is identified by the client certificate it presents on the HTTPS MCP 
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ No credential is exchanged: the subject is the operating system identity that th
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

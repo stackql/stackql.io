@@ -115,7 +115,7 @@ StackQL 查询也可以使用 `exec` 命令执行；这种方式适用于：
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
 --output csv --outfile instances.csv \
-"SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
+"SELECT region, instance_type FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
 上面的示例运行指定的 StackQL 查询并生成一个 `CSV` 输出文件，该文件可以从 AWS CloudShell 下载。此外，还可以使用 `--role-arn` 参数提供一个 IAM 角色，以便为查询或变更操作担任另一个角色；示例如下（在本例中，查询来自输入文件）：  

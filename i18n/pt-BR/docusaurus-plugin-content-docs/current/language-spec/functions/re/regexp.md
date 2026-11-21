@@ -32,7 +32,7 @@ __*pattern_expression*__
 O padrão de expressão regular a ser comparado com a string de origem.
 
 ## Valor(es) retornado(s) {#return-values}
-Retorna um valor booleano: `TRUE` se a string de origem corresponder ao padrão de expressão regular; caso contrário, `FALSE`.
+Retorna `1` se a string de origem corresponder ao padrão de expressão regular; caso contrário, `0`.
 
 * * *
 
@@ -46,7 +46,7 @@ Este exemplo verifica se a string 'the year is 2021' contém um ou mais caracter
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-Esta consulta retorna `TRUE` porque a string contém a substring '2021', que corresponde ao padrão `[0-9]+`, que indica um ou mais dígitos.
+Esta consulta retorna `1` porque a string contém a substring '2021', que corresponde ao padrão `[0-9]+`, que indica um ou mais dígitos.
 
 ### Validar o formato de e-mail {#validate-email-format}
 
@@ -56,4 +56,4 @@ Para verificar se uma string está em um formato de e-mail válido:
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Esta consulta retorna `TRUE`, o que indica que 'user@example.com' tem o formato de um endereço de e-mail típico e corresponde ao padrão de expressão regular especificado.
+Esta consulta retorna `1`, o que indica que 'user@example.com' tem o formato de um endereço de e-mail típico e corresponde ao padrão de expressão regular especificado.

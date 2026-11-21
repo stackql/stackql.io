@@ -30,7 +30,7 @@ Linux:
 curl -L https://bit.ly/stackql-zip -O && unzip stackql-zip
 ```
 
-Windows、安装包和 Docker 镜像的相关内容见[下载页面](https://stackql.io/downloads)。使用 `stackql --version` 进行验证，然后启动交互式 shell：
+Windows、安装包和 Docker 镜像的相关内容见[安装页面](/installing-stackql)。使用 `stackql --version` 进行验证，然后启动交互式 shell：
 
 ```bash
 stackql shell

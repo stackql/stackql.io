@@ -64,7 +64,7 @@ MCP 服务器公开一组数量不多、带类型的工具。每个工具都为�
 | `delete_safe` | 允许 | 允许 | 需要审批 |
 | `full_access` | 允许 | 允许 | 允许 |
 
-“需要审批”使用 MCP 征询（elicitation）：支持它的客户端（Claude Desktop、Cursor、Continue）向用户显示工具名称、查询类别和 SQL，并在任何操作运行之前等待用户决定；未声明支持它的客户端会被拒绝。每次工具调用都会写入审计日志，HTTP 监听器要求提供 bearer 令牌，凭据来自环境或 dotenv 文件，机密值绝不会返回给客户端。详情见[服务器模式](/command-line-usage/mcp#server-modes)、[HTTP 客户端身份验证](/command-line-usage/mcp#http-client-authentication)和[审计日志](/command-line-usage/mcp#audit-log)。
+“需要审批”使用 MCP 征询（elicitation）：支持它的客户端（Claude Desktop、Cursor、Continue）向用户显示工具名称、查询类别和 SQL，并在任何操作运行之前等待用户决定；未声明支持它的客户端会被拒绝。每次工具调用都会写入审计日志，HTTP 监听器要求提供 bearer 令牌，除非通过 `allow_unauthenticated` 显式开放，凭据来自环境或 dotenv 文件，机密值绝不会返回给客户端。详情见[服务器模式](/command-line-usage/mcp#server-modes)、[HTTP 客户端身份验证](/command-line-usage/mcp#http-client-authentication)和[审计日志](/command-line-usage/mcp#audit-log)。
 
 ## 后续步骤 {#next-steps}
 

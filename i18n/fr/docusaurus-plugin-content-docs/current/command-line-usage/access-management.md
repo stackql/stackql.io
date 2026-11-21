@@ -39,7 +39,7 @@ Le fichier de configuration sélectionne un `type` : `jwt` (valeur par défaut s
 
 ### JWT {#jwt}
 
-L'appelant présente un jeton signé, qui est vérifié hors ligne avec les clés épinglées dans la configuration.  Une configuration minimale nomme l'émetteur et l'audience que le jeton doit porter, liste une clé publique et accorde au groupe `readers` l'accès en lecture :
+L'appelant présente un jeton signé, qui est vérifié hors ligne avec les clés épinglées dans la configuration.  Une configuration minimale nomme l'émetteur et l'audience que le jeton doit porter, liste une clé publique et permet aux membres du groupe `analysts` d'exécuter des instructions de lecture (les membres du groupe `readers` peuvent le faire sans règle, voir [Règles de politique](#policy-rules)) :
 
 ```json
 {
@@ -50,7 +50,7 @@ L'appelant présente un jeton signé, qui est vérifié hors ligne avec les clé
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ L'appelant présente un jeton opaque, et la configuration liste l'empreinte SHA-
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ L'appelant est identifié par le certificat client qu'il présente sur le transp
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ Aucun identifiant n'est échangé : le sujet est l'identité du système d'explo
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

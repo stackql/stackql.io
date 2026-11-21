@@ -47,7 +47,7 @@ module.exports = {
   // marked noindex by the theme wrappers (src/theme/DocItem/Content,
   // src/theme/BlogPostPage, src/theme/BlogListPage). The AI Reference
   // (ai-content) is meant for answer engines, whose crawlers read English
-  // and Chinese, so it is translated for zh-Hans only.
+  // and Chinese, so it is translated for zh-Hans and zh-Hant only.
   // `sameAsEnglish` lists string keys whose English message is also the
   // correct rendering in that locale (product and vendor names), so
   // yarn i18n:strings does not report them as untranslated.
@@ -181,6 +181,21 @@ module.exports = {
       ],
     },
     'zh-Hans': {
+      sources: ['docs', 'ai-content'],
+      sameAsEnglish: [
+        'link.title.StackQL',
+        'sidebar.docsSidebar.category.MCP',
+        'sidebar.docsSidebar.category.AWS',
+        'sidebar.docsSidebar.category.Microsoft Azure',
+        'sidebar.docsSidebar.category.Google Cloud Platform',
+        'sidebar.docsSidebar.category.GitHub',
+      ],
+    },
+    // Traditional Chinese carries the AI Reference too: answer engines
+    // serving Taiwan, Hong Kong and Macau match Traditional Chinese queries
+    // against Traditional Chinese text, and hreflang marks the zh-Hans and
+    // zh-Hant pages as alternates of each other, not as duplicates.
+    'zh-Hant': {
       sources: ['docs', 'ai-content'],
       sameAsEnglish: [
         'link.title.StackQL',

@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "Hàm DATETIME trong StackQL: tính một giá trị datetime từ một đầu vào và một hoặc nhiều bộ điều chỉnh, trả về dưới dạng YYYY-MM-DD HH:MM:SS."
+description: "Hàm DATETIME trong StackQL: tính một giá trị datetime từ một đầu vào và không hoặc nhiều bộ điều chỉnh, trả về dưới dạng YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-Trả về một giá trị datetime được tính từ một datetime đầu vào và một hoặc nhiều bộ điều chỉnh.  
+Trả về một giá trị datetime được tính từ một datetime đầu vào và không hoặc nhiều bộ điều chỉnh.  
 
 Xem thêm:  
 [[` SELECT `]](/language-spec/select) [[ Bộ điều chỉnh ngày ]](/language-spec/functions/datetime/date_modifiers) 

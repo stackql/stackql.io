@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の WITH：単一の SELECT、INSERT、UPDATE、DELETE 文をスコープとする、名前付きの一時的な結果セットである共通テーブル式（CTE）を定義します。"
+description: "StackQL の WITH：直後に続く SELECT 文をスコープとする、名前付きの一時的な結果セットである共通テーブル式（CTE）を定義します。"
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-後続の `SELECT`、`INSERT`、`UPDATE`、`DELETE` 文で使用する共通テーブル式（CTE）を定義します。CTE は、クエリの実行中にのみ存在する、名前付きの一時的な結果セットとして機能します。
+直後に続く `SELECT` 文で使用する共通テーブル式（CTE）を定義します。CTE は、クエリの実行中にのみ存在する、名前付きの一時的な結果セットとして機能します。
 
 関連項目：
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

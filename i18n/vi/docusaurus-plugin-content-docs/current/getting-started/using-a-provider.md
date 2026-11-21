@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Xem thêm:  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-Truy vấn StackQL có thể được chạy trên nhiều nhà cung cấp đám mây khác nhau, bao gồm Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean và nhiều nhà cung cấp khác. Đặc tả provider StackQL được tải xuống từ [__StackQL Provider Registry__](/providers), việc này có thể thực hiện bằng lệnh StackQL [__`REGISTRY PULL`__](/language-spec/registry), hoặc bằng tiện ích dòng lệnh [__`stackql registry`__](/command-line-usage/registry).
+Truy vấn StackQL có thể được chạy trên nhiều nhà cung cấp đám mây khác nhau, bao gồm Google Cloud Platform, Amazon Web Services, Microsoft Azure, DigitalOcean và nhiều nhà cung cấp khác. Đặc tả provider StackQL được tải xuống từ [__StackQL Provider Registry__](/providers), việc này có thể thực hiện bằng lệnh StackQL [__`REGISTRY PULL`__](/language-spec/registry), hoặc bằng tiện ích dòng lệnh [__`stackql registry`__](/command-line-usage/registry).
 
 
 ## Cài đặt provider {#installing-a-provider}

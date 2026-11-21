@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-File ini diproses terlebih dahulu oleh `iql/iam.iql` dengan sumber data dari `data/iam/bindings.json`
+File ini menyediakan data yang digunakan untuk memproses terlebih dahulu `iql/iam.iql`, dengan sumber data dari `data/iam/bindings.json`
 
 > file ini seharusnya tidak perlu diubah
 

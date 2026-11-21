@@ -44,7 +44,7 @@ Uma ou mais colunas usadas para realizar operações de resumo ou de agregação
 
 ## Valor(es) retornado(s) {#return-values}
 
-Retorna um inteiro que representa a soma de *columnExpression* se todas as entradas não `NULL` forem inteiros. Se alguma entrada não for um inteiro ou for `NULL`, retorna um valor de ponto flutuante que pode ser uma aproximação da soma real.
+Retorna um inteiro que representa a soma de *columnExpression* se todas as entradas não `NULL` forem inteiros. Se alguma entrada não `NULL` não for um inteiro, retorna um valor de ponto flutuante que pode ser uma aproximação da soma real.
 
 * * *
 

@@ -30,7 +30,7 @@ Linux:
 curl -L https://bit.ly/stackql-zip -O && unzip stackql-zip
 ```
 
-Windows, packages, and Docker images are covered on the [downloads page](https://stackql.io/downloads). Verify with `stackql --version`, then start the interactive shell:
+Windows, packages, and Docker images are covered on the [installation page](/installing-stackql). Verify with `stackql --version`, then start the interactive shell:
 
 ```bash
 stackql shell

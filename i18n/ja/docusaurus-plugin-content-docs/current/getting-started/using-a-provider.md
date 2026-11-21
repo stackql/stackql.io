@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 関連項目：  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-StackQL のクエリは、Google Cloud Platform、Amazon Web Services、Microsoft Azure、Digital Ocean など、さまざまなクラウドベンダーに対して実行できます。StackQL のプロバイダー仕様は [__StackQL Provider Registry__](/providers) からプルされます。プルは、StackQL の [__`REGISTRY PULL`__](/language-spec/registry) コマンドで行うことも、[__`stackql registry`__](/command-line-usage/registry) コマンドラインユーティリティで行うこともできます。
+StackQL のクエリは、Google Cloud Platform、Amazon Web Services、Microsoft Azure、DigitalOcean など、さまざまなクラウドベンダーに対して実行できます。StackQL のプロバイダー仕様は [__StackQL Provider Registry__](/providers) からプルされます。プルは、StackQL の [__`REGISTRY PULL`__](/language-spec/registry) コマンドで行うことも、[__`stackql registry`__](/command-line-usage/registry) コマンドラインユーティリティで行うこともできます。
 
 
 ## プロバイダーのインストール {#installing-a-provider}

@@ -47,7 +47,7 @@ SELECT JSON_PATCH('{"a":1,"b":2}', '{"c":3,"d":4}') AS patched_json;
 
 Saída: `{"a":1,"b":2,"c":3,"d":4}`
 
-### Substituir um elemento em um array {#replace-element-in-array}
+### Substituir um array por um valor {#replace-an-array-with-a-value}
 
 ```sql
 -- Example: Replacing an array with a single value in the JSON object

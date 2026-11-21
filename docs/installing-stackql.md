@@ -74,7 +74,7 @@ Instructions for installing StackQL on various different platforms are provided 
   
   ## macOS
   
-  StackQL is available on macOS via Homebrew and the `pkg` Installer, both ARM (M1/Apple Silicon) and AMD architectures are supported with a single multi-arch installer.
+  StackQL is available on macOS via Homebrew and the `pkg` Installer, both ARM (M1/Apple Silicon) and Intel (x86_64) architectures are supported with a single multi-arch installer.
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ ChatGPT web and mobile cannot run a local stdio server, so the plugin is desktop
 
   ### Goose
 
-  Goose runs stdio extensions directly, so the `npx` launcher is all you need (Node.js 18 or later).
+  Goose runs stdio extensions directly, so the `npx` launcher is all you need (Node.js 24.22.1 or later, or 22.23.4 or 26.12.1 on those release lines).
 
   **Goose Desktop:** click the button below. Goose opens, shows the command it is about to run and asks you to confirm, then adds StackQL as an extension.
 
@@ -703,7 +703,7 @@ Or install it into the current environment with `pip install stackql-mcp-server`
 
 ### Docker {#docker}
 
-**When to use:** a containerised or otherwise isolated runtime. The image is multi-arch (amd64 and arm64).
+**When to use:** a containerized or otherwise isolated runtime. The image is multi-arch (amd64 and arm64).
 
 ```bash
 docker run -i --rm stackql/stackql-mcp
@@ -906,7 +906,7 @@ Full reference: [Embedded MCP: Gleam](/mcp/embedded/gleam).
 </TabItem>
 <TabItem value="swift">
 
-The `stackql-mcp-swift` package spawns the binary behind the official Swift MCP SDK client. The `darwin-universal` binary is Developer ID signed and Apple-notarised, so you can bundle it inside a signed `.app` and keep the app's notarisation valid. Requires macOS 13+ and Swift 6.1 (Xcode 16.3+).
+The `stackql-mcp-swift` package spawns the binary behind the official Swift MCP SDK client. The `darwin-universal` binary is Developer ID signed and Apple-notarized, so you can bundle it inside a signed `.app` and keep the app's notarization valid. Requires macOS 13+ and Swift 6.1 (Xcode 16.3+).
 
 ```swift
 // Package.swift
@@ -939,7 +939,7 @@ Full reference: [Embedded MCP: Swift](/mcp/embedded/swift).
 
 The same security properties hold across every channel:
 
-- The embedded `stackql` binary is Authenticode-signed (Windows) and Apple-notarised (macOS).
+- The embedded `stackql` binary is Authenticode-signed (Windows) and Apple-notarized (macOS).
 - Every `.mcpb` bundle ships with a published SHA-256 checksum on the release page.
 - The `npx` and `uvx` launchers verify the downloaded binary's SHA-256 before first use.
 - The [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=stackql) entry attests the per-platform hashes.

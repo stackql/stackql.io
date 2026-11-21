@@ -32,7 +32,7 @@ Uma expressão da categoria de tipos de dados numéricos exatos ou numéricos ap
 
 ## Valor(es) retornado(s) {#return-values}
 
-Retorna um valor numérico positivo.
+Retorna um valor numérico não negativo.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-Para obter mais informações, consulte [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+Para obter mais informações, consulte [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

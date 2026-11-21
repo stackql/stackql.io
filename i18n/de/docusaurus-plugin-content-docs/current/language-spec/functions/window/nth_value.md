@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Gibt den Wert des Ausdrucks zurück, der für die N-te Zeile im Fensterrahmen ausgewertet wird.
 
-Diese eingebaute Fensterfunktion berechnet den Fensterrahmen für jede Zeile auf dieselbe Weise wie eine Aggregat-Fensterfunktion. Sie gibt den Wert des Ausdrucks zurück, der für die Zeile N des Fensterrahmens ausgewertet wird. Die Zeilen werden innerhalb des Fensterrahmens beginnend bei 1 nummeriert, in der Reihenfolge, die durch die `ORDER BY`-Klausel festgelegt ist, falls vorhanden, andernfalls in beliebiger Reihenfolge. Gibt es keine N-te Zeile in der Partition, wird `NULL` zurückgegeben.
+Diese eingebaute Fensterfunktion berechnet den Fensterrahmen für jede Zeile auf dieselbe Weise wie eine Aggregat-Fensterfunktion. Sie gibt den Wert des Ausdrucks zurück, der für die Zeile N des Fensterrahmens ausgewertet wird. Die Zeilen werden innerhalb des Fensterrahmens beginnend bei 1 nummeriert, in der Reihenfolge, die durch die `ORDER BY`-Klausel festgelegt ist, falls vorhanden, andernfalls in beliebiger Reihenfolge. Gibt es keine N-te Zeile im Fensterrahmen, wird `NULL` zurückgegeben.
 
 Siehe auch:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

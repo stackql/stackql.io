@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Trả về giá trị của biểu thức được tính trên hàng thứ N trong khung cửa sổ.
 
-Hàm cửa sổ tích hợp sẵn này tính khung cửa sổ cho mỗi hàng theo cùng cách với một hàm cửa sổ tổng hợp. Hàm trả về giá trị của biểu thức được tính trên hàng N của khung cửa sổ. Các hàng trong khung cửa sổ được đánh số bắt đầu từ 1 theo thứ tự do mệnh đề `ORDER BY` xác định nếu có, hoặc theo thứ tự tùy ý nếu không có. Nếu không có hàng thứ N trong phân vùng, hàm trả về `NULL`.
+Hàm cửa sổ tích hợp sẵn này tính khung cửa sổ cho mỗi hàng theo cùng cách với một hàm cửa sổ tổng hợp. Hàm trả về giá trị của biểu thức được tính trên hàng N của khung cửa sổ. Các hàng trong khung cửa sổ được đánh số bắt đầu từ 1 theo thứ tự do mệnh đề `ORDER BY` xác định nếu có, hoặc theo thứ tự tùy ý nếu không có. Nếu không có hàng thứ N trong khung cửa sổ, hàm trả về `NULL`.
 
 Xem thêm:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

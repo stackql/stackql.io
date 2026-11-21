@@ -44,7 +44,7 @@ La requête ci-dessus correspond en réalité à 17 requêtes exécutées en par
 ## Prérequis {#prerequisites}
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html), qui s'installe avec `pip install pystackql`
-- Un utilisateur AWS ou un rôle (qui peut être assumé avec `sts assume-role`) auquel est attachée la politique `ReadOnlyAccess` ou une politique plus étendue
+- Un utilisateur AWS ou un rôle (qui peut être assumé avec `aws sts assume-role`) auquel est attachée la politique `ReadOnlyAccess` ou une politique plus étendue
 - Les variables d'environnement `AWS_ACCESS_KEY_ID` et `AWS_SECRET_ACCESS_KEY` définies (ce qui peut se faire automatiquement avec [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell))
 
 ## Le code {#the-code}
@@ -187,7 +187,7 @@ resource_filters = {
         "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
     },
     "ec2": {
-        "snapshots": " AND ownerAlias <> 'amazon'",
+        "snapshots": " AND owner_alias <> 'amazon'",
     },
     "elasticache": {
         "users": " AND user_id <> 'default'",
@@ -197,7 +197,7 @@ resource_filters = {
     },
     "iam": {
         "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
-        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {
         "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",

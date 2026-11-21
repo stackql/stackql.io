@@ -115,7 +115,7 @@ Ví dụ sử dụng `exec` trong AWS CloudShell được trình bày dưới đ
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
 --output csv --outfile instances.csv \
-"SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
+"SELECT region, instance_type FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
 Ví dụ trên chạy truy vấn StackQL đã chỉ định và tạo ra một tệp đầu ra `CSV`, có thể tải xuống từ AWS CloudShell.  Ngoài ra, bạn có thể cung cấp một vai trò IAM bằng đối số `--role-arn` để đảm nhận một vai trò khác cho truy vấn hoặc thao tác thay đổi dữ liệu của bạn; ví dụ được trình bày dưới đây (trong trường hợp này, chúng ta lấy truy vấn từ một tệp đầu vào):

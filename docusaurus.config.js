@@ -81,7 +81,7 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'ar', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans'],
+  locales: ['en', 'ar', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans', 'zh-Hant'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     // Right to left. Docusaurus derives the direction from the locale, but
@@ -97,18 +97,19 @@ const i18nConfig = {
     id: { label: 'Bahasa Indonesia', htmlLang: 'id' },
     ja: { label: '日本語', htmlLang: 'ja' },
     ko: { label: '한국어', htmlLang: 'ko' },
-    // The URL paths of pt-BR and zh-Hans are lower case on purpose. Netlify
-    // answers a page URL that has upper-case letters with a 301 to its
-    // lower-case form, so with the default /zh-Hans/ every canonical,
-    // hreflang and sitemap URL of the locale was a redirect, and the page
-    // then ran at /zh-hans/ with a baseUrl of /zh-Hans/: the language
-    // switcher strips the baseUrl from the path case-sensitively and linked
-    // to //zh-hans/, which a browser reads as a host name (November 2026).
-    // The locale code, the i18n/ directory and the lang attribute keep their
-    // case (pt-BR, zh-Hans).
+    // The URL paths of pt-BR, zh-Hans and zh-Hant are lower case on
+    // purpose. Netlify answers a page URL that has upper-case letters with a
+    // 301 to its lower-case form, so with the default /zh-Hans/ every
+    // canonical, hreflang and sitemap URL of the locale was a redirect, and
+    // the page then ran at /zh-hans/ with a baseUrl of /zh-Hans/: the
+    // language switcher strips the baseUrl from the path case-sensitively
+    // and linked to //zh-hans/, which a browser reads as a host name
+    // (November 2026). The locale code, the i18n/ directory and the lang
+    // attribute keep their case (pt-BR, zh-Hans, zh-Hant).
     'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
     vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
+    'zh-Hant': { label: '繁體中文', htmlLang: 'zh-Hant', baseUrl: '/zh-hant/' },
   },
 };
 

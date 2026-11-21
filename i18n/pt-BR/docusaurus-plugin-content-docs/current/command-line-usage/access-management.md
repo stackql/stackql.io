@@ -39,7 +39,7 @@ O arquivo de configuração seleciona um `type`: `jwt` (o valor padrão quando o
 
 ### JWT {#jwt}
 
-O chamador apresenta um token assinado, que é verificado offline com as chaves fixadas na configuração.  Uma configuração mínima indica o emissor e o público que o token deve conter, lista uma chave pública e concede ao grupo `readers` acesso de leitura:
+O chamador apresenta um token assinado, que é verificado offline com as chaves fixadas na configuração.  Uma configuração mínima indica o emissor e o público que o token deve conter, lista uma chave pública e permite que os membros do grupo `analysts` executem instruções de leitura (os membros do grupo `readers` podem fazer isso sem uma regra, consulte [Regras de política](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ O chamador apresenta um token assinado, que é verificado offline com as chaves 
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ O chamador apresenta um token opaco, e a configuração lista o hash SHA-256 de 
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ O chamador é identificado pelo certificado de cliente que apresenta no transpor
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ Nenhuma credencial é trocada: o subject é a identidade do sistema operacional 
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

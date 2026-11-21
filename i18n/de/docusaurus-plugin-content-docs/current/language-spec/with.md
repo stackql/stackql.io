@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - Cloud-Inventar
-description: "WITH in StackQL: Common Table Expressions (CTEs) definieren, temporäre benannte Ergebnismengen, die auf eine einzelne SELECT-, INSERT-, UPDATE- oder DELETE-Anweisung beschränkt sind."
+description: "WITH in StackQL: Common Table Expressions (CTEs) definieren, temporäre benannte Ergebnismengen, die auf die nachfolgende SELECT-Anweisung beschränkt sind."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-Definiert eine Common Table Expression (CTE) zur Verwendung in einer nachfolgenden `SELECT`-, `INSERT`-, `UPDATE`- oder `DELETE`-Anweisung. CTEs wirken als temporäre benannte Ergebnismengen, die nur für die Dauer der Abfrage existieren.
+Definiert eine Common Table Expression (CTE) zur Verwendung in der nachfolgenden `SELECT`-Anweisung. CTEs wirken als temporäre benannte Ergebnismengen, die nur für die Dauer der Abfrage existieren.
 
 Siehe auch:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

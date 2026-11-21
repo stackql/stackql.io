@@ -41,7 +41,7 @@ Gibt den Kosinus des angegebenen Winkels zurück.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-Diese Abfrage gibt `0.5` zurück, da der Kosinus von π/3 Radiant 0.5 ist.
+Diese Abfrage gibt `0.5000000000000001` zurück, die Gleitkommanäherung des Kosinus von π/3 Radiant, der 0.5 beträgt.
 
 ### Den Kosinus von π Radiant berechnen {#calculate-the-cosine-of-π-radians}
 

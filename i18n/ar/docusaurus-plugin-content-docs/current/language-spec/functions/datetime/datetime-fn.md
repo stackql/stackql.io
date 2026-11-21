@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - جرد الموارد السحابية
-description: "الدالة DATETIME في StackQL: حساب قيمة datetime من إدخال ومعدّل واحد أو أكثر، وتعاد بالتنسيق YYYY-MM-DD HH:MM:SS."
+description: "الدالة DATETIME في StackQL: حساب قيمة datetime من إدخال وصفر أو أكثر من المعدّلات، وتعاد بالتنسيق YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-تعيد قيمة datetime محسوبة من قيمة datetime مدخلة ومعدّل واحد أو أكثر.  
+تعيد قيمة datetime محسوبة من قيمة datetime مدخلة وصفر أو أكثر من المعدّلات.  
 
 راجع أيضًا:  
 [[` SELECT `]](/language-spec/select) [[ معدّلات التاريخ ]](/language-spec/functions/datetime/date_modifiers) 

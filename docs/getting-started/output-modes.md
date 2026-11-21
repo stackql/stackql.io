@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "StackQL output modes: table, json, jsonl, csv and otel, how to select them, and what each emits for shell, exec and server use."
+description: "StackQL output modes: table, json, jsonl, csv, text and otel, how to select them, and what each emits for shell, exec and server use."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-Each line is also, byte for byte, the body of an OTLP/HTTP `POST /v1/logs` request, which is what the built-in push exporter sends.
+Each line is also a complete OTLP/JSON `LogsData` that an OTLP/HTTP `POST /v1/logs` endpoint accepts as a request body.  The built-in push exporter sends the same encoding but batches the records, as described below.
 
 #### Pushing to an OTLP endpoint {#pushing-to-an-otlp-endpoint}
 

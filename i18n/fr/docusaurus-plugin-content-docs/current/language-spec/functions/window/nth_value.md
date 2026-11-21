@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Renvoie la valeur de l'expression évaluée sur la N-ième ligne du cadre de fenêtre.
 
-Cette fonction de fenêtrage intégrée calcule le cadre de fenêtre de chaque ligne de la même manière qu'une fonction de fenêtrage d'agrégation. Elle renvoie la valeur de l'expression évaluée sur la ligne N du cadre de fenêtre. Les lignes sont numérotées au sein du cadre de fenêtre à partir de 1 dans l'ordre défini par la clause `ORDER BY` si elle est présente, ou dans un ordre arbitraire sinon. S'il n'y a pas de N-ième ligne dans la partition, `NULL` est renvoyé.
+Cette fonction de fenêtrage intégrée calcule le cadre de fenêtre de chaque ligne de la même manière qu'une fonction de fenêtrage d'agrégation. Elle renvoie la valeur de l'expression évaluée sur la ligne N du cadre de fenêtre. Les lignes sont numérotées au sein du cadre de fenêtre à partir de 1 dans l'ordre défini par la clause `ORDER BY` si elle est présente, ou dans un ordre arbitraire sinon. S'il n'y a pas de N-ième ligne dans le cadre de fenêtre, `NULL` est renvoyé.
 
 Voir aussi :
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 윈도우 프레임의 N번째 행에 대해 평가한 식의 값을 반환합니다.
 
-이 기본 제공 윈도우 함수는 집계 윈도우 함수와 같은 방식으로 각 행의 윈도우 프레임을 계산합니다. 윈도우 프레임의 N번째 행에 대해 평가한 식의 값을 반환합니다. 윈도우 프레임 내의 행 번호는 `ORDER BY` 절이 있으면 그 절이 정의하는 순서에 따라, 없으면 임의의 순서로 1부터 매겨집니다. 파티션에 N번째 행이 없으면 `NULL`을 반환합니다.
+이 기본 제공 윈도우 함수는 집계 윈도우 함수와 같은 방식으로 각 행의 윈도우 프레임을 계산합니다. 윈도우 프레임의 N번째 행에 대해 평가한 식의 값을 반환합니다. 윈도우 프레임 내의 행 번호는 `ORDER BY` 절이 있으면 그 절이 정의하는 순서에 따라, 없으면 임의의 순서로 1부터 매겨집니다. 윈도우 프레임에 N번째 행이 없으면 `NULL`을 반환합니다.
 
 참고 항목:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

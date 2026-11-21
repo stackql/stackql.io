@@ -74,7 +74,7 @@ Trang này cung cấp hướng dẫn cài đặt StackQL trên nhiều nền t�
   
   ## macOS
   
-  StackQL khả dụng trên macOS qua Homebrew và trình cài đặt `pkg`; cả kiến trúc ARM (M1/Apple Silicon) và AMD đều được hỗ trợ bằng một trình cài đặt đa kiến trúc duy nhất.
+  StackQL khả dụng trên macOS qua Homebrew và trình cài đặt `pkg`; cả kiến trúc ARM (M1/Apple Silicon) và Intel (x86_64) đều được hỗ trợ bằng một trình cài đặt đa kiến trúc duy nhất.
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ ChatGPT web và di động không thể chạy máy chủ stdio cục bộ, nên
 
   ### Goose
 
-  Goose chạy trực tiếp các tiện ích mở rộng stdio, nên bạn chỉ cần trình khởi chạy `npx` (Node.js 18 trở lên).
+  Goose chạy trực tiếp các tiện ích mở rộng stdio, nên bạn chỉ cần trình khởi chạy `npx` (Node.js 24.22.1 trở lên, hoặc 22.23.4 hoặc 26.12.1 trên các dòng phát hành đó).
 
   **Goose Desktop:** nhấp vào nút bên dưới. Goose mở ra, hiển thị lệnh sắp chạy và yêu cầu bạn xác nhận, sau đó thêm StackQL làm tiện ích mở rộng.
 

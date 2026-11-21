@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 另请参阅：  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-StackQL 查询可以针对多个不同的云服务商运行，包括 Google Cloud Platform、Amazon Web Services、Microsoft Azure、Digital Ocean 等。StackQL Provider 规范从 [__StackQL Provider Registry__](/providers) 拉取，可以使用 StackQL 命令 [__`REGISTRY PULL`__](/language-spec/registry) 完成，也可以使用命令行工具 [__`stackql registry`__](/command-line-usage/registry) 完成。
+StackQL 查询可以针对多个不同的云服务商运行，包括 Google Cloud Platform、Amazon Web Services、Microsoft Azure、DigitalOcean 等。StackQL Provider 规范从 [__StackQL Provider Registry__](/providers) 拉取，可以使用 StackQL 命令 [__`REGISTRY PULL`__](/language-spec/registry) 完成，也可以使用命令行工具 [__`stackql registry`__](/command-line-usage/registry) 完成。
 
 
 ## 安装 Provider {#installing-a-provider}

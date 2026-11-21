@@ -32,7 +32,7 @@ Une expression de la catégorie des types de données numériques exacts ou appr
 
 ## Valeur(s) renvoyée(s) {#return-values}
 
-Renvoie une valeur numérique positive.
+Renvoie une valeur numérique positive ou nulle.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-Pour plus d'informations, consultez [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+Pour plus d'informations, consultez [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

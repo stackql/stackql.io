@@ -74,7 +74,7 @@ export const tabLabel = (icon, text) => (
   
   ## macOS
   
-  StackQL 在 macOS 上可通过 Homebrew 和 `pkg` 安装程序获取，单个多架构安装程序同时支持 ARM（M1/Apple Silicon）和 AMD 架构。
+  StackQL 在 macOS 上可通过 Homebrew 和 `pkg` 安装程序获取，单个多架构安装程序同时支持 ARM（M1/Apple Silicon）和 Intel（x86_64）架构。
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ ChatGPT 网页版和移动版无法运行本地 stdio 服务器，因此该插�
 
   ### Goose
 
-  Goose 直接运行 stdio 扩展，因此只需要 `npx` 启动器（Node.js 18 或更高版本）。
+  Goose 直接运行 stdio 扩展，因此只需要 `npx` 启动器（Node.js 24.22.1 或更高版本，在相应版本线上为 22.23.4 或 26.12.1）。
 
   **Goose Desktop：** 点击下方按钮。Goose 会打开，显示即将运行的命令并请你确认，然后将 StackQL 添加为扩展。
 

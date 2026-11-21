@@ -44,7 +44,7 @@ A column or columns used to perform summary or aggregate operations against.  Th
 
 ## Return Value(s) {#return-values}
 
-Returns an integer representing the sum of the *columnExpression* if all non `NULL` inputs are integers. If any inputs are not integers or are `NULL` then a floating point value which might be an approximation to the true sum is returned.
+Returns an integer representing the sum of the *columnExpression* if all non `NULL` inputs are integers. If any non `NULL` input is not an integer, a floating point value which might be an approximation to the true sum is returned.
 
 * * *
 

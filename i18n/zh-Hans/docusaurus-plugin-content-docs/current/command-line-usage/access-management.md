@@ -39,7 +39,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 
 ### JWT {#jwt}
 
-调用方出示一个已签名的令牌，该令牌依据配置中固定的密钥进行离线验证。最小配置指定令牌必须携带的签发者和受众，列出一个公钥，并授予 `readers` 组读取权限：
+调用方出示一个已签名的令牌，该令牌依据配置中固定的密钥进行离线验证。最小配置指定令牌必须携带的签发者和受众，列出一个公钥，并允许 `analysts` 组的成员运行读取语句（`readers` 组的成员无需规则即可这样做，请参阅[策略规则](#policy-rules)）：
 
 ```json
 {
@@ -50,7 +50,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

@@ -7,9 +7,9 @@ faq:
   - question: 为什么查询 EC2 实例时必须提供 region？
     answer: EC2 DescribeInstances API 是区域级 API，因此 region 是底层调用的必需参数。StackQL 将必需的 API 参数呈现为必需的 WHERE 子句谓词。使用 region IN (...) 提供多个区域时，查询会扇出为按区域并行执行的 API 调用，并将结果聚合为一个结果集。
   - question: aws.ec2.instances 有哪些可用的列？
-    answer: 列包括 instance_id、instance_type、image_id、launch_time、availability_zone、private_ip_address、public_ip_address、private_dns_name、public_dns_name、subnet_id、vpc_id、key_name，以及 state、security_groups、network_interfaces 和 tag_set 等结构化列。运行 DESCRIBE aws.ec2.instances 可查看完整列表。
+    answer: 列包括 instance_id、instance_type、image_id、launch_time、private_ip_address、public_ip_address、private_dns_name、public_dns_name、subnet_id、vpc_id、key_name，以及 state、placement、security_groups、network_interfaces 和 tags 等结构化列。运行 DESCRIBE aws.ec2.instances 可查看完整列表。
   - question: 能否使用 StackQL 停止、启动或终止实例？
-    answer: 可以。终止映射到 DELETE，生命周期操作（start、stop、reboot、monitor）是同一资源上的 EXEC 方法。SHOW METHODS IN aws.ec2.instances 会列出每个操作、其 SQL 动词及其必需参数。
+    answer: 可以。终止映射到 DELETE，生命周期操作（start_instances、stop_instances、reboot_instances、monitor_instances）是同一资源上的 EXEC 方法。SHOW METHODS IN aws.ec2.instances 会列出每个操作、其 SQL 动词及其必需参数。
 ---
 
 # 如何使用 StackQL 查询 AWS EC2 实例
@@ -45,7 +45,7 @@ DESCRIBE aws.ec2.instances;
 SHOW METHODS IN aws.ec2.instances;
 ```
 
-`DESCRIBE` 列出可用的列。`SHOW METHODS` 列出各项操作（`describe` SELECT 方法、`terminate` DELETE 方法，以及 `start`、`stop` 和 `reboot` 等 EXEC 生命周期方法）及每项操作的必需参数。这些命令无需凭据即可运行。
+`DESCRIBE` 列出可用的列。`SHOW METHODS` 列出各项操作（`describe_instances` SELECT 方法、`terminate_instances` DELETE 方法，以及 `start_instances`、`stop_instances` 和 `reboot_instances` 等 EXEC 生命周期方法）及每项操作的必需参数。这些命令无需凭据即可运行。
 
 ## 多区域聚合 {#multi-region-aggregation}
 
@@ -71,7 +71,7 @@ WHERE region = 'us-east-1'
 AND public_ip_address IS NOT NULL;
 ```
 
-`state` 和 `tag_set` 等结构化列返回 JSON，可以使用所配置 SQL 后端的 JSON 函数将其展开。
+`state` 和 `tags` 等结构化列返回 JSON，可以使用所配置 SQL 后端的 JSON 函数将其展开。
 
 ## 相关概念 {#related-concepts}
 

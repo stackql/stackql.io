@@ -39,7 +39,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 
 ### JWT {#jwt}
 
-呼び出し元は署名付きトークンを提示し、トークンは設定に固定されたキーに照らしてオフラインで検証されます。最小限の設定では、トークンが持つ必要のある発行者とオーディエンスを指定し、公開鍵を 1 つ列挙し、`readers` グループに読み取りアクセスを付与します：
+呼び出し元は署名付きトークンを提示し、トークンは設定に固定されたキーに照らしてオフラインで検証されます。最小限の設定では、トークンが持つ必要のある発行者とオーディエンスを指定し、公開鍵を 1 つ列挙し、`analysts` グループのメンバーが読み取り文を実行できるようにします（`readers` グループのメンバーはルールなしで実行できます。[ポリシールール](#policy-rules)を参照してください）：
 
 ```json
 {
@@ -50,7 +50,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

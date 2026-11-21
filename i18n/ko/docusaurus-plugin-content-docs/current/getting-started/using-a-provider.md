@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 참고 항목:  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-StackQL 쿼리는 Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean 등 다양한 클라우드 제공업체를 대상으로 실행할 수 있습니다. StackQL 프로바이더 사양은 [__StackQL Provider Registry__](/providers)에서 가져옵니다. 이 작업은 [__`REGISTRY PULL`__](/language-spec/registry) StackQL 명령이나 [__`stackql registry`__](/command-line-usage/registry) 명령줄 유틸리티를 사용하여 수행할 수 있습니다.
+StackQL 쿼리는 Google Cloud Platform, Amazon Web Services, Microsoft Azure, DigitalOcean 등 다양한 클라우드 제공업체를 대상으로 실행할 수 있습니다. StackQL 프로바이더 사양은 [__StackQL Provider Registry__](/providers)에서 가져옵니다. 이 작업은 [__`REGISTRY PULL`__](/language-spec/registry) StackQL 명령이나 [__`stackql registry`__](/command-line-usage/registry) 명령줄 유틸리티를 사용하여 수행할 수 있습니다.
 
 
 ## 프로바이더 설치 {#installing-a-provider}

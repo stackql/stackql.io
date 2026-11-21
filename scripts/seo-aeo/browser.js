@@ -254,6 +254,7 @@ async function switcher(ctx) {
     // Every variant the head script can select has artwork in the
     // stylesheet: a variant with no rule would keep the default flag, which
     // is safe but means the mapping and the stylesheet have drifted apart.
+    // "" is not a variant: it settles on the default flag (zh-Hant's HK).
     const regional = require('../../src/lib/regionalFlags.js').REGIONAL_FLAGS;
     for (const [flagLocale, spec] of Object.entries(regional)) {
       if (!cfg.locales[flagLocale]) continue;
@@ -261,7 +262,7 @@ async function switcher(ctx) {
         ...Object.values(spec.regions || {}),
         ...(spec.timeZones || []).map((t) => t[1]),
         ...Object.values(spec.looseRegions || {}),
-      ])];
+      ])].filter(Boolean);
       const opened = await browser.open(address(flagLocale, '/installing-stackql'));
       if (opened.error) {
         r.fail(`[${flagLocale}] flag variants: the page does not load (${opened.error})`);

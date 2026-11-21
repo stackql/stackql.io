@@ -32,7 +32,7 @@ Jika Anda menggunakan StackQL dengan backend SQL `postgres`, gunakan fungsi `jso
 ## Sintaksis {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 Array atau objek JSON.
 
 __*json_path*__  
-Jalur JSON ke array atau objek yang terdapat di dalam *json_array_or_object*.  Lihat [jsonpath.com](https://jsonpath.com/).
+Opsional. Jalur JSON ke array atau objek yang terdapat di dalam *json_array_or_object*.  Lihat [jsonpath.com](https://jsonpath.com/).
 
 > Jika *json_path* tidak ada di *json_array_or_object*, fungsi mengembalikan `NULL`.
 

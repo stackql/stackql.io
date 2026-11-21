@@ -32,7 +32,7 @@ __*numeric_expression*__
 
 ## 戻り値 {#return-values}
 
-正の数値を返します。
+負でない数値を返します。
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-詳細については、[https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html) を参照してください。
+詳細については、[https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs) を参照してください。

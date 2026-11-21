@@ -32,7 +32,7 @@ An expression of the exact numeric or approximate numeric data type category.
 
 ## Return Value(s) {#return-values}
 
-Returns a positive numeric value.
+Returns a non-negative numeric value.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-For more information, see [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+For more information, see [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

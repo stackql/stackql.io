@@ -102,7 +102,7 @@ Provider SDK [omnisdk](https://github.com/stackql-labs/omnisdk) 管理与云服�
 
 - **API 请求构建**：将 SQL 查询转换为适用于每个 Provider 的 REST API 调用，处理端点构造、参数映射和请求格式化。
 
-- **分页**：自动处理分页的 API 响应，屏蔽各个 Provider 所用的不同分页方案（基于游标、基于偏移量、基于令牌等）的复杂性。
+- **分页**：自动处理分页的 API 响应，屏蔽各个 Provider 所用的不同分页方案（下一页令牌、页码、下一页链接、`Link` 响应头和 GraphQL 游标）的复杂性。
 
 - **谓词下推**：将映射到请求参数的条件，以及在不需要排序时的 `LIMIT`，下推到 Provider 请求中，以减少发出的请求数量和传输的数据量。
 

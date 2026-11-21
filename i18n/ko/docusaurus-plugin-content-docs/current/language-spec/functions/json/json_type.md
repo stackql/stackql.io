@@ -32,7 +32,7 @@ JSON 값의 가장 바깥쪽 요소 또는 선택적 경로에 있는 요소의 
 ## 구문 {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 JSON 배열 또는 객체입니다.
 
 __*json_path*__  
-*json_array_or_object* 안에 포함된 배열 또는 객체에 대한 JSON 경로입니다. [jsonpath.com](https://jsonpath.com/)을 참조하세요.
+선택 사항입니다. *json_array_or_object* 안에 포함된 배열 또는 객체에 대한 JSON 경로입니다. [jsonpath.com](https://jsonpath.com/)을 참조하세요.
 
 > *json_path*가 *json_array_or_object*에 없으면 함수는 `NULL`을 반환합니다.
 
