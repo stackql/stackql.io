@@ -44,7 +44,7 @@ In jedem Servermodus erlaubt.  Keine Auswirkung auf die Control Plane oder Data 
 
 ## Beispiel {#example}
 
-Probieren Sie diesen Prompt mit einem beliebigen Elicitation-fähigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
+Probieren Sie diesen Prompt mit einem beliebigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
 
 ```
 What providers does the StackQL registry offer,  

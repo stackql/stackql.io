@@ -141,7 +141,7 @@ UNSET "providers.saved";
 O contexto de autenticação de um provider é o objeto fornecido para ele por meio de [`--auth`](/command-line-usage/global-flags) na inicialização.  Um caminho sob `$.auth` substitui um campo desse objeto pelo restante da sessão e mantém os outros campos como estavam.  Aqui, o provider do GitHub passa a apontar para outra variável de ambiente, que contém um token de somente leitura; a variável é lida do ambiente do processo do StackQL, e as consultas seguintes em `github.*` a usam até que o campo seja removido ou a sessão termine.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### Vincular um alias de provider {#bind-a-provider-alias}

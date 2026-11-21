@@ -37,7 +37,7 @@ The regular expression pattern to search for.
 __*replacement*__  
 The replacement string.
 
-> Supports backreferences to captured groups `\1` through `\9` in replacement string.  
+> The replacement string is inserted as written: capture group references such as `$1` are not expanded.  
 
 ## Return Value(s) {#return-values}
 Returns a string.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-For more information, see [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+For more information, see [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

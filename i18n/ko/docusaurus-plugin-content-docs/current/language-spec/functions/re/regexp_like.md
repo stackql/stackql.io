@@ -78,4 +78,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-자세한 내용은 [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md) 문서를 참조하세요.
+자세한 내용은 [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax) 문서를 참조하세요.

@@ -1201,9 +1201,8 @@ O exemplo a seguir mostra o pacote `pystackql` usado junto com o `pandas` para e
 
 ```python
 from pystackql import StackQL
-import pandas as pd
 region = "ap-southeast-2"
-stackql = StackQL()
+stackql = StackQL(output='pandas')
 
 query = """
 SELECT instance_type, COUNT(*) as num_instances
@@ -1212,8 +1211,7 @@ WHERE region = '%s'
 GROUP BY instance_type
 """ % (region)
 
-res = stackql.execute(query)
-df = pd.read_json(res)
+df = stackql.execute(query)
 print(df)
 ```
 

@@ -45,7 +45,7 @@ StackQL 레지스트리에서 단일 프로바이더를 로컬 approot 캐시로
 
 ## 예제 {#example}
 
-StackQL MCP 서버가 등록되어 있고 엘리시테이션(elicitation)을 지원하는 MCP 클라이언트에서 다음 프롬프트를 사용해 보세요:
+StackQL MCP 서버가 등록된 MCP 클라이언트에서 다음 프롬프트를 사용해 보세요:
 
 ```
 I want to start querying Google resources with StackQL.  

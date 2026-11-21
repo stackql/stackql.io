@@ -20,9 +20,9 @@ Lihat juga:
 ## Sintaksis {#syntax}
 
 ```sql
-SELECT JSON_GROUP_ARRAY(column_name) FROM <multipartIdentifier>
+SELECT grouping_column, JSON_GROUP_ARRAY(column_name) FROM <multipartIdentifier>
 WHERE condition
-GROUP BY column_name;
+GROUP BY grouping_column;
 ```
 
 ## Argumen {#arguments}

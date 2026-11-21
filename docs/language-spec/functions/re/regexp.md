@@ -53,7 +53,7 @@ This query will return `1` because the string contains the substring '2021', whi
 To check if a string is in a valid email format:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-This query returns `1`, indicating that 'user@example.com' is formatted like a typical email address, matching the specified regular expression pattern.
+This query returns `1`, indicating that 'user@example.com' is formatted like a typical email address, matching the specified regular expression pattern.  The dot before the domain suffix is written `\\.` because a StackQL string literal consumes one backslash, so a backslash that belongs to the regular expression is written twice (see [Regex Reference](/language-spec/functions/re/reference)).

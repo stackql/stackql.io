@@ -35,9 +35,9 @@ Một literal chuỗi hoặc một cột chuỗi mà bạn muốn tách.
 __*sep*__  
 Một hoặc nhiều ký tự mà bạn muốn dùng làm dấu phân cách.  
 
-> Nếu `sep` gồm nhiều ký tự, mỗi ký tự được coi là một dấu phân cách.  
+> Nếu `sep` gồm nhiều ký tự, toàn bộ chuỗi đó là dấu phân cách: `SPLIT_PART('a||b||c', '||', 3)` trả về `c`.  
 
-> Chỉ các ký hiệu ASCII (1 byte) được hỗ trợ làm dấu phân cách.  
+> Có thể dùng bất kỳ ký tự nào trong dấu phân cách, kể cả các ký tự không phải ASCII như `€`.  
 
 __*part*__  
 Phần tử (đánh số từ một) của chuỗi đã tách cần trả về.  Giá trị âm dùng để đếm ngược từ phần tử cuối cùng.  

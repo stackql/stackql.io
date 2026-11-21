@@ -51,7 +51,7 @@ image: "/img/stackql-featured-image.png"
 
 ## مثال {#example}
 
-جرّب هذا الموجه مع أي عميل MCP يدعم elicitation ومسجل فيه خادم StackQL MCP:
+جرّب هذا الموجه مع أي عميل MCP مسجل فيه خادم StackQL MCP:
 
 ```
 List the resources in the google.storage service

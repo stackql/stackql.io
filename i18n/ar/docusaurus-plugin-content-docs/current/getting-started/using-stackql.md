@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 بمجرد دخولك إلى واجهة أوامر تمت مصادقتها لدى مزود خدمات سحابية، يمكنك البدء في تشغيل استعلامات StackQL (استعلامات `SELECT` أو عمليات DDL، أي عمليات البنية التحتية كتعليمات برمجية).
 
-افتراضيًا، تعيد واجهة أوامر StackQL النتائج في شكل جدولي، إلا أن تنسيقات الإخراج `json` و`jsonl` و`csv` و`text` متاحة باستخدام العلامة `--output`، راجع [أوضاع الإخراج](/getting-started/output-modes).  
+افتراضيًا، تعيد واجهة أوامر StackQL النتائج في شكل جدولي، إلا أن تنسيقات الإخراج `json` و`jsonl` و`csv` و`text` و`otel` متاحة باستخدام العلامة `--output`، راجع [أوضاع الإخراج](/getting-started/output-modes).  
 
 ### ملف التهيئة `.stackqlrc` {#the-stackqlrc-initialization-file}
 

@@ -141,7 +141,7 @@ UNSET "providers.saved";
 Provider 的驗證內容，是啟動時透過 [`--auth`](/command-line-usage/global-flags) 為其提供的物件。`$.auth` 下的路徑會在工作階段的剩餘期間取代該物件的一個欄位，其他欄位則維持原狀。此處將 GitHub Provider 指向另一個保存唯讀權杖的環境變數；該變數會從 StackQL 處理程序的環境中讀取，之後針對 `github.*` 的查詢都會使用它，直到該欄位被取消設定或工作階段結束為止。
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### 繫結 Provider 別名 {#bind-a-provider-alias}

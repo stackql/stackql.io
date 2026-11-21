@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 Một câu lệnh có thể xóa cùng lúc cả biến và đường dẫn cấu hình, và các đích được xử lý theo thứ tự.  Ở đây, một biến thông thường, một biến có tên chứa dấu chấm và một ghi đè thông tin xác thực được xóa trong cùng một danh sách.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Ghi rõ phạm vi phiên {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Xóa một ghi đè thông tin xác thực {#clear-a-credential-override}
 
-Trường đã đặt trước đó bằng `SET "$.auth.github.credentialsenvvar"` được xóa khỏi ngữ cảnh xác thực phiên của provider GitHub, và các trường khác của ngữ cảnh đó không bị ảnh hưởng.  Giá trị có hiệu lực trước khi ghi đè không được khôi phục, vì vậy hãy đặt lại trường này nếu provider vẫn cần nó.
+Trường đã đặt trước đó bằng `SET "$.auth.github.password_var"` được xóa khỏi ngữ cảnh xác thực phiên của provider GitHub, và các trường khác của ngữ cảnh đó không bị ảnh hưởng.  Giá trị có hiệu lực trước khi ghi đè không được khôi phục, vì vậy hãy đặt lại trường này nếu provider vẫn cần nó.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Xóa một bí danh provider và bí mật của nó {#remove-a-provider-alias-and-its-secret}

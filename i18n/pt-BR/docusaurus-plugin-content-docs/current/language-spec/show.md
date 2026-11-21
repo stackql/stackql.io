@@ -34,7 +34,7 @@ type="show"
 SHOW [ EXTENDED ]
 { PROVIDERS | SERVICES | RESOURCES | METHODS }
 [ { IN | FROM } { <provider> | <service> | <resource> } ]
-[ { LIKE <pattern> | WHERE <expression> } ];
+[ { LIKE '<pattern>' | WHERE <expression> } ];
 
 SHOW [ EXTENDED ] INSERT INTO <resource>;
 SHOW [ EXTENDED ] VERSION;

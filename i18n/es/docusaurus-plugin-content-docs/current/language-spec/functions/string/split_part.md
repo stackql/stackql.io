@@ -35,9 +35,9 @@ Una cadena literal o una columna de cadena que desea dividir.
 __*sep*__  
 Uno o varios caracteres que desea usar como separador.  
 
-> Si `sep` se compone de varios caracteres, cada carácter se trata como separador.  
+> Si `sep` se compone de varios caracteres, la cadena completa es el separador: `SPLIT_PART('a||b||c', '||', 3)` devuelve `c`.  
 
-> Solo se admiten símbolos ASCII (de 1 byte) como separadores.  
+> En un separador se puede usar cualquier carácter, incluidos caracteres no ASCII como `€`.  
 
 __*part*__  
 El elemento (contado desde uno) de la cadena dividida que se devuelve.  Los valores negativos se usan para contar hacia atrás desde el último elemento.  

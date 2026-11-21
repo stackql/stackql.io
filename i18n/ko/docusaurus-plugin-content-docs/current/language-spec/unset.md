@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 하나의 문으로 변수와 구성 경로를 함께 제거할 수 있으며, 대상은 순서대로 처리됩니다. 이 예제에서는 일반 변수, 이름에 점이 포함된 변수, 자격 증명 재정의를 한 목록에서 제거합니다.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### 세션 범위 명시 {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### 자격 증명 재정의 해제 {#clear-a-credential-override}
 
-앞에서 `SET "$.auth.github.credentialsenvvar"` 문으로 설정한 필드가 GitHub 프로바이더의 세션 인증 컨텍스트에서 삭제되며, 해당 컨텍스트의 다른 필드는 변경되지 않습니다. 재정의 전에 적용되던 값은 복원되지 않으므로, 프로바이더에 해당 필드가 여전히 필요하면 다시 설정하세요.
+앞에서 `SET "$.auth.github.password_var"` 문으로 설정한 필드가 GitHub 프로바이더의 세션 인증 컨텍스트에서 삭제되며, 해당 컨텍스트의 다른 필드는 변경되지 않습니다. 재정의 전에 적용되던 값은 복원되지 않으므로, 프로바이더에 해당 필드가 여전히 필요하면 다시 설정하세요.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### 프로바이더 별칭과 해당 시크릿 제거 {#remove-a-provider-alias-and-its-secret}

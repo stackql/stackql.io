@@ -45,7 +45,7 @@ StackQL レジストリから単一のプロバイダーをローカルの appro
 
 ## 例 {#example}
 
-StackQL MCP サーバーを登録した、エリシテーション（elicitation）に対応する任意の MCP クライアントで、次のプロンプトを試してください：
+StackQL MCP サーバーを登録した任意の MCP クライアントで、次のプロンプトを試してください：
 
 ```
 I want to start querying Google resources with StackQL.  

@@ -45,7 +45,7 @@ Diizinkan di semua mode server.  Tidak ada efek di sisi cloud; hanya status cach
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 I want to start querying Google resources with StackQL.  

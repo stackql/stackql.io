@@ -53,7 +53,7 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 检查字符串是否为有效的电子邮件格式：
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-此查询返回 `1`，表明 'user@example.com' 的格式符合典型的电子邮件地址，与指定的正则表达式模式匹配。
+此查询返回 `1`，表明 'user@example.com' 的格式符合典型的电子邮件地址，与指定的正则表达式模式匹配。域名后缀前的点写作 `\\.`，因为 StackQL 字符串字面量会消耗一个反斜杠，所以属于正则表达式的反斜杠要写两次（参阅[正则表达式参考](/language-spec/functions/re/reference)）。

@@ -54,7 +54,7 @@ Siempre permitida en todos los modos del servidor.  No se audita como mutación.
 
 ## Ejemplo {#example}
 
-Pruebe este prompt con cualquier cliente MCP que admita la elicitación y tenga registrado el servidor MCP de StackQL:
+Pruebe este prompt con cualquier cliente MCP que tenga registrado el servidor MCP de StackQL:
 
 ```
 What StackQL server am I connected to?  

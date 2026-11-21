@@ -76,9 +76,9 @@ Setiap kueri mengambil snapshot terpisah dari kredensial alias.  Mengubah pengik
 Pernyataan `SET "$.auth.<provider>.<field>"` mengubah satu field dari konteks autentikasi provider untuk sesi tersebut, dengan nama field berupa kunci dari entri `--auth` provider:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Seperti halnya alias, perubahan berlaku untuk kueri yang dimulai setelah pernyataan `SET`.  Kueri terhadap provider yang autentikasinya telah dihapus, atau yang aliasnya tidak memiliki `auth` yang dapat digunakan, gagal sebelum permintaan apa pun dikirim.

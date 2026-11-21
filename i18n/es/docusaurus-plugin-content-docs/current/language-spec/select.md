@@ -53,7 +53,7 @@ Un `JOIN` sin cláusula `ON` se trata como un `CROSS JOIN`, por lo que la condic
 Ejecute una instrucción `SELECT` básica en una sesión autenticada.
 
 ```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
+-- Selecting all instances in a zone using a basic SELECT statement
 SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';

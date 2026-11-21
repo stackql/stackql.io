@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## 快速入门 {#quick-start}
 
+此示例假定二进制文件已以 vendoring 方式打包：`StackqlMCPBinary()` 由 [Vendoring / 嵌入](#vendoring--embedding)中所述的 `go:generate` 获取步骤生成。
+
 ```go
 import (
     "context"

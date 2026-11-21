@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 Інструкція `SET "$.auth.<provider>.<field>"` змінює для сеансу одне поле контексту автентифікації провайдера; імена полів - це ключі запису провайдера в `--auth`:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Як і з псевдонімами, зміна застосовується до запитів, запущених після `SET`.  Запити до провайдера, для автентифікації якого скасовано значення, або до провайдера, псевдонім якого не має придатного `auth`, завершуються помилкою ще до надсилання будь-якого запиту до API.

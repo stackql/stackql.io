@@ -151,7 +151,7 @@ and zone = 'australia-southeast1-a'" \
 
 1 つの文が 1 つのスナップショットです。文のすべてのレコードは、同じ `timeUnixNano`（文の開始時刻）、同じ `stackql.snapshot.id`、同じ `spanId` を持ちます。そのため、行が複数のページにわたって数秒かけて届いても、時点指定のクエリ、差分、最新状態のクエリが機能します。`observedTimeUnixNano` には、各レコードが実際に書き込まれた時刻が記録されます。1 回の呼び出しのすべての文は、1 つの `traceId` を共有します。この値は、`TRACEPARENT` 環境変数が設定されていればそこから取得され（CI パイプラインでの慣例）、設定されていなければ生成されます。
 
-文の最後のレコードは完了レコードです。ボディは `snapshot complete <provider.service.resource>` で、`stackql.snapshot.complete=true`、`stackql.rows_returned`、`stackql.duration_ms` を持ちます。完了レコードは、スナップショットが完全であることをバックエンドに伝えます。行を返さない文も完了レコードを出力するため、消えたリソースは何も届かない状態ではなく、ドリフトとして現れます。エラーの表示方法が `record` の場合、失敗した文は `error.type` と `error.message` を持つ `ERROR` レコードを生成します。デフォルトでは、ほかのすべての出力形式と同様に、エラーは stderr に出力されます。
+文の最後のレコードは完了レコードです。ボディは `snapshot complete <provider.service.resource>` で、`stackql.snapshot.complete=true`、`stackql.rows_returned`、`stackql.duration_ms` を持ちます。完了レコードは、スナップショットが完全であることをバックエンドに伝えます。行を返さない文も完了レコードを出力するため、消えたリソースは何も届かない状態ではなく、ドリフトとして現れます。`--errorpresentation record` を指定して StackQL を実行した場合、失敗した文は `error.type` と `error.message` を持つ `ERROR` レコードを生成します。デフォルトでは、ほかのすべての出力形式と同様に、エラーは stderr に出力されます。
 
 #### レコードの形状 {#record-shape}
 

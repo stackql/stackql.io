@@ -10,7 +10,7 @@ keywords:
 description: "StackQL 中的 LENGTH 函数：返回字符串中的字符数，或 BLOB 中的字节数。"
 image: "/img/stackql-featured-image.png"
 ---
-返回字符串输入表达式中第一个 `NULL` 字符之前的字符数，或 BLOB 表达式中的字节数。  
+返回字符串输入表达式中第一个 NUL 字符（`char(0)`）之前的字符数，或 BLOB 表达式中的字节数。  
 
 另请参阅：  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## 参数 {#arguments}
 
 __*expression*__  
-ASCII 字符串或 BLOB。
+字符串或 BLOB。
 
 > 如果 *expression* 为 `NULL`，则返回 `NULL`。
 

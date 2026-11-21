@@ -53,7 +53,7 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 若要檢查字串是否為有效的電子郵件格式：
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-此查詢傳回 `1`，表示「user@example.com」的格式與一般電子郵件地址相同，符合指定的正規表示式模式。
+此查詢傳回 `1`，表示「user@example.com」的格式與一般電子郵件地址相同，符合指定的正規表示式模式。網域尾碼前的句點寫成 `\\.`，因為 StackQL 字串常值會消耗一個反斜線，所以屬於正規表示式的反斜線要寫兩次（請參閱[正規表示式參考](/language-spec/functions/re/reference)）。

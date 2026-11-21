@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 | Аргумент | Опис | Приклад |
 |--|--|--|
-|`query`|Запит StackQL, який потрібно виконати,<br/>або команда, яку потрібно запустити | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Зверніть увагу, що запит має бути взятий в одинарні або подвійні лапки_ |    
+|`query`|Запит StackQL, який потрібно виконати,<br/>або команда, яку потрібно запустити | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Зверніть увагу, що запит має бути взятий в одинарні або подвійні лапки_ |    
 
 
 ### Прапорці {#flags}

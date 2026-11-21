@@ -115,8 +115,7 @@ stackql --version
       "command": "stackql",
       "args": [
         "mcp",
-        "--mcp.server.type=stdio",
-        "--tls.allowInsecure"
+        "--mcp.server.type=stdio"
       ],
       "env": {
         "GOOGLE_CREDENTIALS": "/path/to/google-credentials.json",
@@ -156,7 +155,6 @@ Claude Desktop 通告了 MCP 征询能力，因此默认的服务器模式（`sa
       "args": [
         "mcp",
         "--mcp.server.type=stdio",
-        "--tls.allowInsecure",
         "--env.file=C:\\Users\\me\\stackql-credentials.env"
       ]
     }

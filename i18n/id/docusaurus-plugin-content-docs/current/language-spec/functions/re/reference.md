@@ -26,18 +26,28 @@ Sintaksis ekspresi reguler berikut didukung di StackQL:
 | `X*` | nol atau lebih kemunculan `X` |
 | `X+` | satu atau lebih kemunculan `X` | 
 | `X?` | nol atau satu kemunculan `X` |
+| `X{n}` | tepat `n` kemunculan `X` |
+| `X{n,}` | `n` atau lebih kemunculan `X` |
+| `X{n,m}` | antara `n` dan `m` kemunculan `X` |
 | `(X)` | mencocokkan `X` |
 | `X`&vert;`Y` | `X` atau `Y` |
 | `^X` | `X` yang muncul di awal string |
 | `X$` | `X` yang muncul di akhir string |
-| `.` | Mencocokkan satu karakter apa pun |
+| `.` | Mencocokkan satu karakter apa pun, termasuk baris baru |
 | `\c` | Karakter `c`, dengan `c` salah satu dari `\{}()[]`&vert;`*+?.` |
 | `\c` | Urutan escape bahasa C untuk `c` dalam `afnrtv`. Misalnya: `\t` atau `\n` |
 | `[abc]` | Satu karakter apa pun dari himpunan `abc` |
 | `[^abc]` | Satu karakter apa pun yang tidak ada dalam himpunan `abc` |
 | `[a-z]` | Satu karakter apa pun dalam rentang `a-z` |
-| `[^a-z]` | Satu karakter apa pun yang tidak ada dalam rentang `a-z` |  
+| `[^a-z]` | Satu karakter apa pun yang tidak ada dalam rentang `a-z` |
+| `\d`, `\w`, `\s` | Satu digit, satu karakter kata (`[0-9A-Za-z_]`), satu karakter spasi kosong |
+| `\D`, `\W`, `\S` | Karakter apa pun yang bukan digit, bukan karakter kata, bukan karakter spasi kosong |
+| `\b` | Batas kata |  
 
 &nbsp;  
 &nbsp;  
-Untuk informasi selengkapnya, lihat [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Pola menggunakan sintaksis RE2, sebagaimana diimplementasikan oleh paket `regexp` Go.  Referensi balik (`\1`) dan asersi lookaround tidak didukung: pola yang menggunakannya ditolak dengan error.
+
+Garis miring terbalik dalam literal string StackQL memulai urutan escape (`'\n'` adalah baris baru), sehingga garis miring terbalik yang merupakan bagian dari ekspresi reguler ditulis dua kali: `'\\d+'` cocok dengan satu digit atau lebih dan `'[0-9]+\\.[0-9]+'` cocok dengan titik literal di antara digit.
+
+Untuk sintaksis lengkapnya, lihat [sintaksis RE2](https://github.com/google/re2/wiki/Syntax).

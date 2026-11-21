@@ -115,8 +115,7 @@ Claude Desktop が StackQL と通信できるようにするには、Claude Desk
       "command": "stackql",
       "args": [
         "mcp",
-        "--mcp.server.type=stdio",
-        "--tls.allowInsecure"
+        "--mcp.server.type=stdio"
       ],
       "env": {
         "GOOGLE_CREDENTIALS": "/path/to/google-credentials.json",
@@ -156,7 +155,6 @@ Claude Desktop は MCP のエリシテーション機能を公開しています
       "args": [
         "mcp",
         "--mcp.server.type=stdio",
-        "--tls.allowInsecure",
         "--env.file=C:\\Users\\me\\stackql-credentials.env"
       ]
     }

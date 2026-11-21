@@ -46,7 +46,7 @@ Allowed in every server mode (`read_only`, `safe`, `delete_safe`, `full_access`)
 
 ## Example {#example}
 
-Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
+Try this prompt with any MCP client with the StackQL MCP server registered:
 
 ```
 Which cloud providers are available for you to query right now?

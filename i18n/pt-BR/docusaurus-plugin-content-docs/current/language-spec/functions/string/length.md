@@ -10,7 +10,7 @@ keywords:
 description: "Função LENGTH no StackQL: o número de caracteres em uma string, ou o número de bytes em um BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-Retorna o número de caracteres de uma expressão de entrada do tipo string antes do primeiro caractere `NULL`, ou o número de bytes de uma expressão BLOB.  
+Retorna o número de caracteres de uma expressão de entrada do tipo string antes do primeiro caractere NUL (`char(0)`), ou o número de bytes de uma expressão BLOB.  
 
 Veja também:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## Argumentos {#arguments}
 
 __*expression*__  
-Uma string ASCII ou um BLOB.
+Uma string ou um BLOB.
 
 > Retorna `NULL` se *expression* for `NULL`.
 

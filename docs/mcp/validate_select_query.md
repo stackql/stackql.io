@@ -48,7 +48,7 @@ Allowed in every server mode.  No API calls are made.
 
 ## Example {#example}
 
-Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
+Try this prompt with any MCP client with the StackQL MCP server registered:
 
 ```
 Can you validate this query before I run it:

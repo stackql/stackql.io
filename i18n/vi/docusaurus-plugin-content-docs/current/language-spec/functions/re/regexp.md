@@ -53,7 +53,7 @@ Truy vấn này sẽ trả về `1` vì chuỗi chứa chuỗi con '2021', khớ
 Để kiểm tra xem một chuỗi có đúng định dạng email hợp lệ hay không:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Truy vấn này trả về `1`, cho biết 'user@example.com' có định dạng giống một địa chỉ email thông thường, khớp với mẫu biểu thức chính quy đã chỉ định.
+Truy vấn này trả về `1`, cho biết 'user@example.com' có định dạng giống một địa chỉ email thông thường, khớp với mẫu biểu thức chính quy đã chỉ định.  Dấu chấm trước phần hậu tố tên miền được viết là `\\.` vì literal chuỗi StackQL tiêu thụ một dấu gạch chéo ngược, nên dấu gạch chéo ngược thuộc về biểu thức chính quy được viết hai lần (xem [Tham khảo biểu thức chính quy](/language-spec/functions/re/reference)).

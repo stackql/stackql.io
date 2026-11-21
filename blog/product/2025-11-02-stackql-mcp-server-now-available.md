@@ -126,7 +126,7 @@ Response: ["compute", "storage", "cloudresourcemanager", ...]
 
 # AI agent executes a query
 Tool: query_v2
-Args: {"sql": "SELECT name, status FROM google.compute.instances WHERE project = 'my-project' AND zone = 'us-east1-a'"}
+Args: {"sql": "SELECT name, status FROM google.compute.instances WHERE project = 'my-project' AND zone = 'us-east1-b'"}
 Response: [{"name": "instance-1", "status": "RUNNING"}, ...]
 ```
 

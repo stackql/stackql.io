@@ -53,7 +53,7 @@ FROM { <multipartIdentifier> | <joinStatement(s)> }
 在已通过身份验证的会话中运行基本 `SELECT` 语句。
 
 ```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
+-- Selecting all instances in a zone using a basic SELECT statement
 SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';

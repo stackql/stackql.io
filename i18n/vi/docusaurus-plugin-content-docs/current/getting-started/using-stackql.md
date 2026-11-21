@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Khi đã ở trong một shell đã xác thực với một nhà cung cấp đám mây, bạn có thể bắt đầu chạy các truy vấn StackQL (truy vấn `SELECT` hoặc thao tác DDL - hạ tầng dưới dạng mã).
 
-Theo mặc định, shell StackQL trả về kết quả dạng bảng, tuy nhiên có thể dùng các định dạng đầu ra `json`, `jsonl`, `csv` và `text` thông qua cờ `--output`, xem [Chế độ đầu ra](/getting-started/output-modes).  
+Theo mặc định, shell StackQL trả về kết quả dạng bảng, tuy nhiên có thể dùng các định dạng đầu ra `json`, `jsonl`, `csv`, `text` và `otel` thông qua cờ `--output`, xem [Chế độ đầu ra](/getting-started/output-modes).  
 
 ### Tệp khởi tạo `.stackqlrc` {#the-stackqlrc-initialization-file}
 

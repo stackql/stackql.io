@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## 빠른 시작 {#quick-start}
 
+이 예제는 바이너리가 벤더링되어 있다고 가정합니다. `StackqlMCPBinary()` 함수는 [벤더링 / 내장](#vendoring--embedding) 섹션에서 설명하는 `go:generate` 페치 단계에서 생성됩니다.
+
 ```go
 import (
     "context"

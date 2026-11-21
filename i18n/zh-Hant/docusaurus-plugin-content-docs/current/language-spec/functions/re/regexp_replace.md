@@ -37,7 +37,7 @@ __*pattern*__
 __*replacement*__  
 取代字串。
 
-> 取代字串中支援對擷取群組 `\1` 到 `\9` 的反向參考。  
+> 取代字串會依原樣插入：不會展開 `$1` 等擷取群組參考。  
 
 ## 傳回值 {#return-values}
 傳回字串。
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-如需詳細資訊，請參閱 [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)。
+如需詳細資訊，請參閱 [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)。

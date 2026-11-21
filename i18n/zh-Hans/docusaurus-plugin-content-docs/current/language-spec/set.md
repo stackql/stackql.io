@@ -141,7 +141,7 @@ UNSET "providers.saved";
 Provider 的身份验证上下文是启动时通过 [`--auth`](/command-line-usage/global-flags) 为其提供的对象。`$.auth` 下的路径会在会话的剩余时间内替换该对象的一个字段，其他字段保持不变。这里将 GitHub Provider 指向另一个保存只读令牌的环境变量；该变量从 StackQL 进程环境中读取，之后针对 `github.*` 的查询都会使用它，直到该字段被取消设置或会话结束。
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### 绑定 Provider 别名 {#bind-a-provider-alias}

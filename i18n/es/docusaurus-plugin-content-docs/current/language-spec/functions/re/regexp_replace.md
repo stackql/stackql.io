@@ -37,7 +37,7 @@ El patrón de expresión regular que se busca.
 __*replacement*__  
 La cadena de reemplazo.
 
-> Admite referencias inversas a los grupos capturados `\1` a `\9` en la cadena de reemplazo.  
+> La cadena de reemplazo se inserta tal como está escrita: las referencias a grupos de captura como `$1` no se expanden.  
 
 ## Valor(es) devuelto(s) {#return-values}
 Devuelve una cadena.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Para obtener más información, consulte [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Para obtener más información, consulte [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

@@ -46,7 +46,7 @@ Mỗi hàng chứa tên provider và siêu dữ liệu phiên bản do registry 
 
 ## Ví dụ {#example}
 
-Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào hỗ trợ elicitation và đã đăng ký máy chủ MCP StackQL:
+Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào đã đăng ký máy chủ MCP StackQL:
 
 ```
 Which cloud providers are available for you to query right now?

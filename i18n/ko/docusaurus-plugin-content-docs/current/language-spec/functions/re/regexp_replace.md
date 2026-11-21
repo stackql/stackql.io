@@ -37,7 +37,7 @@ __*pattern*__
 __*replacement*__  
 대체 문자열입니다.
 
-> 대체 문자열에서 `\1`부터 `\9`까지의 캡처된 그룹에 대한 역참조를 지원합니다.  
+> 대체 문자열은 작성된 그대로 삽입되며, `$1` 등의 캡처 그룹 참조는 확장되지 않습니다.  
 
 ## 반환 값 {#return-values}
 문자열을 반환합니다.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-자세한 내용은 [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md) 문서를 참조하세요.
+자세한 내용은 [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax) 문서를 참조하세요.

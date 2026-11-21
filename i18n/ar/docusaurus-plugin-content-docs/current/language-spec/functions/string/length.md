@@ -10,7 +10,7 @@ keywords:
 description: "الدالة LENGTH في StackQL: عدد الأحرف في سلسلة نصية، أو عدد البايتات في قيمة من نوع BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-تعيد عدد الأحرف في تعبير إدخال من نوع سلسلة نصية قبل أول حرف `NULL`، أو عدد البايتات في تعبير من نوع BLOB.  
+تعيد عدد الأحرف في تعبير إدخال من نوع سلسلة نصية قبل أول حرف NUL (`char(0)`)، أو عدد البايتات في تعبير من نوع BLOB.  
 
 راجع أيضًا:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## الوسيطات {#arguments}
 
 __*expression*__  
-سلسلة نصية بترميز ASCII أو قيمة من نوع BLOB.
+سلسلة نصية أو قيمة من نوع BLOB.
 
 > تعيد `NULL` إذا كانت قيمة *expression* هي `NULL`.
 

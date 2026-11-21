@@ -10,7 +10,7 @@ keywords:
 description: "Функція LENGTH у StackQL: кількість символів у рядку або кількість байтів у значенні BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-Повертає кількість символів у рядковому вхідному виразі до першого символу `NULL` або кількість байтів у виразі BLOB.  
+Повертає кількість символів у рядковому вхідному виразі до першого символу NUL (`char(0)`) або кількість байтів у виразі BLOB.  
 
 Див. також:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## Аргументи {#arguments}
 
 __*expression*__  
-Рядок ASCII або значення BLOB.
+Рядок або значення BLOB.
 
 > Повертає `NULL`, якщо *expression* дорівнює `NULL`.
 

@@ -53,7 +53,7 @@ Kueri ini mengembalikan `1` karena string tersebut berisi substring '2021', yang
 Untuk memeriksa apakah string memiliki format email yang valid:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Kueri ini mengembalikan `1`, yang menunjukkan bahwa 'user@example.com' berformat seperti alamat email pada umumnya dan cocok dengan pola ekspresi reguler yang ditentukan.
+Kueri ini mengembalikan `1`, yang menunjukkan bahwa 'user@example.com' berformat seperti alamat email pada umumnya dan cocok dengan pola ekspresi reguler yang ditentukan.  Titik sebelum akhiran domain ditulis `\\.` karena literal string StackQL mengonsumsi satu garis miring terbalik, sehingga garis miring terbalik yang merupakan bagian dari ekspresi reguler ditulis dua kali (lihat [Referensi ekspresi reguler](/language-spec/functions/re/reference)).

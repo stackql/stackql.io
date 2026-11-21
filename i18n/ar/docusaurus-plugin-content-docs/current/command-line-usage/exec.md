@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 | الوسيطة | الوصف | مثال |
 |--|--|--|
-|`query`|استعلام StackQL المراد إجراؤه<br/>أو الأمر المراد تنفيذه | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_لاحظ أنه يجب وضع الاستعلام بين علامتي اقتباس مفردتين أو مزدوجتين_ |    
+|`query`|استعلام StackQL المراد إجراؤه<br/>أو الأمر المراد تنفيذه | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_لاحظ أنه يجب وضع الاستعلام بين علامتي اقتباس مفردتين أو مزدوجتين_ |    
 
 
 ### العلامات {#flags}

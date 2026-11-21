@@ -54,7 +54,7 @@ Toujours autorisé dans tous les modes du serveur. Non audité en tant que mutat
 
 ## Exemple {#example}
 
-Essayez ce prompt avec n'importe quel client MCP prenant en charge l'élicitation et dans lequel le serveur MCP StackQL est enregistré :
+Essayez ce prompt avec n'importe quel client MCP dans lequel le serveur MCP StackQL est enregistré :
 
 ```
 What StackQL server am I connected to?  

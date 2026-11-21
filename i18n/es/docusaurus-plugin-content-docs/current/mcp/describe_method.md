@@ -53,7 +53,7 @@ Permitida en todos los modos del servidor.  De solo lectura.
 
 ## Ejemplo {#example}
 
-Pruebe este prompt con cualquier cliente MCP que admita la elicitación y tenga registrado el servidor MCP de StackQL:
+Pruebe este prompt con cualquier cliente MCP que tenga registrado el servidor MCP de StackQL:
 
 ```
 Show me everything I need to know to call the insert method  

@@ -35,9 +35,9 @@ Ein String-Literal oder eine String-Spalte, die geteilt werden soll.
 __*sep*__  
 Ein Zeichen oder mehrere Zeichen, die als Trennzeichen verwendet werden sollen.  
 
-> Wenn `sep` aus mehreren Zeichen besteht, wird jedes Zeichen als Trennzeichen behandelt.  
+> Wenn `sep` aus mehreren Zeichen besteht, ist der gesamte String das Trennzeichen: `SPLIT_PART('a||b||c', '||', 3)` gibt `c` zurück.  
 
-> Als Trennzeichen werden nur ASCII-Symbole (1 Byte) unterstützt.  
+> In einem Trennzeichen können beliebige Zeichen verwendet werden, einschließlich Nicht-ASCII-Zeichen wie `€`.  
 
 __*part*__  
 Das Element (ab eins gezählt) des geteilten Strings, das zurückgegeben werden soll.  Negative Werte zählen rückwärts vom letzten Element aus.  

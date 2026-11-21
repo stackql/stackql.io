@@ -44,7 +44,7 @@ Permitida em todos os modos do servidor.  Sem efeito no plano de controle nem no
 
 ## Exemplo {#example}
 
-Experimente este prompt em qualquer cliente MCP compatível com elicitação que tenha o servidor MCP do StackQL registrado:
+Experimente este prompt em qualquer cliente MCP que tenha o servidor MCP do StackQL registrado:
 
 ```
 What providers does the StackQL registry offer,  

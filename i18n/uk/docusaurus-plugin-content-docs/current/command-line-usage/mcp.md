@@ -345,7 +345,7 @@ stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "mode": "read_only"}}'
 
-# Delete-safe: INSERT/UPDATE proceed; DELETE and EXEC need approval.
+# Delete-safe: INSERT/UPDATE/REPLACE proceed; DELETE and EXEC need approval.
 stackql mcp \
   --mcp.server.type=http \
   --mcp.config '{"server": {"transport": "http", "address": "127.0.0.1:9912", "allow_unauthenticated": true, "mode": "delete_safe"}}'

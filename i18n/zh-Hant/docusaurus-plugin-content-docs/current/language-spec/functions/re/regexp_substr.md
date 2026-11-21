@@ -58,7 +58,7 @@ select name,
 json_extract(properties, '$.storageProfile.imageReference.offer') as os,
 regexp_substr(
   json_extract(properties, '$.storageProfile.imageReference.exactVersion'), 
-  '[0-9][0-9]\.[0-9][0-9]') as os_version 
+  '[0-9][0-9]\\.[0-9][0-9]') as os_version 
 from azure.compute.virtual_machines 
 WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 ```
@@ -81,4 +81,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-如需詳細資訊，請參閱 [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)。
+如需詳細資訊，請參閱 [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)。

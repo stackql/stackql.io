@@ -37,7 +37,7 @@ O padrão de expressão regular a ser procurado.
 __*replacement*__  
 A string de substituição.
 
-> Oferece suporte a referências retroativas aos grupos capturados `\1` a `\9` na string de substituição.  
+> A string de substituição é inserida exatamente como foi escrita: referências a grupos de captura, como `$1`, não são expandidas.  
 
 ## Valor(es) retornado(s) {#return-values}
 Retorna uma string.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Para obter mais informações, consulte [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Para obter mais informações, consulte [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

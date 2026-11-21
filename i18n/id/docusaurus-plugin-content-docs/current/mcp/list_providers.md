@@ -46,7 +46,7 @@ Diizinkan di semua mode server (`read_only`, `safe`, `delete_safe`, `full_access
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 Which cloud providers are available for you to query right now?

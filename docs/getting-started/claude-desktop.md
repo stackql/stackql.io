@@ -115,8 +115,7 @@ Add the following configuration to your `claude_desktop_config.json` file:
       "command": "stackql",
       "args": [
         "mcp",
-        "--mcp.server.type=stdio",
-        "--tls.allowInsecure"
+        "--mcp.server.type=stdio"
       ],
       "env": {
         "GOOGLE_CREDENTIALS": "/path/to/google-credentials.json",
@@ -156,7 +155,6 @@ An alternative to the `env` block - and on Windows the recommended one - is to k
       "args": [
         "mcp",
         "--mcp.server.type=stdio",
-        "--tls.allowInsecure",
         "--env.file=C:\\Users\\me\\stackql-credentials.env"
       ]
     }

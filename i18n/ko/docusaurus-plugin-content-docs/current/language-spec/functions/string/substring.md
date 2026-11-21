@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## 인수 {#arguments}
 
 __*expression*__  
-ASCII 문자열 또는 BLOB입니다.
+문자열 또는 BLOB입니다.
 
 > *expression*이 문자열이면 문자 인덱스는 실제 UTF-8 문자를 가리킵니다. *expression*이 BLOB이면 인덱스는 바이트를 가리킵니다.
 
@@ -45,7 +45,7 @@ __*start*__
 __*length*__  
 *start* 값 이후에 반환할 하위 시퀀스의 길이를 나타내는 선택적 정수 값입니다.  *length*를 생략하면 *expression*으로 지정한 문자열 또는 BLOB의 끝까지 모든 문자가 반환됩니다.
 
-> *length*가 음수이면 *length*의 절댓값이 사용됩니다.
+> *length*가 음수이면 *start* 앞에 있는 문자가 *length*의 절댓값만큼 반환됩니다. `SUBSTR('abcdef', 4, -2)` 호출은 `bc`를 반환합니다.
 
 ## 반환 값 {#return-values}
 

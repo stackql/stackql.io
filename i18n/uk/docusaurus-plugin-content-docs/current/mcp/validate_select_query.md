@@ -48,7 +48,7 @@ image: "/img/stackql-featured-image.png"
 
 ## Приклад {#example}
 
-Спробуйте цей промпт у будь-якому клієнті MCP з підтримкою elicitation, у якому зареєстровано сервер MCP StackQL:
+Спробуйте цей промпт у будь-якому клієнті MCP, у якому зареєстровано сервер MCP StackQL:
 
 ```
 Can you validate this query before I run it:

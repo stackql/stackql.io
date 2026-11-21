@@ -52,7 +52,7 @@ Allowed in every server mode.  Read only.
 
 ## Example {#example}
 
-Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
+Try this prompt with any MCP client with the StackQL MCP server registered:
 
 ```
 For Google Compute instances, what methods are available  

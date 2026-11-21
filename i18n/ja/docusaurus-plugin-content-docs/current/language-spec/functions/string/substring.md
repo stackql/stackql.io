@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## 引数 {#arguments}
 
 __*expression*__  
-ASCII 文字列または BLOB です。
+文字列または BLOB です。
 
 > *expression* が文字列の場合、インデックスは実際の UTF-8 文字を指します。*expression* が BLOB の場合、インデックスはバイトを指します。
 
@@ -45,7 +45,7 @@ __*start*__
 __*length*__  
 省略可能な整数値で、*start* の値から返す部分シーケンスの長さを表します。*length* を省略すると、*expression* で指定した文字列または BLOB の末尾までのすべての文字が返されます。
 
-> *length* が負の場合は、*length* の絶対値が使用されます。
+> *length* が負の場合は、*start* より前にある文字が、*length* の絶対値と同じ数だけ返されます。たとえば、`SUBSTR('abcdef', 4, -2)` は `bc` を返します。
 
 ## 戻り値 {#return-values}
 

@@ -25,7 +25,7 @@ Command used to run a StackQL query, either as a statement or as a batch of stat
 
 | Argument | Description | Example |
 |--|--|--|
-|`query`|StackQL query to be performed<br/>or command to be executed | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Note that the query must be enclosed in single or double quotes_ |    
+|`query`|StackQL query to be performed<br/>or command to be executed | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Note that the query must be enclosed in single or double quotes_ |    
 
 
 ### Flags {#flags}

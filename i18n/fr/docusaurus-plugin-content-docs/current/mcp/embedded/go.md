@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## Démarrage rapide {#quick-start}
 
+Cet exemple suppose que le binaire est vendored : `StackqlMCPBinary()` est généré par l'étape de récupération `go:generate` décrite dans [Vendoring / intégration](#vendoring--embedding).
+
 ```go
 import (
     "context"

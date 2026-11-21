@@ -37,7 +37,7 @@ __*pattern*__
 __*replacement*__  
 السلسلة النصية البديلة.
 
-> تدعم المراجع الخلفية لمجموعات الالتقاط من `\1` إلى `\9` في السلسلة النصية البديلة.  
+> تُدرج السلسلة النصية البديلة كما هي مكتوبة: لا يتم توسيع مراجع مجموعات الالتقاط مثل `$1`.  
 
 ## القيمة المرجعة {#return-values}
 تعيد سلسلة نصية.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-لمزيد من المعلومات، راجع [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+لمزيد من المعلومات، راجع [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

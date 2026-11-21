@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## Швидкий старт {#quick-start}
 
+Цей приклад передбачає, що двійковий файл включено через вендоринг: функцію `StackqlMCPBinary()` генерує крок отримання в `go:generate`, описаний у розділі [Вендоринг / вбудовування](#vendoring--embedding).
+
 ```go
 import (
     "context"

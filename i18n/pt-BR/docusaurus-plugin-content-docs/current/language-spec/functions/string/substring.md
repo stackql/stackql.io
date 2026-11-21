@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Argumentos {#arguments}
 
 __*expression*__  
-Uma string ASCII ou um BLOB.
+Uma string ou um BLOB.
 
 > Se *expression* for uma string, os índices de caracteres se referem a caracteres UTF-8 reais. Se *expression* for um BLOB, os índices se referem a bytes.
 
@@ -45,7 +45,7 @@ Um inteiro que representa o primeiro caractere ou byte da subsequência da expre
 __*length*__  
 Um valor inteiro opcional que representa o comprimento da subsequência a ser retornada após o valor *start*.  Se *length* for omitido, a função retorna todos os caracteres até o final da string ou do BLOB especificado por *expression*.
 
-> Se *length* for negativo, a função usa o valor absoluto de *length*.
+> Se *length* for negativo, a função retorna os caracteres que precedem *start*, em quantidade igual ao valor absoluto de *length*: `SUBSTR('abcdef', 4, -2)` retorna `bc`.
 
 ## Valor(es) retornado(s) {#return-values}
 

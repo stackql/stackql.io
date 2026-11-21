@@ -76,9 +76,9 @@ Each query takes a detached snapshot of the alias's credentials.  Changing a bin
 `SET "$.auth.<provider>.<field>"` changes one field of a provider's authentication context for the session, where the field names are the keys of the provider's `--auth` entry:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 As with aliases, the change applies to queries started after the `SET`.  Queries against a provider whose authentication has been unset, or whose alias has no usable `auth`, fail before any request is sent.

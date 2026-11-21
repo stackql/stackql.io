@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## البدء السريع {#quick-start}
 
+يفترض هذا المثال أن الملف الثنائي مضمن كنسخة محلية: الدالة `StackqlMCPBinary()` تنشئها خطوة التنزيل في `go:generate` الموضحة ضمن [تضمين نسخة محلية / التضمين](#vendoring--embedding).
+
 ```go
 import (
     "context"

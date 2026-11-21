@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## Bắt đầu nhanh {#quick-start}
 
+Ví dụ này giả định tệp nhị phân đã được đưa vào theo kiểu vendoring: `StackqlMCPBinary()` do bước tải `go:generate` tạo ra, như mô tả trong phần [Vendoring / nhúng](#vendoring--embedding).
+
 ```go
 import (
     "context"

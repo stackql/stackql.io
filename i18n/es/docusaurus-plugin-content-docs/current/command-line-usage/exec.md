@@ -25,7 +25,7 @@ Comando que se usa para ejecutar una consulta de StackQL, ya sea como una instru
 
 | Argumento | Descripción | Ejemplo |
 |--|--|--|
-|`query`|Consulta de StackQL que se va a realizar<br/>o comando que se va a ejecutar | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Tenga en cuenta que la consulta debe ir entre comillas simples o dobles_ |    
+|`query`|Consulta de StackQL que se va a realizar<br/>o comando que se va a ejecutar | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Tenga en cuenta que la consulta debe ir entre comillas simples o dobles_ |    
 
 
 ### Opciones {#flags}

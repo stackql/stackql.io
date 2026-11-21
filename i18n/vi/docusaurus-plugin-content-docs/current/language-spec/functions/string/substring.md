@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Đối số {#arguments}
 
 __*expression*__  
-Một chuỗi ASCII hoặc một BLOB.
+Một chuỗi hoặc một BLOB.
 
 > Nếu *expression* là chuỗi, các chỉ số ký tự tham chiếu đến các ký tự UTF-8 thực tế. Nếu *expression* là BLOB, các chỉ số tham chiếu đến byte.
 
@@ -45,7 +45,7 @@ Một số nguyên biểu thị ký tự hoặc byte đầu tiên của dãy con
 __*length*__  
 Một giá trị số nguyên không bắt buộc, biểu thị độ dài của dãy con cần trả về tính từ giá trị *start*.  Nếu bỏ qua *length*, mọi ký tự cho đến cuối chuỗi hoặc BLOB do *expression* chỉ định đều được trả về.
 
-> Nếu *length* âm, giá trị tuyệt đối của *length* được sử dụng.
+> Nếu *length* âm, các ký tự đứng trước *start* được trả về, với số lượng bằng giá trị tuyệt đối của *length*: `SUBSTR('abcdef', 4, -2)` trả về `bc`.
 
 ## Giá trị trả về {#return-values}
 

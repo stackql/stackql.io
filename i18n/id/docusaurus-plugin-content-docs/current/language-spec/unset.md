@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 Satu pernyataan dapat menghapus variabel dan jalur konfigurasi sekaligus, dan target diproses secara berurutan.  Di sini, variabel biasa, variabel dengan nama bertitik, dan penggantian kredensial dihapus dalam satu daftar.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Menyatakan cakupan sesi secara eksplisit {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Menghapus penggantian kredensial {#clear-a-credential-override}
 
-Field yang sebelumnya ditetapkan dengan `SET "$.auth.github.credentialsenvvar"` dihapus dari konteks autentikasi sesi provider GitHub, dan field lain dalam konteks tersebut tidak berubah.  Nilai yang berlaku sebelum penggantian tidak dipulihkan, jadi tetapkan field tersebut lagi jika provider masih memerlukannya.
+Field yang sebelumnya ditetapkan dengan `SET "$.auth.github.password_var"` dihapus dari konteks autentikasi sesi provider GitHub, dan field lain dalam konteks tersebut tidak berubah.  Nilai yang berlaku sebelum penggantian tidak dipulihkan, jadi tetapkan field tersebut lagi jika provider masih memerlukannya.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Menghapus alias provider beserta rahasianya {#remove-a-provider-alias-and-its-secret}

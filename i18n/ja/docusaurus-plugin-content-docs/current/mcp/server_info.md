@@ -54,7 +54,7 @@ StackQL MCP サーバーの識別情報とランタイム（バージョン、�
 
 ## 例 {#example}
 
-StackQL MCP サーバーを登録した、エリシテーション（elicitation）に対応する任意の MCP クライアントで、次のプロンプトを試してください：
+StackQL MCP サーバーを登録した任意の MCP クライアントで、次のプロンプトを試してください：
 
 ```
 What StackQL server am I connected to?  

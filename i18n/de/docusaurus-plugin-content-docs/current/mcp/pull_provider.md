@@ -45,7 +45,7 @@ In jedem Servermodus erlaubt.  Keine cloudseitigen Auswirkungen; nur der lokale 
 
 ## Beispiel {#example}
 
-Probieren Sie diesen Prompt mit einem beliebigen Elicitation-fähigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
+Probieren Sie diesen Prompt mit einem beliebigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
 
 ```
 I want to start querying Google resources with StackQL.  

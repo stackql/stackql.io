@@ -54,7 +54,7 @@ Luôn được cho phép ở mọi chế độ máy chủ.  Không được ghi 
 
 ## Ví dụ {#example}
 
-Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào hỗ trợ elicitation và đã đăng ký máy chủ MCP StackQL:
+Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào đã đăng ký máy chủ MCP StackQL:
 
 ```
 What StackQL server am I connected to?  

@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 `SET "$.auth.<provider>.<field>"` 會在工作階段中變更 Provider 驗證內容的一個欄位，欄位名稱即 Provider 之 `--auth` 項目中的鍵：
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 與別名相同，變更會套用到 `SET` 之後才開始的查詢。若查詢的 Provider 驗證已被取消設定，或其別名沒有可用的 `auth`，查詢會在送出任何要求之前失敗。

@@ -48,7 +48,7 @@ Diizinkan di semua mode server.  Tidak ada panggilan API yang dilakukan.
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 Can you validate this query before I run it:

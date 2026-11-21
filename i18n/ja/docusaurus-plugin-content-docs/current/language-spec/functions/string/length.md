@@ -10,7 +10,7 @@ keywords:
 description: "StackQL の LENGTH 関数：文字列の文字数、または BLOB のバイト数。"
 image: "/img/stackql-featured-image.png"
 ---
-文字列の入力式に含まれる最初の `NULL` 文字より前の文字数、または BLOB 式のバイト数を返します。  
+文字列の入力式に含まれる最初の NUL 文字（`char(0)`）より前の文字数、または BLOB 式のバイト数を返します。  
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## 引数 {#arguments}
 
 __*expression*__  
-ASCII 文字列または BLOB です。
+文字列または BLOB です。
 
 > *expression* が `NULL` の場合は `NULL` を返します。
 

@@ -10,7 +10,7 @@ keywords:
 description: "StackQL의 LENGTH 함수: 문자열의 문자 수 또는 BLOB의 바이트 수."
 image: "/img/stackql-featured-image.png"
 ---
-문자열 입력 식에서 첫 번째 `NULL` 문자 앞까지의 문자 수 또는 BLOB 식의 바이트 수를 반환합니다.  
+문자열 입력 식에서 첫 번째 NUL 문자(`char(0)`) 앞까지의 문자 수 또는 BLOB 식의 바이트 수를 반환합니다.  
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## 인수 {#arguments}
 
 __*expression*__  
-ASCII 문자열 또는 BLOB입니다.
+문자열 또는 BLOB입니다.
 
 > *expression*이 `NULL`이면 `NULL`을 반환합니다.
 

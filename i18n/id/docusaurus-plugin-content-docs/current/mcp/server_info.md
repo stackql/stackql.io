@@ -54,7 +54,7 @@ Selalu diizinkan di semua mode server.  Tidak diaudit sebagai mutasi.
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 What StackQL server am I connected to?  

@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Arguments {#arguments}
 
 __*expression*__  
-Une chaîne de caractères ASCII ou un BLOB.
+Une chaîne de caractères ou un BLOB.
 
 > Si *expression* est une chaîne, les indices de caractères désignent de véritables caractères UTF-8. Si *expression* est un BLOB, les indices désignent des octets.
 
@@ -45,7 +45,7 @@ Un entier représentant le premier caractère ou octet de la sous-séquence de l
 __*length*__  
 Une valeur entière facultative représentant la longueur de la sous-séquence à renvoyer après la valeur *start*. Si *length* est omis, tous les caractères jusqu'à la fin de la chaîne ou du BLOB désigné par *expression* sont renvoyés.
 
-> Si *length* est négatif, la valeur absolue de *length* est utilisée.
+> Si *length* est négatif, les caractères qui précèdent *start* sont renvoyés, en nombre égal à la valeur absolue de *length* : `SUBSTR('abcdef', 4, -2)` renvoie `bc`.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 
