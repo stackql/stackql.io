@@ -102,7 +102,7 @@ Provider SDK [omnisdk](https://github.com/stackql-labs/omnisdk) 負責管理與�
 
 - **API 要求建置**：將 SQL 查詢轉換為各 Provider 適當的 REST API 呼叫，處理端點建構、參數對應和要求格式化。
 
-- **分頁**：自動處理分頁的 API 回應，將各 Provider 使用的不同分頁機制（以資料指標為基礎、以位移為基礎、以權杖為基礎等）的複雜性抽象化。
+- **分頁**：自動處理分頁的 API 回應，將各 Provider 使用的不同分頁機制（下一頁權杖、頁碼、下一頁連結、`Link` 標頭和 GraphQL 資料指標）的複雜性抽象化。
 
 - **述詞下推**：將對應到要求參數的條件，以及不需要排序時的 `LIMIT`，下推到 Provider 要求中，以減少發出的要求數量和傳輸的資料量。
 

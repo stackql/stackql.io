@@ -4,24 +4,24 @@
     "ar": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-20"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-20"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-20"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -36,8 +36,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-20"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -52,8 +52,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-20"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -72,24 +72,24 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-20"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-20"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -136,8 +136,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -152,8 +152,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -200,8 +200,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-20"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -228,28 +228,28 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-20"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-20"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-20"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -324,8 +324,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-20"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -368,8 +368,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-20"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -464,8 +464,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-20"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -516,8 +516,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-20"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -536,8 +536,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-20"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -616,8 +616,8 @@
           "at": "2026-11-20"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-20"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -636,12 +636,12 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-20"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -656,32 +656,32 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-20"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "de": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -696,8 +696,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -712,8 +712,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -732,24 +732,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -796,8 +796,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -812,8 +812,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -860,8 +860,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -888,28 +888,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -984,8 +984,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -1028,8 +1028,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -1124,8 +1124,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -1176,8 +1176,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -1196,8 +1196,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -1276,8 +1276,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -1296,12 +1296,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -1316,32 +1316,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "es": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -1356,8 +1356,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -1372,8 +1372,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -1392,24 +1392,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -1456,8 +1456,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -1472,8 +1472,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -1520,8 +1520,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -1548,28 +1548,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -1644,8 +1644,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -1688,8 +1688,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -1784,8 +1784,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -1836,8 +1836,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -1856,8 +1856,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -1936,8 +1936,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -1956,12 +1956,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -1976,32 +1976,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "fr": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -2016,8 +2016,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -2032,8 +2032,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -2052,24 +2052,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -2116,8 +2116,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -2132,8 +2132,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -2180,8 +2180,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -2208,28 +2208,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -2304,8 +2304,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -2348,8 +2348,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -2444,8 +2444,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -2496,8 +2496,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -2516,8 +2516,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -2596,8 +2596,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -2616,12 +2616,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -2636,32 +2636,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "id": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-16"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-16"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-16"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -2676,8 +2676,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-16"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -2692,8 +2692,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -2712,24 +2712,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-16"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -2776,8 +2776,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -2792,8 +2792,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -2840,8 +2840,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -2868,28 +2868,28 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-16"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-16"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -2964,8 +2964,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-16"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -3008,8 +3008,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-16"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -3104,8 +3104,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-16"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -3156,8 +3156,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -3176,8 +3176,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -3256,8 +3256,8 @@
           "at": "2026-11-16"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-16"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -3276,12 +3276,12 @@
           "at": "2026-11-16"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-16"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -3296,32 +3296,32 @@
           "at": "2026-11-16"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "ja": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -3336,8 +3336,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -3352,8 +3352,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -3372,24 +3372,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -3436,8 +3436,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -3452,8 +3452,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -3500,8 +3500,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -3528,28 +3528,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -3624,8 +3624,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -3668,8 +3668,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -3764,8 +3764,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -3816,8 +3816,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -3836,8 +3836,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -3916,8 +3916,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -3936,12 +3936,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -3956,32 +3956,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "ko": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -3996,8 +3996,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -4012,8 +4012,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -4032,24 +4032,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -4096,8 +4096,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -4112,8 +4112,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -4160,8 +4160,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -4188,28 +4188,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -4284,8 +4284,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -4328,8 +4328,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -4424,8 +4424,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -4476,8 +4476,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -4496,8 +4496,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -4576,8 +4576,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -4596,12 +4596,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -4616,32 +4616,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "pt-BR": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -4656,8 +4656,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -4672,8 +4672,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -4692,24 +4692,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -4756,8 +4756,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -4772,8 +4772,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -4820,8 +4820,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -4848,28 +4848,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -4944,8 +4944,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -4988,8 +4988,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -5084,8 +5084,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -5136,8 +5136,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -5156,8 +5156,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -5236,8 +5236,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -5256,12 +5256,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -5276,32 +5276,32 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
     "vi": {
       "files": {
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-20"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-20"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-20"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -5316,8 +5316,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-20"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -5332,8 +5332,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-20"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -5352,24 +5352,24 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-20"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-20"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -5416,8 +5416,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -5432,8 +5432,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -5480,8 +5480,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-20"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -5508,28 +5508,28 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-20"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-20"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-20"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -5604,8 +5604,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-20"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -5648,8 +5648,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-20"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -5744,8 +5744,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-20"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -5796,8 +5796,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-20"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -5816,8 +5816,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-20"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -5896,8 +5896,8 @@
           "at": "2026-11-20"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-20"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -5916,12 +5916,12 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-20"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -5936,8 +5936,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-20"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
@@ -5952,8 +5952,8 @@
           "at": "2026-11-15"
         },
         "ai-content/architecture/stackql-mcp-architecture.md": {
-          "blob": "374b3bf79061d3aa9b1081c347f9d5148bf720aa",
-          "at": "2026-11-16"
+          "blob": "c7b3df8eb60bb708c8435256355d7dcce7182b52",
+          "at": "2026-11-21"
         },
         "ai-content/canonical-definitions/control-plane-vs-data-plane.md": {
           "blob": "34fcfe258d6c04ce9d40d3f3e1859a9b5a9af624",
@@ -5992,12 +5992,12 @@
           "at": "2026-11-15"
         },
         "ai-content/comparisons/stackql-vs-custom-mcp-servers.md": {
-          "blob": "774fe0d6984ceb2345869dec6966057e36990f44",
-          "at": "2026-11-15"
+          "blob": "5b21ed71d168f48c17e36fa200adb37997f6a845",
+          "at": "2026-11-21"
         },
         "ai-content/comparisons/stackql-vs-steampipe.md": {
-          "blob": "74a121f78b94fbe675097d8806c1eb8a43efeb03",
-          "at": "2026-11-15"
+          "blob": "04183846796e8d9effe3cd373344ec5066095703",
+          "at": "2026-11-21"
         },
         "ai-content/comparisons/stackql-vs-terraform.md": {
           "blob": "8c09f0a435148e5a971fc25dabff43cb95cc6fd3",
@@ -6068,8 +6068,8 @@
           "at": "2026-11-15"
         },
         "ai-content/how-tos/query-aws-ec2-instances-with-stackql.md": {
-          "blob": "ec90200fbad74bf82616fbb5e4bf0ccfc51b5eb6",
-          "at": "2026-11-15"
+          "blob": "2f706bcee797853d54e187f244fcb7e89497e065",
+          "at": "2026-11-21"
         },
         "ai-content/how-tos/query-github-repositories-with-stackql.md": {
           "blob": "c94138abd314e241b8dc99c0030e1d08eafd1289",
@@ -6104,40 +6104,40 @@
           "at": "2026-11-15"
         },
         "ai-content/troubleshooting/common-stackql-errors.md": {
-          "blob": "ac4898a910e1c0ad5c547486a525addbc1995562",
-          "at": "2026-11-15"
+          "blob": "863d9fd64b091ec7765b2686c94e3836b318f4cf",
+          "at": "2026-11-21"
         },
         "ai-content/troubleshooting/index.md": {
           "blob": "2df1e79fe5a7c450810b3738867660b98e7ec688",
           "at": "2026-11-15"
         },
         "ai-content/tutorials/getting-started-with-stackql.md": {
-          "blob": "8423db5f9c4e886008a37c2f587139ed5482ae56",
-          "at": "2026-11-15"
+          "blob": "eebb503fa7513135463e82e21b85050cf57e6c07",
+          "at": "2026-11-21"
         },
         "ai-content/tutorials/index.md": {
           "blob": "d1338069543f7562ad7ae95f6ee44568c0fc122f",
           "at": "2026-11-15"
         },
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-15"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-15"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-15"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -6152,8 +6152,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-15"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -6168,8 +6168,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-16"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -6188,24 +6188,24 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-16"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-16"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -6252,8 +6252,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -6268,8 +6268,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -6316,8 +6316,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-16"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -6344,28 +6344,28 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-15"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-16"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-15"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -6440,8 +6440,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-15"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -6484,8 +6484,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-15"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -6580,8 +6580,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-15"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -6632,8 +6632,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-16"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -6652,8 +6652,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-16"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -6732,8 +6732,8 @@
           "at": "2026-11-15"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-15"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -6752,12 +6752,12 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-15"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -6772,8 +6772,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-16"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     },
@@ -6788,8 +6788,8 @@
           "at": "2026-11-20"
         },
         "ai-content/architecture/stackql-mcp-architecture.md": {
-          "blob": "374b3bf79061d3aa9b1081c347f9d5148bf720aa",
-          "at": "2026-11-20"
+          "blob": "c7b3df8eb60bb708c8435256355d7dcce7182b52",
+          "at": "2026-11-21"
         },
         "ai-content/canonical-definitions/control-plane-vs-data-plane.md": {
           "blob": "34fcfe258d6c04ce9d40d3f3e1859a9b5a9af624",
@@ -6828,12 +6828,12 @@
           "at": "2026-11-20"
         },
         "ai-content/comparisons/stackql-vs-custom-mcp-servers.md": {
-          "blob": "774fe0d6984ceb2345869dec6966057e36990f44",
-          "at": "2026-11-20"
+          "blob": "5b21ed71d168f48c17e36fa200adb37997f6a845",
+          "at": "2026-11-21"
         },
         "ai-content/comparisons/stackql-vs-steampipe.md": {
-          "blob": "74a121f78b94fbe675097d8806c1eb8a43efeb03",
-          "at": "2026-11-20"
+          "blob": "04183846796e8d9effe3cd373344ec5066095703",
+          "at": "2026-11-21"
         },
         "ai-content/comparisons/stackql-vs-terraform.md": {
           "blob": "8c09f0a435148e5a971fc25dabff43cb95cc6fd3",
@@ -6904,8 +6904,8 @@
           "at": "2026-11-20"
         },
         "ai-content/how-tos/query-aws-ec2-instances-with-stackql.md": {
-          "blob": "ec90200fbad74bf82616fbb5e4bf0ccfc51b5eb6",
-          "at": "2026-11-20"
+          "blob": "2f706bcee797853d54e187f244fcb7e89497e065",
+          "at": "2026-11-21"
         },
         "ai-content/how-tos/query-github-repositories-with-stackql.md": {
           "blob": "c94138abd314e241b8dc99c0030e1d08eafd1289",
@@ -6940,40 +6940,40 @@
           "at": "2026-11-20"
         },
         "ai-content/troubleshooting/common-stackql-errors.md": {
-          "blob": "ac4898a910e1c0ad5c547486a525addbc1995562",
-          "at": "2026-11-20"
+          "blob": "863d9fd64b091ec7765b2686c94e3836b318f4cf",
+          "at": "2026-11-21"
         },
         "ai-content/troubleshooting/index.md": {
           "blob": "2df1e79fe5a7c450810b3738867660b98e7ec688",
           "at": "2026-11-20"
         },
         "ai-content/tutorials/getting-started-with-stackql.md": {
-          "blob": "8423db5f9c4e886008a37c2f587139ed5482ae56",
-          "at": "2026-11-20"
+          "blob": "eebb503fa7513135463e82e21b85050cf57e6c07",
+          "at": "2026-11-21"
         },
         "ai-content/tutorials/index.md": {
           "blob": "d1338069543f7562ad7ae95f6ee44568c0fc122f",
           "at": "2026-11-20"
         },
         "docs/ai-agents.md": {
-          "blob": "a99af86ba7250b4ee22f94982f669a9d0ff353d0",
-          "at": "2026-11-20"
+          "blob": "2c3cd5aaeff4e4ed36fb280a7a8136bbf2f8eeb7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/access-management.md": {
-          "blob": "b88c8ccbaeadab039e573e731ed56409134c2b6c",
-          "at": "2026-11-20"
+          "blob": "77fb52a39dee00e252fb9192dbfdb4e29b236b62",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/exec.md": {
-          "blob": "f90fb9cff44e0224f610b6eccb067708be0aac0f",
-          "at": "2026-11-20"
+          "blob": "c404f832f7927efbd7130f1b79602939efdf39b7",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
           "blob": "0070bfc05bb8a33960287c3fb6cee4f5cf4fb190",
           "at": "2026-11-20"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "2f342d236303726d59a753be452f63d2b730b873",
-          "at": "2026-11-20"
+          "blob": "cc298657f33d067420be1248cad150ac56400e41",
+          "at": "2026-11-21"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -6988,8 +6988,8 @@
           "at": "2026-11-20"
         },
         "docs/developers/architecture.md": {
-          "blob": "61d15481bd78b6f1211103797b94fedbe70d1ef9",
-          "at": "2026-11-20"
+          "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
+          "at": "2026-11-21"
         },
         "docs/developers/developing-stackql-providers.md": {
           "blob": "416fcb60d0810f51689db00fd4a90c803d32e46e",
@@ -7004,8 +7004,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/output-modes.md": {
-          "blob": "f2e8ea45ce5ba9c72d964957710a9937cdfa343e",
-          "at": "2026-11-20"
+          "blob": "18b6670181e8170e4256e4afb4a541cfb1a2330a",
+          "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
           "blob": "a398b8ce3e69b2c9795b4b9867369bc901a8fdcb",
@@ -7024,24 +7024,24 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/using-a-provider.md": {
-          "blob": "958255298af096e1c0c4998d02d5f70b3789782d",
-          "at": "2026-11-20"
+          "blob": "02002a96dd67365a733032f1273d49fa5355e348",
+          "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
           "blob": "fe57d9911d0ecd9bddd5cc51b5a6408eda8075d6",
           "at": "2026-11-20"
         },
         "docs/getting-started/variables.md": {
-          "blob": "47472c01017e17b337625fc722133b1d9dc44a33",
-          "at": "2026-11-20"
+          "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
+          "at": "2026-11-21"
         },
         "docs/index.md": {
           "blob": "c8b37863bd3c25dfb4bb8147130156698a3bdead",
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "d78348d3d202619408949cf21592a188a02fdf65",
-          "at": "2026-11-20"
+          "blob": "d75ab15979f355a3a151a102a7950f2683b535af",
+          "at": "2026-11-21"
         },
         "docs/language-spec/createview.md": {
           "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
@@ -7088,8 +7088,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/aggregate/sum.md": {
-          "blob": "75cc72d67f1dd304b954af36538f1d78a292f1a0",
-          "at": "2026-11-20"
+          "blob": "7279b74ce7a1c2b75db6e9a3a0b9afba60f9d0fa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/aggregate/total.md": {
           "blob": "0b3d054d931ad33ef5128c4ee621286a09a216a1",
@@ -7104,8 +7104,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "0f3b42da503318bb24b3008f46cce790dc7db71d",
-          "at": "2026-11-20"
+          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -7152,8 +7152,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_each.md": {
-          "blob": "41c97524de8df4d2782c7e33969df9619727f920",
-          "at": "2026-11-20"
+          "blob": "2d0b6100d6b608786c7b71cb1eb8b307776d025f",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_equal.md": {
           "blob": "ee29d65f27b443e4e68d172918fea3a093ed2ee8",
@@ -7180,28 +7180,28 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "6fce8ad72bd842f124cb922a41ff38e5a2901271",
-          "at": "2026-11-20"
+          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_replace.md": {
-          "blob": "3b5113f1dc5476304cc5a538dbd1ed1bc1a9caef",
-          "at": "2026-11-20"
+          "blob": "7422444f34956b781d387923b1257e3a222d83fd",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_set.md": {
           "blob": "405b2dde17abb1d0f0a00842a6326a81a81d7d3f",
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_type.md": {
-          "blob": "51a61aa831370f6b7527f63db0ee6ee49eca0a7f",
-          "at": "2026-11-20"
+          "blob": "a07e8efa32b9fe892c94f68e06971950a5ea8eaa",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/abs.md": {
-          "blob": "61f1222fc4f0241d49812eb029c070615ab4640e",
-          "at": "2026-11-20"
+          "blob": "fc4ab7cfbbfc867711ec202175560fcb9c1975de",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/ceil.md": {
           "blob": "14aecb1ebdebc7d6096a4ee9ebc681f83255f0e9",
@@ -7276,8 +7276,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/math/trigonometric/cos.md": {
-          "blob": "c1992e48985ff297215858ffcbdc01ae9c91d011",
-          "at": "2026-11-20"
+          "blob": "faa7f5ebb50885785e50441f3dedebdb3e5a1a20",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/math/trigonometric/cosh.md": {
           "blob": "caecf7f0174720b946091c130a8f1e15c366fbde",
@@ -7320,8 +7320,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/regexp.md": {
-          "blob": "95bcf7780e4dfaf167ef20047d902bf2974120fb",
-          "at": "2026-11-20"
+          "blob": "a9f8d713bf62d2becf03724634bba82427f49579",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/regexp_like.md": {
           "blob": "482d0f613edfdeb0c0c71455a58581d1efca4f79",
@@ -7416,8 +7416,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/nth_value.md": {
-          "blob": "a24298db30fadc29e35ea974413b920358bfa6aa",
-          "at": "2026-11-20"
+          "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
+          "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/ntile.md": {
           "blob": "c141da0dfc87d68dd3881d08d6dae711a5bc7ef5",
@@ -7468,8 +7468,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/show.md": {
-          "blob": "49957c9852bdb711bcfb80d34dbcda1824edc4dd",
-          "at": "2026-11-20"
+          "blob": "c83f3294042cedb4e82a47ba6848b67fe525af82",
+          "at": "2026-11-21"
         },
         "docs/language-spec/unset.md": {
           "blob": "0bd5c6ccc9a7af32aa74991538ebc9b984306d13",
@@ -7488,8 +7488,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/with.md": {
-          "blob": "21d038f303dbd196606d606e0b6cbdb35b36be1f",
-          "at": "2026-11-20"
+          "blob": "7c65013c2512a8562db4c05e80d897103341d05b",
+          "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
           "blob": "6a21499a5b5f62261709c9ecc3f74742eadd2553",
@@ -7568,8 +7568,8 @@
           "at": "2026-11-20"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "e303667f3d2a9ecdf4e35e8fe8c746d005a584ef",
-          "at": "2026-11-20"
+          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "at": "2026-11-21"
         },
         "docs/mcp/run_select_query.md": {
           "blob": "9355d9837ba97d1dc645b8142978b4e8e9e10463",
@@ -7588,12 +7588,12 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "21b8661be4a0d4aa0461c2ef3cb8f28a81f747f2",
-          "at": "2026-11-20"
+          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
-          "blob": "5e3749736e8821ceebc60e42bb1beefc2ace8252",
-          "at": "2026-11-20"
+          "blob": "6b357378d5a642de4309d83e968b56bf7b31e085",
+          "at": "2026-11-21"
         },
         "docs/quick-starts/aws/cross-region-queries.md": {
           "blob": "8157c466e70c73c2f591100a8fcef14702bbc73f",
@@ -7608,8 +7608,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "7275b662d38bd2a8344a8346700ef24bcc919bcd",
-          "at": "2026-11-20"
+          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "at": "2026-11-21"
         }
       }
     }

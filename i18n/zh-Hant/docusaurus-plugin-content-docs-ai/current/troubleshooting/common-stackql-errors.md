@@ -44,7 +44,7 @@ REGISTRY PULL aws;       -- install (repeat per provider)
 SHOW METHODS IN aws.ec2.instances;
 ```
 
-`RequiredParams` 資料行會依存取方法告訴您 `WHERE` 子句確切必須包含哪些內容；以 `aws.ec2.instances` 為例，`describe` 方法需要 `region`。無論是人類或代理程式，這個探索步驟都是文件記載的做法（MCP 伺服器透過 `list_methods` 發佈相同的資料）。
+`RequiredParams` 資料行會依存取方法告訴您 `WHERE` 子句確切必須包含哪些內容；以 `aws.ec2.instances` 為例，`describe_instances` 方法需要 `region`。無論是人類或代理程式，這個探索步驟都是文件記載的做法（MCP 伺服器透過 `list_methods` 發佈相同的資料）。
 
 ## 驗證失敗 {#authentication-failures}
 

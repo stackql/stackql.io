@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "DATETIME function in StackQL: compute a datetime value from an input and one or more modifiers, returned as YYYY-MM-DD HH:MM:SS."
+description: "DATETIME function in StackQL: compute a datetime value from an input and zero or more modifiers, returned as YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-Returns a calculated datetime value from an input datetime and one or more modifiers.  
+Returns a calculated datetime value from an input datetime and zero or more modifiers.  
 
 See also:  
 [[` SELECT `]](/language-spec/select) [[ Date Modifiers ]](/language-spec/functions/datetime/date_modifiers) 

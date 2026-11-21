@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaire cloud
-description: "WITH dans StackQL : définir des expressions de table communes (CTE), jeux de résultats nommés temporaires limités à une seule instruction SELECT, INSERT, UPDATE ou DELETE."
+description: "WITH dans StackQL : définir des expressions de table communes (CTE), jeux de résultats nommés temporaires limités à l'instruction SELECT qui les suit."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-Définit une expression de table commune (CTE) à utiliser dans une instruction `SELECT`, `INSERT`, `UPDATE` ou `DELETE` qui suit. Les CTE se comportent comme des jeux de résultats nommés temporaires qui n'existent que pendant la durée de la requête.
+Définit une expression de table commune (CTE) à utiliser dans l'instruction `SELECT` qui la suit. Les CTE se comportent comme des jeux de résultats nommés temporaires qui n'existent que pendant la durée de la requête.
 
 Voir aussi :
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

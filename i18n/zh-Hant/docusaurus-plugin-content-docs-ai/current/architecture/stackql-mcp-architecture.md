@@ -29,11 +29,12 @@ StackQL 的 MCP 伺服器內建於引擎二進位檔中，將 StackQL 的功能�
 
 ## 工具介面 {#the-tool-surface}
 
-共有十四個工具，每個工具都會傳回供 LLM 使用的轉譯文字檢視，以及具型別的結構化承載：
+共有十五個工具，每個工具都會傳回供 LLM 使用的轉譯文字檢視，以及具型別的結構化承載：
 
 - **探索**：`list_providers`、`list_services`、`list_resources`、`list_methods`、`describe_method`，逐層走訪階層，在撰寫任何查詢之前就揭示必要的 `WHERE` 參數。
 - **登錄庫**：`list_registry`（可用的 Provider 與版本）、`pull_provider`（安裝到本機快取）。
 - **驗證**：`validate_select_query`，剖析並規劃 `SELECT` 而不執行。
+- **Query Library**：`query_library_search`（依意圖、Provider、服務與標籤尋找精選的查詢範本）、`query_library_get`（驗證參數並傳回轉譯後的 SQL，但不執行）。
 - **執行**：`run_select_query`（讀取）、`run_mutation_query`（`INSERT`/`UPDATE`/`REPLACE`/`DELETE`，會產生實際的副作用）、`run_lifecycle_operation`（`EXEC`）。
 - **身分**：`server_info`，提供版本、後端、登錄庫、模式；在需要時呼叫（用於診斷遭拒絕或受管控的作業，或檢查特定版本的行為），而不是在工作階段開始時呼叫。
 - **憑證**：`reload_credentials`，在工作階段進行中將 `--env.file` dotenv 檔案重新載入處理程序環境，並回報各 Provider 的憑證解析狀態；只包含名稱與狀態，絕不包含祕密值（於 v0.10.542 之後的發行版本提供）。

@@ -32,7 +32,7 @@ Nếu bạn sử dụng StackQL với backend SQL `postgres`, hãy dùng hàm `j
 ## Cú pháp {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 Một mảng hoặc đối tượng JSON.
 
 __*json_path*__  
-Đường dẫn JSON đến một mảng hoặc đối tượng nằm trong *json_array_or_object*.  Xem [jsonpath.com](https://jsonpath.com/).
+Không bắt buộc. Đường dẫn JSON đến một mảng hoặc đối tượng nằm trong *json_array_or_object*.  Xem [jsonpath.com](https://jsonpath.com/).
 
 > Nếu *json_path* không tồn tại trong *json_array_or_object*, hàm trả về `NULL`.
 

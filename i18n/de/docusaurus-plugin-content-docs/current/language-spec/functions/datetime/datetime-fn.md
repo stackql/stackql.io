@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - Cloud-Inventar
-description: "Funktion DATETIME in StackQL: berechnet einen Datetime-Wert aus einer Eingabe und einem oder mehreren Modifikatoren, zurückgegeben als YYYY-MM-DD HH:MM:SS."
+description: "Funktion DATETIME in StackQL: berechnet einen Datetime-Wert aus einer Eingabe und null oder mehr Modifikatoren, zurückgegeben als YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-Gibt einen berechneten Datetime-Wert aus einem Eingabe-Datetime-Wert und einem oder mehreren Modifikatoren zurück.  
+Gibt einen berechneten Datetime-Wert aus einem Eingabe-Datetime-Wert und null oder mehr Modifikatoren zurück.  
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) [[ Datumsmodifikatoren ]](/language-spec/functions/datetime/date_modifiers) 

@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Lihat juga:  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-Kueri StackQL dapat dijalankan terhadap sejumlah penyedia cloud yang berbeda, termasuk Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean, dan lainnya. Spesifikasi provider StackQL diunduh dari [__StackQL Provider Registry__](/providers); hal ini dapat dilakukan menggunakan perintah StackQL [__`REGISTRY PULL`__](/language-spec/registry), atau menggunakan utilitas baris perintah [__`stackql registry`__](/command-line-usage/registry).
+Kueri StackQL dapat dijalankan terhadap sejumlah penyedia cloud yang berbeda, termasuk Google Cloud Platform, Amazon Web Services, Microsoft Azure, DigitalOcean, dan lainnya. Spesifikasi provider StackQL diunduh dari [__StackQL Provider Registry__](/providers); hal ini dapat dilakukan menggunakan perintah StackQL [__`REGISTRY PULL`__](/language-spec/registry), atau menggunakan utilitas baris perintah [__`stackql registry`__](/command-line-usage/registry).
 
 
 ## Menginstal provider {#installing-a-provider}

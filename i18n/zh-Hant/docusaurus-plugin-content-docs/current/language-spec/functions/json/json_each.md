@@ -33,7 +33,7 @@ image: "/img/stackql-featured-image.png"
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## 引數 {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 JSON 陣列或物件。
 
 __*json_path*__  
-指向 *json_array_or_object* 內所含之陣列或物件的 JSON 路徑。請參閱 [jsonpath.com](https://jsonpath.com/)。
+選用。指向 *json_array_or_object* 內所含之陣列或物件的 JSON 路徑。請參閱 [jsonpath.com](https://jsonpath.com/)。
 
 > 如果 *json_array_or_object* 中不存在 *json_path*，函式不會傳回任何資料列。
 

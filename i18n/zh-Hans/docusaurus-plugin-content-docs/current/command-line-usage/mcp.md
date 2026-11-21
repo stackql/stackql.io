@@ -539,6 +539,7 @@ stackql mcp \
 |--|--|
 |`--mcp.server.type`|MCP 服务器类型：`http`、`stdio` 或 `reverse_proxy`（后者与 `stackql srv` 搭配使用）。|
 |`--mcp.config`|MCP 服务器的 JSON 配置对象。也接受 YAML。|
+|`--mcp.log.format`|审计日志编码：`jsonl`（默认）或 `otel`（OpenTelemetry OTLP/JSON 日志记录）。覆盖 `server.audit.format`。参阅[日志格式](#log-format)。|
 |`--mcp.protocol.version`|通告的最新协议修订版：`auto`（默认）、`2026-07-28` 或较旧的修订版，例如 `2025-11-25`。参阅[固定修订版](#pinning-the-revision)。|
 |`--env.file`|dotenv 风格的凭据文件，在启动时加载，并由 `reload_credentials` 工具按需重新加载。参阅[凭据（重新）加载](#credential-resourcing---envfile--reload_credentials)。|
 |`--pgsrv.port`|PostgreSQL 线协议服务器的 TCP 端口（与 `stackql srv` 搭配使用）。|
@@ -743,8 +744,9 @@ python cicd/python/build.py --build-mcp-client
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

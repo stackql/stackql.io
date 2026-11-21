@@ -7,9 +7,9 @@ faq:
   - question: 為什麼查詢 EC2 執行個體時必須提供區域？
     answer: EC2 DescribeInstances API 是區域性的，因此 region 是底層呼叫的必要參數。StackQL 會將必要的 API 參數呈現為必要的 WHERE 子句述詞。以 region IN (...) 提供多個區域時，會扇出為各區域平行的 API 呼叫，並彙總為單一結果集。
   - question: aws.ec2.instances 有哪些可用的資料行？
-    answer: 資料行包括 instance_id、instance_type、image_id、launch_time、availability_zone、private_ip_address、public_ip_address、private_dns_name、public_dns_name、subnet_id、vpc_id、key_name，以及 state、security_groups、network_interfaces 與 tag_set 等結構化資料行。執行 DESCRIBE aws.ec2.instances 可查看完整清單。
+    answer: 資料行包括 instance_id、instance_type、image_id、launch_time、private_ip_address、public_ip_address、private_dns_name、public_dns_name、subnet_id、vpc_id、key_name，以及 state、placement、security_groups、network_interfaces 與 tags 等結構化資料行。執行 DESCRIBE aws.ec2.instances 可查看完整清單。
   - question: 可以使用 StackQL 停止、啟動或終止執行個體嗎？
-    answer: 可以。終止對應到 DELETE，而生命週期動作（start、stop、reboot、monitor）則是同一資源上的 EXEC 方法。SHOW METHODS IN aws.ec2.instances 會列出每項作業、其 SQL 動詞及必要參數。
+    answer: 可以。終止對應到 DELETE，而生命週期動作（start_instances、stop_instances、reboot_instances、monitor_instances）則是同一資源上的 EXEC 方法。SHOW METHODS IN aws.ec2.instances 會列出每項作業、其 SQL 動詞及必要參數。
 ---
 
 # 如何使用 StackQL 查詢 AWS EC2 執行個體
@@ -45,7 +45,7 @@ DESCRIBE aws.ec2.instances;
 SHOW METHODS IN aws.ec2.instances;
 ```
 
-`DESCRIBE` 會列出可用的資料行。`SHOW METHODS` 會列出各項作業（`describe` SELECT 方法、`terminate` DELETE 方法，以及 `start`、`stop`、`reboot` 等 EXEC 生命週期方法）及每項作業的必要參數。這些命令無需憑證即可運作。
+`DESCRIBE` 會列出可用的資料行。`SHOW METHODS` 會列出各項作業（`describe_instances` SELECT 方法、`terminate_instances` DELETE 方法，以及 `start_instances`、`stop_instances`、`reboot_instances` 等 EXEC 生命週期方法）及每項作業的必要參數。這些命令無需憑證即可運作。
 
 ## 多區域彙總 {#multi-region-aggregation}
 
@@ -71,7 +71,7 @@ WHERE region = 'us-east-1'
 AND public_ip_address IS NOT NULL;
 ```
 
-`state` 和 `tag_set` 等結構化資料行會傳回 JSON，可使用所設定 SQL 後端的 JSON 函式加以拆解。
+`state` 和 `tags` 等結構化資料行會傳回 JSON，可使用所設定 SQL 後端的 JSON 函式加以拆解。
 
 ## 相關概念 {#related-concepts}
 

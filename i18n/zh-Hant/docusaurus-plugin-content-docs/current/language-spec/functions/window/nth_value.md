@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 傳回運算式針對視窗框架中第 N 個資料列求值的結果。
 
-此內建視窗函式以與彙總視窗函式相同的方式，為每個資料列計算視窗框架。它會傳回運算式針對視窗框架第 N 個資料列求值的結果。視窗框架內的資料列從 1 開始編號，若有 `ORDER BY` 子句則依其定義的順序，否則依任意順序。如果分割區中沒有第 N 個資料列，則傳回 `NULL`。
+此內建視窗函式以與彙總視窗函式相同的方式，為每個資料列計算視窗框架。它會傳回運算式針對視窗框架第 N 個資料列求值的結果。視窗框架內的資料列從 1 開始編號，若有 `ORDER BY` 子句則依其定義的順序，否則依任意順序。如果視窗框架中沒有第 N 個資料列，則傳回 `NULL`。
 
 另請參閱：
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

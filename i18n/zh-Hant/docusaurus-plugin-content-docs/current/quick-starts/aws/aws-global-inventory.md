@@ -44,7 +44,7 @@ GROUP BY region;
 ## 必要條件 {#prerequisites}
 
 - [`pystackql`](https://pystackql.readthedocs.io/en/latest/pystackql.html)，可使用 `pip install pystackql` 安裝
-- 已附加 `ReadOnlyAccess` 政策或更高權限的 AWS 使用者或角色（可使用 `sts assume-role` 擔任角色）
+- 已附加 `ReadOnlyAccess` 政策或更高權限的 AWS 使用者或角色（可使用 `aws sts assume-role` 擔任角色）
 - 已設定 `AWS_ACCESS_KEY_ID` 與 `AWS_SECRET_ACCESS_KEY` 環境變數（可使用 [AWS CloudShell](/blog/tutorials/using-stackql-in-native-cloud-shells-in-aws-azure-and-gcp#using-stackql-in-the-aws-cloud-shell) 自動完成）
 
 ## 程式碼 {#the-code}
@@ -187,7 +187,7 @@ resource_filters = {
         "deployment_configs": " AND SPLIT_PART(deployment_config_name, '.', 1) <> 'CodeDeployDefault'",
     },
     "ec2": {
-        "snapshots": " AND ownerAlias <> 'amazon'",
+        "snapshots": " AND owner_alias <> 'amazon'",
     },
     "elasticache": {
         "users": " AND user_id <> 'default'",
@@ -197,7 +197,7 @@ resource_filters = {
     },
     "iam": {
         "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
-        "policies": " AND SPLIT_PART(Arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
+        "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {
         "aliases": " AND SPLIT_PART(alias_name, '/', 2) <> 'aws'",

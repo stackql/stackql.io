@@ -32,7 +32,7 @@ __*pattern_expression*__
 用于与源字符串进行匹配的正则表达式模式。
 
 ## 返回值 {#return-values}
-返回布尔值：如果源字符串与正则表达式模式匹配，则为 `TRUE`，否则为 `FALSE`。
+如果源字符串与正则表达式模式匹配，则返回 `1`，否则返回 `0`。
 
 * * *
 
@@ -46,7 +46,7 @@ __*pattern_expression*__
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-此查询将返回 `TRUE`，因为该字符串包含子字符串 '2021'，它与表示一个或多个数字的模式 `[0-9]+` 匹配。
+此查询将返回 `1`，因为该字符串包含子字符串 '2021'，它与表示一个或多个数字的模式 `[0-9]+` 匹配。
 
 ### 验证电子邮件格式 {#validate-email-format}
 
@@ -56,4 +56,4 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-此查询返回 `TRUE`，表明 'user@example.com' 的格式符合典型的电子邮件地址，与指定的正则表达式模式匹配。
+此查询返回 `1`，表明 'user@example.com' 的格式符合典型的电子邮件地址，与指定的正则表达式模式匹配。

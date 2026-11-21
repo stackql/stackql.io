@@ -32,7 +32,7 @@ Wenn Sie StackQL mit einem `postgres`-SQL-Backend verwenden, nutzen Sie stattdes
 ## Syntax {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 Ein JSON-Array oder -Objekt.
 
 __*json_path*__  
-Der JSON-Pfad zu einem Array oder Objekt innerhalb von *json_array_or_object*.  Siehe [jsonpath.com](https://jsonpath.com/).
+Optional. Der JSON-Pfad zu einem Array oder Objekt innerhalb von *json_array_or_object*.  Siehe [jsonpath.com](https://jsonpath.com/).
 
 > Wenn *json_path* in *json_array_or_object* nicht vorhanden ist, gibt die Funktion `NULL` zurück.
 

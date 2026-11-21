@@ -39,7 +39,7 @@ File konfigurasi memilih satu nilai `type`: `jwt` (default jika tidak ditentukan
 
 ### JWT {#jwt}
 
-Pemanggil memberikan token yang ditandatangani, yang diverifikasi secara offline terhadap kunci yang dikunci di konfigurasi.  Konfigurasi minimal menyebutkan penerbit dan audiens yang harus dimuat token, mencantumkan satu kunci publik, dan memberikan akses baca kepada grup `readers`:
+Pemanggil memberikan token yang ditandatangani, yang diverifikasi secara offline terhadap kunci yang dikunci di konfigurasi.  Konfigurasi minimal menyebutkan penerbit dan audiens yang harus dimuat token, mencantumkan satu kunci publik, dan mengizinkan anggota grup `analysts` menjalankan pernyataan baca (anggota grup `readers` dapat melakukannya tanpa aturan, lihat [Aturan kebijakan](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ Pemanggil memberikan token yang ditandatangani, yang diverifikasi secara offline
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ Pemanggil memberikan token opak, dan konfigurasi mencantumkan hash SHA-256 dari 
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ Pemanggil diidentifikasi melalui sertifikat klien yang diberikannya pada transpo
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ Tidak ada kredensial yang dipertukarkan: subjeknya adalah identitas sistem opera
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

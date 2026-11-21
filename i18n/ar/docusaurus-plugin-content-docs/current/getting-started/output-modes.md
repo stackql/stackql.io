@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - جرد الموارد السحابية
-description: "أوضاع الإخراج في StackQL: table وjson وjsonl وcsv وotel، وكيفية اختيارها، وما يخرجه كل وضع عند الاستخدام مع shell وexec والخادم."
+description: "أوضاع الإخراج في StackQL: table وjson وjsonl وcsv وtext وotel، وكيفية اختيارها، وما يخرجه كل وضع عند الاستخدام مع shell وexec والخادم."
 image: "/img/stackql-featured-image.png"
 ---
 راجع أيضًا:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-كل سطر مطابق أيضًا، بايت ببايت، لنص طلب OTLP/HTTP `POST /v1/logs`، وهو ما يرسله exporter الدفع المدمج.
+كل سطر هو أيضًا كائن OTLP/JSON كامل من النوع `LogsData` تقبله نقطة نهاية OTLP/HTTP `POST /v1/logs` كنص طلب.  يرسل exporter الدفع المدمج الترميز نفسه، لكنه يجمع السجلات في دفعات، كما هو موضح أدناه.
 
 #### الدفع إلى نقطة نهاية OTLP {#pushing-to-an-otlp-endpoint}
 

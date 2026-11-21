@@ -64,7 +64,7 @@ image: "/img/stackql-featured-image.png"
 | `delete_safe` | سماح | سماح | يتطلب موافقة |
 | `full_access` | سماح | سماح | سماح |
 
-تستخدم حالة "يتطلب موافقة" ميزة elicitation في MCP: يعرض العميل الذي يدعمها (Claude Desktop وCursor وContinue) على المستخدم اسم الأداة وفئة الاستعلام وجملة SQL، وينتظر القرار قبل تشغيل أي شيء؛ أما العميل الذي لا يعلن عن دعمها فيُرفض طلبه. يتم تسجيل كل استدعاء أداة في سجل التدقيق، ويتطلب كل مستمع HTTP رمزًا مميزًا من نوع bearer، ويتم تحميل بيانات الاعتماد من البيئة أو من ملف dotenv دون إعادة أي قيم سرية إلى العميل مطلقًا. التفاصيل في [أوضاع الخادم](/command-line-usage/mcp#server-modes) و[مصادقة عملاء HTTP](/command-line-usage/mcp#http-client-authentication) و[سجل التدقيق](/command-line-usage/mcp#audit-log).
+تستخدم حالة "يتطلب موافقة" ميزة elicitation في MCP: يعرض العميل الذي يدعمها (Claude Desktop وCursor وContinue) على المستخدم اسم الأداة وفئة الاستعلام وجملة SQL، وينتظر القرار قبل تشغيل أي شيء؛ أما العميل الذي لا يعلن عن دعمها فيُرفض طلبه. يتم تسجيل كل استدعاء أداة في سجل التدقيق، ويتطلب كل مستمع HTTP رمزًا مميزًا من نوع bearer ما لم يتم فتحه صراحة باستخدام الحقل `allow_unauthenticated`، ويتم تحميل بيانات الاعتماد من البيئة أو من ملف dotenv دون إعادة أي قيم سرية إلى العميل مطلقًا. التفاصيل في [أوضاع الخادم](/command-line-usage/mcp#server-modes) و[مصادقة عملاء HTTP](/command-line-usage/mcp#http-client-authentication) و[سجل التدقيق](/command-line-usage/mcp#audit-log).
 
 ## الخطوات التالية {#next-steps}
 

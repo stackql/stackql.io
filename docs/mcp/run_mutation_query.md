@@ -66,7 +66,7 @@ is no longer needed.  Please remove it.
 
 The MCP client will surface an approval prompt before the delete is dispatched, unless the server is running in `full_access` mode.
 
-The following clip shows the elicitation flow when the StackQL MCP server is running in the default `safe` mode -- the client is prompted to approve the `DELETE` before any cloud-side change is dispatched.  You can reproduce this against your own StackQL MCP server using the official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) using `npx @modelcontextprotocol/inspector`:
+The following clip shows the elicitation flow when the StackQL MCP server is running in the default `safe` mode -- the client is prompted to approve the `DELETE` before any cloud-side change is dispatched.  You can reproduce this against your own StackQL MCP server with the official [MCP Inspector](https://github.com/modelcontextprotocol/inspector), started with `npx @modelcontextprotocol/inspector`:
 
 
 <video autoPlay loop muted playsInline style={{width: 'calc(100% - 4rem)', display: 'block', margin: '0 auto', border: 'none', outline: 'none'}}>

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の出力モード（table、json、jsonl、csv、otel）、その選択方法、shell、exec、サーバーでの使用時にそれぞれが出力する内容。"
+description: "StackQL の出力モード（table、json、jsonl、csv、text、otel）、その選択方法、shell、exec、サーバーでの使用時にそれぞれが出力する内容。"
 image: "/img/stackql-featured-image.png"
 ---
 関連項目：  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-各行は、OTLP/HTTP の `POST /v1/logs` リクエストのボディともバイト単位で同一です。これは、組み込みのプッシュエクスポーターが送信する内容です。
+各行は、OTLP/HTTP の `POST /v1/logs` エンドポイントがリクエストボディとして受け付ける、完全な OTLP/JSON `LogsData` でもあります。組み込みのプッシュエクスポーターも同じエンコーディングで送信しますが、後述のとおりレコードをバッチにまとめます。
 
 #### OTLP エンドポイントへのプッシュ {#pushing-to-an-otlp-endpoint}
 

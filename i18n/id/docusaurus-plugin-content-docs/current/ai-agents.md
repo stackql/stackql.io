@@ -64,7 +64,7 @@ Mode server menetapkan kontrak keamanan untuk seluruh sesi:
 | `delete_safe` | izinkan | izinkan | perlu persetujuan |
 | `full_access` | izinkan | izinkan | izinkan |
 
-"Perlu persetujuan" menggunakan elisitasi MCP: klien yang mendukungnya (Claude Desktop, Cursor, Continue) menampilkan nama alat, kelas kueri, dan SQL kepada pengguna lalu menunggu keputusan sebelum apa pun dijalankan; klien yang tidak menyatakan kemampuan tersebut ditolak. Setiap panggilan alat ditulis ke log audit, listener HTTP memerlukan token bearer, dan kredensial diambil dari lingkungan atau file dotenv tanpa ada nilai rahasia yang pernah dikembalikan ke klien. Detailnya ada di [Mode server](/command-line-usage/mcp#server-modes), [Autentikasi klien HTTP](/command-line-usage/mcp#http-client-authentication), dan [Log audit](/command-line-usage/mcp#audit-log).
+"Perlu persetujuan" menggunakan elisitasi MCP: klien yang mendukungnya (Claude Desktop, Cursor, Continue) menampilkan nama alat, kelas kueri, dan SQL kepada pengguna lalu menunggu keputusan sebelum apa pun dijalankan; klien yang tidak menyatakan kemampuan tersebut ditolak. Setiap panggilan alat ditulis ke log audit, listener HTTP memerlukan token bearer kecuali jika dibuka secara eksplisit dengan `allow_unauthenticated`, dan kredensial diambil dari lingkungan atau file dotenv tanpa ada nilai rahasia yang pernah dikembalikan ke klien. Detailnya ada di [Mode server](/command-line-usage/mcp#server-modes), [Autentikasi klien HTTP](/command-line-usage/mcp#http-client-authentication), dan [Log audit](/command-line-usage/mcp#audit-log).
 
 ## Langkah berikutnya {#next-steps}
 

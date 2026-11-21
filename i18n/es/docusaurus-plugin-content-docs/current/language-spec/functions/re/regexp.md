@@ -32,7 +32,7 @@ __*pattern_expression*__
 El patrón de expresión regular que se compara con la cadena de origen.
 
 ## Valor(es) devuelto(s) {#return-values}
-Devuelve un valor booleano: `TRUE` si la cadena de origen coincide con el patrón de expresión regular y `FALSE` en caso contrario.
+Devuelve `1` si la cadena de origen coincide con el patrón de expresión regular y `0` en caso contrario.
 
 * * *
 
@@ -46,7 +46,7 @@ Este ejemplo comprueba si la cadena 'the year is 2021' contiene uno o más carac
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-Esta consulta devuelve `TRUE` porque la cadena contiene la subcadena '2021', que coincide con el patrón `[0-9]+`, el cual indica uno o más dígitos.
+Esta consulta devuelve `1` porque la cadena contiene la subcadena '2021', que coincide con el patrón `[0-9]+`, el cual indica uno o más dígitos.
 
 ### Validar el formato de correo electrónico {#validate-email-format}
 
@@ -56,4 +56,4 @@ Para comprobar si una cadena tiene un formato de correo electrónico válido:
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Esta consulta devuelve `TRUE`, lo que indica que 'user@example.com' tiene el formato de una dirección de correo electrónico típica y coincide con el patrón de expresión regular especificado.
+Esta consulta devuelve `1`, lo que indica que 'user@example.com' tiene el formato de una dirección de correo electrónico típica y coincide con el patrón de expresión regular especificado.

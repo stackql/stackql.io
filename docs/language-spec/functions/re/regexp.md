@@ -32,7 +32,7 @@ __*pattern_expression*__
 The regular expression pattern to match against the source string.
 
 ## Return Value(s) {#return-values}
-Returns a boolean value: `TRUE` if the source string matches the regular expression pattern, otherwise `FALSE`.
+Returns `1` if the source string matches the regular expression pattern, otherwise `0`.
 
 * * *
 
@@ -46,7 +46,7 @@ This example demonstrates checking whether the string 'the year is 2021' contain
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-This query will return `TRUE` because the string contains the substring '2021', which matches the pattern `[0-9]+`, indicating one or more digits.
+This query will return `1` because the string contains the substring '2021', which matches the pattern `[0-9]+`, indicating one or more digits.
 
 ### Validate email format {#validate-email-format}
 
@@ -56,4 +56,4 @@ To check if a string is in a valid email format:
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-This query returns `TRUE`, indicating that 'user@example.com' is formatted like a typical email address, matching the specified regular expression pattern.
+This query returns `1`, indicating that 'user@example.com' is formatted like a typical email address, matching the specified regular expression pattern.

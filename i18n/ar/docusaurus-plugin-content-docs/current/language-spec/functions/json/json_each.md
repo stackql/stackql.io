@@ -33,7 +33,7 @@ image: "/img/stackql-featured-image.png"
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## الوسيطات {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 مصفوفة JSON أو كائن JSON.
 
 __*json_path*__  
-مسار JSON إلى مصفوفة أو كائن موجود داخل *json_array_or_object*.  راجع [jsonpath.com](https://jsonpath.com/).
+اختياري. مسار JSON إلى مصفوفة أو كائن موجود داخل *json_array_or_object*.  راجع [jsonpath.com](https://jsonpath.com/).
 
 > إذا لم يوجد *json_path* في *json_array_or_object*، لا تعيد الدالة أي صفوف.
 

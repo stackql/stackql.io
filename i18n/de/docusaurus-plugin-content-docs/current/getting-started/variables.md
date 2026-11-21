@@ -92,7 +92,7 @@ INSERT /*+ AWAIT  */ INTO google.compute.firewalls
  data__allowed
 ) 
 SELECT
-'{{ .global.project }}',
+'{{ $.global.project }}',
 '{{.name}}',
 '{{.network}}',
 '{{.direction}}',
@@ -197,12 +197,12 @@ INSERT /*+ AWAIT  */ INTO google.compute.firewalls
  data__allowed
 ) 
 SELECT
-'{{ project }}',
-'{{ firewalls[0].name }}',
-'{{ firewalls[0].network }}',
-'{{ firewalls[0].direction }}',
-'{{ firewalls[0].sourceRanges }}',
-'{{ firewalls[0].allowed }}';
+'{{ .project }}',
+'{{ (index .firewalls 0).name }}',
+'{{ (index .firewalls 0).network }}',
+'{{ (index .firewalls 0).direction }}',
+'{{ (index .firewalls 0).sourceRanges }}',
+'{{ (index .firewalls 0).allowed }}';
 
 INSERT /*+ AWAIT  */ INTO google.compute.firewalls
 (
@@ -214,12 +214,12 @@ INSERT /*+ AWAIT  */ INTO google.compute.firewalls
  data__allowed
 ) 
 SELECT
-'{{ project }}',
-'{{ firewalls[1].name }}',
-'{{ firewalls[1].network }}',
-'{{ firewalls[1].direction }}',
-'{{ firewalls[1].sourceRanges }}',
-'{{ firewalls[1].allowed }}';
+'{{ .project }}',
+'{{ (index .firewalls 1).name }}',
+'{{ (index .firewalls 1).network }}',
+'{{ (index .firewalls 1).direction }}',
+'{{ (index .firewalls 1).sourceRanges }}',
+'{{ (index .firewalls 1).allowed }}';
 ```
 
 ## Dryrun-Option zur Vorschau des Befehls {#dryrun-option-to-preview-command}

@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-이 파일은 `data/iam/bindings.json` 파일에서 데이터를 가져와 `iql/iam.iql` 파일에서 전처리됩니다.
+이 파일은 `iql/iam.iql` 파일을 전처리하는 데 사용되는 데이터를 제공하며, 이 데이터는 `data/iam/bindings.json` 파일에서 가져옵니다.
 
 > 이 파일은 수정할 필요가 없습니다
 

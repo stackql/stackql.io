@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 雲端資源清單
-description: "StackQL 輸出模式：table、json、jsonl、csv 與 otel，如何選取這些模式，以及各模式在 shell、exec 與伺服器用途中的輸出內容。"
+description: "StackQL 輸出模式：table、json、jsonl、csv、text 與 otel，如何選取這些模式，以及各模式在 shell、exec 與伺服器用途中的輸出內容。"
 image: "/img/stackql-featured-image.png"
 ---
 另請參閱：  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-每一行也與 OTLP/HTTP `POST /v1/logs` 要求的本文逐位元組相同，而這正是內建推送匯出工具所傳送的內容。
+每一行也是完整的 OTLP/JSON `LogsData`，OTLP/HTTP `POST /v1/logs` 端點會接受它作為要求本文。內建推送匯出工具傳送的是相同的編碼，但會將記錄分批傳送，如下文所述。
 
 #### 推送到 OTLP 端點 {#pushing-to-an-otlp-endpoint}
 

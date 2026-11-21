@@ -41,7 +41,7 @@ Renvoie le cosinus de l'angle spécifié.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-Cette requête renvoie `0.5`, car le cosinus de π/3 radians est 0.5.
+Cette requête renvoie `0.5000000000000001`, l'approximation en virgule flottante du cosinus de π/3 radians, qui vaut 0.5.
 
 ### Calculer le cosinus de π radians {#calculate-the-cosine-of-π-radians}
 

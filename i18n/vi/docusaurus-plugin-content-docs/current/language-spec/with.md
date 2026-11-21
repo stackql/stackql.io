@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "WITH trong StackQL: định nghĩa biểu thức bảng chung (CTE), tức các tập kết quả tạm thời có tên, có phạm vi trong một câu lệnh SELECT, INSERT, UPDATE hoặc DELETE."
+description: "WITH trong StackQL: định nghĩa biểu thức bảng chung (CTE), tức các tập kết quả tạm thời có tên, có phạm vi trong câu lệnh SELECT theo sau chúng."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-Định nghĩa một biểu thức bảng chung (CTE) để dùng trong câu lệnh `SELECT`, `INSERT`, `UPDATE` hoặc `DELETE` theo sau. CTE hoạt động như các tập kết quả tạm thời có tên, chỉ tồn tại trong suốt thời gian thực hiện truy vấn.
+Định nghĩa một biểu thức bảng chung (CTE) để dùng trong câu lệnh `SELECT` theo sau nó. CTE hoạt động như các tập kết quả tạm thời có tên, chỉ tồn tại trong suốt thời gian thực hiện truy vấn.
 
 Xem thêm:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

@@ -44,7 +44,7 @@ Satu atau beberapa kolom yang digunakan untuk melakukan operasi ringkasan atau a
 
 ## Nilai yang dikembalikan {#return-values}
 
-Mengembalikan bilangan bulat yang merepresentasikan jumlah *columnExpression* jika semua input yang bukan `NULL` berupa bilangan bulat. Jika ada input yang bukan bilangan bulat atau bernilai `NULL`, yang dikembalikan adalah nilai floating point yang mungkin merupakan perkiraan dari jumlah sebenarnya.
+Mengembalikan bilangan bulat yang merepresentasikan jumlah *columnExpression* jika semua input yang bukan `NULL` berupa bilangan bulat. Jika ada input yang bukan `NULL` dan bukan bilangan bulat, yang dikembalikan adalah nilai floating point yang mungkin merupakan perkiraan dari jumlah sebenarnya.
 
 * * *
 

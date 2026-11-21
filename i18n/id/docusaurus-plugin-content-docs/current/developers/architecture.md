@@ -102,7 +102,7 @@ SDK provider, [omnisdk](https://github.com/stackql-labs/omnisdk), mengelola semu
 
 - **Pembuatan permintaan API**: mengubah kueri SQL menjadi panggilan REST API yang sesuai untuk setiap provider, termasuk penyusunan endpoint, pemetaan parameter, dan pemformatan permintaan.
 
-- **Paginasi**: menangani respons API yang dipaginasi secara otomatis dan menyembunyikan kerumitan berbagai skema paginasi yang digunakan oleh berbagai provider (berbasis kursor, berbasis offset, berbasis token, dan lain-lain).
+- **Paginasi**: menangani respons API yang dipaginasi secara otomatis dan menyembunyikan kerumitan berbagai skema paginasi yang digunakan oleh berbagai provider (token halaman berikutnya, nomor halaman, tautan halaman berikutnya, header `Link`, dan kursor GraphQL).
 
 - **Pushdown predikat**: mendorong kondisi yang dipetakan ke parameter permintaan, serta `LIMIT` jika tidak diperlukan pengurutan, ke dalam permintaan provider untuk mengurangi jumlah permintaan yang dibuat dan data yang ditransfer.
 

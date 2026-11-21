@@ -74,7 +74,7 @@ export const tabLabel = (icon, text) => (
   
   ## macOS
   
-  在 macOS 上可以透過 Homebrew 和 `pkg` 安裝程式取得 StackQL，單一多架構安裝程式同時支援 ARM（M1/Apple Silicon）和 AMD 架構。
+  在 macOS 上可以透過 Homebrew 和 `pkg` 安裝程式取得 StackQL，單一多架構安裝程式同時支援 ARM（M1/Apple Silicon）和 Intel（x86_64）架構。
 
   <Tabs
     defaultValue="homebrew"
@@ -556,7 +556,7 @@ ChatGPT 網頁版和行動版無法執行本機 stdio 伺服器，因此此外�
 
   ### Goose
 
-  Goose 會直接執行 stdio 擴充功能，因此您只需要 `npx` 啟動器（Node.js 18 或更新版本）。
+  Goose 會直接執行 stdio 擴充功能，因此您只需要 `npx` 啟動器（Node.js 24.22.1 或更新版本，在對應的發行線上為 22.23.4 或 26.12.1）。
 
   **Goose Desktop**：按一下下方按鈕。Goose 會開啟，顯示即將執行的命令並要求您確認，然後將 StackQL 新增為擴充功能。
 

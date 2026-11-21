@@ -102,7 +102,7 @@ The Provider SDK, [omnisdk](https://github.com/stackql-labs/omnisdk), manages al
 
 - **API Request Building**: Transforms SQL queries into appropriate REST API calls for each provider, handling endpoint construction, parameter mapping, and request formatting.
 
-- **Pagination**: Automatically handles paginated API responses, abstracting away the complexity of different pagination schemes used by various providers (cursor-based, offset-based, token-based, etc.).
+- **Pagination**: Automatically handles paginated API responses, abstracting away the complexity of different pagination schemes used by various providers (next-page tokens, page numbers, next-page links, `Link` headers and GraphQL cursors).
 
 - **Predicate Pushdown**: Pushes conditions that map to request parameters, and `LIMIT` where no ordering is required, into the provider requests to reduce the number of requests made and the data transferred.
 

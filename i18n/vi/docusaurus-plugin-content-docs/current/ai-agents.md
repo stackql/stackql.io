@@ -64,7 +64,7 @@ Chế độ máy chủ thiết lập hợp đồng an toàn cho toàn bộ phiê
 | `delete_safe` | cho phép | cho phép | cần phê duyệt |
 | `full_access` | cho phép | cho phép | cho phép |
 
-"Cần phê duyệt" sử dụng elicitation của MCP: các ứng dụng khách hỗ trợ tính năng này (Claude Desktop, Cursor, Continue) hiển thị cho người dùng tên công cụ, loại truy vấn và câu lệnh SQL rồi chờ quyết định trước khi chạy bất cứ thứ gì; các ứng dụng khách không công bố khả năng này sẽ bị từ chối. Mọi lệnh gọi công cụ đều được ghi vào nhật ký kiểm tra, các listener HTTP yêu cầu bearer token và thông tin xác thực được lấy từ môi trường hoặc từ tệp dotenv mà không bao giờ trả giá trị bí mật về cho ứng dụng khách. Chi tiết có trong [Chế độ máy chủ](/command-line-usage/mcp#server-modes), [Xác thực ứng dụng khách HTTP](/command-line-usage/mcp#http-client-authentication) và [Nhật ký kiểm tra](/command-line-usage/mcp#audit-log).
+"Cần phê duyệt" sử dụng elicitation của MCP: các ứng dụng khách hỗ trợ tính năng này (Claude Desktop, Cursor, Continue) hiển thị cho người dùng tên công cụ, loại truy vấn và câu lệnh SQL rồi chờ quyết định trước khi chạy bất cứ thứ gì; các ứng dụng khách không công bố khả năng này sẽ bị từ chối. Mọi lệnh gọi công cụ đều được ghi vào nhật ký kiểm tra, các listener HTTP yêu cầu bearer token (trừ khi được mở một cách rõ ràng bằng `allow_unauthenticated`) và thông tin xác thực được lấy từ môi trường hoặc từ tệp dotenv mà không bao giờ trả giá trị bí mật về cho ứng dụng khách. Chi tiết có trong [Chế độ máy chủ](/command-line-usage/mcp#server-modes), [Xác thực ứng dụng khách HTTP](/command-line-usage/mcp#http-client-authentication) và [Nhật ký kiểm tra](/command-line-usage/mcp#audit-log).
 
 ## Các bước tiếp theo {#next-steps}
 

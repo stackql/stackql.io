@@ -39,7 +39,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 
 ### JWT {#jwt}
 
-呼叫端出示已簽署的權杖，系統會依據設定中固定的金鑰離線驗證該權杖。最小設定會指定權杖必須帶有的簽發者和受眾，列出一個公開金鑰，並授予 `readers` 群組讀取存取權：
+呼叫端出示已簽署的權杖，系統會依據設定中固定的金鑰離線驗證該權杖。最小設定會指定權杖必須帶有的簽發者和受眾，列出一個公開金鑰，並讓 `analysts` 群組的成員執行讀取陳述式（`readers` 群組的成員不需要規則即可執行，請參閱[政策規則](#policy-rules)）：
 
 ```json
 {
@@ -50,7 +50,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ stackql --access.config '{"path": "/etc/stackql/access.json"}' shell
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

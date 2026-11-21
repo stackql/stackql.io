@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "Fungsi DATETIME di StackQL: menghitung nilai datetime dari input dan satu atau beberapa pengubah, dikembalikan sebagai YYYY-MM-DD HH:MM:SS."
+description: "Fungsi DATETIME di StackQL: menghitung nilai datetime dari input dan nol atau beberapa pengubah, dikembalikan sebagai YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-Mengembalikan nilai datetime hasil perhitungan dari input datetime dan satu atau beberapa pengubah.  
+Mengembalikan nilai datetime hasil perhitungan dari input datetime dan nol atau beberapa pengubah.  
 
 Lihat juga:  
 [[` SELECT `]](/language-spec/select) [[ Pengubah tanggal ]](/language-spec/functions/datetime/date_modifiers) 

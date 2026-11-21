@@ -115,7 +115,7 @@ Beispiele für die Verwendung von `exec` in AWS CloudShell sind hier dargestellt
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
 --output csv --outfile instances.csv \
-"SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
+"SELECT region, instance_type FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
 Das obige Beispiel führt die angegebene StackQL-Abfrage aus und erzeugt eine `CSV`-Ausgabedatei, die aus AWS CloudShell heruntergeladen werden kann.  Zusätzlich können Sie mit dem Argument `--role-arn` eine IAM-Rolle angeben, um für Ihre Abfrage- oder Mutationsoperation eine andere Rolle anzunehmen; ein Beispiel ist hier dargestellt (in diesem Fall stammt die Abfrage aus einer Eingabedatei):  

@@ -14,7 +14,7 @@ faq:
 
 # StackQL vs Steampipe
 
-Steampipe and StackQL implement the same core idea - cloud and SaaS APIs exposed as SQL tables - with one decisive difference: Steampipe is read-only, while StackQL also writes. Steampipe embeds PostgreSQL and maps APIs through foreign data wrappers fed by Go plugins; StackQL implements its own SQL engine over declarative, OpenAPI-derived provider specs, and maps the full verb set: `SELECT`, `INSERT`, `UPDATE`, `DELETE`, and `EXEC` for lifecycle actions.
+Steampipe and StackQL implement the same core idea - cloud and SaaS APIs exposed as SQL tables - with one decisive difference: Steampipe is read-only, while StackQL also writes. Steampipe embeds PostgreSQL and maps APIs through foreign data wrappers fed by Go plugins; StackQL implements its own SQL engine over declarative, OpenAPI-derived provider specs, and maps the full verb set: `SELECT`, `INSERT`, `UPDATE`, `REPLACE`, `DELETE`, and `EXEC` for lifecycle actions.
 
 ## When to use which {#when-to-use-which}
 

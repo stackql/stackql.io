@@ -44,7 +44,7 @@ Một hoặc nhiều cột được dùng để thực hiện các thao tác tó
 
 ## Giá trị trả về {#return-values}
 
-Trả về một số nguyên biểu thị tổng của *columnExpression* nếu tất cả các đầu vào khác `NULL` đều là số nguyên. Nếu có đầu vào không phải số nguyên hoặc là `NULL`, hàm trả về một giá trị dấu phẩy động, có thể là giá trị xấp xỉ của tổng thực.
+Trả về một số nguyên biểu thị tổng của *columnExpression* nếu tất cả các đầu vào khác `NULL` đều là số nguyên. Nếu có đầu vào khác `NULL` nào không phải số nguyên, hàm trả về một giá trị dấu phẩy động, có thể là giá trị xấp xỉ của tổng thực.
 
 * * *
 

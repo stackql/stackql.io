@@ -32,7 +32,7 @@ image: "/img/stackql-featured-image.png"
 ## 語法 {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 JSON 陣列或物件。
 
 __*json_path*__  
-指向 *json_array_or_object* 中所含陣列或物件的 JSON 路徑。請參閱 [jsonpath.com](https://jsonpath.com/)。
+選用。指向 *json_array_or_object* 中所含陣列或物件的 JSON 路徑。請參閱 [jsonpath.com](https://jsonpath.com/)。
 
 > 如果 *json_path* 不存在於 *json_array_or_object* 中，函式會傳回 `NULL`。
 

@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Mengembalikan nilai ekspresi yang dievaluasi terhadap baris ke-N dalam bingkai jendela.
 
-Fungsi jendela bawaan ini menghitung bingkai jendela untuk setiap baris dengan cara yang sama seperti fungsi jendela agregat. Fungsi ini mengembalikan nilai ekspresi yang dievaluasi terhadap baris N dari bingkai jendela. Baris diberi nomor di dalam bingkai jendela mulai dari 1 sesuai urutan yang ditentukan oleh klausa `ORDER BY` jika ada, atau dalam urutan sembarang jika tidak ada. Jika tidak ada baris ke-N dalam partisi, `NULL` dikembalikan.
+Fungsi jendela bawaan ini menghitung bingkai jendela untuk setiap baris dengan cara yang sama seperti fungsi jendela agregat. Fungsi ini mengembalikan nilai ekspresi yang dievaluasi terhadap baris N dari bingkai jendela. Baris diberi nomor di dalam bingkai jendela mulai dari 1 sesuai urutan yang ditentukan oleh klausa `ORDER BY` jika ada, atau dalam urutan sembarang jika tidak ada. Jika tidak ada baris ke-N dalam bingkai jendela, `NULL` dikembalikan.
 
 Lihat juga:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

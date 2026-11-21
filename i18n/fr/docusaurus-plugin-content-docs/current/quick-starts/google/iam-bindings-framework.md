@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Ce fichier est prétraité par `iql/iam.iql` et tire ses données de `data/iam/bindings.json`
+Ce fichier fournit les données utilisées pour prétraiter `iql/iam.iql`, en les tirant de `data/iam/bindings.json`
 
 > ce fichier ne devrait pas avoir besoin d'être modifié
 

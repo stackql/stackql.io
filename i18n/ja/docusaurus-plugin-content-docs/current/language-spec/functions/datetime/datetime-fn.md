@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の DATETIME 関数：入力値と 1 つ以上の修飾子から日時値を計算し、YYYY-MM-DD HH:MM:SS 形式で返します。"
+description: "StackQL の DATETIME 関数：入力値と 0 個以上の修飾子から日時値を計算し、YYYY-MM-DD HH:MM:SS 形式で返します。"
 image: "/img/stackql-featured-image.png"
 ---
-入力された日時と 1 つ以上の修飾子から計算した日時値を返します。  
+入力された日時と 0 個以上の修飾子から計算した日時値を返します。  
 
 関連項目：  
 [[` SELECT `]](/language-spec/select) [[ 日付修飾子 ]](/language-spec/functions/datetime/date_modifiers) 

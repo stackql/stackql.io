@@ -41,7 +41,7 @@ Trả về cosin của góc đã chỉ định.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-Truy vấn này trả về `0.5`, vì cosin của π/3 radian bằng 0.5.
+Truy vấn này trả về `0.5000000000000001`, giá trị xấp xỉ dấu phẩy động của cosin của π/3 radian, vốn bằng 0.5.
 
 ### Tính cosin của π radian {#calculate-the-cosine-of-π-radians}
 

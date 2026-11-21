@@ -47,7 +47,7 @@ SELECT JSON_PATCH('{"a":1,"b":2}', '{"c":3,"d":4}') AS patched_json;
 
 출력: `{"a":1,"b":2,"c":3,"d":4}`
 
-### 배열 요소 교체 {#replace-element-in-array}
+### 배열을 값으로 교체 {#replace-an-array-with-a-value}
 
 ```sql
 -- Example: Replacing an array with a single value in the JSON object

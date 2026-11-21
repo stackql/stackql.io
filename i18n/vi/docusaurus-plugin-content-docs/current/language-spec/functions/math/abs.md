@@ -32,7 +32,7 @@ Một biểu thức thuộc nhóm kiểu dữ liệu số chính xác hoặc s�
 
 ## Giá trị trả về {#return-values}
 
-Trả về một giá trị số dương.
+Trả về một giá trị số không âm.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-Để biết thêm thông tin, hãy xem [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+Để biết thêm thông tin, hãy xem [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

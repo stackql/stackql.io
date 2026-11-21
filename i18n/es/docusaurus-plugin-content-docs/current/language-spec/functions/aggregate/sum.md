@@ -44,7 +44,7 @@ Una o varias columnas sobre las que se realizan operaciones de resumen o de agre
 
 ## Valor(es) devuelto(s) {#return-values}
 
-Devuelve un entero que representa la suma de *columnExpression* si todas las entradas distintas de `NULL` son enteros. Si alguna entrada no es un entero o es `NULL`, se devuelve un valor de punto flotante que puede ser una aproximación de la suma real.
+Devuelve un entero que representa la suma de *columnExpression* si todas las entradas distintas de `NULL` son enteros. Si alguna entrada distinta de `NULL` no es un entero, se devuelve un valor de punto flotante que puede ser una aproximación de la suma real.
 
 * * *
 

@@ -33,7 +33,7 @@ Hàm `json_each` được hiện thực bằng hàm `json_array_elements_text` n
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## Đối số {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 Một mảng hoặc đối tượng JSON.
 
 __*json_path*__  
-Đường dẫn JSON tới một mảng hoặc đối tượng nằm trong *json_array_or_object*.  Xem [jsonpath.com](https://jsonpath.com/).
+Không bắt buộc. Đường dẫn JSON tới một mảng hoặc đối tượng nằm trong *json_array_or_object*.  Xem [jsonpath.com](https://jsonpath.com/).
 
 > Nếu *json_path* không tồn tại trong *json_array_or_object*, hàm không trả về hàng nào.
 

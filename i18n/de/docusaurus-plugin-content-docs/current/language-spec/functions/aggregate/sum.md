@@ -44,7 +44,7 @@ Eine oder mehrere Spalten, über die Zusammenfassungs- oder Aggregatoperationen 
 
 ## Rückgabewert(e) {#return-values}
 
-Gibt eine Ganzzahl zurück, die die Summe der *columnExpression* darstellt, wenn alle Nicht-`NULL`-Eingaben Ganzzahlen sind. Wenn Eingaben keine Ganzzahlen oder `NULL` sind, wird ein Gleitkommawert zurückgegeben, der eine Näherung der tatsächlichen Summe sein kann.
+Gibt eine Ganzzahl zurück, die die Summe der *columnExpression* darstellt, wenn alle Nicht-`NULL`-Eingaben Ganzzahlen sind. Wenn eine Nicht-`NULL`-Eingabe keine Ganzzahl ist, wird ein Gleitkommawert zurückgegeben, der eine Näherung der tatsächlichen Summe sein kann.
 
 * * *
 

@@ -64,7 +64,7 @@ MCP サーバーは、型付けされた小さなツールセットを公開し�
 | `delete_safe` | 許可 | 許可 | 承認が必要 |
 | `full_access` | 許可 | 許可 | 許可 |
 
-「承認が必要」では、MCP のエリシテーション（elicitation）を使用します。これをサポートするクライアント（Claude Desktop、Cursor、Continue）は、ツール名、クエリの分類、SQL をユーザーに表示し、何かが実行される前に判断を待ちます。これを公開していないクライアントは拒否されます。すべてのツール呼び出しは監査ログに書き込まれ、HTTP リスナーには Bearer トークンが必要です。認証情報は環境または dotenv ファイルから取得され、シークレットの値がクライアントに返されることはありません。詳細は[サーバーモード](/command-line-usage/mcp#server-modes)、[HTTP クライアント認証](/command-line-usage/mcp#http-client-authentication)、[監査ログ](/command-line-usage/mcp#audit-log)にあります。
+「承認が必要」では、MCP のエリシテーション（elicitation）を使用します。これをサポートするクライアント（Claude Desktop、Cursor、Continue）は、ツール名、クエリの分類、SQL をユーザーに表示し、何かが実行される前に判断を待ちます。これを公開していないクライアントは拒否されます。すべてのツール呼び出しは監査ログに書き込まれ、HTTP リスナーには、`allow_unauthenticated` で明示的に開放されていない限り、Bearer トークンが必要です。認証情報は環境または dotenv ファイルから取得され、シークレットの値がクライアントに返されることはありません。詳細は[サーバーモード](/command-line-usage/mcp#server-modes)、[HTTP クライアント認証](/command-line-usage/mcp#http-client-authentication)、[監査ログ](/command-line-usage/mcp#audit-log)にあります。
 
 ## 次のステップ {#next-steps}
 

@@ -32,7 +32,7 @@ __*numeric_expression*__
 
 ## القيمة المرجعة {#return-values}
 
-تعيد قيمة رقمية موجبة.
+تعيد قيمة رقمية غير سالبة.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-لمزيد من المعلومات، راجع [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+لمزيد من المعلومات، راجع [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

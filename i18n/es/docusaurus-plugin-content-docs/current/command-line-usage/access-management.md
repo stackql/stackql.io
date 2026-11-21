@@ -39,7 +39,7 @@ El archivo de configuración selecciona un `type`: `jwt` (el valor predeterminad
 
 ### JWT {#jwt}
 
-El llamador presenta un token firmado, que se verifica sin conexión con las claves fijadas en la configuración.  Una configuración mínima indica el emisor y la audiencia que el token debe llevar, incluye una clave pública y concede al grupo `readers` acceso de lectura:
+El llamador presenta un token firmado, que se verifica sin conexión con las claves fijadas en la configuración.  Una configuración mínima indica el emisor y la audiencia que el token debe llevar, incluye una clave pública y permite a los miembros del grupo `analysts` ejecutar instrucciones de lectura (los miembros del grupo `readers` pueden hacerlo sin una regla, consulte [Reglas de política](#policy-rules)):
 
 ```json
 {
@@ -50,7 +50,7 @@ El llamador presenta un token firmado, que se verifica sin conexión con las cla
     {"kid": "primary", "algorithm": "EdDSA", "public_key_pem": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n"}
   ],
   "rules": [
-    {"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}
+    {"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}
   ]
 }
 ```
@@ -66,7 +66,7 @@ El llamador presenta un token opaco, y la configuración enumera el hash SHA-256
   "type": "bearer",
   "issuer": "local-tokens",
   "tokens": [{"subject": "alice", "sha256": "<64 hexadecimal characters: the SHA-256 of the token>"}],
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -82,7 +82,7 @@ El llamador se identifica por el certificado de cliente que presenta en el trans
   "issuer": "client-certificates",
   "client_ca_pem": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n",
   "certificate_identity": "uri_san",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 
@@ -96,7 +96,7 @@ No se intercambia ninguna credencial: el sujeto es la identidad del sistema oper
 {
   "type": "local_os",
   "issuer": "this-host",
-  "rules": [{"subject": "group:readers", "resource": "host/sql/read", "action": "execute"}]
+  "rules": [{"subject": "group:analysts", "resource": "host/sql/read", "action": "execute"}]
 }
 ```
 

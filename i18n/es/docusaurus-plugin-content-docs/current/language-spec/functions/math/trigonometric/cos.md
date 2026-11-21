@@ -41,7 +41,7 @@ Devuelve el coseno del ángulo especificado.
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-Esta consulta devuelve `0.5`, ya que el coseno de π/3 radianes es 0.5.
+Esta consulta devuelve `0.5000000000000001`, la aproximación de punto flotante del coseno de π/3 radianes, que es 0.5.
 
 ### Calcular el coseno de π radianes {#calculate-the-cosine-of-π-radians}
 

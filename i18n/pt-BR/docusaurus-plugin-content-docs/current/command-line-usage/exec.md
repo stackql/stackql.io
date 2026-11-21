@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### Status de saída {#exit-status}
 
-`exec` termina com o status `0` depois que a entrada é processada; os erros de instruções individuais são gravados no console, portanto os scripts devem inspecionar a saída.  A partir da `v1.0`, ele termina com o status `1` quando uma instrução de configuração [`SET`](/language-spec/set) ou [`UNSET`](/language-spec/unset) falha, quando o [gerenciamento de acesso](/command-line-usage/access-management) está habilitado e uma instrução é recusada ou quando uma execução de IaC em versão prévia informa um recurso com falha.
+`exec` termina com o status `0` depois que a entrada é processada; os erros de instruções individuais são gravados no console, portanto os scripts devem inspecionar a saída.  A partir da `v1.0`, ele termina com o status `1` quando uma instrução de configuração [`SET`](/language-spec/set) ou [`UNSET`](/language-spec/unset) falha, quando uma execução de IaC em versão prévia informa um recurso com falha ou, com o [gerenciamento de acesso](/command-line-usage/access-management) habilitado, quando qualquer instrução falha ou é recusada.

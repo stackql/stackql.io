@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### 結束狀態 {#exit-status}
 
-`exec` 在處理完輸入後會以狀態 `0` 結束；個別陳述式的錯誤會寫入主控台，因此指令碼應檢查輸出。自 `v1.0` 起，當 [`SET`](/language-spec/set) 或 [`UNSET`](/language-spec/unset) 設定陳述式失敗、啟用[存取管理](/command-line-usage/access-management)且陳述式遭拒，或預覽 IaC 執行回報資源失敗時，此命令會以狀態 `1` 結束。
+`exec` 在處理完輸入後會以狀態 `0` 結束；個別陳述式的錯誤會寫入主控台，因此指令碼應檢查輸出。自 `v1.0` 起，當 [`SET`](/language-spec/set) 或 [`UNSET`](/language-spec/unset) 設定陳述式失敗、預覽 IaC 執行回報資源失敗，或在已啟用[存取管理](/command-line-usage/access-management)的情況下有任何陳述式失敗或遭拒時，此命令會以狀態 `1` 結束。

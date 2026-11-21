@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 راجع أيضًا:  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-يمكن تشغيل استعلامات StackQL على عدد من مزودي الخدمات السحابية المختلفين، بما في ذلك Google Cloud Platform وAmazon Web Services وMicrosoft Azure وDigital Ocean وغيرها. يتم سحب مواصفات موفري StackQL من [__StackQL Provider Registry__](/providers)، ويمكن القيام بذلك باستخدام أمر StackQL [__`REGISTRY PULL`__](/language-spec/registry)، أو باستخدام أداة سطر الأوامر [__`stackql registry`__](/command-line-usage/registry).
+يمكن تشغيل استعلامات StackQL على عدد من مزودي الخدمات السحابية المختلفين، بما في ذلك Google Cloud Platform وAmazon Web Services وMicrosoft Azure وDigitalOcean وغيرها. يتم سحب مواصفات موفري StackQL من [__StackQL Provider Registry__](/providers)، ويمكن القيام بذلك باستخدام أمر StackQL [__`REGISTRY PULL`__](/language-spec/registry)، أو باستخدام أداة سطر الأوامر [__`stackql registry`__](/command-line-usage/registry).
 
 
 ## تثبيت موفر {#installing-a-provider}

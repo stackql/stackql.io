@@ -102,7 +102,7 @@ SDK provider, [omnisdk](https://github.com/stackql-labs/omnisdk), quản lý m�
 
 - **Tạo yêu cầu API**: Chuyển đổi truy vấn SQL thành các lệnh gọi REST API phù hợp cho từng provider, xử lý việc tạo điểm cuối, ánh xạ tham số và định dạng yêu cầu.
 
-- **Phân trang**: Tự động xử lý các phản hồi API được phân trang, ẩn đi sự phức tạp của các cơ chế phân trang khác nhau mà các provider sử dụng (dựa trên con trỏ, dựa trên độ lệch, dựa trên token, v.v.).
+- **Phân trang**: Tự động xử lý các phản hồi API được phân trang, ẩn đi sự phức tạp của các cơ chế phân trang khác nhau mà các provider sử dụng (token trang tiếp theo, số trang, liên kết trang tiếp theo, header `Link` và con trỏ GraphQL).
 
 - **Đẩy vị từ xuống (predicate pushdown)**: Đẩy các điều kiện ánh xạ tới tham số yêu cầu, cùng với `LIMIT` khi không cần sắp xếp, vào các yêu cầu gửi tới provider để giảm số lượng yêu cầu và lượng dữ liệu được truyền.
 

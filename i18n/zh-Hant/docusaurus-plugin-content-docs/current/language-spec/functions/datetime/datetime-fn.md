@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 雲端資源清單
-description: "StackQL 中的 DATETIME 函式：根據輸入值和一個或多個修飾詞計算日期時間值，以 YYYY-MM-DD HH:MM:SS 格式傳回。"
+description: "StackQL 中的 DATETIME 函式：根據輸入值和零個或多個修飾詞計算日期時間值，以 YYYY-MM-DD HH:MM:SS 格式傳回。"
 image: "/img/stackql-featured-image.png"
 ---
-根據輸入日期時間和一個或多個修飾詞，傳回計算後的日期時間值。  
+根據輸入日期時間和零個或多個修飾詞，傳回計算後的日期時間值。  
 
 另請參閱：  
 [[` SELECT `]](/language-spec/select) [[ 日期修飾詞 ]](/language-spec/functions/datetime/date_modifiers) 

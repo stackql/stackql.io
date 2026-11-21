@@ -44,7 +44,7 @@ REGISTRY PULL aws;       -- install (repeat per provider)
 SHOW METHODS IN aws.ec2.instances;
 ```
 
-`RequiredParams` 列按访问方法准确说明 `WHERE` 子句必须包含的内容，例如对于 `aws.ec2.instances`，`describe` 方法需要 `region`。这一发现步骤是文档中为人和智能体共同规定的做法（MCP 服务器通过 `list_methods` 发布相同的数据）。
+`RequiredParams` 列按访问方法准确说明 `WHERE` 子句必须包含的内容，例如对于 `aws.ec2.instances`，`describe_instances` 方法需要 `region`。这一发现步骤是文档中为人和智能体共同规定的做法（MCP 服务器通过 `list_methods` 发布相同的数据）。
 
 ## 身份验证失败 {#authentication-failures}
 

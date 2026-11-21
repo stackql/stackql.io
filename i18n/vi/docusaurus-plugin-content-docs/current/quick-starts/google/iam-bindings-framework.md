@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Tệp này được `iql/iam.iql` tiền xử lý, lấy dữ liệu từ `data/iam/bindings.json`
+Tệp này cung cấp dữ liệu dùng để tiền xử lý `iql/iam.iql`, lấy dữ liệu đó từ `data/iam/bindings.json`
 
 > tệp này không cần phải sửa đổi
 

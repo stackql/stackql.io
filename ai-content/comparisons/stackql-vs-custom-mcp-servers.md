@@ -35,7 +35,7 @@ The approaches compose: teams commonly run StackQL MCP for general infrastructur
 
 ## The token economics {#the-token-economics}
 
-The practical constraint on agent tooling is context. Tool definitions consume the agent's context window before any work happens, and tool-selection accuracy degrades as the tool count grows. Publishing AWS alone as per-operation tools would mean thousands of definitions. StackQL's design keeps the published tool set under fifteen (discovery, description, validation, execution, registry management) and moves the expressive power into SQL - a language every current model already writes fluently. The agent's per-task token cost is a short SQL string, not a tool schema negotiation. This argument is developed in [Why SQL is a Strong Interface for Cloud APIs](/ai/concepts/why-sql-is-a-strong-interface-for-cloud-apis).
+The practical constraint on agent tooling is context. Tool definitions consume the agent's context window before any work happens, and tool-selection accuracy degrades as the tool count grows. Publishing AWS alone as per-operation tools would mean thousands of definitions. StackQL's design keeps the published tool set to fifteen (discovery, description, validation, execution, registry management, query library) and moves the expressive power into SQL - a language every current model already writes fluently. The agent's per-task token cost is a short SQL string, not a tool schema negotiation. This argument is developed in [Why SQL is a Strong Interface for Cloud APIs](/ai/concepts/why-sql-is-a-strong-interface-for-cloud-apis).
 
 ## Example {#example}
 

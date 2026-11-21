@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 返回表达式针对窗口帧中第 N 行求值所得的值。
 
-此内置窗口函数以与聚合窗口函数相同的方式为每一行计算窗口帧。它返回表达式针对窗口帧的第 N 行求值所得的值。如果存在 `ORDER BY` 子句，行在窗口帧内按照该子句定义的顺序从 1 开始编号，否则按任意顺序编号。如果分区中不存在第 N 行，则返回 `NULL`。
+此内置窗口函数以与聚合窗口函数相同的方式为每一行计算窗口帧。它返回表达式针对窗口帧的第 N 行求值所得的值。如果存在 `ORDER BY` 子句，行在窗口帧内按照该子句定义的顺序从 1 开始编号，否则按任意顺序编号。如果窗口帧中不存在第 N 行，则返回 `NULL`。
 
 另请参阅：
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

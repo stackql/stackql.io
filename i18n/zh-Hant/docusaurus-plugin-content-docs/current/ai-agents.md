@@ -64,7 +64,7 @@ MCP 伺服器公開一組精簡且具型別的工具。每個工具都會傳回�
 | `delete_safe` | 允許 | 允許 | 需要核准 |
 | `full_access` | 允許 | 允許 | 允許 |
 
-「需要核准」使用 MCP 徵詢（elicitation）：支援此功能的用戶端（Claude Desktop、Cursor、Continue）會向使用者顯示工具名稱、查詢類別與 SQL，並在任何作業執行前等待使用者決定；未宣告此功能的用戶端會遭到拒絕。每次工具呼叫都會寫入稽核記錄，HTTP 接聽程式需要 bearer 權杖，憑證則從環境或 dotenv 檔案取得，祕密值絕不會傳回給用戶端。詳細資訊請參閱[伺服器模式](/command-line-usage/mcp#server-modes)、[HTTP 用戶端驗證](/command-line-usage/mcp#http-client-authentication) 和[稽核記錄](/command-line-usage/mcp#audit-log)。
+「需要核准」使用 MCP 徵詢（elicitation）：支援此功能的用戶端（Claude Desktop、Cursor、Continue）會向使用者顯示工具名稱、查詢類別與 SQL，並在任何作業執行前等待使用者決定；未宣告此功能的用戶端會遭到拒絕。每次工具呼叫都會寫入稽核記錄，HTTP 接聽程式除非以 `allow_unauthenticated` 明確開放，否則需要 bearer 權杖，憑證則從環境或 dotenv 檔案取得，祕密值絕不會傳回給用戶端。詳細資訊請參閱[伺服器模式](/command-line-usage/mcp#server-modes)、[HTTP 用戶端驗證](/command-line-usage/mcp#http-client-authentication) 和[稽核記錄](/command-line-usage/mcp#audit-log)。
 
 ## 後續步驟 {#next-steps}
 

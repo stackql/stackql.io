@@ -74,7 +74,7 @@ export const tabLabel = (icon, text) => (
   
   ## macOS
   
-  StackQL متاح على macOS عبر Homebrew وبرنامج التثبيت `pkg`، ويدعم برنامج تثبيت واحد متعدد البنى بنيتي ARM (M1/Apple Silicon) وAMD معًا.
+  StackQL متاح على macOS عبر Homebrew وبرنامج التثبيت `pkg`، ويدعم برنامج تثبيت واحد متعدد البنى بنيتي ARM (M1/Apple Silicon) وIntel (x86_64) معًا.
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ cargo install stackql-deploy
 
   ### Goose
 
-  يشغل Goose ملحقات stdio مباشرة، لذا فإن أداة التشغيل `npx` هي كل ما تحتاج إليه (Node.js 18 أو إصدار أحدث).
+  يشغل Goose ملحقات stdio مباشرة، لذا فإن أداة التشغيل `npx` هي كل ما تحتاج إليه (Node.js 24.22.1 أو إصدار أحدث، أو 22.23.4 أو 26.12.1 في خطوط الإصدار تلك).
 
   **Goose Desktop:** انقر على الزر أدناه. يفتح Goose، ويعرض الأمر الذي سيشغله ويطلب منك التأكيد، ثم يضيف StackQL كملحق.
 

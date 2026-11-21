@@ -32,7 +32,7 @@ __*pattern_expression*__
 要與來源字串比對的正規表示式模式。
 
 ## 傳回值 {#return-values}
-傳回布林值：如果來源字串符合正規表示式模式，則為 `TRUE`，否則為 `FALSE`。
+如果來源字串符合正規表示式模式，則傳回 `1`，否則傳回 `0`。
 
 * * *
 
@@ -46,7 +46,7 @@ __*pattern_expression*__
 SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 ```
 
-此查詢會傳回 `TRUE`，因為字串包含子字串「2021」，而它符合表示一個或多個數字的模式 `[0-9]+`。
+此查詢會傳回 `1`，因為字串包含子字串「2021」，而它符合表示一個或多個數字的模式 `[0-9]+`。
 
 ### 驗證電子郵件格式 {#validate-email-format}
 
@@ -56,4 +56,4 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-此查詢傳回 `TRUE`，表示「user@example.com」的格式與一般電子郵件地址相同，符合指定的正規表示式模式。
+此查詢傳回 `1`，表示「user@example.com」的格式與一般電子郵件地址相同，符合指定的正規表示式模式。

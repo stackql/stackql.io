@@ -12,7 +12,7 @@ image: "/img/stackql-featured-image.png"
 ---
 Retorna o valor da expressão avaliada na N-ésima linha do quadro da janela.
 
-Esta função de janela integrada calcula o quadro da janela de cada linha da mesma forma que uma função de janela de agregação. Ela retorna o valor da expressão avaliada na linha N do quadro da janela. As linhas são numeradas dentro do quadro da janela a partir de 1, na ordem definida pela cláusula `ORDER BY`, se houver, ou em ordem arbitrária caso contrário. Se não houver uma N-ésima linha na partição, a função retorna `NULL`.
+Esta função de janela integrada calcula o quadro da janela de cada linha da mesma forma que uma função de janela de agregação. Ela retorna o valor da expressão avaliada na linha N do quadro da janela. As linhas são numeradas dentro do quadro da janela a partir de 1, na ordem definida pela cláusula `ORDER BY`, se houver, ou em ordem arbitrária caso contrário. Se não houver uma N-ésima linha no quadro da janela, a função retorna `NULL`.
 
 Veja também:
 [[` SELECT `]](/language-spec/select) [[` FIRST_VALUE `]](/language-spec/functions/window/first_value) [[` LAST_VALUE `]](/language-spec/functions/window/last_value)

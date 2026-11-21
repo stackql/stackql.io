@@ -41,7 +41,7 @@ __*radian_value*__
 SELECT COS(PI() / 3) AS cosine_value;
 ```
 
-此查詢傳回 `0.5`，因為 π/3 弧度的餘弦為 0.5。
+此查詢傳回 `0.5000000000000001`，即 π/3 弧度餘弦值的浮點數近似值，該餘弦值為 0.5。
 
 ### 計算 π 弧度的餘弦 {#calculate-the-cosine-of-π-radians}
 

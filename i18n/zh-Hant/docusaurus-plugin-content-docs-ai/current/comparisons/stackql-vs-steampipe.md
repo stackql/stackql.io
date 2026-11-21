@@ -14,7 +14,7 @@ faq:
 
 # StackQL vs Steampipe
 
-Steampipe 和 StackQL 實作相同的核心概念，也就是將雲端與 SaaS API 公開為 SQL 資料表，但兩者有一個決定性的差異：Steampipe 是唯讀的，而 StackQL 也能寫入。Steampipe 內嵌 PostgreSQL，並透過由 Go 外掛程式提供資料的外部資料包裝器對應 API；StackQL 則在宣告式、衍生自 OpenAPI 的 Provider 規格之上實作自己的 SQL 引擎，並對應完整的動詞集：`SELECT`、`INSERT`、`UPDATE`、`DELETE`，以及用於生命週期動作的 `EXEC`。
+Steampipe 和 StackQL 實作相同的核心概念，也就是將雲端與 SaaS API 公開為 SQL 資料表，但兩者有一個決定性的差異：Steampipe 是唯讀的，而 StackQL 也能寫入。Steampipe 內嵌 PostgreSQL，並透過由 Go 外掛程式提供資料的外部資料包裝器對應 API；StackQL 則在宣告式、衍生自 OpenAPI 的 Provider 規格之上實作自己的 SQL 引擎，並對應完整的動詞集：`SELECT`、`INSERT`、`UPDATE`、`REPLACE`、`DELETE`，以及用於生命週期動作的 `EXEC`。
 
 ## 如何選擇 {#when-to-use-which}
 

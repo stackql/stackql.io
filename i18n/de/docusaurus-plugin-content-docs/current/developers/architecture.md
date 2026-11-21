@@ -102,7 +102,7 @@ Das Provider-SDK, [omnisdk](https://github.com/stackql-labs/omnisdk), verwaltet 
 
 - **Aufbau von API-Anfragen**: Wandelt SQL-Abfragen in passende REST-API-Aufrufe für jeden Provider um und übernimmt dabei die Konstruktion der Endpunkte, die Zuordnung der Parameter und die Formatierung der Anfragen.
 
-- **Paginierung**: Verarbeitet paginierte API-Antworten automatisch und abstrahiert die Komplexität der verschiedenen Paginierungsschemata unterschiedlicher Provider (cursorbasiert, offsetbasiert, tokenbasiert usw.).
+- **Paginierung**: Verarbeitet paginierte API-Antworten automatisch und abstrahiert die Komplexität der verschiedenen Paginierungsschemata unterschiedlicher Provider (Tokens für die nächste Seite, Seitennummern, Links zur nächsten Seite, `Link`-Header und GraphQL-Cursor).
 
 - **Prädikat-Pushdown**: Reicht Bedingungen, die auf Anfrageparameter abgebildet werden, sowie `LIMIT`, wo keine Sortierung erforderlich ist, in die Provider-Anfragen weiter, um die Zahl der Anfragen und die übertragene Datenmenge zu verringern.
 

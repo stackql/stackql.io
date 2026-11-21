@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: "StackQL 中的 WITH：定义公用表表达式（CTE），即作用范围限于单条 SELECT、INSERT、UPDATE 或 DELETE 语句的临时命名结果集。"
+description: "StackQL 中的 WITH：定义公用表表达式（CTE），即作用范围限于其后紧跟的 SELECT 语句的临时命名结果集。"
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-定义公用表表达式（CTE），供随后的 `SELECT`、`INSERT`、`UPDATE` 或 `DELETE` 语句使用。CTE 充当临时的命名结果集，仅在查询执行期间存在。
+定义公用表表达式（CTE），供其后紧跟的 `SELECT` 语句使用。CTE 充当临时的命名结果集，仅在查询执行期间存在。
 
 另请参阅：
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

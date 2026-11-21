@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "StackQL의 WITH: 단일 SELECT, INSERT, UPDATE 또는 DELETE 문으로 범위가 한정된 이름 있는 임시 결과 집합인 공통 테이블 식(CTE)을 정의합니다."
+description: "StackQL의 WITH: 뒤에 이어지는 SELECT 문으로 범위가 한정된 이름 있는 임시 결과 집합인 공통 테이블 식(CTE)을 정의합니다."
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-뒤이은 `SELECT`, `INSERT`, `UPDATE` 또는 `DELETE` 문에서 사용할 공통 테이블 식(CTE)을 정의합니다. CTE는 쿼리가 실행되는 동안에만 존재하는, 이름이 지정된 임시 결과 집합 역할을 합니다.
+뒤에 이어지는 `SELECT` 문에서 사용할 공통 테이블 식(CTE)을 정의합니다. CTE는 쿼리가 실행되는 동안에만 존재하는, 이름이 지정된 임시 결과 집합 역할을 합니다.
 
 참고 항목:
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

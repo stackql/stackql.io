@@ -7,15 +7,15 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 雲端資源清單
-description: "StackQL 中的 WITH：定義通用資料表運算式（CTE），即範圍限於單一 SELECT、INSERT、UPDATE 或 DELETE 陳述式的暫時具名結果集。"
+description: "StackQL 中的 WITH：定義通用資料表運算式（CTE），即範圍限於其後 SELECT 陳述式的暫時具名結果集。"
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
 
-定義通用資料表運算式（CTE），供後續的 `SELECT`、`INSERT`、`UPDATE` 或 `DELETE` 陳述式使用。CTE 的作用如同暫時的具名結果集，只在查詢執行期間存在。
+定義通用資料表運算式（CTE），供其後的 `SELECT` 陳述式使用。CTE 的作用如同暫時的具名結果集，只在查詢執行期間存在。
 
 另請參閱：
-[[` SELECT `]](/language-spec/select) [[` INSERT `]](/language-spec/insert) [[` UPDATE `]](/language-spec/update) [[` DELETE `]](/language-spec/delete)
+[[` SELECT `]](/language-spec/select)
 
 * * *
 

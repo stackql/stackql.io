@@ -32,7 +32,7 @@ __*numeric_expression*__
 
 ## 반환 값 {#return-values}
 
-양의 숫자 값을 반환합니다.
+음수가 아닌 숫자 값을 반환합니다.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-자세한 내용은 [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html) 문서를 참조하세요.
+자세한 내용은 [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs) 문서를 참조하세요.

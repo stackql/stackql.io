@@ -539,6 +539,7 @@ stackql mcp \
 |--|--|
 |`--mcp.server.type`|نوع خادم MCP: `http` أو `stdio` أو `reverse_proxy` (الأخير للاستخدام مع `stackql srv`).|
 |`--mcp.config`|كائن تكوين JSON لخادم MCP. YAML مقبول أيضًا.|
+|`--mcp.log.format`|ترميز سجل التدقيق: `jsonl` (افتراضي) أو `otel` (إدخالات سجل OpenTelemetry بتنسيق OTLP/JSON). تتجاوز قيمة `server.audit.format`. راجع [تنسيق السجل](#log-format).|
 |`--mcp.protocol.version`|أحدث مراجعة للبروتوكول يعلن عنها الخادم: `auto` (افتراضي) أو `2026-07-28` أو مراجعة أقدم مثل `2025-11-25`. راجع [قفل المراجعة](#pinning-the-revision).|
 |`--env.file`|ملف بيانات اعتماد بتنسيق dotenv يتم تحميله عند بدء التشغيل وتعيد الأداة `reload_credentials` تحميله عند الطلب. راجع [(إعادة) تحميل بيانات الاعتماد](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|منفذ TCP لخادم بروتوكول الاتصال الخاص بـ PostgreSQL (للاستخدام مع `stackql srv`).|
@@ -743,8 +744,9 @@ python cicd/python/build.py --build-mcp-client
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

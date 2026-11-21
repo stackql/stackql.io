@@ -29,11 +29,12 @@ StackQL 的 MCP 服务器内置于引擎二进制文件中，并将 StackQL 的�
 
 ## 工具接口面 {#the-tool-surface}
 
-共 14 个工具，每个工具都返回供 LLM 使用的渲染文本视图，以及带类型的结构化负载：
+共 15 个工具，每个工具都返回供 LLM 使用的渲染文本视图，以及带类型的结构化负载：
 
 - **发现**：`list_providers`、`list_services`、`list_resources`、`list_methods`、`describe_method`，即层次结构遍历，可在编写任何查询之前揭示必需的 `WHERE` 参数。
 - **注册表**：`list_registry`（可用的 Provider 及其版本）、`pull_provider`（安装到本地缓存）。
 - **验证**：`validate_select_query`，解析并规划 `SELECT` 而不执行。
+- **Query Library**：`query_library_search`（按意图、Provider、服务和标签查找精选的查询模板）、`query_library_get`（校验参数并返回渲染后的 SQL，但不执行）。
 - **执行**：`run_select_query`（读取）、`run_mutation_query`（`INSERT`/`UPDATE`/`REPLACE`/`DELETE`，会产生真实的副作用）、`run_lifecycle_operation`（`EXEC`）。
 - **标识**：`server_info`（版本、后端、注册表、模式）；按需调用（用于诊断被拒绝或受门控的操作，或检查特定于版本的行为），而不是在会话开始时调用。
 - **凭据**：`reload_credentials`，在会话中途将 `--env.file` 指定的 dotenv 文件重新加载到进程环境中，并报告每个 Provider 的凭据解析状态；只包含名称和状态，绝不包含机密值（在 v0.10.542 之后的发布版本中可用）。

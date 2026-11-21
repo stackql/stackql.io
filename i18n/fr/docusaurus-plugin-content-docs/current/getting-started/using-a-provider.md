@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 Voir aussi :  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider Registry ]](/providers)
 
-Les requêtes StackQL peuvent être exécutées sur de nombreux fournisseurs cloud, notamment Google Cloud Platform, Amazon Web Services, Microsoft Azure, Digital Ocean et d'autres. Les spécifications des providers StackQL sont téléchargées depuis le [__StackQL Provider Registry__](/providers) ; pour cela, utilisez la commande StackQL [__`REGISTRY PULL`__](/language-spec/registry) ou l'utilitaire en ligne de commande [__`stackql registry`__](/command-line-usage/registry).
+Les requêtes StackQL peuvent être exécutées sur de nombreux fournisseurs cloud, notamment Google Cloud Platform, Amazon Web Services, Microsoft Azure, DigitalOcean et d'autres. Les spécifications des providers StackQL sont téléchargées depuis le [__StackQL Provider Registry__](/providers) ; pour cela, utilisez la commande StackQL [__`REGISTRY PULL`__](/language-spec/registry) ou l'utilitaire en ligne de commande [__`stackql registry`__](/command-line-usage/registry).
 
 
 ## Installer un provider {#installing-a-provider}

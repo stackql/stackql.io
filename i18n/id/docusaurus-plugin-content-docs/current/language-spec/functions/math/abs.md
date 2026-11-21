@@ -32,7 +32,7 @@ Ekspresi dari kategori tipe data numerik eksak atau numerik perkiraan.
 
 ## Nilai yang dikembalikan {#return-values}
 
-Mengembalikan nilai numerik positif.
+Mengembalikan nilai numerik nonnegatif.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-Untuk informasi selengkapnya, lihat [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+Untuk informasi selengkapnya, lihat [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

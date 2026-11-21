@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### 종료 상태 {#exit-status}
 
-`exec` 명령은 입력 처리가 끝나면 상태 `0`으로 종료됩니다. 개별 문의 오류는 콘솔에 기록되므로 스크립트에서 출력을 검사해야 합니다. `v1.0`부터는 [`SET`](/language-spec/set) 또는 [`UNSET`](/language-spec/unset) 구성 문이 실패하거나, [액세스 관리](/command-line-usage/access-management)가 활성화된 상태에서 문이 거부되거나, 미리 보기 IaC 실행에서 실패한 리소스를 보고하면 상태 `1`로 종료됩니다.
+`exec` 명령은 입력 처리가 끝나면 상태 `0`으로 종료됩니다. 개별 문의 오류는 콘솔에 기록되므로 스크립트에서 출력을 검사해야 합니다. `v1.0`부터는 [`SET`](/language-spec/set) 또는 [`UNSET`](/language-spec/unset) 구성 문이 실패하거나, 미리 보기 IaC 실행에서 실패한 리소스를 보고하거나, [액세스 관리](/command-line-usage/access-management)가 활성화된 상태에서 어떤 문이든 실패하거나 거부되면 상태 `1`로 종료됩니다.

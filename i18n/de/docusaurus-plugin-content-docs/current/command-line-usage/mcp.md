@@ -539,6 +539,7 @@ Ein statischer Prompt wird veröffentlicht.
 |--|--|
 |`--mcp.server.type`|MCP-Servertyp: `http`, `stdio` oder `reverse_proxy` (Letzterer wird mit `stackql srv` verwendet).|
 |`--mcp.config`|JSON-Konfigurationsobjekt für den MCP-Server.  YAML wird ebenfalls akzeptiert.|
+|`--mcp.log.format`|Kodierung des Audit-Logs: `jsonl` (Standard) oder `otel` (OpenTelemetry-OTLP/JSON-Log-Datensätze).  Überschreibt `server.audit.format`.  Siehe [Log-Format](#log-format).|
 |`--mcp.protocol.version`|Neueste bekannt gegebene Protokollrevision: `auto` (Standard), `2026-07-28` oder eine ältere Revision wie `2025-11-25`.  Siehe [Festlegen der Revision](#pinning-the-revision).|
 |`--env.file`|Datei mit Anmeldedaten im dotenv-Stil, die beim Start eingelesen und vom Tool `reload_credentials` bei Bedarf erneut eingelesen wird.  Siehe [(Erneutes) Einlesen von Anmeldedaten](#credential-resourcing---envfile--reload_credentials).|
 |`--pgsrv.port`|TCP-Port für den PostgreSQL-Wire-Protokoll-Server (wird mit `stackql srv` verwendet).|
@@ -743,8 +744,9 @@ Beachten Sie, dass `stackql_mcp_client` keinen `Authorization`-Header sendet; de
   --exec.action run_select_query \
   --exec.args '{"sql": "select name from google.compute.networks where project = '"'"'my-project'"'"';"}'
 
-# Mutation - succeeds only against a full_access server, or against
-# delete_safe (for INSERT/UPDATE) or safe with an elicitation-capable client.
+# Mutation (a DELETE) - succeeds only against a full_access server:
+# stackql_mcp_client does not support elicitation, so safe and delete_safe
+# servers refuse it.
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

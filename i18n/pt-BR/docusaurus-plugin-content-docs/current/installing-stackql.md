@@ -74,7 +74,7 @@ Esta página contém as instruções para instalar o StackQL em diversas platafo
   
   ## macOS
   
-  O StackQL está disponível no macOS via Homebrew e pelo instalador `pkg`; um único instalador multiarquitetura oferece suporte tanto à arquitetura ARM (M1/Apple Silicon) quanto à AMD.
+  O StackQL está disponível no macOS via Homebrew e pelo instalador `pkg`; um único instalador multiarquitetura oferece suporte tanto à arquitetura ARM (M1/Apple Silicon) quanto à Intel (x86_64).
 
   <Tabs
     defaultValue="homebrew"
@@ -557,7 +557,7 @@ O ChatGPT na web e no celular não consegue executar um servidor stdio local, po
 
   ### Goose
 
-  O Goose executa extensões stdio diretamente, então o inicializador `npx` é tudo de que você precisa (Node.js 18 ou posterior).
+  O Goose executa extensões stdio diretamente, então o inicializador `npx` é tudo de que você precisa (Node.js 24.22.1 ou posterior, ou 22.23.4 ou 26.12.1 nessas linhas de versão).
 
   **Goose Desktop:** clique no botão abaixo. O Goose abre, mostra o comando que vai executar e pede a sua confirmação; depois, adiciona o StackQL como extensão.
 

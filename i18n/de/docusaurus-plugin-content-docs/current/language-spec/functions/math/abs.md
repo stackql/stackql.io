@@ -32,7 +32,7 @@ Ein Ausdruck aus der Kategorie der exakten oder näherungsweisen numerischen Dat
 
 ## Rückgabewert(e) {#return-values}
 
-Gibt einen positiven numerischen Wert zurück.
+Gibt einen nicht negativen numerischen Wert zurück.
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-Weitere Informationen finden Sie unter [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)
+Weitere Informationen finden Sie unter [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)

@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### Trạng thái thoát {#exit-status}
 
-Lệnh `exec` thoát với trạng thái `0` sau khi đã xử lý xong đầu vào; lỗi từ từng câu lệnh riêng lẻ được ghi ra bảng điều khiển, vì vậy các tập lệnh nên kiểm tra đầu ra.  Từ `v1.0`, lệnh thoát với trạng thái `1` khi một câu lệnh cấu hình [`SET`](/language-spec/set) hoặc [`UNSET`](/language-spec/unset) thất bại, khi [quản lý truy cập](/command-line-usage/access-management) được bật và một câu lệnh bị từ chối hoặc khi một lần chạy IaC bản xem trước báo cáo một tài nguyên thất bại.
+Lệnh `exec` thoát với trạng thái `0` sau khi đã xử lý xong đầu vào; lỗi từ từng câu lệnh riêng lẻ được ghi ra bảng điều khiển, vì vậy các tập lệnh nên kiểm tra đầu ra.  Từ `v1.0`, lệnh thoát với trạng thái `1` khi một câu lệnh cấu hình [`SET`](/language-spec/set) hoặc [`UNSET`](/language-spec/unset) thất bại, khi một lần chạy IaC bản xem trước báo cáo một tài nguyên thất bại hoặc khi [quản lý truy cập](/command-line-usage/access-management) được bật và bất kỳ câu lệnh nào thất bại hoặc bị từ chối.

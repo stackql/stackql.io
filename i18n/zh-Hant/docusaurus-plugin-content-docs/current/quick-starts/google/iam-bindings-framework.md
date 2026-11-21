@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-此檔案由 `iql/iam.iql` 進行前置處理，資料來源為 `data/iam/bindings.json`
+此檔案提供前置處理 `iql/iam.iql` 時所用的資料，資料來源為 `data/iam/bindings.json`
 
 > 此檔案應該不需要修改
 

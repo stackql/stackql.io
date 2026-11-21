@@ -47,7 +47,7 @@ SELECT JSON_PATCH('{"a":1,"b":2}', '{"c":3,"d":4}') AS patched_json;
 
 輸出：`{"a":1,"b":2,"c":3,"d":4}`
 
-### 取代陣列中的元素 {#replace-element-in-array}
+### 以值取代陣列 {#replace-an-array-with-a-value}
 
 ```sql
 -- Example: Replacing an array with a single value in the JSON object

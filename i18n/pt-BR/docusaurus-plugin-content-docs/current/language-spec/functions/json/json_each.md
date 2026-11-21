@@ -33,7 +33,7 @@ A função `json_each` é implementada como a função `json_array_elements_text
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## Argumentos {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 Um array ou objeto JSON.
 
 __*json_path*__  
-O caminho JSON para um array ou objeto contido em um *json_array_or_object*.  Consulte [jsonpath.com](https://jsonpath.com/).
+Opcional. O caminho JSON para um array ou objeto contido em um *json_array_or_object*.  Consulte [jsonpath.com](https://jsonpath.com/).
 
 > Se *json_path* não existir em *json_array_or_object*, a função não retorna nenhuma linha.
 

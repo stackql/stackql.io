@@ -32,7 +32,7 @@ JSON 値の最も外側の要素、または省略可能なパスにある要素
 ## 構文 {#syntax}
 
 ```sql
-SELECT JSON_TYPE(json_array_or_object, json_path) 
+SELECT JSON_TYPE(json_array_or_object [, json_path]) 
 FROM <multipartIdentifier>;
 ```
 
@@ -42,7 +42,7 @@ __*json_array_or_object*__
 JSON 配列またはオブジェクト。
 
 __*json_path*__  
-*json_array_or_object* に含まれる配列またはオブジェクトへの JSON パス。[jsonpath.com](https://jsonpath.com/) を参照してください。
+省略可能。*json_array_or_object* に含まれる配列またはオブジェクトへの JSON パス。[jsonpath.com](https://jsonpath.com/) を参照してください。
 
 > *json_path* が *json_array_or_object* に存在しない場合、関数は `NULL` を返します。
 

@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "StackQL의 DATETIME 함수: 입력 값과 하나 이상의 한정자로 날짜/시간 값을 계산하여 YYYY-MM-DD HH:MM:SS 형식으로 반환합니다."
+description: "StackQL의 DATETIME 함수: 입력 값과 0개 이상의 한정자로 날짜/시간 값을 계산하여 YYYY-MM-DD HH:MM:SS 형식으로 반환합니다."
 image: "/img/stackql-featured-image.png"
 ---
-입력 날짜/시간과 하나 이상의 한정자로 계산한 날짜/시간 값을 반환합니다.  
+입력 날짜/시간과 0개 이상의 한정자로 계산한 날짜/시간 값을 반환합니다.  
 
 참고 항목:  
 [[` SELECT `]](/language-spec/select) [[ 날짜 한정자 ]](/language-spec/functions/datetime/date_modifiers) 

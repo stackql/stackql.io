@@ -7,10 +7,10 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventário de nuvem
-description: "Função DATETIME no StackQL: calcular um valor de data e hora a partir de uma entrada e de um ou mais modificadores, retornado como YYYY-MM-DD HH:MM:SS."
+description: "Função DATETIME no StackQL: calcular um valor de data e hora a partir de uma entrada e de zero ou mais modificadores, retornado como YYYY-MM-DD HH:MM:SS."
 image: "/img/stackql-featured-image.png"
 ---
-Retorna um valor de data e hora calculado a partir de um valor de data e hora de entrada e de um ou mais modificadores.  
+Retorna um valor de data e hora calculado a partir de um valor de data e hora de entrada e de zero ou mais modificadores.  
 
 Veja também:  
 [[` SELECT `]](/language-spec/select) [[ Modificadores de data ]](/language-spec/functions/datetime/date_modifiers) 

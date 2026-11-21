@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### Exit status {#exit-status}
 
-`exec` exits with status `0` once the input has been processed; errors from individual statements are written to the console, so scripts should inspect the output.  From `v1.0` it exits with status `1` when a [`SET`](/language-spec/set) or [`UNSET`](/language-spec/unset) configuration statement fails, when [access management](/command-line-usage/access-management) is enabled and a statement is refused, or when a preview IaC run reports a failed resource.
+`exec` exits with status `0` once the input has been processed; errors from individual statements are written to the console, so scripts should inspect the output.  From `v1.0` it exits with status `1` when a [`SET`](/language-spec/set) or [`UNSET`](/language-spec/unset) configuration statement fails, when a preview IaC run reports a failed resource, or, with [access management](/command-line-usage/access-management) enabled, when any statement fails or is refused.

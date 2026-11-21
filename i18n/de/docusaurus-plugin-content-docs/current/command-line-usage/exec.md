@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### Exit-Status {#exit-status}
 
-`exec` beendet sich mit Status `0`, sobald die Eingabe verarbeitet wurde; Fehler einzelner Anweisungen werden auf die Konsole geschrieben, Skripte sollten daher die Ausgabe prüfen.  Ab `v1.0` beendet es sich mit Status `1`, wenn eine [`SET`](/language-spec/set)- oder [`UNSET`](/language-spec/unset)-Konfigurationsanweisung fehlschlägt, wenn die [Zugriffsverwaltung](/command-line-usage/access-management) aktiviert ist und eine Anweisung verweigert wird, oder wenn ein Preview-IaC-Lauf eine fehlgeschlagene Ressource meldet.
+`exec` beendet sich mit Status `0`, sobald die Eingabe verarbeitet wurde; Fehler einzelner Anweisungen werden auf die Konsole geschrieben, Skripte sollten daher die Ausgabe prüfen.  Ab `v1.0` beendet es sich mit Status `1`, wenn eine [`SET`](/language-spec/set)- oder [`UNSET`](/language-spec/unset)-Konfigurationsanweisung fehlschlägt, wenn ein Preview-IaC-Lauf eine fehlgeschlagene Ressource meldet, oder, bei aktivierter [Zugriffsverwaltung](/command-line-usage/access-management), wenn eine beliebige Anweisung fehlschlägt oder verweigert wird.

@@ -73,4 +73,4 @@ stackql exec -i getservices.iql -o json -f services.json
 
 ### Status keluar {#exit-status}
 
-Perintah `exec` keluar dengan status `0` setelah input selesai diproses; error dari setiap pernyataan ditulis ke konsol, sehingga skrip harus memeriksa output.  Mulai `v1.0`, perintah ini keluar dengan status `1` ketika pernyataan konfigurasi [`SET`](/language-spec/set) atau [`UNSET`](/language-spec/unset) gagal, ketika [manajemen akses](/command-line-usage/access-management) diaktifkan dan sebuah pernyataan ditolak, atau ketika eksekusi IaC pratinjau melaporkan sumber daya yang gagal.
+Perintah `exec` keluar dengan status `0` setelah input selesai diproses; error dari setiap pernyataan ditulis ke konsol, sehingga skrip harus memeriksa output.  Mulai `v1.0`, perintah ini keluar dengan status `1` ketika pernyataan konfigurasi [`SET`](/language-spec/set) atau [`UNSET`](/language-spec/unset) gagal, ketika eksekusi IaC pratinjau melaporkan sumber daya yang gagal, atau, jika [manajemen akses](/command-line-usage/access-management) diaktifkan, ketika pernyataan apa pun gagal atau ditolak.

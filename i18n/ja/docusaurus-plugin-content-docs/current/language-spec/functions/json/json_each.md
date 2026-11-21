@@ -33,7 +33,7 @@ image: "/img/stackql-featured-image.png"
 
 ```sql
 SELECT <alias>.<projectedField>, ... , json_each.value  
-FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object, json_path);
+FROM <multipartIdentifier> <alias>, JSON_EACH(json_array_or_object [, json_path]);
 ```
 ## 引数 {#arguments}
 
@@ -41,7 +41,7 @@ __*json_array_or_object*__
 JSON 配列またはオブジェクト。
 
 __*json_path*__  
-*json_array_or_object* に含まれる配列またはオブジェクトへの JSON パス。[jsonpath.com](https://jsonpath.com/) を参照してください。
+省略可能。*json_array_or_object* に含まれる配列またはオブジェクトへの JSON パス。[jsonpath.com](https://jsonpath.com/) を参照してください。
 
 > *json_path* が *json_array_or_object* に存在しない場合、関数は行を返しません。
 

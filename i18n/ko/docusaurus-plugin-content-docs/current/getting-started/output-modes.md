@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "StackQL 출력 모드: table, json, jsonl, csv, otel의 선택 방법과 shell, exec, 서버 사용 시 각 모드의 출력 내용."
+description: "StackQL 출력 모드: table, json, jsonl, csv, text, otel의 선택 방법과 shell, exec, 서버 사용 시 각 모드의 출력 내용."
 image: "/img/stackql-featured-image.png"
 ---
 참고 항목:  
@@ -205,7 +205,7 @@ service:
       exporters: [otlphttp]
 ```
 
-각 줄은 또한 바이트 단위까지 OTLP/HTTP `POST /v1/logs` 요청의 본문과 동일하며, 이것이 기본 제공 푸시 익스포터가 보내는 내용입니다.
+각 줄은 또한 OTLP/HTTP `POST /v1/logs` 엔드포인트가 요청 본문으로 받아들이는 완전한 OTLP/JSON `LogsData` 객체입니다. 기본 제공 푸시 익스포터는 같은 인코딩을 보내지만, 아래에서 설명하는 것처럼 레코드를 배치로 묶어 보냅니다.
 
 #### OTLP 엔드포인트로 푸시 {#pushing-to-an-otlp-endpoint}
 

@@ -32,7 +32,7 @@ __*numeric_expression*__
 
 ## 傳回值 {#return-values}
 
-傳回正數值。
+傳回非負數值。
 
 * * *
 
@@ -47,4 +47,4 @@ WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';
 ```
 
-如需詳細資訊，請參閱 [https://www.sqlite.org/lang_mathfunc.html](https://www.sqlite.org/lang_mathfunc.html)。
+如需詳細資訊，請參閱 [https://www.sqlite.org/lang_corefunc.html#abs](https://www.sqlite.org/lang_corefunc.html#abs)。

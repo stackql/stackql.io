@@ -115,7 +115,7 @@ Contoh penggunaan `exec` di AWS CloudShell ditunjukkan di sini:
 ```shell
 sh stackql-aws-cloud-shell.sh exec \
 --output csv --outfile instances.csv \
-"SELECT region, instanceType FROM aws.ec2.instances WHERE region IN ('us-east-1')"
+"SELECT region, instance_type FROM aws.ec2.instances WHERE region IN ('us-east-1')"
 ```
 
 Contoh di atas menjalankan kueri StackQL yang ditentukan dan menghasilkan file output `CSV`, yang dapat diunduh dari AWS CloudShell.  Selain itu, Anda dapat memberikan peran IAM menggunakan argumen `--role-arn` untuk mengambil peran lain bagi kueri atau operasi mutasi Anda; contohnya ditunjukkan di sini (dalam hal ini, kita mengambil kueri dari file input):  

@@ -14,7 +14,7 @@ image: "/img/stackql-featured-image.png"
 另請參閱：  
 [[` exec `]](/command-line-usage/exec) [[` shell `]](/command-line-usage/shell) [[ StackQL Provider 登錄庫 ]](/providers)
 
-StackQL 查詢可以針對多種不同的雲端服務供應商執行，包括 Google Cloud Platform、Amazon Web Services、Microsoft Azure、Digital Ocean 等。StackQL Provider 規格是從 [**StackQL Provider 登錄庫**](/providers) 提取的，提取方式可以是使用 [__`REGISTRY PULL`__](/language-spec/registry) StackQL 命令，或是使用 [__`stackql registry`__](/command-line-usage/registry) 命令列公用程式。
+StackQL 查詢可以針對多種不同的雲端服務供應商執行，包括 Google Cloud Platform、Amazon Web Services、Microsoft Azure、DigitalOcean 等。StackQL Provider 規格是從 [**StackQL Provider 登錄庫**](/providers) 提取的，提取方式可以是使用 [__`REGISTRY PULL`__](/language-spec/registry) StackQL 命令，或是使用 [__`stackql registry`__](/command-line-usage/registry) 命令列公用程式。
 
 
 ## 安裝 Provider {#installing-a-provider}
