@@ -7,8 +7,8 @@
 import React from 'react';
 
 // The code shown next to the flag: the language subtag of the locale in
-// upper case (en -> EN, ar -> AR, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, vi -> VI, zh-Hans -> ZH), never a country
-// code. The flag already stands for a country, and the regional flag
+// upper case (en -> EN, ar -> AR, id -> ID, ja -> JA, ko -> KO, pt-BR -> PT, uk -> UK, vi -> VI, zh-Hans -> ZH), never a country
+// code (UK is Ukrainian, the language, not the United Kingdom). The flag already stands for a country, and the regional flag
 // variants (src/lib/regionalFlags.js) can change it, while the language
 // stays the same. Two locales that share a language get distinct codes in
 // CODES: Traditional Chinese (zh-Hant) shows ZH-HANT next to Simplified
@@ -207,6 +207,13 @@ const FLAGS = {
     <svg {...svgProps(className)}>
       <path fill="#da251d" d="M0 0h640v480H0z" />
       <polygon fill="#ff0" points={star(320, 240, 144)} />
+    </svg>
+  ),
+  // Ukraine: two equal bands, blue over yellow.
+  uk: (className) => (
+    <svg {...svgProps(className)}>
+      <path fill="#0057b7" d="M0 0h640v240H0z" />
+      <path fill="#ffd700" d="M0 240h640v240H0z" />
     </svg>
   ),
   pl: (className) => (

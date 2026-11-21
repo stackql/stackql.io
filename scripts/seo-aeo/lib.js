@@ -215,11 +215,18 @@ function arabicCount(text) {
   return m ? m.length : 0;
 }
 
-// The same per locale `script` of scripts/seo-aeo/config.js: 'cjk' or
-// 'arabic' (a locale with script null is not checked this way).
+// Cyrillic letters (Ukrainian; the Cyrillic block and its supplement).
+function cyrillicCount(text) {
+  const m = text.match(/[\u0400-\u052F]/g);
+  return m ? m.length : 0;
+}
+
+// The same per locale `script` of scripts/seo-aeo/config.js: 'cjk',
+// 'arabic' or 'cyrillic' (a locale with script null is not checked this way).
 function scriptCount(text, script) {
   if (script === 'cjk') return cjkCount(text);
   if (script === 'arabic') return arabicCount(text);
+  if (script === 'cyrillic') return cyrillicCount(text);
   return 0;
 }
 function scriptRatio(text, script) {
@@ -342,6 +349,6 @@ module.exports = {
   DEFAULT_UA, LEVELS,
   createClient, createReport,
   parseAttrs, tags, meta, metaAll, links, htmlLang, title, h1, mainText, stripTags, jsonLd, typesOf, nodesOfType,
-  cjkCount, cjkRatio, arabicCount, scriptCount, scriptRatio, htmlDir, sample, normalizeUrl, sameUrl,
+  cjkCount, cjkRatio, arabicCount, cyrillicCount, scriptCount, scriptRatio, htmlDir, sample, normalizeUrl, sameUrl,
   parseRobots, robotsAllows, parseSitemap,
 };

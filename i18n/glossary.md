@@ -3186,3 +3186,434 @@ Style:
 - "See X" is 請參閱 X, never 參見 or 請參見.
 - Front matter must stay valid YAML: keep the quoting of the source value, and put a value in double quotes if the Chinese text contains a half-width `: ` or ` #`, or starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`, or with 「. A full-width ： needs no quoting.
 - Chinese text is shorter than English, so the `length ratio` warning from `yarn i18n:verify` is expected on prose-heavy pages and can be ignored.
+
+## uk
+
+Audience: Ukrainian engineers reading technical documentation. Standard literary Ukrainian in the register of vendor documentation in Ukrainian (Microsoft Learn uk-UA, Google Cloud), spelled by the 2019 orthography (Український правопис 2019: проєкт, вебсайт, вебсервер, вебінтерфейс). Neutral and precise; no Russisms, no surzhyk and no calques from Russian (see the "Not" column and the Style list). Address the reader as "ви" in lower case, the polite plural Microsoft uses; never "Ви" with a capital and never "ти". The possessive is "ваш" ("ваш комп'ютер"). Present tense, short sentences. Instructions to the reader use the plural imperative ("Виконайте команду", "Скористайтеся", "Встановіть", "Створіть", "Див. X"), never an infinitive used as an order. Task headings and example headings that name a task use the verbal noun ("Встановлення StackQL", "Створення шаблону", "Отримання абсолютного значення числа"). Keep the names and abbreviations Ukrainian developers write in Latin script; do not coin Ukrainian names for products or APIs. No marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Ukrainian | Not |
+|---|---|---|
+| provider (a StackQL provider) | провайдер, declined as a Ukrainian noun (провайдера, провайдери, провайдерів), lower case in prose | постачальник (that is the cloud vendor), provider (Latin, in prose) |
+| cloud provider (the vendor) | постачальник хмарних послуг; "постачальник" alone where the context is clear | хмарний провайдер, клауд-провайдер |
+| vendor (the company behind an API or SDK, not only cloud) | постачальник; "vendor-published" = опублікований постачальником | вендор, продавець |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | хмарний ("хмарні ресурси", "хмарна інфраструктура") | клауд, cloud (in prose) |
+| service | сервіс ("сервіс `ec2`") | служба (that is an OS or Windows service and the "service account" term), послуга |
+| resource | ресурс | |
+| method | метод | спосіб (for a StackQL method) |
+| operation | операція | |
+| query (noun) / to query | запит / виконувати запити ("query AWS resources" = виконувати запити до ресурсів AWS; "run a query" = виконати запит) | квері, запитувати (for querying a resource) |
+| statement | інструкція ("інструкція `SELECT`") | оператор (that is an operator), вираз (that is an expression), твердження, стейтмент |
+| command (CLI) / subcommand | команда ("команда `stackql exec`") / підкоманда | інструкція (that is a statement) |
+| result set | набір результатів | результуючий набір, множина результатів |
+| row / column | рядок / стовпець | стовбець, колонка (for a table column), запис (for a row) |
+| line (of text, of output) | рядок | лінія, стрічка |
+| table | таблиця | |
+| view | подання ("подання, створене за допомогою `CREATE VIEW`") | представлення, вигляд, view (in prose) |
+| materialized view | матеріалізоване подання | матеріалізоване представлення |
+| window function | віконна функція | функція вікна |
+| window frame | рамка вікна | фрейм |
+| aggregate function / scalar function | агрегатна функція / скалярна функція | агрегуюча функція |
+| function / expression / clause | функція / вираз / речення ("речення `WHERE`", "речення `GROUP BY`") | клауза, оператор `WHERE` |
+| keyword / operator / predicate | ключове слово / оператор / предикат | |
+| subquery / alias / join | підзапит / псевдонім / з'єднання (`JOIN` where the source has code) | аліас, джойн |
+| partition / peer, peer group / tie (window functions) | секція / одноранговий рядок, група однорангових рядків / рівні значення ("рядки з рівними значеннями", "з пропусками", "без пропусків") | партиція, розділ (for a window partition) |
+| offset (`LAG`, `LEAD`) | зсув (the argument name `offset` stays as code) | офсет, зміщення |
+| target (of `SET` and `UNSET`) | ціль ("Ціль" as the heading) | мішень, таргет |
+| override (a credential, a default) / overwrite (a value, a key) | перевизначення, перевизначити / перезапис, перезаписати ("Перезаписати, якщо вже існує?") | оверрайд |
+| dereference | розіменування | |
+| data type / literal / identifier | тип даних / літерал ("рядковий літерал", "числовий літерал") / ідентифікатор | константа (for a literal) |
+| string / integer / boolean | рядок, or рядкове значення where "рядок" could be read as a table row / ціле число / логічне значення (`BOOLEAN` as code) | стрінг, булеве значення, булевий |
+| whitespace | пробільні символи | пробіли (unless the source means space characters) |
+| parameter / argument | параметр / аргумент | |
+| flag (CLI) / option | прапорець ("глобальні прапорці", "прапорець `--output`") / параметр | прапор, флаг, ключ, опція |
+| environment variable | змінна середовища | змінна оточення, змінна env |
+| field / key / value | поле / ключ / значення | |
+| schema | схема | |
+| control plane / data plane | площина керування / площина даних | площина управління, контрольна площина |
+| agent, AI agent | агент, агент ШІ | ШІ-агент, AI-агент |
+| AI, artificial intelligence | ШІ, штучний інтелект ("моделі ШІ", "асистенти ШІ"); product names that contain AI (Ask AI) keep it | AI (in prose), ІІ |
+| tool (an MCP tool) | інструмент ("інструмент MCP") | тул, засіб (for an MCP tool) |
+| prompt (text sent to a model) | промпт | підказка (that is a hint), запит (that is a query) |
+| approval prompt (a dialog shown to the user) | запит на схвалення | |
+| elicitation (MCP) / elicitation prompt | elicitation (the MCP feature name, kept in Latin and not declined) / запит elicitation; "elicitation-capable client" = клієнт MCP з підтримкою elicitation | виявлення, уточнення |
+| gating / gated (MCP) | контроль / контрольований; "gated by X" = контролюється X ("контролюється режимом сервера"); "gated writes" = операції запису, що потребують схвалення | гейтинг |
+| approval / approve | схвалення / схвалити | затвердження, апрув |
+| server mode, safety mode | режим сервера, режим безпеки | |
+| read-only | лише для читання ("режим лише для читання") | тільки для читання, read-only |
+| write (noun, a mutating call) | операція запису | запис (alone: it reads as a record) |
+| mutation / mutating statement | змінення даних / інструкція, що змінює дані | мутація, мутуюча інструкція |
+| lifecycle operation | операція життєвого циклу | |
+| resource lifecycle | життєвий цикл ресурсу | |
+| log / audit log | журнал / журнал аудиту | лог, лог-файл |
+| log record / completion record / row record (OTel output) | запис журналу / запис про завершення / запис рядка | |
+| credentials | облікові дані | креденшели, повноваження, посвідчення |
+| authentication / authorization | автентифікація / авторизація | аутентифікація |
+| principal / service principal | principal / service principal (kept in Latin, Azure and IAM terms, not declined: "для service principal") | принципал, суб'єкт-служба |
+| subject / issuer / audience / claim (JWT, certificate identity) | суб'єкт / видавець / аудиторія / claim | |
+| membership (group, directory) | членство | |
+| service account | обліковий запис служби | сервісний акаунт |
+| token / API key / access key | токен / ключ API / ключ доступу | API-ключ, маркер |
+| secret / secret store | секрет / сховище секретів | |
+| scope (OAuth, and of a variable or a setting) | область ("область OAuth", "область дії змінної") | скоуп, сфера |
+| role / permission | роль / дозвіл | право (for a permission) |
+| assume a role (AWS) | прийняти роль | взяти роль |
+| session / session variable | сеанс / змінна сеансу | сесія |
+| deployment / to deploy | розгортання / розгорнути, розгортати | деплой, деплоїти |
+| infrastructure / infrastructure as code | інфраструктура / інфраструктура як код (IaC) | |
+| registry (generic) / provider registry | реєстр / реєстр провайдерів | регістр, репозиторій (for a registry) |
+| pull (a provider) | завантажити; "pulled" = завантажений | витягнути, пулити |
+| download / upload | завантажити / вивантажити | скачати, закачати |
+| repository | репозиторій | репо (in prose), сховище (for a repository) |
+| release (noun) / to release | випуск / випустити | реліз |
+| command line | командний рядок | командна строка |
+| shell / interactive shell | оболонка / інтерактивна оболонка | шелл |
+| server / client | сервер / клієнт ("сервер MCP", "клієнт MCP") | |
+| transport (MCP) | транспорт ("транспорт stdio") | |
+| stateless / stateful | без збереження стану / зі збереженням стану | стейтлес |
+| endpoint | кінцева точка | ендпоінт, точка доступу |
+| request / response | запит / відповідь; where "запит" could be read as a query, "запит до API" or "запит HTTP" | реквест, респонс |
+| request body | тіло запиту | |
+| payload | корисне навантаження | пейлоад |
+| header (HTTP) | заголовок ("заголовок HTTP", "заголовок `Authorization`") | хедер |
+| pagination | розбиття на сторінки | пагінація |
+| output / output format / output mode | вивід / формат виводу / режим виводу | вихід, аутпут |
+| input | вхідні дані | інпут |
+| template / templating | шаблон / шаблонізація | темплейт |
+| model (AI) | модель | |
+| dry run | пробний запуск | сухий запуск, драй-ран |
+| guardrail | запобіжник | гардрейл |
+| answer engine | система відповідей на основі ШІ | |
+| region / project / subscription / tenant | регіон / проєкт / підписка / тенант | проект (pre-2019 spelling), орендар, клієнт (for a tenant) |
+| account | обліковий запис ("обліковий запис AWS") | акаунт, рахунок |
+| open source | відкритий код ("з відкритим кодом") | опенсорс, відкрите джерело |
+| binary / library | двійковий файл / бібліотека | бінарник, бінарний файл |
+| embedded (Embedded MCP) / to embed | вбудований ("вбудований сервер MCP") / вбудовувати | ембедед |
+| built-in | вбудований ("вбудовані функції") | убудований, built-in |
+| installation / to install / installed | встановлення / встановити / встановлений | інсталяція, інсталювати, установка, установлення |
+| settings / configuration | налаштування / конфігурація | настройки, параметри (for settings) |
+| documentation | документація | |
+| tutorial | посібник | туторіал, підручник |
+| quick start | швидкий старт; "Quick start" as a heading = Швидкий старт | квікстарт |
+| getting started | початок роботи | |
+| announcement | оголошення | анонс |
+| feature | можливість | функція (that is a function), фіча |
+| example | приклад | |
+| syntax / usage | синтаксис / використання | |
+| note / tip / warning (admonition titles are translated by the theme) | примітка / порада / попередження | |
+| resource hierarchy | ієрархія ресурсів | |
+| access management | керування доступом | управління доступом |
+| provider session | сеанс провайдера | |
+| SQL backend | бекенд SQL | серверна частина SQL, SQL-бекенд |
+| query engine / parser | рушій запитів / синтаксичний аналізатор | двигун, движок, парсер (in prose) |
+| wire protocol | мережевий протокол ("мережевий протокол PostgreSQL") | дротовий протокол |
+| reverse proxy | зворотний проксі | реверс-проксі |
+| local cache | локальний кеш | |
+| key-value pair | пара "ключ-значення" | |
+| delimiter / separator | роздільник (both) | розділювач, делімітер |
+| bucket (object storage) / bucket (NTILE) | бакет / група | кошик, відро |
+| throw an error / return an error | видавати помилку / повертати помилку | кидати помилку |
+| return (a value) | повертати | |
+| well-formed / valid (JSON) | правильно сформований / допустимий | валідний |
+| file / state file | файл / файл стану | |
+| directory (of principals, of plugins, filesystem) / folder | каталог / папка | директорія, тека |
+| computer, machine | комп'ютер, машина | ПК |
+| screen / user / team | екран / користувач / команда | юзер |
+| app, application | застосунок | додаток, аплікація, програма (for an app) |
+| drift / infrastructure drift | дрейф / дрейф інфраструктури | відхилення (unless the source says deviation) |
+| cloud inventory, inventory | інвентаризація хмарних ресурсів, інвентаризація ("інвентаризація ресурсів") | інвентар |
+| compliance | відповідність вимогам ("перевірка відповідності вимогам") | комплаєнс |
+| provision (resources) / provisioning | створювати (ресурси) / створення ресурсів | провіжинінг, забезпечення |
+| operator (the person running StackQL) | оператор | |
+| caller | сторона, що викликає | викликач, викликаюча сторона |
+| filter (noun and verb) | фільтр / фільтрувати | |
+| concatenation | конкатенація ("оператор конкатенації") | склеювання, зчеплення |
+| parse / plan (a statement) | синтаксичний аналіз, аналізувати / планування, планувати | парсити, розпарсити |
+| contract (I/O contract, safety contract) | контракт ("контракт вхідних і вихідних даних", "контракт безпеки") | договір |
+| source of truth | джерело істини | джерело правди |
+| entitlement | право доступу | |
+| snapshot / checksum / digest | знімок / контрольна сума / дайджест | снепшот |
+| estate / fingerprint | середовище ("хмарне середовище") / відбиток | |
+| allowlist | список дозволених | білий список, вайтліст |
+| opt in / explicit opt-in | явно ввімкнути / явне ввімкнення | |
+| enable / disable | увімкнути / вимкнути | активувати, деактивувати (except where the source says activate) |
+| support (a feature, a format) / supported | підтримувати / підтримуваний | |
+| hint (in an MCP error or tool annotation) | підказка | хінт |
+| advertise (a capability) | оголошувати | рекламувати |
+| artifact (build or release output) | артефакт | |
+| stack (of resources) | стек | |
+| pipeline | конвеєр | пайплайн |
+| notarized / signed | нотаризований / підписаний | |
+| common table expression (CTE) | загальний табличний вираз (CTE) | |
+| default / by default | значення за замовчуванням / за замовчуванням | по замовчуванню, дефолтний |
+| array (JSON, data type) | масив | |
+| policy (IAM, access policy) / IAM binding | політика / прив'язка IAM | біндинг |
+| bind, binding (alias, secret store) | прив'язувати, прив'язка | |
+| assign, assignment (`SET`) | присвоювати, присвоєння | |
+| token (lexical) | лексема | токен (for a lexical token) |
+| pin (a version, a key, an issuer) | закріпити; the heading "Pinning the revision" is "Закріплення ревізії" | запінити |
+| exporter / receiver (OTel) / sink (audit) | експортер / приймач / місце призначення | |
+| tenancy (the alias label) | tenancy | |
+| preview (a feature in preview) | попередня версія ("доступно як попередня версія") | прев'ю |
+| legacy | попередній, старий ("попередній спосіб автентифікації") | легасі, застарілий (that is deprecated) |
+| batch / statement batch | пакет / пакет інструкцій | батч |
+| wildcard | символ узагальнення | вайлдкард |
+| query hint | підказка для запиту | |
+| substring / pattern (regex) / regular expression | підрядок / шаблон ("шаблон регулярного виразу" on a page that also has templates) / регулярний вираз | регекс (in prose, except in names) |
+| collating function / collating sequence | функція зіставлення / порядок зіставлення | колація |
+| timestamp | позначка часу | таймстемп, мітка часу |
+| current row / rank / running total (window functions) | поточний рядок / ранг / наростальний підсумок | |
+| installer | інсталятор | установник |
+| workspace | робоча область | воркспейс |
+| monitoring / to monitor / monitor (noun) | моніторинг / відстежувати / монітор | моніторити |
+| run / execute | запускати / виконувати | |
+| list (verb) / delete, remove / manage | виводити список, перелічувати / видаляти / керувати | управляти |
+| framework | фреймворк | каркас |
+| capability (of an MCP client or server) | можливість | здатність |
+| Query Library entry | запис ("ідентифікатор запису Query Library") | |
+| job (CI, scheduled) / task (generic) | завдання ("завдання CI за розкладом") / завдання | джоба, задача |
+| container | контейнер | |
+| trace / span / trace id | трасування / спан / ідентифікатор трасування | трейс |
+| SQL engine / backing (SQL engine, server) | рушій SQL / базовий ("базовий рушій SQL") | |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | автономний / попередньо зібраний / засіб запуску | |
+| to vendor (a binary, a dependency) | вендоринг ("включити у ваш застосунок через вендоринг") | |
+| Cargo features (`sidecar`, `vendored`) | можливості Cargo (features) | |
+| predicate pushdown | передавання предикатів (predicate pushdown) | |
+| verbose mode | докладний режим | вербозний |
+| floating point / Unix timestamp / Julian day | рухома кома ("число з рухомою комою") / позначка часу Unix / юліанський день | плаваюча кома, плаваюча точка |
+| update (noun and verb) | оновлення, оновити | апдейт |
+| database / software / network / password | база даних / програмне забезпечення / мережа / пароль | БД (in prose), софт |
+| link (noun) / page / website | посилання / сторінка / вебсайт | лінк, веб-сайт |
+| custom | власний, користувацький | кастомний |
+| interface / object / instance | інтерфейс / об'єкт / екземпляр ("екземпляр EC2") | інстанс |
+| version / revision | версія / ревізія | |
+| script / browser / plugin | скрипт / браузер / плагін | сценарій (for a script) |
+| build (noun) / to build | збірка / зібрати | білд |
+| path (file, JSON, module, root) | шлях ("шлях до файлу", "шлях JSON", "вираз шляху JSON", "кореневий шлях"); the `PATH` variable and argument names such as `path` stay as code | |
+| nested | вкладений | |
+| real-time | у реальному часі, реального часу | |
+| executable (noun) | виконуваний файл; after a code span "виконуваний файл `stackql`" | екзешник |
+| agentic | агентний ("агентні робочі процеси", "агентна інфраструктура") | агентичний, агентський |
+| restart / reset | перезапустити / скинути | рестарт |
+| encoding / encoded | кодування / закодований ("закодований для URL") | енкодинг |
+| privileges / least privilege | привілеї / мінімальні привілеї | |
+| dependency / relation | залежність / відношення | |
+| resolve (a variable, an alias, credentials) | визначати ("облікові дані визначаються зі змінних середовища"); "resolves to" = відповідає | резолвити, вирішувати |
+| refresh (a materialized view) | оновлювати ("оновлення матеріалізованого подання") | рефреш |
+| blocking / non-blocking (invocation) | блокувальний / неблокувальний | блокуючий, неблокуючий |
+| listing (directory, registry, marketplace) | сторінка в каталозі | лістинг |
+| event / alert / notification | подія / оповіщення / сповіщення | алерт, нотифікація |
+| engineer, data engineer | інженер, інженер даних | |
+| hosted / self-host | розміщений / самостійно розміщувати | хостити |
+| escape (a character, a string) | екранувати; "escape sequence" = escape-послідовність; "escape character" = символ екранування | |
+| datetime value / modifier (date functions) | значення дати й часу / модифікатор | |
+| regex: character class / quantifier / capture group / backreference / occurrence / to match | клас символів / квантифікатор / група захоплення / зворотне посилання / входження / відповідати шаблону, збіг | |
+| Unicode code point / character code | кодова точка Unicode / код символу | |
+| sine, cosine, tangent / arc sine, arc cosine, arc tangent / hyperbolic | синус, косинус, тангенс / арксинус, арккосинус, арктангенс / гіперболічний ("гіперболічний косинус 1" in example headings) | |
+| logarithm / natural logarithm | логарифм / натуральний логарифм | |
+| validate, validation / verify (a signature, a binary, a checksum) | перевіряти, перевірка коректності / перевіряти, перевірка ("перевірити підпис") | валідувати, верифікувати |
+| implement, implemented as / implementation | реалізувати, реалізовано як / реалізація ("Функцію `json_each` реалізовано як функцію `json_array_elements_text`") | імплементувати |
+| evaluate (an expression, a predicate) / evaluate (a policy) | обчислювати / оцінювати ("правила оцінювання політик AWS") | |
+| unset (a variable, a field) | скасувати значення | |
+| deprecated | застарілий | депрекейтед, нерекомендований |
+| mutual TLS | взаємний TLS (mTLS) | |
+| grant (access, a permission) | надавати ("надати доступ") | грантувати |
+| identity (caller, resource, OS) | ідентичність ("ідентичність у локальній ОС") | ідентифікатор (that is an identifier), особистість |
+| metadata | метадані | |
+| rotate (a key, a secret, credentials) | ротація, ротувати | обертати |
+| source / re-source (an env file, variables) | завантажити / повторно завантажити; the heading "Credential (re)sourcing" is "(Повторне) завантаження облікових даних" | |
+| process (OS) / subprocess / spawn | процес / дочірній процес / запустити | |
+| production / development (environment) | робоче середовище / середовище розробки | продакшн, прод |
+| render (a template, rendered SQL) / render (display text) | формувати (SQL із шаблону), сформований SQL / відображати | рендерити |
+| call (noun: tool call, API call) / invocation (blocking, non-blocking) / function call | виклик ("виклик інструмента", "блокувальний (синхронний) виклик") / виклик функції | дзвінок |
+| synchronous / asynchronous | синхронний / асинхронний | |
+| comment (SQL) / commented-out statement | коментар / закоментована інструкція | |
+| sessionless | без сеансу ("режим без сеансу") | |
+| SQL dialect | діалект SQL | |
+| archive (ZIP, tarball) | архів | |
+| walkthrough | покрокове керівництво | |
+| canonical | канонічний | |
+| namespace | простір імен | неймспейс |
+| host (a network host, an MCP host application) / host (a machine) | хост / машина | |
+| terminal | термінал | |
+| cast (to a type) | приведення типу, привести до типу | каст, кастувати |
+| lowercase / uppercase / case-insensitive / case-sensitive | нижній регістр / верхній регістр / без урахування регістру / з урахуванням регістру | регістронезалежний |
+| non-NULL | відмінний від `NULL` | ненульовий |
+| table-valued function / qualified name | табличнозначна функція / повне ім'я | |
+| floating-point number / radians / degrees | число з рухомою комою / радіани / градуси ("у радіанах") | |
+| inverse (trigonometric) | обернений ("арккосинус (обернений косинус)") | інверсний, зворотний |
+| natural language | природна мова | |
+| contributor / contribution | учасник / внесок | контриб'ютор |
+| available | доступний | |
+| side effect / breaking change / entry point | побічний ефект / несумісна зміна / точка входу | |
+| clone / commit / merge (git) | клонувати / коміт / злиття | |
+| image (container, Docker) | образ ("образ Docker", "образ контейнера") | імідж, зображення (for a container image) |
+| dropdown | розкривний список | дропдаун, випадний список |
+| production keys, production account | робочі ключі, робочий обліковий запис | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | |
+| bundle (MCP Bundle, `.mcpb`, platform bundle) | пакет ("пакет `.mcpb`"); "MCP Bundle" stays as the format name | бандл |
+| connector (Claude) / Connector Directory | конектор / Connector Directory (a name) | |
+| escalate / escalation (server mode) | підвищити рівень доступу / підвищення рівня доступу | ескалація |
+| builder (SDK builder object, builder pattern) | будівельник | білдер |
+| frame clause (window functions) | речення рамки | |
+| observability | спостережуваність | обсервабіліті |
+| severity (log) | рівень серйозності | |
+| instrumentation scope / semantic conventions (OTel) | область інструментування / семантичні конвенції | |
+| wall-clock (time, duration) | фактичний ("фактична тривалість") | |
+| stale (value, environment) | неактуальний | застарілий (that is deprecated) |
+| time zone / local time | часовий пояс / місцевий час | локальний час |
+| timeout | тайм-аут | таймаут |
+| connection (to a server) | підключення | з'єднання (that is a join) |
+| server instructions, agent instructions (MCP) | вказівки сервера, вказівки для агентів | інструкції (that is statements) |
+| text view (default tool output) / rendered view | текстовий вивід / текстове відображення | подання (that is an SQL view), вигляд |
+| unnest, expand (a JSON array) / explode (rows) | розгорнути (масив) / розкласти на окремі рядки | |
+| discovery (MCP tool category) | виявлення | |
+| SQL verb | дієслово SQL | |
+| enum | перелік | енам |
+| target (compile target, platform target) | цільова платформа | |
+| air-gapped | фізично ізольований | |
+| prepared statement | підготовлена інструкція | |
+| GitHub Action (one action) / release asset | дія ("дія `setup-stackql-mcp`"); the product name GitHub Actions stays / файл випуску | екшн |
+| deep link / desktop app / native | глибоке посилання / настільний застосунок / нативний | |
+| package manager / scheduler / scheduled run | менеджер пакетів / планувальник / запуск за розкладом | |
+| cross-origin request / certificate authority | запит з іншого джерела / центр сертифікації (CA) | |
+| contribution / contributor / maintainer (OSS) | внесок / учасник / супровідник | контриб'ютор, мейнтейнер |
+| member (IAM) / predefined role / billing account / folder (GCP) | учасник / попередньо визначена роль / платіжний обліковий запис / папка | |
+| firewall rule | правило брандмауера | |
+| qualifier (table alias prefix) / DBMS | кваліфікатор / СКБД | |
+| JSON document / object / array | документ JSON / об'єкт JSON / масив JSON | JSON-об'єкт |
+| insert / replace (JSON functions) / patch (JSON MergePatch) | вставлення / заміна / патч (MergePatch stays in Latin) | |
+| anchor (regex) / control character / backslash / forward slash | якір / керувальний символ / зворотна скісна риска / скісна риска | бекслеш, слеш |
+| truncate, truncated / overflow / exception | усікати, усічений / переповнення / виняток | |
+| two's complement / base (of a logarithm) / exponent | доповняльний код / основа ("логарифм за основою 10") / показник степеня | |
+| remainder / dividend / divisor | остача / ділене / дільник | залишок |
+| moving average / cumulative distribution / dense rank | ковзне середнє / кумулятивний розподіл / щільний ранг | |
+| Nth row, Nth value | рядок з номером N, значення з номером N | N-й рядок |
+| edge case / display name / code snippet | граничний випадок / відображуване ім'я / фрагмент коду | |
+| Common contract (heading on `/mcp/embedded`) | Спільний контракт | |
+| Written in Cyrillic and declined as Ukrainian nouns | бекенд, кеш, хеш, тег, проксі (not declined), плагін, фреймворк, контейнер, токен, бакет, стек, артефакт, скрипт, браузер, вебхук, форк, коміт, маркетплейс, спан, тенант, конвеєр | the same words in Latin script in prose |
+| Kept in Latin script, not declined | sidecar, crate, bearer, dotenv, pull request, issue (a GitHub issue), fan-out, loopback, harness, upstream, smoke test, SaaS, skill (a Claude skill), principal, service principal, elicitation, claim, tenancy; third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+| Translated, not borrowed | runtime = середовище виконання, workflow = робочий процес, wrapper = обгортка, placeholder = заповнювач, fallback = резервний варіант, staging = проміжне середовище, toolchain = набір інструментів, handshake = рукостискання, listener = прослуховувач | рантайм, воркфлоу, плейсхолдер, фолбек |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Ukrainian |
+|---|---|
+| Install | Встановлення |
+| Installing StackQL | Встановлення StackQL |
+| Getting Started | Початок роботи |
+| Command Line Usage | Командний рядок |
+| Language Specification | Специфікація мови |
+| Built-in Functions | Вбудовані функції |
+| Functions | Функції |
+| Developers | Для розробників |
+| Providers | Провайдери |
+| Quick Starts | Швидкий старт |
+| AI Agents | Агенти ШІ |
+| MCP Server / MCP Tools / Embedded MCP | Сервер MCP / Інструменти MCP / Вбудований MCP |
+| Embedded (sidebar category) | Вбудовування |
+| Blog | Блог |
+| Product Announcements | Оголошення про продукт |
+| Provider Announcements | Оголошення про провайдери |
+| Tutorials | Посібники |
+| Documentation | Документація |
+| Contact us | Зв'язатися з нами |
+| Privacy Policy | Політика конфіденційності |
+| Terms of Service | Умови надання послуг |
+| Support | Підтримка |
+| AI Reference | Довідник для ШІ |
+| More | Більше |
+| Welcome to StackQL | Ласкаво просимо до StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Ukrainian |
+|---|---|
+| Syntax | Синтаксис |
+| Arguments | Аргументи |
+| Return Value(s) | Значення, що повертається (one form for both) |
+| Example / Examples | Приклад / Приклади |
+| Inputs / Output | Вхідні дані / Вихідні дані |
+| Flags | Прапорці |
+| Overview | Огляд |
+| How it works | Як це працює |
+| Modes | Режими |
+| Gating | Контроль |
+| Install | Встановлення |
+| Quick start | Швидкий старт |
+| Demo app | Демонстраційний застосунок |
+| Repo link | Посилання на репозиторій |
+| Vendoring / embedding | Вендоринг / вбудовування |
+| Prerequisites | Передумови |
+| Next steps | Наступні кроки |
+| Related | Пов'язані матеріали |
+| See also: | Див. також: |
+| See X. | Див. X. |
+| For more information, see X. | Докладніше див. X. |
+| Optional. / Defaults to X. | Необов'язковий. / За замовчуванням: X. (the adjective agrees with the noun it describes: необов'язкова for a функція or змінна) |
+| Returns X. (the sentence that opens a function or tool page) | Повертає X. |
+| Return the absolute value of a number (an example heading that names a task) | Отримання абсолютного значення числа (a verbal noun) |
+| X function in StackQL: ... (description pattern) | Функція X у StackQL: ... |
+| X window function in StackQL: ... (description pattern) | Віконна функція X у StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X у StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... за допомогою SQL у StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Доступно в StackQL `vX` і новіших версіях |
+| Available in StackQL releases after `vX` | Доступно у випусках StackQL після `vX` |
+| None. (no arguments, no inputs) | Немає. |
+| Query / Results (tab labels), Output: | Запит / Результати, Вивід: |
+| Tested with (badge line on quick starts) | Перевірено з |
+| Best Practices / Troubleshooting / Further reading | Найкращі практики / Усунення несправностей / Додаткові матеріали |
+| MCP tool listing X / MCP tool that does X (description pattern) | Інструмент MCP, що виводить список X / Інструмент MCP, що ... |
+| MCP overview (link text) | Огляд MCP |
+| Argument / Required / Description (table headers) | Аргумент / Обов'язковий / Опис |
+| Renderer / Shape (table headers) | Засіб відображення / Форма |
+| Table / One row per X (table cells) | Таблиця / Один рядок на кожен X |
+| Yes / No (table cells) | Так / Ні |
+| For example | Наприклад |
+| Aggregate function / Scalar function | Агрегатна функція / Скалярна функція |
+| When to use, Use case / Example usage | Коли використовувати, Сценарій використання / Приклад використання |
+| Conclusion / Get started (homepage heading) | Висновок / Почніть роботу |
+| Returns : (a `<summary>` or bold label) | Повертає: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | Спробуйте цей промпт у будь-якому клієнті MCP з підтримкою elicitation, у якому зареєстровано сервер MCP StackQL: |
+| Here's an example in Claude Desktop: | Ось приклад у Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | дозволено / відхилено / потрібне схвалення; дозволено / відхилено / (за замовчуванням) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | Контролюється режимом сервера. / Дозволено в усіх режимах сервера. Лише читання. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | вбудований бекенд SQL / бекенд SQL postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | Ієрархія ресурсів StackQL / Сеанси провайдерів / Шаблонізація / Довідник із віконних функцій / X у специфікації мови |
+| keyword `cloud inventory` | інвентаризація хмарних ресурсів |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Ukrainian alphabet only. The Russian letters ы, э, ъ and ё never appear. Every Ukrainian word is written in Cyrillic letters only: the Latin `i`, `a`, `e`, `o`, `c`, `p`, `x`, `y` look like Ukrainian letters and must not be mixed into a Cyrillic word (a Latin `i` in "iнструкція" breaks search and spell checking). Latin words, names and code are written in Latin letters only.
+- The 2019 orthography: проєкт, проєктування, вебсайт, вебсервер, вебінтерфейс, пів години, Ґ where it belongs (ґанок is rare in this corpus). Loanwords as in current dictionaries: інтерфейс, сервер, конфігурація, кеш, хеш, протокол.
+- The apostrophe in Ukrainian words is the keyboard apostrophe `'` (U+0027): об'єкт, ім'я, зв'язок, комп'ютер, пам'ять, прив'язка, з'єднання, обов'язковий, пов'язаний, м'який, п'ять. Never the typographic apostrophe (U+2019) or the modifier letter apostrophe (U+02BC), so the sources stay greppable and consistent.
+- Because of the apostrophe, a front matter value or a JSX or JavaScript string that is single-quoted in the source and gains an apostrophe in Ukrainian switches to double quotes (`description: 'Об'єкт'` does not parse; write `description: "Об'єкт"`). A translated string that gains a double quote goes in single quotes only if it has no apostrophe; otherwise escape the double quote as `\"` inside double quotes.
+- Quotation marks are straight double quotes ("..."). No guillemets («»), no low-high quotes („“), no typographic quotes.
+- No dash punctuation other than the keyboard hyphen. The copula dash and every other sentence dash is ` - ` with a space on each side ("StackQL - це рушій запитів"). Never an em dash, an en dash or a double hyphen in prose. Hyphens in compounds stay ("будь-який", "пара "ключ-значення"", "escape-послідовність").
+- Latin names, code spans, abbreviations and URLs are never declined and never take a Cyrillic ending or a hyphenated suffix ("StackQL-у", "`SELECT`-ом", "API-шки", "MCP-сервер" are all wrong). Put the class noun before them and decline the noun: "у команді `stackql exec`", "інструкцію `SELECT`", "прапорця `--output`", "функцію `json_extract`", "файлу `stackql.yml`", "провайдера `aws`", "у StackQL", "для GitHub". A number written in digits forms a hyphenated adjective as usual ("64-бітний", "32-розрядний"); a Latin letter does not ("рядок з номером N", not "N-й рядок"). An abbreviation follows its noun as an apposition: "запит SQL", "сервер MCP", "клієнт MCP", "ключ API", "об'єкт JSON", "заголовок HTTP", "бекенд SQL", "агент ШІ".
+- When a Latin name is the grammatical subject, prefer the present tense; where agreement is unavoidable, StackQL is masculine (інструмент), a provider name is masculine (провайдер), a service name is masculine (сервіс).
+- Numbers agree with the noun: 1 рядок, 2 рядки, 5 рядків, 21 рядок, 22 рядки; after a digit written in code the noun still agrees.
+- Euphony (милозвучність): apply the standard alternation of у/в, і/й and з/із/зі; judge a Latin word by how it is pronounced. Do not chase it to the point of rewording a sentence.
+- No Russisms or calques: "є" (not "являється", "являє собою"), "наступний" (not "слідуючий"), "брати участь" (not "приймати участь"), "протягом" (not "на протязі"), "як" (not "в якості"), "цей" (not "даний" for "this"), "збігатися" (not "співпадати"), "правильний" (not "вірний"), "будь-який" (not "любий"), "отримати" (not "получити"), "стосуватися", "належати до" (not "відноситися до"), "за замовчуванням" (not "по замовчуванню"), "вказати", "встановити" (not "задати" for a value), "вважати" (not "рахувати" for consider), "полягати" (not "заключатися"), "змінювати" (not "міняти"), "навести приклад" (not "привести приклад"), "наразі" (not "на даний момент"), "оскільки", "бо" (not "так як" for because), "залежно від" (not "в залежності від"), "здебільшого" (not "в основному"), "під час", "у разі" (not "при" for during or in case of), "за", "на" (not "по" for distributive or "according to": "на вимогу", "пошук за ключем"), "дотримуватися" (not "слідувати" for follow instructions), "наявний" (not "існуючий"), "чинний" (not "діючий").
+- No active participles in -учий, -ючий, -ачий, -ячий: use a relative clause ("рядки, що відповідають шаблону") or an adjective in -льний ("блокувальний", "керувальний"). Established adjectives are fine: наступний, поточний, відповідний, подальший.
+- Passive voice sparingly: prefer an active sentence or the impersonal -но/-то form ("запит виконано", "значення повернуто"). Avoid "є" + passive participle and a reflexive -ся verb with an agent ("запит виконується сервером" becomes "сервер виконує запит").
+- Headings in sentence case: a capital on the first word and on proper nouns only ("Змінні сеансу", not "Змінні Сеансу"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Lists of three or more items take no comma before "і", "й", "та" or "або" ("рядки, стовпці й таблиці").
+- No space before `:`, `;`, `?` or `!`; one space after. The word after a colon is lower case unless it is a name or starts a full sentence.
+- "we" as StackQL the project or company is "ми" ("ми рекомендуємо"); "we" in a walkthrough that includes the reader is also "ми" ("ми створимо подання").
+- Example prompts addressed to an AI assistant use the singular imperative, as Ukrainian users write to assistants ("Покажи", "Створи", "Перелічи"); everything addressed to the reader uses the plural "ви" forms.
+- English loanwords and terms from the "Kept in Latin script" row are written plain, never in italics and never in quotes: added italics change the page structure that `yarn i18n:verify` and the node-count check compare.
+- Names of languages, months and days are lower case ("англійська мова", "українська", "січень", "понеділок"). Product, provider and vendor names keep their own spelling.
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the Ukrainian decimal comma and space thousands separator are not applied inside code or tables of command output, and prose numbers follow the source.
+- The `description` front matter stays one sentence and under about 170 characters (Ukrainian runs 10 to 25 percent longer than English in characters; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> інвентаризація хмарних ресурсів); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value unless the apostrophe rule above forces double quotes. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "Функція X у StackQL: ..." always needs the double quotes the source already has.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Ukrainian declension tempts a suffix after a bold term: put the whole inflected word inside the markers (`**провайдера**`), never `**провайдер**а`. A closing `**` must not be followed directly by a letter when it follows punctuation or inline code (it would not close in CommonMark), and a closing `__` or `_` must never be followed directly by a letter; leave a space or punctuation after the marker.
+- A `{` in prose starts a JavaScript expression in MDX. Where the source escapes braces (`\{`info`, `warn`\}`), keep the backslashes exactly.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Віконні функції `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Ukrainian is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` that says the translation is short points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).

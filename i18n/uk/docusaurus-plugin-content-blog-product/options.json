@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Оголошення про продукт",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Нові випуски, можливості та функціональність StackQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Усі оголошення про продукт",
+    "description": "The label for the left sidebar"
+  }
+}
