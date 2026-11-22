@@ -30,7 +30,7 @@ Tested with <span class="tutorial_tested_on">embedded sql backend</span> <span c
 
 ## How it works {#how-it-works}
 
-The StackQL linux package includes scripts to use `stackql` directly within major cloud providers' built-in cloud shell environments.  For AWS the script is __`stackql-aws-cloud-shell.sh`__.  Usage for the __`stackql-aws-cloud-shell.sh`__ script is shown here:  
+The StackQL Linux package includes scripts to use `stackql` directly within major cloud providers' built-in cloud shell environments.  For AWS the script is __`stackql-aws-cloud-shell.sh`__.  Usage for the __`stackql-aws-cloud-shell.sh`__ script is shown here:  
 
 ```
 Usage:

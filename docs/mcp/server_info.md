@@ -41,7 +41,7 @@ None.
 |`transport`|`http` or `stdio`.|
 |`sql_backend`|Backing SQL engine (e.g., `sqlite3`).|
 |`provider_registry`|Provider registry URL.|
-|`mode`|Active server mode -- `read_only`, `safe`, `delete_safe`, or `full_access`.|
+|`mode`|Active server mode - `read_only`, `safe`, `delete_safe`, or `full_access`.|
 |`is_read_only`|Legacy boolean flag (`true` iff `mode == read_only`).|
 
 * * *

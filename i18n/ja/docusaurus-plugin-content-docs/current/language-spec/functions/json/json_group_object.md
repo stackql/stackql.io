@@ -34,7 +34,7 @@ __*value_column*__
 JSON オブジェクトの値を提供する列。
 
 __*grouping_column*__  
-結果をグループ化する基準となる列。
+`GROUP BY` の列です。`JSON_GROUP_OBJECT` の引数ではありません（この関数が取る引数はちょうど 2 つです）。グループごとに 1 つの JSON オブジェクトが返されます。
 
 ## 戻り値 {#return-values}
 指定した列から集約したすべてのキーと値のペアを含む JSON オブジェクトを、`grouping_column` に従ってグループ化して返します。

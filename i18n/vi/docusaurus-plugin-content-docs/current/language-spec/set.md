@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### Liên kết một bí danh provider {#bind-a-provider-alias}
 
-Bí danh provider là một instance thứ hai, được cấu hình độc lập, của một provider, được dùng thay cho tên provider trong truy vấn. Giá trị là một tài liệu JSON trong một chuỗi: `provider` chỉ tên provider bên dưới, `tenancy` gắn nhãn cho tài khoản, `auth` là một khối thông tin xác thực có cùng dạng với `--auth` và `params` cung cấp giá trị mặc định cho các tham số yêu cầu như `region`. Khi đó, các truy vấn đối với `production.s3.buckets` chạy với thông tin xác thực đó, trong khi `aws.s3.buckets` giữ cấu hình lúc khởi động. Danh sách đầy đủ các khóa có trong [Phiên provider](/getting-started/provider-sessions#provider-aliases).
+Bí danh provider là một instance thứ hai, được cấu hình độc lập, của một provider, được dùng thay cho tên provider trong truy vấn. Giá trị là một tài liệu JSON trong một chuỗi: `provider` chỉ tên provider bên dưới, `tenancy` gắn nhãn cho tài khoản, `auth` là một khối thông tin xác thực theo định dạng của bí danh (với AWS là `access_key_id_env_var` và `secret_access_key_env_var`, không phải các khóa `keyIDenvvar` và `credentialsenvvar` của `--auth`) và `params` cung cấp giá trị mặc định cho các tham số yêu cầu như `region`. Khi đó, các truy vấn đối với `production.s3.buckets` chạy với thông tin xác thực đó, trong khi `aws.s3.buckets` giữ cấu hình lúc khởi động. Danh sách đầy đủ các khóa có trong [Phiên provider](/getting-started/provider-sessions#provider-aliases).
 
 ```sql
 SET "$.providers.production" = '{

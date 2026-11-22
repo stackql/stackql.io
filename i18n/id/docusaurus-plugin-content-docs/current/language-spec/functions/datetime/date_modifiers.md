@@ -26,7 +26,7 @@ Dalam fungsi tanggal dan waktu StackQL, nilai tanggal atau waktu dapat diikuti o
 | start of month       | Mundur ke awal bulan                                                            |
 | start of year        | Mundur ke awal tahun                                                            |
 | start of day         | Mundur ke awal hari                                                             |
-| weekday N            | Memajukan tanggal ke tanggal berikutnya yang nomor hari dalam minggunya adalah N |
+| weekday N            | Memajukan tanggal ke tanggal berikutnya yang nomor hari dalam minggunya adalah N; tanggal yang sudah jatuh pada hari N dikembalikan tanpa perubahan |
 | localtime            | Mengembalikan waktu lokal                                                       |
 | utc                  | Mengembalikan waktu UTC                                                         |
 | unixepoch            | Waktu Unix                                                                      |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Mendapatkan hari tertentu berikutnya setelah tanggal yang diberikan {#get-the-next-specified-weekday-after-a-given-date}
+### Mendapatkan hari tertentu pada atau setelah tanggal yang diberikan {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

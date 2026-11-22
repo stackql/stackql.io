@@ -345,7 +345,7 @@ cargo install stackql-deploy
 
   ### AWS CloudShell
 
-  AWS CloudShell menyediakan shell berbasis browser dengan AWS CLI yang sudah terinstal dan terautentikasi. Dengan menjalankan StackQL di AWS CloudShell, Anda dapat mengkueri dan mengelola sumber daya AWS tanpa langkah autentikasi tambahan. Untuk petunjuk terperinci, lihat [tutorial AWS CloudShell](/quick-starts/aws/aws-cloud-shell) kami.
+  AWS CloudShell menyediakan shell berbasis browser dengan AWS CLI yang sudah terinstal dan terautentikasi. Dengan menjalankan StackQL di AWS CloudShell, Anda dapat mengkueri dan mengelola sumber daya AWS tanpa langkah autentikasi tambahan. Untuk petunjuk terperinci, lihat panduan mulai cepat [StackQL di AWS CloudShell](/quick-starts/aws/aws-cloud-shell).
 
   Pertama, unduh paket StackQL:
 

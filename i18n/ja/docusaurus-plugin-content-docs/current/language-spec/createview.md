@@ -11,7 +11,6 @@ description: "StackQL の CREATE VIEW：クエリ（クロスクラウドの UNI
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 セッション内に `view` または `materialized view` を作成します。長いクエリや複雑な `stackql` クエリを表すために使用できます。  
 

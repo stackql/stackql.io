@@ -11,7 +11,6 @@ description: "REFRESH VIEW di StackQL: membangun ulang hasil tersimpan dari tamp
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Menyegarkan data `materialized view` dalam suatu sesi.  
 

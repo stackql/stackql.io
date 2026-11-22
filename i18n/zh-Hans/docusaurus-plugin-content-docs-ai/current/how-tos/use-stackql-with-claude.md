@@ -68,7 +68,7 @@ stackql --version
 
 ## 控制 Claude 可以执行的操作 {#controlling-what-claude-can-do}
 
-配置中的 `mode` 字段就是契约：`read_only` 用于仅做资源清单的助手，`safe`（默认）用于受审批门控的更改，`delete_safe` 允许创建/更新但对删除进行门控，`full_access` 仅用于受信任的自动化。无论处于哪种模式，Claude 发出的每次调用都会记录在服务器的 JSONL 审计日志中。
+配置中的 `mode` 字段就是契约：`read_only` 用于仅做资源清单的助手，`safe`（默认）用于受审批门控的更改，`delete_safe` 允许创建/更新但对删除和 `EXEC` 生命周期操作进行门控，`full_access` 仅用于受信任的自动化。无论处于哪种模式，Claude 发出的每次调用都会记录在服务器的 JSONL 审计日志中。
 
 ## 相关概念 {#related-concepts}
 

@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "Perintah utilitas shell StackQL seperti clear dan sleep, beserta sintaksisnya dan kapan menggunakannya dalam sesi interaktif dan skrip."
+description: "Perintah utilitas shell StackQL clear dan sleep: fungsi masing-masing perintah, beserta contohnya."
 image: "/img/stackql-featured-image.png"
 ---
 

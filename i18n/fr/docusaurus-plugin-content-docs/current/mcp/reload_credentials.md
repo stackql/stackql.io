@@ -67,7 +67,7 @@ Chaque ligne de `providers` contient :
 
 <br/>
 
-Les types d'authentification qui s'authentifient en dehors du chemin des octets d'identifiants (gcloud interactif, azure CLI, oauth2 client credentials, chaînes assume-role, signature OCI, null) indiquent `not_checked`.
+Les types d'authentification qui s'authentifient en dehors du chemin des octets d'identifiants (gcloud interactif, Azure CLI, oauth2 client credentials, chaînes assume-role, signature OCI, null) indiquent `not_checked`.
 
 * * *
 

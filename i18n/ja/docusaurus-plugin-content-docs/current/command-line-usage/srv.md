@@ -11,7 +11,7 @@ description: "stackql srv コマンドは StackQL を PostgreSQL ワイヤプロ
 image: "/img/stackql-featured-image.png"
 ---
 
-StackQL をサービスとして起動するためのコマンドです。起動したサービスには、mTLS で認証された [Postgres ワイヤプロトコル](https://www.postgresql.org/docs/current/protocol.html)クライアントからアクセスできます。`srv` コマンドは、PostgreSQL ワイヤプロトコルサーバーと並行して [Model Context Protocol（MCP）](/command-line-usage/mcp)サーバーを実行することもできます。これにより、従来のデータベースクライアントと AI エージェントの両方からのデュアルプロトコルアクセスが可能になります。
+StackQL をサービスとして起動するためのコマンドです。起動したサービスには [Postgres ワイヤプロトコル](https://www.postgresql.org/docs/current/protocol.html)クライアントからアクセスでき、クライアントは mTLS で認証できます。`srv` コマンドは、PostgreSQL ワイヤプロトコルサーバーと並行して [Model Context Protocol（MCP）](/command-line-usage/mcp)サーバーを実行することもできます。これにより、従来のデータベースクライアントと AI エージェントの両方からのデュアルプロトコルアクセスが可能になります。
 
 * * * 
 

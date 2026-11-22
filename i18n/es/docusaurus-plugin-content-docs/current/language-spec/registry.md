@@ -11,7 +11,6 @@ description: "REGISTRY en StackQL: enumerar los providers y las versiones del re
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Enumera los providers disponibles en el registro de providers configurado o descarga un provider en la instalación local.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### Instalar una versión concreta de un provider {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

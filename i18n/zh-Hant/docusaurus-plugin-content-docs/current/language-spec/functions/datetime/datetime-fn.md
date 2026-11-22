@@ -65,7 +65,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 取得指定日期之後的下一個指定星期幾 {#get-the-next-specified-weekday-after-a-given-date}
+### 取得指定日期當天或之後的指定星期幾 {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

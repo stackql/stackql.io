@@ -67,7 +67,7 @@ Mỗi hàng `providers` có:
 
 <br/>
 
-Các loại xác thực thực hiện xác thực bên ngoài luồng xử lý byte thông tin xác thực (gcloud tương tác, azure CLI, thông tin xác thực ứng dụng khách oauth2, chuỗi đảm nhận vai trò, ký OCI, null) báo cáo `not_checked`.
+Các loại xác thực thực hiện xác thực bên ngoài luồng xử lý byte thông tin xác thực (gcloud tương tác, Azure CLI, thông tin xác thực ứng dụng khách oauth2, chuỗi đảm nhận vai trò, ký OCI, null) báo cáo `not_checked`.
 
 * * *
 

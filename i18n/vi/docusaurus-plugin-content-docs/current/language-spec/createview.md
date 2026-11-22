@@ -11,7 +11,6 @@ description: "CREATE VIEW trong StackQL: lưu một truy vấn, kể cả các U
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Tạo một `view` hoặc một `materialized view` trong một phiên, có thể dùng để biểu diễn một truy vấn `stackql` dài hoặc phức tạp.  
 

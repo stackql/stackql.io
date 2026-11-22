@@ -26,7 +26,7 @@ StackQL の日時関数に渡す日付または時刻の値の後には、日付
 | start of month       | 月の初めまで戻す                                |
 | start of year        | 年の初めまで戻す                                 |
 | start of day         | 日の初めまで戻す                                  |
-| weekday N            | 曜日番号が N となる次の日付まで日付を進める |
+| weekday N            | 曜日番号が N となる次の日付まで日付を進める（すでに曜日 N の日付は変更されずに返される） |
 | localtime            | ローカル時刻を返す                                                     |
 | utc                  | UTC 時刻を返す                                                       |
 | unixepoch            | Unix 時間                                                             |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 指定した日付の後に来る指定曜日を取得する {#get-the-next-specified-weekday-after-a-given-date}
+### 指定した日付以降に来る指定曜日を取得する {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

@@ -64,7 +64,7 @@ Google Cloud Identity and Access Management (IAM) - це фреймворк дл
 
 ### Файл `iql/iam.iql` {#iqliamiql-file}
 
-Це основний файл, який запускатиме `stackql`; за допомогою `data/iam.jsonnet` він сформує та застосує транспільовані прив'язки політик, згенеровані з даних у `data/iam/bindings.json`
+Це основний файл, який запускатиме `stackql`; за допомогою `data/iam.jsonnet` він сформує та застосує транспільовані прив'язки політик, згенеровані з даних у `data/iam/custom_roles.json` і `data/iam/bindings.json`
 
 > цей файл не потрібно змінювати
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Цей файл надає дані для попередньої обробки `iql/iam.iql`, беручи їх із `data/iam/bindings.json`
+Цей файл надає дані для попередньої обробки `iql/iam.iql`, беручи їх із `data/iam/custom_roles.json` і `data/iam/bindings.json`
 
 > цей файл не потрібно змінювати
 

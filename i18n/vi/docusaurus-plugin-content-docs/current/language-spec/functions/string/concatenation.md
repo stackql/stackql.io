@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## Đối số {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 Một literal chuỗi hoặc cột chuỗi.
 
 ## Giá trị trả về {#return-values}

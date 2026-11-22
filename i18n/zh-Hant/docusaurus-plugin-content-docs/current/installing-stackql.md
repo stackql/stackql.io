@@ -344,7 +344,7 @@ cargo install stackql-deploy
 
   ### AWS CloudShell
 
-  AWS CloudShell 提供以瀏覽器為基礎的 shell，已預先安裝 AWS CLI 並完成驗證。在 AWS CloudShell 中執行 StackQL，您不需要額外的驗證步驟，即可查詢和管理 AWS 資源。如需詳細說明，請參閱我們的 [AWS CloudShell 教學](/quick-starts/aws/aws-cloud-shell)。
+  AWS CloudShell 提供以瀏覽器為基礎的 shell，已預先安裝 AWS CLI 並完成驗證。在 AWS CloudShell 中執行 StackQL，您不需要額外的驗證步驟，即可查詢和管理 AWS 資源。如需詳細說明，請參閱 [AWS CloudShell 中的 StackQL](/quick-starts/aws/aws-cloud-shell) 快速入門。
 
   首先，下載 StackQL 套件：
 

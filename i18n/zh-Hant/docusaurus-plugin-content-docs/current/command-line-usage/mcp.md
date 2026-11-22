@@ -525,11 +525,17 @@ stackql mcp \
 
 ### 可用的 MCP 提示詞 {#available-mcp-prompts}
 
-發佈一個靜態提示詞。
+發佈七個提示詞，並受設定的 `enabled_prompts` 允許清單限制。每個提示詞都是代理程式使用 StackQL MCP 工具執行的引導式工作流程，而且都不會變更雲端資源。
 
 | 提示詞 | 描述 |
 |--|--|
-|`write_safe_select`|針對 stackql 資源撰寫安全 `SELECT` 查詢的指引。說明如何使用 `SHOW METHODS IN <provider>.<service>.<resource>` 找出正確的讀取方法和必要的 `WHERE` 參數。|
+|`getting_started`|為新使用者提供的 StackQL 和 StackQL MCP 伺服器互動式引導導覽：概念、Provider 探索、第一個查詢，以及後續步驟。|
+|`cloud_audit`|跨雲端（AWS、Google Cloud、Azure 和 Entra ID）的安全性與 FinOps 稽核；傳回發現項目報告。|
+|`cost_cleanup`|FinOps 清理流程，會找出閒置和孤立的資源、估算每月可節省的成本，並傳回依優先順序排列、可安全刪除的資源清單。|
+|`drift_report`|將宣告的基礎架構即程式碼（Terraform 狀態或計畫，或貼上的資源清單）與實際雲端資源進行比較的漂移報告；傳回漂移表格。|
+|`iam_access_review`|跨 AWS IAM、Entra ID、Okta 和 GitHub 的身分與存取權檢閱；傳回可直接交給稽核人員的存取權檢閱（SOC 2 或 ISO 格式）。|
+|`public_exposure_scan`|掃描可從網際網路存取的資源（公開儲存體、開放的安全群組、公用 IP 位址、公開資料庫端點、對外暴露的 Kubernetes 服務）；傳回依優先順序排列的暴露表格。|
+|`create_deploy_stack`|引導使用者產生 `stackql-deploy` 堆疊（資訊清單和 `.iql` 資源檔案），其中的查詢都經過即時測試。變更只會轉譯給 `stackql-deploy` 使用，絕不會執行。|
 
 * * *
 
@@ -683,7 +689,7 @@ python cicd/python/build.py --build-mcp-client
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

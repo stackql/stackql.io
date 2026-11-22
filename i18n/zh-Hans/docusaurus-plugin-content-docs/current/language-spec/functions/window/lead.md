@@ -61,7 +61,7 @@ __*ORDER BY column*__
 ### 向后查看下一个发布版本 {#look-ahead-to-the-next-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous and next release
 SELECT
     tag_name,
     name,

@@ -67,7 +67,7 @@ StackQL `v0.10.542` 이후 릴리스에서 사용할 수 있습니다.
 
 <br/>
 
-자격 증명 바이트 경로 밖에서 인증하는 인증 형식(대화형 gcloud, azure CLI, oauth2 클라이언트 자격 증명, 역할 수임 체인, OCI 서명, null)은 `not_checked` 상태를 보고합니다.
+자격 증명 바이트 경로 밖에서 인증하는 인증 형식(대화형 gcloud, Azure CLI, oauth2 클라이언트 자격 증명, 역할 수임 체인, OCI 서명, null)은 `not_checked` 상태를 보고합니다.
 
 * * *
 

@@ -67,7 +67,7 @@ env 檔案會疊加在處理程序環境之上，而不是取代它：憑證解�
 
 <br/>
 
-在憑證位元組路徑之外進行驗證的驗證類型（互動式 gcloud、azure CLI、oauth2 用戶端憑證、擔任角色鏈、OCI 簽署、null）會回報 `not_checked`。
+在憑證位元組路徑之外進行驗證的驗證類型（互動式 gcloud、Azure CLI、oauth2 用戶端憑證、擔任角色鏈、OCI 簽署、null）會回報 `not_checked`。
 
 * * *
 

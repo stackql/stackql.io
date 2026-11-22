@@ -34,7 +34,7 @@ __*value_column*__
 Die Spalte, die die Werte für die JSON-Objekte liefert.
 
 __*grouping_column*__  
-Die Spalte, nach der die Ergebnisse gruppiert werden.
+Die `GROUP BY`-Spalte; sie ist kein Argument der Funktion `JSON_GROUP_OBJECT`, die genau zwei annimmt.  Pro Gruppe wird ein JSON-Objekt zurückgegeben.
 
 ## Rückgabewert(e) {#return-values}
 Gibt ein JSON-Objekt zurück, das alle aggregierten Schlüssel-Wert-Paare aus den angegebenen Spalten enthält, gruppiert nach der `grouping_column`.

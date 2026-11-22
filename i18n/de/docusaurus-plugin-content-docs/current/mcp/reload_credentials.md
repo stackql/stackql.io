@@ -67,7 +67,7 @@ Jede `providers`-Zeile enthält:
 
 <br/>
 
-Auth-Typen, die außerhalb des Pfads der Anmeldedaten-Bytes authentifizieren (interaktives gcloud, azure CLI, oauth2 client credentials, assume-role-Ketten, OCI-Signierung, null), melden `not_checked`.
+Auth-Typen, die außerhalb des Pfads der Anmeldedaten-Bytes authentifizieren (interaktives gcloud, Azure CLI, oauth2 client credentials, assume-role-Ketten, OCI-Signierung, null), melden `not_checked`.
 
 * * *
 

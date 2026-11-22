@@ -41,7 +41,7 @@ stackql mcp \
 
 3. **選擇安全模式**。模式在伺服器設定中指定，並管控代理程式可以執行的作業：
 
-| 模式 | SELECT / 中繼資料 | INSERT / UPDATE | DELETE | EXEC |
+| 模式 | SELECT / 中繼資料 | INSERT / UPDATE / REPLACE | DELETE | EXEC |
 |---|---|---|---|---|
 | `read_only` | 允許 | 拒絕 | 拒絕 | 拒絕 |
 | `safe`（預設） | 允許 | 需要核准 | 需要核准 | 需要核准 |
@@ -50,7 +50,7 @@ stackql mcp \
 
 「需要核准」使用 MCP 徵詢（elicitation）流程：用戶端會向使用者顯示待執行的 SQL，由使用者接受或拒絕。資源清單代理程式請固定使用 `read_only`；`full_access` 僅保留給稽核記錄經過審查的受信任管線。包含多個陳述式的承載會依其中權限最高的陳述式管控（從 `v0.12.742` 起），因此變更無法夾帶在開頭的 `SELECT` 之後。
 
-4. **讓代理程式先探索，再查詢**。典型的代理程式工作階段：先呼叫一次 `server_info`，接著 `list_providers` -> `list_methods`（會顯示必要的 `WHERE` 參數）-> `validate_select_query` -> `run_select_query`：
+4. **讓代理程式先探索，再查詢**。典型的代理程式工作階段：`list_providers` -> `list_methods`（會顯示必要的 `WHERE` 參數）-> `validate_select_query` -> `run_select_query`：
 
 ```sql
 SELECT name, language, stargazers_count

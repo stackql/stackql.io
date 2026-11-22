@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "Sử dụng StackQL: chạy truy vấn tương tác trong shell, không tương tác với exec hoặc dưới dạng máy chủ, và khám phá provider, dịch vụ và tài nguyên trong quá trình làm việc."
+description: "Sử dụng StackQL: chạy truy vấn trong shell tương tác, cấu hình shell bằng tệp .stackqlrc hoặc chạy truy vấn không tương tác với exec, trên dòng lệnh hoặc từ tệp đầu vào IQL."
 image: "/img/stackql-featured-image.png"
 ---
 Xem thêm:  

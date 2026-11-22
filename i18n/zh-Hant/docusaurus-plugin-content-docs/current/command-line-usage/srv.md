@@ -11,7 +11,7 @@ description: "stackql srv 命令會將 StackQL 作為 PostgreSQL 線路協定伺
 image: "/img/stackql-featured-image.png"
 ---
 
-用於將 StackQL 作為服務啟動的命令，啟動後可由使用 mTLS 驗證的 [Postgres 線路協定](https://www.postgresql.org/docs/current/protocol.html) 用戶端存取。`srv` 命令也可以在 PostgreSQL 線路協定伺服器之外，同時執行 [Model Context Protocol (MCP)](/command-line-usage/mcp) 伺服器，讓傳統資料庫用戶端與 AI 代理程式都能透過雙協定存取。
+用於將 StackQL 作為服務啟動的命令，啟動後可由 [Postgres 線路協定](https://www.postgresql.org/docs/current/protocol.html) 用戶端存取，這些用戶端可以使用 mTLS 驗證。`srv` 命令也可以在 PostgreSQL 線路協定伺服器之外，同時執行 [Model Context Protocol (MCP)](/command-line-usage/mcp) 伺服器，讓傳統資料庫用戶端與 AI 代理程式都能透過雙協定存取。
 
 * * * 
 

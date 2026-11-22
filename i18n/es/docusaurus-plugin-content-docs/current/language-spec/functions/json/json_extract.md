@@ -25,7 +25,7 @@ Use la instrucción [**DESCRIBE**](/language-spec/describe) para localizar los t
 
 :::note 
 
-La función `json_extract` se implementa como la función `json_extract_path_text` si usa stackql con un backend SQL `postgres`
+La función `json_extract` se implementa como la función `json_extract_path_text` si usa stackql con un backend SQL `postgres`.  La ruta se divide por `.` y se descarta un `$` inicial, de modo que `'$.a.b'` se convierte en las claves `'a'` y `'b'`; un subíndice de array como `$[0]` se pasa como clave de objeto y no selecciona un elemento del array en ese backend.
 
 :::
 

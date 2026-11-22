@@ -64,7 +64,7 @@ Für dieses Bindings-Deployment-Framework wird der folgende Verzeichnisbaum verw
 
 ### Datei `iql/iam.iql` {#iqliamiql-file}
 
-Dies ist die Hauptdatei, die von `stackql` ausgeführt wird; mithilfe von `data/iam.jsonnet` rendert sie die aus den Daten in `data/iam/bindings.json` erzeugten, transpilierten Policy-Bindings und wendet sie an
+Dies ist die Hauptdatei, die von `stackql` ausgeführt wird; mithilfe von `data/iam.jsonnet` rendert sie die aus den Daten in `data/iam/custom_roles.json` und `data/iam/bindings.json` erzeugten, transpilierten Policy-Bindings und wendet sie an
 
 > diese Datei sollte nicht geändert werden müssen
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Diese Datei liefert die Daten, mit denen `iql/iam.iql` vorverarbeitet wird, und bezieht sie aus `data/iam/bindings.json`
+Diese Datei liefert die Daten, mit denen `iql/iam.iql` vorverarbeitet wird, und bezieht sie aus `data/iam/custom_roles.json` und `data/iam/bindings.json`
 
 > diese Datei sollte nicht geändert werden müssen
 

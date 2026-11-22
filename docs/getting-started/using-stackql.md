@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: "Using StackQL: run queries interactively in the shell, non-interactively with exec, or as a server, and discover providers, services and resources as you go."
+description: "Using StackQL: run queries in the interactive shell, set it up with a .stackqlrc file, or run them non-interactively with exec, inline or from an IQL input file."
 image: "/img/stackql-featured-image.png"
 ---
 See also:  

@@ -64,7 +64,7 @@ image: "/img/tutorials/google/stackql-google-provider-featured-image.png"
 
 ### الملف `iql/iam.iql` {#iqliamiql-file}
 
-هذا هو الملف الأساسي الذي سيشغله `stackql`، وباستخدام `data/iam.jsonnet` سينشئ من القالب روابط السياسات المحولة برمجيًا الناتجة عن البيانات الموجودة في `data/iam/bindings.json` ويطبقها
+هذا هو الملف الأساسي الذي سيشغله `stackql`، وباستخدام `data/iam.jsonnet` سينشئ من القالب روابط السياسات المحولة برمجيًا الناتجة عن البيانات الموجودة في `data/iam/custom_roles.json` و`data/iam/bindings.json` ويطبقها
 
 > لا يفترض أن تحتاج إلى تعديل هذا الملف
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-يوفر هذا الملف البيانات المستخدمة في المعالجة المسبقة للملف `iql/iam.iql`، مع الحصول عليها من `data/iam/bindings.json`
+يوفر هذا الملف البيانات المستخدمة في المعالجة المسبقة للملف `iql/iam.iql`، مع الحصول عليها من `data/iam/custom_roles.json` و`data/iam/bindings.json`
 
 > لا يفترض أن تحتاج إلى تعديل هذا الملف
 

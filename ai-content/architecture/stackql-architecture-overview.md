@@ -42,7 +42,7 @@ Consequences: provider coverage tracks the documented API surface rather than pl
 
 For `SELECT instance_id, instance_type FROM aws.ec2.instances WHERE region = 'us-east-1';`:
 
-1. The parser produces the AST; the engine resolves `aws.ec2.instances` against the provider spec and selects the `describe` access method, with `region` satisfying its required parameter.
+1. The parser produces the AST; the engine resolves `aws.ec2.instances` against the provider spec and selects the `describe_instances` access method, with `region` satisfying its required parameter.
 2. The SDK authenticates (from environment variables), issues the EC2 API call(s), and walks pagination.
 3. Responses are flattened to rows and materialized into the SQL backend.
 4. The backend applies the projection and any residual relational work; results return to the caller in the requested format.

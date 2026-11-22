@@ -25,7 +25,7 @@ Use a instrução [**DESCRIBE**](/language-spec/describe) para localizar os tipo
 
 :::note 
 
-A função `json_extract` é implementada como a função `json_extract_path_text` se você usa o stackql com um backend SQL `postgres`
+A função `json_extract` é implementada como a função `json_extract_path_text` se você usa o stackql com um backend SQL `postgres`.  O caminho é dividido em cada `.` e um `$` inicial é descartado, então `'$.a.b'` se torna as chaves `'a'` e `'b'`; um índice de array como `$[0]` é repassado como chave de objeto e não seleciona um elemento do array nesse backend.
 
 :::
 

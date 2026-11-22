@@ -26,7 +26,7 @@ StackQL 日期时间函数中的日期或时间值之后可以跟零个或多个
 | start of month       | 回退到当月的开始                      |
 | start of year        | 回退到当年的开始                      |
 | start of day         | 回退到当天的开始                      |
-| weekday N            | 将日期推进到下一个星期编号为 N 的日期 |
+| weekday N            | 将日期推进到下一个星期编号为 N 的日期；如果日期已经是星期 N，则原样返回 |
 | localtime            | 返回本地时间                          |
 | utc                  | 返回 UTC 时间                         |
 | unixepoch            | Unix 时间                             |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 获取给定日期之后的下一个指定星期几 {#get-the-next-specified-weekday-after-a-given-date}
+### 获取给定日期当天或之后的指定星期几 {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

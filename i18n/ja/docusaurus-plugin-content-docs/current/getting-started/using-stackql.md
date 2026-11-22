@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "StackQL の使用：シェルで対話的に、exec で非対話的に、またはサーバーとしてクエリを実行し、その過程でプロバイダー、サービス、リソースを調べます。"
+description: "StackQL の使用：対話型シェルでのクエリの実行、.stackqlrc ファイルによるシェルの設定、exec によるインラインまたは IQL 入力ファイルからの非対話的な実行。"
 image: "/img/stackql-featured-image.png"
 ---
 関連項目：  

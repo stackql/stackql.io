@@ -11,7 +11,6 @@ description: "REGISTRY di StackQL: mencantumkan provider dan versi di registri p
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Mencantumkan provider yang tersedia di registri provider yang dikonfigurasi, atau mengunduh provider ke instalasi lokal.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### Menginstal versi tertentu provider {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

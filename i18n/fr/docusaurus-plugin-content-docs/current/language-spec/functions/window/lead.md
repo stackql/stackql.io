@@ -61,7 +61,7 @@ Renvoie la valeur de l'expression évaluée sur la ligne suivante indiquée, ou 
 ### Consulter la version suivante {#look-ahead-to-the-next-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous and next release
 SELECT
     tag_name,
     name,

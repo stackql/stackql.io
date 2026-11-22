@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 將 JSON MergePatch 套用至 JSON 文件，以修改或合併 JSON 物件。
 image: "/img/stackql-featured-image.png"
 ---
-將 JSON MergePatch（RFC-7396）套用至 JSON 文件，依指定的作業修改該文件。此函式用於新增、修改或刪除 JSON 物件中的元素，但會將 JSON 陣列視為不可分割的單位。
+將 JSON MergePatch（RFC 7396）套用至 JSON 文件，依指定的作業修改該文件。此函式用於新增、修改或刪除 JSON 物件中的元素，但會將 JSON 陣列視為不可分割的單位。
 
 另請參閱：  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

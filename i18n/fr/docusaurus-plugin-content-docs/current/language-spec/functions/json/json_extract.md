@@ -25,7 +25,7 @@ Utilisez l'instruction [**DESCRIBE**](/language-spec/describe) pour repérer les
 
 :::note 
 
-La fonction `json_extract` est implémentée par la fonction `json_extract_path_text` si vous utilisez stackql avec un backend SQL `postgres`
+La fonction `json_extract` est implémentée par la fonction `json_extract_path_text` si vous utilisez stackql avec un backend SQL `postgres`.  Le chemin est découpé sur `.` et un `$` initial est supprimé, si bien que `'$.a.b'` devient les clés `'a'` et `'b'` ; un indice de tableau tel que `$[0]` est transmis comme clé d'objet et ne sélectionne pas d'élément de tableau sur ce backend.
 
 :::
 

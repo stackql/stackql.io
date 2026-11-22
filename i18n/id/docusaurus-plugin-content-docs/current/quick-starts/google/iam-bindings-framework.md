@@ -64,7 +64,7 @@ Pohon direktori berikut digunakan untuk framework deployment binding ini:
 
 ### File `iql/iam.iql` {#iqliamiql-file}
 
-Ini adalah file utama yang akan dijalankan oleh `stackql`; dengan menggunakan `data/iam.jsonnet`, file ini akan merender dan menerapkan binding kebijakan hasil transpilasi yang dibuat dari data di `data/iam/bindings.json`
+Ini adalah file utama yang akan dijalankan oleh `stackql`; dengan menggunakan `data/iam.jsonnet`, file ini akan merender dan menerapkan binding kebijakan hasil transpilasi yang dibuat dari data di `data/iam/custom_roles.json` dan `data/iam/bindings.json`
 
 > file ini seharusnya tidak perlu diubah
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-File ini menyediakan data yang digunakan untuk memproses terlebih dahulu `iql/iam.iql`, dengan sumber data dari `data/iam/bindings.json`
+File ini menyediakan data yang digunakan untuk memproses terlebih dahulu `iql/iam.iql`, dengan sumber data dari `data/iam/custom_roles.json` dan `data/iam/bindings.json`
 
 > file ini seharusnya tidak perlu diubah
 

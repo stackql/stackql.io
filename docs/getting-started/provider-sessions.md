@@ -28,7 +28,7 @@ Everything described here is scoped to the current session.  Independent connect
 |--|--|--|
 | `provider` | Yes | The canonical provider the alias resolves to, for example `aws`. |
 | `tenancy` | Yes | A grouping label such as an account or tenant name.  StackQL does not verify it against the provider. |
-| `auth` | One of `auth` or `auth_secret` | An authentication document with the same shape as the provider's entry in the [`--auth`](/command-line-usage/global-flags) object.  The alias does not borrow the canonical provider's credentials. |
+| `auth` | One of `auth` or `auth_secret` | An authentication document in the alias format, which differs from the provider's entry in the [`--auth`](/command-line-usage/global-flags) object: for AWS the keys are `access_key_id_env_var` and `secret_access_key_env_var`, not `keyIDenvvar` and `credentialsenvvar`, and a key the alias format does not know fails with `invalid session configuration field or type`.  The alias does not borrow the canonical provider's credentials. |
 | `auth_secret` | One of `auth` or `auth_secret` | The name of a [session secret](#session-secrets) holding the authentication document. |
 | `params` | No | Default values for declared provider parameters, including declared server parameters.  A predicate in the query overrides a default. |
 | `tuning` | No | `max_concurrent` and `max_per_host` limits for the alias's requests.  Aliases that share a provider and tenancy share these controls and must declare identical tuning. |

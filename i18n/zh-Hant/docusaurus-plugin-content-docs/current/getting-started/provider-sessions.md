@@ -28,7 +28,7 @@ image: "/img/stackql-featured-image.png"
 |--|--|--|
 | `provider` | 是 | 別名所解析成的標準 Provider，例如 `aws`。 |
 | `tenancy` | 是 | 分組標籤，例如帳戶或租用戶名稱。StackQL 不會向 Provider 核對此標籤。 |
-| `auth` | `auth` 與 `auth_secret` 擇一 | 驗證文件，其結構與 Provider 在 [`--auth`](/command-line-usage/global-flags) 物件中的項目相同。別名不會沿用標準 Provider 的憑證。 |
+| `auth` | `auth` 與 `auth_secret` 擇一 | 採用別名格式的驗證文件，此格式與 Provider 在 [`--auth`](/command-line-usage/global-flags) 物件中的項目不同：以 AWS 為例，鍵為 `access_key_id_env_var` 和 `secret_access_key_env_var`，而不是 `keyIDenvvar` 和 `credentialsenvvar`；別名格式無法辨識的鍵會以 `invalid session configuration field or type` 失敗。別名不會沿用標準 Provider 的憑證。 |
 | `auth_secret` | `auth` 與 `auth_secret` 擇一 | 保存驗證文件的[工作階段祕密](#session-secrets)名稱。 |
 | `params` | 否 | 已宣告之 Provider 參數的預設值，包括已宣告的伺服器參數。查詢中的述詞會覆寫預設值。 |
 | `tuning` | 否 | 此別名之要求的 `max_concurrent` 與 `max_per_host` 限制。Provider 與租用標籤都相同的別名會共用這些控制項，且必須宣告相同的 tuning 設定。 |

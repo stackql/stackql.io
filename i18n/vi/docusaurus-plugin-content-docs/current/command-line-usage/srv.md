@@ -11,7 +11,7 @@ description: "Lệnh stackql srv chạy StackQL như một máy chủ giao thứ
 image: "/img/stackql-featured-image.png"
 ---
 
-Lệnh dùng để khởi chạy StackQL dưới dạng một dịch vụ, sau đó các ứng dụng khách [giao thức wire của Postgres](https://www.postgresql.org/docs/current/protocol.html) được xác thực bằng mTLS có thể truy cập dịch vụ này. Lệnh `srv` cũng có thể chạy một máy chủ [Model Context Protocol (MCP)](/command-line-usage/mcp) song song với máy chủ giao thức wire của PostgreSQL, cho phép truy cập qua hai giao thức cho cả ứng dụng khách cơ sở dữ liệu truyền thống lẫn tác nhân AI.
+Lệnh dùng để khởi chạy StackQL dưới dạng một dịch vụ, sau đó các ứng dụng khách [giao thức wire của Postgres](https://www.postgresql.org/docs/current/protocol.html) có thể truy cập dịch vụ này; các ứng dụng khách này có thể được xác thực bằng mTLS. Lệnh `srv` cũng có thể chạy một máy chủ [Model Context Protocol (MCP)](/command-line-usage/mcp) song song với máy chủ giao thức wire của PostgreSQL, cho phép truy cập qua hai giao thức cho cả ứng dụng khách cơ sở dữ liệu truyền thống lẫn tác nhân AI.
 
 * * * 
 

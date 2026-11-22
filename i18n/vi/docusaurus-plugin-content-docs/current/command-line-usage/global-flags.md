@@ -25,13 +25,13 @@ Các lệnh StackQL đều chấp nhận cờ toàn cục, nhưng một số c�
 | <span class="nowrap">`--cachekeycount`</span> | integer | Số lượng khóa ban đầu của cache | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Đường dẫn đầy đủ của tệp cấu hình | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | Tệp `cpuprofile`, không có nếu để trống | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Độ sâu phần phụ thuộc luồng dữ liệu tối đa cho một truy vấn | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Số thành phần liên thông yếu tối đa của luồng dữ liệu cho một truy vấn | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Độ sâu phần phụ thuộc luồng dữ liệu tối đa cho một truy vấn | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Số thành phần liên thông yếu tối đa của luồng dữ liệu cho một truy vấn | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | Chuỗi JSON / YAML để cấu hình cách xử lý truy vấn bảo trì nội bộ của DBMS | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Dấu phân cách cho đầu ra csv. Chỉ một ký tự.  Bị bỏ qua đối với mọi đầu ra không phải csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | Cờ `dryrun`; chỉ chạy bộ tiền xử lý, đầu ra đã áp dụng template sẽ được trả về | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Tệp kiểu dotenv không bắt buộc, được nạp vào môi trường tiến trình khi khởi động (mọi lệnh); công cụ MCP [`reload_credentials`](/mcp/reload_credentials) nạp lại tệp này theo yêu cầu. Tệp bị thiếu vẫn được chấp nhận; các khóa có giá trị rỗng bị bỏ qua; các biến đã tồn tại được ghi đè. Không lấy giá trị từ `.stackqlrc`. Có trong các bản phát hành StackQL sau `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Giới hạn đồng thời cho việc thực thi truy vấn | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Giới hạn đồng thời cho việc thực thi truy vấn | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Tiền tố bí danh xuất (không gian tên hoặc lược đồ) | |
 | <span class="nowrap">`--gc`</span> | string | Chuỗi JSON / YAML biểu diễn cấu hình GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Tắt tiêu đề cột, chỉ hợp lệ với `--output csv` hoặc `--output text` | `false` |

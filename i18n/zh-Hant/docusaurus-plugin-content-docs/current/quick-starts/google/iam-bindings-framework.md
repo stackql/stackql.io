@@ -64,7 +64,7 @@ IAM 繫結可以在下列任一層級建立：
 
 ### `iql/iam.iql` 檔案 {#iqliamiql-file}
 
-這是由 `stackql` 執行的主要檔案，它會使用 `data/iam.jsonnet` 呈現並套用由 `data/iam/bindings.json` 中的資料所產生、經過轉換的政策繫結
+這是由 `stackql` 執行的主要檔案，它會使用 `data/iam.jsonnet` 呈現並套用由 `data/iam/custom_roles.json` 和 `data/iam/bindings.json` 中的資料所產生、經過轉換的政策繫結
 
 > 此檔案應該不需要修改
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-此檔案提供前置處理 `iql/iam.iql` 時所用的資料，資料來源為 `data/iam/bindings.json`
+此檔案提供前置處理 `iql/iam.iql` 時所用的資料，資料來源為 `data/iam/custom_roles.json` 和 `data/iam/bindings.json`
 
 > 此檔案應該不需要修改
 

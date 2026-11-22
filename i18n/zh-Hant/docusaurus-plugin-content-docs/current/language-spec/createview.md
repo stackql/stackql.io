@@ -11,7 +11,6 @@ description: "StackQL 中的 CREATE VIEW：將查詢（包括跨雲端的 UNION�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 在工作階段中建立 `view` 或 `materialized view`，可用來代表冗長或複雜的 `stackql` 查詢。  
 

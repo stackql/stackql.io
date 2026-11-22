@@ -43,7 +43,7 @@ export const EMBEDDED_LIBRARIES = [
   {
     name: 'Swift',
     href: '/mcp/embedded/swift',
-    description: 'Bundle the notarised binary in a signed macOS app; official Swift MCP SDK. Demo: CloudLens, a menu-bar cloud sentinel.'
+    description: 'Bundle the notarized binary in a signed macOS app; official Swift MCP SDK. Demo: CloudLens, a menu-bar cloud sentinel.'
   },
   {
     name: 'Kotlin / JVM',
@@ -75,7 +75,7 @@ export const EMBEDDED_LIBRARIES = [
 ## Common contract {#common-contract}
 
 - Default `read_only` mode, with explicit opt-in to `safe`, `delete_safe`, or `full_access`.
-- The binary is Apple-notarised on macOS and Authenticode-signed on Windows.
+- The binary is Apple-notarized on macOS and Authenticode-signed on Windows.
 - sha256 pins are published per release.
 - mcp-name `io.github.stackql/stackql-mcp` on the Official MCP Registry.
 

@@ -11,7 +11,6 @@ description: "StackQL 中的 CREATE VIEW：将查询（包括跨云 UNION）保�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 在会话中创建 `view` 或 `materialized view`，可用于表示较长或复杂的 `stackql` 查询。  
 

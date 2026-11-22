@@ -41,7 +41,7 @@ For editor-embedded clients, use `--mcp.server.type=stdio` and let the client la
 
 3. **Choose a safety mode.** The mode is set in the server config and gates what agents can do:
 
-| Mode | SELECT / metadata | INSERT / UPDATE | DELETE | EXEC |
+| Mode | SELECT / metadata | INSERT / UPDATE / REPLACE | DELETE | EXEC |
 |---|---|---|---|---|
 | `read_only` | allow | refuse | refuse | refuse |
 | `safe` (default) | allow | needs approval | needs approval | needs approval |
@@ -50,7 +50,7 @@ For editor-embedded clients, use `--mcp.server.type=stdio` and let the client la
 
 "Needs approval" uses the MCP elicitation flow: the client shows the user the pending SQL and the user accepts or declines. Pin `read_only` for inventory agents; reserve `full_access` for trusted pipelines with a reviewed audit log.  A payload holding several statements is gated by its most privileged statement (from `v0.12.742`), so a mutation cannot ride behind a leading `SELECT`.
 
-4. **Let the agent discover, then query.** A typical agent session: `server_info` once, then `list_providers` -> `list_methods` (which reveals required `WHERE` parameters) -> `validate_select_query` -> `run_select_query`:
+4. **Let the agent discover, then query.** A typical agent session: `list_providers` -> `list_methods` (which reveals required `WHERE` parameters) -> `validate_select_query` -> `run_select_query`:
 
 ```sql
 SELECT name, language, stargazers_count

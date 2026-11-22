@@ -64,7 +64,7 @@ The following directory tree is used for this bindings deployment framework:
 
 ### `iql/iam.iql` file {#iqliamiql-file}
 
-This is the main file which will be run by `stackql`, using `data/iam.jsonnet` this will render and apply the transpiled policy bindings generated from the data in `data/iam/bindings.json`
+This is the main file which will be run by `stackql`, using `data/iam.jsonnet` this will render and apply the transpiled policy bindings generated from the data in `data/iam/custom_roles.json` and `data/iam/bindings.json`
 
 > this file should not need to be modified
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-This file supplies the data used to preprocess `iql/iam.iql`, sourcing it from `data/iam/bindings.json`
+This file supplies the data used to preprocess `iql/iam.iql`, sourcing it from `data/iam/custom_roles.json` and `data/iam/bindings.json`
 
 > this file should not need to be modified
 

@@ -34,7 +34,7 @@ __*value_column*__
 JSON 객체의 값을 제공하는 열입니다.
 
 __*grouping_column*__  
-결과를 그룹화하는 기준 열입니다.
+`GROUP BY` 절에 지정하는 열입니다. `JSON_GROUP_OBJECT` 함수의 인수가 아니며, 이 함수는 정확히 2개의 인수를 받습니다. 그룹당 JSON 객체 1개가 반환됩니다.
 
 ## 반환 값 {#return-values}
 지정한 열에서 집계된 모든 키-값 쌍을 포함하는 JSON 객체를 `grouping_column` 열에 따라 그룹별로 반환합니다.

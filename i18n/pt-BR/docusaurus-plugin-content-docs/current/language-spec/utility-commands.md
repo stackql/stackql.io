@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventário de nuvem
-description: "Comandos utilitários do shell do StackQL, como clear e sleep, com sua sintaxe e quando usá-los em sessões interativas e scripts."
+description: "Comandos utilitários clear e sleep do shell do StackQL: o que cada um faz, com um exemplo."
 image: "/img/stackql-featured-image.png"
 ---
 

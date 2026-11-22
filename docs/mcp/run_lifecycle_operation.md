@@ -11,7 +11,7 @@ description: MCP tool executing a StackQL EXEC lifecycle operation
 image: "/img/stackql-featured-image.png"
 ---
 
-Executes a StackQL `EXEC` lifecycle operation -- the non-CRUD provider actions (start/stop a VM, rotate a key, trigger a workflow, etc.).  **Real side effects.**
+Executes a StackQL `EXEC` lifecycle operation - the non-CRUD provider actions (start/stop a VM, rotate a key, trigger a workflow, etc.).  **Real side effects.**
 
 Gated by the server [mode](/command-line-usage/mcp#server-modes):
 

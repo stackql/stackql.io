@@ -11,7 +11,7 @@ description: "stackql srv 명령은 StackQL을 PostgreSQL 와이어 프로토콜
 image: "/img/stackql-featured-image.png"
 ---
 
-StackQL을 서비스로 시작하는 데 사용하는 명령입니다. 시작된 서비스에는 mTLS로 인증된 [Postgres 와이어 프로토콜](https://www.postgresql.org/docs/current/protocol.html) 클라이언트로 액세스할 수 있습니다. `srv` 명령은 PostgreSQL 와이어 프로토콜 서버와 함께 [Model Context Protocol (MCP)](/command-line-usage/mcp) 서버도 실행할 수 있으므로, 기존 데이터베이스 클라이언트와 AI 에이전트 모두에 이중 프로토콜 액세스를 제공합니다.
+StackQL을 서비스로 시작하는 데 사용하는 명령입니다. 시작된 서비스에는 [Postgres 와이어 프로토콜](https://www.postgresql.org/docs/current/protocol.html) 클라이언트로 액세스할 수 있으며, 이 클라이언트는 mTLS로 인증할 수 있습니다. `srv` 명령은 PostgreSQL 와이어 프로토콜 서버와 함께 [Model Context Protocol (MCP)](/command-line-usage/mcp) 서버도 실행할 수 있으므로, 기존 데이터베이스 클라이언트와 AI 에이전트 모두에 이중 프로토콜 액세스를 제공합니다.
 
 * * * 
 

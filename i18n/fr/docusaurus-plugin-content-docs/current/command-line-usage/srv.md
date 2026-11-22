@@ -11,7 +11,7 @@ description: "La commande stackql srv exécute StackQL en serveur du protocole f
 image: "/img/stackql-featured-image.png"
 ---
 
-Commande servant à lancer StackQL en tant que service, auquel des clients du [protocole filaire Postgres](https://www.postgresql.org/docs/current/protocol.html) authentifiés par mTLS peuvent ensuite accéder. La commande `srv` peut aussi exécuter un serveur [Model Context Protocol (MCP)](/command-line-usage/mcp) aux côtés du serveur du protocole filaire PostgreSQL, ce qui offre un accès à deux protocoles, à la fois aux clients de base de données traditionnels et aux agents IA.
+Commande servant à lancer StackQL en tant que service, auquel des clients du [protocole filaire Postgres](https://www.postgresql.org/docs/current/protocol.html) peuvent ensuite accéder, ces clients pouvant être authentifiés par mTLS. La commande `srv` peut aussi exécuter un serveur [Model Context Protocol (MCP)](/command-line-usage/mcp) aux côtés du serveur du protocole filaire PostgreSQL, ce qui offre un accès à deux protocoles, à la fois aux clients de base de données traditionnels et aux agents IA.
 
 * * * 
 

@@ -38,7 +38,7 @@ See also:
 
 ## Gating {#gating}
 
-Allowed in every server mode.  No cloud control or data plane effect -- only the registry is read.
+Allowed in every server mode.  No cloud control or data plane effect - only the registry is read.
 
 * * *
 

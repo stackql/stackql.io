@@ -26,7 +26,7 @@ image: "/img/stackql-featured-image.png"
 | start of month       | Назад до початку місяця                                               |
 | start of year        | Назад до початку року                                                 |
 | start of day         | Назад до початку дня                                                  |
-| weekday N            | Переміщує дату вперед до наступної дати, номер дня тижня якої дорівнює N |
+| weekday N            | Переміщує дату вперед до наступної дати, номер дня тижня якої дорівнює N; дата, що вже припадає на день тижня N, повертається без змін |
 | localtime            | Повертає місцевий час                                                |
 | utc                  | Повертає час UTC                                                      |
 | unixepoch            | Час Unix                                                              |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Отримання наступного вказаного дня тижня після певної дати {#get-the-next-specified-weekday-after-a-given-date}
+### Отримання вказаного дня тижня в певну дату або після неї {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

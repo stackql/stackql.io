@@ -67,7 +67,7 @@ Cada fila de `providers` tiene:
 
 <br/>
 
-Los tipos de autenticación que se autentican fuera de la ruta de los bytes de credenciales (gcloud interactivo, azure CLI, credenciales de cliente de oauth2, cadenas de asunción de roles, firma de OCI, null) devuelven el estado `not_checked`.
+Los tipos de autenticación que se autentican fuera de la ruta de los bytes de credenciales (gcloud interactivo, Azure CLI, credenciales de cliente de oauth2, cadenas de asunción de roles, firma de OCI, null) devuelven el estado `not_checked`.
 
 * * *
 

@@ -67,7 +67,7 @@ image: "/img/stackql-featured-image.png"
 
 <br/>
 
-Типи автентифікації, які автентифікують поза шляхом байтів облікових даних (інтерактивний gcloud, azure CLI, oauth2 client credentials, ланцюжки прийняття ролей, підписування OCI, null), повідомляють стан `not_checked`.
+Типи автентифікації, які автентифікують поза шляхом байтів облікових даних (інтерактивний gcloud, Azure CLI, oauth2 client credentials, ланцюжки прийняття ролей, підписування OCI, null), повідомляють стан `not_checked`.
 
 * * *
 

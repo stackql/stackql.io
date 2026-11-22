@@ -28,7 +28,7 @@ image: "/img/stackql-featured-image.png"
 |--|--|--|
 | `provider` | はい | エイリアスの解決先となる正規のプロバイダー（たとえば `aws`）。 |
 | `tenancy` | はい | アカウント名やテナント名などのグループ化ラベル。StackQL はこれをプロバイダーに照らして検証しません。 |
-| `auth` | `auth` または `auth_secret` のいずれか | プロバイダーの [`--auth`](/command-line-usage/global-flags) オブジェクト内のエントリと同じ形状の認証ドキュメント。エイリアスは、正規のプロバイダーの認証情報を借用しません。 |
+| `auth` | `auth` または `auth_secret` のいずれか | エイリアス形式の認証ドキュメント。この形式は、プロバイダーの [`--auth`](/command-line-usage/global-flags) オブジェクト内のエントリとは異なります。AWS の場合、キーは `keyIDenvvar` と `credentialsenvvar` ではなく `access_key_id_env_var` と `secret_access_key_env_var` で、エイリアス形式が認識しないキーは `invalid session configuration field or type` で失敗します。エイリアスは、正規のプロバイダーの認証情報を借用しません。 |
 | `auth_secret` | `auth` または `auth_secret` のいずれか | 認証ドキュメントを保持する[セッションシークレット](#session-secrets)の名前。 |
 | `params` | いいえ | 宣言済みのプロバイダーパラメーター（宣言済みのサーバーパラメーターを含む）のデフォルト値。クエリ内の述語はデフォルト値より優先されます。 |
 | `tuning` | いいえ | エイリアスのリクエストに対する `max_concurrent` と `max_per_host` の上限。プロバイダーとテナンシーが同じエイリアスはこれらの制御を共有するため、同一のチューニングを宣言する必要があります。 |

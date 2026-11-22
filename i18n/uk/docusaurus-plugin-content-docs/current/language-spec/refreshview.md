@@ -11,7 +11,6 @@ description: "REFRESH VIEW у StackQL: перебудова збережених
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Оновлює дані в поданні `materialized view` у межах сеансу.  
 

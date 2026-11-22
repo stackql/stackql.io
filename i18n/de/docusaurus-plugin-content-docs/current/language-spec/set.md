@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### Einen Provider-Alias binden {#bind-a-provider-alias}
 
-Ein Provider-Alias ist eine zweite, unabhängig konfigurierte Instanz eines Providers, die in Abfragen anstelle des Provider-Namens verwendet wird.  Der Wert ist ein JSON-Dokument in einer Zeichenkette: `provider` benennt den zugrunde liegenden Provider, `tenancy` bezeichnet das Konto, `auth` ist ein Anmeldedatenblock in derselben Form wie `--auth`, und `params` liefert Standardwerte für Anfrageparameter wie `region`.  Abfragen gegen `production.s3.buckets` laufen dann mit diesen Anmeldedaten, während `aws.s3.buckets` die Startkonfiguration behält.  Die vollständige Liste der Schlüssel finden Sie unter [Provider-Sitzungen](/getting-started/provider-sessions#provider-aliases).
+Ein Provider-Alias ist eine zweite, unabhängig konfigurierte Instanz eines Providers, die in Abfragen anstelle des Provider-Namens verwendet wird.  Der Wert ist ein JSON-Dokument in einer Zeichenkette: `provider` benennt den zugrunde liegenden Provider, `tenancy` bezeichnet das Konto, `auth` ist ein Anmeldedatenblock im Alias-Format (für AWS `access_key_id_env_var` und `secret_access_key_env_var`, nicht die `--auth`-Schlüssel `keyIDenvvar` und `credentialsenvvar`), und `params` liefert Standardwerte für Anfrageparameter wie `region`.  Abfragen gegen `production.s3.buckets` laufen dann mit diesen Anmeldedaten, während `aws.s3.buckets` die Startkonfiguration behält.  Die vollständige Liste der Schlüssel finden Sie unter [Provider-Sitzungen](/getting-started/provider-sessions#provider-aliases).
 
 ```sql
 SET "$.providers.production" = '{

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Руководства",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Практические пошаговые руководства по облачным операциям, безопасности и автоматизации с помощью SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Все руководства",
+    "description": "The label for the left sidebar"
+  }
+}

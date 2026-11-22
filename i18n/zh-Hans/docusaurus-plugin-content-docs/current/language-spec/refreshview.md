@@ -11,7 +11,6 @@ description: "StackQL 中的 REFRESH VIEW：根据定义查询重建物化视图
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 在会话中刷新 `materialized view` 中的数据。  
 

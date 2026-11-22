@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## Argumen {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 String literal atau kolom string.
 
 ## Nilai yang dikembalikan {#return-values}

@@ -42,7 +42,7 @@ StackQL 沒有經過編譯的 Provider 專屬外掛程式。Provider 是具版�
 
 以 `SELECT instance_id, instance_type FROM aws.ec2.instances WHERE region = 'us-east-1';` 為例：
 
-1. 剖析器產生 AST；引擎根據 Provider 規格解析 `aws.ec2.instances`，並選取 `describe` 存取方法，由 `region` 滿足其必要參數。
+1. 剖析器產生 AST；引擎根據 Provider 規格解析 `aws.ec2.instances`，並選取 `describe_instances` 存取方法，由 `region` 滿足其必要參數。
 2. SDK 進行驗證（根據環境變數）、發出 EC2 API 呼叫，並逐頁走訪分頁。
 3. 回應會攤平成資料列，並具體化到 SQL 後端。
 4. 後端套用投影與其餘的關聯式處理；結果會以要求的格式傳回給呼叫端。

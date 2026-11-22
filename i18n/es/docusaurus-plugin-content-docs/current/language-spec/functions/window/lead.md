@@ -61,7 +61,7 @@ Devuelve el valor de la expresión evaluada sobre la fila posterior especificada
 ### Mirar hacia adelante a la versión siguiente {#look-ahead-to-the-next-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous and next release
 SELECT
     tag_name,
     name,

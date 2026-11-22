@@ -25,7 +25,7 @@ Gunakan pernyataan [**DESCRIBE**](/language-spec/describe) untuk menemukan tipe 
 
 :::note 
 
-Fungsi `json_extract` diimplementasikan sebagai fungsi `json_extract_path_text` jika Anda menggunakan stackql dengan backend SQL `postgres`
+Fungsi `json_extract` diimplementasikan sebagai fungsi `json_extract_path_text` jika Anda menggunakan stackql dengan backend SQL `postgres`.  Jalur dipisahkan pada `.` dan `$` di awal dihapus, sehingga `'$.a.b'` menjadi kunci `'a'` dan `'b'`; subskrip array seperti `$[0]` diteruskan sebagai kunci objek dan tidak memilih elemen array di backend tersebut.
 
 :::
 

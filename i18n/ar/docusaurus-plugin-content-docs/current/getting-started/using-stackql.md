@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - جرد الموارد السحابية
-description: "استخدام StackQL: تشغيل الاستعلامات تفاعليًا في واجهة الأوامر، أو بشكل غير تفاعلي باستخدام exec، أو كخادم، واكتشاف الموفرين والخدمات والموارد أثناء العمل."
+description: "استخدام StackQL: تشغيل الاستعلامات في واجهة الأوامر التفاعلية وإعداد الواجهة بملف .stackqlrc، أو بشكل غير تفاعلي باستخدام exec، مضمنة في الأمر أو من ملف إدخال IQL."
 image: "/img/stackql-featured-image.png"
 ---
 راجع أيضًا:  

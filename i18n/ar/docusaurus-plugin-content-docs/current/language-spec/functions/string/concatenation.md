@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## الوسيطات {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 قيمة حرفية نصية أو عمود من نوع السلسلة النصية.
 
 ## القيمة المرجعة {#return-values}

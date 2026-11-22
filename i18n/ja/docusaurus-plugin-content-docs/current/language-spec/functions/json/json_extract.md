@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-`postgres` SQL バックエンドで stackql を使用している場合、`json_extract` 関数は `json_extract_path_text` 関数として実装されます。
+`postgres` SQL バックエンドで stackql を使用している場合、`json_extract` 関数は `json_extract_path_text` 関数として実装されます。パスは `.` で分割され、先頭の `$` は取り除かれるため、`'$.a.b'` はキー `'a'` と `'b'` になります。`$[0]` などの配列添字はオブジェクトのキーとしてそのまま渡され、このバックエンドでは配列要素を選択しません。
 
 :::
 

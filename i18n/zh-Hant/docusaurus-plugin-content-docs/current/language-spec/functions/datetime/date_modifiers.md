@@ -26,7 +26,7 @@ image: "/img/stackql-featured-image.png"
 | start of month       | 往回移至該月的開始                                                    |
 | start of year        | 往回移至該年的開始                                                    |
 | start of day         | 往回移至該日的開始                                                    |
-| weekday N            | 將日期往後推進至星期數字為 N 的下一個日期                             |
+| weekday N            | 將日期往後推進至星期數字為 N 的下一個日期；已是星期 N 的日期會原樣傳回 |
 | localtime            | 傳回當地時間                                                          |
 | utc                  | 傳回 UTC 時間                                                         |
 | unixepoch            | Unix 時間                                                             |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 取得指定日期之後的下一個指定星期幾 {#get-the-next-specified-weekday-after-a-given-date}
+### 取得指定日期當天或之後的指定星期幾 {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

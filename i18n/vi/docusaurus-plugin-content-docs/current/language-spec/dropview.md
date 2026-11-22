@@ -11,7 +11,6 @@ description: "DROP VIEW trong StackQL: xóa một dạng xem hoặc dạng xem v
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Xóa một `view` hoặc `materialized view` trong một phiên.  
 

@@ -25,7 +25,7 @@ Use the [**DESCRIBE**](/language-spec/describe) statement to locate `array` or `
 
 :::note 
 
-The `json_extract` function is implemented as the `json_extract_path_text` function if you are using stackql with a `postgres` sql backend
+The `json_extract` function is implemented as the `json_extract_path_text` function if you are using stackql with a `postgres` sql backend.  The path is split on `.` and a leading `$` is dropped, so `'$.a.b'` becomes the keys `'a'` and `'b'`; an array subscript such as `$[0]` is passed through as an object key and does not select an array element on that backend.
 
 :::
 

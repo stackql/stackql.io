@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### 繫結 Provider 別名 {#bind-a-provider-alias}
 
-Provider 別名是 Provider 的第二個獨立設定的執行個體，在查詢中用來取代 Provider 名稱。值是字串中的 JSON 文件：`provider` 指定底層 Provider，`tenancy` 標示帳戶，`auth` 是與 `--auth` 結構相同的憑證區塊，`params` 則為 `region` 等要求參數提供預設值。之後針對 `production.s3.buckets` 的查詢會以這些憑證執行，而 `aws.s3.buckets` 仍保留啟動時的設定。完整的鍵清單請參閱 [Provider 工作階段](/getting-started/provider-sessions#provider-aliases)。
+Provider 別名是 Provider 的第二個獨立設定的執行個體，在查詢中用來取代 Provider 名稱。值是字串中的 JSON 文件：`provider` 指定底層 Provider，`tenancy` 標示帳戶，`auth` 是採用別名格式的憑證區塊（以 AWS 為例，為 `access_key_id_env_var` 和 `secret_access_key_env_var`，而不是 `--auth` 的鍵 `keyIDenvvar` 和 `credentialsenvvar`），`params` 則為 `region` 等要求參數提供預設值。之後針對 `production.s3.buckets` 的查詢會以這些憑證執行，而 `aws.s3.buckets` 仍保留啟動時的設定。完整的鍵清單請參閱 [Provider 工作階段](/getting-started/provider-sessions#provider-aliases)。
 
 ```sql
 SET "$.providers.production" = '{

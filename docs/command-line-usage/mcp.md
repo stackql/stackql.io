@@ -17,7 +17,7 @@ Command used to launch StackQL as a Model Context Protocol (MCP) server, enablin
 
 :::info[What is MCP?]
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open protocol that standardizes how AI applications interact with external data sources and tools.  By running StackQL as an MCP server, you can enable AI agents (Claude, Cursor, Continue, custom agents, etc) to query and manage cloud infrastructure across multiple providers using natural language.
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open protocol that standardizes how AI applications interact with external data sources and tools.  By running StackQL as an MCP server, you can enable AI agents (Claude, Cursor, Continue, custom agents, etc.) to query and manage cloud infrastructure across multiple providers using natural language.
 
 :::
 
@@ -92,9 +92,9 @@ TLS encrypts the transport but does not authenticate the client, so this example
 
 | Type | Description |
 |--|--|
-|`http`|Direct HTTP server mode -- MCP requests are handled in-process by the StackQL engine.|
-|`reverse_proxy`|Reverse-proxy mode -- MCP requests are dispatched to a backing PostgreSQL server via the configured DSN.  Used with `stackql srv`.|
-|`stdio`|Standard input/output transport -- the server reads requests from `stdin` and writes responses to `stdout`.  Used by editor-embedded MCP clients (Claude Desktop, Cursor, etc).|
+|`http`|Direct HTTP server mode - MCP requests are handled in-process by the StackQL engine.|
+|`reverse_proxy`|Reverse-proxy mode - MCP requests are dispatched to a backing PostgreSQL server via the configured DSN.  Used with `stackql srv`.|
+|`stdio`|Standard input/output transport - the server reads requests from `stdin` and writes responses to `stdout`.  Used by editor-embedded MCP clients (Claude Desktop, Cursor, etc.).|
 
 #### MCP log format {#mcp-log-format}
 
@@ -112,7 +112,7 @@ The `--mcp.config` flag accepts a JSON object with the following structure.
 
 | Field | Description | Required |
 |--|--|--|
-|`server.transport`|Transport protocol -- `http` or `stdio`.|Yes|
+|`server.transport`|Transport protocol - `http` or `stdio`.|Yes|
 |`server.address`|Address and port to bind the MCP server (e.g., `127.0.0.1:9912`).  HTTP transport only.|For `http`|
 |`server.tls_cert_file`|Path to TLS certificate file for HTTPS.|No|
 |`server.tls_key_file`|Path to TLS private key file for HTTPS.|No|
@@ -147,7 +147,7 @@ The backend DSN should include the `default_query_exec_mode=simple_protocol` par
 
 <br/>
 
-Example -- a server that publishes only `server_info` and `list_providers`:
+Example - a server that publishes only `server_info` and `list_providers`:
 
 ```json
 {
@@ -227,7 +227,7 @@ Streamable HTTP request bodies are capped at 4 MiB (HTTP 413 beyond it), JSON ne
 
 A process environment block is fixed at spawn.  This creates two problems for MCP servers:
 
-- An MCP `stdio` server spawned by a desktop client (Claude Desktop, Cursor, etc) without the credential environment variables can never see them - the client passes its own environment to the subprocess.
+- An MCP `stdio` server spawned by a desktop client (Claude Desktop, Cursor, etc.) without the credential environment variables can never see them - the client passes its own environment to the subprocess.
 - Rotated short-lived credentials never reach a long-running server session.
 
 The `--env.file` flag bridges both gaps by nominating a dotenv-style file that acts as a mutable credential store:
@@ -333,7 +333,7 @@ From release `v0.12.742`, a payload holding several statements is gated by its m
 
 #### Default-mode behaviour change {#default-mode-behaviour-change}
 
-Prior releases enforced safety only through a single `read_only: true/false` flag whose default was "no enforcement".  The current default (`mode: safe`) makes mutations require user approval out of the box.  Operators running an elicitation-capable client (Claude Desktop, Cursor, Continue, etc) will see one approval prompt per mutation.  Operators running automation, or the bundled `stackql_mcp_client` (which does not advertise elicitation), must explicitly opt into a less restrictive mode: `mode: delete_safe` to run `INSERT`, `UPDATE` and `REPLACE`, or `mode: full_access` to also run `DELETE` and lifecycle operations.
+Prior releases enforced safety only through a single `read_only: true/false` flag whose default was "no enforcement".  The current default (`mode: safe`) makes mutations require user approval out of the box.  Operators running an elicitation-capable client (Claude Desktop, Cursor, Continue, etc.) will see one approval prompt per mutation.  Operators running automation, or the bundled `stackql_mcp_client` (which does not advertise elicitation), must explicitly opt into a less restrictive mode: `mode: delete_safe` to run `INSERT`, `UPDATE` and `REPLACE`, or `mode: full_access` to also run `DELETE` and lifecycle operations.
 
 The legacy `read_only: true` JSON / YAML key is still accepted for back-compat and is treated as equivalent to `mode: read_only`.
 
@@ -361,7 +361,7 @@ stackql mcp \
 
 ### Audit log {#audit-log}
 
-Every tool call writes one record to the configured audit sink, as JSONL by default or as OpenTelemetry log records (see [Log format](#log-format)).  Audit is **on by default**.  The audit answers "what did the agent do," not "what did the agent see" -- result rows from `SELECT` statements are intentionally not recorded, in either format.
+Every tool call writes one record to the configured audit sink, as JSONL by default or as OpenTelemetry log records (see [Log format](#log-format)).  Audit is **on by default**.  The audit answers "what did the agent do," not "what did the agent see" - result rows from `SELECT` statements are intentionally not recorded, in either format.
 
 #### What gets recorded {#what-gets-recorded}
 
@@ -379,7 +379,7 @@ Every tool call writes one record to the configured audit sink, as JSONL by defa
 
 <br />
 
-Result rows from `SELECT` statements are deliberately excluded -- they can be very large and may carry sensitive data.
+Result rows from `SELECT` statements are deliberately excluded - they can be very large and may carry sensitive data.
 
 #### File sink {#file-sink}
 
@@ -407,10 +407,10 @@ stackql mcp \
 
 Two ways to specify the location:
 
-- `audit.file.path` -- a complete file path (absolute, or relative to cwd).
-- `audit.file.dir` -- a directory; the sink picks the basename `stackql_mcp_server_<RFC3339-utc-second>.log` inside it.
+- `audit.file.path` - a complete file path (absolute, or relative to cwd).
+- `audit.file.dir` - a directory; the sink picks the basename `stackql_mcp_server_<RFC3339-utc-second>.log` inside it.
 
-When neither is set in `mcp.config`, the MCP server defaults `dir` to cwd so existing operators see the same behaviour as before.  The underlying generic sink package itself refuses to silently pick a directory -- the "where do logs land" decision is always made by the caller.
+When neither is set in `mcp.config`, the MCP server defaults `dir` to cwd so existing operators see the same behaviour as before.  The underlying generic sink package itself refuses to silently pick a directory - the "where do logs land" decision is always made by the caller.
 
 The resolved absolute path is logged to stderr at startup as `sink file: /path/to/file.log`.
 
@@ -477,7 +477,7 @@ When the sink returns an error, the response behaviour depends on `audit.failure
 
 #### Sequencing {#sequencing}
 
-The audit write happens **after** the tool executes (or is gated out) but **before** the response returns to the client.  In strict mode, an audit-write failure on a successful DELETE means the row is gone but the client receives an error -- by design, so no mutation slips through unaudited.
+The audit write happens **after** the tool executes (or is gated out) but **before** the response returns to the client.  In strict mode, an audit-write failure on a successful DELETE means the row is gone but the client receives an error - by design, so no mutation slips through unaudited.
 
 #### Disabling audit {#disabling-audit}
 
@@ -500,10 +500,10 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 | Tool | Renderer | Description | Inputs |
 |--|--|--|--|
 |[`server_info`](/mcp/server_info)|KV|Server identity and runtime: stackql version, backing SQL engine, provider registry location, mode, read-only flag.  Call on demand, for example to diagnose a refused or gated operation or to check version-specific behavior.|none|
-|[`list_providers`](/mcp/list_providers)|Table|Providers already pulled into the local cache -- top of the hierarchy.|none|
+|[`list_providers`](/mcp/list_providers)|Table|Providers already pulled into the local cache - top of the hierarchy.|none|
 |[`list_services`](/mcp/list_services)|Table|Services under a provider.|`provider`|
 |[`list_resources`](/mcp/list_resources)|Table|Resources under a `provider`.`service`.|`provider`, `service`|
-|[`list_methods`](/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query -- this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
+|[`list_methods`](/mcp/list_methods)|Table|Access methods (HTTP operations) for a resource, with the SQL verb each maps to and its required parameters.  Call before writing any query - this is where required `WHERE` parameters are inferred.|`provider`, `service`, `resource`|
 |[`describe_method`](/mcp/describe_method)|KV|Full I/O contract for one method (always EXTENDED): required and optional inputs, and the output fields a `SELECT` can reference.|`provider`, `service`, `resource`, `method`|
 |[`query_library_search`](/mcp/query_library_search)|Table|Find curated query templates by natural-language intent. Read-only; mutation entries require opt-in and are excluded in `read_only` mode.|`intent`, `provider?`, `service?`, `tags?`, `include_mutations?`, `limit?`|
 |[`query_library_get`](/mcp/query_library_get)|KV|Retrieve a template and its parameter declarations. With non-empty `params`, validate values and return rendered SQL plus `next_tool`, without executing.|`id`, `params?`|
@@ -512,7 +512,7 @@ Click any tool name for a full reference page, including inputs, gating behaviou
 |[`run_mutation_query`](/mcp/run_mutation_query)|KV|Execute `INSERT`/`UPDATE`/`REPLACE`/`DELETE` against the provider.  **Real side effects.** Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
 |[`run_lifecycle_operation`](/mcp/run_lifecycle_operation)|KV|Execute a stackql `EXEC` lifecycle operation.  Returns `{messages, timestamp}`.  Gated by the server [mode](#server-modes).|`sql`|
 |[`list_registry`](/mcp/list_registry)|Table|Providers (and their versions) available in the configured registry.  Distinct from `list_providers`, which lists only providers already pulled.|`provider?`|
-|[`pull_provider`](/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only -- no cloud control or data plane effect.|`provider`, `version?`|
+|[`pull_provider`](/mcp/pull_provider)|KV|Install a single provider from the registry into the local cache.  Local cache state only - no cloud control or data plane effect.|`provider`, `version?`|
 |[`reload_credentials`](/mcp/reload_credentials)|Table|Re-source credentials from the `--env.file` dotenv file into the process environment and report per-provider resolution status (`ok`, `unresolved`, `not_checked`).  Never returns secret values.  Allowed in every mode.|`provider?`|
 
 Consult `query_library_search` before authoring SQL from scratch, then use `query_library_get` to inspect and render a matching template. Query tools also accept an optional `source` containing the library entry ID for attribution only; execution remains subject to the normal server mode and approval policy.
@@ -525,11 +525,17 @@ Consult `query_library_search` before authoring SQL from scratch, then use `quer
 
 ### Available MCP prompts {#available-mcp-prompts}
 
-One static prompt is published.
+Seven prompts are published, subject to the configured `enabled_prompts` allowlist.  Each is a guided workflow that an agent runs with the StackQL MCP tools, and none of them changes cloud resources.
 
 | Prompt | Description |
 |--|--|
-|`write_safe_select`|Guidance for writing safe `SELECT` queries against stackql resources.  Explains how to use `SHOW METHODS IN <provider>.<service>.<resource>` to discover the right read method and the required `WHERE` parameters.|
+|`getting_started`|Interactive guided tour of StackQL and the StackQL MCP server for new users: concepts, provider discovery, first queries and where to go next.|
+|`cloud_audit`|Cross-cloud (AWS, Google Cloud, Azure and Entra ID) security and FinOps audit; returns a findings report.|
+|`cost_cleanup`|FinOps cleanup pass that finds idle and orphaned resources, estimates monthly savings and returns a prioritized list of resources that are safe to delete.|
+|`drift_report`|Drift report comparing declared infrastructure as code (Terraform state or plan, or a pasted inventory) against live cloud resources; returns a drift table.|
+|`iam_access_review`|Identity and access review across AWS IAM, Entra ID, Okta and GitHub; returns an auditor-ready access review (SOC 2 or ISO style).|
+|`public_exposure_scan`|Scan for internet-reachable resources (public storage, open security groups, public IP addresses, public database endpoints, exposed Kubernetes services); returns a prioritized exposure table.|
+|`create_deploy_stack`|Guides the user through generating a `stackql-deploy` stack (manifest and `.iql` resource files) with queries tested live.  Mutations are rendered for `stackql-deploy`, never executed.|
 
 * * *
 
@@ -675,7 +681,7 @@ python cicd/python/build.py --build-mcp-client
 
 This produces `./build/stackql_mcp_client`.
 
-Note that `stackql_mcp_client` sends no `Authorization` header, so the server it targets must set `"allow_unauthenticated": true` (as the examples above do); a token-protected server answers it with `401`.  It also does **not** advertise the MCP elicitation capability -- it's for non-interactive scripting.  Against a `safe` server it will receive the "client does not support elicitation" refusal on mutation and lifecycle calls; against a `delete_safe` server, on `DELETE` and `EXEC` calls.  For interactive testing with elicitation prompts, use an editor-embedded MCP client (Claude Desktop, Cursor, Continue).
+Note that `stackql_mcp_client` sends no `Authorization` header, so the server it targets must set `"allow_unauthenticated": true` (as the examples above do); a token-protected server answers it with `401`.  It also does **not** advertise the MCP elicitation capability - it's for non-interactive scripting.  Against a `safe` server it will receive the "client does not support elicitation" refusal on mutation and lifecycle calls; against a `delete_safe` server, on `DELETE` and `EXEC` calls.  For interactive testing with elicitation prompts, use an editor-embedded MCP client (Claude Desktop, Cursor, Continue).
 
 ```bash
 # List all available tools
@@ -683,7 +689,7 @@ Note that `stackql_mcp_client` sends no `Authorization` header, so the server it
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

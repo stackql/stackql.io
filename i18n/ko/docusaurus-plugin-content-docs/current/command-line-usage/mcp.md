@@ -525,11 +525,17 @@ SQL을 처음부터 작성하기 전에 `query_library_search` 도구를 먼저 
 
 ### 사용 가능한 MCP 프롬프트 {#available-mcp-prompts}
 
-정적 프롬프트 1개가 게시됩니다.
+구성된 `enabled_prompts` 허용 목록에 따라 프롬프트 7개가 게시됩니다. 각 프롬프트는 에이전트가 StackQL MCP 도구로 실행하는 안내형 워크플로이며, 어느 프롬프트도 클라우드 리소스를 변경하지 않습니다.
 
 | 프롬프트 | 설명 |
 |--|--|
-|`write_safe_select`|stackql 리소스에 대해 안전한 `SELECT` 쿼리를 작성하기 위한 지침입니다. `SHOW METHODS IN <provider>.<service>.<resource>` 문을 사용하여 올바른 읽기 메서드와 필수 `WHERE` 매개 변수를 찾는 방법을 설명합니다.|
+|`getting_started`|신규 사용자를 위한 StackQL 및 StackQL MCP 서버의 대화형 안내 투어입니다. 개념, 프로바이더 탐색, 첫 쿼리, 다음에 살펴볼 내용을 다룹니다.|
+|`cloud_audit`|여러 클라우드(AWS, Google Cloud, Azure, Entra ID)에 걸친 보안 및 FinOps 감사입니다. 발견 사항 보고서를 반환합니다.|
+|`cost_cleanup`|유휴 리소스와 분리된 리소스를 찾고, 월별 절감액을 추정하고, 안전하게 삭제할 수 있는 리소스의 우선순위 목록을 반환하는 FinOps 정리 작업입니다.|
+|`drift_report`|선언된 코드형 인프라(Terraform 상태나 계획, 또는 붙여 넣은 인벤토리)를 실제 클라우드 리소스와 비교하는 드리프트 보고서입니다. 드리프트 표를 반환합니다.|
+|`iam_access_review`|AWS IAM, Entra ID, Okta, GitHub 전반의 ID 및 액세스 검토입니다. 감사자에게 바로 제출할 수 있는 액세스 검토(SOC 2 또는 ISO 형식)를 반환합니다.|
+|`public_exposure_scan`|인터넷에서 연결할 수 있는 리소스(공용 스토리지, 열린 보안 그룹, 공용 IP 주소, 공용 데이터베이스 엔드포인트, 노출된 Kubernetes 서비스)를 찾는 검사입니다. 우선순위가 지정된 노출 표를 반환합니다.|
+|`create_deploy_stack`|실시간으로 테스트한 쿼리를 사용하여 `stackql-deploy` 스택(매니페스트와 `.iql` 리소스 파일)을 생성하는 과정을 사용자에게 안내합니다. 변경 작업은 `stackql-deploy`용으로 렌더링될 뿐 실행되지 않습니다.|
 
 * * *
 
@@ -683,7 +689,7 @@ python cicd/python/build.py --build-mcp-client
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

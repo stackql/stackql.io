@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: "StackQL shell 实用命令（如 clear 和 sleep），包括其语法以及在交互式会话和脚本中的使用时机。"
+description: "StackQL shell 实用命令 clear 和 sleep：各自的作用及示例。"
 image: "/img/stackql-featured-image.png"
 ---
 

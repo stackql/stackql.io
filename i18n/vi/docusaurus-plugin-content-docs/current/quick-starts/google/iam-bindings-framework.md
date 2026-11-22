@@ -64,7 +64,7 @@ Cây thư mục sau được dùng cho framework triển khai liên kết này:
 
 ### Tệp `iql/iam.iql` {#iqliamiql-file}
 
-Đây là tệp chính mà `stackql` sẽ chạy; với `data/iam.jsonnet`, tệp này sẽ tạo và áp dụng các liên kết chính sách đã được chuyển đổi, sinh ra từ dữ liệu trong `data/iam/bindings.json`
+Đây là tệp chính mà `stackql` sẽ chạy; với `data/iam.jsonnet`, tệp này sẽ tạo và áp dụng các liên kết chính sách đã được chuyển đổi, sinh ra từ dữ liệu trong `data/iam/custom_roles.json` và `data/iam/bindings.json`
 
 > tệp này không cần phải sửa đổi
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Tệp này cung cấp dữ liệu dùng để tiền xử lý `iql/iam.iql`, lấy dữ liệu đó từ `data/iam/bindings.json`
+Tệp này cung cấp dữ liệu dùng để tiền xử lý `iql/iam.iql`, lấy dữ liệu đó từ `data/iam/custom_roles.json` và `data/iam/bindings.json`
 
 > tệp này không cần phải sửa đổi
 

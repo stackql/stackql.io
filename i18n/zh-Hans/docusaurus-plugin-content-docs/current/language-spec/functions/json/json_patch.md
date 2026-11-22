@@ -10,7 +10,7 @@ keywords:
 description: 在 StackQL 中使用 SQL 对 JSON 文档应用 JSON MergePatch，以修改或合并 JSON 对象。
 image: "/img/stackql-featured-image.png"
 ---
-对 JSON 文档应用 JSON MergePatch（RFC-7396），按指定的操作对其进行修改。此函数用于添加、修改或删除 JSON 对象中的元素，但将 JSON 数组视为原子单元。
+对 JSON 文档应用 JSON MergePatch（RFC 7396），按指定的操作对其进行修改。此函数用于添加、修改或删除 JSON 对象中的元素，但将 JSON 数组视为原子单元。
 
 另请参阅：  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

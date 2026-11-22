@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## 引數 {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 字串常值或字串資料行。
 
 ## 傳回值 {#return-values}

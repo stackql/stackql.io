@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - інвентаризація хмарних ресурсів
-description: "Службові команди оболонки StackQL, як-от clear і sleep: їхній синтаксис і коли їх використовувати в інтерактивних сеансах і скриптах."
+description: "Службові команди оболонки StackQL clear і sleep: що робить кожна з них, з прикладом."
 image: "/img/stackql-featured-image.png"
 ---
 

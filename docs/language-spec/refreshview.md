@@ -11,7 +11,6 @@ description: "REFRESH VIEW in StackQL: rebuild the stored results of a materiali
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Refreshes the data in a `materialized view` within a session.  
 

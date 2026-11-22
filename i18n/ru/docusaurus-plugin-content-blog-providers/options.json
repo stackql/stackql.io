@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Новости провайдеров",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Новые и обновленные провайдеры StackQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Все новости провайдеров",
+    "description": "The label for the left sidebar"
+  }
+}

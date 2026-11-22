@@ -25,13 +25,13 @@ StackQL 命令都接受全局标志，但其中一些仅适用于特定模式。
 | <span class="nowrap">`--cachekeycount`</span> | integer | 缓存的初始键数量 | `100` |
 | <span class="nowrap">`--configfile`</span> | string | 配置文件的完整路径 | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` 文件，为空表示无 | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | 单个查询的最大数据流依赖深度 | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | 单个查询的最大数据流弱连通分量数 | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | 单个查询的最大数据流依赖深度 | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | 单个查询的最大数据流弱连通分量数 | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | 用于配置 DBMS 内务查询处理方式的 JSON / YAML 字符串 | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | csv 输出的分隔符。仅限单个字符。对所有非 csv 输出均忽略 | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` 标志；只运行预处理器，返回模板化后的输出 | `false` |
 | <span class="nowrap">`--env.file`</span> | string | 可选的 dotenv 风格文件，启动时加载到进程环境中（所有命令）；MCP [`reload_credentials`](/mcp/reload_credentials) 工具按需重新加载它。文件不存在时不报错；值为空的键会被跳过；已有的变量会被覆盖。不从 `.stackqlrc` 读取。在 `v0.10.542` 之后的 StackQL 发布版本中可用。 | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | 查询执行的并发上限 | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | 查询执行的并发上限 | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | 导出别名前缀（命名空间或 schema） | |
 | <span class="nowrap">`--gc`</span> | string | 表示 GC 配置的 JSON / YAML 字符串 | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | 禁用列标题，仅在使用 `--output csv` 或 `--output text` 时有效 | `false` |

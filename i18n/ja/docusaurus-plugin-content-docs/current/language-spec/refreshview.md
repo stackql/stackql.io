@@ -11,7 +11,6 @@ description: "StackQL の REFRESH VIEW：マテリアライズドビューに保
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 セッション内の `materialized view` のデータをリフレッシュします。  
 

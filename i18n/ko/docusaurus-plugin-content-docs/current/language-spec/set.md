@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### 프로바이더 별칭 바인딩 {#bind-a-provider-alias}
 
-프로바이더 별칭은 독립적으로 구성된 프로바이더의 두 번째 인스턴스로, 쿼리에서 프로바이더 이름 대신 사용합니다.  값은 문자열에 담긴 JSON 문서입니다. `provider` 키는 기반 프로바이더의 이름을 지정하고, `tenancy` 키는 계정에 레이블을 지정하며, `auth` 키는 `--auth` 플래그와 같은 형태의 자격 증명 블록이고, `params` 키는 `region` 같은 요청 매개 변수의 기본값을 제공합니다.  그러면 `production.s3.buckets`에 대한 쿼리는 해당 자격 증명으로 실행되고, `aws.s3.buckets` 리소스는 시작 시 구성을 유지합니다.  전체 키 목록은 [프로바이더 세션](/getting-started/provider-sessions#provider-aliases)에 있습니다.
+프로바이더 별칭은 독립적으로 구성된 프로바이더의 두 번째 인스턴스로, 쿼리에서 프로바이더 이름 대신 사용합니다.  값은 문자열에 담긴 JSON 문서입니다. `provider` 키는 기반 프로바이더의 이름을 지정하고, `tenancy` 키는 계정에 레이블을 지정하며, `auth` 키는 별칭 형식의 자격 증명 블록이고(AWS의 경우 `--auth` 플래그의 `keyIDenvvar` 및 `credentialsenvvar` 키가 아닌 `access_key_id_env_var` 및 `secret_access_key_env_var` 키), `params` 키는 `region` 같은 요청 매개 변수의 기본값을 제공합니다.  그러면 `production.s3.buckets`에 대한 쿼리는 해당 자격 증명으로 실행되고, `aws.s3.buckets` 리소스는 시작 시 구성을 유지합니다.  전체 키 목록은 [프로바이더 세션](/getting-started/provider-sessions#provider-aliases)에 있습니다.
 
 ```sql
 SET "$.providers.production" = '{

@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## 인수 {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 리터럴 문자열 또는 문자열 열입니다.
 
 ## 반환 값 {#return-values}

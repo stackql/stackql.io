@@ -25,13 +25,13 @@ StackQL 命令都接受全域旗標，但部分旗標只適用於特定模式。
 | <span class="nowrap">`--cachekeycount`</span> | integer | 快取的初始鍵數量 | `100` |
 | <span class="nowrap">`--configfile`</span> | string | 設定檔的完整路徑 | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` 檔案，若為空則不使用 | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | 指定查詢的資料流相依性深度上限 | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | 指定查詢的資料流弱連通元件數上限 | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | 指定查詢的資料流相依性深度上限 | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | 指定查詢的資料流弱連通元件數上限 | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | 用來設定 DBMS 內部維護查詢處理方式的 JSON / YAML 字串 | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | csv 輸出的分隔符號。僅限單一字元。所有非 csv 輸出都會忽略此旗標 | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` 旗標；只執行前置處理器，並傳回範本化的輸出 | `false` |
 | <span class="nowrap">`--env.file`</span> | string | 選用的 dotenv 樣式檔案，會在啟動時載入處理程序環境（所有命令）；MCP [`reload_credentials`](/mcp/reload_credentials) 工具會視需要重新載入此檔案。檔案不存在時不會出錯；值為空的鍵會略過；現有的變數會被覆寫。不會從 `.stackqlrc` 載入。在 StackQL `v0.10.542` 之後的發行版本中提供。 | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | 查詢執行的並行限制 | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | 查詢執行的並行限制 | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | 匯出別名前置詞（命名空間或 schema） | |
 | <span class="nowrap">`--gc`</span> | string | 表示 GC 設定的 JSON / YAML 字串 | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | 停用資料行標頭，僅在使用 `--output csv` 或 `--output text` 時有效 | `false` |

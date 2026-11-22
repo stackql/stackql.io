@@ -25,13 +25,13 @@ Les options globales sont acceptées par les commandes StackQL, mais certaines n
 | <span class="nowrap">`--cachekeycount`</span> | integer | Nombre initial de clés du cache | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Chemin complet du fichier de configuration | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | Fichier `cpuprofile`, aucun si vide | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Profondeur maximale des dépendances de flux de données pour une requête donnée | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Nombre maximal de composantes faiblement connexes du flux de données pour une requête donnée | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Profondeur maximale des dépendances de flux de données pour une requête donnée | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Nombre maximal de composantes faiblement connexes du flux de données pour une requête donnée | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | Chaîne JSON / YAML configurant le traitement des requêtes de maintenance du SGBD | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Délimiteur de la sortie csv. Un seul caractère.  Ignoré pour toute sortie autre que csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | Option `dryrun` ; exécute uniquement le préprocesseur, la sortie issue des modèles est renvoyée | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Fichier facultatif de type dotenv chargé dans l'environnement du processus au démarrage (toutes les commandes) ; l'outil MCP [`reload_credentials`](/mcp/reload_credentials) le recharge à la demande. Un fichier manquant est toléré ; les clés dont la valeur est vide sont ignorées ; les variables existantes sont écrasées. Cette option n'est pas lue depuis `.stackqlrc`. Disponible dans les versions de StackQL postérieures à `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Limite de concurrence pour l'exécution des requêtes | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Limite de concurrence pour l'exécution des requêtes | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Préfixe d'alias d'export (espace de noms ou schéma) | |
 | <span class="nowrap">`--gc`</span> | string | Chaîne JSON / YAML représentant la configuration du GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Désactive les en-têtes de colonnes, valide uniquement avec `--output csv` ou `--output text` | `false` |

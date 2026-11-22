@@ -11,7 +11,7 @@ description: "Perintah stackql srv menjalankan StackQL sebagai server protokol k
 image: "/img/stackql-featured-image.png"
 ---
 
-Perintah yang digunakan untuk menjalankan StackQL sebagai layanan, yang kemudian dapat diakses oleh klien [protokol komunikasi Postgres](https://www.postgresql.org/docs/current/protocol.html) yang diautentikasi menggunakan mTLS. Perintah `srv` juga dapat menjalankan server [Model Context Protocol (MCP)](/command-line-usage/mcp) bersama server protokol komunikasi PostgreSQL, sehingga memungkinkan akses melalui dua protokol bagi klien database tradisional maupun agen AI.
+Perintah yang digunakan untuk menjalankan StackQL sebagai layanan, yang kemudian dapat diakses oleh klien [protokol komunikasi Postgres](https://www.postgresql.org/docs/current/protocol.html), yang dapat diautentikasi menggunakan mTLS. Perintah `srv` juga dapat menjalankan server [Model Context Protocol (MCP)](/command-line-usage/mcp) bersama server protokol komunikasi PostgreSQL, sehingga memungkinkan akses melalui dua protokol bagi klien database tradisional maupun agen AI.
 
 * * * 
 

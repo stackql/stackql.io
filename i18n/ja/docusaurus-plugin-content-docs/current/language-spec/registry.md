@@ -11,7 +11,6 @@ description: "StackQL の REGISTRY：プロバイダーレジストリのプロ�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 設定されたプロバイダーレジストリで利用可能なプロバイダーを一覧表示するか、プロバイダーをローカルのインストール環境にプルします。  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### プロバイダーの特定のバージョンをインストールする {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

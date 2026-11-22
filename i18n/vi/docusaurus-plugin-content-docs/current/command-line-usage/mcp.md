@@ -525,11 +525,17 @@ Tham khảo `query_library_search` trước khi tự viết SQL từ đầu, sau
 
 ### Các lời nhắc MCP hiện có {#available-mcp-prompts}
 
-Một lời nhắc tĩnh được công bố.
+Bảy lời nhắc được công bố, tùy theo danh sách cho phép `enabled_prompts` đã cấu hình. Mỗi lời nhắc là một workflow có hướng dẫn mà tác nhân chạy bằng các công cụ MCP của StackQL, và không lời nhắc nào thay đổi tài nguyên đám mây.
 
 | Lời nhắc | Mô tả |
 |--|--|
-|`write_safe_select`|Hướng dẫn viết truy vấn `SELECT` an toàn đối với tài nguyên stackql. Giải thích cách dùng `SHOW METHODS IN <provider>.<service>.<resource>` để tìm phương thức đọc phù hợp và các tham số `WHERE` bắt buộc.|
+|`getting_started`|Phần giới thiệu tương tác có hướng dẫn về StackQL và máy chủ MCP StackQL dành cho người dùng mới: các khái niệm, khám phá provider, những truy vấn đầu tiên và nên tìm hiểu gì tiếp theo.|
+|`cloud_audit`|Kiểm tra bảo mật và FinOps trên nhiều đám mây (AWS, Google Cloud, Azure và Entra ID); trả về một báo cáo các phát hiện.|
+|`cost_cleanup`|Lượt dọn dẹp FinOps tìm các tài nguyên nhàn rỗi và mồ côi, ước tính khoản tiết kiệm hằng tháng và trả về danh sách các tài nguyên có thể xóa an toàn, sắp xếp theo mức độ ưu tiên.|
+|`drift_report`|Báo cáo sai lệch so sánh hạ tầng dưới dạng mã đã khai báo (trạng thái hoặc kế hoạch Terraform, hoặc một bản kiểm kê được dán vào) với tài nguyên đám mây thực tế; trả về một bảng sai lệch.|
+|`iam_access_review`|Rà soát danh tính và quyền truy cập trên AWS IAM, Entra ID, Okta và GitHub; trả về một bản rà soát quyền truy cập sẵn sàng cho kiểm toán viên (theo kiểu SOC 2 hoặc ISO).|
+|`public_exposure_scan`|Quét tìm các tài nguyên có thể truy cập từ internet (bộ lưu trữ công khai, nhóm bảo mật mở, địa chỉ IP công khai, điểm cuối cơ sở dữ liệu công khai, dịch vụ Kubernetes bị lộ ra ngoài); trả về một bảng mức độ phơi bày, sắp xếp theo mức độ ưu tiên.|
+|`create_deploy_stack`|Hướng dẫn người dùng tạo một stack `stackql-deploy` (manifest và các tệp tài nguyên `.iql`) với các truy vấn được kiểm thử trực tiếp. Các thao tác thay đổi dữ liệu được tạo cho `stackql-deploy` chứ không bao giờ được thực thi.|
 
 * * *
 
@@ -683,7 +689,7 @@ Lưu ý rằng `stackql_mcp_client` không gửi header `Authorization`, vì v�
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

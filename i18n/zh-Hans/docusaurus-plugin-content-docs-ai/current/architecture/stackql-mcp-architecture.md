@@ -39,7 +39,7 @@ StackQL 的 MCP 服务器内置于引擎二进制文件中，并将 StackQL 的�
 - **标识**：`server_info`（版本、后端、注册表、模式）；按需调用（用于诊断被拒绝或受门控的操作，或检查特定于版本的行为），而不是在会话开始时调用。
 - **凭据**：`reload_credentials`，在会话中途将 `--env.file` 指定的 dotenv 文件重新加载到进程环境中，并报告每个 Provider 的凭据解析状态；只包含名称和状态，绝不包含机密值（在 v0.10.542 之后的发布版本中可用）。
 
-1 个静态提示词 `write_safe_select` 讲授方法发现工作流。
+已发布 7 个提示词：`getting_started`（面向新用户的引导式教程）、`cloud_audit`、`cost_cleanup`、`drift_report`、`iam_access_review`、`public_exposure_scan` 和 `create_deploy_stack`，每个都是智能体使用上述工具执行的引导式工作流，不会更改云资源。
 
 ## 安全契约 {#the-safety-contract}
 

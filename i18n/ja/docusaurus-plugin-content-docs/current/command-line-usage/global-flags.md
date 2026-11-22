@@ -25,13 +25,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--cachekeycount`</span> | integer | キャッシュの初期キー数 | `100` |
 | <span class="nowrap">`--configfile`</span> | string | 設定ファイルのフルパス | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` ファイル。空の場合はなし | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | 1 つのクエリにおけるデータフロー依存関係の最大深度 | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | 1 つのクエリにおけるデータフローの弱連結成分の最大数 | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | 1 つのクエリにおけるデータフロー依存関係の最大深度 | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | 1 つのクエリにおけるデータフローの弱連結成分の最大数 | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | DBMS のハウスキーピングクエリの処理を設定する JSON / YAML 文字列 | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | CSV 出力の区切り文字。1 文字のみ。CSV 以外の出力ではすべて無視されます | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` フラグ。プリプロセッサーのみを実行し、テンプレート処理された出力が返されます | `false` |
 | <span class="nowrap">`--env.file`</span> | string | 起動時（すべてのコマンド）にプロセスの環境に読み込まれる、省略可能な dotenv 形式のファイル。MCP の [`reload_credentials`](/mcp/reload_credentials) ツールは、要求に応じてこのファイルを再読み込みします。ファイルがなくてもエラーにはなりません。値が空のキーはスキップされ、既存の変数は上書きされます。`.stackqlrc` からは読み込まれません。StackQL `v0.10.542` より後のリリースで利用できます。 | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | クエリ実行の同時実行数の上限 | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | クエリ実行の同時実行数の上限 | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | エクスポートのエイリアスのプレフィックス（名前空間またはスキーマ） | |
 | <span class="nowrap">`--gc`</span> | string | GC の設定を表す JSON / YAML 文字列 | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | 列ヘッダーを無効にします。`--output csv` または `--output text` でのみ有効です | `false` |

@@ -28,7 +28,7 @@ Pernyataan `SET "$.providers.<alias>"` mengikat sebuah alias ke provider.  Nilai
 |--|--|--|
 | `provider` | Ya | Provider kanonis yang dirujuk oleh alias, misalnya `aws`. |
 | `tenancy` | Ya | Label pengelompokan seperti nama akun atau tenant.  StackQL tidak memverifikasinya terhadap provider. |
-| `auth` | Salah satu dari `auth` atau `auth_secret` | Dokumen autentikasi dengan bentuk yang sama seperti entri provider di objek [`--auth`](/command-line-usage/global-flags).  Alias tidak meminjam kredensial provider kanonis. |
+| `auth` | Salah satu dari `auth` atau `auth_secret` | Dokumen autentikasi dalam format alias, yang berbeda dari entri provider di objek [`--auth`](/command-line-usage/global-flags): untuk AWS, kuncinya adalah `access_key_id_env_var` dan `secret_access_key_env_var`, bukan `keyIDenvvar` dan `credentialsenvvar`, dan kunci yang tidak dikenal oleh format alias gagal dengan `invalid session configuration field or type`.  Alias tidak meminjam kredensial provider kanonis. |
 | `auth_secret` | Salah satu dari `auth` atau `auth_secret` | Nama [rahasia sesi](#session-secrets) yang menyimpan dokumen autentikasi. |
 | `params` | Tidak | Nilai default untuk parameter provider yang dideklarasikan, termasuk parameter server yang dideklarasikan.  Predikat dalam kueri mengganti nilai default. |
 | `tuning` | Tidak | Batas `max_concurrent` dan `max_per_host` untuk permintaan alias tersebut.  Alias yang berbagi provider dan tenancy juga berbagi kontrol ini dan harus mendeklarasikan penyetelan yang identik. |

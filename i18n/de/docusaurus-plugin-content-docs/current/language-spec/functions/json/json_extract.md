@@ -25,7 +25,7 @@ Verwenden Sie die Anweisung [**DESCRIBE**](/language-spec/describe), um die Date
 
 :::note 
 
-Die Funktion `json_extract` ist als Funktion `json_extract_path_text` implementiert, wenn Sie stackql mit einem `postgres`-SQL-Backend verwenden
+Die Funktion `json_extract` ist als Funktion `json_extract_path_text` implementiert, wenn Sie stackql mit einem `postgres`-SQL-Backend verwenden.  Der Pfad wird an `.` aufgeteilt und ein führendes `$` entfernt, sodass aus `'$.a.b'` die Schlüssel `'a'` und `'b'` werden; ein Array-Index wie `$[0]` wird als Objektschlüssel durchgereicht und wählt auf diesem Backend kein Array-Element aus.
 
 :::
 

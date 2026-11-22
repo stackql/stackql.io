@@ -11,7 +11,6 @@ description: "DROP VIEW in StackQL: remove a view or materialized view created w
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Drops a `view` or `materialized view` within a session.  
 

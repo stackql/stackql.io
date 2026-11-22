@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-如果您搭配 `postgres` SQL 後端使用 stackql，`json_extract` 函式會實作為 `json_extract_path_text` 函式
+如果您搭配 `postgres` SQL 後端使用 stackql，`json_extract` 函式會實作為 `json_extract_path_text` 函式。路徑會以 `.` 分割，並捨棄開頭的 `$`，因此 `'$.a.b'` 會成為鍵 `'a'` 和 `'b'`；在該後端上，`$[0]` 這類陣列索引會被當作物件鍵傳遞，不會選取陣列元素。
 
 :::
 

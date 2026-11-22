@@ -26,7 +26,7 @@ Nas funções de data e hora do StackQL, um valor de data ou hora pode ser segui
 | start of month       | Retroceder ao início do mês                                                  |
 | start of year        | Retroceder ao início do ano                                                  |
 | start of day         | Retroceder ao início do dia                                                  |
-| weekday N            | Avançar uma data até a próxima data cujo número do dia da semana seja N      |
+| weekday N            | Avançar uma data até a próxima data cujo número do dia da semana seja N; uma data que já cai no dia da semana N é retornada sem alteração |
 | localtime            | Retornar a hora local                                                        |
 | utc                  | Retornar a hora UTC                                                          |
 | unixepoch            | Tempo Unix                                                                   |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Obter o próximo dia da semana especificado após uma data {#get-the-next-specified-weekday-after-a-given-date}
+### Obter o dia da semana especificado em uma data ou após ela {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

@@ -41,7 +41,7 @@ stackql mcp \
 
 3. **选择安全模式。** 模式在服务器配置中设置，并对智能体可以执行的操作进行门控：
 
-| 模式 | SELECT / 元数据 | INSERT / UPDATE | DELETE | EXEC |
+| 模式 | SELECT / 元数据 | INSERT / UPDATE / REPLACE | DELETE | EXEC |
 |---|---|---|---|---|
 | `read_only` | 允许 | 拒绝 | 拒绝 | 拒绝 |
 | `safe`（默认） | 允许 | 需要审批 | 需要审批 | 需要审批 |
@@ -50,7 +50,7 @@ stackql mcp \
 
 “需要审批”使用 MCP 征询（elicitation）流程：客户端向用户显示待执行的 SQL，由用户接受或拒绝。对于资源清单智能体，固定使用 `read_only`；`full_access` 只保留给受信任且审计日志有人审查的流水线。包含多条语句的负载按其中权限最高的语句进行门控（从 `v0.12.742` 起），因此变更无法藏在开头的 `SELECT` 之后绕过门控。
 
-4. **让智能体先发现，再查询。** 典型的智能体会话：调用一次 `server_info`，然后 `list_providers` -> `list_methods`（它会给出必需的 `WHERE` 参数）-> `validate_select_query` -> `run_select_query`：
+4. **让智能体先发现，再查询。** 典型的智能体会话：`list_providers` -> `list_methods`（它会给出必需的 `WHERE` 参数）-> `validate_select_query` -> `run_select_query`：
 
 ```sql
 SELECT name, language, stargazers_count

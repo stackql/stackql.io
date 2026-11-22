@@ -34,7 +34,7 @@ __*value_column*__
 Kolom yang menyediakan nilai untuk objek JSON.
 
 __*grouping_column*__  
-Kolom yang menjadi dasar pengelompokan hasil.
+Kolom `GROUP BY`; kolom ini bukan argumen `JSON_GROUP_OBJECT`, yang menerima tepat dua argumen.  Satu objek JSON dikembalikan per kelompok.
 
 ## Nilai yang dikembalikan {#return-values}
 Mengembalikan objek JSON yang berisi semua pasangan kunci-nilai teragregasi dari kolom yang ditentukan, yang dikelompokkan menurut `grouping_column`.

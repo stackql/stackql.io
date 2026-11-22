@@ -11,7 +11,6 @@ description: "CREATE VIEW dans StackQL : enregistrer une requête, y compris des
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Crée, au sein d'une session, une `view` ou une `materialized view` qui peut servir à représenter une requête `stackql` longue ou complexe.  
 

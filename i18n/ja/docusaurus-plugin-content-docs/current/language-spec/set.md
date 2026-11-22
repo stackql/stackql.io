@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### プロバイダーエイリアスをバインドする {#bind-a-provider-alias}
 
-プロバイダーエイリアスは、独立して構成されたプロバイダーの 2 つ目のインスタンスで、クエリではプロバイダー名の代わりに使用します。値は文字列に格納した JSON ドキュメントです。`provider` は基になるプロバイダーを指定し、`tenancy` はアカウントのラベルを指定します。`auth` は `--auth` と同じ形の認証情報ブロックで、`params` は `region` などのリクエストパラメーターのデフォルト値を指定します。その後、`production.s3.buckets` に対するクエリはその認証情報で実行され、`aws.s3.buckets` は起動時の構成を維持します。キーの完全な一覧は[プロバイダーセッション](/getting-started/provider-sessions#provider-aliases)にあります。
+プロバイダーエイリアスは、独立して構成されたプロバイダーの 2 つ目のインスタンスで、クエリではプロバイダー名の代わりに使用します。値は文字列に格納した JSON ドキュメントです。`provider` は基になるプロバイダーを指定し、`tenancy` はアカウントのラベルを指定します。`auth` はエイリアス形式の認証情報ブロック（AWS の場合は `access_key_id_env_var` と `secret_access_key_env_var` で、`--auth` のキー `keyIDenvvar` と `credentialsenvvar` ではありません）で、`params` は `region` などのリクエストパラメーターのデフォルト値を指定します。その後、`production.s3.buckets` に対するクエリはその認証情報で実行され、`aws.s3.buckets` は起動時の構成を維持します。キーの完全な一覧は[プロバイダーセッション](/getting-started/provider-sessions#provider-aliases)にあります。
 
 ```sql
 SET "$.providers.production" = '{

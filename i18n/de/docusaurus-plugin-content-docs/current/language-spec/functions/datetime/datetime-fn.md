@@ -65,7 +65,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Den nächsten angegebenen Wochentag nach einem bestimmten Datum ermitteln {#get-the-next-specified-weekday-after-a-given-date}
+### Den angegebenen Wochentag am oder nach einem bestimmten Datum ermitteln {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

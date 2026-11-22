@@ -4,9 +4,10 @@
 // Spanish-speaking country of the Americas (or in Equatorial Guinea) sees
 // that country's flag next to "ES" instead of Spain's, a visitor in an
 // Arab League country other than Saudi Arabia sees that country's flag next
-// to "AR", and a visitor in Taiwan or Macau sees that flag next to "ZH-HANT"
-// instead of Hong Kong's. Cosmetic only: the locale, its URL and its content
-// are the same for everyone.
+// to "AR", a visitor in Taiwan or Macau sees that flag next to "ZH-HANT"
+// instead of Hong Kong's, and a visitor in Belarus, Kazakhstan or Kyrgyzstan
+// sees that flag next to "RU" instead of Russia's. Cosmetic only: the locale,
+// its URL and its content are the same for everyone.
 //
 // How it works. The site is static, so every page is served with the default
 // flag (inline SVG, in src/theme/NavbarItem/LocaleDropdownNavbarItem/flags.js).
@@ -75,6 +76,14 @@
 // Kong as well, so like en-GB it is a loose region: a zh-TW browser in Hong
 // Kong keeps the Hong Kong flag (its time zone maps to ""), one in Taipei or
 // with no Chinese time zone gets the Taiwan flag.
+//
+// Russian (ru) has Russia as the default and variants for Belarus,
+// Kazakhstan and Kyrgyzstan, where Russian is an official language. It works
+// like Spanish: ru-BY, ru-KZ and ru-KG decide wherever the machine is;
+// otherwise the country's time zone does, whatever the browser language,
+// because ru-RU is what Windows and browsers report for plain "Russian" and
+// so names no country here. Kazakhstan's seven zones have no common prefix
+// and are listed by name.
 const REGIONAL_FLAGS = {
   en: {
     regions: { AU: 'au', NZ: 'nz', ZA: 'za' },
@@ -177,6 +186,20 @@ const REGIONAL_FLAGS = {
       ['Asia/Hong_Kong', ''],
     ],
     looseRegions: { TW: 'tw' },
+  },
+  ru: {
+    regions: { BY: 'by', KZ: 'kz', KG: 'kg' },
+    timeZones: [
+      ['Europe/Minsk', 'by'],
+      ['Asia/Almaty', 'kz'],
+      ['Asia/Qostanay', 'kz'],
+      ['Asia/Qyzylorda', 'kz'],
+      ['Asia/Aqtobe', 'kz'],
+      ['Asia/Aqtau', 'kz'],
+      ['Asia/Atyrau', 'kz'],
+      ['Asia/Oral', 'kz'],
+      ['Asia/Bishkek', 'kg'],
+    ],
   },
 };
 

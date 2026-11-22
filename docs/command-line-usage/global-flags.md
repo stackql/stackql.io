@@ -25,13 +25,13 @@ Global flags are accepted by StackQL commands, but some apply only to a particul
 | <span class="nowrap">`--cachekeycount`</span> | integer | Cache initial key count | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Config file full path | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` file, none if empty | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Maximum dataflow dependency depth for a given query | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Maximum dataflow weakly connected components for a given query | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Maximum dataflow dependency depth for a given query | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Maximum dataflow weakly connected components for a given query | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | JSON / YAML string to configure DBMS housekeeping query handling | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Delimiter for csv output. Single char only.  Ignored for all non-csv output | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` flag; run preprocessor only, templated output will be returned | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Optional dotenv-style file sourced into the process environment at startup (all commands); the MCP [`reload_credentials`](/mcp/reload_credentials) tool re-sources it on demand. A missing file is tolerated; keys with empty values are skipped; existing variables are overwritten. Not sourced from `.stackqlrc`. Available in StackQL releases after `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Concurrency limit for query execution | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Concurrency limit for query execution | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Export alias prefix (namespace or schema) | |
 | <span class="nowrap">`--gc`</span> | string | JSON / YAML string representing GC config | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Disables column headers, valid only with `--output csv` or `--output text` | `false` |

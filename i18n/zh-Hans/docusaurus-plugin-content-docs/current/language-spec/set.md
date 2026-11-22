@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### 绑定 Provider 别名 {#bind-a-provider-alias}
 
-Provider 别名是某个 Provider 的第二个独立配置的实例，在查询中用来代替 Provider 名称。值是字符串形式的 JSON 文档：`provider` 指定底层 Provider，`tenancy` 标记账号，`auth` 是与 `--auth` 结构相同的凭据块，`params` 为 `region` 等请求参数提供默认值。此后针对 `production.s3.buckets` 的查询使用这些凭据运行，而 `aws.s3.buckets` 保持启动时的配置。完整的键列表见 [Provider 会话](/getting-started/provider-sessions#provider-aliases)。
+Provider 别名是某个 Provider 的第二个独立配置的实例，在查询中用来代替 Provider 名称。值是字符串形式的 JSON 文档：`provider` 指定底层 Provider，`tenancy` 标记账号，`auth` 是别名格式的凭据块（对于 AWS 为 `access_key_id_env_var` 和 `secret_access_key_env_var`，而不是 `--auth` 的键 `keyIDenvvar` 和 `credentialsenvvar`），`params` 为 `region` 等请求参数提供默认值。此后针对 `production.s3.buckets` 的查询使用这些凭据运行，而 `aws.s3.buckets` 保持启动时的配置。完整的键列表见 [Provider 会话](/getting-started/provider-sessions#provider-aliases)。
 
 ```sql
 SET "$.providers.production" = '{

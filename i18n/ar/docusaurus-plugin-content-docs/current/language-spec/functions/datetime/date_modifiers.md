@@ -26,7 +26,7 @@ image: "/img/stackql-featured-image.png"
 | start of month       | يعود إلى بداية الشهر |
 | start of year        | يعود إلى بداية السنة |
 | start of day         | يعود إلى بداية اليوم |
-| weekday N            | يقدم التاريخ إلى التاريخ التالي الذي يكون فيه رقم يوم الأسبوع N |
+| weekday N            | يقدم التاريخ إلى التاريخ التالي الذي يكون فيه رقم يوم الأسبوع N؛ ويعاد التاريخ الذي يقع أصلًا في يوم الأسبوع N دون تغيير |
 | localtime            | يعيد الوقت المحلي |
 | utc                  | يعيد الوقت بتوقيت UTC |
 | unixepoch            | وقت Unix |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### الحصول على يوم الأسبوع المحدد التالي بعد تاريخ معين {#get-the-next-specified-weekday-after-a-given-date}
+### الحصول على يوم الأسبوع المحدد في تاريخ معين أو بعده {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

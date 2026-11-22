@@ -64,7 +64,7 @@ Este framework de implantação de vinculações usa a seguinte árvore de diret
 
 ### Arquivo `iql/iam.iql` {#iqliamiql-file}
 
-Este é o arquivo principal, executado pelo `stackql`; com o `data/iam.jsonnet`, ele renderiza e aplica as vinculações de políticas transpiladas, geradas a partir dos dados de `data/iam/bindings.json`
+Este é o arquivo principal, executado pelo `stackql`; com o `data/iam.jsonnet`, ele renderiza e aplica as vinculações de políticas transpiladas, geradas a partir dos dados de `data/iam/custom_roles.json` e `data/iam/bindings.json`
 
 > não deve ser necessário modificar este arquivo
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Este arquivo fornece os dados usados para pré-processar o `iql/iam.iql`, obtendo-os de `data/iam/bindings.json`
+Este arquivo fornece os dados usados para pré-processar o `iql/iam.iql`, obtendo-os de `data/iam/custom_roles.json` e `data/iam/bindings.json`
 
 > não deve ser necessário modificar este arquivo
 

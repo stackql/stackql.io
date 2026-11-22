@@ -11,7 +11,6 @@ description: "REGISTRY trong StackQL: liệt kê các provider và phiên bản 
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Liệt kê các provider hiện có trong registry provider đã cấu hình, hoặc tải xuống một provider vào bản cài đặt cục bộ.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### Cài đặt một phiên bản cụ thể của một provider {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

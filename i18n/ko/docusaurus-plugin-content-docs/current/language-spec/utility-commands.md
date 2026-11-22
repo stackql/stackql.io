@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "clear, sleep 등 StackQL 셸 유틸리티 명령과 그 구문, 대화형 세션 및 스크립트에서의 사용 시기."
+description: "StackQL 셸 유틸리티 명령 clear 및 sleep: 각 명령의 기능과 예제."
 image: "/img/stackql-featured-image.png"
 ---
 

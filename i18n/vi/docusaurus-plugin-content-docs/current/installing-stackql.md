@@ -345,7 +345,7 @@ cargo install stackql-deploy
 
   ### AWS CloudShell
 
-  AWS CloudShell cung cấp một shell chạy trên trình duyệt, với AWS CLI đã được cài đặt và xác thực sẵn. Khi chạy StackQL trong AWS CloudShell, bạn có thể truy vấn và quản lý tài nguyên AWS mà không cần thêm bước xác thực nào. Để biết các bước chi tiết, hãy xem [hướng dẫn AWS CloudShell](/quick-starts/aws/aws-cloud-shell) của chúng tôi.
+  AWS CloudShell cung cấp một shell chạy trên trình duyệt, với AWS CLI đã được cài đặt và xác thực sẵn. Khi chạy StackQL trong AWS CloudShell, bạn có thể truy vấn và quản lý tài nguyên AWS mà không cần thêm bước xác thực nào. Để biết các bước chi tiết, hãy xem hướng dẫn bắt đầu nhanh [StackQL trong AWS CloudShell](/quick-starts/aws/aws-cloud-shell).
 
   Trước tiên, tải xuống gói StackQL:
 

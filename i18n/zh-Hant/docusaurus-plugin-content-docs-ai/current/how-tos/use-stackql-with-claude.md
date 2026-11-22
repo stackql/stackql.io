@@ -68,7 +68,7 @@ stackql --version
 
 ## 控制 Claude 可以執行的作業 {#controlling-what-claude-can-do}
 
-設定中的 `mode` 欄位就是契約：`read_only` 適用於僅限資源清單的助理，`safe`（預設）適用於需經核准的變更，`delete_safe` 允許建立與更新但管控刪除，`full_access` 僅適用於受信任的自動化。無論模式為何，Claude 進行的每次呼叫都會記錄在伺服器的 JSONL 稽核記錄中。
+設定中的 `mode` 欄位就是契約：`read_only` 適用於僅限資源清單的助理，`safe`（預設）適用於需經核准的變更，`delete_safe` 允許建立與更新但管控刪除和 `EXEC` 生命週期作業，`full_access` 僅適用於受信任的自動化。無論模式為何，Claude 進行的每次呼叫都會記錄在伺服器的 JSONL 稽核記錄中。
 
 ## 相關概念 {#related-concepts}
 

@@ -10,7 +10,7 @@ keywords:
 description: StackQL で SQL を使って JSON ドキュメントに JSON MergePatch を適用し、JSON オブジェクトを変更またはマージします。
 image: "/img/stackql-featured-image.png"
 ---
-JSON ドキュメントに JSON MergePatch（RFC-7396）を適用し、指定した操作に従ってドキュメントを変更します。この関数は JSON オブジェクト内の要素の追加、変更、削除に使用しますが、JSON 配列は不可分の単位として扱います。
+JSON ドキュメントに JSON MergePatch（RFC 7396）を適用し、指定した操作に従ってドキュメントを変更します。この関数は JSON オブジェクト内の要素の追加、変更、削除に使用しますが、JSON 配列は不可分の単位として扱います。
 
 関連項目：  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)
