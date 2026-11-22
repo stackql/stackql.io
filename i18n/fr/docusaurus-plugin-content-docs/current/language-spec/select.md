@@ -53,7 +53,7 @@ Un `JOIN` sans clause `ON` est traité comme un `CROSS JOIN` ; la condition de j
 Exécutez une instruction `SELECT` de base dans une session authentifiée.
 
 ```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
+-- Selecting all instances in a zone using a basic SELECT statement
 SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';

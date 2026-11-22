@@ -151,7 +151,7 @@ and zone = 'australia-southeast1-a'" \
 
 一条语句就是一个快照。该语句的每条记录都带有相同的 `timeUnixNano`（语句开始时间）、相同的 `stackql.snapshot.id` 和相同的 `spanId`，因此即使各行在数秒内跨多个分页陆续到达，时间点查询、差异比较和最新状态查询也都能正常工作；`observedTimeUnixNano` 记录每条记录实际写出的时间。一次调用中的所有语句共享一个 `traceId`，设置了 `TRACEPARENT` 环境变量时取自该变量（CI 流水线的惯例），否则自动生成。
 
-语句的最后一条记录是完成记录：正文为 `snapshot complete <provider.service.resource>`，并带有 `stackql.snapshot.complete=true`、`stackql.rows_returned` 和 `stackql.duration_ms`。它告诉后端该快照是完整的，不返回任何行的语句也会输出它，因此已消失的资源会表现为漂移，而不是无声无息。当错误呈现方式为 `record` 时，失败的语句会产生一条带有 `error.type` 和 `error.message` 的 `ERROR` 记录；默认情况下，错误与其他所有输出格式一样写入 stderr。
+语句的最后一条记录是完成记录：正文为 `snapshot complete <provider.service.resource>`，并带有 `stackql.snapshot.complete=true`、`stackql.rows_returned` 和 `stackql.duration_ms`。它告诉后端该快照是完整的，不返回任何行的语句也会输出它，因此已消失的资源会表现为漂移，而不是无声无息。当 StackQL 以 `--errorpresentation record` 运行时，失败的语句会产生一条带有 `error.type` 和 `error.message` 的 `ERROR` 记录；默认情况下，错误与其他所有输出格式一样写入 stderr。
 
 #### 记录结构 {#record-shape}
 

@@ -10,7 +10,7 @@ keywords:
 description: "StackQL 中的 LENGTH 函式：字串中的字元數，或 BLOB 中的位元組數。"
 image: "/img/stackql-featured-image.png"
 ---
-傳回字串輸入運算式中第一個 `NULL` 字元之前的字元數，或 BLOB 運算式中的位元組數。  
+傳回字串輸入運算式中第一個 NUL 字元（`char(0)`）之前的字元數，或 BLOB 運算式中的位元組數。  
 
 另請參閱：  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## 引數 {#arguments}
 
 __*expression*__  
-ASCII 字串或 BLOB。
+字串或 BLOB。
 
 > 如果 *expression* 為 `NULL`，則傳回 `NULL`。
 

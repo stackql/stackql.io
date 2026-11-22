@@ -37,7 +37,7 @@ Mẫu biểu thức chính quy cần tìm.
 __*replacement*__  
 Chuỗi thay thế.
 
-> Hỗ trợ tham chiếu ngược đến các nhóm bắt từ `\1` đến `\9` trong chuỗi thay thế.  
+> Chuỗi thay thế được chèn nguyên văn: các tham chiếu nhóm bắt như `$1` không được mở rộng.  
 
 ## Giá trị trả về {#return-values}
 Trả về một chuỗi.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Để biết thêm thông tin, hãy xem [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Để biết thêm thông tin, hãy xem [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

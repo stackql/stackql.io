@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Una vez en un shell autenticado en un proveedor de nube, puede empezar a ejecutar consultas de StackQL (consultas `SELECT` u operaciones de DDL, de infraestructura como código).
 
-De forma predeterminada, el shell de StackQL devuelve resultados tabulares; sin embargo, los formatos de salida `json`, `jsonl`, `csv` y `text` están disponibles con la opción `--output`, consulte [Modos de salida](/getting-started/output-modes).  
+De forma predeterminada, el shell de StackQL devuelve resultados tabulares; sin embargo, los formatos de salida `json`, `jsonl`, `csv`, `text` y `otel` están disponibles con la opción `--output`, consulte [Modos de salida](/getting-started/output-modes).  
 
 ### El archivo de inicialización `.stackqlrc` {#the-stackqlrc-initialization-file}
 

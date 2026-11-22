@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Sobald Sie sich in einer bei einem Cloud-Anbieter authentifizierten Shell befinden, können Sie StackQL-Abfragen ausführen (`SELECT`-Abfragen oder DDL-Operationen - Infrastructure as Code).
 
-Standardmäßig gibt die StackQL-Shell tabellarische Ergebnisse zurück; die Ausgabeformate `json`, `jsonl`, `csv` und `text` sind jedoch über das Flag `--output` verfügbar, siehe [Ausgabemodi](/getting-started/output-modes).  
+Standardmäßig gibt die StackQL-Shell tabellarische Ergebnisse zurück; die Ausgabeformate `json`, `jsonl`, `csv`, `text` und `otel` sind jedoch über das Flag `--output` verfügbar, siehe [Ausgabemodi](/getting-started/output-modes).  
 
 ### Die Initialisierungsdatei `.stackqlrc` {#the-stackqlrc-initialization-file}
 

@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 Una sola instrucción puede eliminar variables y rutas de configuración a la vez, y los destinos se procesan en orden.  Aquí se eliminan en una sola lista una variable simple, una variable con un nombre con puntos y una sobrescritura de credenciales.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Hacer explícito el ámbito de sesión {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Quitar una sobrescritura de credenciales {#clear-a-credential-override}
 
-El campo establecido antes con `SET "$.auth.github.credentialsenvvar"` se elimina del contexto de autenticación de sesión del provider de GitHub, y los demás campos de ese contexto no se modifican.  El valor vigente antes de la sobrescritura no se restaura, así que vuelva a establecer el campo si el provider aún lo necesita.
+El campo establecido antes con `SET "$.auth.github.password_var"` se elimina del contexto de autenticación de sesión del provider de GitHub, y los demás campos de ese contexto no se modifican.  El valor vigente antes de la sobrescritura no se restaura, así que vuelva a establecer el campo si el provider aún lo necesita.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Eliminar un alias de provider y su secreto {#remove-a-provider-alias-and-its-secret}

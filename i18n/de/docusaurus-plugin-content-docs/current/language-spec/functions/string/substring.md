@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Argumente {#arguments}
 
 __*expression*__  
-Ein ASCII-String oder ein BLOB.
+Ein String oder ein BLOB.
 
 > Wenn *expression* ein String ist, beziehen sich die Zeichenindizes auf tatsächliche UTF-8-Zeichen. Wenn *expression* ein BLOB ist, beziehen sich die Indizes auf Bytes.
 
@@ -45,7 +45,7 @@ Eine Ganzzahl, die das erste Zeichen oder Byte der zurückzugebenden Teilsequenz
 __*length*__  
 Ein optionaler Ganzzahlwert, der die Länge der nach dem Wert *start* zurückzugebenden Teilsequenz angibt.  Wenn *length* weggelassen wird, werden alle Zeichen bis zum Ende des durch *expression* angegebenen Strings oder BLOBs zurückgegeben.
 
-> Wenn *length* negativ ist, wird der Absolutwert von *length* verwendet.
+> Wenn *length* negativ ist, werden die Zeichen vor *start* zurückgegeben, so viele, wie der Absolutwert von *length* angibt: `SUBSTR('abcdef', 4, -2)` gibt `bc` zurück.
 
 ## Rückgabewert(e) {#return-values}
 

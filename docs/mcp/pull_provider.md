@@ -45,7 +45,7 @@ Allowed in every server mode.  No cloud-side effects; only local cache state cha
 
 ## Example {#example}
 
-Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
+Try this prompt with any MCP client with the StackQL MCP server registered:
 
 ```
 I want to start querying Google resources with StackQL.  

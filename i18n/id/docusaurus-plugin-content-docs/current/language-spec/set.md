@@ -141,7 +141,7 @@ UNSET "providers.saved";
 Konteks autentikasi provider adalah objek yang diberikan untuk provider tersebut melalui [`--auth`](/command-line-usage/global-flags) saat proses dimulai.  Jalur di bawah `$.auth` mengganti satu field dari objek tersebut selama sisa sesi dan membiarkan field lainnya tetap seperti semula.  Di sini, provider GitHub diarahkan ke variabel lingkungan lain yang berisi token hanya baca; variabel tersebut dibaca dari lingkungan proses StackQL, dan kueri berikutnya terhadap `github.*` menggunakannya hingga field tersebut dihapus atau sesi berakhir.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### Mengikat alias provider {#bind-a-provider-alias}

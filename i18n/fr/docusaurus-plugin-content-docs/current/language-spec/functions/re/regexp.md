@@ -53,7 +53,7 @@ Cette requête renvoie `1`, car la chaîne contient la sous-chaîne '2021', qui 
 Pour vérifier si une chaîne a un format d'adresse e-mail valide :
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Cette requête renvoie `1`, ce qui indique que 'user@example.com' a le format d'une adresse e-mail classique et correspond au motif d'expression régulière indiqué.
+Cette requête renvoie `1`, ce qui indique que 'user@example.com' a le format d'une adresse e-mail classique et correspond au motif d'expression régulière indiqué.  Le point qui précède le suffixe de domaine s'écrit `\\.`, car un littéral de chaîne StackQL consomme une barre oblique inverse : une barre oblique inverse qui appartient à l'expression régulière s'écrit donc deux fois (consultez [Référence des expressions régulières](/language-spec/functions/re/reference)).

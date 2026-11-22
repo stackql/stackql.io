@@ -53,7 +53,7 @@ Esta consulta devuelve `1` porque la cadena contiene la subcadena '2021', que co
 Para comprobar si una cadena tiene un formato de correo electrónico válido:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Esta consulta devuelve `1`, lo que indica que 'user@example.com' tiene el formato de una dirección de correo electrónico típica y coincide con el patrón de expresión regular especificado.
+Esta consulta devuelve `1`, lo que indica que 'user@example.com' tiene el formato de una dirección de correo electrónico típica y coincide con el patrón de expresión regular especificado.  El punto que precede al sufijo del dominio se escribe `\\.` porque un literal de cadena de StackQL consume una barra invertida, de modo que una barra invertida que pertenece a la expresión regular se escribe dos veces (consulte [Referencia de expresiones regulares](/language-spec/functions/re/reference)).

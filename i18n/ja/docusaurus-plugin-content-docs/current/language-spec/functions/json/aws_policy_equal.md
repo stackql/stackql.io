@@ -96,9 +96,9 @@ SELECT
     tags,
     '[{"Key":"stackql:stack-name","Value":"stackql-serverless"},{"Key":"stackql:stack-env","Value":"dev"},{"Key":"stackql:resource-name","Value":"aws_s3_workspace_bucket"}]'
   ) as tags_match
-FROM aws.s3.buckets
+FROM awscc.s3.buckets
 WHERE region = 'us-east-1'
-AND name = 'my-workspace-bucket';
+AND Identifier = 'my-workspace-bucket';
 /* returns...
 |------------|
 | tags_match |

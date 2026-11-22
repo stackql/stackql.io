@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 Eine Anweisung kann Variablen und Konfigurationspfade gemeinsam entfernen; die Ziele werden der Reihe nach verarbeitet.  Hier werden eine einfache Variable, eine Variable mit einem Namen mit Punkten und eine Anmeldedaten-Überschreibung in einer Liste entfernt.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Den Sitzungsbereich explizit angeben {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Eine Anmeldedaten-Überschreibung aufheben {#clear-a-credential-override}
 
-Das zuvor mit `SET "$.auth.github.credentialsenvvar"` gesetzte Feld wird aus dem Sitzungs-Authentifizierungskontext des GitHub-Providers gelöscht; die anderen Felder dieses Kontexts bleiben unberührt.  Der vor der Überschreibung geltende Wert wird nicht wiederhergestellt; setzen Sie das Feld daher erneut, wenn der Provider es weiterhin benötigt.
+Das zuvor mit `SET "$.auth.github.password_var"` gesetzte Feld wird aus dem Sitzungs-Authentifizierungskontext des GitHub-Providers gelöscht; die anderen Felder dieses Kontexts bleiben unberührt.  Der vor der Überschreibung geltende Wert wird nicht wiederhergestellt; setzen Sie das Feld daher erneut, wenn der Provider es weiterhin benötigt.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Einen Provider-Alias und sein Secret entfernen {#remove-a-provider-alias-and-its-secret}

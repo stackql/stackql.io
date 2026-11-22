@@ -1,0 +1,46 @@
+{
+  "item.label.Install": {
+    "message": "Встановлення",
+    "description": "Navbar item with label Install"
+  },
+  "item.label.AI Agents": {
+    "message": "Агенти ШІ",
+    "description": "Navbar item with label AI Agents"
+  },
+  "item.label.Providers": {
+    "message": "Провайдери",
+    "description": "Navbar item with label Providers"
+  },
+  "item.label.Blog": {
+    "message": "Блог",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.MCP Server": {
+    "message": "Сервер MCP",
+    "description": "Navbar item with label MCP Server"
+  },
+  "item.label.MCP Tools": {
+    "message": "Інструменти MCP",
+    "description": "Navbar item with label MCP Tools"
+  },
+  "item.label.Embedded MCP": {
+    "message": "Вбудований MCP",
+    "description": "Navbar item with label Embedded MCP"
+  },
+  "item.label.Product Announcements": {
+    "message": "Оголошення про продукт",
+    "description": "Navbar item with label Product Announcements"
+  },
+  "item.label.Provider Announcements": {
+    "message": "Оголошення про провайдери",
+    "description": "Navbar item with label Provider Announcements"
+  },
+  "item.label.Tutorials": {
+    "message": "Посібники",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Quick Starts": {
+    "message": "Швидкий старт",
+    "description": "Navbar item with label Quick Starts"
+  }
+}

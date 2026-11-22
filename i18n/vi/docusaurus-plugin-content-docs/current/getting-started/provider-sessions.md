@@ -76,9 +76,9 @@ Mỗi truy vấn lấy một ảnh chụp nhanh tách rời của thông tin xá
 `SET "$.auth.<provider>.<field>"` thay đổi một trường trong ngữ cảnh xác thực của một provider cho phiên, trong đó tên trường là các khóa trong mục `--auth` của provider:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Giống như với bí danh, thay đổi áp dụng cho các truy vấn bắt đầu sau `SET`.  Các truy vấn đối với một provider có phần xác thực đã bị hủy thiết lập, hoặc có bí danh không có `auth` dùng được, sẽ thất bại trước khi bất kỳ yêu cầu nào được gửi đi.

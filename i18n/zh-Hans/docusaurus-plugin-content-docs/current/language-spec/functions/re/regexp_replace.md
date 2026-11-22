@@ -37,7 +37,7 @@ __*pattern*__
 __*replacement*__  
 替换字符串。
 
-> 替换字符串中支持对捕获组 `\1` 到 `\9` 的反向引用。  
+> 替换字符串按原样插入：`$1` 等捕获组引用不会被展开。  
 
 ## 返回值 {#return-values}
 返回一个字符串。
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-有关更多信息，请参阅 [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+有关更多信息，请参阅 [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

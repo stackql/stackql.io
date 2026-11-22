@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 تغير الجملة `SET "$.auth.<provider>.<field>"` حقلًا واحدًا في سياق مصادقة الموفر للجلسة، وأسماء الحقول هي مفاتيح إدخال الموفر في `--auth`:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 كما هو الحال مع الأسماء المستعارة، ينطبق التغيير على الاستعلامات التي تبدأ بعد `SET`.  تفشل الاستعلامات التي تستهدف موفرًا تم إلغاء تعيين مصادقته، أو لا يملك اسمه المستعار قيمة `auth` قابلة للاستخدام، قبل إرسال أي طلب.

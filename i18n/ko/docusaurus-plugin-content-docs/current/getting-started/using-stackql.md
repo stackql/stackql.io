@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 클라우드 제공업체에 인증된 셸에 들어가면 StackQL 쿼리(`SELECT` 쿼리 또는 코드형 인프라에 해당하는 DDL 작업)를 실행할 수 있습니다.
 
-기본적으로 StackQL 셸은 표 형식의 결과를 반환하지만, `--output` 플래그를 사용하여 `json`, `jsonl`, `csv`, `text` 출력 형식을 사용할 수도 있습니다. [출력 모드](/getting-started/output-modes)를 참조하세요.  
+기본적으로 StackQL 셸은 표 형식의 결과를 반환하지만, `--output` 플래그를 사용하여 `json`, `jsonl`, `csv`, `text`, `otel` 출력 형식을 사용할 수도 있습니다. [출력 모드](/getting-started/output-modes)를 참조하세요.  
 
 ### `.stackqlrc` 초기화 파일 {#the-stackqlrc-initialization-file}
 

@@ -30,7 +30,7 @@ StackQL 為 AI 代理程式提供與人們相同的 SQL 介面，用來查詢、
   "mcpServers": {
     "stackql": {
       "command": "stackql",
-      "args": ["mcp", "--mcp.server.type=stdio", "--tls.allowInsecure"],
+      "args": ["mcp", "--mcp.server.type=stdio"],
       "env": {
         "AWS_ACCESS_KEY_ID": "your-aws-access-key-id",
         "AWS_SECRET_ACCESS_KEY": "your-aws-secret-access-key"

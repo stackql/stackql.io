@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 1 つの文で変数と構成パスをまとめて削除でき、ターゲットは順番に処理されます。ここでは、プレーンな変数、ドット区切りの名前を持つ変数、認証情報の上書きを 1 つのリストで削除します。
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### セッションスコープを明示する {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### 認証情報の上書きをクリアする {#clear-a-credential-override}
 
-先に `SET "$.auth.github.credentialsenvvar"` で設定したフィールドが、GitHub プロバイダーのセッション認証コンテキストから削除されます。そのコンテキストのほかのフィールドは変更されません。上書き前に有効だった値は復元されないため、プロバイダーで引き続き必要な場合はフィールドをもう一度設定してください。
+先に `SET "$.auth.github.password_var"` で設定したフィールドが、GitHub プロバイダーのセッション認証コンテキストから削除されます。そのコンテキストのほかのフィールドは変更されません。上書き前に有効だった値は復元されないため、プロバイダーで引き続き必要な場合はフィールドをもう一度設定してください。
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### プロバイダーエイリアスとそのシークレットを削除する {#remove-a-provider-alias-and-its-secret}

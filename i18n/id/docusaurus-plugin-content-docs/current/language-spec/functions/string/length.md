@@ -10,7 +10,7 @@ keywords:
 description: "Fungsi LENGTH di StackQL: jumlah karakter dalam string, atau jumlah byte dalam BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-Mengembalikan jumlah karakter dalam ekspresi input string sebelum karakter `NULL` pertama, atau jumlah byte dalam ekspresi BLOB.  
+Mengembalikan jumlah karakter dalam ekspresi input string sebelum karakter NUL pertama (`char(0)`), atau jumlah byte dalam ekspresi BLOB.  
 
 Lihat juga:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## Argumen {#arguments}
 
 __*expression*__  
-String ASCII atau BLOB.
+String atau BLOB.
 
 > Mengembalikan `NULL` jika *expression* adalah `NULL`.
 

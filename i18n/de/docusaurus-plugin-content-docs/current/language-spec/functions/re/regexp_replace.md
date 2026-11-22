@@ -37,7 +37,7 @@ Das Muster des regulären Ausdrucks, nach dem gesucht wird.
 __*replacement*__  
 Der Ersetzungsstring.
 
-> Unterstützt Rückverweise auf erfasste Gruppen `\1` bis `\9` im Ersetzungsstring.  
+> Der Ersetzungsstring wird wörtlich eingefügt: Verweise auf Erfassungsgruppen wie `$1` werden nicht expandiert.  
 
 ## Rückgabewert(e) {#return-values}
 Gibt einen String zurück.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Weitere Informationen finden Sie unter [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Weitere Informationen finden Sie unter [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

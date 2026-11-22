@@ -25,7 +25,7 @@ Commande servant à exécuter une requête StackQL, soit sous forme d'instructio
 
 | Argument | Description | Exemple |
 |--|--|--|
-|`query`|Requête StackQL à exécuter<br/>ou commande à exécuter | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Notez que la requête doit être placée entre guillemets simples ou doubles_ |    
+|`query`|Requête StackQL à exécuter<br/>ou commande à exécuter | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Notez que la requête doit être placée entre guillemets simples ou doubles_ |    
 
 
 ### Options {#flags}

@@ -35,9 +35,9 @@ Une chaîne littérale ou une colonne de type chaîne sur laquelle effectuer le 
 __*sep*__  
 Un ou plusieurs caractères à utiliser comme séparateur.  
 
-> Si `sep` est composé de plusieurs caractères, chaque caractère est traité comme un séparateur.  
+> Si `sep` est composé de plusieurs caractères, la chaîne entière constitue le séparateur : `SPLIT_PART('a||b||c', '||', 3)` renvoie `c`.  
 
-> Seuls les symboles ASCII (1 octet) sont pris en charge comme séparateurs.  
+> Tout caractère peut être utilisé dans un séparateur, y compris un caractère non ASCII tel que `€`.  
 
 __*part*__  
 L'élément (numéroté à partir de un) de la chaîne découpée à renvoyer. Les valeurs négatives servent à compter à rebours depuis le dernier élément.  

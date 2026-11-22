@@ -30,7 +30,7 @@ Installez le serveur depuis l'Anthropic Connector Directory (recommandé) ou le 
   "mcpServers": {
     "stackql": {
       "command": "stackql",
-      "args": ["mcp", "--mcp.server.type=stdio", "--tls.allowInsecure"],
+      "args": ["mcp", "--mcp.server.type=stdio"],
       "env": {
         "AWS_ACCESS_KEY_ID": "your-aws-access-key-id",
         "AWS_SECRET_ACCESS_KEY": "your-aws-secret-access-key"

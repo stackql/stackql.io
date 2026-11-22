@@ -141,7 +141,7 @@ UNSET "providers.saved";
 프로바이더의 인증 컨텍스트는 시작 시 [`--auth`](/command-line-usage/global-flags) 플래그를 통해 해당 프로바이더에 제공된 객체입니다.  `$.auth` 아래의 경로는 남은 세션 동안 이 객체의 필드 하나를 대체하며, 나머지 필드는 그대로 둡니다.  이 예제에서는 GitHub 프로바이더가 읽기 전용 토큰을 담은 다른 환경 변수를 가리키도록 합니다. 이 변수는 StackQL 프로세스 환경에서 읽으며, 이후 `github.*`에 대한 쿼리는 필드가 해제되거나 세션이 끝날 때까지 이 변수를 사용합니다.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### 프로바이더 별칭 바인딩 {#bind-a-provider-alias}

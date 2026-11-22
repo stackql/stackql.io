@@ -30,7 +30,7 @@ StackQL 为 AI 智能体提供与人相同的 SQL 接口，用于查询、预配
   "mcpServers": {
     "stackql": {
       "command": "stackql",
-      "args": ["mcp", "--mcp.server.type=stdio", "--tls.allowInsecure"],
+      "args": ["mcp", "--mcp.server.type=stdio"],
       "env": {
         "AWS_ACCESS_KEY_ID": "your-aws-access-key-id",
         "AWS_SECRET_ACCESS_KEY": "your-aws-secret-access-key"

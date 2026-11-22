@@ -45,7 +45,7 @@ Autorisé dans tous les modes du serveur.  Aucun effet côté cloud ; seul l'ét
 
 ## Exemple {#example}
 
-Essayez ce prompt avec n'importe quel client MCP prenant en charge l'élicitation et dans lequel le serveur MCP StackQL est enregistré :
+Essayez ce prompt avec n'importe quel client MCP dans lequel le serveur MCP StackQL est enregistré :
 
 ```
 I want to start querying Google resources with StackQL.  

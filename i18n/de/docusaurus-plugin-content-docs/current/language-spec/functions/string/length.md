@@ -10,7 +10,7 @@ keywords:
 description: "LENGTH-Funktion in StackQL: die Anzahl der Zeichen in einem String oder die Anzahl der Bytes in einem BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-Gibt die Anzahl der Zeichen eines String-Eingabeausdrucks vor dem ersten `NULL`-Zeichen oder die Anzahl der Bytes eines BLOB-Ausdrucks zurück.  
+Gibt die Anzahl der Zeichen eines String-Eingabeausdrucks vor dem ersten NUL-Zeichen (`char(0)`) oder die Anzahl der Bytes eines BLOB-Ausdrucks zurück.  
 
 Siehe auch:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## Argumente {#arguments}
 
 __*expression*__  
-Ein ASCII-String oder ein BLOB.
+Ein String oder ein BLOB.
 
 > Gibt `NULL` zurück, wenn *expression* `NULL` ist.
 

@@ -47,7 +47,7 @@ image: "/img/stackql-featured-image.png"
 
 ## 예제 {#example}
 
-StackQL MCP 서버가 등록되어 있고 엘리시테이션(elicitation)을 지원하는 MCP 클라이언트에서 다음 프롬프트를 사용해 보세요:
+StackQL MCP 서버가 등록된 MCP 클라이언트에서 다음 프롬프트를 사용해 보세요:
 
 ```
 List the VPC networks in my Google Cloud project my-project  

@@ -44,7 +44,7 @@ Allowed in every server mode.  No cloud control or data plane effect -- only the
 
 ## Example {#example}
 
-Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered:
+Try this prompt with any MCP client with the StackQL MCP server registered:
 
 ```
 What providers does the StackQL registry offer,  

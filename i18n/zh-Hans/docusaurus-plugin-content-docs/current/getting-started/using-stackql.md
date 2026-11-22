@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 进入已通过云服务商身份验证的 shell 后，你就可以开始运行 StackQL 查询（`SELECT` 查询或 DDL 操作，即基础设施即代码操作）。
 
-默认情况下，StackQL shell 返回表格形式的结果，不过也可以通过 `--output` 标志使用 `json`、`jsonl`、`csv` 和 `text` 输出格式，参阅[输出模式](/getting-started/output-modes)。  
+默认情况下，StackQL shell 返回表格形式的结果，不过也可以通过 `--output` 标志使用 `json`、`jsonl`、`csv`、`text` 和 `otel` 输出格式，参阅[输出模式](/getting-started/output-modes)。  
 
 ### `.stackqlrc` 初始化文件 {#the-stackqlrc-initialization-file}
 

@@ -196,7 +196,6 @@ resource_filters = {
         "event_buses": " AND name <> 'default'",
     },
     "iam": {
-        "managed_policies": " AND SPLIT_PART(policy_arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
         "policies": " AND SPLIT_PART(arn, '/', 1) <> 'arn:aws:iam::aws:policy'",
     },
     "kms": {

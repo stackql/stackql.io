@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 `SET "$.auth.<provider>.<field>"` 문은 세션에 대해 프로바이더 인증 컨텍스트의 필드 하나를 변경합니다. 필드 이름은 해당 프로바이더 `--auth` 항목의 키입니다.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 별칭과 마찬가지로 변경 사항은 `SET` 문 이후에 시작된 쿼리에 적용됩니다. 인증이 설정 해제된 프로바이더나 사용 가능한 `auth` 값이 없는 별칭에 대한 쿼리는 요청을 보내기 전에 실패합니다.

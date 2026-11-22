@@ -53,7 +53,7 @@ Esta consulta retorna `1` porque a string contém a substring '2021', que corres
 Para verificar se uma string está em um formato de e-mail válido:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Esta consulta retorna `1`, o que indica que 'user@example.com' tem o formato de um endereço de e-mail típico e corresponde ao padrão de expressão regular especificado.
+Esta consulta retorna `1`, o que indica que 'user@example.com' tem o formato de um endereço de e-mail típico e corresponde ao padrão de expressão regular especificado.  O ponto antes do sufixo do domínio é escrito `\\.` porque uma string literal do StackQL consome uma barra invertida; assim, uma barra invertida que pertence à expressão regular é escrita duas vezes (consulte [Referência de expressões regulares](/language-spec/functions/re/reference)).

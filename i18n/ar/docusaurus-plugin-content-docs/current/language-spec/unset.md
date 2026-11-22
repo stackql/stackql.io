@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 يمكن لجملة واحدة إزالة متغيرات ومسارات تكوين معًا، وتتم معالجة الأهداف بالترتيب. هنا تتم إزالة متغير عادي ومتغير يحتوي اسمه على نقاط وتجاوز لبيانات الاعتماد في قائمة واحدة.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### تحديد نطاق الجلسة صراحة {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### مسح تجاوز بيانات الاعتماد {#clear-a-credential-override}
 
-يتم حذف الحقل الذي تم تعيينه سابقًا باستخدام `SET "$.auth.github.credentialsenvvar"` من سياق المصادقة الخاص بجلسة موفر GitHub، وتبقى الحقول الأخرى في هذا السياق كما هي. لا تتم استعادة القيمة التي كانت سارية قبل التجاوز، لذا عيّن الحقل مرة أخرى إذا كان الموفر لا يزال يحتاج إليه.
+يتم حذف الحقل الذي تم تعيينه سابقًا باستخدام `SET "$.auth.github.password_var"` من سياق المصادقة الخاص بجلسة موفر GitHub، وتبقى الحقول الأخرى في هذا السياق كما هي. لا تتم استعادة القيمة التي كانت سارية قبل التجاوز، لذا عيّن الحقل مرة أخرى إذا كان الموفر لا يزال يحتاج إليه.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### إزالة اسم مستعار لموفر وسره {#remove-a-provider-alias-and-its-secret}

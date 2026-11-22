@@ -37,7 +37,7 @@ __*pattern*__
 __*replacement*__  
 置換文字列です。
 
-> 置換文字列では、キャプチャグループ `\1` から `\9` への後方参照がサポートされています。  
+> 置換文字列は記述したとおりに挿入されます。`$1` のようなキャプチャグループ参照は展開されません。  
 
 ## 戻り値 {#return-values}
 文字列を返します。
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-詳細については、[https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md) を参照してください。
+詳細については、[https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax) を参照してください。

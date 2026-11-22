@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 One statement can remove variables and configuration paths together, and the targets are processed in order.  Here a plain variable, a variable with a dotted name and a credential override are removed in one list.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Make the session scope explicit {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Clear a credential override {#clear-a-credential-override}
 
-The field set earlier with `SET "$.auth.github.credentialsenvvar"` is deleted from the GitHub provider's session authentication context, and the other fields of that context are untouched.  The value in force before the override is not restored, so set the field again if the provider still needs it.
+The field set earlier with `SET "$.auth.github.password_var"` is deleted from the GitHub provider's session authentication context, and the other fields of that context are untouched.  The value in force before the override is not restored, so set the field again if the provider still needs it.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Remove a provider alias and its secret {#remove-a-provider-alias-and-its-secret}

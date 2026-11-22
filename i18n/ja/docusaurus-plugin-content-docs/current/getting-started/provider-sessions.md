@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 `SET "$.auth.<provider>.<field>"` は、セッション内でプロバイダーの認証コンテキストのフィールドを 1 つ変更します。フィールド名は、プロバイダーの `--auth` エントリのキーです：
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 エイリアスと同様に、変更は `SET` の後に開始されたクエリに適用されます。認証が解除されたプロバイダー、または使用可能な `auth` を持たないエイリアスに対するクエリは、リクエストが送信される前に失敗します。

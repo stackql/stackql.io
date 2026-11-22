@@ -28,7 +28,7 @@ Global flags are accepted by StackQL commands, but some apply only to a particul
 | <span class="nowrap">`--dataflow.dependency.max`</span> | int | Maximum dataflow dependency depth for a given query | `50` |
 | <span class="nowrap">`--dataflow.components.max`</span> | int | Maximum dataflow weakly connected components for a given query | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | JSON / YAML string to configure DBMS housekeeping query handling | `{}` |
-| <span class="nowrap">`-d`, `--delimiter`</span> | string | Delimiter for csv output. Single char only.  Ignored for all non-csv output | `,` |
+| <span class="nowrap">`-d`, `--delimiter`</span> | string | Delimiter for csv output. Single char only.  Ignored for all non-csv output | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` flag; run preprocessor only, templated output will be returned | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Optional dotenv-style file sourced into the process environment at startup (all commands); the MCP [`reload_credentials`](/mcp/reload_credentials) tool re-sources it on demand. A missing file is tolerated; keys with empty values are skipped; existing variables are overwritten. Not sourced from `.stackqlrc`. Available in StackQL releases after `v0.10.542`. | `null` |
 | <span class="nowrap">`--execution.concurrency.limit`</span> | int | Concurrency limit for query execution | `1` |

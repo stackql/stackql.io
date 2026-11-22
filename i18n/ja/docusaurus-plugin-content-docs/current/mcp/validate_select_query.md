@@ -48,7 +48,7 @@ image: "/img/stackql-featured-image.png"
 
 ## 例 {#example}
 
-StackQL MCP サーバーを登録した、エリシテーション（elicitation）に対応する任意の MCP クライアントで、次のプロンプトを試してください：
+StackQL MCP サーバーを登録した任意の MCP クライアントで、次のプロンプトを試してください：
 
 ```
 Can you validate this query before I run it:

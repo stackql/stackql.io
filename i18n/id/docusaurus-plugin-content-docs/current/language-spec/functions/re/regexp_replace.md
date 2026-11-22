@@ -37,7 +37,7 @@ Pola ekspresi reguler yang dicari.
 __*replacement*__  
 String pengganti.
 
-> Mendukung referensi balik ke grup tangkapan `\1` hingga `\9` dalam string pengganti.  
+> String pengganti disisipkan apa adanya: referensi grup tangkapan seperti `$1` tidak diekspansi.  
 
 ## Nilai yang dikembalikan {#return-values}
 Mengembalikan string.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Untuk informasi selengkapnya, lihat [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Untuk informasi selengkapnya, lihat [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

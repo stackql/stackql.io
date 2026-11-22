@@ -81,7 +81,7 @@ const blogSections = [
 // locale here only once its full pass has been run and verified.
 const i18nConfig = {
   defaultLocale: 'en',
-  locales: ['en', 'ar', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'vi', 'zh-Hans', 'zh-Hant'],
+  locales: ['en', 'ar', 'de', 'es', 'fr', 'id', 'ja', 'ko', 'pt-BR', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
   localeConfigs: {
     en: { label: 'English', htmlLang: 'en' },
     // Right to left. Docusaurus derives the direction from the locale, but
@@ -107,6 +107,7 @@ const i18nConfig = {
     // (November 2026). The locale code, the i18n/ directory and the lang
     // attribute keep their case (pt-BR, zh-Hans, zh-Hant).
     'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
+    uk: { label: 'Українська', htmlLang: 'uk' },
     vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
     'zh-Hant': { label: '繁體中文', htmlLang: 'zh-Hant', baseUrl: '/zh-hant/' },

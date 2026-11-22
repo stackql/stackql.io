@@ -25,7 +25,7 @@ Perintah yang digunakan untuk menjalankan kueri StackQL, baik sebagai satu perny
 
 | Argumen | Deskripsi | Contoh |
 |--|--|--|
-|`query`|Kueri StackQL yang akan diproses<br/>atau perintah yang akan dijalankan | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Perhatikan bahwa kueri harus diapit tanda kutip tunggal atau ganda_ |    
+|`query`|Kueri StackQL yang akan diproses<br/>atau perintah yang akan dijalankan | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Perhatikan bahwa kueri harus diapit tanda kutip tunggal atau ganda_ |    
 
 
 ### Flag {#flags}

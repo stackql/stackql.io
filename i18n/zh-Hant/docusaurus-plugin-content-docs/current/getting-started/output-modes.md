@@ -151,7 +151,7 @@ and zone = 'australia-southeast1-a'" \
 
 一個陳述式就是一個快照。該陳述式的每筆記錄都帶有相同的 `timeUnixNano`（陳述式的開始時間）、相同的 `stackql.snapshot.id` 和相同的 `spanId`，因此即使資料列分散在多個分頁中、於數秒內陸續抵達，時間點查詢、差異比較與最新狀態查詢仍可正常運作；`observedTimeUnixNano` 則記錄每筆記錄實際寫入的時間。同一次叫用中的所有陳述式共用一個 `traceId`，若已設定 `TRACEPARENT` 環境變數（CI 管線的慣例），就取自該變數，否則會自動產生。
 
-陳述式的最後一筆記錄是完成記錄：本文為 `snapshot complete <provider.service.resource>`，並帶有 `stackql.snapshot.complete=true`、`stackql.rows_returned` 和 `stackql.duration_ms`。它告訴後端快照已完整，且未傳回任何資料列的陳述式仍會發出此記錄，因此已消失的資源會顯示為漂移，而不是毫無訊息。當錯誤呈現方式為 `record` 時，失敗的陳述式會產生一筆帶有 `error.type` 和 `error.message` 的 `ERROR` 記錄；預設情況下，錯誤會與其他所有輸出格式一樣寫入 stderr。
+陳述式的最後一筆記錄是完成記錄：本文為 `snapshot complete <provider.service.resource>`，並帶有 `stackql.snapshot.complete=true`、`stackql.rows_returned` 和 `stackql.duration_ms`。它告訴後端快照已完整，且未傳回任何資料列的陳述式仍會發出此記錄，因此已消失的資源會顯示為漂移，而不是毫無訊息。當 StackQL 以 `--errorpresentation record` 執行時，失敗的陳述式會產生一筆帶有 `error.type` 和 `error.message` 的 `ERROR` 記錄；預設情況下，錯誤會與其他所有輸出格式一樣寫入 stderr。
 
 #### 記錄結構 {#record-shape}
 

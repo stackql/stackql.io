@@ -52,7 +52,7 @@ Xem thêm:
 
 ## Ví dụ {#example}
 
-Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào hỗ trợ elicitation và đã đăng ký máy chủ MCP StackQL:
+Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào đã đăng ký máy chủ MCP StackQL:
 
 ```
 For Google Compute instances, what methods are available  

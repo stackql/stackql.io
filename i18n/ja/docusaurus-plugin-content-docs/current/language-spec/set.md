@@ -141,7 +141,7 @@ UNSET "providers.saved";
 プロバイダーの認証コンテキストは、起動時に [`--auth`](/command-line-usage/global-flags) で渡されるオブジェクトです。`$.auth` の下のパスは、セッションの残りの期間、そのオブジェクトのフィールドを 1 つ置き換え、他のフィールドはそのまま残します。ここでは、GitHub プロバイダーが、読み取り専用のトークンを保持する別の環境変数を参照するように設定します。この変数は StackQL プロセスの環境から読み取られます。フィールドが解除されるかセッションが終了するまで、以降の `github.*` に対するクエリではこの変数が使用されます。
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### プロバイダーエイリアスをバインドする {#bind-a-provider-alias}

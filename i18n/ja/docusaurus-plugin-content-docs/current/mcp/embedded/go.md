@@ -32,6 +32,8 @@ go get github.com/stackql/stackql-mcp-go
 
 ## クイックスタート {#quick-start}
 
+この例は、バイナリがベンダリング済みであることを前提としています。`StackqlMCPBinary()` は、[ベンダリング / 組み込み](#vendoring--embedding)で説明する `go:generate` による取得ステップで生成されます。
+
 ```go
 import (
     "context"

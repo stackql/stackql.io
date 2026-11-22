@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 一個陳述式可以同時移除變數與設定路徑，且目標會依序處理。此處在一個清單中移除一般變數、名稱含點號的變數，以及一項憑證覆寫。
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### 明確指定工作階段範圍 {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### 清除憑證覆寫 {#clear-a-credential-override}
 
-先前以 `SET "$.auth.github.credentialsenvvar"` 設定的欄位，會從 GitHub Provider 的工作階段驗證內容中刪除，該內容的其他欄位則不受影響。覆寫之前生效的值不會還原，因此如果 Provider 仍需要該欄位，請重新設定。
+先前以 `SET "$.auth.github.password_var"` 設定的欄位，會從 GitHub Provider 的工作階段驗證內容中刪除，該內容的其他欄位則不受影響。覆寫之前生效的值不會還原，因此如果 Provider 仍需要該欄位，請重新設定。
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### 移除 Provider 別名及其祕密 {#remove-a-provider-alias-and-its-secret}

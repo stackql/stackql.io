@@ -44,7 +44,7 @@ Diizinkan di semua mode server.  Tidak ada efek pada bidang kontrol atau bidang 
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 What providers does the StackQL registry offer,  

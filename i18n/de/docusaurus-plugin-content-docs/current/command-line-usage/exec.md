@@ -25,7 +25,7 @@ Befehl zum Ausführen einer StackQL-Abfrage, entweder als einzelne Anweisung ode
 
 | Argument | Beschreibung | Beispiel |
 |--|--|--|
-|`query`|Auszuführende StackQL-Abfrage<br/>oder auszuführender Befehl | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Beachten Sie, dass die Abfrage in einfache oder doppelte Anführungszeichen eingeschlossen sein muss_ |    
+|`query`|Auszuführende StackQL-Abfrage<br/>oder auszuführender Befehl | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Beachten Sie, dass die Abfrage in einfache oder doppelte Anführungszeichen eingeschlossen sein muss_ |    
 
 
 ### Flags {#flags}

@@ -25,7 +25,7 @@ StackQL 쿼리를 단일 문으로 실행하거나 StackQL 스크립트(IQL 파�
 
 | 인수 | 설명 | 예제 |
 |--|--|--|
-|`query`|수행할 StackQL 쿼리<br/>또는 실행할 명령 | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_쿼리는 작은따옴표 또는 큰따옴표로 묶어야 합니다_ |    
+|`query`|수행할 StackQL 쿼리<br/>또는 실행할 명령 | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_쿼리는 작은따옴표 또는 큰따옴표로 묶어야 합니다_ |    
 
 
 ### 플래그 {#flags}

@@ -46,7 +46,7 @@ image: "/img/stackql-featured-image.png"
 
 ## 範例 {#example}
 
-在任何已註冊 StackQL MCP 伺服器且支援徵詢（elicitation）的 MCP 用戶端中試試這個提示詞：
+請在任何已註冊 StackQL MCP 伺服器的 MCP 用戶端中試用以下提示詞：
 
 ```
 Which cloud providers are available for you to query right now?

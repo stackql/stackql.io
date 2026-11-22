@@ -47,7 +47,7 @@ Permitida em todos os modos do servidor (`read_only`, `safe`, `delete_safe`, `fu
 
 ## Exemplo {#example}
 
-Experimente este prompt em qualquer cliente MCP compatível com elicitação que tenha o servidor MCP do StackQL registrado:
+Experimente este prompt em qualquer cliente MCP que tenha o servidor MCP do StackQL registrado:
 
 ```
 List the VPC networks in my Google Cloud project my-project  

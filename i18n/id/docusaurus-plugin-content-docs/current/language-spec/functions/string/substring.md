@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Argumen {#arguments}
 
 __*expression*__  
-String ASCII atau BLOB.
+String atau BLOB.
 
 > Jika *expression* adalah string, indeks karakter merujuk ke karakter UTF-8 yang sebenarnya. Jika *expression* adalah BLOB, indeks merujuk ke byte.
 
@@ -45,7 +45,7 @@ Bilangan bulat yang menyatakan karakter atau byte pertama dari bagian ekspresi i
 __*length*__  
 Nilai bilangan bulat opsional yang menyatakan panjang bagian yang akan dikembalikan setelah nilai *start*.  Jika *length* dihilangkan, semua karakter hingga akhir string atau BLOB yang ditentukan oleh *expression* dikembalikan.
 
-> Jika *length* negatif, nilai absolut dari *length* yang digunakan.
+> Jika *length* negatif, karakter yang mendahului *start* dikembalikan, sebanyak nilai absolut *length*: `SUBSTR('abcdef', 4, -2)` mengembalikan `bc`.
 
 ## Nilai yang dikembalikan {#return-values}
 

@@ -76,9 +76,9 @@ Cada consulta tira um snapshot independente das credenciais do alias.  Alterar u
 `SET "$.auth.<provider>.<field>"` altera um campo do contexto de autenticação de um provider para a sessão; os nomes dos campos são as chaves da entrada do provider em `--auth`:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Assim como nos aliases, a alteração se aplica às consultas iniciadas depois do `SET`.  Consultas a um provider cuja autenticação foi removida, ou cujo alias não tem um `auth` utilizável, falham antes de qualquer solicitação ser enviada.

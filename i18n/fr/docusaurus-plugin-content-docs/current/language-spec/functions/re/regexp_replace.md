@@ -37,7 +37,7 @@ Le motif d'expression régulière à rechercher.
 __*replacement*__  
 La chaîne de remplacement.
 
-> Prend en charge les références arrière aux groupes capturés `\1` à `\9` dans la chaîne de remplacement.  
+> La chaîne de remplacement est insérée telle quelle : les références aux groupes de capture telles que `$1` ne sont pas développées.  
 
 ## Valeur(s) renvoyée(s) {#return-values}
 Renvoie une chaîne.
@@ -82,4 +82,4 @@ WHERE subscription_id = '273769f6-545f-45b2-8ab8-2f14ec5768dc';
 </TabItem>
 </Tabs>
 
-Pour plus d'informations, consultez [https://github.com/nalgeon/sqlean/blob/main/docs/re.md](https://github.com/nalgeon/sqlean/blob/main/docs/re.md)
+Pour plus d'informations, consultez [https://github.com/google/re2/wiki/Syntax](https://github.com/google/re2/wiki/Syntax)

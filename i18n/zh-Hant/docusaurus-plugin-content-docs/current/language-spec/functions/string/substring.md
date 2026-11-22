@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## 引數 {#arguments}
 
 __*expression*__  
-ASCII 字串或 BLOB。
+字串或 BLOB。
 
 > 如果 *expression* 是字串，則字元索引指的是實際的 UTF-8 字元。如果 *expression* 是 BLOB，則索引指的是位元組。
 
@@ -45,7 +45,7 @@ __*start*__
 __*length*__  
 選用的整數值，表示從 *start* 值起要傳回的子序列長度。如果省略 *length*，則傳回 *expression* 所指定之字串或 BLOB 直到結尾的所有字元。
 
-> 如果 *length* 為負數，則使用 *length* 的絕對值。
+> 如果 *length* 為負數，則傳回 *start* 之前的字元，數量為 *length* 的絕對值：`SUBSTR('abcdef', 4, -2)` 傳回 `bc`。
 
 ## 傳回值 {#return-values}
 

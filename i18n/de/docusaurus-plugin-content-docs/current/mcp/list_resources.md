@@ -51,7 +51,7 @@ In jedem Servermodus erlaubt.  Nur lesend.
 
 ## Beispiel {#example}
 
-Probieren Sie diesen Prompt mit einem beliebigen Elicitation-fähigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
+Probieren Sie diesen Prompt mit einem beliebigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
 
 ```
 List the resources in the google.storage service

@@ -48,7 +48,7 @@ In jedem Servermodus erlaubt.  Es werden keine API-Aufrufe durchgeführt.
 
 ## Beispiel {#example}
 
-Probieren Sie diesen Prompt mit einem beliebigen Elicitation-fähigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
+Probieren Sie diesen Prompt mit einem beliebigen MCP-Client aus, bei dem der StackQL-MCP-Server registriert ist:
 
 ```
 Can you validate this query before I run it:

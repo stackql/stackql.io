@@ -35,8 +35,9 @@ module.exports = {
   //   inLanguage  JSON-LD inLanguage of the page-level nodes
   //   script      'cjk' when translated text must contain CJK characters
   //               (Han ideographs, Japanese kana or Korean Hangul),
-  //               'arabic' when it must contain Arabic letters; null for
-  //               Latin-script locales, which are not checked this way
+  //               'arabic' when it must contain Arabic letters,
+  //               'cyrillic' when it must contain Cyrillic letters; null
+  //               for Latin-script locales, which are not checked this way
   //   language    the language name used in the script check messages
   //   dir         'rtl' for a right-to-left locale (<html dir>); 'ltr'
   //               when absent
@@ -52,6 +53,7 @@ module.exports = {
     ja: { prefix: '/ja', htmlLang: 'ja', code: 'JA', inLanguage: 'ja', script: 'cjk', language: 'Japanese' },
     ko: { prefix: '/ko', htmlLang: 'ko', code: 'KO', inLanguage: 'ko', script: 'cjk', language: 'Korean' },
     'pt-BR': { prefix: '/pt-br', htmlLang: 'pt-BR', code: 'PT', inLanguage: 'pt-BR', script: null },
+    uk: { prefix: '/uk', htmlLang: 'uk', code: 'UK', inLanguage: 'uk', script: 'cyrillic', language: 'Ukrainian' },
     vi: { prefix: '/vi', htmlLang: 'vi', code: 'VI', inLanguage: 'vi', script: null },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', code: 'ZH', inLanguage: 'zh-Hans', script: 'cjk', language: 'Chinese', mainlandChina: true },
     'zh-Hant': { prefix: '/zh-hant', htmlLang: 'zh-Hant', code: 'ZH-HANT', inLanguage: 'zh-Hant', script: 'cjk', language: 'Traditional Chinese' },
@@ -65,8 +67,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
-    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,

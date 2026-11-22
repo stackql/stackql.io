@@ -53,7 +53,7 @@ Diese Abfrage gibt `1` zurück, weil der String den Teilstring '2021' enthält, 
 So prüfen Sie, ob ein String ein gültiges E-Mail-Format hat:
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-Diese Abfrage gibt `1` zurück, was anzeigt, dass 'user@example.com' wie eine typische E-Mail-Adresse formatiert ist und dem angegebenen Muster des regulären Ausdrucks entspricht.
+Diese Abfrage gibt `1` zurück, was anzeigt, dass 'user@example.com' wie eine typische E-Mail-Adresse formatiert ist und dem angegebenen Muster des regulären Ausdrucks entspricht.  Der Punkt vor der Domain-Endung wird `\\.` geschrieben, weil ein StackQL-String-Literal einen Backslash verbraucht, sodass ein Backslash, der zum regulären Ausdruck gehört, doppelt geschrieben wird (siehe [Regex-Referenz](/language-spec/functions/re/reference)).

@@ -47,7 +47,7 @@ image: "/img/stackql-featured-image.png"
 
 ## 範例 {#example}
 
-請在任何支援徵詢（elicitation）且已註冊 StackQL MCP 伺服器的 MCP 用戶端中試用以下提示詞：
+請在任何已註冊 StackQL MCP 伺服器的 MCP 用戶端中試用以下提示詞：
 
 ```
 List the VPC networks in my Google Cloud project my-project  

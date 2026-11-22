@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 一条语句可以同时移除变量和配置路径，目标按顺序处理。这里在一个列表中移除了一个普通变量、一个名称带点号的变量和一个凭据覆盖项。
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### 显式指定会话作用域 {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### 清除凭据覆盖项 {#clear-a-credential-override}
 
-之前通过 `SET "$.auth.github.credentialsenvvar"` 设置的字段会从 GitHub Provider 的会话身份验证上下文中删除，该上下文的其他字段不受影响。覆盖之前生效的值不会恢复，因此如果 Provider 仍需要该字段，请重新设置。
+之前通过 `SET "$.auth.github.password_var"` 设置的字段会从 GitHub Provider 的会话身份验证上下文中删除，该上下文的其他字段不受影响。覆盖之前生效的值不会恢复，因此如果 Provider 仍需要该字段，请重新设置。
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### 移除 Provider 别名及其机密 {#remove-a-provider-alias-and-its-secret}

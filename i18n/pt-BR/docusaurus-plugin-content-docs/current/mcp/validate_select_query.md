@@ -48,7 +48,7 @@ Permitida em todos os modos do servidor.  Nenhuma chamada de API é feita.
 
 ## Exemplo {#example}
 
-Experimente este prompt em qualquer cliente MCP compatível com elicitação que tenha o servidor MCP do StackQL registrado:
+Experimente este prompt em qualquer cliente MCP que tenha o servidor MCP do StackQL registrado:
 
 ```
 Can you validate this query before I run it:

@@ -35,9 +35,9 @@ Uma string literal ou coluna de string que você deseja dividir.
 __*sep*__  
 Um ou mais caracteres que você deseja usar como separador.  
 
-> Se `sep` for composto de vários caracteres, cada caractere será tratado como separador.  
+> Se `sep` for composto de vários caracteres, a string inteira é o separador: `SPLIT_PART('a||b||c', '||', 3)` retorna `c`.  
 
-> Como separadores, há suporte somente para símbolos ASCII (de 1 byte).  
+> Um separador pode conter quaisquer caracteres, inclusive caracteres não ASCII, como `€`.  
 
 __*part*__  
 O elemento (contado a partir de 1) da string dividida a ser retornado.  Valores negativos contam de trás para frente a partir do último elemento.  

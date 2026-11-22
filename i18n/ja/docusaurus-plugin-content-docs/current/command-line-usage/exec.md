@@ -25,7 +25,7 @@ StackQL クエリを、単一の文として、または StackQL スクリプト
 
 | 引数 | 説明 | 例 |
 |--|--|--|
-|`query`|実行する StackQL クエリ<br/>または実行するコマンド | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_なお、クエリは単一引用符または二重引用符で囲む必要があります_ |    
+|`query`|実行する StackQL クエリ<br/>または実行するコマンド | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_なお、クエリは単一引用符または二重引用符で囲む必要があります_ |    
 
 
 ### フラグ {#flags}

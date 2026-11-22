@@ -76,9 +76,9 @@ Chaque requête prend un instantané détaché des identifiants de l'alias. La m
 `SET "$.auth.<provider>.<field>"` modifie un champ du contexte d'authentification d'un provider pour la session ; les noms de champ sont les clés de l'entrée `--auth` du provider :
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Comme pour les alias, la modification s'applique aux requêtes démarrées après le `SET`. Les requêtes sur un provider dont l'authentification a été supprimée, ou dont l'alias n'a pas de `auth` utilisable, échouent avant l'envoi de toute requête HTTP.

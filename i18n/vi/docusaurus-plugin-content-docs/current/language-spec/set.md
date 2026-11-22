@@ -141,7 +141,7 @@ UNSET "providers.saved";
 Ngữ cảnh xác thực của một provider là đối tượng được cung cấp cho provider đó qua [`--auth`](/command-line-usage/global-flags) khi khởi động. Một đường dẫn dưới `$.auth` thay thế một trường của đối tượng đó trong phần còn lại của phiên và giữ nguyên các trường khác. Ở đây, provider GitHub được trỏ tới một biến môi trường khác chứa một token chỉ đọc; biến này được đọc từ môi trường của tiến trình StackQL, và các truy vấn sau đó đối với `github.*` dùng biến này cho đến khi trường bị hủy thiết lập hoặc phiên kết thúc.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### Liên kết một bí danh provider {#bind-a-provider-alias}

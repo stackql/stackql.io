@@ -52,7 +52,7 @@ Diizinkan di semua mode server.  Hanya baca.
 
 ## Contoh {#example}
 
-Coba prompt ini di klien MCP mana pun yang mendukung elisitasi dan telah mendaftarkan server MCP StackQL:
+Coba prompt ini di klien MCP mana pun yang telah mendaftarkan server MCP StackQL:
 
 ```
 For Google Compute instances, what methods are available  

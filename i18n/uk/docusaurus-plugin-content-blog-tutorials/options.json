@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Посібники",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Практичні покрокові керівництва з хмарних операцій, безпеки й автоматизації за допомогою SQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Усі посібники",
+    "description": "The label for the left sidebar"
+  }
+}

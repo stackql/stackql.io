@@ -53,7 +53,7 @@ A `JOIN` with no `ON` clause is treated as a `CROSS JOIN`, so the join condition
 Run a basic `SELECT` statement in an authenticated session.
 
 ```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
+-- Selecting all instances in a zone using a basic SELECT statement
 SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';

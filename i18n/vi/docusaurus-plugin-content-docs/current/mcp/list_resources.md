@@ -51,7 +51,7 @@ Xem thêm:
 
 ## Ví dụ {#example}
 
-Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào hỗ trợ elicitation và đã đăng ký máy chủ MCP StackQL:
+Hãy thử lời nhắc này với bất kỳ ứng dụng khách MCP nào đã đăng ký máy chủ MCP StackQL:
 
 ```
 List the resources in the google.storage service

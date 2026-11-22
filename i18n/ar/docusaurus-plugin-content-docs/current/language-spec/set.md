@@ -141,7 +141,7 @@ UNSET "providers.saved";
 سياق المصادقة الخاص بالموفر هو الكائن الذي يتم تمريره له عبر [`--auth`](/command-line-usage/global-flags) عند بدء التشغيل. يستبدل المسار الموجود تحت `$.auth` حقلًا واحدًا من ذلك الكائن لبقية الجلسة ويترك الحقول الأخرى كما كانت. هنا يتم توجيه موفر GitHub إلى متغير بيئة مختلف يحمل رمزًا مميزًا للقراءة فقط؛ تتم قراءة المتغير من بيئة عملية StackQL، وتستخدمه الاستعلامات اللاحقة على `github.*` حتى يتم إلغاء تعيين الحقل أو تنتهي الجلسة.
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 ```
 
 ### ربط اسم مستعار لموفر {#bind-a-provider-alias}

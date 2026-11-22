@@ -33,7 +33,7 @@ SELECT SUBSTR(expression, start[, length]) FROM <multipartIdentifier>;
 ## Arguments {#arguments}
 
 __*expression*__  
-An ASCII string or a BLOB.
+A string or a BLOB.
 
 > If *expression* is a string then character indices refer to actual UTF-8 characters. If *expression* is a BLOB then the indices refer to bytes.
 
@@ -45,7 +45,7 @@ An integer representing the first character or byte of the sub sequence of the i
 __*length*__  
 An optional integer value representing the length of the sub sequence to be returned after the *start* value.  If *length* is omitted then all characters through the end of the string or BLOB specified by the *expression* are returned.
 
-> If *length* is negative then the absolute value of *length* is used.
+> If *length* is negative, the characters that precede *start* are returned, as many as the absolute value of *length*: `SUBSTR('abcdef', 4, -2)` returns `bc`.
 
 ## Return Value(s) {#return-values}
 

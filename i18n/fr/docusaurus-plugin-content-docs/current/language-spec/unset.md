@@ -74,7 +74,7 @@ SELECT name FROM aws.s3.buckets WHERE region = $region;
 Une même instruction peut supprimer à la fois des variables et des chemins de configuration, et les cibles sont traitées dans l'ordre. Ici, une variable simple, une variable dont le nom contient des points et un remplacement d'identifiants sont supprimés dans une même liste.
 
 ```sql
-UNSET region, "providers.saved", "$.auth.github.credentialsenvvar";
+UNSET region, "providers.saved", "$.auth.github.password_var";
 ```
 
 ### Rendre explicite la portée de session {#make-the-session-scope-explicit}
@@ -93,10 +93,10 @@ UNSET GLOBAL region;
 
 ### Effacer un remplacement d'identifiants {#clear-a-credential-override}
 
-Le champ défini précédemment avec `SET "$.auth.github.credentialsenvvar"` est supprimé du contexte d'authentification de session du provider GitHub, et les autres champs de ce contexte restent inchangés. La valeur en vigueur avant le remplacement n'est pas restaurée ; définissez donc de nouveau le champ si le provider en a encore besoin.
+Le champ défini précédemment avec `SET "$.auth.github.password_var"` est supprimé du contexte d'authentification de session du provider GitHub, et les autres champs de ce contexte restent inchangés. La valeur en vigueur avant le remplacement n'est pas restaurée ; définissez donc de nouveau le champ si le provider en a encore besoin.
 
 ```sql
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 ### Supprimer un alias de provider et son secret {#remove-a-provider-alias-and-its-secret}

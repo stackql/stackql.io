@@ -53,7 +53,7 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 문자열이 유효한 이메일 형식인지 확인하는 방법은 다음과 같습니다.
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-이 쿼리는 `1`을 반환합니다. 즉, 'user@example.com'은 지정한 정규식 패턴과 일치하는 일반적인 이메일 주소 형식입니다.
+이 쿼리는 `1`을 반환합니다. 즉, 'user@example.com'은 지정한 정규식 패턴과 일치하는 일반적인 이메일 주소 형식입니다.  도메인 접미사 앞의 점은 `\\.` 형태로 씁니다. StackQL 문자열 리터럴이 백슬래시 하나를 소비하므로 정규식에 속하는 백슬래시는 두 번 쓰기 때문입니다([정규식 참조](/language-spec/functions/re/reference)를 참조하세요).

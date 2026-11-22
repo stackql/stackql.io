@@ -25,7 +25,7 @@ Lệnh dùng để chạy một truy vấn StackQL, dưới dạng một câu l�
 
 | Đối số | Mô tả | Ví dụ |
 |--|--|--|
-|`query`|Truy vấn StackQL cần thực hiện<br/>hoặc lệnh cần thực thi | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_Lưu ý rằng truy vấn phải được đặt trong dấu nháy đơn hoặc nháy kép_ |    
+|`query`|Truy vấn StackQL cần thực hiện<br/>hoặc lệnh cần thực thi | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_Lưu ý rằng truy vấn phải được đặt trong dấu nháy đơn hoặc nháy kép_ |    
 
 
 ### Cờ {#flags}

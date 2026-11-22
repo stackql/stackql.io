@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 | 参数 | 说明 | 示例 |
 |--|--|--|
-|`query`|要执行的 StackQL 查询<br/>或要执行的命令 | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-a'"`<br/>_注意，查询必须用单引号或双引号括起来_ |    
+|`query`|要执行的 StackQL 查询<br/>或要执行的命令 | `"SELECT * FROM google.compute.instances`<br/>`WHERE project = 'myproject' AND zone = 'us-east1-b'"`<br/>_注意，查询必须用单引号或双引号括起来_ |    
 
 
 ### 标志 {#flags}

@@ -151,7 +151,7 @@ and zone = 'australia-southeast1-a'" \
 
 하나의 문은 하나의 스냅샷입니다. 문의 모든 레코드는 동일한 `timeUnixNano` 값(문 시작 시간), 동일한 `stackql.snapshot.id` 값, 동일한 `spanId` 값을 가지므로, 행이 여러 페이지에 걸쳐 몇 초 동안 도착하더라도 특정 시점 기준 쿼리, 차이 비교, 최신 상태 쿼리가 작동합니다. `observedTimeUnixNano` 값은 각 레코드가 실제로 기록된 시간을 나타냅니다. 한 번의 호출에 포함된 모든 문은 하나의 `traceId` 값을 공유합니다. 이 값은 `TRACEPARENT` 환경 변수가 설정되어 있으면 그 값을 사용하고(CI 파이프라인의 관례), 그렇지 않으면 생성됩니다.
 
-문의 마지막 레코드는 완료 레코드입니다. 완료 레코드의 본문은 `snapshot complete <provider.service.resource>` 형식이며, `stackql.snapshot.complete=true`, `stackql.rows_returned`, `stackql.duration_ms` 속성을 포함합니다. 이 레코드는 스냅샷이 완전하다는 것을 백엔드에 알립니다. 행을 반환하지 않는 문도 이 레코드를 내보내므로, 사라진 리소스는 아무 신호 없이 사라지는 대신 드리프트로 나타납니다. 오류 표시 방식이 `record`인 경우 실패한 문은 `error.type` 속성과 `error.message` 속성을 포함하는 `ERROR` 레코드를 생성합니다. 기본적으로 오류는 다른 모든 출력 형식과 마찬가지로 stderr로 출력됩니다.
+문의 마지막 레코드는 완료 레코드입니다. 완료 레코드의 본문은 `snapshot complete <provider.service.resource>` 형식이며, `stackql.snapshot.complete=true`, `stackql.rows_returned`, `stackql.duration_ms` 속성을 포함합니다. 이 레코드는 스냅샷이 완전하다는 것을 백엔드에 알립니다. 행을 반환하지 않는 문도 이 레코드를 내보내므로, 사라진 리소스는 아무 신호 없이 사라지는 대신 드리프트로 나타납니다. StackQL이 `--errorpresentation record` 플래그로 실행되는 경우 실패한 문은 `error.type` 속성과 `error.message` 속성을 포함하는 `ERROR` 레코드를 생성합니다. 기본적으로 오류는 다른 모든 출력 형식과 마찬가지로 stderr로 출력됩니다.
 
 #### 레코드 형태 {#record-shape}
 

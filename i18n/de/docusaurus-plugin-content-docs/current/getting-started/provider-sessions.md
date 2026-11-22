@@ -76,9 +76,9 @@ Jede Abfrage nimmt einen entkoppelten Snapshot der Anmeldedaten des Alias.  Das 
 `SET "$.auth.<provider>.<field>"` ändert ein Feld des Authentifizierungskontexts eines Providers für die Sitzung; die Feldnamen sind die Schlüssel des `--auth`-Eintrags des Providers:
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 Wie bei Aliassen gilt die Änderung für Abfragen, die nach dem `SET` gestartet werden.  Abfragen gegen einen Provider, dessen Authentifizierung zurückgesetzt wurde oder dessen Alias kein verwendbares `auth` hat, schlagen fehl, bevor eine Anfrage gesendet wird.

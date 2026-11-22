@@ -53,7 +53,7 @@ SELECT 'the year is 2021' REGEXP '[0-9]+' AS match_result;
 文字列が有効なメールアドレスの形式かどうかを確認するには、次のようにします。
 
 ```sql
-SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' AS match_result;
+SELECT 'user@example.com' REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' AS match_result;
 ```
 
-このクエリは `1` を返します。これは、'user@example.com' が指定した正規表現パターンに一致し、一般的なメールアドレスの形式であることを示します。
+このクエリは `1` を返します。これは、'user@example.com' が指定した正規表現パターンに一致し、一般的なメールアドレスの形式であることを示します。ドメインサフィックスの前のドットを `\\.` と記述しているのは、StackQL の文字列リテラルがバックスラッシュを 1 つ消費するためです。そのため、正規表現の一部であるバックスラッシュは 2 つ重ねて記述します（[正規表現リファレンス](/language-spec/functions/re/reference)を参照）。

@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 Setelah berada di shell yang terautentikasi ke penyedia cloud, Anda dapat mulai menjalankan kueri StackQL (kueri `SELECT` atau operasi DDL, yaitu infrastruktur sebagai kode).
 
-Secara default, shell StackQL mengembalikan hasil dalam bentuk tabel, tetapi format output `json`, `jsonl`, `csv`, dan `text` tersedia melalui flag `--output`, lihat [Mode output](/getting-started/output-modes).
+Secara default, shell StackQL mengembalikan hasil dalam bentuk tabel, tetapi format output `json`, `jsonl`, `csv`, `text`, dan `otel` tersedia melalui flag `--output`, lihat [Mode output](/getting-started/output-modes).
 
 ### File inisialisasi `.stackqlrc` {#the-stackqlrc-initialization-file}
 

@@ -35,9 +35,9 @@ String literal atau kolom string yang ingin Anda pecah.
 __*sep*__  
 Satu atau beberapa karakter yang ingin Anda gunakan sebagai pemisah.  
 
-> Jika `sep` terdiri atas beberapa karakter, setiap karakter diperlakukan sebagai pemisah.  
+> Jika `sep` terdiri atas beberapa karakter, seluruh string tersebut menjadi pemisah: `SPLIT_PART('a||b||c', '||', 3)` mengembalikan `c`.  
 
-> Hanya simbol ASCII (1 byte) yang didukung sebagai pemisah.  
+> Karakter apa pun dapat digunakan dalam pemisah, termasuk karakter non-ASCII seperti `€`.  
 
 __*part*__  
 Elemen (berbasis satu) dari string yang dipecah yang akan dikembalikan.  Nilai negatif digunakan untuk menghitung mundur dari elemen terakhir.  

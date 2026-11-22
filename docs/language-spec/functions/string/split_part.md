@@ -35,9 +35,9 @@ A literal string or string column that you want to perform the split on.
 __*sep*__  
 A character or characters you want to use as the separator.  
 
-> If `sep` is composed of multiple characters, each character is treated as separator.  
+> If `sep` is composed of multiple characters, the whole string is the separator: `SPLIT_PART('a||b||c', '||', 3)` returns `c`.  
 
-> Only ASCII (1-byte) symbols are supported as separators.  
+> Any characters can be used in a separator, including non-ASCII characters such as `€`.  
 
 __*part*__  
 The element (one based) of the split string to return.  Negative values are used to count backwards from the last element.  

@@ -76,9 +76,9 @@ SELECT name, 'development' AS account FROM development.s3.buckets;
 `SET "$.auth.<provider>.<field>"` 在当前会话中更改 Provider 身份验证上下文的一个字段，其中字段名是该 Provider 的 `--auth` 条目中的键：
 
 ```sql
-SET "$.auth.github.credentialsenvvar" = 'GITHUB_TOKEN_READONLY';
+SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 SELECT name FROM github.repos.repos WHERE org = 'stackql';
-UNSET "$.auth.github.credentialsenvvar";
+UNSET "$.auth.github.password_var";
 ```
 
 与别名一样，更改适用于 `SET` 之后启动的查询。如果 Provider 的身份验证已被取消设置，或其别名没有可用的 `auth`，针对它的查询会在发送任何请求之前失败。

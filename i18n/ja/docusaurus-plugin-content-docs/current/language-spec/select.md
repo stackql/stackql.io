@@ -53,7 +53,7 @@ FROM { <multipartIdentifier> | <joinStatement(s)> }
 認証済みのセッションで基本的な `SELECT` 文を実行します。
 
 ```sql
--- Selecting all resources deployed within a service using a basic SELECT statement
+-- Selecting all instances in a zone using a basic SELECT statement
 SELECT * FROM google.compute.instances
 WHERE project = 'stackql-demo'
 AND zone = 'australia-southeast1-a';

@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 進入已向雲端服務供應商驗證的 shell 後，您就可以開始執行 StackQL 查詢（`SELECT` 查詢或 DDL 作業，也就是基礎架構即程式碼作業）。
 
-根據預設，StackQL shell 會傳回表格式結果，但也可以使用 `--output` 旗標選擇 `json`、`jsonl`、`csv` 與 `text` 輸出格式，請參閱[輸出模式](/getting-started/output-modes)。  
+根據預設，StackQL shell 會傳回表格式結果，但也可以使用 `--output` 旗標選擇 `json`、`jsonl`、`csv`、`text` 與 `otel` 輸出格式，請參閱[輸出模式](/getting-started/output-modes)。  
 
 ### `.stackqlrc` 初始化檔案 {#the-stackqlrc-initialization-file}
 

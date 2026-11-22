@@ -30,7 +30,7 @@ stackql shell --auth="${AUTH}"
 ```
 クラウドベンダーに認証済みのシェルに入ると、StackQL クエリ（`SELECT` クエリ、または Infrastructure as Code の DDL 操作）の実行を開始できます。
 
-StackQL シェルはデフォルトで表形式の結果を返しますが、`--output` フラグを使用すると `json`、`jsonl`、`csv`、`text` の出力形式も利用できます。[出力モード](/getting-started/output-modes)を参照してください。
+StackQL シェルはデフォルトで表形式の結果を返しますが、`--output` フラグを使用すると `json`、`jsonl`、`csv`、`text`、`otel` の出力形式も利用できます。[出力モード](/getting-started/output-modes)を参照してください。
 
 ### `.stackqlrc` 初期化ファイル {#the-stackqlrc-initialization-file}
 

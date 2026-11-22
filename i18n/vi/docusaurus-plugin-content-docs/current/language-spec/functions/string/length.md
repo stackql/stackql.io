@@ -10,7 +10,7 @@ keywords:
 description: "Hàm LENGTH trong StackQL: số ký tự trong một chuỗi, hoặc số byte trong một BLOB."
 image: "/img/stackql-featured-image.png"
 ---
-Trả về số ký tự trong một biểu thức đầu vào kiểu chuỗi tính đến trước ký tự `NULL` đầu tiên, hoặc số byte trong một biểu thức BLOB.  
+Trả về số ký tự trong một biểu thức đầu vào kiểu chuỗi tính đến trước ký tự NUL đầu tiên (`char(0)`), hoặc số byte trong một biểu thức BLOB.  
 
 Xem thêm:  
 [[` SELECT `]](/language-spec/select) 
@@ -32,7 +32,7 @@ SELECT LENGTH(expression) FROM <multipartIdentifier>;
 ## Đối số {#arguments}
 
 __*expression*__  
-Một chuỗi ASCII hoặc một BLOB.
+Một chuỗi hoặc một BLOB.
 
 > Trả về `NULL` nếu *expression* là `NULL`.
 
