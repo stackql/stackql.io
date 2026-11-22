@@ -16,12 +16,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -32,8 +32,8 @@
           "at": "2026-11-20"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -44,8 +44,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -56,8 +56,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -76,8 +76,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -88,12 +88,12 @@
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-20"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -108,8 +108,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-20"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -148,12 +148,12 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -208,16 +208,16 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-20"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-20"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -228,8 +228,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -364,8 +364,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -396,8 +396,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-20"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -460,8 +460,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-20"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -496,12 +496,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-20"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-20"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -512,8 +512,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -528,8 +528,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-20"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -540,8 +540,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -556,8 +556,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-20"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -568,36 +568,36 @@
           "at": "2026-11-20"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-20"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-20"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -608,24 +608,24 @@
           "at": "2026-11-20"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-20"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-20"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -636,8 +636,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -656,8 +656,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -676,12 +676,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -692,8 +692,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -704,8 +704,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -716,8 +716,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -736,8 +736,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -748,12 +748,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -768,8 +768,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -808,12 +808,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -868,16 +868,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -888,8 +888,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -1024,8 +1024,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -1056,8 +1056,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -1120,8 +1120,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -1156,12 +1156,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -1172,8 +1172,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -1188,8 +1188,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -1200,8 +1200,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -1216,8 +1216,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -1228,36 +1228,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -1268,24 +1268,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -1296,8 +1296,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -1316,8 +1316,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -1336,12 +1336,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -1352,8 +1352,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -1364,8 +1364,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -1376,8 +1376,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -1396,8 +1396,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -1408,12 +1408,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -1428,8 +1428,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -1468,12 +1468,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -1528,16 +1528,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -1548,8 +1548,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -1684,8 +1684,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -1716,8 +1716,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -1780,8 +1780,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -1816,12 +1816,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -1832,8 +1832,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -1848,8 +1848,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -1860,8 +1860,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -1876,8 +1876,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -1888,36 +1888,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -1928,24 +1928,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -1956,8 +1956,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -1976,8 +1976,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -1996,12 +1996,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -2012,8 +2012,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -2024,8 +2024,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -2036,8 +2036,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -2056,8 +2056,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -2068,12 +2068,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -2088,8 +2088,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -2128,12 +2128,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -2188,16 +2188,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -2208,8 +2208,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -2344,8 +2344,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -2376,8 +2376,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -2440,8 +2440,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -2476,12 +2476,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -2492,8 +2492,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -2508,8 +2508,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -2520,8 +2520,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -2536,8 +2536,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -2548,36 +2548,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -2588,24 +2588,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -2616,8 +2616,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -2636,8 +2636,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -2656,12 +2656,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -2672,8 +2672,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -2684,8 +2684,8 @@
           "at": "2026-11-16"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -2696,8 +2696,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -2716,8 +2716,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -2728,12 +2728,12 @@
           "at": "2026-11-16"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-16"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -2748,8 +2748,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-16"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -2788,12 +2788,12 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -2848,16 +2848,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-16"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-16"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -2868,8 +2868,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -3004,8 +3004,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -3036,8 +3036,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-16"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -3100,8 +3100,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-16"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -3136,12 +3136,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-16"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -3152,8 +3152,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -3168,8 +3168,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-16"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -3180,8 +3180,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -3196,8 +3196,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-16"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -3208,36 +3208,36 @@
           "at": "2026-11-16"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-16"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-16"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -3248,24 +3248,24 @@
           "at": "2026-11-16"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-16"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-16"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -3276,8 +3276,8 @@
           "at": "2026-11-16"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -3296,8 +3296,8 @@
           "at": "2026-11-16"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -3316,12 +3316,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -3332,8 +3332,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -3344,8 +3344,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -3356,8 +3356,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -3376,8 +3376,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -3388,12 +3388,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -3408,8 +3408,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -3448,12 +3448,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -3508,16 +3508,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -3528,8 +3528,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -3664,8 +3664,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -3696,8 +3696,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -3760,8 +3760,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -3796,12 +3796,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -3812,8 +3812,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -3828,8 +3828,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -3840,8 +3840,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -3856,8 +3856,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -3868,36 +3868,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -3908,24 +3908,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -3936,8 +3936,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -3956,8 +3956,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -3976,12 +3976,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -3992,8 +3992,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -4004,8 +4004,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -4016,8 +4016,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -4036,8 +4036,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -4048,12 +4048,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -4068,8 +4068,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -4108,12 +4108,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -4168,16 +4168,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -4188,8 +4188,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -4324,8 +4324,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -4356,8 +4356,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -4420,8 +4420,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -4456,12 +4456,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -4472,8 +4472,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -4488,8 +4488,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -4500,8 +4500,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -4516,8 +4516,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -4528,36 +4528,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -4568,24 +4568,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -4596,8 +4596,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -4616,8 +4616,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -4636,12 +4636,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -4652,8 +4652,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -4664,8 +4664,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -4676,8 +4676,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -4696,8 +4696,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -4708,12 +4708,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -4728,8 +4728,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -4768,12 +4768,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -4828,16 +4828,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -4848,8 +4848,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -4984,8 +4984,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -5016,8 +5016,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -5080,8 +5080,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -5116,12 +5116,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -5132,8 +5132,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -5148,8 +5148,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -5160,8 +5160,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -5176,8 +5176,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -5188,36 +5188,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -5228,24 +5228,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -5256,8 +5256,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -5276,13 +5276,189 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
     "ru": {
       "files": {
+        "ai-content/architecture/index.md": {
+          "blob": "9f72a248cd6fc66ef456aca1369a77a479043ca2",
+          "at": "2026-11-22"
+        },
+        "ai-content/architecture/stackql-architecture-overview.md": {
+          "blob": "b2aa4f62fc55cf63cf92263103ea7cb4acd4da13",
+          "at": "2026-11-22"
+        },
+        "ai-content/architecture/stackql-mcp-architecture.md": {
+          "blob": "53a7ea6f51fbfb3b4a4826c9d275bd4bd7e04644",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/control-plane-vs-data-plane.md": {
+          "blob": "34fcfe258d6c04ce9d40d3f3e1859a9b5a9af624",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/index.md": {
+          "blob": "db954883a2df2b53da93987a2bf67c753f708c61",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/what-is-agentic-infrastructure.md": {
+          "blob": "f3bd4aaad68005ea606403ab48778562b80d6458",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/what-is-infrastructure-drift.md": {
+          "blob": "5793de8de6c05b911a3a3788bce89aa9615ed685",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/what-is-queryable-infrastructure.md": {
+          "blob": "c55f4495c95ba4797b938b851881950ff5f49756",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/what-is-sql-for-apis.md": {
+          "blob": "40d11eb5ff8a1ca991fd8e26156ad57989e71c3c",
+          "at": "2026-11-22"
+        },
+        "ai-content/canonical-definitions/what-is-stackql.md": {
+          "blob": "369216fbeb81f4fd5f8518194ab25b165c8da8a7",
+          "at": "2026-11-22"
+        },
+        "ai-content/comparisons/index.md": {
+          "blob": "847ce85ec52e051a0dcf7898e333305f1009ab5d",
+          "at": "2026-11-22"
+        },
+        "ai-content/comparisons/stackql-vs-cloudquery.md": {
+          "blob": "b182cfc8f1f2bcbe76ffc5e5480c051cbb9c39d2",
+          "at": "2026-11-22"
+        },
+        "ai-content/comparisons/stackql-vs-custom-mcp-servers.md": {
+          "blob": "5b21ed71d168f48c17e36fa200adb37997f6a845",
+          "at": "2026-11-22"
+        },
+        "ai-content/comparisons/stackql-vs-steampipe.md": {
+          "blob": "04183846796e8d9effe3cd373344ec5066095703",
+          "at": "2026-11-22"
+        },
+        "ai-content/comparisons/stackql-vs-terraform.md": {
+          "blob": "8c09f0a435148e5a971fc25dabff43cb95cc6fd3",
+          "at": "2026-11-22"
+        },
+        "ai-content/concepts/index.md": {
+          "blob": "6079c25362428a84d137073ce168b5df441ed28d",
+          "at": "2026-11-22"
+        },
+        "ai-content/concepts/why-sql-is-a-strong-interface-for-cloud-apis.md": {
+          "blob": "2f582c3d6f5210fbb2884020526ce07a0ac52b77",
+          "at": "2026-11-22"
+        },
+        "ai-content/concepts/why-state-files-break-down-for-ai-agents.md": {
+          "blob": "3e55ba2a71ce36c4718a95734de2f2ad63de6498",
+          "at": "2026-11-22"
+        },
+        "ai-content/faqs/index.md": {
+          "blob": "aaaa1a1cc86545060ae8ead8753ea23802d81928",
+          "at": "2026-11-22"
+        },
+        "ai-content/faqs/stackql-faq.md": {
+          "blob": "084d238d2d755ffd2166290c96c356026ed4a64f",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/authenticate-stackql-to-aws.md": {
+          "blob": "842828687bbf80809fa2995aba3a110684314ac1",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/authenticate-stackql-to-azure.md": {
+          "blob": "45e1a9f1226ba90af084a45745fec7cfe8ad2909",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/authenticate-stackql-to-github.md": {
+          "blob": "f3e8052cf2290038e1c2147c02b5c27e92d4f653",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/authenticate-stackql-to-google-cloud.md": {
+          "blob": "b355eb4bf6640ef1bd4e27bc8c154cd9c2cd43db",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-dotnet.md": {
+          "blob": "58c8d0f5cc6f817db0da1ae3141a20b1d4002d9c",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-gleam.md": {
+          "blob": "808f95263affcf4745370e59d179a17307399c8f",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-go.md": {
+          "blob": "5806a3a3fcf18fc2f454c403c11ec3182c3c89c9",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-kotlin.md": {
+          "blob": "1e626d7571edff0c6254012fe102972786a2d9bf",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-rust.md": {
+          "blob": "09e2788e370d998657fd737ccf5c5d72abad5dd5",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/embed-stackql-mcp-server-in-swift.md": {
+          "blob": "8c88ef9d1c0d1029d3512eeb6bdc8e851f594c20",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/index.md": {
+          "blob": "a46ea458b94497c330122c0c324ffc0679f68d6a",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/query-aws-ec2-instances-with-stackql.md": {
+          "blob": "2f706bcee797853d54e187f244fcb7e89497e065",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/query-github-repositories-with-stackql.md": {
+          "blob": "c94138abd314e241b8dc99c0030e1d08eafd1289",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/query-s3-buckets-with-stackql.md": {
+          "blob": "56a243534813ec48176d539d497020573d052e2d",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/use-stackql-with-ai-agents.md": {
+          "blob": "6b509c48b1e2574219eb1a696987e0931de3b9fd",
+          "at": "2026-11-22"
+        },
+        "ai-content/how-tos/use-stackql-with-claude.md": {
+          "blob": "023675e9093d20c8478c67dbb8a44c2b61c72181",
+          "at": "2026-11-22"
+        },
+        "ai-content/index.md": {
+          "blob": "236fed639e22caf5988e54481855e2b8df1c4284",
+          "at": "2026-11-22"
+        },
+        "ai-content/industry-positioning/from-iac-to-agentic-infrastructure.md": {
+          "blob": "6df9f16d4bf58829692174aaee0a9a955701da9a",
+          "at": "2026-11-22"
+        },
+        "ai-content/industry-positioning/index.md": {
+          "blob": "a51ea4d4c7afece9087fdba73ddd00e8affe9e4e",
+          "at": "2026-11-22"
+        },
+        "ai-content/providers/index.md": {
+          "blob": "aad55f0192ecd8e04ed9fd4f2b9ec8fa3d6bfb02",
+          "at": "2026-11-22"
+        },
+        "ai-content/troubleshooting/common-stackql-errors.md": {
+          "blob": "863d9fd64b091ec7765b2686c94e3836b318f4cf",
+          "at": "2026-11-22"
+        },
+        "ai-content/troubleshooting/index.md": {
+          "blob": "2df1e79fe5a7c450810b3738867660b98e7ec688",
+          "at": "2026-11-22"
+        },
+        "ai-content/tutorials/getting-started-with-stackql.md": {
+          "blob": "eebb503fa7513135463e82e21b85050cf57e6c07",
+          "at": "2026-11-22"
+        },
+        "ai-content/tutorials/index.md": {
+          "blob": "d1338069543f7562ad7ae95f6ee44568c0fc122f",
+          "at": "2026-11-22"
+        },
         "docs/ai-agents.md": {
           "blob": "370d3ff154bb6105eacaaac6b97974b8629fa432",
           "at": "2026-11-22"
@@ -5296,11 +5472,11 @@
           "at": "2026-11-22"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
           "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
           "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
@@ -5312,7 +5488,7 @@
           "at": "2026-11-22"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
           "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
@@ -5324,7 +5500,7 @@
           "at": "2026-11-22"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
           "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
@@ -5336,7 +5512,7 @@
           "at": "2026-11-22"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
           "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
@@ -5356,7 +5532,7 @@
           "at": "2026-11-22"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
           "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
@@ -5368,11 +5544,11 @@
           "at": "2026-11-22"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
           "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
           "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
@@ -5388,7 +5564,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
           "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
@@ -5428,11 +5604,11 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
@@ -5488,7 +5664,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
@@ -5496,7 +5672,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
@@ -5508,7 +5684,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
@@ -5644,7 +5820,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
@@ -5676,7 +5852,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
@@ -5740,7 +5916,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
           "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
@@ -5776,11 +5952,11 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
           "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
           "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
@@ -5792,7 +5968,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
           "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
@@ -5808,7 +5984,7 @@
           "at": "2026-11-22"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
           "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
@@ -5820,7 +5996,7 @@
           "at": "2026-11-22"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
           "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
@@ -5836,7 +6012,7 @@
           "at": "2026-11-22"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
           "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
@@ -5848,7 +6024,7 @@
           "at": "2026-11-22"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
           "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
@@ -5856,27 +6032,27 @@
           "at": "2026-11-22"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
           "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
           "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
           "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
           "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
           "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
           "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
@@ -5888,23 +6064,23 @@
           "at": "2026-11-22"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
           "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
           "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
           "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
           "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
           "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
@@ -5916,7 +6092,7 @@
           "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
           "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
@@ -5936,7 +6112,7 @@
           "at": "2026-11-22"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
           "at": "2026-11-22"
         }
       }
@@ -5956,12 +6132,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -5972,8 +6148,8 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-21"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -5984,8 +6160,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -5996,8 +6172,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -6016,8 +6192,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -6028,12 +6204,12 @@
           "at": "2026-11-21"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-21"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -6048,8 +6224,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-21"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -6088,12 +6264,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-21"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -6148,16 +6324,16 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-21"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-21"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -6168,8 +6344,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -6304,8 +6480,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -6336,8 +6512,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-21"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -6400,8 +6576,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-21"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -6436,12 +6612,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-21"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-21"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -6452,8 +6628,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -6468,8 +6644,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-21"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -6480,8 +6656,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -6496,8 +6672,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-21"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -6508,36 +6684,36 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-21"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-21"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -6548,24 +6724,24 @@
           "at": "2026-11-21"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-21"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-21"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -6576,8 +6752,8 @@
           "at": "2026-11-21"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -6596,8 +6772,8 @@
           "at": "2026-11-21"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -6616,12 +6792,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -6632,8 +6808,8 @@
           "at": "2026-11-20"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -6644,8 +6820,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -6656,8 +6832,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -6676,8 +6852,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -6688,12 +6864,12 @@
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-20"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -6708,8 +6884,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-20"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -6748,12 +6924,12 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -6808,16 +6984,16 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-20"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-20"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -6828,8 +7004,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -6964,8 +7140,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -6996,8 +7172,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-20"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -7060,8 +7236,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-20"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -7096,12 +7272,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-20"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-20"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -7112,8 +7288,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -7128,8 +7304,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-20"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -7140,8 +7316,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -7156,8 +7332,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-20"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -7168,36 +7344,36 @@
           "at": "2026-11-20"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-20"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-20"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -7208,24 +7384,24 @@
           "at": "2026-11-20"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-20"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-20"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -7236,8 +7412,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -7256,8 +7432,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -7268,12 +7444,12 @@
           "at": "2026-11-15"
         },
         "ai-content/architecture/stackql-architecture-overview.md": {
-          "blob": "b431e3a55baca8caf2528c22ed42fd1d3a92158a",
-          "at": "2026-11-15"
+          "blob": "b2aa4f62fc55cf63cf92263103ea7cb4acd4da13",
+          "at": "2026-11-22"
         },
         "ai-content/architecture/stackql-mcp-architecture.md": {
-          "blob": "c7b3df8eb60bb708c8435256355d7dcce7182b52",
-          "at": "2026-11-21"
+          "blob": "53a7ea6f51fbfb3b4a4826c9d275bd4bd7e04644",
+          "at": "2026-11-22"
         },
         "ai-content/canonical-definitions/control-plane-vs-data-plane.md": {
           "blob": "34fcfe258d6c04ce9d40d3f3e1859a9b5a9af624",
@@ -7380,8 +7556,8 @@
           "at": "2026-11-15"
         },
         "ai-content/how-tos/embed-stackql-mcp-server-in-swift.md": {
-          "blob": "83732ee1813bc9952095a1f90dbdbbd05e702c49",
-          "at": "2026-11-15"
+          "blob": "8c88ef9d1c0d1029d3512eeb6bdc8e851f594c20",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/index.md": {
           "blob": "a46ea458b94497c330122c0c324ffc0679f68d6a",
@@ -7396,16 +7572,16 @@
           "at": "2026-11-15"
         },
         "ai-content/how-tos/query-s3-buckets-with-stackql.md": {
-          "blob": "b5afe4c634a70f05cbee9d13ae5180883eea757b",
-          "at": "2026-11-15"
+          "blob": "56a243534813ec48176d539d497020573d052e2d",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/use-stackql-with-ai-agents.md": {
-          "blob": "afcad467678226cc34d36e2b5e9f98dd3c645e4f",
-          "at": "2026-11-15"
+          "blob": "6b509c48b1e2574219eb1a696987e0931de3b9fd",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/use-stackql-with-claude.md": {
-          "blob": "4b345a2148b0d9862cc8c4f1a4b6be645e13b3a2",
-          "at": "2026-11-15"
+          "blob": "023675e9093d20c8478c67dbb8a44c2b61c72181",
+          "at": "2026-11-22"
         },
         "ai-content/index.md": {
           "blob": "236fed639e22caf5988e54481855e2b8df1c4284",
@@ -7452,12 +7628,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -7468,8 +7644,8 @@
           "at": "2026-11-16"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -7480,8 +7656,8 @@
           "at": "2026-11-15"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -7492,8 +7668,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -7512,8 +7688,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -7524,12 +7700,12 @@
           "at": "2026-11-15"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-15"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -7544,8 +7720,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-15"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -7584,12 +7760,12 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -7644,16 +7820,16 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-15"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-15"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -7664,8 +7840,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -7800,8 +7976,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -7832,8 +8008,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-15"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -7896,8 +8072,8 @@
           "at": "2026-11-16"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-15"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -7932,12 +8108,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-15"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-16"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -7948,8 +8124,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -7964,8 +8140,8 @@
           "at": "2026-11-15"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-15"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -7976,8 +8152,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -7992,8 +8168,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-15"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -8004,36 +8180,36 @@
           "at": "2026-11-15"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-15"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-15"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -8044,24 +8220,24 @@
           "at": "2026-11-15"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-15"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-15"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -8072,8 +8248,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -8092,8 +8268,8 @@
           "at": "2026-11-15"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     },
@@ -8104,12 +8280,12 @@
           "at": "2026-11-20"
         },
         "ai-content/architecture/stackql-architecture-overview.md": {
-          "blob": "b431e3a55baca8caf2528c22ed42fd1d3a92158a",
-          "at": "2026-11-20"
+          "blob": "b2aa4f62fc55cf63cf92263103ea7cb4acd4da13",
+          "at": "2026-11-22"
         },
         "ai-content/architecture/stackql-mcp-architecture.md": {
-          "blob": "c7b3df8eb60bb708c8435256355d7dcce7182b52",
-          "at": "2026-11-21"
+          "blob": "53a7ea6f51fbfb3b4a4826c9d275bd4bd7e04644",
+          "at": "2026-11-22"
         },
         "ai-content/canonical-definitions/control-plane-vs-data-plane.md": {
           "blob": "34fcfe258d6c04ce9d40d3f3e1859a9b5a9af624",
@@ -8216,8 +8392,8 @@
           "at": "2026-11-20"
         },
         "ai-content/how-tos/embed-stackql-mcp-server-in-swift.md": {
-          "blob": "83732ee1813bc9952095a1f90dbdbbd05e702c49",
-          "at": "2026-11-20"
+          "blob": "8c88ef9d1c0d1029d3512eeb6bdc8e851f594c20",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/index.md": {
           "blob": "a46ea458b94497c330122c0c324ffc0679f68d6a",
@@ -8232,16 +8408,16 @@
           "at": "2026-11-20"
         },
         "ai-content/how-tos/query-s3-buckets-with-stackql.md": {
-          "blob": "b5afe4c634a70f05cbee9d13ae5180883eea757b",
-          "at": "2026-11-20"
+          "blob": "56a243534813ec48176d539d497020573d052e2d",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/use-stackql-with-ai-agents.md": {
-          "blob": "afcad467678226cc34d36e2b5e9f98dd3c645e4f",
-          "at": "2026-11-20"
+          "blob": "6b509c48b1e2574219eb1a696987e0931de3b9fd",
+          "at": "2026-11-22"
         },
         "ai-content/how-tos/use-stackql-with-claude.md": {
-          "blob": "4b345a2148b0d9862cc8c4f1a4b6be645e13b3a2",
-          "at": "2026-11-20"
+          "blob": "023675e9093d20c8478c67dbb8a44c2b61c72181",
+          "at": "2026-11-22"
         },
         "ai-content/index.md": {
           "blob": "236fed639e22caf5988e54481855e2b8df1c4284",
@@ -8288,12 +8464,12 @@
           "at": "2026-11-21"
         },
         "docs/command-line-usage/global-flags.md": {
-          "blob": "30f9fa31522d41619dc365a427dc42699bad99bf",
-          "at": "2026-11-21"
+          "blob": "5545d9b5fe7c81516f30cdf59e69cf47f9accd60",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/mcp.md": {
-          "blob": "095c5f90a2fc4d656bf7b7bda2b1b2f6a872df46",
-          "at": "2026-11-21"
+          "blob": "4e18299197298d5792dbf8a68d03345521031f62",
+          "at": "2026-11-22"
         },
         "docs/command-line-usage/registry.md": {
           "blob": "96c2337b07c43199e695ba3cf7a1342329afa7ae",
@@ -8304,8 +8480,8 @@
           "at": "2026-11-20"
         },
         "docs/command-line-usage/srv.md": {
-          "blob": "58c24d4f6607a945f19c0b7e65d90b8f81795e39",
-          "at": "2026-11-20"
+          "blob": "270649e2278cdd1210c06c9b013b1465ea76ca88",
+          "at": "2026-11-22"
         },
         "docs/developers/architecture.md": {
           "blob": "4a53d423f87020783623aef82f57a191ca284ffb",
@@ -8316,8 +8492,8 @@
           "at": "2026-11-20"
         },
         "docs/getting-started/claude-desktop.md": {
-          "blob": "2511beb12cfb4f7283a48203f895c6156e308e58",
-          "at": "2026-11-21"
+          "blob": "aa7e513fbd3c514f50d98ae84ecf0c560a79a8ac",
+          "at": "2026-11-22"
         },
         "docs/getting-started/otel-recipes.md": {
           "blob": "6b6a52a2c5964c9f20a9a4a14c4f6e65cf2d8623",
@@ -8328,8 +8504,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/provider-sessions.md": {
-          "blob": "aec49b26309d743b567f87585aa05ccfc7af42a4",
-          "at": "2026-11-21"
+          "blob": "ef55122036570cd5705d2dad6490a365f728fbae",
+          "at": "2026-11-22"
         },
         "docs/getting-started/resource-hierarchy.md": {
           "blob": "898cbed08cd2278afe4de466c20de106bcddc3a2",
@@ -8348,8 +8524,8 @@
           "at": "2026-11-21"
         },
         "docs/getting-started/using-stackql.md": {
-          "blob": "a2c9d31801a1ca8b658677f46cca28da8faf39ca",
-          "at": "2026-11-21"
+          "blob": "7576fcecd82fc6111173eeaa9e4a7547b52ab6f5",
+          "at": "2026-11-22"
         },
         "docs/getting-started/variables.md": {
           "blob": "ac944650390c931bfde2c9ff7f45eefc6572c1f2",
@@ -8360,12 +8536,12 @@
           "at": "2026-11-20"
         },
         "docs/installing-stackql.md": {
-          "blob": "c4597b3d86fba694e8ede48eb70fe163a1987d50",
-          "at": "2026-11-21"
+          "blob": "69c462eee8659e9c8df4abefc70fcb6f8d2e2a70",
+          "at": "2026-11-22"
         },
         "docs/language-spec/createview.md": {
-          "blob": "7b9431c0c494ce0f7d6c0c0dc96fb760a1ef7729",
-          "at": "2026-11-20"
+          "blob": "97ea567c59dece79f3a0a52faddd395ccbde7b6d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/data-types.md": {
           "blob": "6fbd4d253b91745ed1727b8a04c9ac8c56467f08",
@@ -8380,8 +8556,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/dropview.md": {
-          "blob": "bfed44e37e2165563d7886203b3bde830c6b85a3",
-          "at": "2026-11-20"
+          "blob": "4cd9a90566262026bdc1697bfe8d515ec08393c1",
+          "at": "2026-11-22"
         },
         "docs/language-spec/exec.md": {
           "blob": "ad99acf5c0a641fa23e2b1cd68d7b80848e5911a",
@@ -8420,12 +8596,12 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/datetime/date_modifiers.md": {
-          "blob": "b43753389d8195a8d485c1a2638f58512473f404",
-          "at": "2026-11-20"
+          "blob": "357cb2c28f7eda23b940ba5b3463671d538be451",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/datetime-fn.md": {
-          "blob": "d363b4f2c5e4ee960259aae2ac686ae2283db3d0",
-          "at": "2026-11-21"
+          "blob": "645b88c51d46e7e463b560f4b75a289c31a3026e",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/datetime/julianday.md": {
           "blob": "c54004abe7c2d3f1e0781b893ea96801a4104adc",
@@ -8480,16 +8656,16 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_extract.md": {
-          "blob": "f28679d71602310efa151e150519508ebf3fa279",
-          "at": "2026-11-20"
+          "blob": "ecd7f24bcb8931fbe6bc895b73b38785b1ae0535",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_group_array.md": {
           "blob": "4566a48b9be294330f0481cd1743194ce2ca6131",
           "at": "2026-11-21"
         },
         "docs/language-spec/functions/json/json_group_object.md": {
-          "blob": "436aae6dd2d6e4f917a80b6e3e52a3c218c6ee7e",
-          "at": "2026-11-20"
+          "blob": "46aba7c40c5bc483a7a28be6c528b972a4f52bac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_insert.md": {
           "blob": "73656c328946acaab7200a46c8fb3940a73c1d67",
@@ -8500,8 +8676,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/json/json_patch.md": {
-          "blob": "261b33dc574c53842468066030e15ea1c8b28af0",
-          "at": "2026-11-21"
+          "blob": "24b418e574a5ddef11d0ae2a4f148e0aebc41bd0",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/json/json_remove.md": {
           "blob": "3db4f54eda053015a385410a5e8ae1386e2907d4",
@@ -8636,8 +8812,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/re/reference.md": {
-          "blob": "5d61598214d860513f3438b001d22794f96087ab",
-          "at": "2026-11-21"
+          "blob": "95c6d4fb5fced2026eaebeaa96c1f156ae02d49d",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/re/regexp.md": {
           "blob": "5853c87367eb21a2adaaffdfc442edc754064dd8",
@@ -8668,8 +8844,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/string/concatenation.md": {
-          "blob": "b2b15f60b1a0af40ad2595b399332dcc735d8355",
-          "at": "2026-11-20"
+          "blob": "137a2b78d42c9e49f8bccc86517c28791dcdceac",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/string/instr.md": {
           "blob": "8889591cd73c1d0516b1cfafc2e8ad974fe594e4",
@@ -8732,8 +8908,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/functions/window/lead.md": {
-          "blob": "e4e54f9dbb02c50227847363a7b09551e18c5876",
-          "at": "2026-11-20"
+          "blob": "651d8eb59f6ad406cf369c791bd86fe3fc1a49ad",
+          "at": "2026-11-22"
         },
         "docs/language-spec/functions/window/nth_value.md": {
           "blob": "d62bae710db7e6276e22f499a6581dc71af87d8b",
@@ -8768,12 +8944,12 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/refreshview.md": {
-          "blob": "02341f9d2b886352c0b1541b2f74fda6b73f5c2a",
-          "at": "2026-11-20"
+          "blob": "d24c6212711b716f956853bc202e172a58c10e92",
+          "at": "2026-11-22"
         },
         "docs/language-spec/registry.md": {
-          "blob": "1bd8c0c4fa230732bd037244c19d444e892f9348",
-          "at": "2026-11-20"
+          "blob": "e2bc62b15631e50218631343b4ad4a3307f893b2",
+          "at": "2026-11-22"
         },
         "docs/language-spec/replace.md": {
           "blob": "950ffbb82b16dba492104adf2a442d04a8b8feea",
@@ -8784,8 +8960,8 @@
           "at": "2026-11-21"
         },
         "docs/language-spec/set.md": {
-          "blob": "d46531e8b3bf828ab51daab137b1d6aa22e29fe5",
-          "at": "2026-11-21"
+          "blob": "04575a8904201950d9ed097ab31fab2dec4d88ba",
+          "at": "2026-11-22"
         },
         "docs/language-spec/show.md": {
           "blob": "cf94bca4a46fbd50e71a8aa31b846ca1405a561d",
@@ -8800,8 +8976,8 @@
           "at": "2026-11-20"
         },
         "docs/language-spec/utility-commands.md": {
-          "blob": "26a70152c1537534d5a05be9a5626c35ad6062df",
-          "at": "2026-11-20"
+          "blob": "27d9d34068a68e6acbf52c8b768444129d8edc23",
+          "at": "2026-11-22"
         },
         "docs/language-spec/windowing_functions.md": {
           "blob": "b0c377690999782e08411d390fb81e3ab5ac2410",
@@ -8812,8 +8988,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/describe_method.md": {
-          "blob": "23adc3cdb876ae1b49ca779ec4f4c4eb0783bce3",
-          "at": "2026-11-21"
+          "blob": "f208f5f9278e7f42bc2685214e888b4d37905813",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/dotnet.md": {
           "blob": "8c25913b0533d69fe5ad2357a8755fc2d634de7b",
@@ -8828,8 +9004,8 @@
           "at": "2026-11-21"
         },
         "docs/mcp/embedded/index.md": {
-          "blob": "d6d3959da10b1b6edfdd6be2228ae357bc7dccf1",
-          "at": "2026-11-20"
+          "blob": "6b2a0455832baca4d3871a26c98702a2cc63aca1",
+          "at": "2026-11-22"
         },
         "docs/mcp/embedded/kotlin.md": {
           "blob": "8cecd0875ca68ac4a07c7de9e55860fc0f3e55d3",
@@ -8840,36 +9016,36 @@
           "at": "2026-11-20"
         },
         "docs/mcp/embedded/swift.md": {
-          "blob": "398d60ead25be17922f21f2242020618d473ad29",
-          "at": "2026-11-20"
+          "blob": "090a9cfa24fe7cfe8bac631aa4243f769de785cb",
+          "at": "2026-11-22"
         },
         "docs/mcp/index.md": {
           "blob": "4af2a650443232d9040b7106d054a8aa94f5ecbd",
           "at": "2026-11-20"
         },
         "docs/mcp/list_methods.md": {
-          "blob": "0ef8414873138db556841cbf73f3107104453c1c",
-          "at": "2026-11-21"
+          "blob": "c4010fae6f54c37d21db91e78c6144fe61d44f96",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_providers.md": {
-          "blob": "f8210c46d9734453818a3d080e4929cc044d837a",
-          "at": "2026-11-21"
+          "blob": "743dfc9ae85a5073ecec156c7bcd30567fd1a438",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_registry.md": {
-          "blob": "1c8186e757be5e2ef3b5a50b80e04a310b145aba",
-          "at": "2026-11-21"
+          "blob": "9842be1d96d9437c9c7069acb0397ae745671cd6",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_resources.md": {
-          "blob": "0acef8d8add2524ac2116c0e0fef16045c44d523",
-          "at": "2026-11-21"
+          "blob": "92e0a6eb7318fc90c22f594858d31cbf14342057",
+          "at": "2026-11-22"
         },
         "docs/mcp/list_services.md": {
-          "blob": "ebf5c974a27de8b495328ee359c3fbfbec50759b",
-          "at": "2026-11-21"
+          "blob": "33ccde992edacfe0003e578a7f303d535528ae41",
+          "at": "2026-11-22"
         },
         "docs/mcp/pull_provider.md": {
-          "blob": "6dd46d648b00d01281a374644e52886ec17925a0",
-          "at": "2026-11-21"
+          "blob": "79c073e4c9b307b1921594855a1c838e3ff00873",
+          "at": "2026-11-22"
         },
         "docs/mcp/query_library_get.md": {
           "blob": "ccdea405513185efaeb9c53e3a25a63aa8313c57",
@@ -8880,24 +9056,24 @@
           "at": "2026-11-20"
         },
         "docs/mcp/reload_credentials.md": {
-          "blob": "b1ff2708faf4b80af7cdccdece2448b84be443c3",
-          "at": "2026-11-20"
+          "blob": "a25fcd9c40a28761e6da94bf2b467c2ceb34c800",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_lifecycle_operation.md": {
-          "blob": "f8b52d4b8e3e88c2712c5657b415efc792bc9b00",
-          "at": "2026-11-20"
+          "blob": "292c70f8d15e22403487f49d393503a1604fbefa",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_mutation_query.md": {
-          "blob": "102942b9ad3ff315cc83b2fac1ca974bc4267a89",
-          "at": "2026-11-21"
+          "blob": "0e0e181c0eacd75174b290c161c3ccc957d50632",
+          "at": "2026-11-22"
         },
         "docs/mcp/run_select_query.md": {
-          "blob": "fe02727c15001938d58594ce9c16e7653299b81d",
-          "at": "2026-11-21"
+          "blob": "0c491bcdaa874feb708b0b00733b4f109220d7b2",
+          "at": "2026-11-22"
         },
         "docs/mcp/server_info.md": {
-          "blob": "57a3079caafee1003667d7cd6fdb29239fd00428",
-          "at": "2026-11-21"
+          "blob": "dcef0bcae91b96582e4941428865c6ca9977d897",
+          "at": "2026-11-22"
         },
         "docs/mcp/validate_select_query.md": {
           "blob": "0745ffa9cdc5f4c22ac2a047dcf6faf7971fd595",
@@ -8908,8 +9084,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/aws/aws-cloud-shell.md": {
-          "blob": "65ef74367ceceddde5ea6192c55079580d1dd8b3",
-          "at": "2026-11-21"
+          "blob": "9eaba33d93825e60f1b2f6372f26d191c0fc37e4",
+          "at": "2026-11-22"
         },
         "docs/quick-starts/aws/aws-global-inventory.md": {
           "blob": "6c5a56486eb5274c40a6a63faa7fa7f61fe995cb",
@@ -8928,8 +9104,8 @@
           "at": "2026-11-20"
         },
         "docs/quick-starts/google/iam-bindings-framework.md": {
-          "blob": "d88dbd852792dfe03df02a8578629bbf30526eb0",
-          "at": "2026-11-21"
+          "blob": "cedfb1f14ae589a0ce1ed794d8a4b38b530a4b29",
+          "at": "2026-11-22"
         }
       }
     }

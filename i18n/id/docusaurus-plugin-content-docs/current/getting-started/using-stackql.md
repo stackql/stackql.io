@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - inventaris cloud
-description: "Menggunakan StackQL: menjalankan kueri secara interaktif di shell, noninteraktif dengan exec, atau sebagai server, sambil menemukan provider, layanan, dan sumber daya."
+description: "Menggunakan StackQL: menjalankan kueri di shell interaktif, mengaturnya dengan file .stackqlrc, atau menjalankan kueri noninteraktif dengan exec, inline atau dari file input IQL."
 image: "/img/stackql-featured-image.png"
 ---
 Lihat juga:  

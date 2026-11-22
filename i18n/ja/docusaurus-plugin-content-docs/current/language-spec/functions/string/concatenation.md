@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## 引数 {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 文字列リテラルまたは文字列型の列です。
 
 ## 戻り値 {#return-values}

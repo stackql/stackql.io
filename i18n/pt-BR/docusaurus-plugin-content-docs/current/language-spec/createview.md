@@ -11,7 +11,6 @@ description: "CREATE VIEW no StackQL: salvar uma consulta, incluindo UNIONs entr
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Cria uma `view` ou uma `materialized view` em uma sessão, que pode ser usada para representar uma consulta `stackql` longa ou complexa.
 

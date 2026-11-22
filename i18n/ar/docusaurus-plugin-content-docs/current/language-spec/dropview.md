@@ -11,7 +11,6 @@ description: "DROP VIEW في StackQL: إزالة طريقة عرض أو طريق
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 تحذف طريقة عرض (`view`) أو طريقة عرض مجسدة (`materialized view`) داخل جلسة.  
 

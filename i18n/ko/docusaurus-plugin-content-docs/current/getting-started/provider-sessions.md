@@ -28,7 +28,7 @@ image: "/img/stackql-featured-image.png"
 |--|--|--|
 | `provider` | 예 | 별칭이 가리키는 정식 프로바이더입니다(예: `aws`). |
 | `tenancy` | 예 | 계정 이름이나 테넌트 이름 같은 그룹화 레이블입니다. StackQL은 이 값을 프로바이더에 대해 검증하지 않습니다. |
-| `auth` | `auth` 또는 `auth_secret` 중 하나 | [`--auth`](/command-line-usage/global-flags) 객체에 있는 프로바이더 항목과 같은 형태의 인증 문서입니다. 별칭은 정식 프로바이더의 자격 증명을 빌려 쓰지 않습니다. |
+| `auth` | `auth` 또는 `auth_secret` 중 하나 | 별칭 형식의 인증 문서이며, 이 형식은 [`--auth`](/command-line-usage/global-flags) 객체에 있는 프로바이더 항목과 다릅니다. AWS의 경우 `keyIDenvvar` 및 `credentialsenvvar` 키가 아니라 `access_key_id_env_var` 및 `secret_access_key_env_var` 키를 사용하며, 별칭 형식이 알지 못하는 키는 `invalid session configuration field or type` 오류로 실패합니다. 별칭은 정식 프로바이더의 자격 증명을 빌려 쓰지 않습니다. |
 | `auth_secret` | `auth` 또는 `auth_secret` 중 하나 | 인증 문서를 보관하는 [세션 시크릿](#session-secrets)의 이름입니다. |
 | `params` | 아니요 | 선언된 프로바이더 매개 변수(선언된 서버 매개 변수 포함)의 기본값입니다. 쿼리의 조건자가 기본값을 재정의합니다. |
 | `tuning` | 아니요 | 별칭의 요청에 대한 `max_concurrent` 및 `max_per_host` 제한입니다. 프로바이더와 테넌시를 공유하는 별칭은 이 제어를 공유하며, 동일한 튜닝을 선언해야 합니다. |

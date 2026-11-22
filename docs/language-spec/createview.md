@@ -11,7 +11,6 @@ description: "CREATE VIEW in StackQL: save a query, including cross-cloud UNIONs
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Creates a `view` or a `materialized view` within a session which can be used to represent a long or complex `stackql` query.  
 

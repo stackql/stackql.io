@@ -25,13 +25,13 @@ Los comandos de StackQL aceptan las opciones globales, pero algunas solo se apli
 | <span class="nowrap">`--cachekeycount`</span> | integer | Número inicial de claves de la caché | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Ruta completa del archivo de configuración | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | Archivo `cpuprofile`, ninguno si está vacío | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Profundidad máxima de dependencias del flujo de datos para una consulta determinada | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Número máximo de componentes débilmente conexos del flujo de datos para una consulta determinada | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Profundidad máxima de dependencias del flujo de datos para una consulta determinada | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Número máximo de componentes débilmente conexos del flujo de datos para una consulta determinada | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | Cadena JSON / YAML para configurar el tratamiento de las consultas de mantenimiento interno del SGBD | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Delimitador para la salida csv. Un solo carácter.  Se ignora para toda salida que no sea csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | Opción `dryrun`; solo se ejecuta el preprocesador y se devuelve la salida generada a partir de la plantilla | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Archivo opcional de estilo dotenv que se carga en el entorno del proceso al iniciar (todos los comandos); la herramienta MCP [`reload_credentials`](/mcp/reload_credentials) lo vuelve a cargar bajo demanda. Se tolera que el archivo no exista; las claves con valores vacíos se omiten; las variables existentes se sobrescriben. No se carga desde `.stackqlrc`. Disponible en las versiones de StackQL posteriores a `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Límite de concurrencia para la ejecución de consultas | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Límite de concurrencia para la ejecución de consultas | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Prefijo de alias de exportación (espacio de nombres o esquema) | |
 | <span class="nowrap">`--gc`</span> | string | Cadena JSON / YAML que representa la configuración de GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Deshabilita los encabezados de columna, válido solo con `--output csv` o `--output text` | `false` |

@@ -525,11 +525,17 @@ Consulte `query_library_search` antes de escrever SQL do zero e, em seguida, use
 
 ### Prompts MCP disponíveis {#available-mcp-prompts}
 
-Um prompt estático é publicado.
+Sete prompts são publicados, sujeitos à lista de permissões `enabled_prompts` configurada.  Cada um é um workflow guiado que um agente executa com as ferramentas MCP do StackQL, e nenhum deles altera recursos na nuvem.
 
 | Prompt | Descrição |
 |--|--|
-|`write_safe_select`|Orientações para escrever consultas `SELECT` seguras em recursos do stackql.  Explica como usar `SHOW METHODS IN <provider>.<service>.<resource>` para descobrir o método de leitura certo e os parâmetros obrigatórios do `WHERE`.|
+|`getting_started`|Tour guiado e interativo pelo StackQL e pelo servidor MCP do StackQL para novos usuários: conceitos, descoberta de providers, primeiras consultas e por onde continuar.|
+|`cloud_audit`|Auditoria multinuvem (AWS, Google Cloud, Azure e Entra ID) de segurança e FinOps; retorna um relatório de achados.|
+|`cost_cleanup`|Limpeza de FinOps que encontra recursos ociosos e órfãos, estima a economia mensal e retorna uma lista priorizada dos recursos que podem ser excluídos com segurança.|
+|`drift_report`|Relatório de desvios que compara a infraestrutura como código declarada (estado ou plano do Terraform, ou um inventário colado) com os recursos ativos na nuvem; retorna uma tabela de desvios.|
+|`iam_access_review`|Revisão de identidades e acessos no AWS IAM, no Entra ID, no Okta e no GitHub; retorna uma revisão de acessos pronta para auditoria (no estilo SOC 2 ou ISO).|
+|`public_exposure_scan`|Varredura de recursos acessíveis pela internet (armazenamento público, grupos de segurança abertos, endereços IP públicos, endpoints públicos de bancos de dados, serviços do Kubernetes expostos); retorna uma tabela de exposição priorizada.|
+|`create_deploy_stack`|Orienta o usuário na geração de um stack do `stackql-deploy` (manifesto e arquivos de recursos `.iql`) com consultas testadas ao vivo.  As mutações são renderizadas para o `stackql-deploy`, nunca executadas.|
 
 * * *
 
@@ -683,7 +689,7 @@ Observe que o `stackql_mcp_client` não envia o cabeçalho `Authorization`, ent�
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

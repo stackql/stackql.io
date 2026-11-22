@@ -67,7 +67,7 @@ Cada linha de `providers` tem:
 
 <br/>
 
-Os tipos de autenticação que se autenticam fora do caminho dos bytes de credenciais (gcloud interativo, azure CLI, credenciais de cliente oauth2, cadeias de roles assumidas, assinatura OCI, null) informam `not_checked`.
+Os tipos de autenticação que se autenticam fora do caminho dos bytes de credenciais (gcloud interativo, Azure CLI, credenciais de cliente oauth2, cadeias de roles assumidas, assinatura OCI, null) informam `not_checked`.
 
 * * *
 

@@ -525,11 +525,17 @@ Consulte `query_library_search` antes de escribir SQL desde cero y, después, us
 
 ### Prompts MCP disponibles {#available-mcp-prompts}
 
-Se publica un prompt estático.
+Se publican siete prompts, sujetos a la lista de permitidos `enabled_prompts` configurada.  Cada uno es un workflow guiado que un agente ejecuta con las herramientas MCP de StackQL, y ninguno de ellos modifica recursos en la nube.
 
 | Prompt | Descripción |
 |--|--|
-|`write_safe_select`|Orientación para escribir consultas `SELECT` seguras sobre recursos de stackql.  Explica cómo usar `SHOW METHODS IN <provider>.<service>.<resource>` para descubrir el método de lectura adecuado y los parámetros `WHERE` obligatorios.|
+|`getting_started`|Recorrido guiado e interactivo por StackQL y el servidor MCP de StackQL para nuevos usuarios: conceptos, descubrimiento de providers, primeras consultas y por dónde continuar.|
+|`cloud_audit`|Auditoría de seguridad y FinOps entre nubes (AWS, Google Cloud, Azure y Entra ID); devuelve un informe de hallazgos.|
+|`cost_cleanup`|Revisión de limpieza de FinOps que encuentra recursos inactivos y huérfanos, estima el ahorro mensual y devuelve una lista priorizada de recursos que se pueden eliminar de forma segura.|
+|`drift_report`|Informe de desviación que compara la infraestructura como código declarada (estado o plan de Terraform, o un inventario pegado) con los recursos en la nube en vivo; devuelve una tabla de desviaciones.|
+|`iam_access_review`|Revisión de identidades y accesos en AWS IAM, Entra ID, Okta y GitHub; devuelve una revisión de accesos lista para auditores (al estilo de SOC 2 o ISO).|
+|`public_exposure_scan`|Análisis de recursos accesibles desde Internet (almacenamiento público, grupos de seguridad abiertos, direcciones IP públicas, endpoints de bases de datos públicos, servicios de Kubernetes expuestos); devuelve una tabla de exposición priorizada.|
+|`create_deploy_stack`|Guía al usuario en la generación de un stack de `stackql-deploy` (manifiesto y archivos de recursos `.iql`) con consultas probadas en vivo.  Las mutaciones se generan para `stackql-deploy`, nunca se ejecutan.|
 
 * * *
 
@@ -683,7 +689,7 @@ Tenga en cuenta que `stackql_mcp_client` no envía ningún encabezado `Authoriza
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

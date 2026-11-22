@@ -67,7 +67,7 @@ StackQL `v0.10.542` より後のリリースで利用できます。
 
 <br/>
 
-認証情報のバイト列を介さずに認証する認証タイプ（対話型の gcloud、azure CLI、oauth2 クライアント認証情報、ロールの引き受けチェーン、OCI 署名、null）は、`not_checked` を報告します。
+認証情報のバイト列を介さずに認証する認証タイプ（対話型の gcloud、Azure CLI、oauth2 クライアント認証情報、ロールの引き受けチェーン、OCI 署名、null）は、`not_checked` を報告します。
 
 * * *
 

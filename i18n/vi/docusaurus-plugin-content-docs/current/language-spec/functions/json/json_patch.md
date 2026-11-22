@@ -10,7 +10,7 @@ keywords:
 description: Áp dụng JSON MergePatch cho tài liệu JSON bằng SQL trong StackQL để sửa đổi hoặc hợp nhất các đối tượng JSON.
 image: "/img/stackql-featured-image.png"
 ---
-Áp dụng một JSON MergePatch (RFC-7396) cho tài liệu JSON và sửa đổi tài liệu đó theo các thao tác được chỉ định. Hàm này được dùng để thêm, sửa đổi hoặc xóa các phần tử trong đối tượng JSON nhưng coi mảng JSON là đơn vị nguyên khối.
+Áp dụng một JSON MergePatch (RFC 7396) cho tài liệu JSON và sửa đổi tài liệu đó theo các thao tác được chỉ định. Hàm này được dùng để thêm, sửa đổi hoặc xóa các phần tử trong đối tượng JSON nhưng coi mảng JSON là đơn vị nguyên khối.
 
 Xem thêm:  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

@@ -61,7 +61,7 @@ Gibt den Wert des Ausdrucks zurück, der für die angegebene nachfolgende Zeile 
 ### Auf das nächste Release vorausblicken {#look-ahead-to-the-next-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous and next release
 SELECT
     tag_name,
     name,

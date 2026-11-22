@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 云资源清单
-description: "使用 StackQL：在 shell 中交互式运行查询，通过 exec 非交互式运行，或以服务器方式运行，并在使用过程中发现 Provider、服务和资源。"
+description: "使用 StackQL：在交互式 shell 中运行查询，用 .stackqlrc 文件配置 shell，或通过 exec 以内联方式或从 IQL 输入文件非交互式运行查询。"
 image: "/img/stackql-featured-image.png"
 ---
 另请参阅：  

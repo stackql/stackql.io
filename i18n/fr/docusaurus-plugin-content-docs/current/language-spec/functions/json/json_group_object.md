@@ -34,7 +34,7 @@ __*value_column*__
 La colonne qui fournit les valeurs des objets JSON.
 
 __*grouping_column*__  
-La colonne selon laquelle les résultats sont regroupés.
+La colonne du `GROUP BY` ; ce n'est pas un argument de `JSON_GROUP_OBJECT`, qui en accepte exactement deux.  Un objet JSON est renvoyé par groupe.
 
 ## Valeur(s) renvoyée(s) {#return-values}
 Renvoie un objet JSON contenant toutes les paires clé-valeur agrégées des colonnes spécifiées, regroupées selon `grouping_column`.

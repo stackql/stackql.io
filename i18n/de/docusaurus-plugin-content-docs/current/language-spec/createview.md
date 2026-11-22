@@ -11,7 +11,6 @@ description: "CREATE VIEW in StackQL: speichert eine Abfrage, auch Cloud-übergr
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Erstellt eine `view` oder eine `materialized view` innerhalb einer Sitzung, die eine lange oder komplexe `stackql`-Abfrage repräsentieren kann.  
 

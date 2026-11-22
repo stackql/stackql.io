@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - kiểm kê đám mây
-description: "Các lệnh tiện ích của shell StackQL như clear và sleep, cùng cú pháp và thời điểm sử dụng chúng trong phiên tương tác và tập lệnh."
+description: "Các lệnh tiện ích clear và sleep của shell StackQL: công dụng của từng lệnh, kèm một ví dụ."
 image: "/img/stackql-featured-image.png"
 ---
 

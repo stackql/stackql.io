@@ -39,7 +39,7 @@ StackQL 的 MCP 伺服器內建於引擎二進位檔中，將 StackQL 的功能�
 - **身分**：`server_info`，提供版本、後端、登錄庫、模式；在需要時呼叫（用於診斷遭拒絕或受管控的作業，或檢查特定版本的行為），而不是在工作階段開始時呼叫。
 - **憑證**：`reload_credentials`，在工作階段進行中將 `--env.file` dotenv 檔案重新載入處理程序環境，並回報各 Provider 的憑證解析狀態；只包含名稱與狀態，絕不包含祕密值（於 v0.10.542 之後的發行版本提供）。
 
-另有一個靜態提示詞 `write_safe_select`，用來教導方法探索的工作流程。
+另發布 7 個提示詞：`getting_started`（為新使用者提供的引導式導覽）、`cloud_audit`、`cost_cleanup`、`drift_report`、`iam_access_review`、`public_exposure_scan` 與 `create_deploy_stack`，每個都是代理程式使用上述工具執行的引導式工作流程，不會變更雲端資源。
 
 ## 安全契約 {#the-safety-contract}
 

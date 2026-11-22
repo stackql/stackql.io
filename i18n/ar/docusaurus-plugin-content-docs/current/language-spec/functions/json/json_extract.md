@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-تُنفذ الدالة `json_extract` باستخدام الدالة `json_extract_path_text` إذا كنت تستخدم stackql مع واجهة SQL الخلفية `postgres`
+تُنفذ الدالة `json_extract` باستخدام الدالة `json_extract_path_text` إذا كنت تستخدم stackql مع واجهة SQL الخلفية `postgres`. تقسم الدالة المسار عند `.` وتحذف الرمز `$` البادئ، لذا يصبح `'$.a.b'` المفتاحين `'a'` و`'b'`؛ وتمرر فهرس المصفوفة مثل `$[0]` كمفتاح كائن، فلا يحدد عنصرًا من المصفوفة مع واجهة SQL الخلفية هذه.
 
 :::
 

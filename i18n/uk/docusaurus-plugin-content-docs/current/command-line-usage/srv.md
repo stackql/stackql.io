@@ -11,7 +11,7 @@ description: "Команда stackql srv запускає StackQL як серв�
 image: "/img/stackql-featured-image.png"
 ---
 
-Команда для запуску StackQL як служби, до якої потім можуть звертатися клієнти [мережевого протоколу Postgres](https://www.postgresql.org/docs/current/protocol.html), автентифіковані за допомогою mTLS. Команда `srv` також може запускати сервер [Model Context Protocol (MCP)](/command-line-usage/mcp) поряд із сервером мережевого протоколу PostgreSQL, що забезпечує доступ за двома протоколами як для традиційних клієнтів баз даних, так і для агентів ШІ.
+Команда для запуску StackQL як служби, до якої потім можуть звертатися клієнти [мережевого протоколу Postgres](https://www.postgresql.org/docs/current/protocol.html), яких можна автентифікувати за допомогою mTLS. Команда `srv` також може запускати сервер [Model Context Protocol (MCP)](/command-line-usage/mcp) поряд із сервером мережевого протоколу PostgreSQL, що забезпечує доступ за двома протоколами як для традиційних клієнтів баз даних, так і для агентів ШІ.
 
 * * * 
 

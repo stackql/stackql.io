@@ -11,7 +11,7 @@ description: "Der Befehl stackql srv betreibt StackQL als PostgreSQL-Wire-Protoc
 image: "/img/stackql-featured-image.png"
 ---
 
-Befehl zum Starten von StackQL als Dienst, auf den anschließend [Postgres-Wire-Protocol](https://www.postgresql.org/docs/current/protocol.html)-Clients mit mTLS-Authentifizierung zugreifen können. Der Befehl `srv` kann zusätzlich zum PostgreSQL-Wire-Protocol-Server einen [Model Context Protocol (MCP)](/command-line-usage/mcp)-Server betreiben und so den Zugriff über beide Protokolle für klassische Datenbank-Clients und KI-Agenten ermöglichen.
+Befehl zum Starten von StackQL als Dienst, auf den anschließend [Postgres-Wire-Protocol](https://www.postgresql.org/docs/current/protocol.html)-Clients zugreifen können, die mit mTLS authentifiziert werden können. Der Befehl `srv` kann zusätzlich zum PostgreSQL-Wire-Protocol-Server einen [Model Context Protocol (MCP)](/command-line-usage/mcp)-Server betreiben und so den Zugriff über beide Protokolle für klassische Datenbank-Clients und KI-Agenten ermöglichen.
 
 * * * 
 

@@ -28,7 +28,7 @@ Alles hier Beschriebene gilt nur für die aktuelle Sitzung.  Unabhängige Verbin
 |--|--|--|
 | `provider` | Ja | Der kanonische Provider, auf den der Alias aufgelöst wird, zum Beispiel `aws`. |
 | `tenancy` | Ja | Ein Gruppierungslabel wie ein Konto- oder Mandantenname.  StackQL prüft es nicht gegen den Provider. |
-| `auth` | Eines von `auth` oder `auth_secret` | Ein Authentifizierungsdokument mit derselben Struktur wie der Eintrag des Providers im [`--auth`](/command-line-usage/global-flags)-Objekt.  Der Alias übernimmt nicht die Anmeldedaten des kanonischen Providers. |
+| `auth` | Eines von `auth` oder `auth_secret` | Ein Authentifizierungsdokument im Alias-Format, das sich vom Eintrag des Providers im [`--auth`](/command-line-usage/global-flags)-Objekt unterscheidet: Für AWS lauten die Schlüssel `access_key_id_env_var` und `secret_access_key_env_var`, nicht `keyIDenvvar` und `credentialsenvvar`, und ein Schlüssel, den das Alias-Format nicht kennt, schlägt mit `invalid session configuration field or type` fehl.  Der Alias übernimmt nicht die Anmeldedaten des kanonischen Providers. |
 | `auth_secret` | Eines von `auth` oder `auth_secret` | Der Name eines [Sitzungs-Secrets](#session-secrets), das das Authentifizierungsdokument enthält. |
 | `params` | Nein | Standardwerte für deklarierte Provider-Parameter, einschließlich deklarierter Server-Parameter.  Ein Prädikat in der Abfrage überschreibt einen Standardwert. |
 | `tuning` | Nein | Die Limits `max_concurrent` und `max_per_host` für die Anfragen des Alias.  Aliasse, die sich Provider und Tenancy teilen, teilen sich diese Steuerung und müssen identisches Tuning deklarieren. |

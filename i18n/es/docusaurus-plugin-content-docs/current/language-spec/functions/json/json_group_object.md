@@ -34,7 +34,7 @@ __*value_column*__
 La columna que proporciona los valores de los objetos JSON.
 
 __*grouping_column*__  
-La columna por la que se agrupan los resultados.
+La columna de `GROUP BY`; no es un argumento de `JSON_GROUP_OBJECT`, que recibe exactamente dos.  Se devuelve un objeto JSON por grupo.
 
 ## Valor(es) devuelto(s) {#return-values}
 Devuelve un objeto JSON que contiene todos los pares clave-valor agregados de las columnas especificadas, agrupados según `grouping_column`.

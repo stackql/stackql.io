@@ -64,7 +64,7 @@ IAM 바인딩은 다음 수준 중 어디에서나 생성할 수 있습니다:
 
 ### `iql/iam.iql` 파일 {#iqliamiql-file}
 
-`stackql` 명령으로 실행하는 기본 파일입니다. 이 파일은 `data/iam.jsonnet` 파일을 사용하여 `data/iam/bindings.json` 파일의 데이터로 생성된 트랜스파일된 정책 바인딩을 렌더링하고 적용합니다.
+`stackql` 명령으로 실행하는 기본 파일입니다. 이 파일은 `data/iam.jsonnet` 파일을 사용하여 `data/iam/custom_roles.json` 파일과 `data/iam/bindings.json` 파일의 데이터로 생성된 트랜스파일된 정책 바인딩을 렌더링하고 적용합니다.
 
 > 이 파일은 수정할 필요가 없습니다
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-이 파일은 `iql/iam.iql` 파일을 전처리하는 데 사용되는 데이터를 제공하며, 이 데이터는 `data/iam/bindings.json` 파일에서 가져옵니다.
+이 파일은 `iql/iam.iql` 파일을 전처리하는 데 사용되는 데이터를 제공하며, 이 데이터는 `data/iam/custom_roles.json` 파일과 `data/iam/bindings.json` 파일에서 가져옵니다.
 
 > 이 파일은 수정할 필요가 없습니다
 

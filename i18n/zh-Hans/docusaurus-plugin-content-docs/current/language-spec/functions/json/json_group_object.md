@@ -34,7 +34,7 @@ __*value_column*__
 为 JSON 对象提供值的列。
 
 __*grouping_column*__  
-对结果进行分组所依据的列。
+`GROUP BY` 列；它不是 `JSON_GROUP_OBJECT` 的参数，该函数恰好接受两个参数。每个分组返回一个 JSON 对象。
 
 ## 返回值 {#return-values}
 返回一个 JSON 对象，包含指定列中所有聚合的键值对，并按 `grouping_column` 分组。

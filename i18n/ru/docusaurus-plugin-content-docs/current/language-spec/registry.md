@@ -11,7 +11,6 @@ description: "REGISTRY в StackQL: вывод списка провайдеро�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Выводит список провайдеров, доступных в настроенном реестре провайдеров, или загружает провайдер в локальную установку.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### Установка конкретной версии провайдера {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

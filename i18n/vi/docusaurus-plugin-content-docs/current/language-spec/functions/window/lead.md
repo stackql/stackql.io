@@ -61,7 +61,7 @@ Trả về giá trị của biểu thức được tính trên hàng đứng sau
 ### Nhìn tới bản phát hành tiếp theo {#look-ahead-to-the-next-release}
 
 ```sql
--- Compare each release to previous and next release dates
+-- Compare each release to the previous and next release
 SELECT
     tag_name,
     name,

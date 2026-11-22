@@ -11,7 +11,6 @@ description: "StackQL の DROP VIEW：CREATE VIEW で作成したビューまた
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 セッション内の `view` または `materialized view` を削除します。  
 

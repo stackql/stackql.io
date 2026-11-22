@@ -11,7 +11,6 @@ description: "StackQL의 REGISTRY: 프로바이더 레지스트리의 프로바�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 구성된 프로바이더 레지스트리에서 사용할 수 있는 프로바이더를 나열하거나, 프로바이더를 로컬 설치 환경으로 가져옵니다.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### 프로바이더의 특정 버전 설치 {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

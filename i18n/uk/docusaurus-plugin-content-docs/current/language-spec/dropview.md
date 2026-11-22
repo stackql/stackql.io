@@ -11,7 +11,6 @@ description: "DROP VIEW у StackQL: видалення подання або м�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Видаляє подання (`view`) або матеріалізоване подання (`materialized view`) у межах сеансу.  
 

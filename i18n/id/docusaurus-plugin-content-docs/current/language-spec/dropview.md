@@ -11,7 +11,6 @@ description: "DROP VIEW di StackQL: menghapus tampilan atau tampilan terwujud ya
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Menghapus `view` atau `materialized view` dalam sesi.
 

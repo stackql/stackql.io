@@ -11,7 +11,6 @@ description: "StackQL의 CREATE VIEW: 클라우드 간 UNION을 포함한 쿼리
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 세션 내에서 `view` 또는 `materialized view`를 생성합니다. 이를 사용하여 길거나 복잡한 `stackql` 쿼리를 나타낼 수 있습니다.
 

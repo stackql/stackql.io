@@ -34,7 +34,7 @@ __*value_column*__
 提供 JSON 物件之值的資料行。
 
 __*grouping_column*__  
-用來將結果分組的資料行。
+`GROUP BY` 資料行；它不是 `JSON_GROUP_OBJECT` 的引數，該函式恰好接受兩個引數。每個群組會傳回一個 JSON 物件。
 
 ## 傳回值 {#return-values}
 傳回包含指定資料行中所有彙總鍵值對的 JSON 物件，並依 `grouping_column` 分組。

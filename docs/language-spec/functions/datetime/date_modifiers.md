@@ -26,7 +26,7 @@ In StackQL datetime functions, a date or time value can be followed by zero or m
 | start of month       | Backward to the beginning of the month                                |
 | start of year        | Backward to the beginning of the year                                 |
 | start of day         | Backward to the beginning of the day                                  |
-| weekday N            | Advance a date forward to the next date where the weekday number is N |
+| weekday N            | Advance a date forward to the next date where the weekday number is N; a date already on weekday N is returned unchanged |
 | localtime            | Return local time                                                     |
 | utc                  | Return UTC time                                                       |
 | unixepoch            | Unix time                                                             |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Get the next specified weekday after a given date {#get-the-next-specified-weekday-after-a-given-date}
+### Get the specified weekday on or after a given date {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

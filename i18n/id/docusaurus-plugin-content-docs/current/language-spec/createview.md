@@ -11,7 +11,6 @@ description: "CREATE VIEW di StackQL: menyimpan kueri, termasuk UNION lintas clo
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Membuat `view` atau `materialized view` dalam sesi, yang dapat digunakan untuk merepresentasikan kueri `stackql` yang panjang atau kompleks.
 

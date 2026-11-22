@@ -11,7 +11,6 @@ description: "CREATE VIEW у StackQL: збереження запиту, зок�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Створює подання (`view`) або матеріалізоване подання (`materialized view`) у межах сеансу, яке можна використовувати замість довгого або складного запиту `stackql`.  
 

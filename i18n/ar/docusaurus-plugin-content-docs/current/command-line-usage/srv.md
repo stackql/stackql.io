@@ -11,7 +11,7 @@ description: "يشغل الأمر stackql srv نظام StackQL كخادم لبر
 image: "/img/stackql-featured-image.png"
 ---
 
-الأمر المستخدم لتشغيل StackQL كخدمة يمكن بعد ذلك الوصول إليها من خلال عملاء [بروتوكول الاتصال الخاص بـ Postgres](https://www.postgresql.org/docs/current/protocol.html) الذين تتم مصادقتهم باستخدام mTLS. يمكن للأمر `srv` أيضًا تشغيل خادم [Model Context Protocol (MCP)](/command-line-usage/mcp) إلى جانب خادم بروتوكول الاتصال الخاص بـ PostgreSQL، مما يتيح الوصول عبر بروتوكولين لكل من عملاء قواعد البيانات التقليدية ووكلاء الذكاء الاصطناعي.
+الأمر المستخدم لتشغيل StackQL كخدمة يمكن بعد ذلك الوصول إليها من خلال عملاء [بروتوكول الاتصال الخاص بـ Postgres](https://www.postgresql.org/docs/current/protocol.html) الذين يمكن مصادقتهم باستخدام mTLS. يمكن للأمر `srv` أيضًا تشغيل خادم [Model Context Protocol (MCP)](/command-line-usage/mcp) إلى جانب خادم بروتوكول الاتصال الخاص بـ PostgreSQL، مما يتيح الوصول عبر بروتوكولين لكل من عملاء قواعد البيانات التقليدية ووكلاء الذكاء الاصطناعي.
 
 * * * 
 

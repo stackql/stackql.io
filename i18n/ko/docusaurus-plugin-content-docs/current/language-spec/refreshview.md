@@ -11,7 +11,6 @@ description: "StackQL의 REFRESH VIEW: 구체화된 뷰를 정의하는 쿼리�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 세션 내에서 `materialized view`의 데이터를 새로 고칩니다.  
 

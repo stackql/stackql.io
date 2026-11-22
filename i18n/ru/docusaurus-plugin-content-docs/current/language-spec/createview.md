@@ -11,7 +11,6 @@ description: "CREATE VIEW в StackQL: сохранение запроса, в т
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Создает в рамках сеанса `view` или `materialized view`, с помощью которого можно представить длинный или сложный запрос `stackql`.  
 

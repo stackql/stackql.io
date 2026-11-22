@@ -11,7 +11,6 @@ description: "StackQL 中的 REGISTRY：列出 Provider 登錄庫中的 Provider
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 列出已設定之 Provider 登錄庫中可用的 Provider，或將 Provider 提取到本機安裝中。
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### 安裝 Provider 的特定版本 {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

@@ -39,7 +39,7 @@ Fifteen tools, each returning a rendered text view for the LLM plus a typed stru
 - **Identity**: `server_info` - version, backend, registry, mode; called on demand (to diagnose a refused or gated operation, or to check version-specific behavior), not at session start.
 - **Credentials**: `reload_credentials` - re-sources the `--env.file` dotenv file into the process environment mid-session and reports per-provider credential resolution status; names and statuses only, never secret values (available in releases after v0.10.542).
 
-One static prompt, `write_safe_select`, teaches the method-discovery workflow.
+Seven prompts are published: `getting_started` (a guided tour for new users), `cloud_audit`, `cost_cleanup`, `drift_report`, `iam_access_review`, `public_exposure_scan` and `create_deploy_stack`, each a guided workflow that an agent runs with the tools above without changing cloud resources.
 
 ## The safety contract {#the-safety-contract}
 

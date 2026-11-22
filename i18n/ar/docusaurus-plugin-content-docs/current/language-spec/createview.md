@@ -11,7 +11,6 @@ description: "CREATE VIEW في StackQL: حفظ استعلام، بما في ذل
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 تنشئ طريقة عرض (`view`) أو طريقة عرض مجسدة (`materialized view`) داخل جلسة، ويمكن استخدامها لتمثيل استعلام `stackql` طويل أو معقد.  
 

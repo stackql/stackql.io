@@ -525,11 +525,17 @@ SQL を一から書く前に `query_library_search` を確認し、次に `query
 
 ### 利用可能な MCP プロンプト {#available-mcp-prompts}
 
-静的なプロンプトが 1 つ公開されています。
+設定された `enabled_prompts` 許可リストの範囲で、7 つのプロンプトが公開されます。各プロンプトは、エージェントが StackQL MCP ツールを使って実行するガイド付きのワークフローで、いずれもクラウドリソースを変更しません。
 
 | プロンプト | 説明 |
 |--|--|
-|`write_safe_select`|stackql のリソースに対して安全な `SELECT` クエリを書くためのガイダンス。`SHOW METHODS IN <provider>.<service>.<resource>` を使用して、適切な読み取りメソッドと必須の `WHERE` パラメーターを見つける方法を説明します。|
+|`getting_started`|新しいユーザー向けの、StackQL と StackQL MCP サーバーの対話型ガイドツアー：概念、プロバイダーの検出、最初のクエリ、次のステップ。|
+|`cloud_audit`|クロスクラウド（AWS、Google Cloud、Azure、Entra ID）のセキュリティと FinOps の監査。検出結果のレポートを返します。|
+|`cost_cleanup`|FinOps のクリーンアップ。アイドル状態のリソースと孤立したリソースを見つけ、月々の削減額を見積もり、安全に削除できるリソースを優先順位付きのリストで返します。|
+|`drift_report`|宣言された Infrastructure as Code（Terraform のステートまたはプラン、または貼り付けたインベントリ）をライブのクラウドリソースと比較するドリフトレポート。ドリフトの表を返します。|
+|`iam_access_review`|AWS IAM、Entra ID、Okta、GitHub にわたる ID とアクセスのレビュー。監査人にそのまま提出できるアクセスレビュー（SOC 2 または ISO の形式）を返します。|
+|`public_exposure_scan`|インターネットから到達可能なリソース（パブリックストレージ、開放されたセキュリティグループ、パブリック IP アドレス、パブリックなデータベースエンドポイント、公開された Kubernetes サービス）のスキャン。優先順位付きの露出状況の表を返します。|
+|`create_deploy_stack`|ライブでテストしたクエリを使って、`stackql-deploy` スタック（マニフェストと `.iql` リソースファイル）の生成をユーザーに案内します。ミューテーションは `stackql-deploy` 用にレンダリングされ、実行されることはありません。|
 
 * * *
 
@@ -683,7 +689,7 @@ python cicd/python/build.py --build-mcp-client
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

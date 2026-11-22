@@ -11,7 +11,7 @@ description: "The stackql srv command runs StackQL as a PostgreSQL wire protocol
 image: "/img/stackql-featured-image.png"
 ---
 
-Command used to launch StackQL as a service, which can then be accessed by [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
+Command used to launch StackQL as a service, which can then be accessed by [Postgres wire protocol](https://www.postgresql.org/docs/current/protocol.html) clients, which can be authenticated using mTLS. The `srv` command can also run a [Model Context Protocol (MCP)](/command-line-usage/mcp) server alongside the PostgreSQL wire protocol server, enabling dual-protocol access for both traditional database clients and AI agents.
 
 * * * 
 

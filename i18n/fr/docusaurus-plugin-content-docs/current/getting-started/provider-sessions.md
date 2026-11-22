@@ -28,7 +28,7 @@ Tout ce qui est décrit ici est limité à la session en cours. Des connexions i
 |--|--|--|
 | `provider` | Oui | Le provider canonique vers lequel l'alias est résolu, par exemple `aws`. |
 | `tenancy` | Oui | Un libellé de regroupement, tel qu'un nom de compte ou de tenant. StackQL ne le vérifie pas auprès du provider. |
-| `auth` | L'un de `auth` ou `auth_secret` | Un document d'authentification de même forme que l'entrée du provider dans l'objet [`--auth`](/command-line-usage/global-flags). L'alias n'emprunte pas les identifiants du provider canonique. |
+| `auth` | L'un de `auth` ou `auth_secret` | Un document d'authentification au format des alias, qui diffère de l'entrée du provider dans l'objet [`--auth`](/command-line-usage/global-flags) : pour AWS, les clés sont `access_key_id_env_var` et `secret_access_key_env_var`, et non `keyIDenvvar` et `credentialsenvvar`, et une clé inconnue du format des alias provoque l'erreur `invalid session configuration field or type`. L'alias n'emprunte pas les identifiants du provider canonique. |
 | `auth_secret` | L'un de `auth` ou `auth_secret` | Le nom d'un [secret de session](#session-secrets) contenant le document d'authentification. |
 | `params` | Non | Valeurs par défaut des paramètres déclarés du provider, y compris les paramètres de serveur déclarés. Un prédicat dans la requête remplace une valeur par défaut. |
 | `tuning` | Non | Limites `max_concurrent` et `max_per_host` pour les requêtes HTTP de l'alias. Les alias qui partagent un provider et une tenancy partagent ces contrôles et doivent déclarer un réglage identique. |

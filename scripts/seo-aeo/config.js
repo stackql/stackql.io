@@ -68,8 +68,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
-    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 200, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 200, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,

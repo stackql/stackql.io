@@ -67,7 +67,7 @@ Setiap baris `providers` berisi:
 
 <br/>
 
-Tipe autentikasi yang melakukan autentikasi di luar jalur byte kredensial (gcloud interaktif, azure CLI, kredensial klien oauth2, rantai pengambilan peran, penandatanganan OCI, null) melaporkan `not_checked`.
+Tipe autentikasi yang melakukan autentikasi di luar jalur byte kredensial (gcloud interaktif, Azure CLI, kredensial klien oauth2, rantai pengambilan peran, penandatanganan OCI, null) melaporkan `not_checked`.
 
 * * *
 

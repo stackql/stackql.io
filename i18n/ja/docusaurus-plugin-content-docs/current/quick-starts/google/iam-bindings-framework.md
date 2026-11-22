@@ -64,7 +64,7 @@ IAM バインディングは、次のいずれのレベルでも作成できま�
 
 ### `iql/iam.iql` ファイル {#iqliamiql-file}
 
-これは `stackql` によって実行されるメインファイルです。`data/iam.jsonnet` を使用して、`data/iam/bindings.json` のデータから生成されたトランスパイル済みのポリシーバインディングをレンダリングし、適用します。
+これは `stackql` によって実行されるメインファイルです。`data/iam.jsonnet` を使用して、`data/iam/custom_roles.json` と `data/iam/bindings.json` のデータから生成されたトランスパイル済みのポリシーバインディングをレンダリングし、適用します。
 
 > このファイルを変更する必要はありません
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-このファイルは、`iql/iam.iql` の前処理に使用するデータを、`data/iam/bindings.json` から取得して提供します。
+このファイルは、`iql/iam.iql` の前処理に使用するデータを、`data/iam/custom_roles.json` と `data/iam/bindings.json` から取得して提供します。
 
 > このファイルを変更する必要はありません
 

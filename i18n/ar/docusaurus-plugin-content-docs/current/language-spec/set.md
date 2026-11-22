@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### ربط اسم مستعار لموفر {#bind-a-provider-alias}
 
-الاسم المستعار للموفر هو مثيل ثان من الموفر يتم تكوينه بشكل مستقل، ويُستخدم بدلًا من اسم الموفر في الاستعلامات. القيمة مستند JSON داخل سلسلة نصية: يسمي `provider` الموفر الأساسي، ويعطي `tenancy` تسمية للحساب، و`auth` كتلة بيانات اعتماد بالشكل نفسه المستخدم في `--auth`، ويوفر `params` قيمًا افتراضية لمعلمات الطلب مثل `region`. بعد ذلك تعمل الاستعلامات على `production.s3.buckets` باستخدام بيانات الاعتماد هذه، بينما يحتفظ `aws.s3.buckets` بتكوين بدء التشغيل. توجد القائمة الكاملة للمفاتيح في [جلسات الموفر](/getting-started/provider-sessions#provider-aliases).
+الاسم المستعار للموفر هو مثيل ثان من الموفر يتم تكوينه بشكل مستقل، ويُستخدم بدلًا من اسم الموفر في الاستعلامات. القيمة مستند JSON داخل سلسلة نصية: يسمي `provider` الموفر الأساسي، ويعطي `tenancy` تسمية للحساب، و`auth` كتلة بيانات اعتماد بتنسيق الاسم المستعار (بالنسبة إلى AWS: `access_key_id_env_var` و`secret_access_key_env_var`، وليس المفتاحين `keyIDenvvar` و`credentialsenvvar` المستخدمين في `--auth`)، ويوفر `params` قيمًا افتراضية لمعلمات الطلب مثل `region`. بعد ذلك تعمل الاستعلامات على `production.s3.buckets` باستخدام بيانات الاعتماد هذه، بينما يحتفظ `aws.s3.buckets` بتكوين بدء التشغيل. توجد القائمة الكاملة للمفاتيح في [جلسات الموفر](/getting-started/provider-sessions#provider-aliases).
 
 ```sql
 SET "$.providers.production" = '{

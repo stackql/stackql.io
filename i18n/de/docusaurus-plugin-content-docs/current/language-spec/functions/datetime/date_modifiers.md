@@ -26,7 +26,7 @@ In den Datetime-Funktionen von StackQL können auf einen Datums- oder Zeitwert n
 | start of month       | Zurück zum Beginn des Monats                                                        |
 | start of year        | Zurück zum Beginn des Jahres                                                        |
 | start of day         | Zurück zum Beginn des Tages                                                         |
-| weekday N            | Verschiebt ein Datum vorwärts auf das nächste Datum, dessen Wochentagsnummer N ist |
+| weekday N            | Verschiebt ein Datum vorwärts auf das nächste Datum, dessen Wochentagsnummer N ist; ein Datum, das bereits auf Wochentag N fällt, wird unverändert zurückgegeben |
 | localtime            | Gibt die lokale Zeit zurück                                                         |
 | utc                  | Gibt die UTC-Zeit zurück                                                            |
 | unixepoch            | Unix-Zeit                                                                           |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Den nächsten angegebenen Wochentag nach einem bestimmten Datum ermitteln {#get-the-next-specified-weekday-after-a-given-date}
+### Den angegebenen Wochentag am oder nach einem bestimmten Datum ermitteln {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

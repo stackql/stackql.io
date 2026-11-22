@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 雲端資源清單
-description: "StackQL shell 的公用程式命令（例如 clear 與 sleep）及其語法，以及在互動式工作階段與指令碼中的使用時機。"
+description: "StackQL shell 的公用程式命令 clear 與 sleep：各自的作用及範例。"
 image: "/img/stackql-featured-image.png"
 ---
 

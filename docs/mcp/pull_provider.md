@@ -13,7 +13,7 @@ image: "/img/stackql-featured-image.png"
 
 Installs a single provider from the StackQL registry into the local approot cache.  When `version` is omitted, the latest published version is pulled.
 
-Writes only local cache state -- there is no cloud control or data plane effect, so this tool is allowed in every server mode (including `read_only`).  Use [`list_registry`](/mcp/list_registry) to discover the provider name and the versions available before pulling.
+Writes only local cache state - there is no cloud control or data plane effect, so this tool is allowed in every server mode (including `read_only`).  Use [`list_registry`](/mcp/list_registry) to discover the provider name and the versions available before pulling.
 
 See also:
 [[ MCP overview ]](/command-line-usage/mcp) [[ `list_registry` ]](/mcp/list_registry) [[ `list_providers` ]](/mcp/list_providers) [[ Registry command ]](/command-line-usage/registry)

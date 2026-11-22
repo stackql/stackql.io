@@ -26,7 +26,7 @@ The easiest way to use the StackQL MCP server with Claude Desktop is to install 
 
 You can also view the listing directly at [claude.ai/directory](https://claude.ai/directory/connectors/ant.dir.gh.stackql.stackql).
 
-This installs the StackQL MCP server in-process for your platform: the listing serves a combined multiplatform bundle containing signed binaries for macOS universal, Windows x64, and Linux x64 and arm64, and Claude Desktop selects the right one for your machine automatically. For native Windows ARM64, install the separate `windows-arm64` bundle from the [downloads below](#install-from-a-downloaded-bundle). The Windows binaries are Authenticode-signed and the macOS binary is Apple-notarised - the same binaries as the standalone StackQL release.
+This installs the StackQL MCP server in-process for your platform: the listing serves a combined multiplatform bundle containing signed binaries for macOS universal, Windows x64, and Linux x64 and arm64, and Claude Desktop selects the right one for your machine automatically. For native Windows ARM64, install the separate `windows-arm64` bundle from the [downloads below](#install-from-a-downloaded-bundle). The Windows binaries are Authenticode-signed and the macOS binary is Apple-notarized - the same binaries as the standalone StackQL release.
 
 ![Installing the StackQL connector](/img/stackql-anthropic-directory-install.png)
 
@@ -52,7 +52,7 @@ Download the bundle for your platform from the latest release:
 
 <br/>
 
-Then in Claude Desktop: **Settings -> Extensions -> Install Extension** and select the downloaded file. The embedded binary is Authenticode-signed (Windows) and Apple-notarised (macOS); each bundle has a `.sha256` checksum alongside it on the [release page](https://github.com/stackql/stackql/releases/latest). To verify before installing:
+Then in Claude Desktop: **Settings -> Extensions -> Install Extension** and select the downloaded file. The embedded binary is Authenticode-signed (Windows) and Apple-notarized (macOS); each bundle has a `.sha256` checksum alongside it on the [release page](https://github.com/stackql/stackql/releases/latest). To verify before installing:
 
 ```bash
 # macOS / Linux

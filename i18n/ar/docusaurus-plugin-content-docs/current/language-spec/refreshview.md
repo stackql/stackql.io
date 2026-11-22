@@ -11,7 +11,6 @@ description: "REFRESH VIEW في StackQL: إعادة بناء النتائج ال
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 تعمل على تحديث البيانات في طريقة عرض مجسدة (`materialized view`) ضمن جلسة.  
 

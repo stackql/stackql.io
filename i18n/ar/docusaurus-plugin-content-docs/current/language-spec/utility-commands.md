@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - جرد الموارد السحابية
-description: "الأوامر المساعدة في واجهة أوامر StackQL مثل clear وsleep، مع بناء الجملة الخاص بها ومتى تستخدمها في الجلسات التفاعلية والبرامج النصية."
+description: "الأمران المساعدان clear وsleep في واجهة أوامر StackQL: ما يفعله كل منهما، مع مثال."
 image: "/img/stackql-featured-image.png"
 ---
 

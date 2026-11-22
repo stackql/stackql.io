@@ -28,7 +28,7 @@ Tudo o que é descrito aqui tem como escopo a sessão atual.  Conexões independ
 |--|--|--|
 | `provider` | Sim | O provider canônico para o qual o alias é resolvido, por exemplo `aws`. |
 | `tenancy` | Sim | Um rótulo de agrupamento, como o nome de uma conta ou de um tenant.  O StackQL não o verifica junto ao provider. |
-| `auth` | Um entre `auth` e `auth_secret` | Um documento de autenticação com o mesmo formato da entrada do provider no objeto [`--auth`](/command-line-usage/global-flags).  O alias não usa as credenciais do provider canônico. |
+| `auth` | Um entre `auth` e `auth_secret` | Um documento de autenticação no formato de alias, que difere da entrada do provider no objeto [`--auth`](/command-line-usage/global-flags): para a AWS, as chaves são `access_key_id_env_var` e `secret_access_key_env_var`, não `keyIDenvvar` e `credentialsenvvar`, e uma chave que o formato de alias não reconhece gera o erro `invalid session configuration field or type`.  O alias não usa as credenciais do provider canônico. |
 | `auth_secret` | Um entre `auth` e `auth_secret` | O nome de um [segredo de sessão](#session-secrets) que contém o documento de autenticação. |
 | `params` | Não | Valores padrão para os parâmetros declarados do provider, incluindo os parâmetros de servidor declarados.  Um predicado na consulta substitui um valor padrão. |
 | `tuning` | Não | Limites `max_concurrent` e `max_per_host` para as solicitações do alias.  Aliases que compartilham provider e tenancy compartilham esses controles e precisam declarar o mesmo tuning. |

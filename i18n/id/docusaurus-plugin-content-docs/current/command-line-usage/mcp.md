@@ -525,11 +525,17 @@ Gunakan `query_library_search` sebelum menulis SQL dari awal, lalu gunakan `quer
 
 ### Prompt MCP yang tersedia {#available-mcp-prompts}
 
-Satu prompt statis dipublikasikan.
+Tujuh prompt dipublikasikan, tergantung pada daftar izin `enabled_prompts` yang dikonfigurasi.  Masing-masing merupakan workflow terpandu yang dijalankan agen dengan alat MCP StackQL, dan tidak satu pun yang mengubah sumber daya cloud.
 
 | Prompt | Deskripsi |
 |--|--|
-|`write_safe_select`|Panduan untuk menulis kueri `SELECT` yang aman terhadap sumber daya stackql.  Menjelaskan cara menggunakan `SHOW METHODS IN <provider>.<service>.<resource>` untuk menemukan metode baca yang tepat dan parameter `WHERE` yang wajib.|
+|`getting_started`|Tur terpandu interaktif tentang StackQL dan server MCP StackQL untuk pengguna baru: konsep, penemuan provider, kueri pertama, dan langkah berikutnya.|
+|`cloud_audit`|Audit keamanan dan FinOps lintas cloud (AWS, Google Cloud, Azure, dan Entra ID); mengembalikan laporan temuan.|
+|`cost_cleanup`|Pembersihan FinOps yang menemukan sumber daya yang menganggur dan telantar, memperkirakan penghematan bulanan, dan mengembalikan daftar prioritas sumber daya yang aman untuk dihapus.|
+|`drift_report`|Laporan penyimpangan yang membandingkan infrastruktur sebagai kode yang dideklarasikan (state atau plan Terraform, atau inventaris yang ditempelkan) dengan sumber daya cloud yang aktif; mengembalikan tabel penyimpangan.|
+|`iam_access_review`|Tinjauan identitas dan akses di AWS IAM, Entra ID, Okta, dan GitHub; mengembalikan tinjauan akses yang siap untuk auditor (gaya SOC 2 atau ISO).|
+|`public_exposure_scan`|Pemindaian sumber daya yang dapat dijangkau dari internet (penyimpanan publik, grup keamanan terbuka, alamat IP publik, endpoint database publik, layanan Kubernetes yang terekspos); mengembalikan tabel eksposur yang diprioritaskan.|
+|`create_deploy_stack`|Memandu pengguna membuat stack `stackql-deploy` (manifest dan file sumber daya `.iql`) dengan kueri yang diuji secara langsung.  Mutasi dirender untuk `stackql-deploy`, tidak pernah dijalankan.|
 
 * * *
 
@@ -683,7 +689,7 @@ Perhatikan bahwa `stackql_mcp_client` tidak mengirim header `Authorization`, seh
   --client-type=http \
   --url=http://127.0.0.1:9912
 
-# Server identity, mode, audit / registry context
+# Server identity, mode and registry
 ./build/stackql_mcp_client exec \
   --client-type=http \
   --url=http://127.0.0.1:9912 \

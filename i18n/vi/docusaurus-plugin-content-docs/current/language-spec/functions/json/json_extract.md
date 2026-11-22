@@ -25,7 +25,7 @@ Sử dụng câu lệnh [**DESCRIBE**](/language-spec/describe) để tìm các 
 
 :::note 
 
-Hàm `json_extract` được hiện thực bằng hàm `json_extract_path_text` nếu bạn sử dụng stackql với backend SQL `postgres`
+Hàm `json_extract` được hiện thực bằng hàm `json_extract_path_text` nếu bạn sử dụng stackql với backend SQL `postgres`. Đường dẫn được tách theo `.` và ký tự `$` ở đầu được lược bỏ, vì vậy `'$.a.b'` trở thành các khóa `'a'` và `'b'`; một chỉ số mảng như `$[0]` được chuyển nguyên trạng thành một khóa đối tượng và không chọn phần tử mảng trên backend đó.
 
 :::
 

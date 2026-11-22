@@ -26,7 +26,7 @@ Trong các hàm datetime của StackQL, một giá trị ngày hoặc giờ có 
 | start of month       | Lùi về đầu tháng |
 | start of year        | Lùi về đầu năm |
 | start of day         | Lùi về đầu ngày |
-| weekday N            | Đẩy một ngày về phía trước tới ngày kế tiếp có số thứ tự ngày trong tuần là N |
+| weekday N            | Đẩy một ngày về phía trước tới ngày kế tiếp có số thứ tự ngày trong tuần là N; một ngày đã rơi vào ngày trong tuần N được trả về nguyên trạng |
 | localtime            | Trả về giờ địa phương |
 | utc                  | Trả về giờ UTC |
 | unixepoch            | Thời gian Unix |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Lấy ngày trong tuần được chỉ định tiếp theo sau một ngày cho trước {#get-the-next-specified-weekday-after-a-given-date}
+### Lấy ngày trong tuần được chỉ định vào hoặc sau một ngày cho trước {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

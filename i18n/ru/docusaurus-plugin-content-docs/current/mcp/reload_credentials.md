@@ -67,7 +67,7 @@ image: "/img/stackql-featured-image.png"
 
 <br/>
 
-Типы аутентификации, которые выполняют аутентификацию вне пути байтов учетных данных (интерактивный gcloud, azure CLI, oauth2 client credentials, цепочки принятия ролей, подпись OCI, null), сообщают статус `not_checked`.
+Типы аутентификации, которые выполняют аутентификацию вне пути байтов учетных данных (интерактивный gcloud, Azure CLI, oauth2 client credentials, цепочки принятия ролей, подпись OCI, null), сообщают статус `not_checked`.
 
 * * *
 

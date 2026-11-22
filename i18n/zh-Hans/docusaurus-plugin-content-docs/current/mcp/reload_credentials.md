@@ -67,7 +67,7 @@ env 文件叠加在进程环境之上，而不是替换它：凭据解析始终�
 
 <br/>
 
-在凭据字节路径之外进行身份验证的身份验证类型（交互式 gcloud、azure CLI、oauth2 客户端凭据、assume-role 链、OCI 签名、null）报告 `not_checked`。
+在凭据字节路径之外进行身份验证的身份验证类型（交互式 gcloud、Azure CLI、oauth2 客户端凭据、assume-role 链、OCI 签名、null）报告 `not_checked`。
 
 * * *
 

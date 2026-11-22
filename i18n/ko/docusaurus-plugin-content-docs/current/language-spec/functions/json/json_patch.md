@@ -10,7 +10,7 @@ keywords:
 description: StackQL에서 SQL로 JSON 문서에 JSON MergePatch를 적용하여 JSON 객체를 수정하거나 병합합니다.
 image: "/img/stackql-featured-image.png"
 ---
-JSON 문서에 JSON MergePatch(RFC-7396)를 적용하여 지정한 작업에 따라 문서를 수정합니다. 이 함수는 JSON 객체 안의 요소를 추가, 수정 또는 삭제하는 데 사용되지만 JSON 배열은 원자 단위로 처리합니다.
+JSON 문서에 JSON MergePatch(RFC 7396)를 적용하여 지정한 작업에 따라 문서를 수정합니다. 이 함수는 JSON 객체 안의 요소를 추가, 수정 또는 삭제하는 데 사용되지만 JSON 배열은 원자 단위로 처리합니다.
 
 참고 항목:  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

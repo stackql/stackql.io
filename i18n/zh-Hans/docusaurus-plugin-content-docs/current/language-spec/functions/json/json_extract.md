@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-如果你将 stackql 与 `postgres` SQL 后端一起使用，`json_extract` 函数将实现为 `json_extract_path_text` 函数
+如果你将 stackql 与 `postgres` SQL 后端一起使用，`json_extract` 函数将实现为 `json_extract_path_text` 函数。路径按 `.` 拆分，并去掉开头的 `$`，因此 `'$.a.b'` 会变为键 `'a'` 和 `'b'`；`$[0]` 等数组下标会作为对象键原样传递，在该后端上不会选取数组元素。
 
 :::
 

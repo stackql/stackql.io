@@ -67,7 +67,7 @@ Each `providers` row has:
 
 <br/>
 
-Auth types that authenticate outside the credential-bytes path (interactive gcloud, azure CLI, oauth2 client credentials, assume-role chains, OCI signing, null) report `not_checked`.
+Auth types that authenticate outside the credential-bytes path (interactive gcloud, Azure CLI, oauth2 client credentials, assume-role chains, OCI signing, null) report `not_checked`.
 
 * * *
 

@@ -25,13 +25,13 @@ Flag global diterima oleh perintah StackQL, tetapi sebagian hanya berlaku untuk 
 | <span class="nowrap">`--cachekeycount`</span> | integer | Jumlah kunci awal cache | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Jalur lengkap file konfigurasi | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | File `cpuprofile`, tidak ada jika kosong | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Kedalaman maksimum dependensi dataflow untuk kueri tertentu | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Jumlah maksimum komponen dataflow yang terhubung lemah untuk kueri tertentu | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Kedalaman maksimum dependensi dataflow untuk kueri tertentu | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Jumlah maksimum komponen dataflow yang terhubung lemah untuk kueri tertentu | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | String JSON / YAML untuk mengonfigurasi penanganan kueri pemeliharaan DBMS | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Pembatas untuk output csv. Hanya satu karakter.  Diabaikan untuk semua output selain csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | Flag `dryrun`; hanya menjalankan praprosesor, output hasil template akan dikembalikan | `false` |
 | <span class="nowrap">`--env.file`</span> | string | File opsional bergaya dotenv yang dimuat ke lingkungan proses saat startup (semua perintah); alat MCP [`reload_credentials`](/mcp/reload_credentials) memuatnya ulang sesuai permintaan. File yang tidak ada ditoleransi; kunci dengan nilai kosong dilewati; variabel yang sudah ada diganti. Tidak dimuat dari `.stackqlrc`. Tersedia di rilis StackQL setelah `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Batas konkurensi untuk eksekusi kueri | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Batas konkurensi untuk eksekusi kueri | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Prefiks alias ekspor (namespace atau skema) | |
 | <span class="nowrap">`--gc`</span> | string | String JSON / YAML yang merepresentasikan konfigurasi GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Menonaktifkan header kolom, hanya valid dengan `--output csv` atau `--output text` | `false` |

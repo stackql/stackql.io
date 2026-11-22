@@ -25,7 +25,7 @@ SELECT character_expression1 || character_expression2 FROM <multipartIdentifier>
 
 ## 参数 {#arguments}
 
-__*character_expression*__  
+__*character_expression1*__, __*character_expression2*__  
 字符串字面量或字符串列。
 
 ## 返回值 {#return-values}

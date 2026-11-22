@@ -11,7 +11,6 @@ description: "REGISTRY في StackQL: سرد الموفرين والإصدارا�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 تسرد الموفرين المتاحين في سجل الموفرين الذي تم تكوينه، أو تسحب موفرًا إلى التثبيت المحلي.  
 
@@ -59,5 +58,5 @@ REGISTRY PULL okta;
 
 ### تثبيت إصدار محدد من موفر {#install-a-specific-version-of-a-provider}
 ```sql
-REGISTRY PULL azure v23.01.00104;
+REGISTRY PULL azure v24.10.00267;
 ```

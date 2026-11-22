@@ -26,7 +26,7 @@ StackQL의 날짜/시간 함수에서 날짜 또는 시간 값 뒤에는 날짜,
 | start of month       | 해당 월의 시작 시점으로 되돌림                      |
 | start of year        | 해당 연도의 시작 시점으로 되돌림                    |
 | start of day         | 해당 일의 시작 시점으로 되돌림                      |
-| weekday N            | 요일 번호가 N인 다음 날짜로 날짜를 앞으로 이동      |
+| weekday N            | 요일 번호가 N인 다음 날짜로 날짜를 앞으로 이동. 이미 요일 N인 날짜는 그대로 반환됩니다 |
 | localtime            | 로컬 시간 반환                                      |
 | utc                  | UTC 시간 반환                                       |
 | unixepoch            | Unix 시간                                           |
@@ -66,7 +66,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### 주어진 날짜 이후의 다음 지정 요일 조회 {#get-the-next-specified-weekday-after-a-given-date}
+### 주어진 날짜 또는 그 이후의 지정 요일 조회 {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

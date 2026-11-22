@@ -10,7 +10,7 @@ keywords:
 description: تطبيق JSON MergePatch على مستند JSON باستخدام SQL في StackQL لتعديل كائنات JSON أو دمجها.
 image: "/img/stackql-featured-image.png"
 ---
-تطبق JSON MergePatch (RFC-7396) على مستند JSON، فتعدله وفقًا للعمليات المحددة. تُستخدم هذه الدالة لإضافة العناصر أو تعديلها أو حذفها داخل كائنات JSON، لكنها تتعامل مع مصفوفات JSON كوحدات غير قابلة للتجزئة.
+تطبق JSON MergePatch (RFC 7396) على مستند JSON، فتعدله وفقًا للعمليات المحددة. تُستخدم هذه الدالة لإضافة العناصر أو تعديلها أو حذفها داخل كائنات JSON، لكنها تتعامل مع مصفوفات JSON كوحدات غير قابلة للتجزئة.
 
 راجع أيضًا:  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### Mengikat alias provider {#bind-a-provider-alias}
 
-Alias provider adalah instance kedua dari suatu provider yang dikonfigurasi secara independen, yang digunakan sebagai pengganti nama provider dalam kueri.  Nilainya berupa dokumen JSON dalam string: `provider` menyebutkan provider yang mendasarinya, `tenancy` memberi label pada akun, `auth` adalah blok kredensial dengan bentuk yang sama seperti `--auth`, dan `params` menyediakan nilai default untuk parameter permintaan seperti `region`.  Kueri terhadap `production.s3.buckets` kemudian dijalankan dengan kredensial tersebut, sedangkan `aws.s3.buckets` tetap menggunakan konfigurasi awal.  Daftar lengkap kunci terdapat di [Sesi provider](/getting-started/provider-sessions#provider-aliases).
+Alias provider adalah instance kedua dari suatu provider yang dikonfigurasi secara independen, yang digunakan sebagai pengganti nama provider dalam kueri.  Nilainya berupa dokumen JSON dalam string: `provider` menyebutkan provider yang mendasarinya, `tenancy` memberi label pada akun, `auth` adalah blok kredensial dalam format alias (untuk AWS, `access_key_id_env_var` dan `secret_access_key_env_var`, bukan kunci `keyIDenvvar` dan `credentialsenvvar` dari `--auth`), dan `params` menyediakan nilai default untuk parameter permintaan seperti `region`.  Kueri terhadap `production.s3.buckets` kemudian dijalankan dengan kredensial tersebut, sedangkan `aws.s3.buckets` tetap menggunakan konfigurasi awal.  Daftar lengkap kunci terdapat di [Sesi provider](/getting-started/provider-sessions#provider-aliases).
 
 ```sql
 SET "$.providers.production" = '{

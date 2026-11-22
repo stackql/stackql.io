@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - Cloud-Inventar
-description: "Hilfsbefehle der StackQL-Shell wie clear und sleep, mit ihrer Syntax und wann sie in interaktiven Sitzungen und Skripten verwendet werden."
+description: "Die Hilfsbefehle clear und sleep der StackQL-Shell: was jeder von ihnen bewirkt, mit einem Beispiel."
 image: "/img/stackql-featured-image.png"
 ---
 

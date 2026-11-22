@@ -25,13 +25,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--cachekeycount`</span> | integer | Начальное количество ключей кэша | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Полный путь к файлу конфигурации | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | Файл `cpuprofile`; если значение пустое, файл не создается | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Максимальная глубина зависимостей потока данных для одного запроса | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Максимальное число слабо связанных компонентов потока данных для одного запроса | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Максимальная глубина зависимостей потока данных для одного запроса | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Максимальное число слабо связанных компонентов потока данных для одного запроса | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | Строка JSON / YAML для настройки обработки служебных запросов СУБД | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Разделитель для вывода csv. Только один символ. Игнорируется для любого вывода, кроме csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | Флаг `dryrun`; выполняется только препроцессор, возвращается вывод после шаблонизации | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Необязательный файл в стиле dotenv, который загружается в среду процесса при запуске (для всех команд); MCP-инструмент [`reload_credentials`](/mcp/reload_credentials) повторно загружает его по требованию. Отсутствие файла допускается; ключи с пустыми значениями пропускаются; существующие переменные перезаписываются. Значение флага не берется из `.stackqlrc`. Доступно в выпусках StackQL после `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Ограничение параллелизма при выполнении запросов | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Ограничение параллелизма при выполнении запросов | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Префикс псевдонима экспорта (пространство имен или схема) | |
 | <span class="nowrap">`--gc`</span> | string | Строка JSON / YAML с конфигурацией GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Отключает заголовки столбцов; действует только с `--output csv` или `--output text` | `false` |

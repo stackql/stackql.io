@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - クラウドインベントリ
-description: "clear や sleep などの StackQL シェルのユーティリティコマンドについて、その構文と、対話型セッションやスクリプトでの使いどころを説明します。"
+description: "StackQL シェルのユーティリティコマンド clear と sleep：それぞれの機能と例。"
 image: "/img/stackql-featured-image.png"
 ---
 

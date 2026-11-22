@@ -65,7 +65,7 @@ datetime(timeCreated, '+24 hours') as a_day_later
 FROM google.storage.buckets WHERE project = 'stackql';
 ```
 
-### Lấy ngày trong tuần được chỉ định tiếp theo sau một ngày cho trước {#get-the-next-specified-weekday-after-a-given-date}
+### Lấy ngày trong tuần được chỉ định vào hoặc sau một ngày cho trước {#get-the-next-specified-weekday-after-a-given-date}
 
 ```sql
 SELECT name, timeCreated,

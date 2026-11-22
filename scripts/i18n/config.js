@@ -168,7 +168,7 @@ module.exports = {
       ],
     },
     ru: {
-      sources: ['docs'],
+      sources: ['docs', 'ai-content'],
       sameAsEnglish: [
         'link.title.StackQL',
         'sidebar.docsSidebar.category.MCP',

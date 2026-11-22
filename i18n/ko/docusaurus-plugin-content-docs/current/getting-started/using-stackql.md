@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 클라우드 인벤토리
-description: "StackQL 사용: 셸에서 대화형으로, exec로 비대화형으로, 또는 서버로 쿼리를 실행하고, 진행하면서 프로바이더, 서비스, 리소스를 탐색합니다."
+description: "StackQL 사용: 대화형 셸에서 쿼리를 실행하고, .stackqlrc 파일로 셸을 설정하거나, exec로 인라인 또는 IQL 입력 파일의 쿼리를 비대화형으로 실행합니다."
 image: "/img/stackql-featured-image.png"
 ---
 참고 항목:  

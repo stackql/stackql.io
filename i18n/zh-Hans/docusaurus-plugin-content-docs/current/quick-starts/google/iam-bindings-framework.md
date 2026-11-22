@@ -64,7 +64,7 @@ IAM 绑定可以在以下任一层级创建：
 
 ### `iql/iam.iql` 文件 {#iqliamiql-file}
 
-这是由 `stackql` 运行的主文件，它使用 `data/iam.jsonnet` 渲染并应用转译后的策略绑定，这些绑定由 `data/iam/bindings.json` 中的数据生成
+这是由 `stackql` 运行的主文件，它使用 `data/iam.jsonnet` 渲染并应用转译后的策略绑定，这些绑定由 `data/iam/custom_roles.json` 和 `data/iam/bindings.json` 中的数据生成
 
 > 此文件应无需修改
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-此文件提供用于预处理 `iql/iam.iql` 的数据，这些数据来自 `data/iam/bindings.json`
+此文件提供用于预处理 `iql/iam.iql` 的数据，这些数据来自 `data/iam/custom_roles.json` 和 `data/iam/bindings.json`
 
 > 此文件应无需修改
 

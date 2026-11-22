@@ -155,6 +155,40 @@ html[data-theme='dark'] .react-toggle-thumb {
 	 padding: 0px 64px;
 }
 
+/* Desktop navbar below 1440px. The items need about 1,220px in English and
+   up to 1,310px in the longer translations (ru, uk, fr, es, pt-BR), so on
+   narrower screens Infima wrapped labels inside their items ("stackql-" /
+   "deploy", a caret on its own line), and at 997px the first item was drawn
+   over the logo. Below 1440px the search button shows its icon only (as
+   DocSearch does on small screens), item padding is tighter and the logo
+   keeps its width; below 1200px the item text is slightly smaller. From
+   1100px every locale then fits on one line, and from 1200px labels are kept
+   on one line. Checked in every locale at 997 to 1440px. */
+@media (min-width: 997px) and (max-width: 1439.98px) {
+	.navbar__item {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	.navbar__brand {
+		flex-shrink: 0;
+	}
+	.navbar .DocSearch-Button-Placeholder,
+	.navbar .DocSearch-Button-Keys {
+		display: none;
+	}
+}
+@media (min-width: 997px) and (max-width: 1199.98px) {
+	.navbar__item {
+		font-size: 0.875rem;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar__item.navbar__link,
+	.navbar__item > .navbar__link {
+		white-space: nowrap;
+	}
+}
+
 .hero--primary {
     --ifm-hero-background-color: var(--ifm-hero-background-color);
     --ifm-hero-text-color: var(--gamma-dark-blue);

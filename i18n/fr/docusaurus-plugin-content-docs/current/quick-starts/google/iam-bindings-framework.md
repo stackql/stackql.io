@@ -64,7 +64,7 @@ L'arborescence de répertoires suivante est utilisée pour ce framework de dépl
 
 ### Fichier `iql/iam.iql` {#iqliamiql-file}
 
-C'est le fichier principal exécuté par `stackql` ; à l'aide de `data/iam.jsonnet`, il génère et applique les liaisons de politique transpilées, produites à partir des données de `data/iam/bindings.json`
+C'est le fichier principal exécuté par `stackql` ; à l'aide de `data/iam.jsonnet`, il génère et applique les liaisons de politique transpilées, produites à partir des données de `data/iam/custom_roles.json` et `data/iam/bindings.json`
 
 > ce fichier ne devrait pas avoir besoin d'être modifié
 
@@ -150,7 +150,7 @@ AND topicsId = '{{ .name }}';
 
 ## `data/iam.jsonnet` {#dataiamjsonnet}
 
-Ce fichier fournit les données utilisées pour prétraiter `iql/iam.iql`, en les tirant de `data/iam/bindings.json`
+Ce fichier fournit les données utilisées pour prétraiter `iql/iam.iql`, en les tirant de `data/iam/custom_roles.json` et `data/iam/bindings.json`
 
 > ce fichier ne devrait pas avoir besoin d'être modifié
 

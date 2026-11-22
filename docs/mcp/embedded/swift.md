@@ -9,13 +9,13 @@ keywords:
   - embedded
   - swift
   - macos
-description: Bundle the notarised StackQL MCP server binary inside a signed macOS app
+description: Bundle the notarized StackQL MCP server binary inside a signed macOS app
 image: "/img/stackql-featured-image.png"
 ---
 
 # Swift
 
-Embed the StackQL MCP server in a macOS application. The signed, notarised binary can be bundled inside your `.app`, and the client is the official Swift MCP SDK.
+Embed the StackQL MCP server in a macOS application. The signed, notarized binary can be bundled inside your `.app`, and the client is the official Swift MCP SDK.
 
 :::info
 The embedded binary is downloaded and sha256-verified on first run, or vendored into your app. See the [common contract](/mcp/embedded#common-contract).
@@ -67,7 +67,7 @@ The API is `StackQLServer.start(Options)`, `.listToolNames()`, `.call(_:_:)`, an
 
 ## Vendoring / embedding {#vendoring--embedding}
 
-The `darwin-universal` binary is Developer ID signed and Apple-notarised, so it can be bundled inside a signed macOS `.app` while keeping the app's own notarisation valid. This is unique to the Swift library - you ship one self-contained, notarised application with no first-run download.
+The `darwin-universal` binary is Developer ID signed and Apple-notarized, so it can be bundled inside a signed macOS `.app` while keeping the app's own notarization valid. This is unique to the Swift library - you ship one self-contained, notarized application with no first-run download.
 
 Binary resolution order:
 
@@ -80,7 +80,7 @@ Binary resolution order:
 
 ## Demo app {#demo-app}
 
-**CloudLens** is a menu-bar cloud sentinel that embeds the notarised binary and runs a `read_only` check suite.
+**CloudLens** is a menu-bar cloud sentinel that embeds the notarized binary and runs a `read_only` check suite.
 
 * * *
 

@@ -4038,7 +4038,7 @@ Style:
 - Quotation marks are straight double quotes ("..."). No guillemets («»), no low-high quotes („“), no typographic quotes. Russian has no apostrophe in native words; the source's quoting of front matter values and JSX strings is kept.
 - No dash punctuation other than the keyboard hyphen. The copula dash and every other sentence dash is ` - ` with a space on each side ("StackQL - это движок запросов"). Never an em dash, an en dash or a double hyphen in prose. Hyphens in compounds stay ("какой-либо", "пара "ключ-значение"", "escape-последовательность", "веб-сайт").
 - Latin names, code spans and URLs are never declined and never take a Cyrillic ending or a hyphenated suffix ("StackQL-а", "`SELECT`-ом", "AWS-а", "GitHub-е" are all wrong). Put the class noun before them and decline the noun: "в команде `stackql exec`", "инструкцию `SELECT`", "флага `--output`", "функцию `json_extract`", "файла `stackql.yml`", "провайдера `aws`", "в StackQL", "для GitHub", "ресурсы AWS", "репозиторий GitHub".
-- A technical abbreviation written in capitals forms a hyphenated compound with the noun after it, as Russian technical writing does: "SQL-запрос", "MCP-сервер", "MCP-клиент", "MCP-инструмент", "API-ключ", "JSON-объект", "HTTP-заголовок", "SQL-бэкенд", "URL-адрес", "ИИ-агент". This applies to SQL, MCP, API, JSON, YAML, HTTP, HTTPS, URL, CLI, TLS, JWT, CSV, SaaS ("SaaS-сервис") and ИИ only; vendor and product names (AWS, GCP, IAM, GitHub, OAuth, Docker, PostgreSQL, OTel) follow the noun without a hyphen ("ресурсы AWS", "роль IAM", "токен OAuth", "образ Docker"), and a code span never takes a hyphen. A number written in digits forms a hyphenated adjective as usual ("64-битный", "2-й"); a Latin letter does not ("строка с номером N", not "N-я строка").
+- A technical abbreviation written in capitals forms a hyphenated compound with the noun after it, as Russian technical writing does: "SQL-запрос", "MCP-сервер", "MCP-клиент", "MCP-инструмент", "API-ключ", "JSON-объект", "HTTP-заголовок", "SQL-бэкенд", "URL-адрес", "ИИ-агент". This applies to SQL, MCP, API, JSON, YAML, HTTP, HTTPS, URL, CLI, TLS, JWT, CSV, IP ("IP-адрес"), SaaS ("SaaS-сервис") and ИИ only; vendor and product names (AWS, GCP, IAM, GitHub, OAuth, Docker, PostgreSQL, OTel) follow the noun without a hyphen ("ресурсы AWS", "роль IAM", "токен OAuth", "образ Docker"), and a code span never takes a hyphen. A number written in digits forms a hyphenated adjective as usual ("64-битный", "2-й"); a Latin letter does not ("строка с номером N", not "N-я строка").
 - When a Latin name is the grammatical subject and agreement is needed, StackQL is masculine (инструмент), a provider name is masculine (провайдер), a service name is masculine (сервис).
 - "провайдер" is inanimate (a software component), so its accusative singular equals the nominative: "загрузить провайдер", "установить провайдер", "выберите провайдер" (never "установить провайдера"); the genitive is "провайдера".
 - Numbers agree with the noun: 1 строка, 2 строки, 5 строк, 21 строка, 22 строки; after a digit written in code the noun still agrees.
@@ -4062,3 +4062,22 @@ Style:
 - Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Оконные функции `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Where a sentence needs the title in another grammatical case, rephrase so the title stays in the nominative ("См. [Глобальные флаги](...)", "на странице [Глобальные флаги](...)"). Link text that is a heading of the target page is that heading's translation.
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Russian is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` that says the translation is short points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).
+
+AI Reference (`ai-content/`, translated for `ru` since November 2026). These pages are written for answer engines (Yandex Neuro and Alice, GigaChat, and Russian-language queries to ChatGPT, Claude and Perplexity), so titles and FAQ questions are phrased the way a Russian-speaking engineer asks:
+
+| English | Russian |
+|---|---|
+| What is X? (title, H1, FAQ question) | Что такое X? |
+| How to X (title, H1) | Как + infinitive ("Как настроить аутентификацию StackQL в AWS", "Как встроить MCP-сервер StackQL в приложение Go") |
+| X vs Y (comparison title) | X и Y: сравнение; in prose "в отличие от Y", "по сравнению с Y" |
+| Why X (concept title) | Почему X |
+| canonical definition / comparison / concept / how-to / FAQ / troubleshooting / industry positioning | каноническое определение / сравнение / концепция / практическое руководство / часто задаваемые вопросы / устранение неполадок / место в отрасли |
+| queryable infrastructure / agentic infrastructure / infrastructure drift / SQL for APIs | инфраструктура, доступная для запросов / агентная инфраструктура / дрейф инфраструктуры / SQL для API |
+| state file / desired state / reconcile (Terraform) | файл состояния / желаемое состояние / согласовывать |
+| competitor and product names (CloudQuery, Steampipe, Terraform, OpenTofu, Pulumi, Crossplane, AWS Config) | unchanged |
+| recurring headings: Steps / Related concepts / Why it exists / Architectural comparison | Шаги / Связанные концепции / Зачем это нужно / Сравнение архитектур |
+| troubleshooting labels: Symptom / Cause / Fix / Checklist | Симптом / Причина / Решение / Что проверить |
+| live state / self-describing / rate limit / baseline (drift) | актуальное состояние / самоописываемый / ограничение частоты запросов / эталон |
+
+- `faq:` questions and answers, `howTo:` names and step text are translated; every other front matter key and value (`proficiencyLevel`, `dependencies`, `softwareApplication`) stays as it is. A YAML value that contains `: ` after translation must be double-quoted; keep flow-style `keywords: [...]` lists in flow style, translating generic terms and keeping names.
+- The body H1 that repeats the title is the translated title, word for word.

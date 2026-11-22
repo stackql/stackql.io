@@ -25,7 +25,7 @@ The following regular expression syntax is supported in StackQL:
 |------------|-------------|
 | `X*` | zero or more occurrences of `X` |
 | `X+` | one or more occurrences of `X` | 
-| `X?` | zero or one occurrences of `X` |
+| `X?` | zero or one occurrence of `X` |
 | `X{n}` | exactly `n` occurrences of `X` |
 | `X{n,}` | `n` or more occurrences of `X` |
 | `X{n,m}` | between `n` and `m` occurrences of `X` |

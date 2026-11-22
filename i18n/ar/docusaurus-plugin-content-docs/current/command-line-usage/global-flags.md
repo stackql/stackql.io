@@ -25,13 +25,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--cachekeycount`</span> | integer | العدد الأولي لمفاتيح ذاكرة التخزين المؤقت | `100` |
 | <span class="nowrap">`--configfile`</span> | string | المسار الكامل لملف التكوين | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | ملف `cpuprofile`، لا يوجد ملف إذا كانت القيمة فارغة | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | الحد الأقصى لعمق تبعيات تدفق البيانات لاستعلام معين | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | الحد الأقصى لعدد المكونات ضعيفة الاتصال في تدفق البيانات لاستعلام معين | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | الحد الأقصى لعمق تبعيات تدفق البيانات لاستعلام معين | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | الحد الأقصى لعدد المكونات ضعيفة الاتصال في تدفق البيانات لاستعلام معين | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | سلسلة نصية بتنسيق JSON / YAML لتكوين معالجة استعلامات الصيانة الداخلية في DBMS | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | الفاصل لإخراج csv. حرف واحد فقط.  يتم تجاهله لكل إخراج غير csv | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | علامة `dryrun`؛ تشغيل المعالج المسبق فقط، ويعاد الإخراج الناتج عن القوالب | `false` |
 | <span class="nowrap">`--env.file`</span> | string | ملف اختياري بنمط dotenv يتم تحميله في بيئة العملية عند بدء التشغيل (جميع الأوامر)؛ وتعيد الأداة [`reload_credentials`](/mcp/reload_credentials) في MCP تحميله عند الطلب. لا يعد غياب الملف خطأ؛ ويتم تخطي المفاتيح ذات القيم الفارغة؛ وتتم الكتابة فوق المتغيرات الموجودة. لا يؤخذ من الملف `.stackqlrc`. متاح في إصدارات StackQL بعد `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | حد التزامن لتنفيذ الاستعلامات | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | حد التزامن لتنفيذ الاستعلامات | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | بادئة الاسم المستعار للتصدير (مساحة الاسم أو المخطط) | |
 | <span class="nowrap">`--gc`</span> | string | سلسلة نصية بتنسيق JSON / YAML تمثل تكوين GC | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | يعطل رؤوس الأعمدة، وهو صالح فقط مع `--output csv` أو `--output text` | `false` |

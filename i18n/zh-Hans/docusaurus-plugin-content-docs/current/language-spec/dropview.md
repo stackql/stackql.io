@@ -11,7 +11,6 @@ description: "StackQL 中的 DROP VIEW：删除使用 CREATE VIEW 创建的视�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 在会话中删除 `view` 或 `materialized view`。  
 

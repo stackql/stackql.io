@@ -146,7 +146,7 @@ SET "$.auth.github.password_var" = 'GITHUB_TOKEN_READONLY';
 
 ### Vincular um alias de provider {#bind-a-provider-alias}
 
-Um alias de provider é uma segunda instância de um provider, configurada de forma independente, usada no lugar do nome do provider nas consultas.  O valor é um documento JSON em uma string: `provider` nomeia o provider subjacente, `tenancy` rotula a conta, `auth` é um bloco de credenciais no mesmo formato de `--auth`, e `params` fornece valores padrão para parâmetros de solicitação, como `region`.  As consultas em `production.s3.buckets` passam então a ser executadas com essas credenciais, enquanto `aws.s3.buckets` mantém a configuração de inicialização.  A lista completa de chaves está em [Sessões de provider](/getting-started/provider-sessions#provider-aliases).
+Um alias de provider é uma segunda instância de um provider, configurada de forma independente, usada no lugar do nome do provider nas consultas.  O valor é um documento JSON em uma string: `provider` nomeia o provider subjacente, `tenancy` rotula a conta, `auth` é um bloco de credenciais no formato de alias (para a AWS, `access_key_id_env_var` e `secret_access_key_env_var`, não as chaves `keyIDenvvar` e `credentialsenvvar` de `--auth`), e `params` fornece valores padrão para parâmetros de solicitação, como `region`.  As consultas em `production.s3.buckets` passam então a ser executadas com essas credenciais, enquanto `aws.s3.buckets` mantém a configuração de inicialização.  A lista completa de chaves está em [Sessões de provider](/getting-started/provider-sessions#provider-aliases).
 
 ```sql
 SET "$.providers.production" = '{

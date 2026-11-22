@@ -25,13 +25,13 @@ Globale Flags werden von StackQL-Befehlen akzeptiert, manche gelten jedoch nur f
 | <span class="nowrap">`--cachekeycount`</span> | integer | Anfängliche Schlüsselanzahl des Caches | `100` |
 | <span class="nowrap">`--configfile`</span> | string | Vollständiger Pfad der Konfigurationsdatei | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile`-Datei, keine wenn leer | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | Maximale Tiefe der Datenflussabhängigkeiten für eine Abfrage | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | Maximale Anzahl schwach zusammenhängender Datenflusskomponenten für eine Abfrage | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | Maximale Tiefe der Datenflussabhängigkeiten für eine Abfrage | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | Maximale Anzahl schwach zusammenhängender Datenflusskomponenten für eine Abfrage | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | JSON-/YAML-String zur Konfiguration der Behandlung von DBMS-Housekeeping-Abfragen | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | Trennzeichen für die csv-Ausgabe. Nur ein einzelnes Zeichen.  Wird bei jeder Nicht-csv-Ausgabe ignoriert | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun`-Flag; nur den Präprozessor ausführen, die templatierte Ausgabe wird zurückgegeben | `false` |
 | <span class="nowrap">`--env.file`</span> | string | Optionale Datei im dotenv-Stil, die beim Start in die Prozessumgebung eingelesen wird (alle Befehle); das MCP-Tool [`reload_credentials`](/mcp/reload_credentials) liest sie bei Bedarf erneut ein. Eine fehlende Datei wird toleriert; Schlüssel mit leeren Werten werden übersprungen; vorhandene Variablen werden überschrieben. Wird nicht aus `.stackqlrc` gelesen. Verfügbar in StackQL-Releases nach `v0.10.542`. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | Parallelitätslimit für die Abfrageausführung | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | Parallelitätslimit für die Abfrageausführung | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | Präfix für Export-Aliase (Namespace oder Schema) | |
 | <span class="nowrap">`--gc`</span> | string | JSON-/YAML-String mit der GC-Konfiguration | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | Deaktiviert Spaltenüberschriften, nur gültig mit `--output csv` oder `--output text` | `false` |

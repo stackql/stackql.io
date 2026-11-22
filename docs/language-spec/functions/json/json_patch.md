@@ -10,7 +10,7 @@ keywords:
 description: Apply a JSON MergePatch to a JSON document using SQL in StackQL, modifying or merging JSON objects.
 image: "/img/stackql-featured-image.png"
 ---
-Applies a JSON MergePatch (RFC-7396) to a JSON document, modifying it according to specified operations. This function is used to add, modify, or delete elements within JSON objects but treats JSON arrays as atomic units.
+Applies a JSON MergePatch (RFC 7396) to a JSON document, modifying it according to specified operations. This function is used to add, modify, or delete elements within JSON objects but treats JSON arrays as atomic units.
 
 See also:  
 [[`SELECT`]](/language-spec/select) [[` JSON_EXTRACT `]](/language-spec/functions/json/json_extract)

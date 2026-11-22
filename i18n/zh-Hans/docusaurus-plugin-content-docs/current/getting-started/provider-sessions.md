@@ -28,7 +28,7 @@ image: "/img/stackql-featured-image.png"
 |--|--|--|
 | `provider` | 是 | 别名解析到的规范 Provider，例如 `aws`。 |
 | `tenancy` | 是 | 分组标签，例如账号名称或租户名称。StackQL 不会对照 Provider 验证它。 |
-| `auth` | `auth` 与 `auth_secret` 二者之一 | 身份验证文档，结构与该 Provider 在 [`--auth`](/command-line-usage/global-flags) 对象中的条目相同。别名不会借用规范 Provider 的凭据。 |
+| `auth` | `auth` 与 `auth_secret` 二者之一 | 别名格式的身份验证文档，该格式不同于该 Provider 在 [`--auth`](/command-line-usage/global-flags) 对象中的条目：对于 AWS，键为 `access_key_id_env_var` 和 `secret_access_key_env_var`，而不是 `keyIDenvvar` 和 `credentialsenvvar`；别名格式不认识的键会以 `invalid session configuration field or type` 报错失败。别名不会借用规范 Provider 的凭据。 |
 | `auth_secret` | `auth` 与 `auth_secret` 二者之一 | 保存身份验证文档的[会话机密](#session-secrets)的名称。 |
 | `params` | 否 | 已声明的 Provider 参数的默认值，包括已声明的服务器参数。查询中的谓词会覆盖默认值。 |
 | `tuning` | 否 | 该别名的请求所适用的 `max_concurrent` 和 `max_per_host` 限制。Provider 和租户标签都相同的别名共用这些控制项，并且必须声明相同的调优设置。 |

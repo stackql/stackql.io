@@ -68,7 +68,7 @@ For reads, Claude discovers the schema and runs `SELECT` statements immediately.
 
 ## Controlling what Claude can do {#controlling-what-claude-can-do}
 
-The `mode` field in the config is the contract: `read_only` for inventory-only assistants, `safe` (default) for approval-gated changes, `delete_safe` to allow create/update but gate deletes, `full_access` only for trusted automation. Every call Claude makes is recorded in the server's JSONL audit log regardless of mode.
+The `mode` field in the config is the contract: `read_only` for inventory-only assistants, `safe` (default) for approval-gated changes, `delete_safe` to allow create/update but gate deletes and `EXEC` lifecycle operations, `full_access` only for trusted automation. Every call Claude makes is recorded in the server's JSONL audit log regardless of mode.
 
 ## Related concepts {#related-concepts}
 

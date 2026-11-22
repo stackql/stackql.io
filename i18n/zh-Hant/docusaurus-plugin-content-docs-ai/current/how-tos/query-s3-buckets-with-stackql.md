@@ -1,30 +1,30 @@
 ---
 title: 如何使用 StackQL 查詢 S3 儲存貯體
-description: 以 aws.s3.buckets 資料表列出 S3 儲存貯體，並透過以 data__Identifier 為鍵的 aws.s3.bucket 詳細資料表取得加密、版本控制、公開存取封鎖等設定。
+description: 以 aws.s3.buckets 資料表列出 S3 儲存貯體及其區域，並從以 Identifier 為鍵的 awscc.s3.buckets Cloud Control 資料表取得加密、版本控制、公開存取封鎖等設定。
 keywords: [stackql, aws, s3, 儲存貯體, sql, 雲端安全, 公開存取]
 proficiencyLevel: Beginner
 faq:
   - question: 儲存貯體是全域的，為什麼 S3 儲存貯體查詢仍使用 region = 'us-east-1'？
-    answer: 儲存貯體名稱在全域範圍內是唯一的，但底層的 AWS Cloud Control API 呼叫仍需要區域路由參數；us-east-1 會傳回帳戶的儲存貯體清單。每個儲存貯體的所在區域是一項屬性，可從個別儲存貯體的詳細資料中取得。
+    answer: 儲存貯體名稱在全域範圍內是唯一的，但區域仍是清單方法的必要路由參數；us-east-1 會傳回帳戶的儲存貯體清單。每個儲存貯體的所在區域是該清單的 bucket_region 資料行。
   - question: 如何取得特定儲存貯體的設定？
-    answer: 查詢單數形式的詳細資料表 aws.s3.bucket，並以儲存貯體名稱作為 data__Identifier。詳細資料列包含加密、版本控制、公開存取封鎖、記錄和標籤等設定。
+    answer: 查詢 Cloud Control 資料表 awscc.s3.buckets，並以儲存貯體名稱作為 Identifier。該資料列包含加密、版本控制、公開存取封鎖、記錄和標籤等設定。
   - question: StackQL 可以建立或刪除 S3 儲存貯體嗎？
-    answer: 可以。aws.s3.buckets 公開了 INSERT（create_resource）、UPDATE（update_resource）和 DELETE（delete_resource）方法。SHOW INSERT INTO aws.s3.buckets 會產生可寫入屬性的範本。
+    answer: 可以。aws.s3.buckets 公開了 INSERT（create_bucket）和 DELETE（delete_bucket）方法，Cloud Control 資料表 awscc.s3.buckets 則公開了 INSERT（create_resource）、UPDATE（update_resource）和 DELETE（delete_resource）。SHOW INSERT INTO awscc.s3.buckets 會產生可寫入屬性的範本。
 ---
 
 # 如何使用 StackQL 查詢 S3 儲存貯體
 
-S3 儲存貯體以兩個相關的資料表公開：`aws.s3.buckets` 列出帳戶中的儲存貯體，`aws.s3.bucket`（單數）則傳回由 `data__Identifier` 識別之單一儲存貯體的完整設定。這種清單與詳細資料的區分，反映了這些資料表所依據的 AWS Cloud Control API。
+S3 儲存貯體以兩個相關的資料表公開：`aws.s3.buckets` 列出帳戶中的儲存貯體，`awscc.s3.buckets` 則傳回由 `Identifier` 識別之單一儲存貯體的完整設定。前者以 `aws` Provider 中的 S3 API 為基礎，後者以 `awscc` Provider 中的 AWS Cloud Control API 為基礎。
 
 ## 必要條件 {#prerequisites}
 
 - 已匯出 AWS 憑證，請參閱[如何讓 StackQL 向 AWS 進行驗證](/ai/how-tos/authenticate-stackql-to-aws)
-- 已安裝 AWS Provider：`REGISTRY PULL aws;`
+- 已安裝兩個 AWS Provider：`REGISTRY PULL aws;` 和 `REGISTRY PULL awscc;`
 
 ## 列出儲存貯體 {#list-buckets}
 
 ```sql
-SELECT bucket_name
+SELECT name, bucket_region, creation_date
 FROM aws.s3.buckets
 WHERE region = 'us-east-1';
 ```
@@ -33,21 +33,20 @@ WHERE region = 'us-east-1';
 
 ## 檢查單一儲存貯體 {#inspect-one-bucket}
 
-詳細資料表會傳回指定儲存貯體的設定屬性：
+Cloud Control 資料表會傳回指定儲存貯體的設定屬性：
 
 ```sql
 SELECT
   bucket_name,
-  bucket_location,
   bucket_encryption,
   versioning_configuration,
   public_access_block_configuration
-FROM aws.s3.bucket
+FROM awscc.s3.buckets
 WHERE region = 'us-east-1'
-AND data__Identifier = 'my-bucket-name';
+AND Identifier = 'my-bucket-name';
 ```
 
-設定資料行會傳回結構化 JSON；`DESCRIBE aws.s3.bucket` 會列出所有可用的資料行，包括 `logging_configuration`、`lifecycle_configuration`、`object_lock_configuration`、`tags` 和 `arn`。
+設定資料行會傳回結構化 JSON；`DESCRIBE awscc.s3.buckets` 會列出所有可用的資料行，包括 `logging_configuration`、`lifecycle_configuration`、`object_lock_configuration`、`tags` 和 `arn`。
 
 ## 稽核模式：先列舉，再檢查 {#audit-pattern-enumerate-then-inspect}
 
@@ -58,10 +57,10 @@ AND data__Identifier = 'my-bucket-name';
 可寫入屬性的探索方式與可讀取屬性相同：
 
 ```sql
-SHOW INSERT INTO aws.s3.buckets;
+SHOW INSERT INTO awscc.s3.buckets;
 ```
 
-這會產生涵蓋資源可寫入欄位（期望狀態文件和 `region`）的 `INSERT` 範本。若只要包含必要欄位，請使用 `/*+ REQUIRED */` 查詢提示。
+這會產生涵蓋資源可寫入欄位的 `INSERT` 範本，形式為 Cloud Control 所接受的期望狀態文件。若只要包含必要欄位，請使用 `/*+ REQUIRED */` 查詢提示。
 
 ## 相關概念 {#related-concepts}
 

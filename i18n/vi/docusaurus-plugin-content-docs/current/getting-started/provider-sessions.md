@@ -28,7 +28,7 @@ Câu lệnh `SET "$.providers.<alias>"` liên kết một bí danh với một p
 |--|--|--|
 | `provider` | Có | Provider chuẩn tắc mà bí danh được phân giải thành, ví dụ `aws`. |
 | `tenancy` | Có | Một nhãn nhóm như tên tài khoản hoặc tên tenant.  StackQL không đối chiếu nhãn này với provider. |
-| `auth` | Một trong `auth` hoặc `auth_secret` | Một tài liệu xác thực có cùng dạng với mục của provider trong đối tượng [`--auth`](/command-line-usage/global-flags).  Bí danh không mượn thông tin xác thực của provider chuẩn tắc. |
+| `auth` | Một trong `auth` hoặc `auth_secret` | Một tài liệu xác thực theo định dạng của bí danh, khác với mục của provider trong đối tượng [`--auth`](/command-line-usage/global-flags): với AWS, các khóa là `access_key_id_env_var` và `secret_access_key_env_var`, không phải `keyIDenvvar` và `credentialsenvvar`, và một khóa mà định dạng của bí danh không biết sẽ thất bại với lỗi `invalid session configuration field or type`.  Bí danh không mượn thông tin xác thực của provider chuẩn tắc. |
 | `auth_secret` | Một trong `auth` hoặc `auth_secret` | Tên của một [bí mật phiên](#session-secrets) chứa tài liệu xác thực. |
 | `params` | Không | Giá trị mặc định cho các tham số provider đã khai báo, bao gồm cả các tham số máy chủ đã khai báo.  Một vị từ trong truy vấn sẽ ghi đè giá trị mặc định. |
 | `tuning` | Không | Giới hạn `max_concurrent` và `max_per_host` cho các yêu cầu của bí danh.  Các bí danh dùng chung provider và tenancy sẽ dùng chung các cơ chế kiểm soát này và phải khai báo thiết lập tuning giống hệt nhau. |

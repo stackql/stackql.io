@@ -25,13 +25,13 @@ image: "/img/stackql-featured-image.png"
 | <span class="nowrap">`--cachekeycount`</span> | integer | 캐시 초기 키 개수 | `100` |
 | <span class="nowrap">`--configfile`</span> | string | 구성 파일 전체 경로 | `{cwd}/.stackqlrc` |
 | <span class="nowrap">`--cpuprofile`</span> | string | `cpuprofile` 파일, 비어 있으면 없음 | `null` |
-| <span class="nowrap">`--dataflow.dependency.max`</span> | int | 지정된 쿼리의 최대 데이터 흐름 종속성 깊이 | `50` |
-| <span class="nowrap">`--dataflow.components.max`</span> | int | 지정된 쿼리에서 데이터 흐름의 약하게 연결된 구성 요소 최대 개수 | `50` |
+| <span class="nowrap">`--dataflow.dependency.max`</span> | integer | 지정된 쿼리의 최대 데이터 흐름 종속성 깊이 | `50` |
+| <span class="nowrap">`--dataflow.components.max`</span> | integer | 지정된 쿼리에서 데이터 흐름의 약하게 연결된 구성 요소 최대 개수 | `50` |
 | <span class="nowrap">`--dbInternal`</span> | string | DBMS 유지 관리 쿼리 처리를 구성하는 JSON / YAML 문자열 | `{}` |
 | <span class="nowrap">`-d`, `--delimiter`</span> | string | csv 출력의 구분 기호입니다. 단일 문자만 허용됩니다. csv 이외의 모든 출력에서는 무시됩니다 | `,` |
 | <span class="nowrap">`--dryrun`</span> | flag | `dryrun` 플래그입니다. 전처리기만 실행하며 템플릿이 적용된 출력이 반환됩니다 | `false` |
 | <span class="nowrap">`--env.file`</span> | string | 시작 시 프로세스 환경으로 로드되는 선택적 dotenv 스타일 파일입니다(모든 명령). MCP [`reload_credentials`](/mcp/reload_credentials) 도구는 요청 시 이 파일을 다시 로드합니다. 파일이 없어도 허용되고, 값이 비어 있는 키는 건너뛰며, 기존 변수는 덮어씁니다. `.stackqlrc` 파일에서는 로드되지 않습니다. StackQL `v0.10.542` 이후 릴리스에서 사용할 수 있습니다. | `null` |
-| <span class="nowrap">`--execution.concurrency.limit`</span> | int | 쿼리 실행의 동시성 제한 | `1` |
+| <span class="nowrap">`--execution.concurrency.limit`</span> | integer | 쿼리 실행의 동시성 제한 | `1` |
 | <span class="nowrap">`--export.alias`</span> | string | 내보내기 별칭 접두사(네임스페이스 또는 스키마) | |
 | <span class="nowrap">`--gc`</span> | string | GC 구성을 나타내는 JSON / YAML 문자열 | `{}` |
 | <span class="nowrap">`-H`, `--hideheaders`</span> | flag | 열 머리글을 비활성화합니다. `--output csv` 또는 `--output text`에서만 유효합니다 | `false` |

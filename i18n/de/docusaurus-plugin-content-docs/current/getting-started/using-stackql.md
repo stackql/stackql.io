@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - Cloud-Inventar
-description: "StackQL verwenden: Abfragen interaktiv in der Shell, nicht-interaktiv mit exec oder als Server ausführen und dabei Provider, Services und Ressourcen entdecken."
+description: "StackQL verwenden: Abfragen in der interaktiven Shell ausführen, die Shell mit einer .stackqlrc-Datei einrichten oder Abfragen nicht-interaktiv mit exec ausführen, inline oder aus einer IQL-Eingabedatei."
 image: "/img/stackql-featured-image.png"
 ---
 Siehe auch:  

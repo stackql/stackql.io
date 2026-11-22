@@ -34,7 +34,7 @@ __*value_column*__
 Cột cung cấp các giá trị cho đối tượng JSON.
 
 __*grouping_column*__  
-Cột dùng để nhóm các kết quả.
+Cột trong mệnh đề `GROUP BY`; cột này không phải là đối số của hàm `JSON_GROUP_OBJECT`, vốn nhận đúng hai đối số. Một đối tượng JSON được trả về cho mỗi nhóm.
 
 ## Giá trị trả về {#return-values}
 Trả về một đối tượng JSON chứa tất cả các cặp khóa-giá trị đã tổng hợp từ các cột được chỉ định, được nhóm theo cột `grouping_column`.

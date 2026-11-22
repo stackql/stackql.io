@@ -11,7 +11,6 @@ description: "StackQL 中的 REFRESH VIEW：依據定義查詢重建具體化檢
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 在工作階段內重新整理 `materialized view` 中的資料。
 

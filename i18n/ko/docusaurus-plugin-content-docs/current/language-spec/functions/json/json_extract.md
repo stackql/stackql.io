@@ -25,7 +25,7 @@ image: "/img/stackql-featured-image.png"
 
 :::note 
 
-`postgres` SQL 백엔드와 함께 stackql을 사용하는 경우 `json_extract` 함수는 `json_extract_path_text` 함수로 구현됩니다.
+`postgres` SQL 백엔드와 함께 stackql을 사용하는 경우 `json_extract` 함수는 `json_extract_path_text` 함수로 구현됩니다. 경로는 `.` 문자를 기준으로 분할되고 앞에 오는 `$` 문자는 제거되므로, `'$.a.b'` 경로는 `'a'` 키와 `'b'` 키가 됩니다. `$[0]` 같은 배열 첨자는 객체 키로 그대로 전달되며, 이 백엔드에서는 배열 요소를 선택하지 않습니다.
 
 :::
 

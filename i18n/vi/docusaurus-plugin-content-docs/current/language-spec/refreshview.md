@@ -11,7 +11,6 @@ description: "REFRESH VIEW trong StackQL: dựng lại kết quả đã lưu c�
 image: "/img/stackql-featured-image.png"
 ---
 import RailroadDiagram from '/js/RailroadDiagram/RailroadDiagram.js';
-//import Gist from 'react-gist';
 
 Làm mới dữ liệu của một `materialized view` trong một phiên.  
 

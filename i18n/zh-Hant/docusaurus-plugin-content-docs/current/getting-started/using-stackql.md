@@ -7,7 +7,7 @@ keywords:
   - infrastructure-as-code
   - configuration-as-data
   - 雲端資源清單
-description: "使用 StackQL：在 shell 中以互動方式執行查詢、以 exec 非互動方式執行或作為伺服器執行，並隨時探索 Provider、服務與資源。"
+description: "使用 StackQL：在互動式 shell 中執行查詢、以 .stackqlrc 檔案設定 shell，或以 exec 非互動方式執行內嵌查詢或 IQL 輸入檔。"
 image: "/img/stackql-featured-image.png"
 ---
 另請參閱：  
