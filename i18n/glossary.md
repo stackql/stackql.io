@@ -3617,3 +3617,448 @@ Style:
 - Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Віконні функції `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Link text that is a heading of the target page is that heading's translation.
 - The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
 - Ukrainian is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` that says the translation is short points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).
+
+## ru
+
+Audience: Russian-speaking engineers reading technical documentation. Standard literary Russian in the register of vendor documentation in Russian (Microsoft Learn ru-RU, Yandex Cloud, Google Cloud ru): neutral, precise and plain, without bureaucratic padding (канцелярит) and without English calques or slang (see the "Not" column and the Style list). Address the reader as "вы" in lower case, as Microsoft does; never "Вы" with a capital and never "ты". The possessive is "ваш" ("ваш компьютер"). Present tense, short sentences. Instructions to the reader use the plural imperative ("Выполните команду", "Установите", "Создайте", "См. X"), never an infinitive used as an order. Task headings and example headings that name a task use the verbal noun ("Установка StackQL", "Создание шаблона", "Получение абсолютного значения числа"). Keep the names and abbreviations Russian developers write in Latin script; do not coin Russian names for products or APIs. No marketing tone.
+
+Terminology (use the rendering every time; do not alternate with the variants in the third column):
+
+| English | Russian | Not |
+|---|---|---|
+| provider (a StackQL provider) | провайдер, declined as a Russian noun (провайдера, провайдеры, провайдеров), lower case in prose | поставщик (that is the cloud vendor), provider (Latin, in prose) |
+| cloud provider (the vendor) | поставщик облачных услуг; "поставщик" alone where the context is clear | облачный провайдер, облачный вендор, клауд-провайдер |
+| vendor (the company behind an API or SDK, not only cloud) | поставщик; "vendor-published" = опубликованный поставщиком | вендор, продавец |
+| cloud (as an adjective: cloud resources, cloud infrastructure) | облачный ("облачные ресурсы", "облачная инфраструктура") | клауд, cloud (in prose) |
+| service | сервис ("сервис `ec2`") | служба (that is an OS or Windows service), услуга |
+| resource | ресурс | |
+| method | метод | способ (for a StackQL method) |
+| operation | операция | |
+| query (noun) / to query | запрос / выполнять запросы ("query AWS resources" = выполнять запросы к ресурсам AWS; "run a query" = выполнить запрос) | квери, опрашивать (for querying a resource) |
+| statement | инструкция ("инструкция `SELECT`") | оператор (that is an operator), выражение (that is an expression), утверждение, стейтмент |
+| command (CLI) / subcommand | команда ("команда `stackql exec`") / подкоманда | инструкция (that is a statement) |
+| result set | результирующий набор | множество результатов, резалтсет |
+| row / column | строка / столбец | колонка (for a table column), запись (for a row), ряд |
+| line (of text, of output) | строка | линия |
+| table | таблица | |
+| view | представление ("представление, созданное с помощью `CREATE VIEW`") | вид, вью, view (in prose) |
+| materialized view | материализованное представление | |
+| window function | оконная функция | функция окна |
+| window frame | рамка окна | фрейм |
+| aggregate function / scalar function | агрегатная функция / скалярная функция | агрегирующая функция |
+| function / expression / clause | функция / выражение / предложение ("предложение `WHERE`", "предложение `GROUP BY`") | клауза, оператор `WHERE` |
+| keyword / operator / predicate | ключевое слово / оператор / предикат | |
+| subquery / alias / join | вложенный запрос / псевдоним / соединение (`JOIN` where the source has code) | подзапрос, алиас, джойн |
+| partition / peer, peer group / tie (window functions) | секция / родственная строка, группа родственных строк / равные значения ("строки с равными значениями", "с пропусками", "без пропусков") | партиция, раздел (for a window partition) |
+| offset (`LAG`, `LEAD`) | смещение (the argument name `offset` stays as code) | офсет, сдвиг |
+| target (of `SET` and `UNSET`) | цель ("Цель" as the heading) | мишень, таргет |
+| override (a credential, a default) / overwrite (a value, a key) | переопределение, переопределить / перезапись, перезаписать ("Перезаписать, если уже существует?") | оверрайд |
+| dereference | разыменование | |
+| data type / literal / identifier | тип данных / литерал ("строковый литерал", "числовой литерал") / идентификатор | константа (for a literal) |
+| string / integer / boolean | строка, or строковое значение where "строка" could be read as a table row / целое число / логическое значение (`BOOLEAN` as code) | стринг, булево значение, булевый |
+| whitespace | пробельные символы | пробелы (unless the source means space characters) |
+| parameter / argument | параметр / аргумент | |
+| flag (CLI) / option | флаг ("глобальные флаги", "флаг `--output`") / параметр | опция, ключ (for a CLI flag) |
+| environment variable | переменная среды | переменная окружения, env-переменная |
+| field / key / value | поле / ключ / значение | |
+| schema | схема | |
+| control plane / data plane | плоскость управления / плоскость данных | контрольная плоскость, уровень управления |
+| agent, AI agent | агент, ИИ-агент | AI-агент, агент ИИ |
+| AI, artificial intelligence | ИИ, искусственный интеллект ("ИИ-модели", "ИИ-ассистенты"); product names that contain AI (Ask AI) keep it | AI (in prose) |
+| tool (an MCP tool) | инструмент ("MCP-инструмент", "инструмент `list_methods`") | тул, средство (for an MCP tool) |
+| prompt (text sent to a model) | промпт | промт, подсказка (that is a hint), запрос (that is a query) |
+| approval prompt (a dialog shown to the user) | запрос подтверждения | |
+| elicitation (MCP) / elicitation prompt | elicitation (the MCP feature name, kept in Latin and not declined) / запрос elicitation; "elicitation-capable client" = MCP-клиент с поддержкой elicitation | выявление, уточнение |
+| gating / gated (MCP) | контроль / контролируемый; "gated by X" = контролируется X ("контролируется режимом сервера"); "gated writes" = операции записи, требующие подтверждения | гейтинг |
+| approval / approve | подтверждение / подтвердить | одобрение, апрув |
+| server mode, safety mode | режим сервера, режим безопасности | |
+| read-only | только для чтения ("режим только для чтения") | read-only, лишь для чтения |
+| write (noun, a mutating call) | операция записи | запись (alone: it reads as a record) |
+| mutation / mutating statement | изменение данных / инструкция, изменяющая данные | мутация, мутирующая инструкция |
+| lifecycle operation | операция жизненного цикла | |
+| resource lifecycle | жизненный цикл ресурса | |
+| log / audit log | журнал / журнал аудита | лог, логи, лог-файл |
+| log record / completion record / row record (OTel output) | запись журнала / запись о завершении / запись строки | |
+| credentials | учетные данные | креды, креденшелы, полномочия |
+| authentication / authorization | аутентификация / авторизация | проверка подлинности (keep one term), автентификация |
+| principal / service principal | субъект / субъект-служба (Azure: "субъект-служба", plural "субъекты-службы") | принципал, сервис-принципал |
+| subject / issuer / audience / claim (JWT, certificate identity) | субъект / издатель / аудитория / утверждение (claim) | |
+| membership (group, directory) | членство | |
+| service account | сервисный аккаунт (the Google Cloud and Yandex Cloud term) | учетная запись службы (that is a Windows service account) |
+| token / API key / access key | токен / API-ключ / ключ доступа | маркер |
+| secret / secret store | секрет / хранилище секретов | |
+| scope (OAuth, and of a variable or a setting) | область ("область OAuth", "область действия переменной") | скоуп |
+| role / permission | роль / разрешение | право (for a permission), пермишен |
+| assume a role (AWS) | принять роль | взять роль |
+| session / session variable | сеанс / переменная сеанса | сессия |
+| deployment / to deploy | развертывание / развернуть, развертывать | деплой, деплоить |
+| infrastructure / infrastructure as code | инфраструктура / инфраструктура как код (IaC) | |
+| registry (generic) / provider registry | реестр / реестр провайдеров | регистр, репозиторий (for a registry) |
+| pull (a provider) | загрузить; "pulled" = загруженный | вытянуть, спулить |
+| download / upload | скачать / отправить, загрузить на сервер | закачать |
+| repository | репозиторий | репо (in prose), хранилище (for a repository) |
+| release (noun) / to release | выпуск / выпустить | релиз |
+| command line | командная строка | |
+| shell / interactive shell | оболочка / интерактивная оболочка | шелл |
+| server / client | сервер / клиент ("MCP-сервер", "MCP-клиент") | |
+| transport (MCP) | транспорт ("транспорт stdio") | |
+| stateless / stateful | без сохранения состояния / с сохранением состояния | стейтлесс |
+| endpoint | конечная точка | эндпоинт, точка доступа |
+| request / response | запрос / ответ; where "запрос" could be read as a query, "запрос к API" or "HTTP-запрос" | реквест, респонс |
+| request body | тело запроса | |
+| payload | полезная нагрузка | пейлоад |
+| header (HTTP) | заголовок ("HTTP-заголовок", "заголовок `Authorization`") | хедер |
+| pagination | разбиение на страницы | пагинация |
+| output / output format / output mode | вывод / формат вывода / режим вывода | выход, аутпут |
+| input | входные данные | инпут |
+| template / templating | шаблон / шаблонизация | темплейт |
+| model (AI) | модель ("ИИ-модель") | |
+| dry run | пробный запуск | сухой прогон, драй-ран |
+| guardrail | защитный механизм | гардрейл |
+| answer engine | система ответов на базе ИИ | |
+| region / project / subscription / tenant | регион / проект / подписка / тенант | арендатор, клиент (for a tenant) |
+| account | учетная запись ("учетная запись AWS"); the established compounds "сервисный аккаунт" and "платежный аккаунт" keep аккаунт | аккаунт (elsewhere), счет |
+| open source | открытый исходный код ("с открытым исходным кодом") | опенсорс |
+| binary / library | двоичный файл / библиотека | бинарник |
+| embedded (Embedded MCP) / to embed | встроенный ("встроенный MCP-сервер") / встраивать | эмбеддед |
+| built-in | встроенный ("встроенные функции") | built-in |
+| installation / to install / installed | установка / установить / установленный | инсталляция, инсталлировать |
+| settings / configuration | настройки / конфигурация | параметры (for settings), конфиг |
+| documentation | документация | |
+| tutorial | руководство | туториал, учебник |
+| quick start | быстрый старт; "Quick start" as a heading = Быстрый старт | квикстарт |
+| getting started | начало работы | |
+| announcement | новость (the blog sections "Новости продукта", "Новости провайдеров"), объявление in prose | анонс |
+| feature | возможность | функция (that is a function), фича |
+| example | пример | |
+| syntax / usage | синтаксис / использование | |
+| note / tip / warning (admonition titles are translated by the theme) | примечание / совет / предупреждение | |
+| resource hierarchy | иерархия ресурсов | |
+| access management | управление доступом | |
+| provider session | сеанс провайдера | |
+| SQL backend | SQL-бэкенд | серверная часть SQL, бекенд |
+| query engine / parser | движок запросов / синтаксический анализатор | механизм запросов, парсер (in prose) |
+| wire protocol | сетевой протокол ("сетевой протокол PostgreSQL") | проводной протокол |
+| reverse proxy | обратный прокси | реверс-прокси |
+| local cache | локальный кэш | кеш |
+| key-value pair | пара "ключ-значение" | |
+| delimiter / separator | разделитель (both) | делимитер |
+| bucket (object storage) / bucket (NTILE) | бакет / группа | корзина, ведро |
+| throw an error / return an error | выдавать ошибку / возвращать ошибку | бросать ошибку, кидать ошибку |
+| return (a value) | возвращать | |
+| well-formed / valid (JSON) | правильно сформированный / допустимый | валидный |
+| file / state file | файл / файл состояния | |
+| directory (of principals, of plugins, filesystem) / folder | каталог / папка | директория |
+| computer, machine | компьютер, машина | ПК |
+| screen / user / team | экран / пользователь / команда | юзер |
+| app, application | приложение | апп, аппликация |
+| drift / infrastructure drift | дрейф / дрейф инфраструктуры | отклонение (unless the source says deviation) |
+| cloud inventory, inventory | инвентаризация облачных ресурсов, инвентаризация ("инвентаризация ресурсов") | инвентарь |
+| compliance | соответствие требованиям ("проверка соответствия требованиям") | комплаенс |
+| provision (resources) / provisioning | создавать (ресурсы) / создание ресурсов | провижининг |
+| operator (the person running StackQL) | оператор | |
+| caller | вызывающая сторона | вызывающий |
+| filter (noun and verb) | фильтр / фильтровать | |
+| concatenation | конкатенация ("оператор конкатенации") | склеивание, сцепление |
+| parse / plan (a statement) | синтаксический анализ, анализировать / планирование, планировать | парсить, распарсить |
+| contract (I/O contract, safety contract) | контракт ("контракт входных и выходных данных", "контракт безопасности") | договор |
+| source of truth | источник истины | источник правды |
+| entitlement | право доступа | |
+| snapshot / checksum / digest | снимок / контрольная сумма / дайджест | снапшот, снэпшот |
+| estate / fingerprint | среда ("облачная среда") / отпечаток | |
+| allowlist | список разрешенных | белый список, вайтлист |
+| opt in / explicit opt-in | явно включить / явное включение | |
+| enable / disable | включить / отключить | активировать, деактивировать (except where the source says activate) |
+| support (a feature, a format) / supported | поддерживать / поддерживаемый | |
+| hint (in an MCP error or tool annotation) | подсказка | хинт |
+| advertise (a capability) | объявлять | рекламировать |
+| artifact (build or release output) | артефакт | |
+| stack (of resources) | стек | |
+| pipeline | конвейер | пайплайн |
+| notarized / signed | нотариально заверенный (Apple notarization) / подписанный | нотаризованный |
+| common table expression (CTE) | обобщенное табличное выражение (CTE) | |
+| default / by default | значение по умолчанию / по умолчанию | дефолтный, по-умолчанию |
+| array (JSON, data type) | массив | |
+| policy (IAM, access policy) / IAM binding | политика / привязка IAM | биндинг |
+| bind, binding (alias, secret store) | привязывать, привязка | |
+| assign, assignment (`SET`) | присваивать, присваивание | |
+| token (lexical) | лексема | токен (for a lexical token) |
+| pin (a version, a key, an issuer) | закрепить; the heading "Pinning the revision" is "Закрепление ревизии" | запинить |
+| exporter / receiver (OTel) / sink (audit) | экспортер / приемник / место назначения | |
+| tenancy (the alias label) | tenancy | |
+| preview (a feature in preview) | предварительная версия ("доступно в предварительной версии") | превью |
+| legacy | прежний ("прежний способ аутентификации") | легаси, устаревший (that is deprecated) |
+| batch / statement batch | пакет / пакет инструкций | батч |
+| wildcard | подстановочный знак | вайлдкард |
+| query hint | подсказка запроса | |
+| substring / pattern (regex) / regular expression | подстрока / шаблон ("шаблон регулярного выражения" on a page that also has templates) / регулярное выражение | регекс, регулярка (in prose, except in names) |
+| collating function / collating sequence | функция сравнения / порядок сравнения (collation) | коллация |
+| timestamp | метка времени | таймстамп, временная метка |
+| current row / rank / running total (window functions) | текущая строка / ранг / нарастающий итог | |
+| installer | установщик | инсталлятор |
+| workspace | рабочая область | воркспейс |
+| monitoring / to monitor / monitor (noun) | мониторинг / отслеживать / монитор | мониторить |
+| run / execute | запускать / выполнять | |
+| list (verb) / delete, remove / manage | выводить список, перечислять / удалять / управлять | |
+| framework | фреймворк | каркас |
+| capability (of an MCP client or server) | возможность | способность |
+| Query Library entry | запись ("идентификатор записи Query Library") | |
+| job (CI, scheduled) / task (generic) | задание ("задание CI по расписанию") / задача | джоба |
+| container | контейнер | |
+| trace / span / trace id | трассировка / спан / идентификатор трассировки | трейс |
+| SQL engine / backing (SQL engine, server) | SQL-движок / базовый ("базовый SQL-движок") | |
+| self-contained / prebuilt / launcher (`npx`, `uvx`) | автономный / предварительно собранный / средство запуска | |
+| to vendor (a binary, a dependency) | вендоринг ("включить в ваше приложение через вендоринг") | |
+| Cargo features (`sidecar`, `vendored`) | возможности Cargo (features) | |
+| predicate pushdown | передача предикатов (predicate pushdown) | |
+| verbose mode | подробный режим | вербозный |
+| floating point / Unix timestamp / Julian day | плавающая запятая ("число с плавающей запятой") / метка времени Unix / юлианский день | плавающая точка |
+| update (noun and verb) | обновление, обновить | апдейт |
+| database / software / network / password | база данных / программное обеспечение / сеть / пароль | БД (in prose), софт |
+| link (noun) / page / website | ссылка / страница / веб-сайт | линк |
+| custom | пользовательский, собственный | кастомный |
+| interface / object / instance | интерфейс / объект / экземпляр ("экземпляр EC2") | инстанс |
+| version / revision | версия / ревизия | |
+| script / browser / plugin | скрипт / браузер / плагин | сценарий (for a script) |
+| build (noun) / to build | сборка / собрать | билд |
+| path (file, JSON, module, root) | путь ("путь к файлу", "путь JSON", "выражение пути JSON", "корневой путь"); the `PATH` variable and argument names such as `path` stay as code | |
+| nested | вложенный | |
+| real-time | в реальном времени | |
+| executable (noun) | исполняемый файл; after a code span "исполняемый файл `stackql`" | экзешник |
+| agentic | агентный ("агентные рабочие процессы", "агентная инфраструктура") | агентский, агентичный |
+| restart / reset | перезапустить / сбросить | рестарт |
+| encoding / encoded | кодировка / закодированный ("закодированный для URL") | энкодинг |
+| privileges / least privilege | привилегии / минимальные привилегии | |
+| dependency / relation | зависимость / отношение | |
+| resolve (a variable, an alias, credentials) | определять ("учетные данные определяются из переменных среды"); "resolves to" = соответствует | резолвить, разрешать (for a variable) |
+| refresh (a materialized view) | обновлять ("обновление материализованного представления") | рефреш |
+| blocking / non-blocking (invocation) | блокирующий / неблокирующий | |
+| listing (directory, registry, marketplace) | страница в каталоге | листинг |
+| event / alert / notification | событие / оповещение / уведомление | алерт, нотификация |
+| engineer, data engineer | инженер, инженер данных | |
+| hosted / self-host | размещенный / размещать самостоятельно | хостить |
+| escape (a character, a string) | экранировать; "escape sequence" = escape-последовательность; "escape character" = escape-символ | |
+| datetime value / modifier (date functions) | значение даты и времени / модификатор | |
+| regex: character class / quantifier / capture group / backreference / occurrence / to match | класс символов / квантификатор / группа захвата / обратная ссылка / вхождение / соответствовать шаблону, совпадение | |
+| Unicode code point / character code | кодовая точка Юникода / код символа | |
+| sine, cosine, tangent / arc sine, arc cosine, arc tangent / hyperbolic | синус, косинус, тангенс / арксинус, арккосинус, арктангенс / гиперболический ("гиперболический косинус 1" in example headings) | |
+| logarithm / natural logarithm | логарифм / натуральный логарифм | |
+| validate, validation / verify (a signature, a binary, a checksum) | проверять, проверка допустимости / проверять, проверка ("проверить подпись") | валидировать, верифицировать |
+| implement, implemented as / implementation | реализовать, реализовано как / реализация ("Функция `json_each` реализована как функция `json_array_elements_text`") | имплементировать |
+| evaluate (an expression, a predicate) / evaluate (a policy) | вычислять / оценивать ("правила оценки политик AWS") | |
+| unset (a variable, a field) | сбросить значение | |
+| deprecated | устаревший | депрекейтед |
+| mutual TLS | взаимный TLS (mTLS) | |
+| grant (access, a permission) | предоставлять ("предоставить доступ") | грантовать |
+| identity (caller, resource, OS) | удостоверение ("удостоверение в локальной ОС"); "managed identity" = управляемое удостоверение | идентификатор (that is an identifier), личность |
+| metadata | метаданные | |
+| rotate (a key, a secret, credentials) | смена, сменить ("регулярная смена ключей") | ротировать |
+| source / re-source (an env file, variables) | загрузить / повторно загрузить; the heading "Credential (re)sourcing" is "(Повторная) загрузка учетных данных" | |
+| process (OS) / subprocess / spawn | процесс / дочерний процесс / запустить | |
+| production / development (environment) | рабочая среда / среда разработки | продакшн, прод |
+| render (a template, rendered SQL) / render (display text) | формировать (SQL из шаблона), сформированный SQL / отображать | рендерить |
+| call (noun: tool call, API call) / invocation (blocking, non-blocking) / function call | вызов ("вызов инструмента", "блокирующий (синхронный) вызов") / вызов функции | |
+| synchronous / asynchronous | синхронный / асинхронный | |
+| comment (SQL) / commented-out statement | комментарий / закомментированная инструкция | |
+| sessionless | без сеанса ("режим без сеанса") | |
+| SQL dialect | диалект SQL | |
+| archive (ZIP, tarball) | архив | |
+| walkthrough | пошаговое руководство | |
+| canonical | канонический | |
+| namespace | пространство имен | неймспейс |
+| host (a network host, an MCP host application) / host (a machine) | хост / машина | |
+| terminal | терминал | |
+| cast (to a type) | приведение типа, привести к типу | каст, кастовать |
+| lowercase / uppercase / case-insensitive / case-sensitive | нижний регистр / верхний регистр / без учета регистра / с учетом регистра | регистронезависимый |
+| non-NULL | отличный от `NULL` | ненулевой |
+| table-valued function / qualified name | функция с табличным значением / полное имя | |
+| floating-point number / radians / degrees | число с плавающей запятой / радианы / градусы ("в радианах") | |
+| inverse (trigonometric) | обратный ("арккосинус (обратный косинус)") | инверсный |
+| natural language | естественный язык | |
+| available | доступный | |
+| side effect / breaking change / entry point | побочный эффект / критическое изменение / точка входа | ломающее изменение |
+| clone / commit / merge (git) | клонировать / коммит / слияние | |
+| image (container, Docker) | образ ("образ Docker", "образ контейнера") | имидж, изображение (for a container image) |
+| dropdown | раскрывающийся список | дропдаун, выпадающий список |
+| production keys, production account | рабочие ключи, рабочая учетная запись | |
+| StackQL Provider Registry (link text to `/providers`) | unchanged, it is a name | |
+| bundle (MCP Bundle, `.mcpb`, platform bundle) | пакет ("пакет `.mcpb`"); "MCP Bundle" stays as the format name | бандл |
+| connector (Claude) / Connector Directory | коннектор / Connector Directory (a name) | соединитель |
+| escalate / escalation (server mode) | повысить уровень доступа / повышение уровня доступа | эскалация |
+| builder (SDK builder object, builder pattern) | построитель | билдер |
+| frame clause (window functions) | предложение рамки | |
+| observability | наблюдаемость | обсервабилити |
+| severity (log) | уровень серьезности | |
+| instrumentation scope / semantic conventions (OTel) | область инструментирования / семантические соглашения | |
+| wall-clock (time, duration) | фактический ("фактическая длительность") | |
+| stale (value, environment) | неактуальный | устаревший (that is deprecated) |
+| time zone / local time | часовой пояс / местное время | локальное время |
+| timeout | тайм-аут | таймаут |
+| connection (to a server) | подключение | соединение (that is a join) |
+| server instructions, agent instructions (MCP) | указания сервера, указания для агентов | инструкции (that is statements) |
+| text view (default tool output) / rendered view | текстовый вывод / текстовое отображение | представление (that is an SQL view), вид |
+| unnest, expand (a JSON array) / explode (rows) | развернуть (массив) / разложить на отдельные строки | |
+| discovery (MCP tool category) | обнаружение | |
+| SQL verb | глагол SQL | |
+| enum | перечисление | енам |
+| target (compile target, platform target) | целевая платформа | |
+| air-gapped | физически изолированный | |
+| prepared statement | подготовленная инструкция | |
+| GitHub Action (one action) / release asset | действие ("действие `setup-stackql-mcp`"); the product name GitHub Actions stays / файл выпуска | экшен |
+| deep link / desktop app / native | прямая ссылка / настольное приложение / нативный | диплинк |
+| package manager / scheduler / scheduled run | менеджер пакетов / планировщик / запуск по расписанию | |
+| cross-origin request / certificate authority | запрос между источниками / центр сертификации (CA) | |
+| contribution / contributor / maintainer (OSS) | вклад / участник / сопровождающий | контрибьютор, мейнтейнер |
+| member (IAM) / predefined role / billing account / folder (GCP) | участник / предопределенная роль / платежный аккаунт / папка | |
+| firewall rule | правило брандмауэра | правило файрвола |
+| qualifier (table alias prefix) / DBMS | квалификатор / СУБД | |
+| JSON document / object / array | JSON-документ / JSON-объект / JSON-массив | объект JSON |
+| insert / replace (JSON functions) / patch (JSON MergePatch) | вставка / замена / патч (MergePatch stays in Latin) | |
+| anchor (regex) / control character / backslash / forward slash | якорь / управляющий символ / обратная косая черта / косая черта | бэкслеш, слеш |
+| truncate, truncated / overflow / exception | усекать, усеченный / переполнение / исключение | |
+| two's complement / base (of a logarithm) / exponent | дополнительный код / основание ("логарифм по основанию 10") / показатель степени | |
+| remainder / dividend / divisor | остаток / делимое / делитель | |
+| moving average / cumulative distribution / dense rank | скользящее среднее / интегральное распределение / плотный ранг | кумулятивное распределение |
+| Nth row, Nth value | строка с номером N, значение с номером N | N-я строка |
+| edge case / display name / code snippet | граничный случай / отображаемое имя / фрагмент кода | |
+| Common contract (heading on `/mcp/embedded`) | Общий контракт | |
+| Written in Cyrillic and declined as Russian nouns | бэкенд, кэш, хэш, тег, прокси (not declined), плагин, фреймворк, контейнер, токен, бакет, стек, артефакт, скрипт, браузер, веб-хук, форк, коммит, маркетплейс, спан, тенант, конвейер | the same words in Latin script in prose |
+| Kept in Latin script, not declined | sidecar, crate, bearer, dotenv, pull request, issue (a GitHub issue), fan-out, loopback, harness, upstream, smoke test, SaaS, skill (a Claude skill), elicitation, tenancy; third-party UI terms (Datadog facets, ChatGPT threads, GitHub stargazers and watchers) | |
+| Translated, not borrowed | runtime = среда выполнения, workflow = рабочий процесс, wrapper = оболочка, placeholder = заполнитель, fallback = резервный вариант, staging = промежуточная среда, toolchain = набор инструментов, handshake = рукопожатие, listener = прослушиватель | рантайм, воркфлоу, плейсхолдер, фолбэк, обертка |
+| bearer token / self-signed certificate / log rotation | токен bearer / самозаверенный сертификат / ротация журналов | bearer-токен |
+| server identity (name, version, build) / Query Library entry identity | идентификационные сведения (сервера) / идентификационные данные (записи) | удостоверение (that is a credential identity) |
+| offline (deployment) / in-process | без доступа к сети / внутри процесса | автономный (that is self-contained) |
+| exit status / workload / correlation ID | код завершения / рабочая нагрузка / идентификатор корреляции | |
+| server-side / client-side (filtering) | на стороне сервера / на стороне клиента | |
+| Availability Zone / virtual machine / resource group | зона доступности / виртуальная машина (ВМ) / группа ресурсов | |
+| personal access token / dataset (BigQuery) / leaderboard | персональный токен доступа / набор данных / рейтинг | |
+| ascending / descending / ordering columns | по возрастанию / по убыванию / столбцы упорядочения | |
+| Data Manipulation Language (DML) | язык манипулирования данными (DML) | |
+| true / false (results 1 and 0) | истина / ложь | |
+| word character / word boundary / carriage return / form feed | символ слова / граница слова / возврат каретки / перевод страницы | |
+| intent (Query Library) / hit / miss | намерение / совпадение / отсутствие совпадений | |
+| OTP supervision tree / under a supervisor | дерево супервизоров / под супервизором | |
+| Go / Swift / Kotlin MCP SDK | MCP SDK для Go (для Swift, для Kotlin) | |
+| abbreviations not on the hyphen list (TCP, BI, XML) | after the noun: "порт TCP", "инструменты BI", "провайдеры на основе XML" | TCP-порт, BI-инструменты, XML-провайдеры |
+| Basic / Extended `X` Statement (headings) / Response (heading) | Простая / Расширенная инструкция `X` / Ответ | |
+| Behavior If a Key Exists (admonition title on the JSON functions) | Поведение, если ключ существует | |
+| unnest (example heading) | Разворачивание (Развертывание is deployment) | |
+
+UI and navigation labels (navbar, footer, sidebar categories):
+
+| English | Russian |
+|---|---|
+| Install | Установка |
+| Installing StackQL | Установка StackQL |
+| Getting Started | Начало работы |
+| Command Line Usage | Командная строка |
+| Language Specification | Спецификация языка |
+| Built-in Functions | Встроенные функции |
+| Functions | Функции |
+| Developers | Для разработчиков |
+| Providers | Провайдеры |
+| Quick Starts | Быстрый старт |
+| AI Agents | ИИ-агенты |
+| MCP Server / MCP Tools / Embedded MCP | MCP-сервер / MCP-инструменты / Встроенный MCP |
+| Embedded (sidebar category) | Встраивание |
+| Blog | Блог |
+| Product Announcements | Новости продукта |
+| Provider Announcements | Новости провайдеров |
+| Tutorials | Руководства |
+| Documentation | Документация |
+| Contact us | Связаться с нами |
+| Privacy Policy | Политика конфиденциальности |
+| Terms of Service | Условия использования |
+| Support | Поддержка |
+| AI Reference | Справочник для ИИ |
+| More | Еще |
+| Welcome to StackQL | Добро пожаловать в StackQL |
+
+Recurring headings, phrases and keywords (the same on every page):
+
+| English | Russian |
+|---|---|
+| Syntax | Синтаксис |
+| Arguments | Аргументы |
+| Return Value(s) | Возвращаемое значение (one form for both) |
+| Example / Examples | Пример / Примеры |
+| Inputs / Output | Входные данные / Выходные данные |
+| Flags | Флаги |
+| Overview | Обзор |
+| How it works | Как это работает |
+| Modes | Режимы |
+| Gating | Контроль |
+| Install | Установка |
+| Quick start | Быстрый старт |
+| Demo app | Демонстрационное приложение |
+| Repo link | Ссылка на репозиторий |
+| Vendoring / embedding | Вендоринг / встраивание |
+| Prerequisites | Предварительные требования |
+| Next steps | Дальнейшие действия |
+| Related | Связанные материалы |
+| See also: | См. также: |
+| See X. | См. X. |
+| For more information, see X. | Подробнее см. X. |
+| Optional. / Defaults to X. | Необязательный. / По умолчанию: X. (the adjective agrees with the noun it describes: необязательная for a функция or переменная, необязательное for a поле or значение) |
+| Returns X. (the sentence that opens a function or tool page) | Возвращает X. |
+| Return the absolute value of a number (an example heading that names a task) | Получение абсолютного значения числа (a verbal noun) |
+| X function in StackQL: ... (description pattern) | Функция X в StackQL: ... |
+| X window function in StackQL: ... (description pattern) | Оконная функция X в StackQL: ... |
+| X in StackQL: ... (description of a statement page) | X в StackQL: ... |
+| ... using SQL in StackQL (description pattern) | ... с помощью SQL в StackQL |
+| Available in StackQL `vX` and later / releases from `vX` | Доступно в StackQL `vX` и более поздних версиях |
+| Available in StackQL releases after `vX` | Доступно в выпусках StackQL после `vX` |
+| None. (no arguments, no inputs) | Нет. |
+| Query / Results (tab labels), Output: | Запрос / Результаты, Вывод: |
+| Tested with (badge line on quick starts) | Проверено с |
+| Best Practices / Troubleshooting / Further reading | Рекомендации / Устранение неполадок / Дополнительные материалы |
+| MCP tool listing X / MCP tool that does X (description pattern) | MCP-инструмент, выводящий список X / MCP-инструмент, который ... |
+| MCP overview (link text) | Обзор MCP |
+| Argument / Required / Description (table headers) | Аргумент / Обязательный / Описание |
+| Renderer / Shape (table headers) | Средство отображения / Форма |
+| Table / One row per X (table cells) | Таблица / Одна строка на каждый X |
+| Yes / No (table cells) | Да / Нет |
+| For example | Например |
+| Aggregate function / Scalar function | Агрегатная функция / Скалярная функция |
+| When to use, Use case / Example usage | Когда использовать, Сценарий использования / Пример использования |
+| Conclusion / Get started (homepage heading) | Заключение / Начните работу |
+| Returns : (a `<summary>` or bold label) | Возвращает: |
+| Try this prompt with any elicitation-capable MCP client with the StackQL MCP server registered: | Попробуйте этот промпт в любом MCP-клиенте с поддержкой elicitation, в котором зарегистрирован MCP-сервер StackQL: |
+| Here's an example in Claude Desktop: | Вот пример в Claude Desktop: |
+| Server mode table cells: allow / refuse / needs approval; allowed / refused / (default) | разрешено / отклонено / требуется подтверждение; разрешено / отклонено / (по умолчанию) |
+| Gated by the server mode. / Allowed in every server mode. Read-only. (the Gating section of an MCP tool page) | Контролируется режимом сервера. / Разрешено во всех режимах сервера. Только чтение. |
+| `embedded sql backend` / `postgres sql backend` (the "Tested with" badges on quick starts) | встроенный SQL-бэкенд / SQL-бэкенд postgres |
+| Short "See also" badges that are not a page's exact title: StackQL Resource Hierarchy / Provider Sessions / Templating / Window Function Reference / X language spec | Иерархия ресурсов StackQL / Сеансы провайдеров / Шаблонизация / Справочник по оконным функциям / X в спецификации языка |
+| keyword `cloud inventory` | инвентаризация облачных ресурсов |
+| keywords `stackql`, `infrastructure-as-code`, `configuration-as-data`, `mcp`, `model context protocol`, `cspm` | unchanged |
+
+Style:
+
+- Russian alphabet only. The letter ё is not used: write е (ее, еще, все, счет, отчет), as Microsoft and most Russian technical documentation do and as search engines treat the two as one; where "все" could be misread as "всё", rephrase. The Ukrainian and Belarusian letters і, ї, є, ґ, ў never appear. Every Russian word is written in Cyrillic letters only: the Latin `a`, `e`, `o`, `c`, `p`, `x`, `y` look like Russian letters and must not be mixed into a Cyrillic word (it breaks search and spell checking). Latin words, names and code are written in Latin letters only.
+- Quotation marks are straight double quotes ("..."). No guillemets («»), no low-high quotes („“), no typographic quotes. Russian has no apostrophe in native words; the source's quoting of front matter values and JSX strings is kept.
+- No dash punctuation other than the keyboard hyphen. The copula dash and every other sentence dash is ` - ` with a space on each side ("StackQL - это движок запросов"). Never an em dash, an en dash or a double hyphen in prose. Hyphens in compounds stay ("какой-либо", "пара "ключ-значение"", "escape-последовательность", "веб-сайт").
+- Latin names, code spans and URLs are never declined and never take a Cyrillic ending or a hyphenated suffix ("StackQL-а", "`SELECT`-ом", "AWS-а", "GitHub-е" are all wrong). Put the class noun before them and decline the noun: "в команде `stackql exec`", "инструкцию `SELECT`", "флага `--output`", "функцию `json_extract`", "файла `stackql.yml`", "провайдера `aws`", "в StackQL", "для GitHub", "ресурсы AWS", "репозиторий GitHub".
+- A technical abbreviation written in capitals forms a hyphenated compound with the noun after it, as Russian technical writing does: "SQL-запрос", "MCP-сервер", "MCP-клиент", "MCP-инструмент", "API-ключ", "JSON-объект", "HTTP-заголовок", "SQL-бэкенд", "URL-адрес", "ИИ-агент". This applies to SQL, MCP, API, JSON, YAML, HTTP, HTTPS, URL, CLI, TLS, JWT, CSV, SaaS ("SaaS-сервис") and ИИ only; vendor and product names (AWS, GCP, IAM, GitHub, OAuth, Docker, PostgreSQL, OTel) follow the noun without a hyphen ("ресурсы AWS", "роль IAM", "токен OAuth", "образ Docker"), and a code span never takes a hyphen. A number written in digits forms a hyphenated adjective as usual ("64-битный", "2-й"); a Latin letter does not ("строка с номером N", not "N-я строка").
+- When a Latin name is the grammatical subject and agreement is needed, StackQL is masculine (инструмент), a provider name is masculine (провайдер), a service name is masculine (сервис).
+- "провайдер" is inanimate (a software component), so its accusative singular equals the nominative: "загрузить провайдер", "установить провайдер", "выберите провайдер" (never "установить провайдера"); the genitive is "провайдера".
+- Numbers agree with the noun: 1 строка, 2 строки, 5 строк, 21 строка, 22 строки; after a digit written in code the noun still agrees.
+- No bureaucratic padding (канцелярит): "этот" (not "данный" for "this"), "выполнять" (not "осуществлять", "производить" for perform), "использовать" (not "осуществлять использование"), "чтобы" (not "для того чтобы" where "чтобы" suffices), "сейчас", "в настоящее время" (not "на данный момент"), "так как", "поскольку" (both fine), "с помощью" (not "посредством"). Prefer a verb over a chain of verbal nouns ("чтобы создать ресурс", not "для осуществления создания ресурса"). "Является" only where the sentence needs a copula; prefer the dash or a plain verb.
+- No English calques: "в случае" (not "в кейсе"), "использовать" (not "юзать"), "по умолчанию" (not "по-умолчанию"), "поддерживать" (not "саппортить"), "выполнить запрос" (not "сделать запрос" for running a query), "имеет смысл" (not "делает смысл").
+- Headings in sentence case: a capital on the first word and on proper nouns only ("Переменные сеанса", not "Переменные Сеанса"). No end punctuation. Keep the `{#id}` suffix. A heading that is only a name, a command or a function (`COUNT`, `stackql exec`, AWS) stays as it is.
+- Lists of three or more items take no comma before "и" or "или" ("строки, столбцы и таблицы"). Standard Russian commas otherwise (before "что", "который", "чтобы", "если" clauses and around participial phrases that follow their noun).
+- No space before `:`, `;`, `?` or `!`; one space after. The word after a colon is lower case unless it is a name or starts a full sentence.
+- "we" as StackQL the project or company is "мы" ("мы рекомендуем"); "we" in a walkthrough that includes the reader is also "мы" ("мы создадим представление").
+- Example prompts addressed to an AI assistant use the singular imperative, as Russian users write to assistants ("Покажи", "Создай", "Перечисли"); everything addressed to the reader uses the plural "вы" forms.
+- English loanwords and terms from the "Kept in Latin script" row are written plain, never in italics and never in quotes: added italics change the page structure that `yarn i18n:verify` and the node-count check compare.
+- Names of languages, months and days are lower case ("английский язык", "русский", "январь", "понедельник"). Product, provider and vendor names keep their own spelling.
+- List items and table cells end the way the source does: no full stop added to fragments, a full stop where the source item is a full sentence.
+- Quoted command output, log lines and error text stay in English. UI text of third-party consoles (AWS, Azure, Google Cloud, GitHub) stays in English.
+- Numbers, dates, versions and units as in the source; the Russian decimal comma and space thousands separator are not applied inside code or tables of command output, and prose numbers follow the source.
+- The `description` front matter stays one sentence and under about 170 characters (Russian runs 10 to 25 percent longer than English in characters; trim filler rather than facts).
+- `keywords` in front matter: names stay in English, generic terms are translated (`cloud inventory` -> инвентаризация облачных ресурсов); keep the number and order of entries.
+- Front matter must stay valid YAML. Keep the quoting of the source value. A value that contains `: ` (a colon followed by a space) or ` #` must be in double quotes, as must a value that starts with a quote, bracket, backtick, `*`, `&`, `!`, `%` or `@`; escape any inner double quote as `\"`. The description pattern "Функция X в StackQL: ..." always needs the double quotes the source already has.
+- Bold and italic markers stay where the source has them, with no space inside the markers. Russian declension tempts a suffix after a bold term: put the whole inflected word inside the markers (`**провайдера**`), never `**провайдер**а`. A closing `**` must not be followed directly by a letter when it follows punctuation or inline code (it would not close in CommonMark), and a closing `__` or `_` must never be followed directly by a letter; leave a space or punctuation after the marker.
+- A `{` in prose starts a JavaScript expression in MDX. Where the source escapes braces (`\{`info`, `warn`\}`), keep the backslashes exactly.
+- Link text that is another page's title is that page's translated `title`, including the "See also" badges that wrap the title in inline code (`` [[` Window Functions `]] `` becomes `` [[` Оконные функции `]] ``); `yarn i18n:verify` warns about the changed inline code on those pages, which is expected. Where a sentence needs the title in another grammatical case, rephrase so the title stays in the nominative ("См. [Глобальные флаги](...)", "на странице [Глобальные флаги](...)"). Link text that is a heading of the target page is that heading's translation.
+- The homepage tagline "Configuration-as-Data. Infrastructure-as-Context." stays in English.
+- Russian is longer than English in characters, so a `length ratio` warning from `yarn i18n:verify` that says the translation is short points at an omission. Short pages whose code fences carry padded result tables are the exception (see the es note in CLAUDE.md).

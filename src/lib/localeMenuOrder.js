@@ -21,7 +21,7 @@ const LOCALE_MENU_ORDER = [
   'ja', //      JA       日本語
   'de', //      DE       Deutsch
   'id', //      ID       Bahasa Indonesia
-  'ru', //      RU       Русский (planned)
+  'ru', //      RU       Русский
   'fr', //      FR       Français
   'ko', //      KO       한국어
   'zh-Hant', // ZH-HANT  繁體中文

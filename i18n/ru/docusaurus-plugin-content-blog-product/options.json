@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Новости продукта",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Новые выпуски и возможности StackQL",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Все новости продукта",
+    "description": "The label for the left sidebar"
+  }
+}

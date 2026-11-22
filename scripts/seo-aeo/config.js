@@ -53,6 +53,7 @@ module.exports = {
     ja: { prefix: '/ja', htmlLang: 'ja', code: 'JA', inLanguage: 'ja', script: 'cjk', language: 'Japanese' },
     ko: { prefix: '/ko', htmlLang: 'ko', code: 'KO', inLanguage: 'ko', script: 'cjk', language: 'Korean' },
     'pt-BR': { prefix: '/pt-br', htmlLang: 'pt-BR', code: 'PT', inLanguage: 'pt-BR', script: null },
+    ru: { prefix: '/ru', htmlLang: 'ru', code: 'RU', inLanguage: 'ru', script: 'cyrillic', language: 'Russian' },
     uk: { prefix: '/uk', htmlLang: 'uk', code: 'UK', inLanguage: 'uk', script: 'cyrillic', language: 'Ukrainian' },
     vi: { prefix: '/vi', htmlLang: 'vi', code: 'VI', inLanguage: 'vi', script: null },
     'zh-Hans': { prefix: '/zh-hans', htmlLang: 'zh-Hans', code: 'ZH', inLanguage: 'zh-Hans', script: 'cjk', language: 'Chinese', mainlandChina: true },
@@ -67,8 +68,8 @@ module.exports = {
 
   // Lower bounds, so a build that silently drops a section fails the check.
   minimums: {
-    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
-    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    sitemapUrls: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
+    llmsEntries: { en: 300, ar: 150, de: 150, es: 150, fr: 150, id: 150, ja: 150, ko: 150, 'pt-BR': 150, ru: 150, uk: 150, vi: 150, 'zh-Hans': 200, 'zh-Hant': 200 },
     llmsFullBytes: 300 * 1024,
     lastmodCoverage: 0.9,
     mainTextChars: 200,
@@ -231,6 +232,20 @@ module.exports = {
     // Simplified Chinese and everything else: the default
     { locale: 'zh-Hant', languages: 'zh-CN,zh', timeZone: 'Asia/Shanghai', flag: null },
     { locale: 'zh-Hant', languages: 'en-US,en', timeZone: 'America/New_York', flag: null },
+    // Russian: Russia by default, Belarus, Kazakhstan or Kyrgyzstan otherwise.
+    // ru-RU is the default "Russian" setting, so the time zone decides, as it
+    // does for es-ES; ru-BY, ru-KZ and ru-KG decide wherever the machine is
+    { locale: 'ru', languages: 'ru-RU,ru', timeZone: 'Europe/Moscow', flag: null },
+    { locale: 'ru', languages: 'ru-RU,ru', timeZone: 'Europe/Minsk', flag: 'by' },
+    { locale: 'ru', languages: 'ru-BY,ru', timeZone: 'Europe/Moscow', flag: 'by' },
+    { locale: 'ru', languages: 'en-US,en', timeZone: 'Asia/Almaty', flag: 'kz' },
+    { locale: 'ru', languages: 'ru-RU,ru', timeZone: 'Asia/Aqtobe', flag: 'kz' },
+    { locale: 'ru', languages: 'ru-KZ,kk', timeZone: 'Europe/Berlin', flag: 'kz' },
+    { locale: 'ru', languages: 'ru-KG,ky', timeZone: 'Europe/Moscow', flag: 'kg' },
+    { locale: 'ru', languages: 'ru', timeZone: 'Asia/Bishkek', flag: 'kg' },
+    // no country named and none of those time zones: the default
+    { locale: 'ru', languages: 'ru', timeZone: 'Europe/London', flag: null },
+    { locale: 'ru', languages: 'en-US,en', timeZone: 'Asia/Tashkent', flag: null },
     // Arabic: Saudi Arabia by default, the visitor's Arab League country
     // otherwise. ar-SA is the default "Arabic" setting, so the time zone
     // decides, as it does for es-ES

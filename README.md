@@ -73,7 +73,7 @@ The StackQL query library lives in its own repo (query-library.stackql.io) and i
 
 ### SEO and AEO checks
 
-`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `ar`, `de`, `es`, `fr`, `id`, `ja`, `ko`, `pt-BR`, `uk`, `vi`, `zh-Hans`, `zh-Hant`). It is run by hand, against a local build or against production:
+`yarn seo:check` verifies that the site publishes what search engines and answer engines need, in every locale (`en`, `ar`, `de`, `es`, `fr`, `id`, `ja`, `ko`, `pt-BR`, `ru`, `uk`, `vi`, `zh-Hans`, `zh-Hant`). It is run by hand, against a local build or against production:
 
 ```
 # a local build: build it, serve it in one terminal, check it in another
@@ -91,7 +91,7 @@ Run it locally before a deploy that touches locales, URLs, `netlify.toml`, `stat
 |---|---|---|---|
 | `robots` | `robots.txt` allows every crawler token in the config and lists one sitemap per locale | yes | yes |
 | `sitemaps` | per locale: URL count, only that locale's own indexable pages, lower-case paths, `lastmod`; sampled URLs answer 200, are self-canonical and in the right language | yes | yes, and no redirects |
-| `llms` | per locale: `llms.txt` sections and entries, only translated pages listed, Arabic text for `ar`, Chinese for `zh-Hans` and `zh-Hant`, Japanese for `ja`, Korean for `ko` and Cyrillic for `uk`, sampled `.md` companions, `llms-full.txt` | yes | yes, and content types and `X-Robots-Tag` |
+| `llms` | per locale: `llms.txt` sections and entries, only translated pages listed, Arabic text for `ar`, Chinese for `zh-Hans` and `zh-Hant`, Japanese for `ja`, Korean for `ko` and Cyrillic for `ru` and `uk`, sampled `.md` companions, `llms-full.txt` | yes | yes, and content types and `X-Robots-Tag` |
 | `pages` | representative pages per locale: `lang`, `dir` (`rtl` for `ar`), title, description, canonical, robots meta, `hreflang`, social tags, JSON-LD types and language, the markdown twin, and that the text is in the served HTML (no JavaScript needed) | yes | yes, and no redirects |
 | `assets` | third-party hosts on the rendering path; a warning for hosts that are slow or unreachable from mainland China | yes | yes |
 | `switcher` | in headless Chrome: after the page hydrates, the language switcher links to the same page in every locale, for every pair of locales, and shows each locale's language code (EN, AR, DE, ES, FR, ID, JA, KO, PT, UK, VI, ZH; a language, never a country code) in the order current locale, English, then the rest as listed in `src/lib/localeMenuOrder.js`; the English flag follows the browser's region (AU, NZ, ZA, GB) and is the US flag otherwise, the Spanish flag follows it to the visitor's country in the Americas (MX, AR, CO and the rest) and is Spain's otherwise, the Arabic flag follows it to the visitor's Arab League country (EG, AE, MA and the rest) and is Saudi Arabia's otherwise, and every variant the head script can pick has artwork in the stylesheet | yes | yes |
