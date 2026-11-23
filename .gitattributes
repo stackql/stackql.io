@@ -7,3 +7,7 @@ ai-content/**/*.mdx text eol=lf
 i18n/**/*.md text eol=lf
 i18n/**/*.mdx text eol=lf
 i18n/**/*.json text eol=lf
+
+# patch-package patches (patches/, applied by postinstall) must keep the line
+# endings of the files they patch.
+patches/*.patch text eol=lf

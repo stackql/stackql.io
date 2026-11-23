@@ -153,6 +153,25 @@ if (unorderedLocales.length) {
   throw new Error(`locale(s) ${unorderedLocales.join(', ')} missing from LOCALE_MENU_ORDER in src/lib/localeMenuOrder.js`);
 }
 
+// Docusaurus's eager git strategy (the `default-v2` preset: one `git log`
+// for the whole repository in production builds, fixed dates in development)
+// with relative file paths resolved against the site directory first. The
+// preset keys its file map by absolute path, but the sitemap plugin looks up
+// routes without a lastUpdatedAt of their own (blog posts, the AI Reference,
+// src/pages) by their site-relative sourceFilePath, so with the plain preset
+// (faster.gitEagerVcs) those URLs lost <lastmod> (Docusaurus 3.10.2: 162
+// English URLs and the 44 AI Reference URLs of each locale that has it).
+function eagerGitVcs() {
+  const path = require('path');
+  const vcs = require('@docusaurus/utils').getVcsPreset('default-v2');
+  const absolute = (filePath) => path.resolve(__dirname, filePath);
+  return {
+    initialize: (params) => vcs.initialize(params),
+    getFileCreationInfo: (filePath) => vcs.getFileCreationInfo(absolute(filePath)),
+    getFileLastUpdateInfo: (filePath) => vcs.getFileLastUpdateInfo(absolute(filePath)),
+  };
+}
+
 const blogSectionNavItems = blogSections.map(({id, label}) => ({
   label,
   to: `/blog/${id}`,
@@ -232,6 +251,46 @@ const config = {
   trailingSlash: false,
   clientModules: [require.resolve('./src/clientModules/revealTabAnchors.js')],
   i18n: i18nConfig,
+  // Docusaurus Faster (@docusaurus/faster, at the core's version). Every
+  // locale is a full build, so build time grows with each locale; see
+  // CLAUDE.md, "Build time". The keys, all on:
+  // - rspackBundler: Rspack instead of webpack (same loaders and plugins;
+  //   theme-classic's rtlcss still runs through postcss-loader for ar)
+  // - rspackPersistentCache: Rspack's cache in node_modules/.cache, which
+  //   Netlify keeps between builds (evicted when this file or its imports
+  //   change)
+  // - swcJsLoader, swcJsMinimizer, swcHtmlMinimizer, lightningCssMinimizer:
+  //   SWC and LightningCSS instead of Babel, Terser, html-minifier-terser
+  //   and cssnano
+  // - mdxCrossCompilerCache: each MDX file compiled once for the client and
+  //   server bundles instead of twice
+  // - ssgWorkerThreads: pages rendered in worker threads (one per 100 pages,
+  //   at most os.availableParallelism(); DOCUSAURUS_SSG_WORKER_THREAD_COUNT
+  //   overrides)
+  // ssgWorkerThreads needs future.v4.removeLegacyPostBuildHeadAttribute
+  // (plugins' postBuild no longer gets `head`; none of ours reads it). The
+  // other v4 flags change output (CSS cascade layers, storage keys, MDX 1
+  // compatibility) and stay off.
+  // The last-update dates come from one `git log` of the whole repository
+  // (experimental_vcs below) instead of one per file, which is what
+  // faster.gitEagerVcs would switch on; see eagerGitVcs() for why it is set
+  // here instead.
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    faster: {
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      ssgWorkerThreads: true,
+    },
+    experimental_vcs: eagerGitVcs(),
+  },
   headTags: [
     {
       // Picks the regional variant of the English flag (AU, NZ, ZA, GB) and
