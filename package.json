@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "prebuild": "node scripts/build-env.js",
-    "build": "docusaurus build",
+    "build": "node scripts/build.js",
     "postbuild": "node scripts/strip-nul-bytes.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

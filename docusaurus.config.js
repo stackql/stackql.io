@@ -90,13 +90,17 @@ const i18nConfig = {
     // rtlcss, which mirrors physical properties (margin-left becomes
     // margin-right). A declaration that must not be mirrored takes a
     // /* rtl:ignore */ comment, as the inline code rule in custom.css does.
-    ar: { label: 'العربية', htmlLang: 'ar', direction: 'rtl' },
-    de: { label: 'Deutsch', htmlLang: 'de' },
-    es: { label: 'Español', htmlLang: 'es' },
-    fr: { label: 'Français', htmlLang: 'fr' },
-    id: { label: 'Bahasa Indonesia', htmlLang: 'id' },
-    ja: { label: '日本語', htmlLang: 'ja' },
-    ko: { label: '한국어', htmlLang: 'ko' },
+    // Every locale other than the default sets its baseUrl, because
+    // scripts/build.js builds each locale in its own process
+    // (`docusaurus build --locale <l>`), and a single-locale build of a
+    // locale without one is built at the site root, into build/ itself.
+    ar: { label: 'العربية', htmlLang: 'ar', direction: 'rtl', baseUrl: '/ar/' },
+    de: { label: 'Deutsch', htmlLang: 'de', baseUrl: '/de/' },
+    es: { label: 'Español', htmlLang: 'es', baseUrl: '/es/' },
+    fr: { label: 'Français', htmlLang: 'fr', baseUrl: '/fr/' },
+    id: { label: 'Bahasa Indonesia', htmlLang: 'id', baseUrl: '/id/' },
+    ja: { label: '日本語', htmlLang: 'ja', baseUrl: '/ja/' },
+    ko: { label: '한국어', htmlLang: 'ko', baseUrl: '/ko/' },
     // The URL paths of pt-BR, zh-Hans and zh-Hant are lower case on
     // purpose. Netlify answers a page URL that has upper-case letters with a
     // 301 to its lower-case form, so with the default /zh-Hans/ every
@@ -107,20 +111,25 @@ const i18nConfig = {
     // (November 2026). The locale code, the i18n/ directory and the lang
     // attribute keep their case (pt-BR, zh-Hans, zh-Hant).
     'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
-    ru: { label: 'Русский', htmlLang: 'ru' },
-    uk: { label: 'Українська', htmlLang: 'uk' },
-    vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
+    ru: { label: 'Русский', htmlLang: 'ru', baseUrl: '/ru/' },
+    uk: { label: 'Українська', htmlLang: 'uk', baseUrl: '/uk/' },
+    vi: { label: 'Tiếng Việt', htmlLang: 'vi', baseUrl: '/vi/' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
     'zh-Hant': { label: '繁體中文', htmlLang: 'zh-Hant', baseUrl: '/zh-hant/' },
   },
 };
 
-// The URL path prefix of a locale ('' for the default): its baseUrl when the
-// locale sets one, otherwise /<locale>. Always lower case, see above.
+// The URL path prefix of a locale ('' for the default): its baseUrl, which
+// every other locale must set (see above). Always lower case.
+for (const locale of i18nConfig.locales) {
+  if (locale !== i18nConfig.defaultLocale && !(i18nConfig.localeConfigs[locale] || {}).baseUrl) {
+    throw new Error(`locale ${locale} has no baseUrl in i18nConfig.localeConfigs: set /${locale.toLowerCase()}/ (scripts/build.js builds each locale on its own, and without one it would be built into build/ itself)`);
+  }
+}
 const localeUrlPrefix = (locale) =>
   locale === i18nConfig.defaultLocale
     ? ''
-    : (i18nConfig.localeConfigs[locale].baseUrl || `/${locale}/`).replace(/\/+$/, '');
+    : i18nConfig.localeConfigs[locale].baseUrl.replace(/\/+$/, '');
 
 // What a locale offers crawlers follows from what is translated for it
 // (scripts/i18n/config.js, `locales.<l>.sources`): every locale has its own
