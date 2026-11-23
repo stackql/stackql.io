@@ -90,13 +90,17 @@ const i18nConfig = {
     // rtlcss, which mirrors physical properties (margin-left becomes
     // margin-right). A declaration that must not be mirrored takes a
     // /* rtl:ignore */ comment, as the inline code rule in custom.css does.
-    ar: { label: 'العربية', htmlLang: 'ar', direction: 'rtl' },
-    de: { label: 'Deutsch', htmlLang: 'de' },
-    es: { label: 'Español', htmlLang: 'es' },
-    fr: { label: 'Français', htmlLang: 'fr' },
-    id: { label: 'Bahasa Indonesia', htmlLang: 'id' },
-    ja: { label: '日本語', htmlLang: 'ja' },
-    ko: { label: '한국어', htmlLang: 'ko' },
+    // Every locale other than the default sets its baseUrl, because
+    // scripts/build.js builds each locale in its own process
+    // (`docusaurus build --locale <l>`), and a single-locale build of a
+    // locale without one is built at the site root, into build/ itself.
+    ar: { label: 'العربية', htmlLang: 'ar', direction: 'rtl', baseUrl: '/ar/' },
+    de: { label: 'Deutsch', htmlLang: 'de', baseUrl: '/de/' },
+    es: { label: 'Español', htmlLang: 'es', baseUrl: '/es/' },
+    fr: { label: 'Français', htmlLang: 'fr', baseUrl: '/fr/' },
+    id: { label: 'Bahasa Indonesia', htmlLang: 'id', baseUrl: '/id/' },
+    ja: { label: '日本語', htmlLang: 'ja', baseUrl: '/ja/' },
+    ko: { label: '한국어', htmlLang: 'ko', baseUrl: '/ko/' },
     // The URL paths of pt-BR, zh-Hans and zh-Hant are lower case on
     // purpose. Netlify answers a page URL that has upper-case letters with a
     // 301 to its lower-case form, so with the default /zh-Hans/ every
@@ -107,20 +111,25 @@ const i18nConfig = {
     // (November 2026). The locale code, the i18n/ directory and the lang
     // attribute keep their case (pt-BR, zh-Hans, zh-Hant).
     'pt-BR': { label: 'Português (Brasil)', htmlLang: 'pt-BR', baseUrl: '/pt-br/' },
-    ru: { label: 'Русский', htmlLang: 'ru' },
-    uk: { label: 'Українська', htmlLang: 'uk' },
-    vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
+    ru: { label: 'Русский', htmlLang: 'ru', baseUrl: '/ru/' },
+    uk: { label: 'Українська', htmlLang: 'uk', baseUrl: '/uk/' },
+    vi: { label: 'Tiếng Việt', htmlLang: 'vi', baseUrl: '/vi/' },
     'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans', baseUrl: '/zh-hans/' },
     'zh-Hant': { label: '繁體中文', htmlLang: 'zh-Hant', baseUrl: '/zh-hant/' },
   },
 };
 
-// The URL path prefix of a locale ('' for the default): its baseUrl when the
-// locale sets one, otherwise /<locale>. Always lower case, see above.
+// The URL path prefix of a locale ('' for the default): its baseUrl, which
+// every other locale must set (see above). Always lower case.
+for (const locale of i18nConfig.locales) {
+  if (locale !== i18nConfig.defaultLocale && !(i18nConfig.localeConfigs[locale] || {}).baseUrl) {
+    throw new Error(`locale ${locale} has no baseUrl in i18nConfig.localeConfigs: set /${locale.toLowerCase()}/ (scripts/build.js builds each locale on its own, and without one it would be built into build/ itself)`);
+  }
+}
 const localeUrlPrefix = (locale) =>
   locale === i18nConfig.defaultLocale
     ? ''
-    : (i18nConfig.localeConfigs[locale].baseUrl || `/${locale}/`).replace(/\/+$/, '');
+    : i18nConfig.localeConfigs[locale].baseUrl.replace(/\/+$/, '');
 
 // What a locale offers crawlers follows from what is translated for it
 // (scripts/i18n/config.js, `locales.<l>.sources`): every locale has its own
@@ -151,6 +160,25 @@ for (const prefix of localeRoutePrefixes) {
 const unorderedLocales = require('./src/lib/localeMenuOrder.js').missingFromMenuOrder(i18nConfig.locales);
 if (unorderedLocales.length) {
   throw new Error(`locale(s) ${unorderedLocales.join(', ')} missing from LOCALE_MENU_ORDER in src/lib/localeMenuOrder.js`);
+}
+
+// Docusaurus's eager git strategy (the `default-v2` preset: one `git log`
+// for the whole repository in production builds, fixed dates in development)
+// with relative file paths resolved against the site directory first. The
+// preset keys its file map by absolute path, but the sitemap plugin looks up
+// routes without a lastUpdatedAt of their own (blog posts, the AI Reference,
+// src/pages) by their site-relative sourceFilePath, so with the plain preset
+// (faster.gitEagerVcs) those URLs lost <lastmod> (Docusaurus 3.10.2: 162
+// English URLs and the 44 AI Reference URLs of each locale that has it).
+function eagerGitVcs() {
+  const path = require('path');
+  const vcs = require('@docusaurus/utils').getVcsPreset('default-v2');
+  const absolute = (filePath) => path.resolve(__dirname, filePath);
+  return {
+    initialize: (params) => vcs.initialize(params),
+    getFileCreationInfo: (filePath) => vcs.getFileCreationInfo(absolute(filePath)),
+    getFileLastUpdateInfo: (filePath) => vcs.getFileLastUpdateInfo(absolute(filePath)),
+  };
 }
 
 const blogSectionNavItems = blogSections.map(({id, label}) => ({
@@ -232,6 +260,46 @@ const config = {
   trailingSlash: false,
   clientModules: [require.resolve('./src/clientModules/revealTabAnchors.js')],
   i18n: i18nConfig,
+  // Docusaurus Faster (@docusaurus/faster, at the core's version). Every
+  // locale is a full build, so build time grows with each locale; see
+  // CLAUDE.md, "Build time". The keys, all on:
+  // - rspackBundler: Rspack instead of webpack (same loaders and plugins;
+  //   theme-classic's rtlcss still runs through postcss-loader for ar)
+  // - rspackPersistentCache: Rspack's cache in node_modules/.cache, which
+  //   Netlify keeps between builds (evicted when this file or its imports
+  //   change)
+  // - swcJsLoader, swcJsMinimizer, swcHtmlMinimizer, lightningCssMinimizer:
+  //   SWC and LightningCSS instead of Babel, Terser, html-minifier-terser
+  //   and cssnano
+  // - mdxCrossCompilerCache: each MDX file compiled once for the client and
+  //   server bundles instead of twice
+  // - ssgWorkerThreads: pages rendered in worker threads (one per 100 pages,
+  //   at most os.availableParallelism(); DOCUSAURUS_SSG_WORKER_THREAD_COUNT
+  //   overrides)
+  // ssgWorkerThreads needs future.v4.removeLegacyPostBuildHeadAttribute
+  // (plugins' postBuild no longer gets `head`; none of ours reads it). The
+  // other v4 flags change output (CSS cascade layers, storage keys, MDX 1
+  // compatibility) and stay off.
+  // The last-update dates come from one `git log` of the whole repository
+  // (experimental_vcs below) instead of one per file, which is what
+  // faster.gitEagerVcs would switch on; see eagerGitVcs() for why it is set
+  // here instead.
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    faster: {
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      ssgWorkerThreads: true,
+    },
+    experimental_vcs: eagerGitVcs(),
+  },
   headTags: [
     {
       // Picks the regional variant of the English flag (AU, NZ, ZA, GB) and

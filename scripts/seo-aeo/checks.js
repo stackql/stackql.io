@@ -6,6 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const lib = require('./lib');
 
+// A Netlify deploy preview (deploy-preview-<n>--<site>.netlify.app), where
+// Netlify adds X-Robots-Tag: noindex to every response and answers redirects
+// with an absolute Location on the preview host.
+const isNetlifyPreview = (base) => /^deploy-preview-\d+--[^.]+\.netlify\.app$/.test(new URL(base).host);
+
 function helpers(ctx) {
   const { cfg } = ctx;
   const loc = (l) => cfg.locales[l];
@@ -188,7 +193,13 @@ async function llms(ctx) {
       const source = (md.body.match(/^Source: (\S+)/m) || [])[1];
       if (!source || !h.inLocale(l, source)) problems.push(`${e.url} -> Source line is ${source || 'missing'}`);
       if (target.edge && !(contentType(md).includes('text/markdown') && contentType(md).includes('utf-8'))) problems.push(`${e.url} -> content type ${contentType(md)}`);
-      if (target.edge && /noindex/i.test(md.headers.get('x-robots-tag') || '')) problems.push(`${e.url} -> X-Robots-Tag noindex`);
+      if (target.edge) {
+        // On a deploy preview Netlify's own noindex is folded into the same
+        // header; there the site's "index, follow" must still be present.
+        const robots = md.headers.get('x-robots-tag') || '';
+        const bad = isNetlifyPreview(client.base) ? !/index, follow/i.test(robots) : /noindex/i.test(robots);
+        if (bad) problems.push(`${e.url} -> X-Robots-Tag ${robots || 'missing'}`);
+      }
       return null;
     }));
     r.check(problems.length === 0, `${tag} ${picked.length} sampled markdown companions are served${target.edge ? ' as text/markdown; charset=utf-8, indexable' : ''} and name their source page`, h.list(problems, 6));
@@ -486,7 +497,9 @@ async function edge(ctx) {
     r.skip('redirect rules, response headers, per-locale 404 pages and the query library proxy exist at the hosting edge only: run with --target prod');
     return;
   }
-  const absolute = (to) => (to.startsWith('/') ? cfg.siteUrl + to : to);
+  // A rule's site-relative target as the edge answers it: on the site's own
+  // host in production, on the preview host on a deploy preview.
+  const absolute = (to) => (to.startsWith('/') ? (isNetlifyPreview(client.base) ? client.base : cfg.siteUrl) + to : to);
 
   // host, scheme and wildcard cases from the config
   for (const c of cfg.redirectCases) {
