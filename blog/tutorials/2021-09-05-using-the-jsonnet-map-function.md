@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 <meta name="author" content="Jeffrey Aven" />
 </head>
 
-[Jsonnet](https://jsonnet.org/) is a fantastic configuration language as discussed in [Using Jsonnet to Configure Multiple Environments](https://cloudywithachanceofbigdata.com/using-jsonnet-to-configure-multiple-environments/).  Going slightly beyond the basics, this article is an introduction to anonymous functions and the `map` and `format` methods in the Jsonnet standard library.  
+[Jsonnet](https://jsonnet.org/) is a fantastic configuration language as discussed in [Using Jsonnet to Configure Multiple Environments](https://fullstackchronicles.io/using-jsonnet-to-configure-multiple-environments).  Going slightly beyond the basics, this article is an introduction to anonymous functions and the `map` and `format` methods in the Jsonnet standard library.  
 
 <!-- truncate -->
 
