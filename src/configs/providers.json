@@ -284,6 +284,14 @@
         "branch": "main"
       },
       {
+        "name": "Jira",
+        "href": "https://jira-provider.stackql.io/",
+        "icon": "/img/providers/jira/favicon.ico",
+        "deployedBy": "github",
+        "repo": "stackql-registry/stackql-provider-jira",
+        "branch": "main"
+      },
+      {
         "name": "Firebase",
         "href": "https://firebase-provider.stackql.io/",
         "icon": "/img/providers/firebase/favicon.png",

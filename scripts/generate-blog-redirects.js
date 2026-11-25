@@ -45,6 +45,7 @@ const POST_SPLIT_SLUGS = new Set([
   'stackql-1-0-released',
   'new-ovh-provider-available',
   'stackql-github-secure-open-source-fund',
+  'new-jira-provider-available',
 ]);
 
 function postsIn(section) {
