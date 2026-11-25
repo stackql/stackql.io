@@ -580,6 +580,11 @@
   status = 301
 
 [[redirects]]
+  from = "/providers/jira"
+  to = "https://jira-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
   from = "/providers/firebase"
   to = "https://firebase-provider.stackql.io/"
   status = 301
@@ -807,6 +812,11 @@
 [[redirects]]
   from = "/registry/gitlab"
   to = "https://gitlab-provider.stackql.io/"
+  status = 301
+
+[[redirects]]
+  from = "/registry/jira"
+  to = "https://jira-provider.stackql.io/"
   status = 301
 
 [[redirects]]
