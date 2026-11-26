@@ -12,7 +12,7 @@ tags: [stackql, jira, atlassian, provider, devops]
 
 We've released a new StackQL provider for Jira Cloud:
 
-- [__`jira`__](https://jira-provider.stackql.io) - the Jira Cloud platform REST API v3 and the Jira Software REST API: __`issues`__, __`projects`__, __`users`__, __`permissions`__, __`workflows`__, __`fields`__, __`issue_types`__, __`screens`__, __`dashboards`__, __`filters`__, __`issue_attributes`__, __`notifications`__, __`jql`__, __`plans`__, __`system`__, __`agile`__ (boards, sprints and epics) and __`atlassian_tenant`__ (17 services, 227 resources, 611 methods)
+- [__`jira`__](https://jira-provider.stackql.io) - the Jira Cloud platform REST API v3 and the Jira Software REST API: __`issues`__, __`projects`__, __`users`__, __`permissions`__, __`workflows`__, __`fields`__, __`issue_types`__, __`screens`__, __`dashboards`__, __`filters`__, __`issue_attributes`__, __`notifications`__, __`jql`__, __`plans`__, __`system`__, __`agile`__ (boards, sprints and epics) and __`atlassian_tenant`__ (17 services, 217 resources, 611 methods)
 
 <!-- truncate -->
 
@@ -91,7 +91,7 @@ SELECT ps.name AS scheme,
        json_extract(g.value, '$.permission') AS permission,
        json_extract(g.value, '$.holder.type') AS holder_type,
        json_extract(g.value, '$.holder.parameter') AS holder
-FROM jira.permissions.permission_schemes ps,
+FROM jira.permissions.schemes ps,
      json_each(ps.permissions) g
 WHERE ps.expand = 'permissions'
 ORDER BY scheme, permission;
@@ -122,9 +122,17 @@ FROM jira.agile.boards
 WHERE type = 'scrum' AND project_key_or_id = 'ENG';
 
 SELECT id, name, state, start_date, complete_date, goal
-FROM jira.agile.board_sprints
+FROM jira.agile.sprints
 WHERE board_id = '12' AND state = 'closed'
 ORDER BY complete_date DESC;
+```
+
+`agile.sprints` and `agile.issues` are routed by the `WHERE` clause: `board_id` lists a board's sprints and `sprint_id` reads one sprint, and the issues of a board, a sprint or an epic come from `agile.issues` with `board_id`, `sprint_id` or `epic_id_or_key`:
+
+```sql
+SELECT key, json_extract(fields, '$.summary') AS summary
+FROM jira.agile.issues
+WHERE board_id = '12';
 ```
 
 ## Provisioning
